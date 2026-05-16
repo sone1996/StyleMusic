@@ -1,174 +1,150 @@
-
 <!DOCTYPE html>
 <html lang="th">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SadTune AI Pro</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<title>SadTune AI Login</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+body{
+font-family:'Noto Sans Thai',sans-serif;
+background:#0b0c10;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+}
+.box{
+width:380px;
+background:#171923;
+padding:40px;
+border-radius:20px;
+}
+input{
+width:100%;
+padding:14px;
+margin-bottom:15px;
+border:none;
+border-radius:12px;
+background:#232734;
+color:white;
+}
+button{
+width:100%;
+padding:14px;
+border:none;
+border-radius:12px;
+background:#ff2d55;
+color:white;
+font-weight:bold;
+cursor:pointer;
+margin-bottom:10px;
+}
+#userBox{
+display:none;
+margin-top:20px;
+background:#232734;
+padding:15px;
+border-radius:12px;
+}
+</style>
 </head>
 <body>
 
-<div class="sidebar">
-    <div class="logo">🎵 SadTune <span>AI</span></div>
+<div class="box">
+<h1>🎵 SadTune AI Login</h1>
 
-    <a class="active">🏠 หน้าแรก</a>
-    <a>🔥 Trending</a>
-    <a>🎼 Prompt Library</a>
-    <a>🎬 AI MV</a>
-    <a>💔 เพลงเศร้า</a>
-    <a>🎧 Playlist</a>
-    <a>📚 Tutorial</a>
+<input type="email" id="email" placeholder="Email">
+<input type="password" id="password" placeholder="Password">
 
-    <div class="playlist-box">
-        <h3>My Playlist</h3>
-        <div class="playlist-item">ฝนตกในใจ</div>
-        <div class="playlist-item">เมาแล้วคิดถึง</div>
-        <div class="playlist-item">คิดฮอดบ้าน</div>
-    </div>
+<button onclick="register()">สมัครสมาชิก</button>
+<button onclick="login()">เข้าสู่ระบบ</button>
+<button onclick="googleLogin()">Login with Google</button>
+<button onclick="logout()">Logout</button>
+
+<div id="userBox"></div>
 </div>
 
-<div class="main">
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
-<header>
-    <div class="search">
-        <input type="text" placeholder="ค้นหาเพลง Prompt หรือ Artist">
-    </div>
+import {
+getAuth,
+createUserWithEmailAndPassword,
+signInWithEmailAndPassword,
+GoogleAuthProvider,
+signInWithPopup,
+signOut,
+onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-    <div class="profile">
-        <button>+ Create AI Song</button>
-        <img src="https://i.pravatar.cc/100">
-    </div>
-</header>
+const firebaseConfig = {
+  apiKey: "AIzaSyBLzQ5gL2Fd0PLGHqfRiBfkgiQzl8MJwXY",
+  authDomain: "sadtuneai-bfb93.firebaseapp.com",
+  projectId: "sadtuneai-bfb93",
+  storageBucket: "sadtuneai-bfb93.firebasestorage.app",
+  messagingSenderId: "602718605517",
+  appId: "1:602718605517:web:49ef207af51e4a1b22d984",
+  measurementId: "G-24Q1TN3F5E"
+};
 
-<section class="hero">
-    <div class="overlay">
-        <h1>AI Music For Broken Hearts</h1>
-        <p>สร้างเพลงเศร้าด้วย AI • Prompt • MV • Lyrics • Playlist</p>
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
-        <div class="hero-buttons">
-            <button class="play">▶ เล่นเลย</button>
-            <button class="ghost">♡ Favorite</button>
-        </div>
-    </div>
-</section>
+window.register = async function(){
+const email = document.getElementById("email").value;
+const password = document.getElementById("password").value;
 
-<section class="section">
-    <div class="section-header">
-        <h2>🔥 Trending AI Songs</h2>
-        <span>ดูทั้งหมด</span>
-    </div>
+try{
+await createUserWithEmailAndPassword(auth,email,password);
+alert("สมัครสมาชิกสำเร็จ");
+}catch(error){
+alert(error.message);
+}
+}
 
-    <div class="music-grid">
+window.login = async function(){
+const email = document.getElementById("email").value;
+const password = document.getElementById("password").value;
 
-        <div class="music-card">
-            <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1000&auto=format&fit=crop">
-            <h3>ถ้าวันนั้นไม่รักเธอ</h3>
-            <p>Pop Sad • AI Music</p>
-        </div>
+try{
+await signInWithEmailAndPassword(auth,email,password);
+alert("Login สำเร็จ");
+}catch(error){
+alert(error.message);
+}
+}
 
-        <div class="music-card">
-            <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=1000&auto=format&fit=crop">
-            <h3>เมาแล้วร้องไห้</h3>
-            <p>Dark Emotional</p>
-        </div>
+window.googleLogin = async function(){
+const provider = new GoogleAuthProvider();
 
-        <div class="music-card">
-            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1000&auto=format&fit=crop">
-            <h3>กลับบ้านเฮา</h3>
-            <p>Lao Emotional</p>
-        </div>
+try{
+await signInWithPopup(auth,provider);
+}catch(error){
+alert(error.message);
+}
+}
 
-        <div class="music-card">
-            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1000&auto=format&fit=crop">
-            <h3>ฝนตกฮอดใจ</h3>
-            <p>Midnight Sad</p>
-        </div>
+window.logout = async function(){
+await signOut(auth);
+}
 
-    </div>
-</section>
+onAuthStateChanged(auth,(user)=>{
+const userBox = document.getElementById("userBox");
 
-<section class="section">
-    <div class="section-header">
-        <h2>🎼 Prompt Library</h2>
-        <span>Prompt ใหม่</span>
-    </div>
-
-    <div class="prompt-list">
-
-        <div class="prompt-item">
-            <div>
-                <h4>Prompt เพลงเศร้าสายดึก</h4>
-                <p>Dark Piano + Emotional Male Vocal + Rain Ambience</p>
-            </div>
-            <button>ใช้ Prompt</button>
-        </div>
-
-        <div class="prompt-item">
-            <div>
-                <h4>Prompt เพลงคิดถึงบ้าน</h4>
-                <p>Lao Folk + Acoustic Guitar + Emotional Mood</p>
-            </div>
-            <button>ใช้ Prompt</button>
-        </div>
-
-        <div class="prompt-item">
-            <div>
-                <h4>Prompt เพลงเมาเหงา</h4>
-                <p>Slow Pop + Sad Male Voice + Bar Atmosphere</p>
-            </div>
-            <button>ใช้ Prompt</button>
-        </div>
-
-    </div>
-</section>
-
-<section class="section">
-    <div class="section-header">
-        <h2>🎬 AI MV Showcase</h2>
-        <span>MV ล่าสุด</span>
-    </div>
-
-    <div class="video-grid">
-
-        <div class="video-card">
-            <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=1000&auto=format&fit=crop">
-            <div class="play-btn">▶</div>
-        </div>
-
-        <div class="video-card">
-            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1000&auto=format&fit=crop">
-            <div class="play-btn">▶</div>
-        </div>
-
-    </div>
-</section>
-
-</div>
-
-<div class="player">
-    <div class="song-info">
-        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=300&auto=format&fit=crop">
-        <div>
-            <h4>เมาแล้วร้องไห้</h4>
-            <p>SadTune AI</p>
-        </div>
-    </div>
-
-    <div class="controls">
-        <button>⏮</button>
-        <button class="main-play">▶</button>
-        <button>⏭</button>
-    </div>
-
-    <div class="progress">
-        <div class="bar">
-            <div class="fill"></div>
-        </div>
-    </div>
-</div>
+if(user){
+userBox.style.display = "block";
+userBox.innerHTML = `
+<h3>Welcome 🎉</h3>
+<p>${user.email}</p>
+`;
+}else{
+userBox.style.display = "none";
+}
+});
+</script>
 
 </body>
 </html>
