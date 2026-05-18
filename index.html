@@ -1,19 +1,13 @@
 <!DOCTYPE html>
-
 <html lang="th">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Style Music</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-
-/* RESET */
 
 *{
 margin:0;
@@ -28,8 +22,6 @@ color:white;
 overflow-x:hidden;
 position:relative;
 }
-
-/* BACKGROUND GLOW */
 
 body::before{
 content:'';
@@ -46,22 +38,10 @@ animation:floatGlow 8s ease-in-out infinite;
 }
 
 @keyframes floatGlow{
-
-0%{
-transform:translateY(0px);
+0%{transform:translateY(0px);}
+50%{transform:translateY(40px);}
+100%{transform:translateY(0px);}
 }
-
-50%{
-transform:translateY(40px);
-}
-
-100%{
-transform:translateY(0px);
-}
-
-}
-
-/* SIDEBAR */
 
 .sidebar{
 width:230px;
@@ -96,16 +76,11 @@ transform:translateX(5px);
 color:#ff2d55;
 }
 
-/* MAIN */
-
 .main{
 margin-left:250px;
 padding:10px 30px;
 padding-bottom:140px;
 }
-
-
-/* HERO */
 
 .hero{
 height:150px;
@@ -113,18 +88,11 @@ border-radius:30px;
 overflow:hidden;
 position:relative;
 margin-bottom:50px;
-
 background:
-linear-gradient(
-rgba(0,0,0,.5),
-rgba(0,0,0,.8)
-),
-
+linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.8)),
 url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1400&auto=format&fit=crop');
-
 background-size:cover;
 background-position:center;
-
 display:flex;
 align-items:center;
 padding:50px;
@@ -164,72 +132,21 @@ transform:scale(1.05);
 box-shadow:0 0 35px rgba(255,45,85,.5);
 }
 
-/* PLAYLIST */
-
-.playlist-section{
-margin-bottom:50px;
-}
-
-.playlist-section h2{
-font-size:32px;
-margin-bottom:25px;
-}
-
-.playlists{
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.playlist-card{
-background:#181818;
-border-radius:20px;
-overflow:hidden;
-transition:.4s;
-cursor:pointer;
-}
-
-.playlist-card:hover{
-transform:translateY(-8px);
-box-shadow:0 0 35px rgba(255,45,85,.25);
-}
-
-.playlist-card img{
-width:100%;
-height:180px;
-object-fit:cover;
-}
-
-.playlist-card h3{
-padding:15px 15px 5px;
-}
-
-.playlist-card p{
-padding:0 15px 20px;
-color:#aaa;
-}
-
-/* TITLE */
-
 .title{
 font-size:38px;
-font-weight;
+font-weight:bold;
 margin-bottom:20px;
-text-align;
+text-align:center;
 width:100%;
-display;
-justify-content;
+display:flex;
+justify-content:center;
 }
-
-/* SEARCH */
 
 .search-box{
 margin-bottom:30px;
 display:flex;
 justify-content:center;
 }
-
 
 .search-box input{
 width:500px;
@@ -249,12 +166,34 @@ border:1px solid #ff2d55;
 box-shadow:0 0 15px rgba(255,45,85,.4);
 }
 
-/* SONGS */
+.mood-buttons{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+margin-bottom:30px;
+}
+
+.mood-buttons button{
+background:#1f1f1f;
+border:1px solid #333;
+color:white;
+padding:12px 22px;
+border-radius:30px;
+cursor:pointer;
+font-size:15px;
+transition:.3s;
+}
+
+.mood-buttons button:hover{
+background:#ff2d55;
+transform:translateY(-3px);
+box-shadow:0 0 20px rgba(255,45,85,.4);
+}
 
 .songs{
 display:grid;
-grid-template-columns:
-repeat(auto-fill,minmax(220px,1fr));
+grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
 gap:20px;
 }
 
@@ -294,18 +233,12 @@ background:rgba(0,0,0,.5);
 padding:8px;
 border-radius:50%;
 cursor:pointer;
-transition:.3s;
-}
-
-.like-btn:hover{
-transform:scale(1.2);
 }
 
 .song-title{
 font-size:20px;
 margin-top:15px;
 font-weight:bold;
-cursor:pointer;
 }
 
 .artist{
@@ -323,8 +256,6 @@ audio{
 width:100%;
 margin-top:12px;
 }
-
-/* PLAYER */
 
 .bottom-player{
 position:fixed;
@@ -355,38 +286,23 @@ border-radius:12px;
 object-fit:cover;
 }
 
-#playerTitle{
-font-weight:bold;
-}
-
-.player-artist{
-color:#aaa;
-font-size:14px;
-}
-
 .player-center{
 display:flex;
 align-items:center;
 gap:20px;
 }
 
-.player-center button{
-width:52px;
-height:52px;
+.player-center button,
+.fullscreen-controls button{
+width:60px;
+height:60px;
 border:none;
 border-radius:50%;
 background:#ff2d55;
 color:white;
-font-size:20px;
+font-size:22px;
 cursor:pointer;
-transition:.3s;
 }
-
-.player-center button:hover{
-transform:scale(1.08);
-}
-
-/* FULLSCREEN PLAYER */
 
 .fullscreen-player{
 position:fixed;
@@ -400,26 +316,6 @@ justify-content:center;
 align-items:center;
 z-index:9999;
 overflow:hidden;
-}
-
-.fullscreen-bg{
-position:absolute;
-width:100%;
-height:100%;
-
-background:
-linear-gradient(
-rgba(0,0,0,.7),
-rgba(0,0,0,.9)
-),
-
-url('https://picsum.photos/1200');
-
-background-size:cover;
-background-position:center;
-
-filter:blur(20px);
-transform:scale(1.2);
 }
 
 .fullscreen-content{
@@ -438,11 +334,6 @@ object-fit:cover;
 box-shadow:0 0 40px rgba(255,45,85,.4);
 }
 
-#fullscreenTitle{
-margin-top:25px;
-font-size:38px;
-}
-
 #progressBar{
 width:100%;
 margin-top:30px;
@@ -456,20 +347,51 @@ gap:25px;
 margin-top:35px;
 }
 
-.fullscreen-controls button{
-width:70px;
-height:70px;
-border:none;
-border-radius:50%;
-background:#ff2d55;
+.fullscreen-actions{
+display:flex;
+justify-content:center;
+gap:15px;
+margin-top:25px;
+}
+
+.fullscreen-actions button{
+background:#1f1f1f;
+border:1px solid #333;
 color:white;
-font-size:26px;
+padding:12px 22px;
+border-radius:30px;
 cursor:pointer;
 transition:.3s;
 }
 
-.fullscreen-controls button:hover{
-transform:scale(1.08);
+.fullscreen-actions button:hover{
+background:#ff2d55;
+}
+
+.fullscreen-moods{
+display:flex;
+justify-content:center;
+gap:12px;
+margin-top:25px;
+flex-wrap:wrap;
+}
+
+.fullscreen-moods button{
+width:55px;
+height:55px;
+border:none;
+border-radius:50%;
+background:#1f1f1f;
+font-size:22px;
+cursor:pointer;
+color:white;
+}
+
+#moodText{
+margin-top:20px;
+font-size:18px;
+color:#ff2d55;
+font-weight:bold;
 }
 
 .close-player{
@@ -482,51 +404,6 @@ color:white;
 font-size:30px;
 cursor:pointer;
 }
-
-/* LYRICS */
-
-.lyrics-popup{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.85);
-display:none;
-justify-content:center;
-align-items:center;
-z-index:99999;
-}
-
-.lyrics-content{
-background:#181818;
-padding:40px;
-border-radius:25px;
-max-width:500px;
-width:90%;
-text-align:center;
-}
-
-.lyrics-content h2{
-margin-bottom:20px;
-}
-
-.lyrics-content p{
-line-height:1.8;
-color:#ccc;
-}
-
-.lyrics-content button{
-margin-top:20px;
-padding:12px 24px;
-border:none;
-border-radius:30px;
-background:#ff2d55;
-color:white;
-cursor:pointer;
-}
-
-/* MOBILE */
 
 @media(max-width:768px){
 
@@ -547,441 +424,147 @@ margin-left:0;
 padding:15px;
 }
 
-.hero{
-height:260px;
-padding:25px;
-}
-
-.hero h1{
-font-size:36px;
-}
-
-.hero p{
-font-size:15px;
-}
-
 .search-box input{
 width:100%;
 }
 
-.bottom-player{
-flex-direction:column;
-height:auto;
-padding:10px;
-gap:10px;
 }
-
-#fullscreenCover{
-width:260px;
-height:260px;
-}
-
-}
-.mood-buttons{
-display:flex;
-justify-content:center;
-gap:15px;
-flex-wrap:wrap;
-margin-bottom:30px;
-}
-
-.mood-buttons button{
-background:#1f1f1f;
-border:1px solid #333;
-color:white;
-padding:12px 22px;
-border-radius:30px;
-cursor:pointer;
-font-size:15px;
-transition:.3s;
-}
-
-.mood-buttons button:hover{
-background:#ff2d55;
-transform:translateY(-3px);
-box-shadow:0 0 20px rgba(255,45,85,.4);
-}
-
 </style>
-
 </head>
 
 <body>
 
-<!-- SIDEBAR -->
-
 <div class="sidebar">
-
-<div class="logo">
-🎵 style music
-</div>
-
+<div class="logo">🎵 Style Music</div>
 <div class="menu">🏠 Home</div>
 <div class="menu">🔥 Trending</div>
 <div class="menu">❤️ Favorites</div>
 <div class="menu">🎤 AI Music</div>
 <div class="menu">⚙️ Settings</div>
-
 </div>
-
-<!-- MAIN -->
 
 <div class="main">
 
-<!-- HERO -->
-
 <div class="hero">
-
 <div class="hero-content">
-
-<h1>
-Feel Every Broken Moment
-</h1>
-
-<p>
-AI music for lonely nights, heartbreaks, and memories.
-</p>
-
-<button>
-▶ Start Listening
-</button>
-
+<h1>Feel Every Broken Moment</h1>
+<p>AI music for lonely nights, heartbreaks, and memories.</p>
+<button>▶ Start Listening</button>
 </div>
-
 </div>
-
-<!-- PLAYLISTS -->
-
-
-</div>
-
-</div>
-
-<!-- SONGS -->
 
 <div class="title">
-search"
+🎵 เพลงแนะนำ
 </div>
 
 <div class="search-box">
 <input type="text" id="search" placeholder="Search music...">
 </div>
+
 <div class="mood-buttons">
-
 <button>😢 เศร้า</button>
-
 <button>❤️ ความรัก</button>
-
 <button>🌧 เหงา</button>
-
 <button>😭 อกหัก</button>
-
 <button>🔥 อินจัด</button>
-
 </div>
 
 <div class="songs">
 
-<!-- SONG 1 -->
-
 <div class="card">
-
 <div class="like-btn">❤️</div>
-
 <img src="https://picsum.photos/300?1">
-
-<div class="song-title">
-Died in vain
-</div>
-
-<div class="artist">
-SadTune AI
-</div>
-
-<div class="song-meta">
-Sad Pop • 3:42 • 24K Plays
-</div>
-
+<div class="song-title">Died in vain</div>
+<div class="artist">Style Music</div>
+<div class="song-meta">Sad Pop • 3:42 • 24K Plays</div>
 <audio controls>
 <source src="Died in vain.mp3" type="audio/mpeg">
 </audio>
-
 </div>
-
-<!-- SONG 2 -->
 
 <div class="card">
-
 <div class="like-btn">❤️</div>
-
 <img src="https://picsum.photos/300?2">
-
-<div class="song-title">
-False promises
-</div>
-
-<div class="artist">
-SadTune AI
-</div>
-
-<div class="song-meta">
-Heartbreak • 4:01 • 18K Plays
-</div>
-
+<div class="song-title">False promises</div>
+<div class="artist">Style Music</div>
+<div class="song-meta">Heartbreak • 4:01 • 18K Plays</div>
 <audio controls>
 <source src="False promises.mp3" type="audio/mpeg">
 </audio>
-
-</div>
-
-<!-- SONG 3 -->
-
-<div class="card">
-
-<div class="like-btn">❤️</div>
-
-<img src="https://picsum.photos/300?3">
-
-<div class="song-title">
-Feelings of longing
-</div>
-
-<div class="artist">
-SadTune AI
-</div>
-
-<div class="song-meta">
-Lonely Mood • 3:22 • 14K Plays
-</div>
-
-<audio controls>
-<source src="Feelings of longing.mp3" type="audio/mpeg">
-</audio>
-
-</div>
-
-<!-- SONG 4 -->
-
-<div class="card">
-
-<div class="like-btn">❤️</div>
-
-<img src="https://picsum.photos/300?4">
-
-<div class="song-title">
-Leaks in the heart
-</div>
-
-<div class="artist">
-SadTune AI
-</div>
-
-<div class="song-meta">
-Sad Vibes • 3:55 • 10K Plays
-</div>
-
-<audio controls>
-<source src="Leaks in the heart.mp3" type="audio/mpeg">
-</audio>
-
-</div>
-
-<!-- SONG 5 -->
-
-<div class="card">
-
-<div class="like-btn">❤️</div>
-
-<img src="https://picsum.photos/300?5">
-
-<div class="song-title">
-The Forgotten Pieces of My Heart
-</div>
-
-<div class="artist">
-SadTune AI
-</div>
-
-<div class="song-meta">
-Emotional • 4:12 • 9K Plays
-</div>
-
-<audio controls>
-<source src="The Forgotten Pieces of My Heart.mp3" type="audio/mpeg">
-</audio>
-
-</div>
-
-<!-- SONG 6 -->
-
-<div class="card">
-
-<div class="like-btn">❤️</div>
-
-<img src="https://picsum.photos/300?6">
-
-<div class="song-title">
-The last breath shared
-</div>
-
-<div class="artist">
-SadTune AI
-</div>
-
-<div class="song-meta">
-Broken Love • 3:58 • 7K Plays
-</div>
-
-<audio controls>
-<source src="The last breath shared.mp3" type="audio/mpeg">
-</audio>
-
-</div>
-
-<!-- SONG 7 -->
-
-<div class="card">
-
-<div class="like-btn">❤️</div>
-
-<img src="https://picsum.photos/300?7">
-
-<div class="song-title">
-The sentence that's stuck in my throat
-</div>
-
-<div class="artist">
-SadTune AI
-</div>
-
-<div class="song-meta">
-Deep Feelings • 4:20 • 12K Plays
-</div>
-
-<audio controls>
-<source src="The sentence that's stuck in my throat.mp3" type="audio/mpeg">
-</audio>
-
 </div>
 
 </div>
-
 </div>
-
-<!-- PLAYER -->
 
 <div class="bottom-player">
 
 <div class="player-left">
-
-<img id="playerCover"
-src="https://picsum.photos/100">
-
+<img id="playerCover" src="https://picsum.photos/100">
 <div>
-
-<div id="playerTitle">
-No song playing
+<div id="playerTitle">No song playing</div>
+<div class="player-artist">Style Music</div>
 </div>
-
-<div class="player-artist">
-SadTune AI
-</div>
-
-</div>
-
 </div>
 
 <div class="player-center">
-
 <button onclick="prevSong()">⏮</button>
-
-<button onclick="togglePlay()" id="playBtn">
-▶
-</button>
-
+<button onclick="togglePlay()" id="playBtn">▶</button>
 <button onclick="nextSong()">⏭</button>
-
 </div>
 
 </div>
-
-<!-- FULLSCREEN PLAYER -->
 
 <div class="fullscreen-player" id="fullscreenPlayer">
 
-<div class="fullscreen-bg"></div>
-
 <div class="fullscreen-content">
 
-<img id="fullscreenCover"
-src="https://picsum.photos/500">
+<img id="fullscreenCover" src="https://picsum.photos/500">
 
-<h1 id="fullscreenTitle">
-No song playing
-</h1>
+<h1 id="fullscreenTitle">No song playing</h1>
 
-<p>SadTune AI</p>
+<p>Style Music</p>
 
 <input type="range" id="progressBar" value="0">
 
 <div class="fullscreen-controls">
-
 <button onclick="prevSong()">⏮</button>
-
 <button onclick="togglePlay()">▶</button>
-
 <button onclick="nextSong()">⏭</button>
-
 </div>
 
-<button class="close-player"
-onclick="closeFullscreen()">
-✕ </button>
-
+<div class="fullscreen-actions">
+<button onclick="likeSong()">👍 Like</button>
+<button onclick="shareSong()">🔗 Share</button>
 </div>
 
+<div class="fullscreen-moods">
+<button onclick="setMood('😢 เศร้า')">😢</button>
+<button onclick="setMood('❤️ ความรัก')">❤️</button>
+<button onclick="setMood('🌧 เหงา')">🌧</button>
+<button onclick="setMood('😭 อกหัก')">😭</button>
+<button onclick="setMood('🔥 อินจัด')">🔥</button>
 </div>
 
-<!-- LYRICS -->
+<p id="moodText"></p>
 
-<div class="lyrics-popup" id="lyricsPopup">
-
-<div class="lyrics-content">
-
-<h2>Lyrics</h2>
-
-<p>
-Every broken memory still lives inside my heart...
-</p>
-
-<button onclick="closeLyrics()">
-Close
-</button>
+<button class="close-player" onclick="closeFullscreen()">✕</button>
 
 </div>
-
 </div>
 
 <script>
 
-/* SEARCH */
-
-const search =
-document.getElementById("search");
+const search = document.getElementById("search");
 
 search.addEventListener("keyup",function(){
 
-let filter =
-search.value.toLowerCase();
+let filter = search.value.toLowerCase();
 
-let cards =
-document.querySelectorAll(".card");
+let cards = document.querySelectorAll(".card");
 
 cards.forEach(card=>{
 
-let title =
-card.querySelector(".song-title")
-.innerText.toLowerCase();
+let title = card.querySelector(".song-title").innerText.toLowerCase();
 
 if(title.includes(filter)){
 card.style.display="block";
@@ -993,68 +576,48 @@ card.style.display="none";
 
 });
 
-/* PLAYER */
+const audios = document.querySelectorAll("audio");
 
-const audios =
-document.querySelectorAll("audio");
+const playerTitle = document.getElementById("playerTitle");
+const playBtn = document.getElementById("playBtn");
+const playerCover = document.getElementById("playerCover");
 
-const playerTitle =
-document.getElementById("playerTitle");
-
-const playBtn =
-document.getElementById("playBtn");
-
-const playerCover =
-document.getElementById("playerCover");
+const fullscreenPlayer = document.getElementById("fullscreenPlayer");
+const fullscreenTitle = document.getElementById("fullscreenTitle");
+const fullscreenCover = document.getElementById("fullscreenCover");
 
 let currentAudio = null;
 let currentIndex = 0;
-
-/* PLAY */
 
 audios.forEach((audio,index)=>{
 
 audio.addEventListener("play",()=>{
 
-if(currentAudio &&
-currentAudio !== audio){
+if(currentAudio && currentAudio !== audio){
 currentAudio.pause();
 }
 
 currentAudio = audio;
 currentIndex = index;
 
-let title =
-audio.parentElement
-.querySelector(".song-title")
-.innerText;
-
-let cover =
-audio.parentElement
-.querySelector("img").src;
+let title = audio.parentElement.querySelector(".song-title").innerText;
+let cover = audio.parentElement.querySelector("img").src;
 
 playerTitle.innerText = title;
-
 playerCover.src = cover;
-
-playBtn.innerText = "⏸";
 
 fullscreenTitle.innerText = title;
 fullscreenCover.src = cover;
 
-});
+playBtn.innerText = "⏸";
 
-/* AUTO NEXT */
+});
 
 audio.addEventListener("ended",()=>{
-
 nextSong();
-
 });
 
 });
-
-/* PLAY PAUSE */
 
 function togglePlay(){
 
@@ -1072,8 +635,6 @@ playBtn.innerText="▶";
 
 }
 
-/* NEXT */
-
 function nextSong(){
 
 if(!currentAudio) return;
@@ -1086,14 +647,10 @@ if(currentIndex >= audios.length){
 currentIndex = 0;
 }
 
-currentAudio =
-audios[currentIndex];
-
+currentAudio = audios[currentIndex];
 currentAudio.play();
 
 }
-
-/* PREVIOUS */
 
 function prevSong(){
 
@@ -1104,27 +661,13 @@ currentAudio.pause();
 currentIndex--;
 
 if(currentIndex < 0){
-currentIndex =
-audios.length - 1;
+currentIndex = audios.length - 1;
 }
 
-currentAudio =
-audios[currentIndex];
-
+currentAudio = audios[currentIndex];
 currentAudio.play();
 
 }
-
-/* FULLSCREEN */
-
-const fullscreenPlayer =
-document.getElementById("fullscreenPlayer");
-
-const fullscreenTitle =
-document.getElementById("fullscreenTitle");
-
-const fullscreenCover =
-document.getElementById("fullscreenCover");
 
 document.querySelectorAll(".card img")
 .forEach((img,index)=>{
@@ -1133,11 +676,8 @@ img.addEventListener("click",()=>{
 
 fullscreenPlayer.style.display="flex";
 
-let title =
-document.querySelectorAll(".song-title")[index]
-.innerText;
-
-fullscreenTitle.innerText = title;
+fullscreenTitle.innerText =
+document.querySelectorAll(".song-title")[index].innerText;
 
 fullscreenCover.src = img.src;
 
@@ -1146,25 +686,17 @@ fullscreenCover.src = img.src;
 });
 
 function closeFullscreen(){
-
 fullscreenPlayer.style.display="none";
-
 }
 
-/* PROGRESS BAR */
-
-const progressBar =
-document.getElementById("progressBar");
+const progressBar = document.getElementById("progressBar");
 
 setInterval(()=>{
 
 if(currentAudio){
 
-progressBar.max =
-currentAudio.duration;
-
-progressBar.value =
-currentAudio.currentTime;
+progressBar.max = currentAudio.duration;
+progressBar.value = currentAudio.currentTime;
 
 }
 
@@ -1173,31 +705,27 @@ currentAudio.currentTime;
 progressBar.addEventListener("input",()=>{
 
 if(currentAudio){
-currentAudio.currentTime =
-progressBar.value;
+currentAudio.currentTime = progressBar.value;
 }
 
 });
 
-/* LYRICS */
+function likeSong(){
+alert("❤️ Liked this song!");
+}
 
-const lyricsPopup =
-document.getElementById("lyricsPopup");
+function shareSong(){
 
-document.querySelectorAll(".song-title")
-.forEach(title=>{
+navigator.clipboard.writeText(window.location.href);
 
-title.addEventListener("dblclick",()=>{
+alert("🔗 Link copied!");
 
-lyricsPopup.style.display="flex";
+}
 
-});
+function setMood(mood){
 
-});
-
-function closeLyrics(){
-
-lyricsPopup.style.display="none";
+document.getElementById("moodText").innerText =
+"Your Mood: " + mood;
 
 }
 
