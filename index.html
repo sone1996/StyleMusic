@@ -493,63 +493,61 @@ width:100%;
 </audio>
 </div>
 
-</div>
-</div>
-
-<div class="bottom-player">
-
-<div class="player-left">
-<img id="playerCover" src="https://picsum.photos/100">
-<div>
-<div id="playerTitle">No song playing</div>
-<div class="player-artist">Style Music</div>
-</div>
+<div class="card">
+<div class="like-btn">❤️</div>
+<img src="https://picsum.photos/300?3">
+<div class="song-title">Feelings of longing</div>
+<div class="artist">Style Music</div>
+<div class="song-meta">Lonely Mood • 3:22 • 14K Plays</div>
+<audio controls>
+<source src="Feelings of longing.mp3" type="audio/mpeg">
+</audio>
 </div>
 
-<div class="player-center">
-<button onclick="prevSong()">⏮</button>
-<button onclick="togglePlay()" id="playBtn">▶</button>
-<button onclick="nextSong()">⏭</button>
+<div class="card">
+<div class="like-btn">❤️</div>
+<img src="https://picsum.photos/300?4">
+<div class="song-title">Leaks in the heart</div>
+<div class="artist">Style Music</div>
+<div class="song-meta">Sad Vibes • 3:55 • 10K Plays</div>
+<audio controls>
+<source src="Leaks in the heart.mp3" type="audio/mpeg">
+</audio>
 </div>
 
+<div class="card">
+<div class="like-btn">❤️</div>
+<img src="https://picsum.photos/300?5">
+<div class="song-title">The Forgotten Pieces of My Heart</div>
+<div class="artist">Style Music</div>
+<div class="song-meta">Emotional • 4:12 • 9K Plays</div>
+<audio controls>
+<source src="The Forgotten Pieces of My Heart.mp3" type="audio/mpeg">
+</audio>
 </div>
 
-<div class="fullscreen-player" id="fullscreenPlayer">
-
-<div class="fullscreen-content">
-
-<img id="fullscreenCover" src="https://picsum.photos/500">
-
-<h1 id="fullscreenTitle">No song playing</h1>
-
-<p>Style Music</p>
-
-<input type="range" id="progressBar" value="0">
-
-<div class="fullscreen-controls">
-<button onclick="prevSong()">⏮</button>
-<button onclick="togglePlay()">▶</button>
-<button onclick="nextSong()">⏭</button>
+<div class="card">
+<div class="like-btn">❤️</div>
+<img src="https://picsum.photos/300?6">
+<div class="song-title">The last breath shared</div>
+<div class="artist">Style Music</div>
+<div class="song-meta">Broken Love • 3:58 • 7K Plays</div>
+<audio controls>
+<source src="The last breath shared.mp3" type="audio/mpeg">
+</audio>
 </div>
 
-<div class="fullscreen-actions">
-<button onclick="likeSong()">👍 Like</button>
-<button onclick="shareSong()">🔗 Share</button>
+<div class="card">
+<div class="like-btn">❤️</div>
+<img src="https://picsum.photos/300?7">
+<div class="song-title">The sentence that's stuck in my throat</div>
+<div class="artist">Style Music</div>
+<div class="song-meta">Deep Feelings • 4:20 • 12K Plays</div>
+<audio controls>
+<source src="The sentence that's stuck in my throat.mp3" type="audio/mpeg">
+</audio>
 </div>
 
-<div class="fullscreen-moods">
-<button onclick="setMood('😢 เศร้า')">😢</button>
-<button onclick="setMood('❤️ ความรัก')">❤️</button>
-<button onclick="setMood('🌧 เหงา')">🌧</button>
-<button onclick="setMood('😭 อกหัก')">😭</button>
-<button onclick="setMood('🔥 อินจัด')">🔥</button>
-</div>
-
-<p id="moodText"></p>
-
-<button class="close-player" onclick="closeFullscreen()">✕</button>
-
-</div>
 </div>
 
 <script>
