@@ -577,6 +577,30 @@ height:260px;
 }
 
 }
+.mood-buttons{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+margin-bottom:30px;
+}
+
+.mood-buttons button{
+background:#1f1f1f;
+border:1px solid #333;
+color:white;
+padding:12px 22px;
+border-radius:30px;
+cursor:pointer;
+font-size:15px;
+transition:.3s;
+}
+
+.mood-buttons button:hover{
+background:#ff2d55;
+transform:translateY(-3px);
+box-shadow:0 0 20px rgba(255,45,85,.4);
+}
 
 </style>
 
@@ -641,6 +665,19 @@ search"
 
 <div class="search-box">
 <input type="text" id="search" placeholder="Search music...">
+</div>
+<div class="mood-buttons">
+
+<button>😢 เศร้า</button>
+
+<button>❤️ ความรัก</button>
+
+<button>🌧 เหงา</button>
+
+<button>😭 อกหัก</button>
+
+<button>🔥 อินจัด</button>
+
 </div>
 
 <div class="songs">
