@@ -941,8 +941,28 @@ set(likesRef,currentLikes + 1);
 });
 
 });
+const visitorsRef = ref(db,'website/visitors');
 
-</script>
+get(visitorsRef).then((snapshot)=>{
+
+let current = snapshot.val() || 0;
+
+set(visitorsRef,current + 1);
+
+});
+
+onValue(visitorsRef,(snapshot)=>{
+
+document.getElementById("visitorCount")
+.innerText =
+"👥 คนเข้าเว็บ: " + snapshot.val();
+
+});
 </script>
 </body>
+  <div id="visitorCount">
+
+👥 คนเข้าเว็บ: 0
+
+</div>
 </html>
