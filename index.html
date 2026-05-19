@@ -857,6 +857,34 @@ btn.innerText = "❤️ " + num.toFixed(1) + "K";
 
 });
 </script>
+<script type="module">
 
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+
+const firebaseConfig = {
+
+apiKey: "AIzaSyA3Hl-RoqK9RvqF2KiYrRg7GC6EmyOuMVo",
+
+authDomain: "stylemusic-72ef9.firebaseapp.com",
+
+projectId: "stylemusic-72ef9",
+
+storageBucket: "stylemusic-72ef9.firebasestorage.app",
+
+messagingSenderId: "224408363563",
+
+appId: "1:224408363563:web:2fd5b7a83bbd1b8936406e",
+
+measurementId: "G-7MRFWKW6Y6"
+
+};
+
+const app = initializeApp(firebaseConfig);
+
+const analytics = getAnalytics(app);
+
+</script>
 </body>
 </html>
