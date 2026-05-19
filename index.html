@@ -843,9 +843,30 @@ function likeSong(){
 alert("❤️ Liked this song!");
 }
 
-function shareSong(){
+function shareSong(song){
+
+const shareData = {
+
+title: "Style Music",
+
+text: "🎵 ฟังเพลง: " + song,
+
+url: window.location.href
+
+};
+
+if(navigator.share){
+
+navigator.share(shareData);
+
+}else{
+
 navigator.clipboard.writeText(window.location.href);
-alert("🔗 Link copied!");
+
+alert("🔗 คัดลอกลิงก์แล้ว");
+
+}
+
 }
 
 function setMood(mood){
