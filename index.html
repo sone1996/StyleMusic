@@ -1016,9 +1016,7 @@ storageBucket:
 messagingSenderId: "224408363563",
 
 appId:
-"1:224408363563:web:2fd5b7a83bbd1b8936406e",
-
-measurementId: "G-7MRFWKW6Y6"
+"1:224408363563:web:2fd5b7a83bbd1b8936406e"
 
 };
 
@@ -1026,10 +1024,9 @@ const app = initializeApp(firebaseConfig);
 
 const db = getDatabase(app);
 
+for(let i=1;i<=7;i++){
 
-// VIEW
-
-const viewsRef = ref(db,'song1/views');
+const viewsRef = ref(db,'song'+i+'/views');
 
 get(viewsRef).then((snapshot)=>{
 
@@ -1041,24 +1038,24 @@ set(viewsRef,currentViews + 1);
 
 onValue(viewsRef,(snapshot)=>{
 
-document.getElementById("views1").innerText =
-"👁 " + snapshot.val();
+document.getElementById("views"+i)
+.innerText =
+"👁 " + (snapshot.val() || 0);
 
 });
 
 
-// LIKE
-
-const likesRef = ref(db,'song1/likes');
+const likesRef = ref(db,'song'+i+'/likes');
 
 onValue(likesRef,(snapshot)=>{
 
-document.getElementById("likes1").innerText =
+document.getElementById("likes"+i)
+.innerText =
 "❤️ " + (snapshot.val() || 0);
 
 });
 
-document.getElementById("likes1")
+document.getElementById("likes"+i)
 .addEventListener("click",()=>{
 
 get(likesRef).then((snapshot)=>{
@@ -1070,40 +1067,11 @@ set(likesRef,currentLikes + 1);
 });
 
 });
-const visitorsRef = ref(db,'website/visitors');
 
-get(visitorsRef).then((snapshot)=>{
+}
 
-let current = snapshot.val() || 0;
-
-set(visitorsRef,current + 1);
-
-});
-
-onValue(visitorsRef,(snapshot)=>{
-
-document.getElementById("visitorCount")
-.innerText =
-"👥 คนเข้าเว็บ: " + snapshot.val();
-
-});
 </script>
-    <div id="visitorCount" style="
-position:fixed;
-bottom:100px;
-right:20px;
-background:#ff2d55;
-color:white;
-padding:15px 20px;
-border-radius:20px;
-font-size:20px;
-font-weight:bold;
-z-index:999999;
-">
 
-👥 คนเข้าเว็บ: 0
-
-</div>
 </body>
 
 </html>
