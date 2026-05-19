@@ -1083,40 +1083,9 @@ set(likesRef,currentLikes + 1);
 });
 
 }
-const visitorsRef = ref(db,'website/visitors');
 
-get(visitorsRef).then((snapshot)=>{
-
-let current = snapshot.val() || 0;
-
-set(visitorsRef,current + 1);
-
-});
-
-onValue(visitorsRef,(snapshot)=>{
-
-document.getElementById("visitorCount")
-.innerText =
-"👥 คนเข้าเว็บ: " + (snapshot.val() || 0);
-
-});
 </script>
-<div id="visitorCount" style="
-position:fixed;
-bottom:100px;
-right:20px;
-background:#ff2d55;
-color:white;
-padding:15px 20px;
-border-radius:20px;
-font-size:20px;
-font-weight:bold;
-z-index:999999;
-">
 
-👥 คนเข้าเว็บ: 0
-
-</div>
 </body>
 
 </html>
