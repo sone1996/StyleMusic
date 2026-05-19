@@ -1012,6 +1012,8 @@ const players = document.querySelectorAll("audio");
 
 players.forEach((player,index)=>{
 
+/* เล่นทีละเพลง */
+
 player.addEventListener("play",()=>{
 
 players.forEach((p,i)=>{
@@ -1020,11 +1022,15 @@ if(i !== index){
 
 p.pause();
 
+p.currentTime = 0;
+
 }
 
 });
 
 });
+
+/* เล่นเพลงต่อ */
 
 player.addEventListener("ended",()=>{
 
@@ -1043,6 +1049,61 @@ players[0].play();
 });
 
 });
+
+/* Like Button */
+
+document.querySelectorAll(".like-btn").forEach(btn=>{
+
+btn.addEventListener("click",()=>{
+
+btn.classList.toggle("active");
+
+if(btn.classList.contains("active")){
+
+btn.innerHTML="💖";
+
+}else{
+
+btn.innerHTML="❤️";
+
+}
+
+});
+
+});
+
+/* Search เพลง */
+
+const search = document.getElementById("search");
+
+if(search){
+
+search.addEventListener("keyup",()=>{
+
+let filter = search.value.toLowerCase();
+
+let rows = document.querySelectorAll(".song-row");
+
+rows.forEach(row=>{
+
+let title = row.querySelector(".song-title")
+.innerText.toLowerCase();
+
+if(title.includes(filter)){
+
+row.style.display="";
+
+}else{
+
+row.style.display="none";
+
+}
+
+});
+
+});
+
+}
 
 </script>
 </body>
