@@ -1007,9 +1007,24 @@ row.style.display="none";
 });
 
 </script>
+
 const players = document.querySelectorAll("audio");
 
 players.forEach((player,index)=>{
+
+player.addEventListener("play",()=>{
+
+players.forEach((p,i)=>{
+
+if(i !== index){
+
+p.pause();
+
+}
+
+});
+
+});
 
 player.addEventListener("ended",()=>{
 
@@ -1028,5 +1043,7 @@ players[0].play();
 });
 
 });
+
+</script>
 </body>
 </html>
