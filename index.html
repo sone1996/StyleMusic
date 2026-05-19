@@ -970,21 +970,7 @@ btn.innerHTML="❤️";
 });
 
 });
-document.querySelectorAll(".likes").forEach(btn=>{
 
-btn.addEventListener("click",()=>{
-
-let text = btn.innerText;
-
-let num = parseFloat(text.replace("❤️",""));
-
-num += 0.1;
-
-btn.innerText = "❤️ " + num.toFixed(1) + "K";
-
-});
-
-});
 </script>
 <script type="module">
 
