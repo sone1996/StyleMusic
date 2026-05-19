@@ -756,6 +756,26 @@ row.style.display="none";
 });
 
 </script>
+const players = document.querySelectorAll("audio");
 
+players.forEach((player,index)=>{
+
+player.addEventListener("ended",()=>{
+
+let next = players[index + 1];
+
+if(next){
+
+next.play();
+
+}else{
+
+players[0].play();
+
+}
+
+});
+
+});
 </body>
 </html>
