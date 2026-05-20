@@ -954,6 +954,13 @@ onclick="shareSong('โปรดส่งเรามาคู่กัน')">
 
 <script>
 
+function toggleMenu(){
+
+document.querySelector(".sidebar")
+.classList.toggle("active");
+
+}
+
 function likeSong(){
 
 players[currentIndex].play();
