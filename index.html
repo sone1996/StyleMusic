@@ -958,7 +958,14 @@ p.pause();
 
 });
 
-document.getElementById("playerTitle").innerText = titles[index].innerText;
+document.getElementById("playerTitle").innerText =
+titles[index].innerText;
+
+const cover =
+document.querySelectorAll(".song-info img");
+
+document.getElementById("playerCover").src =
+cover[index].src;
 
 });
 
