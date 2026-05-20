@@ -1042,13 +1042,6 @@ for(let i=1;i<=7;i++){
 
 const viewsRef = ref(db,'song'+i+'/views');
 
-get(viewsRef).then((snapshot)=>{
-
-let currentViews = snapshot.val() || 0;
-
-set(viewsRef,currentViews + 1);
-
-});
 
 onValue(viewsRef,(snapshot)=>{
 
