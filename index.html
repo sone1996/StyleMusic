@@ -883,7 +883,9 @@ onclick="shareSong('โปรดส่งเรามาคู่กัน')">
 <script>
 
 function likeSong(){
-alert("❤️ Liked this song!");
+
+players[currentIndex].play();
+
 }
 
 function shareSong(song){
