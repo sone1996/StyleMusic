@@ -1040,6 +1040,37 @@ const db = getDatabase(app);
 
 for(let i=1;i<=7;i++){
 
+const player =
+document.querySelectorAll("audio")[i-1];
+
+player.addEventListener("play",()=>{
+
+const viewsRef =
+ref(db,'song'+i+'/views');
+
+get(viewsRef).then((snapshot)=>{
+
+let currentViews =
+snapshot.val() || 0;
+
+set(viewsRef,currentViews + 1);
+
+});
+
+});
+
+const viewsRef =
+ref(db,'song'+i+'/views');
+
+onValue(viewsRef,(snapshot)=>{
+
+document.getElementById("views"+i)
+.innerText =
+"👁 " + (snapshot.val() || 0);
+
+});
+
+}
 const viewsRef = ref(db,'song'+i+'/views');
 
 
