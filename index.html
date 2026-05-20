@@ -1043,10 +1043,16 @@ for(let i=1;i<=7;i++){
 const player =
 document.querySelectorAll("audio")[i-1];
 
-player.addEventListener("play",()=>{
-
 const viewsRef =
 ref(db,'song'+i+'/views');
+
+const likesRef =
+ref(db,'song'+i+'/likes');
+
+
+// นับวิวเมื่อกดเล่นเพลง
+
+player.addEventListener("play",()=>{
 
 get(viewsRef).then((snapshot)=>{
 
@@ -1059,20 +1065,8 @@ set(viewsRef,currentViews + 1);
 
 });
 
-const viewsRef =
-ref(db,'song'+i+'/views');
 
-onValue(viewsRef,(snapshot)=>{
-
-document.getElementById("views"+i)
-.innerText =
-"👁 " + (snapshot.val() || 0);
-
-});
-
-}
-const viewsRef = ref(db,'song'+i+'/views');
-
+// แสดงยอดวิว
 
 onValue(viewsRef,(snapshot)=>{
 
@@ -1083,7 +1077,7 @@ document.getElementById("views"+i)
 });
 
 
-const likesRef = ref(db,'song'+i+'/likes');
+// แสดงยอดไลก์
 
 onValue(likesRef,(snapshot)=>{
 
@@ -1093,12 +1087,16 @@ document.getElementById("likes"+i)
 
 });
 
+
+// กดไลก์
+
 document.getElementById("likes"+i)
 .addEventListener("click",()=>{
 
 get(likesRef).then((snapshot)=>{
 
-let currentLikes = snapshot.val() || 0;
+let currentLikes =
+snapshot.val() || 0;
 
 set(likesRef,currentLikes + 1);
 
@@ -1107,7 +1105,6 @@ set(likesRef,currentLikes + 1);
 });
 
 }
-
 </script>
 <audio id="main-audio"></audio>
 </body>
