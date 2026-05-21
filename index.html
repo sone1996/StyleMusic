@@ -1608,7 +1608,13 @@ players[currentIndex].play();
 }else{
 players[currentIndex].pause();
 }
+function likeSong(){
 
+document.getElementById(
+'likes'+(currentIndex+1)
+).click();
+
+}
 }
 
 document.querySelectorAll(".like-btn").forEach(btn=>{
