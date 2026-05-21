@@ -1859,7 +1859,63 @@ const app = initializeApp(firebaseConfig);
 
 const db = getDatabase(app);
 const storage = getStorage(app);
-for(let i=1;i<=19;i++){
+const allPlayers =
+document.querySelectorAll("audio");
+
+allPlayers.forEach((player,index)=>{
+
+const i = index + 1;
+
+const viewsRef =
+ref(db,'song'+i+'/views');
+
+const likesRef =
+ref(db,'song'+i+'/likes');
+
+player.addEventListener("play",()=>{
+
+get(viewsRef).then((snapshot)=>{
+
+let currentViews =
+snapshot.val() || 0;
+
+set(viewsRef,currentViews + 1);
+
+});
+
+});
+
+onValue(viewsRef,(snapshot)=>{
+
+document.getElementById("views"+i)
+.innerText =
+"👁 " + (snapshot.val() || 0);
+
+});
+
+onValue(likesRef,(snapshot)=>{
+
+document.getElementById("likes"+i)
+.innerText =
+"❤️ " + (snapshot.val() || 0);
+
+});
+
+document.getElementById("likes"+i)
+.addEventListener("click",()=>{
+
+get(likesRef).then((snapshot)=>{
+
+let currentLikes =
+snapshot.val() || 0;
+
+set(likesRef,currentLikes + 1);
+
+});
+
+});
+
+});
 
 const player =
 document.querySelectorAll("audio")[i-1];
