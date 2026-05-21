@@ -1855,16 +1855,58 @@ appId:
 
 };
 
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+getDatabase,
+ref,
+set,
+get,
+onValue
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+const firebaseConfig = {
+
+apiKey: "AIzaSyA3Hl-RoqK9RvqF2KiYrRg7GC6EmyOuMVo",
+
+authDomain: "stylemusic-72ef9.firebaseapp.com",
+
+databaseURL:
+"https://stylemusic-72ef9-default-rtdb.asia-southeast1.firebasedatabase.app",
+
+projectId: "stylemusic-72ef9",
+
+storageBucket:
+"stylemusic-72ef9.firebasestorage.app",
+
+messagingSenderId: "224408363563",
+
+appId:
+"1:224408363563:web:2fd5b7a83bbd1b8936406e"
+
+};
+
 const app = initializeApp(firebaseConfig);
 
 const db = getDatabase(app);
-const storage = getStorage(app);
+
 const allPlayers =
 document.querySelectorAll("audio");
 
 allPlayers.forEach((player,index)=>{
 
 const i = index + 1;
+
+const viewsElement =
+document.getElementById("views"+i);
+
+const likesElement =
+document.getElementById("likes"+i);
+
+if(!viewsElement || !likesElement) return;
 
 const viewsRef =
 ref(db,'song'+i+'/views');
@@ -1887,22 +1929,19 @@ set(viewsRef,currentViews + 1);
 
 onValue(viewsRef,(snapshot)=>{
 
-document.getElementById("views"+i)
-.innerText =
+viewsElement.innerText =
 "👁 " + (snapshot.val() || 0);
 
 });
 
 onValue(likesRef,(snapshot)=>{
 
-document.getElementById("likes"+i)
-.innerText =
+likesElement.innerText =
 "❤️ " + (snapshot.val() || 0);
 
 });
 
-document.getElementById("likes"+i)
-.addEventListener("click",()=>{
+likesElement.addEventListener("click",()=>{
 
 get(likesRef).then((snapshot)=>{
 
@@ -1917,82 +1956,6 @@ set(likesRef,currentLikes + 1);
 
 });
 
-
-const likesRef =
-ref(db,'song'+i+'/likes');
-
-
-// นับวิวเมื่อกดเล่นเพลง
-
-player.addEventListener("play",()=>{
-
-get(viewsRef).then((snapshot)=>{
-
-let currentViews =
-snapshot.val() || 0;
-
-set(viewsRef,currentViews + 1);
-
-});
-
-});
-
-
-// แสดงยอดวิว
-
-onValue(viewsRef,(snapshot)=>{
-
-document.getElementById("views"+i)
-.innerText =
-"👁 " + (snapshot.val() || 0);
-
-});
-
-
-// แสดงยอดไลก์
-
-onValue(likesRef,(snapshot)=>{
-
-document.getElementById("likes"+i)
-.innerText =
-"❤️ " + (snapshot.val() || 0);
-
-});
-
-
-// กดไลก์
-
-document.getElementById("likes"+i)
-.addEventListener("click",()=>{
-
-get(likesRef).then((snapshot)=>{
-
-let currentLikes =
-snapshot.val() || 0;
-
-set(likesRef,currentLikes + 1);
-
-});
-
-});
-
-}
-async function uploadSong(){
-
-const file =
-document.getElementById("uploadSong").files[0];
-
-if(!file){
-
-alert("เลือกเพลงก่อน");
-
-return;
-
-}
-
-alert("อัปโหลดสำเร็จ: " + file.name);
-
-}
 </script>
 </body>
 </html>
