@@ -1927,7 +1927,7 @@ for(let i=1;i<=1000000;i++){
 
 const player =
 document.querySelectorAll("audio")[i-1];
-
+if(!player) continue;
 const viewsRef =
 ref(db,'song'+i+'/views');
 
