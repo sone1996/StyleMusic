@@ -2244,12 +2244,40 @@ progress.style.width = (player.currentTime / player.duration) * 100 + "%";
 
 player.addEventListener("ended",()=>{
 
-let next = players[index + 1];
+const rows = document.querySelectorAll(".song-row");
 
-if(next){
-next.play();
+let currentMood =
+rows[index]
+.querySelector("div[style*='color:#ff2d55']")
+.innerText.trim();
+
+let sameMoodSongs = [];
+
+rows.forEach((row,i)=>{
+
+let mood =
+row.querySelector("div[style*='color:#ff2d55']")
+.innerText.trim();
+
+if(mood === currentMood && i !== index){
+sameMoodSongs.push(i);
+}
+
+});
+
+if(sameMoodSongs.length > 0){
+
+let randomIndex =
+sameMoodSongs[
+Math.floor(Math.random() * sameMoodSongs.length)
+];
+
+players[randomIndex].play();
+
 }else{
-players[0].play();
+
+players[(index + 1) % players.length].play();
+
 }
 
 });
