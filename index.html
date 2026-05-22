@@ -2359,7 +2359,85 @@ btn.innerHTML="❤️";
 });
 
 });
+function generateRecommendations(){
 
+const rows =
+document.querySelectorAll(".song-row");
+
+const container =
+document.getElementById("recommendedSongs");
+
+container.innerHTML = "";
+
+let shuffled =
+Array.from(rows)
+.sort(()=>0.5 - Math.random())
+.slice(0,6);
+
+shuffled.forEach((row)=>{
+
+let title =
+row.querySelector(".song-title").innerText;
+
+let img =
+row.querySelector("img").src;
+
+let audio =
+row.querySelector("audio source").src;
+
+container.innerHTML += `
+
+<div style="
+background:#1a1a1a;
+padding:15px;
+border-radius:15px;
+cursor:pointer;
+"
+onclick="playRecommended('${audio}')">
+
+<img src="${img}"
+style="
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:12px;
+">
+
+<h3 style="
+margin-top:10px;
+font-size:16px;
+">
+${title}
+</h3>
+
+</div>
+
+`;
+
+});
+
+}
+
+function playRecommended(src){
+
+players.forEach((player,index)=>{
+
+let source =
+player.querySelector("source").src;
+
+if(source === src){
+
+currentIndex = index;
+
+player.play();
+
+}
+
+});
+
+}
+
+generateRecommendations();
 </script>
 
 <script type="module">
@@ -2462,74 +2540,7 @@ set(likesRef,currentLikes + 1);
 });
 
 });
-  function generateRecommendations(){
-
-const rows =
-document.querySelectorAll(".song-row");
-
-const container =
-document.getElementById("recommendedSongs");
-
-container.innerHTML = "";
-
-let shuffled =
-Array.from(rows)
-.sort(()=>0.5 - Math.random())
-.slice(0,6);
-
-shuffled.forEach((row)=>{
-
-let title =
-row.querySelector(".song-title").innerText;
-
-let img =
-row.querySelector("img").src;
-
-let audio =
-row.querySelector("audio source").src;
-
-container.innerHTML += `
-
-<div style="
-background:#1a1a1a;
-padding:15px;
-border-radius:15px;
-cursor:pointer;
-"
-onclick="playRecommended('${audio}')">
-
-<img src="${img}"
-style="
-width:100%;
-height:180px;
-object-fit:cover;
-border-radius:12px;
-">
-
-<h3 style="
-margin-top:10px;
-font-size:16px;
-">
-${title}
-</h3>
-
-</div>
-
-`;
-
-});
-
-}
-
-function playRecommended(src){
-
-let audio = new Audio(src);
-
-audio.play();
-
-}
-
-generateRecommendations();
+ 
 </script>
 
 </body>
