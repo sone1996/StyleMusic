@@ -2283,7 +2283,11 @@ sameMoodSongs[
 Math.floor(Math.random() * sameMoodSongs.length)
 ];
 
-players[randomIndex].play();
+players[currentIndex].pause();
+
+currentIndex = randomIndex;
+
+players[currentIndex].play();
 
 }else{
 
