@@ -1,4 +1,57 @@
+# StyleMusicPro Complete Neon UI
+
+ให้นำโค้ดด้านล่างไปแทนไฟล์ `index.html` ทั้งหมด
+
+```html
 <!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PZHXG2Y1PY"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-PZHXG2Y1PY');
+</script>
+
+<title>StyleMusicPro</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#050816;
+color:white;
+overflow:hidden;
+}
+
+.container{
+display:flex;
+height:100vh;
+}
+
+.sidebar{
+width:240px;
+background:#070b18;
+padding:25px;
+display:flex;
+flex-direction:column;
+gap:18px;
+border-right:1px solid rgba(255,255,255,.05);
+}
+
+.logo{
 font-size:30px;
 font-weight:700;
 color:#9b5cff;
@@ -69,4 +122,292 @@ border-radius:50%;
 object-fit:cover;
 border:4px solid #9b5cff;
 box-shadow:0 0 40px rgba(155,92,255,.7);
+}
+
+.playlist-info h1{
+font-size:60px;
+margin-bottom:10px;
+}
+
+.song-table{
+width:100%;
+border-collapse:collapse;
+}
+
+.song-table td,
+.song-table th{
+padding:18px;
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.song-row:hover{
+background:rgba(255,255,255,.05);
+}
+
+.song-info{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.song-info img{
+width:65px;
+height:65px;
+border-radius:14px;
+object-fit:cover;
+}
+
+.song-title{
+font-weight:700;
+}
+
+.song-artist{
+font-size:14px;
+color:#bbb;
+}
+
+.song-stats{
+display:flex;
+gap:15px;
+align-items:center;
+}
+
+.share-btn{
+cursor:pointer;
+color:#00d2ff;
+}
+
+.bottom-player{
+position:fixed;
+bottom:0;
+left:240px;
+right:0;
+height:85px;
+background:#070b18;
+border-top:1px solid rgba(255,255,255,.08);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 20px;
+}
+
+.player-controls{
+display:flex;
+gap:15px;
+}
+
+.player-controls button{
+width:50px;
+height:50px;
+border:none;
+border-radius:50%;
+background:#9b5cff;
+color:white;
+font-size:20px;
+cursor:pointer;
+}
+
+@media(max-width:900px){
+.sidebar{
+display:none;
+}
+
+.bottom-player{
+left:0;
+}
+
+.playlist-header{
+flex-direction:column;
+text-align:center;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="sidebar">
+<div class="logo">🎵 StyleMusicPro</div>
+<div class="menu">🏠 หน้าแรก</div>
+<div class="menu">🔥 Trending</div>
+<div class="menu">❤️ Favorites</div>
+<div class="menu">🎧 Sad Pop</div>
+<div class="menu">🌙 เพลงเหงา</div>
+</div>
+
+<div class="main">
+
+<div class="topbar">
+<div class="search-box" style="flex:1;">
+<input type="text" id="search" placeholder="ค้นหาเพลง...">
+</div>
+</div>
+
+<div class="playlist-header">
+<img src="https://picsum.photos/500">
+
+<div class="playlist-info">
+<p>PLAYLIST</p>
+<h1>StyleMusicPro</h1>
+<p>เว็บรวมเพลงเศร้า เพลงอกหัก เพลงเหงา ฟังฟรีออนไลน์</p>
+</div>
+</div>
+
+<table class="song-table">
+<thead>
+<tr>
+<th>เพลง</th>
+<th>หมวด</th>
+<th>เวลา</th>
+<th>สถิติ</th>
+</tr>
+</thead>
+
+<tbody id="songList">
+
+<tr class="song-row">
+<td>
+<div class="song-info">
+<img src="https://picsum.photos/100?1">
+<div>
+<div class="song-title">Invisible Distance</div>
+<div class="song-artist">Style Music</div>
+<audio controls>
+<source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/Invisible%20distance.mp3">
+</audio>
+</div>
+</div>
+</td>
+<td>Sad Pop</td>
+<td>4:12</td>
+<td>
+<div class="song-stats">
+<span id="views1">👁 0</span>
+<span id="likes1">❤️ 0</span>
+<span class="share-btn" onclick="shareSong('Invisible Distance')">🔗 Share</span>
+</div>
+</td>
+</tr>
+
+<tr class="song-row">
+<td>
+<div class="song-info">
+<img src="https://picsum.photos/100?2">
+<div>
+<div class="song-title">Before She Disappears</div>
+<div class="song-artist">Style Music</div>
+<audio controls>
+<source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/Before%20She%20Disappears.mp3">
+</audio>
+</div>
+</div>
+</td>
+<td>Emotional</td>
+<td>4:05</td>
+<td>
+<div class="song-stats">
+<span id="views2">👁 0</span>
+<span id="likes2">❤️ 0</span>
+<span class="share-btn" onclick="shareSong('Before She Disappears')">🔗 Share</span>
+</div>
+</td>
+</tr>
+
+</tbody>
+</table>
+
+</div>
+</div>
+
+<div class="bottom-player">
+<div>🎵 StyleMusicPro Player</div>
+
+<div class="player-controls">
+<button onclick="prevSong()">⏮</button>
+<button onclick="togglePlay()">▶</button>
+<button onclick="nextSong()">⏭</button>
+</div>
+</div>
+
+<script>
+function shareSong(song){
+const shareData = {
+title: "Style Music",
+text: "🎵 ฟังเพลง: " + song,
+url: window.location.href
+};
+
+if(navigator.share){
+navigator.share(shareData);
+}else{
+navigator.clipboard.writeText(window.location.href);
+alert("🔗 คัดลอกลิงก์แล้ว");
+}
+}
+
+const search = document.getElementById("search");
+search.addEventListener("keyup", () => {
+let filter = search.value.toLowerCase();
+let rows = document.querySelectorAll(".song-row");
+
+rows.forEach(row => {
+let title = row.querySelector(".song-title").innerText.toLowerCase();
+if(title.includes(filter)){
+row.style.display = "";
+}else{
+row.style.display = "none";
+}
+});
+});
+
+const players = document.querySelectorAll("audio");
+let currentIndex = 0;
+
+players.forEach((player,index)=>{
+player.addEventListener("play",()=>{
+currentIndex = index;
+players.forEach((p,i)=>{
+if(i !== index){
+p.pause();
+}
+});
+
+let views = localStorage.getItem('views'+index) || 0;
+views++;
+localStorage.setItem('views'+index, views);
+document.getElementById('views'+(index+1)).innerHTML = '👁 ' + views;
+});
+});
+
+function nextSong(){
+players[currentIndex].pause();
+currentIndex++;
+if(currentIndex >= players.length){
+currentIndex = 0;
+}
+players[currentIndex].play();
+}
+
+function prevSong(){
+players[currentIndex].pause();
+currentIndex--;
+if(currentIndex < 0){
+currentIndex = players.length - 1;
+}
+players[currentIndex].play();
+}
+
+function togglePlay(){
+if(players[currentIndex].paused){
+players[currentIndex].play();
+}else{
+players[currentIndex].pause();
+}
+}
+</script>
+
+</body>
 </html>
+```
