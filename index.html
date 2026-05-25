@@ -645,7 +645,29 @@ playBtn.innerHTML = "❚❚";
 isPlaying = true;
 
 });
+audio.addEventListener("timeupdate",()=>{
 
+const duration = audio.duration;
+
+const currentTime = audio.currentTime;
+
+const percent = (currentTime / duration) * 100;
+
+progressBar.style.width = percent + "%";
+
+});
+
+progress.addEventListener("click",(e)=>{
+
+const width = progress.clientWidth;
+
+const clickX = e.offsetX;
+
+const duration = audio.duration;
+
+audio.currentTime = (clickX / width) * duration;
+
+});
 </script>
 </body>
 </html>
