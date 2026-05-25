@@ -516,40 +516,129 @@ Style<span>Music</span>
 
 </div>
 
-<audio id="audio">
-<source src="songs/sopsak.mp3" type="audio/mp3">
-</audio>
+<audio id="audio"></audio>
+
+<div class="player">
 
 <div>
-<h4>คืนที่คิดถึง</h4>
+<h4 id="songTitle">คืนที่คิดถึง</h4>
 <span>กำลังเล่น...</span>
 </div>
 
+<div style="display:flex;gap:15px;align-items:center;">
+
+<button id="prevBtn">⏮</button>
+
 <button id="playBtn">▶</button>
+
+<button id="nextBtn">⏭</button>
+
+</div>
 
 <div class="progress">
 <div></div>
 </div>
 
 </div>
+
 <script>
 
+const songs = [
+
+{
+title: "คืนที่คิดถึง",
+src: "songs/sopsak.mp3"
+},
+
+{
+title: "คำลายในความเงียบ",
+src: "songs/คำลายในความเงียบ.mp3"
+},
+
+{
+title: "คนที่ถูกลืม",
+src: "songs/คนที่ถูกลืม.mp3"
+}
+
+];
+
+let songIndex = 0;
+
 const audio = document.getElementById("audio");
+
 const playBtn = document.getElementById("playBtn");
+
+const nextBtn = document.getElementById("nextBtn");
+
+const prevBtn = document.getElementById("prevBtn");
+
+const songTitle = document.getElementById("songTitle");
 
 let isPlaying = false;
 
-playBtn.addEventListener("click", () => {
+loadSong(songIndex);
+
+function loadSong(index){
+
+audio.src = songs[index].src;
+
+songTitle.innerHTML = songs[index].title;
+
+}
+
+playBtn.addEventListener("click",()=>{
 
 if(isPlaying){
+
 audio.pause();
+
 playBtn.innerHTML = "▶";
+
 }else{
+
 audio.play();
+
 playBtn.innerHTML = "❚❚";
+
 }
 
 isPlaying = !isPlaying;
+
+});
+
+nextBtn.addEventListener("click",()=>{
+
+songIndex++;
+
+if(songIndex >= songs.length){
+songIndex = 0;
+}
+
+loadSong(songIndex);
+
+audio.play();
+
+playBtn.innerHTML = "❚❚";
+
+isPlaying = true;
+
+});
+
+prevBtn.addEventListener("click",()=>{
+
+songIndex--;
+
+if(songIndex < 0){
+songIndex = songs.length - 1;
+}
+
+loadSong(songIndex);
+
+audio.play();
+
+playBtn.innerHTML = "❚❚";
+
+isPlaying = true;
 
 });
 
