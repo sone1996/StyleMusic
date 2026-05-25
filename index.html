@@ -687,7 +687,7 @@ audio.src = songs[index].src;
 songTitle.innerHTML = songs[index].title;
 
 }
-
+loadStats(songs[index].id);
 playBtn.addEventListener("click",()=>{
 
 if(isPlaying){
