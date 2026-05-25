@@ -630,7 +630,7 @@ const song = songs[songIndex];
 
 songList.innerHTML += `
 
-<div class="song" onclick="playSong(${songIndex})">
+<div class="song" data-index="${songIndex}">
 
 <div class="song-left">
 
@@ -645,6 +645,10 @@ songList.innerHTML += `
 </div>
 
 </div>
+
+<button onclick="playSong(${songIndex})">
+▶
+</button>
 
 </div>
 
