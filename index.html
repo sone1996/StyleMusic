@@ -911,10 +911,18 @@ loadStats(songId);
 
 });
 
+if(navigator.share){
+
 navigator.share({
 title:songs[songIndex].title,
 url:window.location.href
 });
+
+}else{
+
+alert("อุปกรณ์นี้ไม่รองรับการแชร์");
+
+}
 
 });
 function playPlaylist(index){
