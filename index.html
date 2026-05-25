@@ -324,7 +324,13 @@ transition:0.1s;
 }
 
 /* MOBILE */
-
+.menu-toggle{
+display:none;
+font-size:30px;
+cursor:pointer;
+margin-bottom:15px;
+color:white;
+}
 @media(max-width:900px){
 
 .sidebar{
@@ -369,7 +375,19 @@ flex-direction:column;
 gap:15px;
 align-items:flex-start;
 }
+.menu-toggle{
+display:block;
+}
 
+.sidebar{
+left:-100%;
+transition:0.4s;
+z-index:999;
+}
+
+.sidebar.active{
+left:0;
+}
 }
 
 </style>
