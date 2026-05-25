@@ -913,7 +913,30 @@ songShares.innerHTML =
 });
 
 }
+function loadSongCardStats(songId){
 
+const songRef = ref(db,"songs/"+songId);
+
+get(songRef).then((snapshot)=>{
+
+if(snapshot.exists()){
+
+const data = snapshot.val();
+
+document.getElementById(`views-${songId}`).innerHTML =
+"👁 " + (data.views || 0);
+
+document.getElementById(`likes-${songId}`).innerHTML =
+"❤️ " + (data.likes || 0);
+
+document.getElementById(`shares-${songId}`).innerHTML =
+"🔁 " + (data.shares || 0);
+
+}
+
+});
+
+}
 /* VIEW */
 
 function countSongView(songId){
