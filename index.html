@@ -666,6 +666,17 @@ songList.innerHTML += `
 });
 
 }
+  document.addEventListener("click",(e)=>{
+
+if(e.target.classList.contains("play-song-btn")){
+
+const index = e.target.dataset.song;
+
+playSong(index);
+
+}
+
+});
 /* ELEMENTS */
 
 const audio = document.getElementById("audio");
