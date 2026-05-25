@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
 <title>StyleMusicPro</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -18,36 +20,31 @@ font-family:'Prompt',sans-serif;
 }
 
 body{
-background:
-linear-gradient(to bottom,#050816,#03030d);
+background:linear-gradient(to bottom,#050816,#03030d);
 color:white;
 overflow-x:hidden;
-}
-
-.container{
-display:flex;
-min-height:100vh;
 }
 
 /* SIDEBAR */
 
 .sidebar{
 width:240px;
-background:rgba(8,8,25,0.95);
-backdrop-filter:blur(15px);
-padding:25px 18px;
-border-right:1px solid rgba(255,255,255,0.06);
-position:fixed;
 height:100vh;
+position:fixed;
 left:0;
 top:0;
+background:rgba(8,8,25,0.95);
+padding:25px 18px;
+backdrop-filter:blur(15px);
+border-right:1px solid rgba(255,255,255,0.05);
+transition:0.4s;
+z-index:999;
 }
 
 .logo{
 font-size:28px;
 font-weight:700;
 margin-bottom:40px;
-color:#fff;
 }
 
 .logo span{
@@ -67,25 +64,22 @@ padding:14px 16px;
 border-radius:14px;
 transition:0.3s;
 display:flex;
-align-items:center;
 gap:12px;
-font-size:15px;
 }
 
-.menu a:hover,
-.menu a.active{
+.menu a:hover{
 background:linear-gradient(90deg,#7b2ff7,#9f44ff);
 color:white;
-transform:translateX(5px);
 }
+
+/* MAIN */
 
 .main{
 margin-left:240px;
-width:calc(100% - 240px);
 padding:25px;
 }
 
-/* HEADER */
+/* TOPBAR */
 
 .topbar{
 display:flex;
@@ -94,14 +88,20 @@ align-items:center;
 margin-bottom:25px;
 }
 
+.menu-toggle{
+display:none;
+font-size:30px;
+cursor:pointer;
+}
+
 .search{
 width:420px;
-background:#0c1026;
 padding:14px 20px;
 border-radius:50px;
-border:1px solid rgba(255,255,255,0.06);
-color:white;
+border:none;
 outline:none;
+background:#11162d;
+color:white;
 }
 
 .profile{
@@ -111,81 +111,65 @@ gap:10px;
 }
 
 .profile img{
-width:42px;
-height:42px;
+width:50px;
+height:50px;
 border-radius:50%;
+object-fit:cover;
+border:2px solid #7b2ff7;
 }
 
 /* HERO */
 
 .hero{
-height:330px;
+height:320px;
 border-radius:28px;
 padding:35px;
-position:relative;
-overflow:hidden;
 display:flex;
 align-items:end;
 
 background:
-linear-gradient(to top,rgba(0,0,0,0.75),rgba(0,0,0,0.2)),
+linear-gradient(to top,rgba(0,0,0,0.7),rgba(0,0,0,0.2)),
 url('songs/bg.png');
 
 background-size:cover;
 background-position:center;
-background-repeat:no-repeat;
 
-box-shadow:0 0 50px rgba(123,47,247,0.25);
+box-shadow:0 0 40px rgba(123,47,247,0.3);
 }
 
 .hero-content{
-z-index:2;
 display:flex;
-align-items:center;
 gap:25px;
+align-items:center;
 }
 
 .hero-logo{
 width:160px;
 height:160px;
-min-width:160px;
-
 border-radius:50%;
 overflow:hidden;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
 border:4px solid #7b2ff7;
-
-background:#050510;
 
 box-shadow:
 0 0 20px #7b2ff7,
-0 0 40px rgba(123,47,247,0.6);
+0 0 40px rgba(123,47,247,0.5);
 }
+
 .hero-logo img{
 width:100%;
 height:100%;
 object-fit:cover;
-border-radius:50%;
 }
+
 .hero-text h1{
 font-size:48px;
 margin-bottom:10px;
 }
 
-.hero-text p{
-color:#c9c9c9;
-margin-bottom:15px;
-}
-
 .stats{
 display:flex;
-gap:25px;
-font-size:15px;
-color:#ccc;
+gap:20px;
+margin-top:15px;
 }
 
 /* PLAYLIST */
@@ -203,17 +187,14 @@ gap:20px;
 
 .card{
 background:rgba(255,255,255,0.04);
-border:1px solid rgba(255,255,255,0.05);
 border-radius:22px;
 overflow:hidden;
 transition:0.3s;
 cursor:pointer;
-backdrop-filter:blur(10px);
 }
 
 .card:hover{
-transform:translateY(-8px);
-box-shadow:0 0 30px rgba(123,47,247,0.3);
+transform:translateY(-6px);
 }
 
 .card img{
@@ -226,36 +207,22 @@ object-fit:cover;
 padding:18px;
 }
 
-.card h3{
-margin-bottom:8px;
-}
-
-.card p{
-color:#b3b3b3;
-font-size:14px;
-}
-
 /* SONG LIST */
 
 .song-list{
-margin-top:15px;
 display:flex;
 flex-direction:column;
 gap:12px;
+margin-top:15px;
 }
 
 .song{
 background:rgba(255,255,255,0.03);
-padding:15px 20px;
+padding:15px;
 border-radius:16px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-transition:0.3s;
-}
-
-.song:hover{
-background:rgba(123,47,247,0.15);
 }
 
 .song-left{
@@ -269,15 +236,6 @@ width:55px;
 height:55px;
 border-radius:12px;
 object-fit:cover;
-}
-
-.song h4{
-font-size:16px;
-}
-
-.song span{
-color:#aaa;
-font-size:14px;
 }
 
 /* PLAYER */
@@ -299,13 +257,12 @@ border-top:1px solid rgba(255,255,255,0.05);
 .player button{
 background:#7b2ff7;
 border:none;
-width:60px;
-height:60px;
+width:55px;
+height:55px;
 border-radius:50%;
 color:white;
-font-size:22px;
+font-size:20px;
 cursor:pointer;
-box-shadow:0 0 20px rgba(123,47,247,0.5);
 }
 
 .progress{
@@ -314,37 +271,33 @@ height:5px;
 background:#222;
 border-radius:20px;
 overflow:hidden;
+cursor:pointer;
 }
 
 #progressBar{
 width:0%;
 height:100%;
 background:#7b2ff7;
-transition:0.1s;
 }
 
 /* MOBILE */
-.menu-toggle{
-display:none;
-font-size:30px;
-cursor:pointer;
-margin-bottom:15px;
-color:white;
-}
+
 @media(max-width:900px){
 
-.sidebar{
-width:80px;
-padding:20px 10px;
+.menu-toggle{
+display:block;
 }
 
-.sidebar .text{
-display:none;
+.sidebar{
+left:-100%;
+}
+
+.sidebar.active{
+left:0;
 }
 
 .main{
 margin-left:0;
-width:100%;
 padding:15px;
 }
 
@@ -354,43 +307,17 @@ width:100%;
 padding:15px;
 }
 
-.hero{
-height:auto;
-padding:25px;
-}
-
-.hero-content{
+.topbar{
 flex-direction:column;
 align-items:flex-start;
-}
-
-.hero-text h1{
-font-size:32px;
+gap:15px;
 }
 
 .search{
 width:100%;
 }
 
-.topbar{
-flex-direction:column;
-gap:15px;
-align-items:flex-start;
-}
-.menu-toggle{
-display:block;
-}
-
-.sidebar{
-left:-100%;
-transition:0.4s;
-z-index:999;
-}
-
-.sidebar.active{
-left:0;
-}
-  .playlists{
+.playlists{
 grid-template-columns:1fr;
 }
 
@@ -406,7 +333,10 @@ align-items:flex-start;
 .hero-logo{
 width:120px;
 height:120px;
-min-width:120px;
+}
+
+.hero-text h1{
+font-size:32px;
 }
 
 .stats{
@@ -414,21 +344,14 @@ flex-wrap:wrap;
 gap:10px;
 }
 
-.song{
-padding:12px;
-}
-
-.song h4{
-font-size:14px;
-}
-
 }
 
 </style>
 </head>
+
 <body>
 
-<div class="container">
+<!-- SIDEBAR -->
 
 <div class="sidebar">
 
@@ -437,17 +360,28 @@ Style<span>Music</span>
 </div>
 
 <div class="menu">
-<a class="active" href="#">🏠 <span class="text">หน้าแรก</span></a>
-<a href="#">🔍 <span class="text">ค้นหา</span></a>
-<a href="#">🎵 <span class="text">เพลงฮิต</span></a>
-<a href="#">💜 <span class="text">รายการโปรด</span></a>
-<a href="#">📀 <span class="text">อัลบั้ม</span></a>
-<a href="#">👤 <span class="text">โปรไฟล์</span></a>
+
+<a href="#">🏠 หน้าแรก</a>
+
+<a href="#">🔍 ค้นหา</a>
+
+<a href="#">🎵 เพลงฮิต</a>
+
+<a href="#">❤️ รายการโปรด</a>
+
+<a href="#">📀 อัลบั้ม</a>
+
+<a href="#">👤 โปรไฟล์</a>
+
 </div>
 
 </div>
+
+<!-- MAIN -->
 
 <div class="main">
+
+<!-- TOPBAR -->
 
 <div class="topbar">
 
@@ -455,10 +389,11 @@ Style<span>Music</span>
 ☰
 </div>
 
-<input class="search" type="text" placeholder="ค้นหาเพลง ศิลปิน อัลบั้ม..." />
+<input class="search" type="text" placeholder="ค้นหาเพลง ศิลปิน อัลบั้ม...">
 
 <div class="profile">
-<img src="songs/stylemusic.png" />
+
+<img src="songs/stylemusic.png">
 
 <div>
 <h4>StyleMusicPro</h4>
@@ -469,6 +404,8 @@ Style<span>Music</span>
 
 </div>
 
+<!-- HERO -->
+
 <div class="hero">
 
 <div class="hero-content">
@@ -478,15 +415,18 @@ Style<span>Music</span>
 </div>
 
 <div class="hero-text">
+
 <h1>StyleMusicPro</h1>
 
 <p>รวมเพลงเศร้า LoFi Sad Pop Thai • Lao • Chill</p>
 
 <div class="stats">
+
 <div>120 เพลง</div>
+
 <div>12.5K ผู้ติดตาม</div>
+
 <div>8 เพลย์ลิสต์</div>
-</div>
 
 </div>
 
@@ -494,105 +434,120 @@ Style<span>Music</span>
 
 </div>
 
-<h2 class="section-title">เพลย์ลิสต์เด่น</h2>
+</div>
+
+<!-- PLAYLIST -->
+
+<h2 class="section-title">
+เพลย์ลิสต์เด่น
+</h2>
 
 <div class="playlists">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1974&auto=format&fit=crop">
+<img src="songs/bg.png">
+
 <div class="card-content">
 <h3>Thai Sad Pop</h3>
 <p>45 เพลง</p>
 </div>
+
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1974&auto=format&fit=crop">
+<img src="songs/bg.png">
+
 <div class="card-content">
 <h3>LoFi Sad Chill</h3>
 <p>32 เพลง</p>
 </div>
-</div>
 
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=2070&auto=format&fit=crop">
-<div class="card-content">
-<h3>Lao Sad Pop</h3>
-<p>25 เพลง</p>
-</div>
 </div>
 
 </div>
 
-<h2 class="section-title">เพลงล่าสุด</h2>
+<!-- SONG LIST -->
+
+<h2 class="section-title">
+เพลงล่าสุด
+</h2>
 
 <div class="song-list">
 
 <div class="song">
+
 <div class="song-left">
+
 <img src="songs/stylemusic.png">
+
 <div>
+
 <h4>คืนที่คิดถึง</h4>
+
 <span>StyleMusicPro</span>
+
 </div>
+
 </div>
+
 <div>3:58</div>
-</div>
-
-<div class="song">
-<div class="song-left">
-<img src="https://picsum.photos/100?2">
-<div>
-<h4>บ่เป็นหยัง...อ้ายยังบ่ตาย</h4>
-<span>Lao Sad Pop</span>
-</div>
-</div>
-<div>4:12</div>
-</div>
-
-<div class="song">
-<div class="song-left">
-<img src="https://picsum.photos/100?3">
-<div>
-<h4>เธอคงไม่กลับมา</h4>
-<span>Sad LoFi</span>
-</div>
-</div>
-<div>3:46</div>
-</div>
 
 </div>
 
 </div>
 
 </div>
+
+<!-- AUDIO -->
 
 <audio id="audio"></audio>
+
+<!-- PLAYER -->
 
 <div class="player">
 
 <div>
 
-<h4 id="songTitle">คืนที่คิดถึง</h4>
+<h4 id="songTitle">
+คืนที่คิดถึง
+</h4>
 
-<span id="songViews">👁 0</span>
+<div id="songViews">
+👁 0
+</div>
 
-<span id="songLikes">❤️ 0</span>
+<div id="songLikes">
+❤️ 0
+</div>
 
-<span id="songShares">🔁 0</span>
+<div id="songShares">
+🔁 0
+</div>
 
 </div>
-<div style="display:flex;gap:15px;align-items:center;">
 
-<button id="prevBtn">⏮</button>
+<div style="display:flex;gap:10px;align-items:center;">
 
-<button id="playBtn">▶</button>
+<button id="prevBtn">
+⏮
+</button>
 
-<button id="nextBtn">⏭</button>
-<button id="likeBtn">❤️</button>
+<button id="playBtn">
+▶
+</button>
 
-<button id="shareBtn">🔁</button>
+<button id="nextBtn">
+⏭
+</button>
+
+<button id="likeBtn">
+❤️
+</button>
+
+<button id="shareBtn">
+🔁
+</button>
+
 </div>
 
 <div class="progress" id="progress">
@@ -603,38 +558,66 @@ Style<span>Music</span>
 
 </div>
 
-<script>
+<!-- FIREBASE + PLAYER -->
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+getDatabase,
+ref,
+get,
+set
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+const firebaseConfig = {
+
+apiKey: "AIzaSyA3Hl-RoqK9RvqF2KiYrRg7GC6EmyOuMVo",
+
+authDomain: "stylemusic-72ef9.firebaseapp.com",
+
+databaseURL: "https://stylemusic-72ef9-default-rtdb.asia-southeast1.firebasedatabase.app",
+
+projectId: "stylemusic-72ef9",
+
+storageBucket: "stylemusic-72ef9.firebasestorage.app",
+
+messagingSenderId: "224408363563",
+
+appId: "1:224408363563:web:2fd5b7a83bbd1b8936406e"
+
+};
+
+const app = initializeApp(firebaseConfig);
+
+const db = getDatabase(app);
+
+/* SONGS */
 
 const songs = [
 
 {
 id:"song1",
 title:"คืนที่คิดถึง",
-src:"songs/sopsak.mp3",
-likes:0,
-shares:0
+src:"songs/sopsak.mp3"
 },
 
 {
 id:"song2",
 title:"คำลายในความเงียบ",
-src:"songs/คำลายในความเงียบ.mp3",
-likes:0,
-shares:0
+src:"songs/คำลายในความเงียบ.mp3"
 },
 
 {
 id:"song3",
 title:"คนที่ถูกลืม",
-src:"songs/คนที่ถูกลืม.mp3",
-likes:0,
-shares:0
+src:"songs/คนที่ถูกลืม.mp3"
 }
 
 ];
 
-
-let songIndex = 0;
+/* ELEMENTS */
 
 const audio = document.getElementById("audio");
 
@@ -644,23 +627,31 @@ const nextBtn = document.getElementById("nextBtn");
 
 const prevBtn = document.getElementById("prevBtn");
 
+const likeBtn = document.getElementById("likeBtn");
+
+const shareBtn = document.getElementById("shareBtn");
+
+const progress = document.getElementById("progress");
+
+const progressBar = document.getElementById("progressBar");
+
 const songTitle = document.getElementById("songTitle");
-  const songViews = document.getElementById("songViews");
+
+const songViews = document.getElementById("songViews");
 
 const songLikes = document.getElementById("songLikes");
 
 const songShares = document.getElementById("songShares");
 
-const likeBtn = document.getElementById("likeBtn");
-
-const shareBtn = document.getElementById("shareBtn");
-const progress = document.getElementById("progress");
-
-const progressBar = document.getElementById("progressBar");
-  const menuToggle = document.getElementById("menuToggle");
+const menuToggle = document.getElementById("menuToggle");
 
 const sidebar = document.querySelector(".sidebar");
+
+let songIndex = 0;
+
 let isPlaying = false;
+
+/* LOAD SONG */
 
 loadSong(songIndex);
 
@@ -675,6 +666,8 @@ loadStats(songs[index].id);
 countSongView(songs[index].id);
 
 }
+
+/* PLAY */
 
 playBtn.addEventListener("click",()=>{
 
@@ -696,6 +689,8 @@ isPlaying = !isPlaying;
 
 });
 
+/* NEXT */
+
 nextBtn.addEventListener("click",()=>{
 
 songIndex++;
@@ -714,6 +709,8 @@ isPlaying = true;
 
 });
 
+/* PREV */
+
 prevBtn.addEventListener("click",()=>{
 
 songIndex--;
@@ -731,30 +728,10 @@ playBtn.innerHTML = "❚❚";
 isPlaying = true;
 
 });
-audio.addEventListener("timeupdate",()=>{
 
-const duration = audio.duration;
+/* AUTO NEXT */
 
-const currentTime = audio.currentTime;
-
-const percent = (currentTime / duration) * 100;
-
-progressBar.style.width = percent + "%";
-
-});
-
-progress.addEventListener("click",(e)=>{
-
-const width = progress.clientWidth;
-
-const clickX = e.offsetX;
-
-const duration = audio.duration;
-
-audio.currentTime = (clickX / width) * duration;
-
-});
-  audio.addEventListener("ended",()=>{
+audio.addEventListener("ended",()=>{
 
 songIndex++;
 
@@ -766,17 +743,41 @@ loadSong(songIndex);
 
 audio.play();
 
-playBtn.innerHTML = "❚❚";
+});
 
-isPlaying = true;
+/* PROGRESS */
+
+audio.addEventListener("timeupdate",()=>{
+
+const percent =
+(audio.currentTime / audio.duration) * 100;
+
+progressBar.style.width = percent + "%";
 
 });
-  menuToggle.addEventListener("click",()=>{
+
+progress.addEventListener("click",(e)=>{
+
+const width = progress.clientWidth;
+
+const clickX = e.offsetX;
+
+audio.currentTime =
+(clickX / width) * audio.duration;
+
+});
+
+/* MOBILE MENU */
+
+menuToggle.addEventListener("click",()=>{
 
 sidebar.classList.toggle("active");
 
 });
-  function loadStats(songId){
+
+/* FIREBASE STATS */
+
+function loadStats(songId){
 
 const songRef = ref(db,"songs/"+songId);
 
@@ -786,11 +787,14 @@ if(snapshot.exists()){
 
 const data = snapshot.val();
 
-songViews.innerHTML = "👁 " + (data.views || 0);
+songViews.innerHTML =
+"👁 " + (data.views || 0);
 
-songLikes.innerHTML = "❤️ " + (data.likes || 0);
+songLikes.innerHTML =
+"❤️ " + (data.likes || 0);
 
-songShares.innerHTML = "🔁 " + (data.shares || 0);
+songShares.innerHTML =
+"🔁 " + (data.shares || 0);
 
 }
 
@@ -798,23 +802,21 @@ songShares.innerHTML = "🔁 " + (data.shares || 0);
 
 }
 
+/* VIEW */
+
 function countSongView(songId){
 
-const songRef = ref(db,"songs/"+songId+"/views");
+const viewRef = ref(db,"songs/"+songId+"/views");
 
-get(songRef).then((snapshot)=>{
+get(viewRef).then((snapshot)=>{
 
 if(snapshot.exists()){
 
-let views = snapshot.val();
-
-views++;
-
-set(songRef,views);
+set(viewRef,snapshot.val()+1);
 
 }else{
 
-set(songRef,1);
+set(viewRef,1);
 
 }
 
@@ -823,6 +825,8 @@ loadStats(songId);
 });
 
 }
+
+/* LIKE */
 
 likeBtn.addEventListener("click",()=>{
 
@@ -834,11 +838,7 @@ get(likeRef).then((snapshot)=>{
 
 if(snapshot.exists()){
 
-let likes = snapshot.val();
-
-likes++;
-
-set(likeRef,likes);
+set(likeRef,snapshot.val()+1);
 
 }else{
 
@@ -852,6 +852,8 @@ loadStats(songId);
 
 });
 
+/* SHARE */
+
 shareBtn.addEventListener("click",()=>{
 
 const songId = songs[songIndex].id;
@@ -862,11 +864,7 @@ get(shareRef).then((snapshot)=>{
 
 if(snapshot.exists()){
 
-let shares = snapshot.val();
-
-shares++;
-
-set(shareRef,shares);
+set(shareRef,snapshot.val()+1);
 
 }else{
 
@@ -884,6 +882,8 @@ url:window.location.href
 });
 
 });
+
 </script>
+
 </body>
 </html>
