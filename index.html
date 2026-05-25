@@ -3778,9 +3778,16 @@ p.pause();
 });
 
 let views = localStorage.getItem('views'+index) || 0;
+
 views++;
+
 localStorage.setItem('views'+index, views);
-document.getElementById('views'+(index+1)).innerHTML = '👁 ' + views;
+
+let viewEl = document.getElementById('views'+(index+1));
+
+if(viewEl){
+viewEl.innerHTML = '👁 ' + views;
+}
 });
 });
 
