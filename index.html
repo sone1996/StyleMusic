@@ -254,13 +254,6 @@ font-size:14px;
 color:#bbb;
 }
 
-.song-stats{
-display:flex;
-align-items:center;
-justify-content:flex-start;
-gap:8px;
-margin-left:-120px;
-}
 .share-btn{
 cursor:pointer;
 color:#00d2ff;
@@ -374,13 +367,35 @@ border-radius:20px;
 }
 
 }
-.song-table td:nth-child(3){
-padding-left:0;
-width:80px;
+.song-table{
+table-layout:fixed;
+width:100%;
 }
 
-.song-table td:nth-child(4){
-width:180px;
+.song-table th:nth-child(1),
+.song-table td:nth-child(1){
+width:78%;
+}
+
+.song-table th:nth-child(2),
+.song-table td:nth-child(2){
+width:8%;
+text-align:center;
+white-space:nowrap;
+}
+
+.song-table th:nth-child(3),
+.song-table td:nth-child(3){
+width:14%;
+}
+
+.song-stats{
+display:flex;
+align-items:center;
+gap:12px;
+justify-content:flex-start;
+margin-left:0;
+white-space:nowrap;
 }
 </style>
 </head>
