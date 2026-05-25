@@ -932,23 +932,27 @@ playBtn.innerHTML = "❚❚";
 isPlaying = true;
 
 }
-  function playSong(index){
+  async function playSong(index){
 
 songIndex = index;
 
 loadSong(songIndex);
 
-audio.play().then(()=>{
+try{
+
+await audio.play();
 
 playBtn.innerHTML = "❚❚";
 
 isPlaying = true;
 
-}).catch((err)=>{
+}catch(err){
 
-console.log(err);
+console.log("เล่นเพลงไม่ได้",err);
 
-});
+alert("เบราว์เซอร์บล็อกการเล่นเพลง");
+
+}
 
 }
 </script>
