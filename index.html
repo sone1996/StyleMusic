@@ -668,6 +668,23 @@ const duration = audio.duration;
 audio.currentTime = (clickX / width) * duration;
 
 });
+  audio.addEventListener("ended",()=>{
+
+songIndex++;
+
+if(songIndex >= songs.length){
+songIndex = 0;
+}
+
+loadSong(songIndex);
+
+audio.play();
+
+playBtn.innerHTML = "❚❚";
+
+isPlaying = true;
+
+});
 </script>
 </body>
 </html>
