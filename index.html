@@ -532,6 +532,27 @@ Style<span>Music</span>
 </div>
 
 </div>
+<script>
 
+const audio = document.getElementById("audio");
+const playBtn = document.getElementById("playBtn");
+
+let isPlaying = false;
+
+playBtn.addEventListener("click", () => {
+
+if(isPlaying){
+audio.pause();
+playBtn.innerHTML = "▶";
+}else{
+audio.play();
+playBtn.innerHTML = "❚❚";
+}
+
+isPlaying = !isPlaying;
+
+});
+
+</script>
 </body>
 </html>
