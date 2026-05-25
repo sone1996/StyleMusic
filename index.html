@@ -931,11 +931,17 @@ songIndex = index;
 
 loadSong(songIndex);
 
-audio.play();
+audio.play().then(()=>{
 
 playBtn.innerHTML = "❚❚";
 
 isPlaying = true;
+
+}).catch((err)=>{
+
+console.log(err);
+
+});
 
 }
 </script>
