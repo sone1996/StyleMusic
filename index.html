@@ -3897,6 +3897,17 @@ players[currentIndex].play();
 players[currentIndex].pause();
 }
 }
+  function likeSong(id){
+
+let likes = localStorage.getItem("likes"+id) || 0;
+
+likes++;
+
+localStorage.setItem("likes"+id, likes);
+
+document.getElementById("likes"+id).innerText = likes;
+
+}
 </script>
 
 </body>
