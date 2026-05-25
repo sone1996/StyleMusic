@@ -319,40 +319,58 @@ flex-direction:column;
 text-align:center;
 }
 }
- @media(max-width:768px){
+@media(max-width:768px){
 
-.song-table th:nth-child(2),
-.song-table th:nth-child(3),
-.song-table th:nth-child(4),
-
-.song-table td:nth-child(2),
-.song-table td:nth-child(3),
-.song-table td:nth-child(4){
-display:none;
-}
-
-.song-info{
-display:flex;
+.hero-overlay{
 flex-direction:column;
 align-items:flex-start;
-gap:10px;
+padding:25px;
 }
 
-.song-info img{
-width:90px;
-height:90px;
-border-radius:18px;
-object-fit:cover;
+.hero-left{
+flex-direction:column;
+align-items:flex-start;
+gap:20px;
 }
 
-audio{
+.hero-logo{
+width:140px;
+height:140px;
+}
+
+.hero-info h1{
+font-size:42px;
+line-height:1.1;
+}
+
+.hero-stats{
+gap:20px;
+flex-wrap:wrap;
+}
+
+.hero-social{
+display:grid;
+grid-template-columns:1fr 1fr;
 width:100%;
-max-width:320px;
-height:45px;
 }
 
-.song-row{
-padding:15px 0;
+.social-card{
+width:100%;
+height:80px;
+}
+
+.follow-btn,
+.share-btn{
+width:100%;
+}
+
+.hero-buttons{
+width:100%;
+flex-direction:column;
+}
+
+.hero-banner{
+border-radius:20px;
 }
 
 }
