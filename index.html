@@ -1021,6 +1021,29 @@ alert("เบราว์เซอร์บล็อกการเล่นเ�
 }
 
 }
+  function nextSong(){
+
+songIndex++;
+
+if(songIndex >= songs.length){
+songIndex = 0;
+}
+
+playSong(songIndex);
+
+}
+
+function prevSong(){
+
+songIndex--;
+
+if(songIndex < 0){
+songIndex = songs.length - 1;
+}
+
+playSong(songIndex);
+
+}
 </script>
 
 </body>
