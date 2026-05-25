@@ -3817,7 +3817,11 @@ likes++;
 
 localStorage.setItem("likes"+id, likes);
 
-document.getElementById("likes"+id).innerText = likes;
+let likeEl = document.getElementById("likes"+id);
+
+if(likeEl){
+likeEl.innerText = likes;
+}
 
 }
 </script>
