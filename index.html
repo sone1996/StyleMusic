@@ -670,7 +670,7 @@ songList.innerHTML += `
 
 if(e.target.classList.contains("play-song-btn")){
 
-const index = e.target.dataset.song;
+const index = parseInt(e.target.dataset.song);
 
 playSong(index);
 
