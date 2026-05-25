@@ -629,6 +629,43 @@ const playlists = [
 ]
 
 ];
+  const songList = document.getElementById("songList");
+
+function showPlaylist(index){
+
+songList.innerHTML = "";
+
+const playlist = playlists[index];
+
+playlist.forEach((songIndex)=>{
+
+const song = songs[songIndex];
+
+songList.innerHTML += `
+
+<div class="song" onclick="playSong(${songIndex})">
+
+<div class="song-left">
+
+<img src="songs/stylemusic.png">
+
+<div>
+
+<h4>${song.title}</h4>
+
+<span>StyleMusicPro</span>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
 /* ELEMENTS */
 
 const audio = document.getElementById("audio");
