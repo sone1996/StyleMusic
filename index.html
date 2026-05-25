@@ -943,6 +943,19 @@ playBtn.innerHTML = "❚❚";
 isPlaying = true;
 
 }
+  function playSong(index){
+
+songIndex = index;
+
+loadSong(songIndex);
+
+audio.play();
+
+playBtn.innerHTML = "❚❚";
+
+isPlaying = true;
+
+}
 </script>
 
 </body>
