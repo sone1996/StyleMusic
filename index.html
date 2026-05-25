@@ -788,6 +788,114 @@ isPlaying = true;
 sidebar.classList.toggle("active");
 
 });
+  function loadStats(songId){
+
+const songRef = ref(db,"songs/"+songId);
+
+get(songRef).then((snapshot)=>{
+
+if(snapshot.exists()){
+
+const data = snapshot.val();
+
+songViews.innerHTML = "👁 " + (data.views || 0);
+
+songLikes.innerHTML = "❤️ " + (data.likes || 0);
+
+songShares.innerHTML = "🔁 " + (data.shares || 0);
+
+}
+
+});
+
+}
+
+function countSongView(songId){
+
+const songRef = ref(db,"songs/"+songId+"/views");
+
+get(songRef).then((snapshot)=>{
+
+if(snapshot.exists()){
+
+let views = snapshot.val();
+
+views++;
+
+set(songRef,views);
+
+}else{
+
+set(songRef,1);
+
+}
+
+loadStats(songId);
+
+});
+
+}
+
+likeBtn.addEventListener("click",()=>{
+
+const songId = songs[songIndex].id;
+
+const likeRef = ref(db,"songs/"+songId+"/likes");
+
+get(likeRef).then((snapshot)=>{
+
+if(snapshot.exists()){
+
+let likes = snapshot.val();
+
+likes++;
+
+set(likeRef,likes);
+
+}else{
+
+set(likeRef,1);
+
+}
+
+loadStats(songId);
+
+});
+
+});
+
+shareBtn.addEventListener("click",()=>{
+
+const songId = songs[songIndex].id;
+
+const shareRef = ref(db,"songs/"+songId+"/shares");
+
+get(shareRef).then((snapshot)=>{
+
+if(snapshot.exists()){
+
+let shares = snapshot.val();
+
+shares++;
+
+set(shareRef,shares);
+
+}else{
+
+set(shareRef,1);
+
+}
+
+loadStats(songId);
+
+});
+
+navigator.share({
+title:songs[songIndex].title,
+url:window.location.href
+});
+
+});
 </script>
 </body>
 </html>
