@@ -655,9 +655,21 @@ songList.innerHTML += `
 
 </div>
 
-<button class="play-song-btn" data-song="${songIndex}">
-▶
+<div class="song-controls">
+
+<button onclick="prevSong()">
+⏮
 </button>
+
+<button class="play-song-btn" data-song="${songIndex}">
+⏯
+</button>
+
+<button onclick="nextSong()">
+⏭
+</button>
+
+</div>
 
 </div>
 
