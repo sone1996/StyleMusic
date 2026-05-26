@@ -493,10 +493,21 @@ box-shadow:0 0 30px rgba(0,0,0,.7);
 }
 
 }
-  @media(max-width:768px){
+@media(max-width:768px){
 
 .hero-social{
-grid-template-columns:1fr;
+display:flex;
+overflow-x:auto;
+gap:12px;
+padding-bottom:10px;
+scroll-behavior:smooth;
+}
+
+.hero-social iframe{
+min-width:300px;
+height:170px;
+flex-shrink:0;
+border-radius:16px;
 }
 
 }
