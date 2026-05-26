@@ -250,11 +250,19 @@ cursor:pointer;
 }
 
 .hero-social{
-display:grid;
-grid-template-columns:repeat(3,1fr);
+display:flex;
 gap:15px;
-max-width:100%;
-align-items:start;
+overflow-x:auto;
+padding-bottom:10px;
+scroll-behavior:smooth;
+}
+
+.hero-social iframe{
+min-width:380px;
+height:220px;
+border-radius:16px;
+border:none;
+flex-shrink:0;
 }
 
 .hero-social iframe{
