@@ -550,6 +550,35 @@ margin-top:10px;
 
 }
 </style>
+  <style>
+audio{
+width:100%;
+max-width:320px;
+height:40px;
+border-radius:30px;
+}
+
+audio::-webkit-media-controls-download-button{
+display:none;
+}
+
+audio::-webkit-media-controls-enclosure{
+overflow:hidden;
+}
+
+.song-info{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.song-info img{
+width:60px;
+height:60px;
+border-radius:10px;
+object-fit:cover;
+}
+</style>
 </head>
 
 <body>
