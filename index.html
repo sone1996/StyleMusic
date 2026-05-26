@@ -4002,7 +4002,38 @@ likeEl.innerText = likes;
     document.head.appendChild(s);
 </script>
 
+<script>
 
+
+players.forEach((player,index)=>{
+
+player.addEventListener("play",()=>{
+
+currentIndex = index;
+
+players.forEach((p,i)=>{
+if(i !== index){
+p.pause();
+}
+});
+
+});
+
+player.addEventListener("ended",()=>{
+
+currentIndex++;
+
+if(currentIndex >= players.length){
+currentIndex = 0;
+}
+
+players[currentIndex].play();
+
+});
+
+});
+
+</script>
 </body>
 </html>
 
