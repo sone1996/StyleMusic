@@ -2,7 +2,4 @@ User-agent: *
 
 Allow: /
 
-Disallow:
-
-Sitemap:
-https://sone1996.github.io/StyleMusic/sitemap.xml
+Sitemap: https://stylemusicpro.com/sitemap.xml
