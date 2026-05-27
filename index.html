@@ -815,7 +815,7 @@ padding:8px 0;
         <div class="selection-item-card" onclick="showSpecificLyric('songLyric2')">
             🎵 
             <div>
-                <h4>Invisible Distance</h4>
+                <h4> แสงเช้าที่ว่างเปล่า</h4>
                 <p>ศิลปิน: Style Music</p>
             </div>
         </div>
@@ -858,12 +858,83 @@ padding:8px 0;
     </div>
 </div>
 
-<!-- กล่องย่อยเนื้อเพลงตัวเต็ม 2 (🖤 พื้นหลังสีดำสนิท) -->
-<div id="songLyric2" class="dark-read-mode" style="display: none;">
+<div class="selection-list">
+    <div class="selection-item-card" onclick="showSpecificLyric('songLyric1')">
+        🎵 
+        <div>
+            <h4>แสงเช้าที่ว่างเปล่า</h4>
+            <p>ศิลปิน: Style Music</p>
+        </div>
+    </div>
+    <div class="selection-item-card" onclick="showSpecificLyric('songLyric2')">
+        🎵 
+        <div>
+            <h4>Invisible Distance</h4>
+            <p>ศิลปิน: Style Music</p>
+        </div>
+    </div>
+</div>
+
+<!-- กล่องย่อยเนื้อเพลงตัวเต็ม 1 (🖤 พื้นหลังสีดำสนิท) -->
+<div id="songLyric1" class="dark-read-mode" style="display: none;">
     <button class="back-btn" onclick="backToLyricsList()">⬅ ย้อนกลับไปรายชื่อเพลง</button>
-    <h2 style="color: #9b5cff; margin-bottom: 20px; font-size: 24px;">📝 เนื้อเพลง: Invisible Distance</h2>
+    <h2 style="color: #9b5cff; margin-bottom: 10px; font-size: 24px;">📝 เนื้อเพลง: แสงเช้าที่ว่างเปล่า</h2>
+    
+    <!-- กล่อง Prompt ดนตรี -->
+    <div class="lyrics-block" style="background-color: #1e1e24; padding: 15px; border-radius: 8px; margin-bottom: 25px; border-left: 4px solid #9b5cff;">
+        <div class="lyrics-section-title" style="color: #d4a5ff; font-size: 14px; margin-bottom: 5px;">🎛️ Prompt แนวทางดนตรี (Suno AI)</div>
+        <div class="lyrics-text" style="color: #a0a0b0; font-family: monospace; line-height: 1.5;">Modern Thai gloomy sad pop, highly emotional vocal, vocal-centric, minimalist soft piano, deep ambient synth, slow tempo, heartbreak, breathy intimate voice, cinematic sad build-up, dark and melancholic atmosphere, fading ending</div>
+    </div>
+
+    <!-- เนื้อเพลง -->
     <div class="lyrics-block">
-        <div class="lyrics-text">[เนื้อหาเพลงย่อยของเพลง Invisible Distance สามารถนำมาวางพิมพ์เพิ่มเติมตรงนี้ได้เลยครับ...]</div>
+        <div class="lyrics-section-title">Intro</div>
+        <div class="lyrics-text">(เสียงเปียโนโน้ตต่ำ เล่นช้าๆ หม่นๆ ทิ้งจังหวะ)<br>(เสียงร้องนำขึ้นมาก่อนดนตรี ด้วยน้ำเสียงสั่นเครือ)<br>มองเข็มนาฬิกา... ที่ค่อยๆ เดินไป...</div>
+    </div>
+
+    <div class="lyrics-block">
+        <div class="lyrics-section-title">Verse 1</div>
+        <div class="lyrics-text">เหลือเวลาอีกไม่นานนัก ก่อนที่ฟ้าจะสาง<br>แสงไฟในห้องสลัวๆ กับแผ่นหลังของเธอที่เตรียมก้าวเดิน<br>พยายามจะเก็บซ่อนน้ำตา ไม่อยากให้มันดูขัดเขิน<br>พยายามท่องจำทุกรายละเอียด ก่อนที่เธอจะเดินจากฉันไป</div>
+    </div>
+
+    <div class="lyrics-block">
+        <div class="lyrics-section-title">Pre-Chorus</div>
+        <div class="lyrics-text">เพราะรู้ดีว่าเมื่อแสงอาทิตย์ส่องลงมา<br>เราสองคนจะกลายเป็นแค่คนแปลกหน้า<br>ที่เคยมีความทรงจำร่วมกัน<br>แค่คิดหัวใจก็สั่น... จนแทบยืนไม่ไหว</div>
+    </div>
+
+    <div class="lyrics-block">
+        <div class="lyrics-section-title">Chorus</div>
+        <div class="lyrics-text">เพราะต่อจากคืนนี้ไป... ฉันจะไม่มีเธอให้กอดอีกแล้ว<br>ตื่นมาพบกับความว่างเปล่า ในห้องที่เคยมีเรา<br>แค่หลับตาลงยังกลัว เพราะรู้ว่าพรุ่งนี้จะปวดร้าว<br>เมื่อต้องยอมรับความจริงว่าเรื่องของเรา...<br>มันจบลงแล้วพร้อมกับคืนนี้</div>
+    </div>
+
+    <div class="lyrics-block">
+        <div class="lyrics-section-title">Verse 2</div>
+        <div class="lyrics-text">กระเป๋าของเธอวางอยู่ตรงนั้น ทุกอย่างเตรียมพร้อมหมดแล้ว<br>เหลือแค่รอเวลาให้เช้า เพื่อกล่าวคำร่ำลา<br>อยากจะดึงเธอกลับมากอดไว้ แต่ก็รู้ว่าไม่มีค่า<br>เพราะใจของเธอได้เดินล่วงหน้า ไปไกลแสนไกลแล้ว</div>
+    </div>
+
+    <div class="lyrics-block">
+        <div class="lyrics-section-title">Pre-Chorus</div>
+        <div class="lyrics-text">เพราะรู้ดีว่าเมื่อแสงอาทิตย์ส่องลงมา<br>เราสองคนจะกลายเป็นแค่คนแปลกหน้า<br>ที่เคยมีความทรงจำร่วมกัน<br>แค่คิดหัวใจก็สั่น... จนแทบยืนไม่ไหว</div>
+    </div>
+
+    <div class="lyrics-block">
+        <div class="lyrics-section-title">Chorus</div>
+        <div class="lyrics-text">เพราะต่อจากคืนนี้ไป... ฉันจะไม่มีเธอให้กอดอีกแล้ว<br>ตื่นมาพบกับความว่างเปล่า ในห้องที่เคยมีเรา<br>แค่หลับตาลงยังกลัว เพราะรู้ว่าพรุ่งนี้จะปวดร้าว<br>เมื่อต้องยอมรับความจริงว่าเรื่องของเรา...<br>มันจบลงแล้วพร้อมกับคืนนี้</div>
+    </div>
+
+    <div class="lyrics-block">
+        <div class="lyrics-section-title">Bridge</div>
+        <div class="lyrics-text">(ดนตรีบิ้วอารมณ์ขึ้นมา เสียงกลองจังหวะหนักและช้า เสียงซินธ์หม่นๆ)<br>ขอให้คืนนี้ยาวนานกว่านี้ได้ไหม<br>หยุดเวลาเอาไว้ตรงนี้ จะแลกด้วยอะไรก็ยอม<br>ไม่อยากให้พรุ่งนี้มาถึง ไม่อยากให้เธอต้องไป!</div>
+    </div>
+
+    <div class="lyrics-block">
+        <div class="lyrics-section-title">Chorus</div>
+        <div class="lyrics-text">(เสียงร้องเค้นอารมณ์ พุ่งทะยานเต็มที่เจ็บปวดสุดขีด)<br>เพราะต่อจากคืนนี้ไป... ฉันจะไม่มีเธอให้กอดอีกแล้ว!<br>ตื่นมาพบกับความว่างเปล่า ในห้องที่เคยมีเรา<br>แค่หลับตาลงยังกลัว เพราะรู้ว่าพรุ่งนี้จะทรมานแค่ไหน<br>เมื่อต้องยอมรับความจริงว่าใจของเธอ...<br>มันจากฉันไป... ตั้งแต่คืนนี้</div>
+    </div>
+
+    <div class="lyrics-block">
+        <div class="lyrics-section-title">Outro</div>
+        <div class="lyrics-text">(ดนตรีค่อยๆ ลดระดับลง เหลือเพียงเสียงร้องและเปียโนหม่นๆ)<br>แสงเช้ากำลังจะมา...<br>พร้อมกับคำลา... ของเธอ<br>(ดนตรี Fade out จบลงด้วยความเงียบ)</div>
     </div>
 </div>
 
