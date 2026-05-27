@@ -18,6 +18,7 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PZHXG2Y1PY"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -358,7 +359,7 @@ transition:.2s;
 transform:scale(1.1);
 }
 
-/* ส่วนแสดงสไตล์เพิ่มเติม */
+/* ปรับแต่งกล่องหลักสำหรับลิสต์รวม */
 .lyrics-container, .articles-container {
 background: rgba(255, 255, 255, 0.03);
 border: 1px solid rgba(255, 255, 255, 0.05);
@@ -366,6 +367,16 @@ border-radius: 20px;
 padding: 30px;
 margin-top: 20px;
 backdrop-filter: blur(10px);
+}
+
+/* 🖤 ปรับแต่งกล่องเนื้อเพลง/บทความตัวเต็มให้เป็นพื้นหลังสีดำสนิท เพื่อให้อ่านง่าย สบายตา 🖤 */
+.dark-read-mode {
+background: #000000 !important;
+border: 1px solid rgba(155, 92, 255, 0.2);
+border-radius: 20px;
+padding: 35px;
+margin-top: 20px;
+box-shadow: 0 0 30px rgba(0,0,0,1);
 }
 
 .lyrics-block {
@@ -382,13 +393,13 @@ margin-bottom: 5px;
 letter-spacing: 1px;
 }
 
-.lyrics-text {
+.lyrics-text, .article-detail-text {
 font-size: 18px;
 color: #e0e0e0;
 white-space: pre-line;
+line-height: 1.8;
 }
 
-/* ปุ่มแท็บย่อยในหมวดหมู่เพลง */
 .sub-tabs {
 display: flex;
 gap: 12px;
@@ -412,16 +423,51 @@ background: #9b5cff;
 border-color: #9b5cff;
 }
 
-/* ดีไซน์การ์ดบทความ */
-.article-card {
-background: rgba(255,255,255,0.02);
-border-radius: 16px;
-padding: 20px;
-margin-bottom: 15px;
-border-left: 4px solid #9b5cff;
+/* ดีไซน์ลิสต์แบบ Grid Card สำหรับเลือกรายชื่อเพลง และ หัวข้อบทความ */
+.selection-list {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+gap: 15px;
+margin-top: 15px;
 }
-.article-card h3 { margin-bottom: 8px; color: #fff; }
-.article-card p { color: #bbb; font-size: 15px; line-height: 1.6; }
+
+.selection-item-card {
+background: rgba(255,255,255,0.04);
+border: 1px solid rgba(255,255,255,0.08);
+padding: 20px;
+border-radius: 14px;
+cursor: pointer;
+transition: 0.3s;
+display: flex;
+align-items: center;
+gap: 15px;
+}
+
+.selection-item-card:hover {
+background: #9b5cff;
+border-color: #9b5cff;
+transform: translateY(-3px);
+box-shadow: 0 5px 15px rgba(155,92,255,0.3);
+}
+
+.selection-item-card h4 { font-size: 18px; color: #fff; font-weight: 600; }
+.selection-item-card p { font-size: 13px; color: #ccc; margin-top: 2px; }
+
+.back-btn {
+padding: 10px 18px;
+background: rgba(255,255,255,0.12);
+border: 1px solid rgba(255,255,255,0.1);
+color: #fff;
+border-radius: 10px;
+cursor: pointer;
+margin-bottom: 25px;
+font-size: 14px;
+transition: 0.2s;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+}
+.back-btn:hover { background: #ff2d55; border-color: #ff2d55; }
 
 @media(max-width:768px){
 .song-stats{
@@ -549,11 +595,13 @@ padding:8px 0;
 
 <div class="container">
 
+<!-- แถบเมนูด้านซ้าย: เอา Favorites ออกเรียบร้อยครับ -->
 <div class="sidebar" id="sidebar">
 <div class="logo">🎵 StyleMusicPro</div>
 <div class="menu active" id="menuHome">🏠 หน้าแรก</div>
-<div class="menu" id="menuArticles">📰 บทความ</div> <div class="menu" id="menuFavorites">❤️ Favorites</div>
-<div class="menu" id="menuSongs">🎵 เพลง</div> <div class="menu" id="lyricsMenu">📝 เนื้อเพลง</div>
+<div class="menu" id="menuArticles">📰 บทความ</div>
+<div class="menu" id="menuSongs">🎵 เพลง</div>
+<div class="menu" id="lyricsMenu">📝 เนื้อเพลง</div>
 </div>
 
 <div class="main">
@@ -663,7 +711,7 @@ padding:8px 0;
 <div class="song-title">เป็นคนเดิมที่เธอไม่รัก</div>
 <div class="song-artist">Style Music</div>
 <div style="margin-top:5px;color:#ff2d55;">🎵 Romantic</div>
-<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%80%E0%B8%A5%E0%B8%A5%E0%B8%94%E0%B8%99%E0%B9%80%E0%B8%94%E0%B8%B4%E0%B8%A1%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%98%E0%B8%AD%E0%B9%84%E0%B8%A1%E0%B8%A3%E0%B8%B1%E0%B8%81.mp3" type="audio/mpeg"></audio>
+<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%80%E0%B8%A5%E0%B8%A5%E0%B8%94%E0%B8%99%E0%B9%80%E0%B8%94%E0%B8%B4%E0%B8%A1%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%98%E0%B8%AD%E0%B9%84%E0%B8%A1%E0%B8%A3%E0%B8%B1%E0%B8%A1.mp3" type="audio/mpeg"></audio>
 </div>
 </div>
 </td>
@@ -685,7 +733,7 @@ padding:8px 0;
 <div class="song-title">เกือบได้เป็นตลอดไป</div>
 <div class="song-artist">Style Music</div>
 <div style="margin-top:5px;color:#ff2d55;">🎵 Sad</div>
-<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%80%E0%B8%A1%E0%B9%86%E0%B8%AB%E0%B9%84%E0%B8%9D%E0%B9%89%E0%B9%80%E0%B8%A5%E0%B9%87%E0%B8%99%E0%B8%95%E0%B8%A5%E0%B8%AD%E0%B8%94%E0%B9%84%E0%B8%9B.mp3" type="audio/mpeg"></audio>
+<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%80%E0%B8%A1%E0%B9%86%E0%B8%AB%E0%B9%84%E0%B9%89%E0%B9%80%E0%B8%A5%E0%B9%87%E0%B8%99%E0%B8%95%E0%B8%A5%E0%B8%AD%E0%B8%94%E0%B9%84%E0%B8%A1.mp3" type="audio/mpeg"></audio>
 </div>
 </div>
 </td>
@@ -729,7 +777,7 @@ padding:8px 0;
 <div class="song-title">แค่เคยมีเธอ</div>
 <div class="song-artist">Style Music</div>
 <div style="margin-top:5px;color:#ff2d55;">🎵 Sad</div>
-<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%82%E0%B8%A5%E0%B8%A1%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B9%81%E0%B8%95%E0%B9%88%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B8%A2%E0%B8%AD%E0%B8%A1.mp3" type="audio/mpeg"></audio>
+<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%82%E0%B8%A1%E0%B8%A2%E0%B9%88%E0%B8%B5%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B8%A2%E0%B8%AD%E0%B8%A1.mp3" type="audio/mpeg"></audio>
 </div>
 </div>
 </td>
@@ -751,7 +799,7 @@ padding:8px 0;
 <div class="song-title">แค่ช่วงที่เธอเหงา</div>
 <div class="song-artist">Style Music</div>
 <div style="margin-top:5px;color:#ff2d55;">🎵 Sad</div>
-<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%81%E0%B8%84%E0%B9%88%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%87%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%80%E0%B8%9E%E0%B8%B2%E0%B9%80%E0%B8%AB%E0%B8%87%E0%B8%B2.mp3" type="audio/mpeg"></audio>
+<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%81%E0%B8%84%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%87%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%80%E0%B8%9E%E0%B8%B2%E0%B9%80%E0%B8%AB%E0%B8%87%E0%B8%B2.mp3" type="audio/mpeg"></audio>
 </div>
 </div>
 </td>
@@ -773,7 +821,7 @@ padding:8px 0;
 <div class="song-title">โลกที่ขาดเธอไป</div>
 <div class="song-artist">Style Music</div>
 <div style="margin-top:5px;color:#ff2d55;">🎵 Sad</div>
-<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%82%E0%B8%A5%E0%B8%81%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%82%E0%B8%B2%E0%B8%94%E0%B9%80%E0%B8%98%E0%B8%AD%E0%B9%84%E0%B2%A2.mp3" type="audio/mpeg"></audio>
+<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%82%E0%B8%A5%E0%B8%A1%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%82%E0%B8%B2%E0%B8%94%E0%B9%80%E0%B8%98%E0%B8%AD%E0%B9%84%E0%B2%A2.mp3" type="audio/mpeg"></audio>
 </div>
 </div>
 </td>
@@ -861,7 +909,7 @@ padding:8px 0;
 <div class="song-title">รู้ทุกอย่างแต่ยังยอม</div>
 <div class="song-artist">Style Music</div>
 <div style="margin-top:5px;color:#ff2d55;">🎵 Sad</div>
-<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B8%A3%E0%B8%B9%E0%B9%89%E0%B8%97%E0%B8%B8%E0%B8%81%E0%B8%AD%E0%B8%A2%E0%B8%88%E0%B9%88%E0%B8%B2%E0%B8%A5%E0%B9%81%E0%B8%95%E0%B9%88%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B8%A2%E0%B8%A1.mp3" type="audio/mpeg"></audio>
+<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B8%A3%E0%B8%B9%E0%B9%89%E0%B8%97%E0%B8%B8%E0%B8%A1%E0%B8%AD%E0%B8%A2%E0%B8%88%E0%B9%88%E0%B8%A5%E0%B9%81%E0%B8%95%E0%B9%88%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B8%A2%E0%B8%A1.mp3" type="audio/mpeg"></audio>
 </div>
 </div>
 </td>
@@ -883,7 +931,7 @@ padding:8px 0;
 <div class="song-title">เก็บที่ว่างไว้ให้เธอ</div>
 <div class="song-artist">Style Music</div>
 <div style="margin-top:5px;color:#ff2d55;">🎵 Sad</div>
-<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%80%E0%B8%A1%E0%B9%87%E0%B8%B2%E0%B8%B5%E0%B9%88%E0%B8%A7%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B9%84%E0%B8%A7%E0%B9%89%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B9%80%E0%B8%98%E0%B8%AD.mp3" type="audio/mpeg"></audio>
+<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%80%E0%B8%A1%E0%B9%87%E0%B8%A5%E0%B8%B5%E0%B9%88%E0%B8%A7%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B9%84%E0%B8%A7%E0%B9%89%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B8%90%E0%B8%B5%E0%B9%80%E0%B8%98%E0%B8%AD.mp3" type="audio/mpeg"></audio>
 </div>
 </div>
 </td>
@@ -927,7 +975,7 @@ padding:8px 0;
 <div class="song-title">เหลือไว้เผื่อใจ</div>
 <div class="song-artist">Style Music</div>
 <div style="margin-top:5px;color:#ff2d55;">🎵 Sad</div>
-<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%80%E0%B8%A1%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B9%84%E0%B8%A7%E0%B9%89%E0%B9%80%E0%B8%9E%E0%B8%B7%E0%B9%8D%E0%B9%83%E0%B8%A5.mp3" type="audio/mpeg"></audio>
+<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B8%A1%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B9%84%E0%B8%A7%E0%B9%89%E0%B9%80%E0%B8%9E%E0%B8%B7%E0%B9%8D%E0%B9%83%E0%B8%A5.mp3" type="audio/mpeg"></audio>
 </div>
 </div>
 </td>
@@ -949,7 +997,7 @@ padding:8px 0;
 <div class="song-title">ไม่ใช่เพราะใครเลย</div>
 <div class="song-artist">Style Music</div>
 <div style="margin-top:5px;color:#ff2d55;">🎵 Sad</div>
-<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%83%E0%B8%8A%E0%B9%88%E0%B8%9E%E0%B8%A3%E0%B8%B2%E0%B8%B0%E0%B8%A3%E0%B8%84%E0%B8%A3%E0%B9%80%E0%B8%A5%E0%B8%A2.mp3" type="audio/mpeg"></audio>
+<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B  3%E0%B8%9E%E0%B8%A3%E0%B8%B2%E0%B8%B0%E0%B8%A3%E0%B8%84%E0%B8%A3%E0%B9%80%E0%B8%A5%E0%B8%A2.mp3" type="audio/mpeg"></audio>
 </div>
 </div>
 </td>
@@ -971,7 +1019,7 @@ padding:8px 0;
 <div class="song-title">ถ้าโลกนี้ไม่มีใครฉันยังมีเธอ</div>
 <div class="song-artist">Style Music</div>
 <div style="margin-top:5px;color:#ff2d55;">🎵 Sad</div>
-<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B8%96%E0%B9%85%E0%B8%92%E0%B9%82%E0%B8%A5%E0%B8%81%E0%B8%99%E0%B8%B5%E0%B9%89%E0%B9%84%E0%B8%A1%E0%B8%A1%E0%B8%B5%E0%B9%83%E0%B8%84%E0%B8%A3%E0%B8%89%E0%B8%B1%E0%B8%99%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B8%A1%E0%B8%B5%E0%B9%80%E0%B8%98%E0%B8%AD.mp3" type="audio/mpeg"></audio>
+<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B...E0%B8%A3%E0%B8%B7%E0%B8%96%E0%B8%B2%E0%B8%A1%E0%B8%B1%E0%B8%81%E0%B8%B5%E0%B9%88%E0%B8%84%E0%B8%A3%E0%B8%B1%E0%B8%A5%E0%B8%87%E0%B8%81%E0%B9%87%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B8%A3%E0%B8%B1%E0%B8%81.mp3" type="audio/mpeg"></audio>
 </div>
 </div>
 </td>
@@ -1010,91 +1058,123 @@ padding:8px 0;
 </tbody>
 </table>
 
-<div id="articlesContentSection" class="articles-container" style="display: none;">
+<!-- ============================================ -->
+<!-- หน้าจอหลักหมวดบทความ (ปรับปรุงใหม่ตามโจทย์: กดเลือกหัวข้อ) -->
+<!-- ============================================ -->
+<div id="articlesMainSection" class="articles-container" style="display: none;">
     <h2 style="color: #9b5cff; margin-bottom: 20px; font-size: 24px;">📰 บทความ & รีวิวเพลงเศร้า</h2>
-    <div class="article-card">
-        <h3>5 เพลงเศร้าที่คนอกหักปี 2026 ต้องฟังให้ร้องไห้โฮ</h3>
-        <p>เปิดลิสต์เพลงฮิตดิ่งลึกที่รวบรวมไว้ในเว็บ StyleMusicPro สำหรับคนที่ต้องการบำบัดความรู้สึกด้วยเสียงเพลงยามค่ำคืน...</p>
+    <p style="color: #bbb; margin-bottom: 20px; font-size: 15px;">เลือกหัวข้อบทความที่ต้องการอ่านด้านล่างนี้:</p>
+    
+    <div class="selection-list">
+        <!-- บทความที่ 1 -->
+        <div class="selection-item-card" onclick="showSpecificArticle('articleContent1')">
+            📰
+            <div>
+                <h4>5 เพลงเศร้าที่คนอกหักปี 2026 ต้องฟัง</h4>
+                <p>หมวดหมู่: รีวิวเพลงฮิต</p>
+            </div>
+        </div>
+        <!-- บทความที่ 2 -->
+        <div class="selection-item-card" onclick="showSpecificArticle('articleContent2')">
+            📰
+            <div>
+                <h4>ทำไมเวลาอกหัก เราถึงชอบฟังเพลงตอกย้ำตัวเอง?</h4>
+                <p>หมวดหมู่: จิตวิทยาเสียงเพลง</p>
+            </div>
+        </div>
     </div>
-    <div class="article-card">
-        <h3>ทำไมเวลาอกหัก เราถึงชอบฟังเพลงตอกย้ำตัวเอง?</h3>
-        <p>บทความเชิงจิตวิทยาที่เล่าถึงกลไกของสมองมนุษย์ เมื่อเราฟังเพลง Sad Pop จังหวะหน่วง ๆ ความเศร้าจะช่วยเยียวยาจิตใจได้อย่างไร...</p>
+</div>
+
+<!-- กล่องเนื้อหาบทความตัวเต็ม 1 (🖤 พื้นหลังสีดำสนิท) -->
+<div id="articleContent1" class="dark-read-mode" style="display: none;">
+    <button class="back-btn" onclick="backToArticlesList()">⬅ ย้อนกลับไปหน้ารวมบทความ</button>
+    <h2 style="color: #9b5cff; margin-bottom: 25px; font-size: 26px;">5 เพลงเศร้าที่คนอกหักปี 2026 ต้องฟังให้ร้องไห้โฮ</h2>
+    <div class="article-detail-text">
+        เปิดลิสต์เพลงฮิตดิ่งลึกที่รวบรวมไว้ในเว็บ StyleMusicPro สำหรับคนที่ต้องการบำบัดความรู้สึกด้วยเสียงเพลงยามค่ำคืน...
+        
+        แนะนำให้อัปเดตเพลย์ลิสต์เพลง Sad Pop ล่าสุดของคุณแล้วปล่อยให้อารมณ์ลื่นไหลไปตามเสียงเพลง เพราะปีนี้บทเพลงเศร้าเน้นบิตที่หน่วงอารมณ์และกินใจมากกว่าเดิมหลายเท่าตัว!
     </div>
 </div>
 
-<div id="lyricsContentSection" class="lyrics-container" style="display: none;">
-<h2 style="color: #9b5cff; margin-bottom: 20px; font-size: 24px;">🎵 เนื้อเพลง: ได้แค่มองเธอ</h2>
-
-<div class="lyrics-block">
-<div class="lyrics-section-title">🎤 Hook (เปิดเพลงทันที)</div>
-<div class="lyrics-text">ทำได้แค่มองเธอ…จากตรงนี้เงียบๆ
-ทั้งที่ใจยังรู้สึก…แต่ไม่มีสิทธิ์อะไร
-เพราะคนที่ยืนข้างเธอ…ไม่ใช่ฉันอีกแล้ว
-เลยต้องเก็บทุกความรู้สึก…ไว้คนเดียว</div>
+<!-- กล่องเนื้อหาบทความตัวเต็ม 2 (🖤 พื้นหลังสีดำสนิท) -->
+<div id="articleContent2" class="dark-read-mode" style="display: none;">
+    <button class="back-btn" onclick="backToArticlesList()">⬅ ย้อนกลับไปหน้ารวมบทความ</button>
+    <h2 style="color: #9b5cff; margin-bottom: 25px; font-size: 26px;">ทำไมเวลาอกหัก เราถึงชอบฟังเพลงตอกย้ำตัวเอง?</h2>
+    <div class="article-detail-text">
+        บทความเชิงจิตวิทยาที่เล่าถึงกลไกของสมองมนุษย์ เมื่อเราฟังเพลง Sad Pop จังหวะหน่วง ๆ ความเศร้าจะช่วยเยียวยาจิตใจได้อย่างไร...
+        
+        การศึกษาพบว่าการฟังเพลงเศร้าไม่ได้ทำให้เราดิ่งจมลงไปมากกว่าเดิมในแง่ลบ แต่กลับทำหน้าที่เสมือน 'เพื่อนร่วมทุกข์' ที่คอยเข้าใจความรู้สึกและปลอบประโลมจิตใจของเราเงียบ ๆ ในเวลาที่ไม่มีใครอยู่เคียงข้าง
+    </div>
 </div>
 
-<div class="lyrics-block">
-<div class="lyrics-section-title">Verse 1</div>
-<div class="lyrics-text">ไม่คิดว่าวันหนึ่งเราจะไกลกันขนาดนี้
-จากคนที่เคยสำคัญ…กลายเป็นเพียงคนรู้จัก
-ฉันยังจำทุกเรื่องราวของเราได้ดี
-แต่วันนี้เธอคงลืมมันไปแล้ว</div>
+<!-- ============================================ -->
+<!-- หน้าจอหลักหมวดเนื้อเพลง (เลือกรายชื่อเพลง ➔ เปิดกล่องเนื้อร้อง) -->
+<!-- ============================================ -->
+<div id="lyricsMainSection" class="lyrics-container" style="display: none;">
+    <h2 style="color: #9b5cff; margin-bottom: 20px; font-size: 24px;">📝 คลังเนื้อเพลงทั้งหมด</h2>
+    <p style="color: #bbb; margin-bottom: 20px; font-size: 15px;">เลือกรายชื่อเพลงที่ต้องการอ่านเนื้อร้องด้านล่างนี้:</p>
+    
+    <div class="selection-list">
+        <div class="selection-item-card" onclick="showSpecificLyric('songLyric1')">
+            🎵 
+            <div>
+                <h4>ได้แค่มองเธอ</h4>
+                <p>ศิลปิน: Style Music</p>
+            </div>
+        </div>
+        <div class="selection-item-card" onclick="showSpecificLyric('songLyric2')">
+            🎵 
+            <div>
+                <h4>Invisible Distance</h4>
+                <p>ศิลปิน: Style Music</p>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="lyrics-block">
-<div class="lyrics-section-title">Pre-Chorus</div>
-<div class="lyrics-text">ฉันพยายามห้ามใจ
-ไม่ให้กลับไปคิดถึง
-แต่ทุกครั้งที่เห็นเธอ
-หัวใจก็ยังสั่นเหมือนเดิม</div>
+<!-- กล่องย่อยเนื้อเพลงตัวเต็ม 1 (🖤 พื้นหลังสีดำสนิท) -->
+<div id="songLyric1" class="dark-read-mode" style="display: none;">
+    <button class="back-btn" onclick="backToLyricsList()">⬅ ย้อนกลับไปรายชื่อเพลง</button>
+    <h2 style="color: #9b5cff; margin-bottom: 20px; font-size: 24px;">📝 เนื้อเพลง: ได้แค่มองเธอ</h2>
+    
+    <div class="lyrics-block">
+        <div class="lyrics-section-title">🎤 Hook (เปิดเพลงทันที)</div>
+        <div class="lyrics-text">ทำได้แค่มองเธอ…จากตรงนี้เงียบๆ
+        ทั้งที่ใจยังรู้สึก…แต่ไม่มีสิทธิ์อะไร
+        เพราะคนที่ยืนข้างเธอ…ไม่ใช่ฉันอีกแล้ว
+        เลยต้องเก็บทุกความรู้สึก…ไว้คนเดียว</div>
+    </div>
+    <div class="lyrics-block">
+        <div class="lyrics-section-title">Verse 1</div>
+        <div class="lyrics-text">ไม่คิดว่าวันหนึ่งเราจะไกลกันขนาดนี้
+        จากคนที่เคยสำคัญ…กลายเป็นเพียงคนรู้จัก
+        ฉันยังจำทุกเรื่องราวของเราได้ดี
+        แต่วันนี้เธอคงลืมมันไปแล้ว</div>
+    </div>
+    <div class="lyrics-block">
+        <div class="lyrics-section-title">Chorus</div>
+        <div class="lyrics-text">ทำได้แค่มองเธอ…ในวันที่เธอมีใคร
+        เก็บคำว่ารักเอาไว้…แม้มันยังชัดในใจ
+        ต่อให้คิดถึงมากแค่ไหน
+        ก็ไม่มีสิทธิ์เดินกลับไป
+        เพราะวันนี้เธอ…ไม่ใช่ของฉันอีกแล้ว</div>
+    </div>
+    <div class="lyrics-block">
+        <div class="lyrics-section-title">Bridge</div>
+        <div class="lyrics-text">บางครั้งความรัก
+        ก็ไม่ได้แปลว่าจะต้องได้ครอบครอง
+        แค่เคยมีเธอในชีวิต
+        ก็มากพอแล้วสำหรับฉัน</div>
+    </div>
 </div>
 
-<div class="lyrics-block">
-<div class="lyrics-section-title">Chorus</div>
-<div class="lyrics-text">ทำได้แค่มองเธอ…ในวันที่เธอมีใคร
-เก็บคำว่ารักเอาไว้…แม้มันยังชัดในใจ
-ต่อให้คิดถึงมากแค่ไหน
-ก็ไม่มีสิทธิ์เดินกลับไป
-เพราะวันนี้เธอ…ไม่ใช่ของฉันอีกแล้ว</div>
-</div>
-
-<div class="lyrics-block">
-<div class="lyrics-section-title">Verse 2</div>
-<div class="lyrics-text">บางคืนยังเปิดรูปเก่าๆ ดูคนเดียว
-แล้วถามตัวเองว่าทำไมยังลืมไม่ได้
-ทั้งที่เวลาพาเราไกลกันตั้งนาน
-แต่หัวใจกลับยังอยู่ที่เดิม</div>
-</div>
-
-<div class="lyrics-block">
-<div class="lyrics-section-title">Pre-Chorus</div>
-<div class="lyrics-text">ยิ่งฝืนก็ยิ่งเจ็บ
-ยิ่งเก็บก็ยิ่งคิดถึง
-แต่สุดท้ายก็ต้องยอมรับ
-ว่าเราคงกลับไปไม่ได้แล้ว</div>
-</div>
-
-<div class="lyrics-block">
-<div class="lyrics-section-title">Chorus (ใหญ่ขึ้น / emotional peak)</div>
-<div class="lyrics-text">ทำได้แค่มองเธอ…กับรอยยิ้มที่ไม่ใช่ของฉัน
-แม้ในใจยังรัก…แต่คงพูดมันไม่ได้อีกแล้ว
-ฉันได้แต่หวังให้เธอมีความสุข
-แม้คนที่อยู่ตรงนั้น…จะไม่ใช่ฉันก็ตาม</div>
-</div>
-
-<div class="lyrics-block">
-<div class="lyrics-section-title">Bridge</div>
-<div class="lyrics-text">บางครั้งความรัก
-ก็ไม่ได้แปลว่าจะต้องได้ครอบครอง
-แค่เคยมีเธอในชีวิต
-ก็มากพอแล้วสำหรับฉัน</div>
-</div>
-
-<div class="lyrics-block">
-<div class="lyrics-section-title">Outro</div>
-<div class="lyrics-text">จากนี้ฉันคง…
-ทำได้แค่คิดถึงเธอเงียบๆ…</div>
-</div>
+<!-- กล่องย่อยเนื้อเพลงตัวเต็ม 2 (🖤 พื้นหลังสีดำสนิท) -->
+<div id="songLyric2" class="dark-read-mode" style="display: none;">
+    <button class="back-btn" onclick="backToLyricsList()">⬅ ย้อนกลับไปรายชื่อเพลง</button>
+    <h2 style="color: #9b5cff; margin-bottom: 20px; font-size: 24px;">📝 เนื้อเพลง: Invisible Distance</h2>
+    <div class="lyrics-block">
+        <div class="lyrics-text">[เนื้อหาเพลงย่อยของเพลง Invisible Distance สามารถนำมาวางพิมพ์เพิ่มเติมตรงนี้ได้เลยครับ...]</div>
+    </div>
 </div>
 
 </div>
@@ -1201,19 +1281,21 @@ likeEl.innerText = likes;
 }
 
 // ============================================
-// ระบบนับเพลงจริงและสลับหน้าเมนูที่อัปเกรดใหม่
+// ระบบจัดการหน้าจอและนำทางข้อมูล
 // ============================================
 const allMenus = document.querySelectorAll('.sidebar .menu');
 const allSongRows = document.querySelectorAll('.song-row');
 const mainTitle = document.getElementById('playlistTitle');
 const mainDesc = document.getElementById('playlistDesc');
 const mainSongTable = document.getElementById('mainSongTable');
-const lyricsContentSection = document.getElementById('lyricsContentSection');
-const articlesContentSection = document.getElementById('articlesContentSection');
 const genreTabs = document.getElementById('genreTabs');
 const songCountDisplay = document.getElementById('songCountDisplay');
 
-let currentActiveGenre = "all"; // ตัวแปรเก็บสถานะฟิลเตอร์แท็บย่อยของหมวดเพลง
+// ตัวแปรฝั่งเนื้อเพลงและบทความที่เพิ่มเข้ามาระบบสลับหน้ารายตัว
+const lyricsMainSection = document.getElementById('lyricsMainSection');
+const allLyricDetails = document.querySelectorAll('[id^="songLyric"]');
+const articlesMainSection = document.getElementById('articlesMainSection');
+const allArticleDetails = document.querySelectorAll('[id^="articleContent"]');
 
 function updateLiveSongCount() {
     let currentVisibleSongs = 0;
@@ -1225,11 +1307,7 @@ function updateLiveSongCount() {
     songCountDisplay.innerText = currentVisibleSongs; 
 }
 
-// ฟังก์ชันกรองเพลงย่อยเมื่อกดในเมนู "เพลง" (Pop, Sad Pop, เพลงเหงา)
 function filterSubGenre(subTag) {
-    currentActiveGenre = subTag;
-    
-    // สลับคลาส active ของปุ่มแท็บย่อย
     const tabBtns = document.querySelectorAll('.tab-btn');
     tabBtns.forEach(btn => btn.classList.remove('active'));
     event.target.classList.add('active');
@@ -1245,6 +1323,28 @@ function filterSubGenre(subTag) {
     updateLiveSongCount();
 }
 
+// ระบบคุมหน้าเนื้อเพลง
+function showSpecificLyric(lyricId) {
+    lyricsMainSection.style.display = "none";
+    allLyricDetails.forEach(sec => sec.style.display = "none");
+    document.getElementById(lyricId).style.display = "block";
+}
+function backToLyricsList() {
+    allLyricDetails.forEach(sec => sec.style.display = "none");
+    lyricsMainSection.style.display = "block";
+}
+
+// ระบบคุมหน้าบทความ
+function showSpecificArticle(articleId) {
+    articlesMainSection.style.display = "none";
+    allArticleDetails.forEach(sec => sec.style.display = "none");
+    document.getElementById(articleId).style.display = "block";
+}
+function backToArticlesList() {
+    allArticleDetails.forEach(sec => sec.style.display = "none");
+    articlesMainSection.style.display = "block";
+}
+
 function selectMenu(menuId, titleText, descText, filterMode = "all") {
     allMenus.forEach(menu => menu.classList.remove('active'));
     document.getElementById(menuId).classList.add('active');
@@ -1254,41 +1354,31 @@ function selectMenu(menuId, titleText, descText, filterMode = "all") {
     
     document.getElementById('sidebar').classList.remove('active');
     
-    // รีเซ็ตซ่อนทุกหน้าจอกลางก่อน เพื่อสลับหน้าตามเงื่อนไข
+    // เคลียร์ซ่อนทุกแผงหน้าจอทั้งหมดก่อน
     mainSongTable.style.display = "none";
-    lyricsContentSection.style.display = "none";
-    articlesContentSection.style.display = "none";
     genreTabs.style.display = "none";
+    lyricsMainSection.style.display = "none";
+    articlesMainSection.style.display = "none";
+    allLyricDetails.forEach(sec => sec.style.display = "none");
+    allArticleDetails.forEach(sec => sec.style.display = "none");
 
     if (filterMode === "lyrics") {
-        lyricsContentSection.style.display = "block";
+        lyricsMainSection.style.display = "block";
         songCountDisplay.innerText = "0";
     } else if (filterMode === "articles") {
-        articlesContentSection.style.display = "block";
+        articlesMainSection.style.display = "block";
         songCountDisplay.innerText = "0";
     } else {
         mainSongTable.style.display = "table";
         
-        // ถ้ากดเมนู "เพลง" ให้แสดงแท็บย่อย Pop / Sad Pop ขึ้นมาเสริม
         if (filterMode === "songs") {
             genreTabs.style.display = "flex";
-            // สลับกลับมาแสดงทุกเพลงเป็นค่าเริ่มต้นในหมวดเพลงย่อย
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
             document.querySelectorAll('.tab-btn')[0].classList.add('active');
         }
 
         allSongRows.forEach(row => {
-            const tags = row.getAttribute('data-tags') || "";
-            if (filterMode === "all" || filterMode === "songs") {
-                row.style.display = ""; // หน้าแรก และเมนูเพลงโชว์หมด 18 เพลง
-            } else {
-                // คัดกรองสำหรับเมนูอื่นๆ เช่น favorites
-                if (tags.includes(filterMode)) {
-                    row.style.display = "";
-                } else {
-                    row.style.display = "none";
-                }
-            }
+            row.style.display = ""; // สั่งแสดงผลทั้งหมด 18 เพลง
         });
         updateLiveSongCount();
     }
@@ -1299,9 +1389,6 @@ document.getElementById('menuHome').addEventListener('click', function() {
 });
 document.getElementById('menuArticles').addEventListener('click', function() {
     selectMenu('menuArticles', 'Articles & Reviews 📰', 'อ่านบทความเชิงจิตวิทยาและรีวิวเพลงเศร้าโดนใจ', 'articles');
-});
-document.getElementById('menuFavorites').addEventListener('click', function() {
-    selectMenu('menuFavorites', 'Your Favorites ❤️', 'คลังเพลงโปรดที่คุณรักและกดไลก์ไว้บ่อยที่สุด', 'favorites');
 });
 document.getElementById('menuSongs').addEventListener('click', function() {
     selectMenu('menuSongs', 'Music Library 🎵', 'คลังเพลงทั้งหมด เลือกฟังตามสไตล์อารมณ์ของคุณ', 'songs');
@@ -1325,6 +1412,7 @@ players[currentIndex].play();
 });
 </script>
 
+<!-- Firebase Module -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
