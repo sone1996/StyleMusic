@@ -1,32 +1,23 @@
-
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta name="pushsdk" content="fda6941e9c3d841eda4672176755a786">
+<meta name="pushsdk" content="fda6941e9c3d841eda4672176755a786">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>StyleMusicPro - ฟังเพลงเศร้า เพลงอกหัก ออนไลน์ฟรี</title>
 
 <meta name="description" content="เว็บฟังเพลงเศร้า เพลงอกหัก เพลงใหม่ 2026 ฟังออนไลน์ฟรี ทั้งเพลงไทย เพลงลาว Sad Pop และ Lo-fi">
-
 <meta name="keywords" content="เพลงเศร้า, เพลงอกหัก, ฟังเพลงออนไลน์, เพลงใหม่, เพลงลาว, Sad Pop, เพลงเหงา, เพลงเศร้า 2026">
-
 <meta name="author" content="StyleMusicPro">
-
 <meta name="robots" content="index, follow">
 
 <meta property="og:title" content="StyleMusicPro - เว็บฟังเพลงเศร้าออนไลน์">
-
 <meta property="og:description" content="รวมเพลงเศร้า เพลงอกหัก เพลงใหม่ ฟังฟรีออนไลน์">
-
 <meta property="og:image" content="https://stylemusicpro.com/songs/stylemusic.png">
-
 <meta property="og:url" content="https://stylemusicpro.com">
-
 <meta property="og:type" content="website">
-
 <meta name="twitter:card" content="summary_large_image">
-<!-- Google Analytics -->
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PZHXG2Y1PY"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -35,40 +26,30 @@ gtag('js', new Date());
 gtag('config', 'G-PZHXG2Y1PY');
 </script>
 
-<title>StyleMusicPro</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
 .menu-toggle{
 display:none;
 position:fixed;
 top:15px;
 left:15px;
 z-index:9999;
-
 width:42px;
 height:42px;
-
 border:none;
 border-radius:12px;
-
 background:#9b5cff;
 color:white;
-
 font-size:28px;
 cursor:pointer;
-
 box-shadow:0 0 20px rgba(155,92,255,.5);
 }
 
 @media(max-width:768px){
-
 .menu-toggle{
 display:block;
 }
-
 .sidebar{
 position:fixed;
 left:-260px;
@@ -77,20 +58,16 @@ height:100%;
 z-index:999;
 transition:.3s;
 }
-
 .sidebar.active{
 left:0;
 }
-
 .main{
 width:100%;
 padding-top:80px;
 }
-
 .bottom-player{
 left:0;
 }
-
 }
 
 *{
@@ -138,7 +115,7 @@ transition:.3s;
 background:rgba(255,255,255,.03);
 }
 
-.menu:hover{
+.menu:hover, .menu.active {
 background:#9b5cff;
 transform:translateX(5px);
 }
@@ -258,6 +235,7 @@ background:#7c4dff;
 color:white;
 font-size:18px;
 cursor:pointer;
+text-decoration:none;
 }
 
 .share-btn{
@@ -275,25 +253,16 @@ gap:15px;
 overflow-x:auto;
 padding-bottom:10px;
 scroll-behavior:smooth;
+width:100%;
 }
 
 .hero-social iframe{
 width:33%;
+min-width: 280px;
 height:220px;
 border-radius:16px;
 border:none;
 flex-shrink:0;
-}
-.social-card{
-width:120px;
-height:100px;
-background:rgba(0,0,0,.4);
-border-radius:20px;
-display:flex;
-justify-content:center;
-align-items:center;
-backdrop-filter:blur(10px);
-font-weight:600;
 }
 
 .song-table{
@@ -316,17 +285,20 @@ background:rgba(255,255,255,.05);
 transform:scale(1.01);
 backdrop-filter:blur(8px);
 }
+
 .song-info{
 display:flex;
 align-items:center;
 gap:15px;
 }
+
 .song-stats{
 display:flex;
 align-items:center;
 gap:10px;
 flex-wrap:wrap;
 }
+
 .song-info img{
 width:65px;
 height:65px;
@@ -343,19 +315,6 @@ font-size:14px;
 color:#bbb;
 }
 
-.share-btn{
-display:inline-flex;
-align-items:center;
-gap:5px;
-padding:6px 10px;
-border:none;
-border-radius:12px;
-background:rgba(255,255,255,.08);
-color:#00d2ff;
-cursor:pointer;
-font-size:14px;
-white-space:nowrap;
-}
 .bottom-player{
 position:fixed;
 bottom:0;
@@ -369,6 +328,7 @@ justify-content:space-between;
 align-items:center;
 padding:0 20px;
 box-shadow:0 -5px 30px rgba(155,92,255,.15);  
+z-index: 998;
 }
 
 .player-controls{
@@ -386,6 +346,7 @@ color:white;
 font-size:20px;
 cursor:pointer;
 }
+
 .like-btn{
 cursor:pointer;
 color:#ff4d6d;
@@ -396,23 +357,85 @@ transition:.2s;
 .like-btn:hover{
 transform:scale(1.1);
 }
-@media(max-width:768px){
 
+/* ส่วนแสดงสไตล์เพิ่มเติม */
+.lyrics-container, .articles-container {
+background: rgba(255, 255, 255, 0.03);
+border: 1px solid rgba(255, 255, 255, 0.05);
+border-radius: 20px;
+padding: 30px;
+margin-top: 20px;
+backdrop-filter: blur(10px);
+}
+
+.lyrics-block {
+margin-bottom: 25px;
+line-height: 1.8;
+}
+
+.lyrics-section-title {
+color: #9b5cff;
+font-size: 14px;
+font-weight: 600;
+text-transform: uppercase;
+margin-bottom: 5px;
+letter-spacing: 1px;
+}
+
+.lyrics-text {
+font-size: 18px;
+color: #e0e0e0;
+white-space: pre-line;
+}
+
+/* ปุ่มแท็บย่อยในหมวดหมู่เพลง */
+.sub-tabs {
+display: flex;
+gap: 12px;
+margin-bottom: 20px;
+flex-wrap: wrap;
+}
+
+.tab-btn {
+padding: 8px 18px;
+border-radius: 20px;
+background: rgba(255,255,255,0.06);
+border: 1px solid rgba(255,255,255,0.1);
+color: #fff;
+cursor: pointer;
+font-size: 14px;
+transition: 0.2s;
+}
+
+.tab-btn:hover, .tab-btn.active {
+background: #9b5cff;
+border-color: #9b5cff;
+}
+
+/* ดีไซน์การ์ดบทความ */
+.article-card {
+background: rgba(255,255,255,0.02);
+border-radius: 16px;
+padding: 20px;
+margin-bottom: 15px;
+border-left: 4px solid #9b5cff;
+}
+.article-card h3 { margin-bottom: 8px; color: #fff; }
+.article-card p { color: #bbb; font-size: 15px; line-height: 1.6; }
+
+@media(max-width:768px){
 .song-stats{
 display:flex;
 align-items:center;
 gap:10px;
 font-size:14px;
 }
-
 .song-table td:nth-child(2){
 width:70px;
 }
-
 .song-table td:nth-child(3){
 width:130px;
 }
-
 .share-btn{
 display:inline-flex;
 align-items:center;
@@ -427,44 +450,33 @@ cursor:pointer;
 font-size:15px;
 white-space:nowrap;
 }
-
-}
-  @media(max-width:768px){
-
 body{
 overflow-x:hidden;
 }
-
 .container{
 flex-direction:column;
 }
-
 .main{
 padding:15px;
 padding-top:90px;
 padding-bottom:140px;
 }
-
 .hero-banner{
 padding:20px;
 border-radius:20px;
 }
-
 .hero-left{
 flex-direction:column;
 align-items:flex-start;
 gap:15px;
 }
-
 .hero-logo{
 width:100px;
 height:100px;
 }
-
 .hero-info h1{
 font-size:28px;
 }
-
 .song-table,
 .song-table tbody,
 .song-table tr,
@@ -472,52 +484,45 @@ font-size:28px;
 display:block;
 width:100%;
 }
-
 .song-row{
 padding:15px 0;
+display:block;
 }
-
 .song-info{
 flex-direction:column;
 align-items:flex-start;
 gap:12px;
+width:100%;
 }
-
 .song-info img{
 width:90px;
 height:90px;
 }
-
 audio{
-width:100%;
-height:55px;
-border-radius:30px;
+width:100% !important;
+max-width:100% !important;
+height:55px !important;
 }
 .song-stats{
 margin-top:10px;
+display:flex;
+gap:15px;
 }
-
 .bottom-player{
 height:70px;
 padding:10px;
 left:0;
 }
-
 .player-controls button{
 width:45px;
 height:45px;
 font-size:18px;
 }
-
 .sidebar.active{
 left:0;
 width:240px;
 box-shadow:0 0 30px rgba(0,0,0,.7);
 }
-
-}
-@media(max-width:768px){
-
 .hero-social{
 display:flex;
 overflow-x:auto;
@@ -525,68 +530,33 @@ gap:12px;
 padding-bottom:10px;
 scroll-behavior:smooth;
 }
-
 .hero-social iframe{
 min-width:300px;
 height:170px;
 flex-shrink:0;
 border-radius:16px;
 }
-
-}
-  @media(max-width:768px){
-
-.song-row{
-display:block;
-padding:20px 0;
-}
-
 .song-table td{
-display:block;
-width:100%;
 border:none;
 padding:8px 0;
 }
-
-.song-info{
-display:flex;
-flex-direction:column;
-align-items:flex-start;
-gap:12px;
-width:100%;
-}
-
-audio{
-width:250px !important;
-max-width:250px !important;
-height:60px !important;
-}
-.song-stats{
-display:flex;
-gap:15px;
-margin-top:10px;
-}
-
 }
 </style>
 </head>
 <body>
-<button class="menu-toggle" onclick="toggleMenu()">
-☰
-</button>
+
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
 <div class="container">
 
-<div class="sidebar">
+<div class="sidebar" id="sidebar">
 <div class="logo">🎵 StyleMusicPro</div>
-<div class="menu">🏠 หน้าแรก</div>
-<div class="menu">🔥 Trending</div>
-<div class="menu">❤️ Favorites</div>
-<div class="menu">🎧 Sad Pop</div>
-<div class="menu">🌙 เพลงเหงา</div>
+<div class="menu active" id="menuHome">🏠 หน้าแรก</div>
+<div class="menu" id="menuArticles">📰 บทความ</div> <div class="menu" id="menuFavorites">❤️ Favorites</div>
+<div class="menu" id="menuSongs">🎵 เพลง</div> <div class="menu" id="lyricsMenu">📝 เนื้อเพลง</div>
 </div>
 
 <div class="main">
-
 <div class="topbar">
 <div class="search-box" style="flex:1;">
 <input type="text" id="search" placeholder="ค้นหาเพลง...">
@@ -594,23 +564,12 @@ margin-top:10px;
 </div>
 
 <div class="hero-banner">
-
 <div class="hero-overlay">
-
 <div class="hero-left">
-
 <img src="songs/stylemusic.png" class="hero-logo">
-
 <div class="hero-info">
-
-<h1>
-StyleMusicPro 💜
-</h1>
-
-<p class="hero-desc">
-เว็บรวมเพลงเศร้า เพลงอกหัก ฟังออนไลน์
-</p>
-
+<h1 id="playlistTitle">StyleMusicPro 💜</h1>
+<p class="hero-desc" id="playlistDesc">เว็บรวมเพลงเศร้า เพลงอกหัก ฟังออนไลน์</p>
 <div class="hero-tags">
 <span>Sad Pop</span>
 <span>Lo-fi</span>
@@ -618,56 +577,33 @@ StyleMusicPro 💜
 <span>Lao</span>
 <span>Chill</span>
 </div>
-
 <div class="hero-stats">
-<div><b>1M</b><span>เพลง</span></div>
+<div><b id="songCountDisplay">0</b><span>เพลง</span></div>
 <div><b>12.5M</b><span>ผู้ติดตาม</span></div>
 <div><b>8</b><span>เพลย์ลิสต์</span></div>
 </div>
-
 <div class="hero-buttons">
-<a href="https://www.youtube.com/channel/UCzWN7WZwTU_QCUustb7QP9w"
-target="_blank"
-class="follow-btn">
-+ ติดตาม
-</a>
-
-<button class="share-btn">
-แชร์
-</button>
+<a href="https://www.youtube.com/channel/UCzWN7WZwTU_QCUustb7QP9w" target="_blank" class="follow-btn">+ ติดตาม</a>
+<button class="share-btn" onclick="shareSong('StyleMusicPro Website')">แชร์</button>
 </div>
-
 </div>
 </div>
 
 <div class="hero-social">
-
-<iframe width="100%" height="220"
-src="https://www.youtube.com/embed/948N259yu-A"
-frameborder="0"
-allowfullscreen>
-</iframe>
-
-<iframe width="100%" height="220"
-src="https://www.youtube.com/embed/9heGivXfYgw"
-frameborder="0"
-allowfullscreen>
-</iframe>
-
-<iframe width="100%" height="220"
-src="https://www.youtube.com/embed/jCO7IGr0SBY"
-frameborder="0"
-allowfullscreen>
-</iframe>
-
-<iframe width="100%" height="220"
-src="https://www.youtube.com/embed/gHJ9FdzcyEU"
-frameborder="0"
-allowfullscreen>
-</iframe>
-
+<iframe src="https://www.youtube.com/embed/948N259yu-A" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/9heGivXfYgw" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/jCO7IGr0SBY" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/gHJ9FdzcyEU" frameborder="0" allowfullscreen></iframe>
 </div>
-<table class="song-table">
+
+<div class="sub-tabs" id="genreTabs" style="display: none;">
+    <button class="tab-btn active" onclick="filterSubGenre('all')">ทั้งหมด</button>
+    <button class="tab-btn" onclick="filterSubGenre('sadpop')">Sad Pop</button>
+    <button class="tab-btn" onclick="filterSubGenre('pop')">Pop บิตสนุก</button>
+    <button class="tab-btn" onclick="filterSubGenre('lonely')">เพลงเหงา</button>
+</div>
+
+<table class="song-table" id="mainSongTable">
 <thead>
 <tr>
 <th style="width:75%;">เพลง</th>
@@ -675,19 +611,16 @@ allowfullscreen>
 <th style="width:15%;">สถิติ</th>
 </tr>
 </thead>
-
 <tbody id="songList">
 
-<tr class="song-row">
+<tr class="song-row" data-tags="sadpop">
 <td>
 <div class="song-info">
 <img src="songs/stylemusic.png">
 <div>
 <div class="song-title">Invisible Distance</div>
 <div class="song-artist">Style Music</div>
-<audio controls controlsList="nodownload noplaybackrate">
-<source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/Invisible%20distance.mp3">
-</audio>
+<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/Invisible%20distance.mp3" type="audio/mpeg"></audio>
 </div>
 </div>
 </td>
@@ -695,24 +628,20 @@ allowfullscreen>
 <td>
 <div class="song-stats">
 <span id="views1">👁 0</span>
-<span class="like-btn" onclick="likeSong(1)">
-❤️ <span id="likes1">0</span>
-</span>
+<span class="like-btn" onclick="likeSong(1)">❤️ <span id="likes1">0</span></span>
 <span class="share-btn" onclick="shareSong('Invisible Distance')">🔗 Share</span>
 </div>
 </td>
 </tr>
 
-<tr class="song-row">
+<tr class="song-row" data-tags="sadpop">
 <td>
 <div class="song-info">
 <img src="songs/stylemusic.png">
 <div>
 <div class="song-title">Before She Disappears</div>
 <div class="song-artist">Style Music</div>
-<audio controls controlsList="nodownload noplaybackrate">
-<source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/Before%20She%20Disappears.mp3">
-</audio>
+<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/Before%20She%20Disappears.mp3" type="audio/mpeg"></audio>
 </div>
 </div>
 </td>
@@ -720,600 +649,459 @@ allowfullscreen>
 <td>
 <div class="song-stats">
 <span id="views2">👁 0</span>
-<span id="likes2">❤️ 0</span>
+<span class="like-btn" onclick="likeSong(2)">❤️ <span id="likes2">0</span></span>
 <span class="share-btn" onclick="shareSong('Before She Disappears')">🔗 Share</span>
 </div>
 </td>
 </tr>
 
-  
-<tr class="song-row">
+<tr class="song-row" data-tags="pop">
 <td>
 <div class="song-info">
 <img src="songs/stylemusic.png">
 <div>
-<div class="song-title">
-เป็นคนเดิมที่เธอไม่รัก
-</div>
-<div class="song-artist">
-Style Music
-</div>
-
-<div style="margin-top:5px;color:#ff2d55;">
-🎵 Romantic
-</div>
-<audio controls controlsList="nodownload noplaybackrate">
-<source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B8%84%E0%B8%99%E0%B9%80%E0%B8%94%E0%B8%B4%E0%B8%A1%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%98%E0%B8%AD%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%A3%E0%B8%B1%E0%B8%81.mp3"
-type="audio/mpeg">
-</audio>
+<div class="song-title">เป็นคนเดิมที่เธอไม่รัก</div>
+<div class="song-artist">Style Music</div>
+<div style="margin-top:5px;color:#ff2d55;">🎵 Romantic</div>
+<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%80%E0%B8%A5%E0%B8%A5%E0%B8%94%E0%B8%99%E0%B9%80%E0%B8%94%E0%B8%B4%E0%B8%A1%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%98%E0%B8%AD%E0%B9%84%E0%B8%A1%E0%B8%A3%E0%B8%B1%E0%B8%81.mp3" type="audio/mpeg"></audio>
 </div>
 </div>
 </td>
 <td>4:12</td>
 <td>
 <div class="song-stats">
-<span class="views" id="views3">
-👁 0
-</span>
-<span class="likes" id="likes3">
-❤️ 0
-</span>
-<span class="share-btn"
-onclick="shareSong('เป็นคนเดิมที่เธอไม่รัก')">
-🔗 Share
-</span>
+<span id="views3">👁 0</span>
+<span class="like-btn" onclick="likeSong(3)">❤️ <span id="likes3">0</span></span>
+<span class="share-btn" onclick="shareSong('เป็นคนเดิมที่เธอไม่รัก')">🔗 Share</span>
 </div>
 </td>
 </tr>
-<tr class="song-row">
+
+<tr class="song-row" data-tags="lonely sadpop">
 <td>
 <div class="song-info">
 <img src="songs/stylemusic.png">
 <div>
-<div class="song-title">
-เกือบได้เป็นตลอดไป
-</div>
-<div class="song-artist">
-Style Music
-</div>
-<div style="margin-top:5px;color:#ff2d55;">
-🎵 Sad
-</div>
-<audio controls controlsList="nodownload noplaybackrate">
-<source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%80%E0%B8%81%E0%B8%B7%E0%B8%AD%E0%B8%9A%E0%B9%84%E0%B8%94%E0%B9%89%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B8%95%E0%B8%A5%E0%B8%AD%E0%B8%94%E0%B9%84%E0%B8%9B.mp3"
-type="audio/mpeg">
-</audio>
+<div class="song-title">เกือบได้เป็นตลอดไป</div>
+<div class="song-artist">Style Music</div>
+<div style="margin-top:5px;color:#ff2d55;">🎵 Sad</div>
+<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%80%E0%B8%A1%E0%B9%86%E0%B8%AB%E0%B9%84%E0%B8%9D%E0%B9%89%E0%B9%80%E0%B8%A5%E0%B9%87%E0%B8%99%E0%B8%95%E0%B8%A5%E0%B8%AD%E0%B8%94%E0%B9%84%E0%B8%9B.mp3" type="audio/mpeg"></audio>
 </div>
 </div>
 </td>
 <td>4:11</td>
-
 <td>
 <div class="song-stats">
-<span class="views" id="views4">👁 0</span>
-<span class="likes" id="likes4">❤️ 0</span>
+<span id="views4">👁 0</span>
+<span class="like-btn" onclick="likeSong(4)">❤️ <span id="likes4">0</span></span>
 <span class="share-btn" onclick="shareSong('เกือบได้เป็นตลอดไป')">🔗 Share</span>
 </div>
 </td>
 </tr>
 
-
-<tr class="song-row">
+<tr class="song-row" data-tags="lonely sadpop">
 <td>
 <div class="song-info">
 <img src="songs/stylemusic.png">
 <div>
-<div class="song-title">
-เหลือไว้แค่ของเธอ
-</div>
-<div class="song-artist">
-Style Music
-</div>
-<div style="margin-top:5px;color:#ff2d55;">
-🎵 Sad
-</div>
-<audio controls controlsList="nodownload noplaybackrate">
-<source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B9%84%E0%B8%A7%E0%B9%89%E0%B9%81%E0%B8%84%E0%B9%88%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%98%E0%B8%AD.mp3"
-type="audio/mpeg">
-</audio>
+<div class="song-title">เหลือไว้แค่ของเธอ</div>
+<div class="song-artist">Style Music</div>
+<div style="margin-top:5px;color:#ff2d55;">🎵 Sad</div>
+<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B9%84%E0%B8%A2%E0%B9%89%E0%B9%81%E0%B8%84%E0%B8%82%E0%B8%A3%E0%B9%80%E0%B8%98%E0%B8%AD.mp3" type="audio/mpeg"></audio>
 </div>
 </div>
 </td>
 <td>4:03</td>
 <td>
 <div class="song-stats">
-<span class="views" id="views5">👁 0</span>
-<span class="likes" id="likes5">❤️ 0</span>
+<span id="views5">👁 0</span>
+<span class="like-btn" onclick="likeSong(5)">❤️ <span id="likes5">0</span></span>
 <span class="share-btn" onclick="shareSong('เหลือไว้แค่ของเธอ')">🔗 Share</span>
 </div>
 </td>
 </tr>
 
-
-<tr class="song-row">
+<tr class="song-row" data-tags="lonely sadpop">
 <td>
 <div class="song-info">
 <img src="songs/stylemusic.png">
 <div>
-<div class="song-title">
-แค่เคยมีเธอ
-</div>
-<div class="song-artist">
-Style Music
-</div>
-<div style="margin-top:5px;color:#ff2d55;">
-🎵 Sad
-</div>
-<audio controls controlsList="nodownload noplaybackrate">
-<source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%81%E0%B8%84%E0%B9%88%E0%B9%80%E0%B8%84%E0%B8%A2%E0%B8%A1%E0%B8%B5%E0%B9%80%E0%B8%98%E0%B8%AD.mp3"
-type="audio/mpeg">
-</audio>
+<div class="song-title">แค่เคยมีเธอ</div>
+<div class="song-artist">Style Music</div>
+<div style="margin-top:5px;color:#ff2d55;">🎵 Sad</div>
+<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%82%E0%B8%A5%E0%B8%A1%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B9%81%E0%B8%95%E0%B9%88%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B8%A2%E0%B8%AD%E0%B8%A1.mp3" type="audio/mpeg"></audio>
 </div>
 </div>
 </td>
 <td>4:05</td>
 <td>
 <div class="song-stats">
-<span class="views" id="views6">👁 0</span>
-<span class="likes" id="likes6">❤️ 0</span>
+<span id="views6">👁 0</span>
+<span class="like-btn" onclick="likeSong(6)">❤️ <span id="likes6">0</span></span>
 <span class="share-btn" onclick="shareSong('แค่เคยมีเธอ')">🔗 Share</span>
 </div>
 </td>
 </tr>
 
-
-<tr class="song-row">
+<tr class="song-row" data-tags="lonely sadpop">
 <td>
 <div class="song-info">
 <img src="songs/stylemusic.png">
 <div>
-<div class="song-title">
-แค่ช่วงที่เธอเหงา
-</div>
-<div class="song-artist">
-Style Music
-</div>
-<div style="margin-top:5px;color:#ff2d55;">
-🎵 Sad
-</div>
-<audio controls controlsList="nodownload noplaybackrate">
-<source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%81%E0%B8%84%E0%B9%88%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%87%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%98%E0%B8%AD%E0%B9%80%E0%B8%AB%E0%B8%87%E0%B8%B2.mp3"
-type="audio/mpeg">
-</audio>
+<div class="song-title">แค่ช่วงที่เธอเหงา</div>
+<div class="song-artist">Style Music</div>
+<div style="margin-top:5px;color:#ff2d55;">🎵 Sad</div>
+<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%81%E0%B8%84%E0%B9%88%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%87%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%80%E0%B8%9E%E0%B8%B2%E0%B9%80%E0%B8%AB%E0%B8%87%E0%B8%B2.mp3" type="audio/mpeg"></audio>
 </div>
 </div>
 </td>
 <td>4:14</td>
 <td>
 <div class="song-stats">
-<span class="views" id="views7">👁 0</span>
-<span class="likes" id="likes7">❤️ 0</span>
+<span id="views7">👁 0</span>
+<span class="like-btn" onclick="likeSong(7)">❤️ <span id="likes7">0</span></span>
 <span class="share-btn" onclick="shareSong('แค่ช่วงที่เธอเหงา')">🔗 Share</span>
 </div>
 </td>
 </tr>
 
-<tr class="song-row">
+<tr class="song-row" data-tags="sadpop">
 <td>
 <div class="song-info">
 <img src="songs/stylemusic.png">
 <div>
-<div class="song-title">
-โลกที่ขาดเธอไป
-</div>
-<div class="song-artist">
-Style Music
-</div>
-<div style="margin-top:5px;color:#ff2d55;">
-🎵 Sad
-</div>
-
-<audio controls controlsList="nodownload noplaybackrate">
-<source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%82%E0%B8%A5%E0%B8%81%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%82%E0%B8%B2%E0%B8%94%E0%B9%80%E0%B8%98%E0%B8%AD%E0%B9%84%E0%B8%9B.mp3"
-type="audio/mpeg">
-</audio>
+<div class="song-title">โลกที่ขาดเธอไป</div>
+<div class="song-artist">Style Music</div>
+<div style="margin-top:5px;color:#ff2d55;">🎵 Sad</div>
+<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%82%E0%B8%A5%E0%B8%81%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%82%E0%B8%B2%E0%B8%94%E0%B9%80%E0%B8%98%E0%B8%AD%E0%B9%84%E0%B2%A2.mp3" type="audio/mpeg"></audio>
 </div>
 </div>
 </td>
 <td>4:09</td>
 <td>
 <div class="song-stats">
-<span class="views" id="views8">👁 0</span>
-<span class="likes" id="likes8">❤️ 0</span>
+<span id="views8">👁 0</span>
+<span class="like-btn" onclick="likeSong(8)">❤️ <span id="likes8">0</span></span>
 <span class="share-btn" onclick="shareSong('โลกที่ขาดเธอไป')">🔗 Share</span>
 </div>
 </td>
 </tr>
-<tr class="song-row">
+
+<tr class="song-row" data-tags="sadpop">
 <td>
 <div class="song-info">
 <img src="songs/stylemusic.png">
 <div>
-<div class="song-title">
-ไม่มีคำว่าเราแล้ว
-</div>
-<div class="song-artist">
-Style Music
-</div>
-<div style="margin-top:5px;color:#ff2d55;">
-🎵 Sad
-</div>
-<audio controls controlsList="nodownload noplaybackrate">
-<source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ไม่มีคำว่าเราแล้ว.mp3"
-type="audio/mpeg">
-</audio>
+<div class="song-title">ไม่มีคำว่าเราแล้ว</div>
+<div class="song-artist">Style Music</div>
+<div style="margin-top:5px;color:#ff2d55;">🎵 Sad</div>
+<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ไม่มีคำว่าเราแล้ว.mp3" type="audio/mpeg"></audio>
 </div>
 </div>
 </td>
 <td>4:12</td>
 <td>
 <div class="song-stats">
-<span class="views" id="views9">👁 0</span>
-<span class="likes" id="likes9">❤️ 0</span>
+<span id="views9">👁 0</span>
+<span class="like-btn" onclick="likeSong(9)">❤️ <span id="likes9">0</span></span>
 <span class="share-btn" onclick="shareSong('ไม่มีคำว่าเราแล้ว')">🔗 Share</span>
 </div>
 </td>
 </tr>
 
-
-<tr class="song-row">
+<tr class="song-row" data-tags="sadpop">
 <td>
 <div class="song-info">
 <img src="songs/stylemusic.png">
 <div>
-<div class="song-title">
-คนนั้นไม่ใช่ฉัน
-</div>
-<div class="song-artist">
-Style Music
-</div>
-<div style="margin-top:5px;color:#ff2d55;">
-🎵 Sad
-</div>
-<audio controls controlsList="nodownload noplaybackrate">
-<source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B8%84%E0%B8%99%E0%B8%99%E0%B8%B1%E0%B9%89%E0%B8%99%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%83%E0%B8%8A%E0%B9%88%E0%B8%89%E0%B8%B1%E0%B8%99.mp3"
-type="audio/mpeg">
-</audio>
+<div class="song-title">คนนั้นไม่ใช่ฉัน</div>
+<div class="song-artist">Style Music</div>
+<div style="margin-top:5px;color:#ff2d55;">🎵 Sad</div>
+<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B8%84%E0%B8%99%E0%B8%99%E0%B8%B1%E0%B9%89%E0%B8%99%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%89%E0%B8%B1%E0%B8%A1%E0%B8%99.mp3" type="audio/mpeg"></audio>
 </div>
 </div>
 </td>
 <td>4:00</td>
 <td>
 <div class="song-stats">
-<span class="views" id="views10">👁 0</span>
-<span class="likes" id="likes10">❤️ 0</span>
+<span id="views10">👁 0</span>
+<span class="like-btn" onclick="likeSong(10)">❤️ <span id="likes10">0</span></span>
 <span class="share-btn" onclick="shareSong('คนนั้นไม่ใช่ฉัน')">🔗 Share</span>
 </div>
 </td>
 </tr>
 
-
-<tr class="song-row">
+<tr class="song-row" data-tags="sadpop">
 <td>
 <div class="song-info">
 <img src="songs/stylemusic.png">
-
 <div>
-
-<div class="song-title">
-พูดไปเธอก็ไม่ฟัง
-</div>
-
-<div class="song-artist">
-Style Music
-</div>
-
-<div style="margin-top:5px;color:#ff2d55;">
-🎵 Sad
-</div>
-
-<audio controls controlsList="nodownload noplaybackrate">
-<source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B8%9E%E0%B8%B9%E0%B8%94%E0%B9%84%E0%B8%9B%E0%B9%80%E0%B8%98%E0%B8%AD%E0%B8%81%E0%B9%87%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%9F%E0%B8%B1%E0%B8%87.mp3"
-type="audio/mpeg">
-</audio>
-
+<div class="song-title">พูดไปเธอก็ไม่ฟัง</div>
+<div class="song-artist">Style Music</div>
+<div style="margin-top:5px;color:#ff2d55;">🎵 Sad</div>
+<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B8%9E%E0%B8%B9%E0%B8%A3%E0%B9%84%E0%B8%9B%E0%B9%80%E0%B8%98%E0%B8%AD%E0%B8%81%E0%B9%87%E0%B9%84%E0%B..A1%E0%B9%88%E0%B8%9F%E0%B8%B1%E0%B8%B7%E0%B8%A7.mp3" type="audio/mpeg"></audio>
 </div>
 </div>
 </td>
-
 <td>4:08</td>
-
 <td>
 <div class="song-stats">
-<span class="views" id="views11">👁 0</span>
-<span class="likes" id="likes11">❤️ 0</span>
+<span id="views11">👁 0</span>
+<span class="like-btn" onclick="likeSong(11)">❤️ <span id="likes11">0</span></span>
 <span class="share-btn" onclick="shareSong('พูดไปเธอก็ไม่ฟัง')">🔗 Share</span>
 </div>
 </td>
 </tr>
 
-
-<tr class="song-row">
+<tr class="song-row" data-tags="sadpop">
 <td>
 <div class="song-info">
 <img src="songs/stylemusic.png">
-
 <div>
-
-<div class="song-title">
-รู้ทุกอย่างแต่ยังยอม
-</div>
-
-<div class="song-artist">
-Style Music
-</div>
-
-<div style="margin-top:5px;color:#ff2d55;">
-🎵 Sad
-</div>
-
-<audio controls controlsList="nodownload noplaybackrate">
-<source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B8%A3%E0%B8%B9%E0%B9%89%E0%B8%97%E0%B8%B8%E0%B8%81%E0%B8%AD%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B9%81%E0%B8%95%E0%B9%88%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B8%A2%E0%B8%AD%E0%B8%A1.mp3"
-type="audio/mpeg">
-</audio>
-
+<div class="song-title">รู้ทุกอย่างแต่ยังยอม</div>
+<div class="song-artist">Style Music</div>
+<div style="margin-top:5px;color:#ff2d55;">🎵 Sad</div>
+<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B8%A3%E0%B8%B9%E0%B9%89%E0%B8%97%E0%B8%B8%E0%B8%81%E0%B8%AD%E0%B8%A2%E0%B8%88%E0%B9%88%E0%B8%B2%E0%B8%A5%E0%B9%81%E0%B8%95%E0%B9%88%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B8%A2%E0%B8%A1.mp3" type="audio/mpeg"></audio>
 </div>
 </div>
 </td>
-
 <td>4:15</td>
-
 <td>
 <div class="song-stats">
-<span class="views" id="views12">👁 0</span>
-<span class="likes" id="likes12">❤️ 0</span>
+<span id="views12">👁 0</span>
+<span class="like-btn" onclick="likeSong(12)">❤️ <span id="likes12">0</span></span>
 <span class="share-btn" onclick="shareSong('รู้ทุกอย่างแต่ยังยอม')">🔗 Share</span>
 </div>
 </td>
 </tr>
 
-
-<tr class="song-row">
+<tr class="song-row" data-tags="sadpop">
 <td>
 <div class="song-info">
 <img src="songs/stylemusic.png">
-
 <div>
-
-<div class="song-title">
-เก็บที่ว่างไว้ให้เธอ
-</div>
-
-<div class="song-artist">
-Style Music
-</div>
-
-<div style="margin-top:5px;color:#ff2d55;">
-🎵 Sad
-</div>
-
-<audio controls controlsList="nodownload noplaybackrate">
-<source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%80%E0%B8%81%E0%B9%87%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A7%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B9%84%E0%B8%A7%E0%B9%89%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B9%80%E0%B8%98%E0%B8%AD.mp3"
-type="audio/mpeg">
-</audio>
-
+<div class="song-title">เก็บที่ว่างไว้ให้เธอ</div>
+<div class="song-artist">Style Music</div>
+<div style="margin-top:5px;color:#ff2d55;">🎵 Sad</div>
+<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%80%E0%B8%A1%E0%B9%87%E0%B8%B2%E0%B8%B5%E0%B9%88%E0%B8%A7%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B9%84%E0%B8%A7%E0%B9%89%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B9%80%E0%B8%98%E0%B8%AD.mp3" type="audio/mpeg"></audio>
 </div>
 </div>
 </td>
-
 <td>4:10</td>
-
 <td>
 <div class="song-stats">
-<span class="views" id="views13">👁 0</span>
-<span class="likes" id="likes13">❤️ 0</span>
+<span id="views13">👁 0</span>
+<span class="like-btn" onclick="likeSong(13)">❤️ <span id="likes13">0</span></span>
 <span class="share-btn" onclick="shareSong('เก็บที่ว่างไว้ให้เธอ')">🔗 Share</span>
 </div>
 </td>
 </tr>
 
-
-<tr class="song-row">
+<tr class="song-row" data-tags="sadpop">
 <td>
 <div class="song-info">
 <img src="songs/stylemusic.png">
-
 <div>
-
-<div class="song-title">
-เหนื่อยแล้วใช่ไหม
-</div>
-
-<div class="song-artist">
-Style Music
-</div>
-
-<div style="margin-top:5px;color:#ff2d55;">
-🎵 Sad
-</div>
-
-<audio controls controlsList="nodownload noplaybackrate">
-<source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%80%E0%B8%AB%E0%B8%99%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%A2%E0%B9%81%E0%B8%A5%E0%B9%89%E0%B8%A7%E0%B9%83%E0%B8%8A%E0%B9%88%E0%B9%84%E0%B8%AB%E0%B8%A1.mp3"
-type="audio/mpeg">
-</audio>
-
+<div class="song-title">เหนื่อยแล้วใช่ไหม</div>
+<div class="song-artist">Style Music</div>
+<div style="margin-top:5px;color:#ff2d55;">🎵 Sad</div>
+<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%80%E0%B8%AB%E0%B8%A9%E0%B8%B7%E0%B9%88%E0%B8%A5%E0%B9%89%E0%B8%A2%E0%B8%A2%E0%B9%83%E0%B8%8A%E0%B9%88%E0%B9%84%E0%B8%AB%E0%B8%A1.mp3" type="audio/mpeg"></audio>
 </div>
 </div>
 </td>
-
 <td>4:02</td>
-
 <td>
 <div class="song-stats">
-<span class="views" id="views14">👁 0</span>
-<span class="likes" id="likes14">❤️ 0</span>
+<span id="views14">👁 0</span>
+<span class="like-btn" onclick="likeSong(14)">❤️ <span id="likes14">0</span></span>
 <span class="share-btn" onclick="shareSong('เหนื่อยแล้วใช่ไหม')">🔗 Share</span>
 </div>
 </td>
 </tr>
 
-
-<tr class="song-row">
+<tr class="song-row" data-tags="sadpop">
 <td>
 <div class="song-info">
 <img src="songs/stylemusic.png">
-
 <div>
-
-<div class="song-title">
-เหลือไว้เผื่อใจ
-</div>
-
-<div class="song-artist">
-Style Music
-</div>
-
-<div style="margin-top:5px;color:#ff2d55;">
-🎵 Sad
-</div>
-
-<audio controls controlsList="nodownload noplaybackrate">
-<source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B9%84%E0%B8%A7%E0%B9%89%E0%B9%80%E0%B8%9C%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B9%83%E0%B8%88.mp3"
-type="audio/mpeg">
-</audio>
-
+<div class="song-title">เหลือไว้เผื่อใจ</div>
+<div class="song-artist">Style Music</div>
+<div style="margin-top:5px;color:#ff2d55;">🎵 Sad</div>
+<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%80%E0%B8%A1%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B9%84%E0%B8%A7%E0%B9%89%E0%B9%80%E0%B8%9E%E0%B8%B7%E0%B9%8D%E0%B9%83%E0%B8%A5.mp3" type="audio/mpeg"></audio>
 </div>
 </div>
 </td>
-
 <td>4:07</td>
-
 <td>
 <div class="song-stats">
-<span class="views" id="views15">👁 0</span>
-<span class="likes" id="likes15">❤️ 0</span>
+<span id="views15">👁 0</span>
+<span class="like-btn" onclick="likeSong(15)">❤️ <span id="likes15">0</span></span>
 <span class="share-btn" onclick="shareSong('เหลือไว้เผื่อใจ')">🔗 Share</span>
 </div>
 </td>
 </tr>
 
-
-<tr class="song-row">
+<tr class="song-row" data-tags="sadpop">
 <td>
 <div class="song-info">
 <img src="songs/stylemusic.png">
-
 <div>
-
-<div class="song-title">
-ไม่ใช่เพราะใครเลย
-</div>
-
-<div class="song-artist">
-Style Music
-</div>
-
-<div style="margin-top:5px;color:#ff2d55;">
-🎵 Sad
-</div>
-<audio controls controlsList="nodownload noplaybackrate">
-<source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%83%E0%B8%8A%E0%B9%88%E0%B9%80%E0%B8%9E%E0%B8%A3%E0%B8%B2%E0%B8%B0%E0%B9%83%E0%B8%84%E0%B8%A3%E0%B9%80%E0%B8%A5%E0%B8%A2.mp3"
-type="audio/mpeg">
-</audio>
-
+<div class="song-title">ไม่ใช่เพราะใครเลย</div>
+<div class="song-artist">Style Music</div>
+<div style="margin-top:5px;color:#ff2d55;">🎵 Sad</div>
+<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%83%E0%B8%8A%E0%B9%88%E0%B8%9E%E0%B8%A3%E0%B8%B2%E0%B8%B0%E0%B8%A3%E0%B8%84%E0%B8%A3%E0%B9%80%E0%B8%A5%E0%B8%A2.mp3" type="audio/mpeg"></audio>
 </div>
 </div>
 </td>
-
 <td>4:01</td>
-
 <td>
 <div class="song-stats">
-<span class="views" id="views16">👁 0</span>
-<span class="likes" id="likes16">❤️ 0</span>
+<span id="views16">👁 0</span>
+<span class="like-btn" onclick="likeSong(16)">❤️ <span id="likes16">0</span></span>
 <span class="share-btn" onclick="shareSong('ไม่ใช่เพราะใครเลย')">🔗 Share</span>
 </div>
 </td>
 </tr>
 
-
-<tr class="song-row">
+<tr class="song-row" data-tags="sadpop">
 <td>
 <div class="song-info">
 <img src="songs/stylemusic.png">
-
 <div>
-
-<div class="song-title">
-ถ้าโลกนี้ไม่มีใครฉันยังมีเธอ
-</div>
-
-<div class="song-artist">
-Style Music
-</div>
-
-<div style="margin-top:5px;color:#ff2d55;">
-🎵 Sad
-</div>
-<audio controls controlsList="nodownload noplaybackrate">
-<source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B8%96%E0%B9%89%E0%B8%B2%E0%B9%82%E0%B8%A5%E0%B8%81%E0%B8%99%E0%B8%B5%E0%B9%89%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%A1%E0%B8%B5%E0%B9%83%E0%B8%84%E0%B8%A3%E0%B8%89%E0%B8%B1%E0%B8%99%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B8%A1%E0%B8%B5%E0%B9%80%E0%B8%98%E0%B8%AD.mp3"
-type="audio/mpeg">
-</audio>
-
+<div class="song-title">ถ้าโลกนี้ไม่มีใครฉันยังมีเธอ</div>
+<div class="song-artist">Style Music</div>
+<div style="margin-top:5px;color:#ff2d55;">🎵 Sad</div>
+<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B8%96%E0%B9%85%E0%B8%92%E0%B9%82%E0%B8%A5%E0%B8%81%E0%B8%99%E0%B8%B5%E0%B9%89%E0%B9%84%E0%B8%A1%E0%B8%A1%E0%B8%B5%E0%B9%83%E0%B8%84%E0%B8%A3%E0%B8%89%E0%B8%B1%E0%B8%99%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B8%A1%E0%B8%B5%E0%B9%80%E0%B8%98%E0%B8%AD.mp3" type="audio/mpeg"></audio>
 </div>
 </div>
 </td>
-
 <td>4:20</td>
-
 <td>
 <div class="song-stats">
-<span class="views" id="views17">👁 0</span>
-<span class="likes" id="likes17">❤️ 0</span>
+<span id="views17">👁 0</span>
+<span class="like-btn" onclick="likeSong(17)">❤️ <span id="likes17">0</span></span>
 <span class="share-btn" onclick="shareSong('ถ้าโลกนี้ไม่มีใครฉันยังมีเธอ')">🔗 Share</span>
 </div>
 </td>
 </tr>
 
-
-<tr class="song-row">
+<tr class="song-row" data-tags="sadpop">
 <td>
 <div class="song-info">
 <img src="songs/stylemusic.png">
-
 <div>
-
-<div class="song-title">
-ถามกี่ครั้งก็ยังรัก
-</div>
-
-<div class="song-artist">
-Style Music
-</div>
-
-<div style="margin-top:5px;color:#ff2d55;">
-🎵 Sad
-</div>
-<audio controls controlsList="nodownload noplaybackrate">
-<source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B8%96%E0%B8%B2%E0%B8%A1%E0%B8%81%E0%B8%B5%E0%B9%88%E0%B8%84%E0%B8%A3%E0%B8%B1%E0%B9%89%E0%B8%87%E0%B8%81%E0%B9%87%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B8%A3%E0%B8%B1%E0%B8%81.mp3"
-type="audio/mpeg">
-</audio>
-
+<div class="song-title">ถามกี่ครั้งก็ยังรัก</div>
+<div class="song-artist">Style Music</div>
+<div style="margin-top:5px;color:#ff2d55;">🎵 Sad</div>
+<audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/%E0%B...E0%B8%A3%E0%B8%B7%E0%B8%96%E0%B8%B2%E0%B8%A1%E0%B8%B1%E0%B8%81%E0%B8%B5%E0%B9%88%E0%B8%84%E0%B8%A3%E0%B8%B1%E0%B8%A5%E0%B8%87%E0%B8%81%E0%B9%87%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B8%A3%E0%B8%B1%E0%B8%81.mp3" type="audio/mpeg"></audio>
 </div>
 </div>
 </td>
-
 <td>4:06</td>
-
 <td>
 <div class="song-stats">
-<span class="views" id="views18">👁 0</span>
-<span class="likes" id="likes18">❤️ 0</span>
+<span id="views18">👁 0</span>
+<span class="like-btn" onclick="likeSong(18)">❤️ <span id="likes18">0</span></span>
 <span class="share-btn" onclick="shareSong('ถามกี่ครั้งก็ยังรัก')">🔗 Share</span>
 </div>
 </td>
 </tr>
 
-  
 </tbody>
 </table>
+
+<div id="articlesContentSection" class="articles-container" style="display: none;">
+    <h2 style="color: #9b5cff; margin-bottom: 20px; font-size: 24px;">📰 บทความ & รีวิวเพลงเศร้า</h2>
+    <div class="article-card">
+        <h3>5 เพลงเศร้าที่คนอกหักปี 2026 ต้องฟังให้ร้องไห้โฮ</h3>
+        <p>เปิดลิสต์เพลงฮิตดิ่งลึกที่รวบรวมไว้ในเว็บ StyleMusicPro สำหรับคนที่ต้องการบำบัดความรู้สึกด้วยเสียงเพลงยามค่ำคืน...</p>
+    </div>
+    <div class="article-card">
+        <h3>ทำไมเวลาอกหัก เราถึงชอบฟังเพลงตอกย้ำตัวเอง?</h3>
+        <p>บทความเชิงจิตวิทยาที่เล่าถึงกลไกของสมองมนุษย์ เมื่อเราฟังเพลง Sad Pop จังหวะหน่วง ๆ ความเศร้าจะช่วยเยียวยาจิตใจได้อย่างไร...</p>
+    </div>
+</div>
+
+<div id="lyricsContentSection" class="lyrics-container" style="display: none;">
+<h2 style="color: #9b5cff; margin-bottom: 20px; font-size: 24px;">🎵 เนื้อเพลง: ได้แค่มองเธอ</h2>
+
+<div class="lyrics-block">
+<div class="lyrics-section-title">🎤 Hook (เปิดเพลงทันที)</div>
+<div class="lyrics-text">ทำได้แค่มองเธอ…จากตรงนี้เงียบๆ
+ทั้งที่ใจยังรู้สึก…แต่ไม่มีสิทธิ์อะไร
+เพราะคนที่ยืนข้างเธอ…ไม่ใช่ฉันอีกแล้ว
+เลยต้องเก็บทุกความรู้สึก…ไว้คนเดียว</div>
+</div>
+
+<div class="lyrics-block">
+<div class="lyrics-section-title">Verse 1</div>
+<div class="lyrics-text">ไม่คิดว่าวันหนึ่งเราจะไกลกันขนาดนี้
+จากคนที่เคยสำคัญ…กลายเป็นเพียงคนรู้จัก
+ฉันยังจำทุกเรื่องราวของเราได้ดี
+แต่วันนี้เธอคงลืมมันไปแล้ว</div>
+</div>
+
+<div class="lyrics-block">
+<div class="lyrics-section-title">Pre-Chorus</div>
+<div class="lyrics-text">ฉันพยายามห้ามใจ
+ไม่ให้กลับไปคิดถึง
+แต่ทุกครั้งที่เห็นเธอ
+หัวใจก็ยังสั่นเหมือนเดิม</div>
+</div>
+
+<div class="lyrics-block">
+<div class="lyrics-section-title">Chorus</div>
+<div class="lyrics-text">ทำได้แค่มองเธอ…ในวันที่เธอมีใคร
+เก็บคำว่ารักเอาไว้…แม้มันยังชัดในใจ
+ต่อให้คิดถึงมากแค่ไหน
+ก็ไม่มีสิทธิ์เดินกลับไป
+เพราะวันนี้เธอ…ไม่ใช่ของฉันอีกแล้ว</div>
+</div>
+
+<div class="lyrics-block">
+<div class="lyrics-section-title">Verse 2</div>
+<div class="lyrics-text">บางคืนยังเปิดรูปเก่าๆ ดูคนเดียว
+แล้วถามตัวเองว่าทำไมยังลืมไม่ได้
+ทั้งที่เวลาพาเราไกลกันตั้งนาน
+แต่หัวใจกลับยังอยู่ที่เดิม</div>
+</div>
+
+<div class="lyrics-block">
+<div class="lyrics-section-title">Pre-Chorus</div>
+<div class="lyrics-text">ยิ่งฝืนก็ยิ่งเจ็บ
+ยิ่งเก็บก็ยิ่งคิดถึง
+แต่สุดท้ายก็ต้องยอมรับ
+ว่าเราคงกลับไปไม่ได้แล้ว</div>
+</div>
+
+<div class="lyrics-block">
+<div class="lyrics-section-title">Chorus (ใหญ่ขึ้น / emotional peak)</div>
+<div class="lyrics-text">ทำได้แค่มองเธอ…กับรอยยิ้มที่ไม่ใช่ของฉัน
+แม้ในใจยังรัก…แต่คงพูดมันไม่ได้อีกแล้ว
+ฉันได้แต่หวังให้เธอมีความสุข
+แม้คนที่อยู่ตรงนั้น…จะไม่ใช่ฉันก็ตาม</div>
+</div>
+
+<div class="lyrics-block">
+<div class="lyrics-section-title">Bridge</div>
+<div class="lyrics-text">บางครั้งความรัก
+ก็ไม่ได้แปลว่าจะต้องได้ครอบครอง
+แค่เคยมีเธอในชีวิต
+ก็มากพอแล้วสำหรับฉัน</div>
+</div>
+
+<div class="lyrics-block">
+<div class="lyrics-section-title">Outro</div>
+<div class="lyrics-text">จากนี้ฉันคง…
+ทำได้แค่คิดถึงเธอเงียบๆ…</div>
+</div>
+</div>
 
 </div>
 </div>
 
 <div class="bottom-player">
 <div>🎵 StyleMusicPro Player</div>
-
 <div class="player-controls">
 <button onclick="prevSong()">⏮</button>
 <button onclick="togglePlay()">▶</button>
@@ -1322,13 +1110,16 @@ type="audio/mpeg">
 </div>
 
 <script>
+function toggleMenu() {
+    document.getElementById('sidebar').classList.toggle('active');
+}
+
 function shareSong(song){
 const shareData = {
 title: "Style Music",
 text: "🎵 ฟังเพลง: " + song,
 url: window.location.href
 };
-
 if(navigator.share){
 navigator.share(shareData);
 }else{
@@ -1341,7 +1132,6 @@ const search = document.getElementById("search");
 search.addEventListener("keyup", () => {
 let filter = search.value.toLowerCase();
 let rows = document.querySelectorAll(".song-row");
-
 rows.forEach(row => {
 let title = row.querySelector(".song-title").innerText.toLowerCase();
 if(title.includes(filter)){
@@ -1350,6 +1140,7 @@ row.style.display = "";
 row.style.display = "none";
 }
 });
+updateLiveSongCount();
 });
 
 const players = document.querySelectorAll("audio");
@@ -1363,15 +1154,10 @@ if(i !== index){
 p.pause();
 }
 });
-
 let views = localStorage.getItem('views'+index) || 0;
-
 views++;
-
 localStorage.setItem('views'+index, views);
-
 let viewEl = document.getElementById('views'+(index+1));
-
 if(viewEl){
 viewEl.innerHTML = '👁 ' + views;
 }
@@ -1403,142 +1189,190 @@ players[currentIndex].play();
 players[currentIndex].pause();
 }
 }
-  function likeSong(id){
 
+function likeSong(id){
 let likes = localStorage.getItem("likes"+id) || 0;
-
 likes++;
-
 localStorage.setItem("likes"+id, likes);
-
 let likeEl = document.getElementById("likes"+id);
-
 if(likeEl){
 likeEl.innerText = likes;
 }
-
 }
-</script>
 
-<script>
+// ============================================
+// ระบบนับเพลงจริงและสลับหน้าเมนูที่อัปเกรดใหม่
+// ============================================
+const allMenus = document.querySelectorAll('.sidebar .menu');
+const allSongRows = document.querySelectorAll('.song-row');
+const mainTitle = document.getElementById('playlistTitle');
+const mainDesc = document.getElementById('playlistDesc');
+const mainSongTable = document.getElementById('mainSongTable');
+const lyricsContentSection = document.getElementById('lyricsContentSection');
+const articlesContentSection = document.getElementById('articlesContentSection');
+const genreTabs = document.getElementById('genreTabs');
+const songCountDisplay = document.getElementById('songCountDisplay');
+
+let currentActiveGenre = "all"; // ตัวแปรเก็บสถานะฟิลเตอร์แท็บย่อยของหมวดเพลง
+
+function updateLiveSongCount() {
+    let currentVisibleSongs = 0;
+    allSongRows.forEach(row => {
+        if (row.style.display !== "none") {
+            currentVisibleSongs++;
+        }
+    });
+    songCountDisplay.innerText = currentVisibleSongs; 
+}
+
+// ฟังก์ชันกรองเพลงย่อยเมื่อกดในเมนู "เพลง" (Pop, Sad Pop, เพลงเหงา)
+function filterSubGenre(subTag) {
+    currentActiveGenre = subTag;
+    
+    // สลับคลาส active ของปุ่มแท็บย่อย
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    tabBtns.forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+
+    allSongRows.forEach(row => {
+        const tags = row.getAttribute('data-tags') || "";
+        if (subTag === "all" || tags.includes(subTag)) {
+            row.style.display = "";
+        } else {
+            row.style.display = "none";
+        }
+    });
+    updateLiveSongCount();
+}
+
+function selectMenu(menuId, titleText, descText, filterMode = "all") {
+    allMenus.forEach(menu => menu.classList.remove('active'));
+    document.getElementById(menuId).classList.add('active');
+    
+    mainTitle.innerHTML = titleText;
+    mainDesc.innerHTML = descText;
+    
+    document.getElementById('sidebar').classList.remove('active');
+    
+    // รีเซ็ตซ่อนทุกหน้าจอกลางก่อน เพื่อสลับหน้าตามเงื่อนไข
+    mainSongTable.style.display = "none";
+    lyricsContentSection.style.display = "none";
+    articlesContentSection.style.display = "none";
+    genreTabs.style.display = "none";
+
+    if (filterMode === "lyrics") {
+        lyricsContentSection.style.display = "block";
+        songCountDisplay.innerText = "0";
+    } else if (filterMode === "articles") {
+        articlesContentSection.style.display = "block";
+        songCountDisplay.innerText = "0";
+    } else {
+        mainSongTable.style.display = "table";
+        
+        // ถ้ากดเมนู "เพลง" ให้แสดงแท็บย่อย Pop / Sad Pop ขึ้นมาเสริม
+        if (filterMode === "songs") {
+            genreTabs.style.display = "flex";
+            // สลับกลับมาแสดงทุกเพลงเป็นค่าเริ่มต้นในหมวดเพลงย่อย
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-btn')[0].classList.add('active');
+        }
+
+        allSongRows.forEach(row => {
+            const tags = row.getAttribute('data-tags') || "";
+            if (filterMode === "all" || filterMode === "songs") {
+                row.style.display = ""; // หน้าแรก และเมนูเพลงโชว์หมด 18 เพลง
+            } else {
+                // คัดกรองสำหรับเมนูอื่นๆ เช่น favorites
+                if (tags.includes(filterMode)) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = "none";
+                }
+            }
+        });
+        updateLiveSongCount();
+    }
+}
+
+document.getElementById('menuHome').addEventListener('click', function() {
+    selectMenu('menuHome', 'StyleMusicPro 💜', 'เว็บรวมเพลงเศร้า เพลงอกหัก ฟังออนไลน์', 'all');
+});
+document.getElementById('menuArticles').addEventListener('click', function() {
+    selectMenu('menuArticles', 'Articles & Reviews 📰', 'อ่านบทความเชิงจิตวิทยาและรีวิวเพลงเศร้าโดนใจ', 'articles');
+});
+document.getElementById('menuFavorites').addEventListener('click', function() {
+    selectMenu('menuFavorites', 'Your Favorites ❤️', 'คลังเพลงโปรดที่คุณรักและกดไลก์ไว้บ่อยที่สุด', 'favorites');
+});
+document.getElementById('menuSongs').addEventListener('click', function() {
+    selectMenu('menuSongs', 'Music Library 🎵', 'คลังเพลงทั้งหมด เลือกฟังตามสไตล์อารมณ์ของคุณ', 'songs');
+});
+document.getElementById('lyricsMenu').addEventListener('click', function() {
+    selectMenu('lyricsMenu', 'Lyrics คลังเนื้อเพลง 📝', 'อ่านเนื้อเพลงเศร้าโดนใจ อินไปกับทุกบทเพลง', 'lyrics');
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    updateLiveSongCount();
+});
 
 players.forEach((player,index)=>{
-
 player.addEventListener("ended",()=>{
-
 currentIndex++;
-
 if(currentIndex >= players.length){
 currentIndex = 0;
 }
-
 players[currentIndex].play();
-
 });
-
 });
 </script>
+
 <script type="module">
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-
-import {
-getDatabase,
-ref,
-set,
-get
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
 const firebaseConfig = {
-
 apiKey: "AIzaSyA3Hl-RoqK9RvqF2KiYrRg7GC6EmyOuMVo",
-
 authDomain: "stylemusic-72ef9.firebaseapp.com",
-
 databaseURL: "https://stylemusic-72ef9-default-rtdb.asia-southeast1.firebasedatabase.app",
-
 projectId: "stylemusic-72ef9",
-
 storageBucket: "stylemusic-72ef9.firebasestorage.app",
-
 messagingSenderId: "224408363563",
-
 appId: "1:224408363563:web:2fd5b7a83bbd1b8936406e",
-
 measurementId: "G-7MRFWKW6Y6"
-
 };
 
 const app = initializeApp(firebaseConfig);
-
 const db = getDatabase(app);
-
 console.log("Firebase Connected");
 
 document.querySelectorAll("audio").forEach((audio,index)=>{
-
 audio.addEventListener("play",()=>{
-
 const songId = "song" + (index + 1);
-
 const songRef = ref(db, songId);
-
 get(songRef).then((snapshot)=>{
-
 let views = 0;
-
 if(snapshot.exists()){
-
 views = snapshot.val().views || 0;
-
 }
-
 views++;
-
-set(songRef,{
-views: views
-});
-
+set(songRef,{ views: views });
 const el = document.getElementById("views"+(index+1));
-
-if(el){
-
-el.innerHTML = "👁 " + views;
-
-}
-
+if(el){ el.innerHTML = "👁 " + views; }
 });
-
 });
-
 });
 
 window.addEventListener("load",()=>{
-
 document.querySelectorAll("[id^='views']").forEach((el,index)=>{
-
 const songId = "song" + (index + 1);
-
 const songRef = ref(db, songId);
-
 get(songRef).then((snapshot)=>{
-
 if(snapshot.exists()){
-
 const views = snapshot.val().views || 0;
-
 el.innerHTML = "👁 " + views;
-
 }
-
 });
-
 });
-
 });
-
 </script>
-  
 </body>
 </html>
-
