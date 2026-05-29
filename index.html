@@ -6,18 +6,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>StyleMusicPro - ฟังเพลงเศร้า เพลงอกหัก ออนไลน์ฟรี</title>
 
-<meta name="description" content="เว็บฟังเพลงเศร้า เพลงอกหัก เพลงใหม่ 2026 ฟังออนไลน์ฟรี ทั้งเพลงไทย เพลงลาว Sad Pop และ Lo-fi">
-<meta name="keywords" content="เพลงเศร้า, เพลงอกหัก, ฟังเพลงออนไลน์, เพลงใหม่, เพลงลาว, Sad Pop, เพลงเหงา, เพลงเศร้า 2026">
+<meta name="description" content="เว็บฟังเพลงเศร้า เพลงอกหัก เพลงใหม่ ฟังออนไลน์ฟรี ทั้งเพลงไทย เพลงลาว Sad Pop และ Lo-fi">
+<meta name="keywords" content="เพลงเศร้า, เพลงอกหัก, ฟังเพลงออนไลน์, เพลงใหม่, เพลงลาว, Sad Pop, เพลงเหงา">
 <meta name="author" content="StyleMusicPro">
 <meta name="robots" content="index, follow">
 
 <meta property="og:title" content="StyleMusicPro - เว็บฟังเพลงเศร้าออนไลน์">
-<meta property="og:description" content="รวมเพลงเศร้า เพลงอกหัก เพลงใหม่ ฟังฟรีออนไลน์">
+<meta property="og:description" content="รวมเพลงเศร้า เพลงอกหัก เพลงใหม่ ฟังฟรีออนไลน์ พร้อมดูดวงรายวัน">
 <meta property="og:image" content="https://stylemusicpro.com/songs/stylemusic.png">
 <meta property="og:url" content="https://stylemusicpro.com">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PZHXG2Y1PY"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -29,562 +30,164 @@ gtag('config', 'G-PZHXG2Y1PY');
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-.menu-toggle{
-display:none;
-position:fixed;
-top:15px;
-left:15px;
-z-index:9999;
-width:42px;
-height:42px;
-border:none;
-border-radius:12px;
-background:#9b5cff;
-color:white;
-font-size:28px;
-cursor:pointer;
-box-shadow:0 0 20px rgba(155,92,255,.5);
-}
-
+/* ============================================
+   Global & Layout Styles
+============================================ */
+.menu-toggle{ display:none; position:fixed; top:15px; left:15px; z-index:9999; width:42px; height:42px; border:none; border-radius:12px; background:#9b5cff; color:white; font-size:28px; cursor:pointer; box-shadow:0 0 20px rgba(155,92,255,.5); }
 @media(max-width:768px){
-.menu-toggle{
-display:block;
-}
-.sidebar{
-position:fixed;
-left:-260px;
-top:0;
-height:100%;
-z-index:999;
-transition:.3s;
-}
-.sidebar.active{
-left:0;
-}
-.main{
-width:100%;
-padding-top:80px;
-}
-.bottom-player{
-left:0;
-}
+.menu-toggle{ display:block; }
+.sidebar{ position:fixed; left:-260px; top:0; height:100%; z-index:999; transition:.3s; }
+.sidebar.active{ left:0; }
+.main{ width:100%; padding-top:80px; }
+.bottom-player{ left:0; }
 }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+*{ margin:0; padding:0; box-sizing:border-box; }
+body{ font-family:'Poppins',sans-serif; background:#050816; color:white; overflow-x:hidden; scroll-behavior:smooth; }
+.container{ display:flex; height:100vh; }
 
-body{
-font-family:'Poppins',sans-serif;
-background:#050816;
-color:white;
-overflow-x:hidden;
-scroll-behavior:smooth;
-}
+/* Sidebar */
+.sidebar{ width:240px; background:rgba(7,11,24,.88); backdrop-filter:blur(12px); padding:25px; display:flex; flex-direction:column; gap:18px; border-right:1px solid rgba(255,255,255,.05); }
+.logo{ font-size:30px; font-weight:700; color:#9b5cff; margin-bottom:20px; }
+.menu{ padding:14px; border-radius:14px; cursor:pointer; transition:.3s; background:rgba(255,255,255,.03); }
+.menu:hover, .menu.active { background:#9b5cff; transform:translateX(5px); }
 
-.container{
-display:flex;
-height:100vh;
-}
+/* Main Content */
+.main{ flex:1; overflow-y:auto; padding:30px; padding-bottom:120px; background:#050816; }
+.topbar{ display:flex; justify-content:space-between; align-items:center; gap:20px; margin-bottom:30px; }
+.search-box input{ width:100%; padding:15px 20px; border:none; border-radius:40px; background:rgba(255,255,255,.08); color:white; outline:none; font-size:16px; }
 
-.sidebar{
-width:240px;
-background:rgba(7,11,24,.88);
-backdrop-filter:blur(12px);
-padding:25px;
-display:flex;
-flex-direction:column;
-gap:18px;
-border-right:1px solid rgba(255,255,255,.05);
-}
+/* Hero Banner */
+.hero-banner{ background:url('songs/bg.png'); background-size:cover; background-position:center; border-radius:30px; overflow:hidden; margin-bottom:30px; box-shadow:0 0 40px rgba(155,92,255,.3); }
+.hero-overlay{ display:flex; justify-content:space-between; align-items:center; padding:25px; backdrop-filter:blur(4px); flex-wrap:wrap; gap:30px; }
+.hero-left{ display:flex; align-items:center; gap:30px; }
+.hero-logo{ width:160px; height:160px; border-radius:50%; object-fit:cover; border:5px solid #9b5cff; box-shadow:0 0 40px #9b5cff; }
+.hero-info h1{ font-size:42px; margin-bottom:10px; }
+.hero-desc{ color:#ddd; margin-bottom:15px; }
+.hero-tags{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:20px; }
+.hero-tags span{ color:#b77dff; }
+.hero-stats{ display:flex; gap:40px; margin-bottom:20px; }
+.hero-stats div{ display:flex; flex-direction:column; }
+.hero-stats b{ font-size:28px; }
+.hero-stats span{ color:#bbb; }
+.hero-buttons{ display:flex; gap:15px; }
+.follow-btn{ padding:14px 35px; border:none; border-radius:16px; background:#7c4dff; color:white; font-size:18px; cursor:pointer; text-decoration:none; }
+.share-btn{ padding:14px 25px; border:none; border-radius:16px; background:rgba(255,255,255,.08); color:white; cursor:pointer; }
+.hero-social{ display:flex; gap:15px; overflow-x:auto; padding-bottom:10px; scroll-behavior:smooth; width:100%; }
+.hero-social iframe{ width:33%; min-width: 280px; height:220px; border-radius:16px; border:none; flex-shrink:0; }
 
-.logo{
-font-size:30px;
-font-weight:700;
-color:#9b5cff;
-margin-bottom:20px;
-}
+/* Music Player Bottom */
+.bottom-player{ position:fixed; bottom:0; left:240px; right:0; height:72px; background:#070b18; border-top:1px solid rgba(255,255,255,.08); display:flex; justify-content:space-between; align-items:center; padding:0 20px; box-shadow:0 -5px 30px rgba(155,92,255,.15); z-index: 998; }
+.player-controls{ display:flex; gap:15px; }
+.player-controls button{ width:42px; height:42px; border:none; border-radius:50%; background:#9b5cff; color:white; font-size:20px; cursor:pointer; }
 
-.menu{
-padding:14px;
-border-radius:14px;
-cursor:pointer;
-transition:.3s;
-background:rgba(255,255,255,.03);
-}
+/* Song Table */
+.song-table{ width:100%; border-collapse:collapse; }
+.song-table td, .song-table th{ padding:12px 8px; border-bottom:1px solid rgba(255,255,255,.08); }
+.song-row{ transition:.25s; }
+.song-row:hover{ background:rgba(255,255,255,.05); transform:scale(1.01); backdrop-filter:blur(8px); }
+.song-info{ display:flex; align-items:center; gap:15px; }
+.song-stats{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.song-info img{ width:65px; height:65px; border-radius:14px; object-fit:cover; }
+.song-title{ font-weight:700; }
+.song-artist{ font-size:14px; color:#bbb; }
+.like-btn{ cursor:pointer; color:#ff4d6d; font-weight:bold; transition:.2s; }
+.like-btn:hover{ transform:scale(1.1); }
 
-.menu:hover, .menu.active {
-background:#9b5cff;
-transform:translateX(5px);
-}
+/* Containers */
+.lyrics-container, .articles-container { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 20px; padding: 30px; margin-top: 20px; backdrop-filter: blur(10px); }
+.dark-read-mode { background: #000000 !important; border: 1px solid rgba(155, 92, 255, 0.2); border-radius: 20px; padding: 35px; margin-top: 20px; box-shadow: 0 0 30px rgba(0,0,0,1); }
 
-.main{
-flex:1;
-overflow-y:auto;
-padding:30px;
-padding-bottom:120px;
-background:#050816;
-}
+/* Common UI Elements */
+.sub-tabs { display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.tab-btn { padding: 8px 18px; border-radius: 20px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #fff; cursor: pointer; font-size: 14px; transition: 0.2s; }
+.tab-btn:hover, .tab-btn.active { background: #9b5cff; border-color: #9b5cff; }
 
-.topbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:20px;
-margin-bottom:30px;
-}
+/* Main Horo Types Tabs (Daily/Weekly/Monthly) */
+.type-tabs .tab-btn { padding: 12px 25px; font-size: 16px; border-radius: 30px; font-weight: 500; }
+.type-tabs .tab-btn.active { background: #ff2d55; border-color: #ff2d55; box-shadow: 0 0 20px rgba(255,45,85,0.4); }
 
-.search-box input{
-width:100%;
-padding:15px 20px;
-border:none;
-border-radius:40px;
-background:rgba(255,255,255,.08);
-color:white;
-outline:none;
-font-size:16px;
-}
+/* Day Tab Colors */
+.tab-sun.active { background: #ff4d4d; border-color: #ff4d4d; box-shadow: 0 0 15px rgba(255,77,77,0.4); }
+.tab-mon.active { background: #ffcc00; border-color: #ffcc00; color: #000; box-shadow: 0 0 15px rgba(255,204,0,0.4); }
+.tab-tue.active { background: #ff66b2; border-color: #ff66b2; box-shadow: 0 0 15px rgba(255,102,178,0.4); }
+.tab-wed.active { background: #00e676; border-color: #00e676; color: #000; box-shadow: 0 0 15px rgba(0,230,118,0.4); }
+.tab-thu.active { background: #ff9900; border-color: #ff9900; box-shadow: 0 0 15px rgba(255,153,0,0.4); }
+.tab-fri.active { background: #3399ff; border-color: #3399ff; box-shadow: 0 0 15px rgba(51,153,255,0.4); }
+.tab-sat.active { background: #b366ff; border-color: #b366ff; box-shadow: 0 0 15px rgba(179,102,255,0.4); }
 
-.hero-banner{
-background:url('songs/bg.png');
-background-size:cover;
-background-position:center;
-border-radius:30px;
-overflow:hidden;
-margin-bottom:30px;
-box-shadow:0 0 40px rgba(155,92,255,.3);
+/* Horoscope Card Layout */
+.sanook-card {
+    background: #0a0d1d;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 24px;
+    padding: 30px;
+    margin-top: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    position: relative;
+    overflow: hidden;
 }
+.card-sun { border-left: 6px solid #ff4d4d; }
+.card-mon { border-left: 6px solid #ffcc00; }
+.card-tue { border-left: 6px solid #ff66b2; }
+.card-wed { border-left: 6px solid #00e676; }
+.card-thu { border-left: 6px solid #ff9900; }
+.card-fri { border-left: 6px solid #3399ff; }
+.card-sat { border-left: 6px solid #b366ff; }
 
-.hero-overlay{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:25px;
-backdrop-filter:blur(4px);
-flex-wrap:wrap;
-gap:30px;
-}
+.horo-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; margin-bottom: 25px; }
+.horo-header h3 { font-size: 26px; }
+.horo-stars { font-size: 20px; letter-spacing: 2px; }
 
-.hero-left{
-display:flex;
-align-items:center;
-gap:30px;
-}
+.horo-row { display: flex; gap: 20px; margin-bottom: 25px; align-items: flex-start; }
+.horo-icon-box { width: 55px; height: 55px; border-radius: 16px; display: flex; justify-content: center; align-items: center; font-size: 26px; background: rgba(255,255,255,0.05); flex-shrink: 0; }
+.horo-detail h4 { font-size: 18px; margin-bottom: 5px; }
+.horo-detail p { font-size: 15px; color: #ccc; line-height: 1.6; }
 
-.hero-logo{
-width:160px;
-height:160px;
-border-radius:50%;
-object-fit:cover;
-border:5px solid #9b5cff;
-box-shadow:0 0 40px #9b5cff;
-}
+.lucky-box { display: flex; gap: 15px; margin-top: 30px; flex-wrap: wrap; }
+.lucky-item { flex: 1; min-width: 200px; background: rgba(255,255,255,0.03); border-radius: 16px; padding: 15px 20px; display: flex; align-items: center; gap: 15px; border: 1px solid rgba(255,255,255,0.05); }
+.lucky-item span { font-size: 24px; }
+.lucky-item div h5 { font-size: 14px; color: #888; font-weight: 500; margin-bottom: 2px;}
+.lucky-item div p { font-size: 18px; font-weight: 700; color: #fff; }
 
-.hero-info h1{
-font-size:42px;
-margin-bottom:10px;
-}
+.lyrics-block { margin-bottom: 25px; line-height: 1.8; }
+.lyrics-section-title { color: #9b5cff; font-size: 14px; font-weight: 600; text-transform: uppercase; margin-bottom: 5px; letter-spacing: 1px; }
+.lyrics-text { font-size: 18px; color: #e0e0e0; white-space: pre-line; line-height: 1.8; }
 
-.hero-desc{
-color:#ddd;
-margin-bottom:15px;
-}
+.selection-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; margin-top: 15px; }
+.selection-item-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); padding: 20px; border-radius: 14px; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 15px; }
+.selection-item-card:hover { background: #9b5cff; border-color: #9b5cff; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(155,92,255,0.3); }
 
-.hero-tags{
-display:flex;
-gap:10px;
-flex-wrap:wrap;
-margin-bottom:20px;
-}
-
-.hero-tags span{
-color:#b77dff;
-}
-
-.hero-stats{
-display:flex;
-gap:40px;
-margin-bottom:20px;
-}
-
-.hero-stats div{
-display:flex;
-flex-direction:column;
-}
-
-.hero-stats b{
-font-size:28px;
-}
-
-.hero-stats span{
-color:#bbb;
-}
-
-.hero-buttons{
-display:flex;
-gap:15px;
-}
-
-.follow-btn{
-padding:14px 35px;
-border:none;
-border-radius:16px;
-background:#7c4dff;
-color:white;
-font-size:18px;
-cursor:pointer;
-text-decoration:none;
-}
-
-.share-btn{
-padding:14px 25px;
-border:none;
-border-radius:16px;
-background:rgba(255,255,255,.08);
-color:white;
-cursor:pointer;
-}
-
-.hero-social{
-display:flex;
-gap:15px;
-overflow-x:auto;
-padding-bottom:10px;
-scroll-behavior:smooth;
-width:100%;
-}
-
-.hero-social iframe{
-width:33%;
-min-width: 280px;
-height:220px;
-border-radius:16px;
-border:none;
-flex-shrink:0;
-}
-
-.song-table{
-width:100%;
-border-collapse:collapse;
-}
-
-.song-table td,
-.song-table th{
-padding:12px 8px;
-border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.song-row{
-transition:.25s;
-}
-
-.song-row:hover{
-background:rgba(255,255,255,.05);
-transform:scale(1.01);
-backdrop-filter:blur(8px);
-}
-
-.song-info{
-display:flex;
-align-items:center;
-gap:15px;
-}
-
-.song-stats{
-display:flex;
-align-items:center;
-gap:10px;
-flex-wrap:wrap;
-}
-
-.song-info img{
-width:65px;
-height:65px;
-border-radius:14px;
-object-fit:cover;
-}
-
-.song-title{
-font-weight:700;
-}
-
-.song-artist{
-font-size:14px;
-color:#bbb;
-}
-
-.bottom-player{
-position:fixed;
-bottom:0;
-left:240px;
-right:0;
-height:72px;
-background:#070b18;
-border-top:1px solid rgba(255,255,255,.08);
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:0 20px;
-box-shadow:0 -5px 30px rgba(155,92,255,.15);  
-z-index: 998;
-}
-
-.player-controls{
-display:flex;
-gap:15px;
-}
-
-.player-controls button{
-width:42px;
-height:42px;
-border:none;
-border-radius:50%;
-background:#9b5cff;
-color:white;
-font-size:20px;
-cursor:pointer;
-}
-
-.like-btn{
-cursor:pointer;
-color:#ff4d6d;
-font-weight:bold;
-transition:.2s;
-}
-
-.like-btn:hover{
-transform:scale(1.1);
-}
-
-/* ปรับแต่งกล่องหลักสำหรับลิสต์รวม */
-.lyrics-container, .articles-container {
-background: rgba(255, 255, 255, 0.03);
-border: 1px solid rgba(255, 255, 255, 0.05);
-border-radius: 20px;
-padding: 30px;
-margin-top: 20px;
-backdrop-filter: blur(10px);
-}
-
-/* 🖤 ปรับแต่งกล่องเนื้อเพลง/บทความตัวเต็มให้เป็นพื้นหลังสีดำสนิท เพื่อให้อ่านง่าย สบายตา 🖤 */
-.dark-read-mode {
-background: #000000 !important;
-border: 1px solid rgba(155, 92, 255, 0.2);
-border-radius: 20px;
-padding: 35px;
-margin-top: 20px;
-box-shadow: 0 0 30px rgba(0,0,0,1);
-}
-
-.lyrics-block {
-margin-bottom: 25px;
-line-height: 1.8;
-}
-
-.lyrics-section-title {
-color: #9b5cff;
-font-size: 14px;
-font-weight: 600;
-text-transform: uppercase;
-margin-bottom: 5px;
-letter-spacing: 1px;
-}
-
-.lyrics-text, .article-detail-text {
-font-size: 18px;
-color: #e0e0e0;
-white-space: pre-line;
-line-height: 1.8;
-}
-
-.sub-tabs {
-display: flex;
-gap: 12px;
-margin-bottom: 20px;
-flex-wrap: wrap;
-}
-
-.tab-btn {
-padding: 8px 18px;
-border-radius: 20px;
-background: rgba(255,255,255,0.06);
-border: 1px solid rgba(255,255,255,0.1);
-color: #fff;
-cursor: pointer;
-font-size: 14px;
-transition: 0.2s;
-}
-
-.tab-btn:hover, .tab-btn.active {
-background: #9b5cff;
-border-color: #9b5cff;
-}
-
-/* ดีไซน์ลิสต์แบบ Grid Card สำหรับเลือกรายชื่อเพลง และ หัวข้อบทความ */
-.selection-list {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-gap: 15px;
-margin-top: 15px;
-}
-
-.selection-item-card {
-background: rgba(255,255,255,0.04);
-border: 1px solid rgba(255,255,255,0.08);
-padding: 20px;
-border-radius: 14px;
-cursor: pointer;
-transition: 0.3s;
-display: flex;
-align-items: center;
-gap: 15px;
-}
-
-.selection-item-card:hover {
-background: #9b5cff;
-border-color: #9b5cff;
-transform: translateY(-3px);
-box-shadow: 0 5px 15px rgba(155,92,255,0.3);
-}
-
-.selection-item-card h4 { font-size: 18px; color: #fff; font-weight: 600; }
-.selection-item-card p { font-size: 13px; color: #ccc; margin-top: 2px; }
-
-.back-btn {
-padding: 10px 18px;
-background: rgba(255,255,255,0.12);
-border: 1px solid rgba(255,255,255,0.1);
-color: #fff;
-border-radius: 10px;
-cursor: pointer;
-margin-bottom: 25px;
-font-size: 14px;
-transition: 0.2s;
-display: inline-flex;
-align-items: center;
-gap: 8px;
-}
+.back-btn { padding: 10px 18px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.1); color: #fff; border-radius: 10px; cursor: pointer; margin-bottom: 25px; font-size: 14px; transition: 0.2s; display: inline-flex; align-items: center; gap: 8px; }
 .back-btn:hover { background: #ff2d55; border-color: #ff2d55; }
 
 @media(max-width:768px){
-.song-stats{
-display:flex;
-align-items:center;
-gap:10px;
-font-size:14px;
-}
-.song-table td:nth-child(2){
-width:70px;
-}
-.song-table td:nth-child(3){
-width:130px;
-}
-.share-btn{
-display:inline-flex;
-align-items:center;
-gap:5px;
-padding:10px 16px;
-border:none;
-border-radius:16px;
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(10px);
-color:#00d2ff;
-cursor:pointer;
-font-size:15px;
-white-space:nowrap;
-}
-body{
-overflow-x:hidden;
-}
-.container{
-flex-direction:column;
-}
-.main{
-padding:15px;
-padding-top:90px;
-padding-bottom:140px;
-}
-.hero-banner{
-padding:20px;
-border-radius:20px;
-}
-.hero-left{
-flex-direction:column;
-align-items:flex-start;
-gap:15px;
-}
-.hero-logo{
-width:100px;
-height:100px;
-}
-.hero-info h1{
-font-size:28px;
-}
-.song-table,
-.song-table tbody,
-.song-table tr,
-.song-table td{
-display:block;
-width:100%;
-}
-.song-row{
-padding:15px 0;
-display:block;
-}
-.song-info{
-flex-direction:column;
-align-items:flex-start;
-gap:12px;
-width:100%;
-}
-.song-info img{
-width:90px;
-height:90px;
-}
-audio{
-width:100% !important;
-max-width:100% !important;
-height:55px !important;
-}
-.song-stats{
-margin-top:10px;
-display:flex;
-gap:15px;
-}
-.bottom-player{
-height:70px;
-padding:10px;
-left:0;
-}
-.player-controls button{
-width:45px;
-height:45px;
-font-size:18px;
-}
-.sidebar.active{
-left:0;
-width:240px;
-box-shadow:0 0 30px rgba(0,0,0,.7);
-}
-.hero-social{
-display:flex;
-overflow-x:auto;
-gap:12px;
-padding-bottom:10px;
-scroll-behavior:smooth;
-}
-.hero-social iframe{
-min-width:300px;
-height:170px;
-flex-shrink:0;
-border-radius:16px;
-}
-.song-table td{
-border:none;
-padding:8px 0;
-}
+.song-stats{ display:flex; align-items:center; gap:10px; font-size:14px; }
+.song-table td:nth-child(2){ width:70px; }
+.song-table td:nth-child(3){ width:130px; }
+.share-btn{ display:inline-flex; align-items:center; gap:5px; padding:10px 16px; border:none; border-radius:16px; background:rgba(255,255,255,.08); backdrop-filter:blur(10px); color:#00d2ff; cursor:pointer; font-size:15px; white-space:nowrap; }
+body{ overflow-x:hidden; }
+.container{ flex-direction:column; }
+.main{ padding:15px; padding-top:90px; padding-bottom:140px; }
+.hero-banner{ padding:20px; border-radius:20px; }
+.hero-left{ flex-direction:column; align-items:flex-start; gap:15px; }
+.hero-logo{ width:100px; height:100px; }
+.hero-info h1{ font-size:28px; }
+.song-table, .song-table tbody, .song-table tr, .song-table td{ display:block; width:100%; }
+.song-row{ padding:15px 0; display:block; }
+.song-info{ flex-direction:column; align-items:flex-start; gap:12px; width:100%; }
+.song-info img{ width:90px; height:90px; }
+audio{ width:100% !important; max-width:100% !important; height:55px !important; }
+.song-stats{ margin-top:10px; display:flex; gap:15px; }
+.bottom-player{ height:70px; padding:10px; left:0; }
+.player-controls button{ width:45px; height:45px; font-size:18px; }
+.sidebar.active{ left:0; width:240px; box-shadow:0 0 30px rgba(0,0,0,.7); }
+.hero-social{ display:flex; overflow-x:auto; gap:12px; padding-bottom:10px; scroll-behavior:smooth; }
+.hero-social iframe{ min-width:300px; height:170px; flex-shrink:0; border-radius:16px; }
+.song-table td{ border:none; padding:8px 0; }
+.horo-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+.lucky-box { flex-direction: column; }
+.type-tabs .tab-btn { padding: 10px 15px; font-size: 14px; flex: 1; text-align: center;}
 }
 </style>
 </head>
@@ -594,10 +197,11 @@ padding:8px 0;
 
 <div class="container">
 
+<!-- แถบเมนูด้านซ้าย -->
 <div class="sidebar" id="sidebar">
 <div class="logo">🎵 StyleMusicPro</div>
 <div class="menu active" id="menuHome">🏠 หน้าแรก</div>
-<div class="menu" id="menuArticles">📰 บทความ</div>
+<div class="menu" id="menuArticles">🔮 ดูดวง</div>
 <div class="menu" id="menuSongs">🎵 เพลง</div>
 <div class="menu" id="lyricsMenu">📝 เนื้อเพลง</div>
 </div>
@@ -609,6 +213,7 @@ padding:8px 0;
 </div>
 </div>
 
+<!-- ฮีโร่แบนเนอร์ หน้าแรก -->
 <div class="hero-banner">
 <div class="hero-overlay">
 <div class="hero-left">
@@ -659,6 +264,7 @@ padding:8px 0;
 </thead>
 <tbody id="songList">
 
+<!-- เพลงที่ 1 -->
 <tr class="song-row" data-tags="sadpop">
 <td>
 <div class="song-info">
@@ -913,36 +519,195 @@ padding:8px 0;
 <td>4:12</td>
 <td><div class="song-stats"><span id="views17">👁 0</span><span class="like-btn" onclick="likeSong(17)">❤️ <span id="likes17">0</span></span><span class="share-btn" onclick="shareSong('บทเรียนของหัวใจ')">🔗 Share</span></div></td>
 </tr>
-
 </tbody>
 </table>
 
-<div id="articlesMainSection" class="articles-container" style="display: none;">
-    <h2 style="color: #9b5cff; margin-bottom: 20px; font-size: 24px;">📰 บทความ & รีวิวเพลงเศร้า</h2>
-    <p style="color: #bbb; margin-bottom: 20px; font-size: 15px;">เลือกหัวข้อบทความที่ต้องการอ่านด้านล่างนี้:</p>
+
+<!-- ============================================ -->
+<!-- ดูดวง ครบวงจร (รายวัน / รายสัปดาห์ / รายเดือน) -->
+<!-- ============================================ -->
+<div id="articlesMainSection" class="articles-container" style="display: none; padding: 20px 10px;">
     
-    <div class="selection-list">
-        <div class="selection-item-card" onclick="showSpecificArticle('articleContent1')">
-            📰<div><h4>5 เพลงเศร้าที่คนอกหักปี 2026 ต้องฟัง</h4><p>หมวดหมู่: รีวิวเพลงฮิต</p></div>
+    <div style="text-align: center; margin-bottom: 25px;">
+        <h2 style="color: #fff; font-size: 28px;">🔮 ดูดวงชะตาสไตล์ Sanook</h2>
+        <p style="color: #bbb; margin-top: 5px;">เช็กดวงแม่นๆ ครบทุกมิติ การงาน การเงิน ความรัก</p>
+    </div>
+
+    <!-- เมนูหลัก เลือกว่าจะดูแบบ วัน/สัปดาห์/เดือน -->
+    <div class="sub-tabs type-tabs" id="horoTypeTabs" style="justify-content: center; gap: 15px; margin-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px;">
+        <button class="tab-btn active" id="btn-type-daily" onclick="switchHoroType('daily', this)">📅 รายวัน</button>
+        <button class="tab-btn" id="btn-type-weekly" onclick="switchHoroType('weekly', this)">📆 รายสัปดาห์</button>
+        <button class="tab-btn" id="btn-type-monthly" onclick="switchHoroType('monthly', this)">🗓️ รายเดือน</button>
+    </div>
+
+    <!-- 🌟 SECTION 1: ดูดวงรายวัน -->
+    <div id="type-daily" class="horo-type-section" style="display: block;">
+        <div class="sub-tabs" style="justify-content: center; gap: 8px;">
+            <button class="tab-btn tab-sun" id="btn-daily-sunday" onclick="showHoroCard('daily', 'sunday', this)">วันอาทิตย์</button>
+            <button class="tab-btn tab-mon" id="btn-daily-monday" onclick="showHoroCard('daily', 'monday', this)">วันจันทร์</button>
+            <button class="tab-btn tab-tue" id="btn-daily-tuesday" onclick="showHoroCard('daily', 'tuesday', this)">วันอังคาร</button>
+            <button class="tab-btn tab-wed" id="btn-daily-wednesday" onclick="showHoroCard('daily', 'wednesday', this)">วันพุธ</button>
+            <button class="tab-btn tab-thu" id="btn-daily-thursday" onclick="showHoroCard('daily', 'thursday', this)">วันพฤหัสฯ</button>
+            <button class="tab-btn tab-fri" id="btn-daily-friday" onclick="showHoroCard('daily', 'friday', this)">วันศุกร์</button>
+            <button class="tab-btn tab-sat" id="btn-daily-saturday" onclick="showHoroCard('daily', 'saturday', this)">วันเสาร์</button>
         </div>
-        <div class="selection-item-card" onclick="showSpecificArticle('articleContent2')">
-            📰<div><h4>ทำไมเวลาอกหัก เราถึงชอบฟังเพลงตอกย้ำตัวเอง?</h4><p>หมวดหมู่: จิตวิทยาเสียงเพลง</p></div>
+
+        <!-- การ์ดรายวัน วันอาทิตย์ -->
+        <div id="card-daily-sunday" class="sanook-card card-sun" style="display: none;">
+            <div class="horo-header"><h3 style="color:#ff4d4d;">ดวงประจำวัน (อาทิตย์) ❤️</h3><div class="horo-stars">⭐⭐⭐⭐⭐</div></div>
+            <div class="horo-row"><div class="horo-icon-box" style="color: #00d2ff;">💼</div><div class="horo-detail"><h4 style="color: #00d2ff;">การงาน</h4><p>เตรียมตัวรับมือกับโปรเจกต์ใหม่ๆ อาจมีเรื่องให้คิดเยอะ หรือต้องแบกรับภาระหนักกว่าเพื่อนร่วมงาน แต่ผลลัพธ์จะออกมาดีเกินคาด</p></div></div>
+            <div class="horo-row"><div class="horo-icon-box" style="color: #ffcc00;">💰</div><div class="horo-detail"><h4 style="color: #ffcc00;">การเงิน</h4><p>มีค่าใช้จ่ายเกี่ยวกับคนในครอบครัว หรือการซ่อมแซมบ้าน/รถ เตรียมเงินสำรองไว้บ้าง อย่าเพิ่งลงทุนอะไรเสี่ยงๆ ในช่วงนี้</p></div></div>
+            <div class="horo-row"><div class="horo-icon-box" style="color: #ff66b2;">💖</div><div class="horo-detail"><h4 style="color: #ff66b2;">ความรัก</h4><p><b>คนโสด:</b> ได้พักผ่อนเต็มที่ ความรักยังไม่โดดเด่น อยู่กับเพื่อนแฮปปี้แล้ว<br><b>คนมีคู่:</b> วันหยุดสบายๆ แค่ได้อยู่บ้านก็เป็นความสุขที่หาที่ไหนไม่ได้<br><b>คนอกหัก:</b> ยังมีเรื่องราวของเขาโผล่ขึ้นมาในความทรงจำให้หน่วงๆ บ้าง</p></div></div>
+            <div class="lucky-box"><div class="lucky-item"><span>🎨</span><div><h5>สีมงคลประจำวัน</h5><p style="color:#ff4d4d;">แดง, ชมพู, ดำ</p></div></div><div class="lucky-item"><span>🔢</span><div><h5>เลขนำโชค</h5><p>1, 4, 7</p></div></div></div>
+        </div>
+
+        <!-- การ์ดรายวัน วันจันทร์ -->
+        <div id="card-daily-monday" class="sanook-card card-mon" style="display: none;">
+            <div class="horo-header"><h3 style="color:#ffcc00;">ดวงประจำวัน (จันทร์) 💛</h3><div class="horo-stars">⭐⭐⭐⭐</div></div>
+            <div class="horo-row"><div class="horo-icon-box" style="color: #00d2ff;">💼</div><div class="horo-detail"><h4 style="color: #00d2ff;">การงาน</h4><p>เริ่มต้นสัปดาห์ด้วยความวุ่นวาย มีงานด่วนเข้ามาแทรก ต้องอาศัยการจัดลำดับความสำคัญให้ดี แต่คุณจะจัดการมันได้ด้วยความใจเย็น</p></div></div>
+            <div class="horo-row"><div class="horo-icon-box" style="color: #ffcc00;">💰</div><div class="horo-detail"><h4 style="color: #ffcc00;">การเงิน</h4><p>มีเกณฑ์เสียเงินไปกับการซื้อมื้ออร่อยปลอบใจตัวเอง หรือของกระจุ๊กกระจิ๊กเล็กน้อย ระวังอย่าตามใจปากมากเกินไป</p></div></div>
+            <div class="horo-row"><div class="horo-icon-box" style="color: #ff66b2;">💖</div><div class="horo-detail"><h4 style="color: #ff66b2;">ความรัก</h4><p><b>คนโสด:</b> พบคนรู้ใจจากหน้าที่การงาน หรือคนที่ต้องดีลงานด้วยบ่อยๆ<br><b>คนมีคู่:</b> ระวังอารมณ์หงุดหงิดจากเรื่องอื่นแล้วพาลมาลงที่แฟน<br><b>คนอกหัก:</b> ยังมูฟออนเป็นวงกลม ได้แต่ฟังเพลงเศร้าวนไป ร้องไห้ออกมาเถอะนะ</p></div></div>
+            <div class="lucky-box"><div class="lucky-item"><span>🎨</span><div><h5>สีมงคลประจำวัน</h5><p style="color:#ffcc00;">เหลือง, ส้ม, ม่วง</p></div></div><div class="lucky-item"><span>🔢</span><div><h5>เลขนำโชค</h5><p>2, 5, 8</p></div></div></div>
+        </div>
+
+        <!-- การ์ดรายวัน วันอังคาร -->
+        <div id="card-daily-tuesday" class="sanook-card card-tue" style="display: none;">
+            <div class="horo-header"><h3 style="color:#ff66b2;">ดวงประจำวัน (อังคาร) 💗</h3><div class="horo-stars">⭐⭐⭐</div></div>
+            <div class="horo-row"><div class="horo-icon-box" style="color: #00d2ff;">💼</div><div class="horo-detail"><h4 style="color: #00d2ff;">การงาน</h4><p>ราบรื่นดี แต่ระวังมีคนคอยขัดใจหรือพูดจาไม่เข้าหู ทำหูทวนลมไปบ้างจะดีที่สุด โฟกัสแค่งานของตัวเองก็พอ</p></div></div>
+            <div class="horo-row"><div class="horo-icon-box" style="color: #ffcc00;">💰</div><div class="horo-detail"><h4 style="color: #ffcc00;">การเงิน</h4><p>หมุนเงินเหนื่อยหน่อยในช่วงนี้ อะไรประหยัดได้ควรประหยัด งด F ของออนไลน์ไปก่อนนะ เก็บเงินสดไว้ดีกว่า</p></div></div>
+            <div class="horo-row"><div class="horo-icon-box" style="color: #ff66b2;">💖</div><div class="horo-detail"><h4 style="color: #ff66b2;">ความรัก</h4><p><b>คนโสด:</b> คนที่แอบชอบเริ่มมีท่าทีตอบรับ มีคนอายุน้อยกว่าเข้ามา<br><b>คนมีคู่:</b> ความรักหวานชื่น มีเกณฑ์ได้ของขวัญหรือเซอร์ไพรส์เล็กๆ<br><b>คนอกหัก:</b> ความเจ็บปวดเริ่มจางหาย คุณพร้อมเปิดใจให้ตัวเองอีกครั้ง</p></div></div>
+            <div class="lucky-box"><div class="lucky-item"><span>🎨</span><div><h5>สีมงคลประจำวัน</h5><p style="color:#ff66b2;">ชมพู, ดำ, เทา</p></div></div><div class="lucky-item"><span>🔢</span><div><h5>เลขนำโชค</h5><p>3, 6, 9</p></div></div></div>
+        </div>
+
+        <!-- การ์ดรายวัน วันพุธ -->
+        <div id="card-daily-wednesday" class="sanook-card card-wed" style="display: none;">
+            <div class="horo-header"><h3 style="color:#00e676;">ดวงประจำวัน (พุธ) 💚</h3><div class="horo-stars">⭐⭐⭐⭐⭐</div></div>
+            <div class="horo-row"><div class="horo-icon-box" style="color: #00d2ff;">💼</div><div class="horo-detail"><h4 style="color: #00d2ff;">การงาน</h4><p>มีเรื่องให้ต้องตัดสินใจสำคัญ หากไม่แน่ใจลองปรึกษาผู้ใหญ่หรือคนที่ไว้ใจได้ จะได้คำตอบที่ดี การเจรจาต่อรองจะสำเร็จ</p></div></div>
+            <div class="horo-row"><div class="horo-icon-box" style="color: #ffcc00;">💰</div><div class="horo-detail"><h4 style="color: #ffcc00;">การเงิน</h4><p>เริ่มเข้าที่เข้าทาง มีเงินเข้ามาจากความพยายามของคุณเอง หรืออาจได้เงินที่เคยถูกยืมไปคืนมา มีโชคจากการพูด</p></div></div>
+            <div class="horo-row"><div class="horo-icon-box" style="color: #ff66b2;">💖</div><div class="horo-detail"><h4 style="color: #ff66b2;">ความรัก</h4><p><b>คนโสด:</b> ระวังเจอคนมีเจ้าของแล้วเข้ามาคุย เช็กประวัติให้ดีก่อน<br><b>คนมีคู่:</b> อาจมีเรื่องงอนกันเล็กๆ น้อยๆ ถนอมน้ำใจกันให้มากๆ<br><b>คนอกหัก:</b> วันนี้รู้สึกเหงาและดิ่งเป็นพิเศษ โหยหาอดีต</p></div></div>
+            <div class="lucky-box"><div class="lucky-item"><span>🎨</span><div><h5>สีมงคลประจำวัน</h5><p style="color:#00e676;">เขียว, ฟ้า, ขาว</p></div></div><div class="lucky-item"><span>🔢</span><div><h5>เลขนำโชค</h5><p>4, 2, 8</p></div></div></div>
+        </div>
+
+        <!-- การ์ดรายวัน วันพฤหัสบดี -->
+        <div id="card-daily-thursday" class="sanook-card card-thu" style="display: none;">
+            <div class="horo-header"><h3 style="color:#ff9900;">ดวงประจำวัน (พฤหัสบดี) 🧡</h3><div class="horo-stars">⭐⭐⭐⭐</div></div>
+            <div class="horo-row"><div class="horo-icon-box" style="color: #00d2ff;">💼</div><div class="horo-detail"><h4 style="color: #00d2ff;">การงาน</h4><p>ผู้ใหญ่ให้ความเมตตาเอ็นดู หากติดขัดปัญหาอะไรให้ออกปากขอความช่วยเหลือ จะผ่านไปได้ฉลุย ได้รับคำชมจากหัวหน้า</p></div></div>
+            <div class="horo-row"><div class="horo-icon-box" style="color: #ffcc00;">💰</div><div class="horo-detail"><h4 style="color: #ffcc00;">การเงิน</h4><p>มีโชคเล็กๆ น้อยๆ อาจได้ของฝาก ของฟรี หรือลาภลอยแบบไม่ทันตั้งตัว ทำให้ยิ้มออกได้ทั้งวัน</p></div></div>
+            <div class="horo-row"><div class="horo-icon-box" style="color: #ff66b2;">💖</div><div class="horo-detail"><h4 style="color: #ff66b2;">ความรัก</h4><p><b>คนโสด:</b> มีผู้ใหญ่แนะนำคนโปรไฟล์ดีให้รู้จัก ลองเปิดใจคุยดู<br><b>คนมีคู่:</b> เป็นที่ปรึกษาที่ดีให้กันและกัน ความรักมั่นคง เรียบง่าย<br><b>คนอกหัก:</b> เริ่มมีสติและคิดได้ว่า การอยู่คนเดียวก็มีความสุขดี</p></div></div>
+            <div class="lucky-box"><div class="lucky-item"><span>🎨</span><div><h5>สีมงคลประจำวัน</h5><p style="color:#ff9900;">ส้ม, ทอง, แดง</p></div></div><div class="lucky-item"><span>🔢</span><div><h5>เลขนำโชค</h5><p>5, 1, 9</p></div></div></div>
+        </div>
+
+        <!-- การ์ดรายวัน วันศุกร์ -->
+        <div id="card-daily-friday" class="sanook-card card-fri" style="display: none;">
+            <div class="horo-header"><h3 style="color:#3399ff;">ดวงประจำวัน (ศุกร์) 💙</h3><div class="horo-stars">⭐⭐⭐</div></div>
+            <div class="horo-row"><div class="horo-icon-box" style="color: #00d2ff;">💼</div><div class="horo-detail"><h4 style="color: #00d2ff;">การงาน</h4><p>จิตใจลอยไปถึงวันหยุดแล้ว! งานเดินช้าลงนิดหน่อย แต่ระวังอย่าให้พลาดจุดเล็กๆ น้อยๆ นะ รีบเคลียร์ให้เสร็จก่อนเลิกงาน</p></div></div>
+            <div class="horo-row"><div class="horo-icon-box" style="color: #ffcc00;">💰</div><div class="horo-detail"><h4 style="color: #ffcc00;">การเงิน</h4><p>เตรียมตัวเสียเงินกับการปาร์ตี้ สังสรรค์ หรือให้รางวัลตัวเองอย่างหนักหน่วง กระเป๋าเบาแน่นอน</p></div></div>
+            <div class="horo-row"><div class="horo-icon-box" style="color: #ff66b2;">💖</div><div class="horo-detail"><h4 style="color: #ff66b2;">ความรัก</h4><p><b>คนโสด:</b> อาจทำให้เจอคนถูกใจสไตล์สายปาร์ตี้เหมือนกัน<br><b>คนมีคู่:</b> วางแผนไปเที่ยวพักผ่อนด้วยกัน เติมความหวาน<br><b>คนอกหัก:</b> คืนวันศุกร์ช่างโหดร้าย ระวังน้ำตาแตกตอนดึกๆ</p></div></div>
+            <div class="lucky-box"><div class="lucky-item"><span>🎨</span><div><h5>สีมงคลประจำวัน</h5><p style="color:#3399ff;">ฟ้า, น้ำเงิน, ชมพู</p></div></div><div class="lucky-item"><span>🔢</span><div><h5>เลขนำโชค</h5><p>6, 3, 5</p></div></div></div>
+        </div>
+
+        <!-- การ์ดรายวัน วันเสาร์ -->
+        <div id="card-daily-saturday" class="sanook-card card-sat" style="display: none;">
+            <div class="horo-header"><h3 style="color:#b366ff;">ดวงประจำวัน (เสาร์) 💜</h3><div class="horo-stars">⭐⭐⭐⭐</div></div>
+            <div class="horo-row"><div class="horo-icon-box" style="color: #00d2ff;">💼</div><div class="horo-detail"><h4 style="color: #00d2ff;">การงาน</h4><p>วันพักผ่อนแต่สมองก็ยังแอบคิดเรื่องงานอยู่ดี ปล่อยวางบ้าง ชาร์จแบตให้ตัวเองด่วนๆ อย่าเอางานกลับมาทำที่บ้าน</p></div></div>
+            <div class="horo-row"><div class="horo-icon-box" style="color: #ffcc00;">💰</div><div class="horo-detail"><h4 style="color: #ffcc00;">การเงิน</h4><p>ช้อปปิ้งแก้เครียดคือทางออกของคุณ ระวังบิลสิ้นเดือนจะทำให้เครียดหนักกว่าเดิม ซื้อเฉพาะของที่จำเป็นจริงๆ ดีกว่า</p></div></div>
+            <div class="horo-row"><div class="horo-icon-box" style="color: #ff66b2;">💖</div><div class="horo-detail"><h4 style="color: #ff66b2;">ความรัก</h4><p><b>คนโสด:</b> เสน่ห์แรง! มีคนทักมาคุยเยอะ แต่คุณยังหวงความโสด<br><b>คนมีคู่:</b> ระวังเรื่องความหึงหวง หรือระแวงเกินเหตุ จะทะเลาะกัน<br><b>คนอกหัก:</b> เอาเวลาที่เศร้าไปดูแลตัวเอง ทำสวยทำหล่อดีกว่า!</p></div></div>
+            <div class="lucky-box"><div class="lucky-item"><span>🎨</span><div><h5>สีมงคลประจำวัน</h5><p style="color:#b366ff;">ม่วง, ดำ, น้ำเงิน</p></div></div><div class="lucky-item"><span>🔢</span><div><h5>เลขนำโชค</h5><p>7, 8, 4</p></div></div></div>
         </div>
     </div>
+
+
+    <!-- 🌟 SECTION 2: ดูดวงรายสัปดาห์ -->
+    <div id="type-weekly" class="horo-type-section" style="display: none;">
+        <div class="sub-tabs" style="justify-content: center; gap: 8px;">
+            <button class="tab-btn tab-sun" id="btn-weekly-sunday" onclick="showHoroCard('weekly', 'sunday', this)">วันอาทิตย์</button>
+            <button class="tab-btn tab-mon" id="btn-weekly-monday" onclick="showHoroCard('weekly', 'monday', this)">วันจันทร์</button>
+            <button class="tab-btn tab-tue" id="btn-weekly-tuesday" onclick="showHoroCard('weekly', 'tuesday', this)">วันอังคาร</button>
+            <button class="tab-btn tab-wed" id="btn-weekly-wednesday" onclick="showHoroCard('weekly', 'wednesday', this)">วันพุธ</button>
+            <button class="tab-btn tab-thu" id="btn-weekly-thursday" onclick="showHoroCard('weekly', 'thursday', this)">วันพฤหัสฯ</button>
+            <button class="tab-btn tab-fri" id="btn-weekly-friday" onclick="showHoroCard('weekly', 'friday', this)">วันศุกร์</button>
+            <button class="tab-btn tab-sat" id="btn-weekly-saturday" onclick="showHoroCard('weekly', 'saturday', this)">วันเสาร์</button>
+        </div>
+
+        <div id="card-weekly-sunday" class="sanook-card card-sun" style="display: none;">
+            <div class="horo-header"><h3 style="color:#ff4d4d;">ภาพรวมสัปดาห์นี้ (อาทิตย์)</h3><div class="horo-stars">⭐⭐⭐⭐</div></div>
+            <div class="horo-row"><div class="horo-detail"><h4 style="color: #00d2ff;">สัปดาห์นี้ของคุณ</h4><p>เป็นสัปดาห์แห่งการเคลียร์สะสางปัญหาที่ค้างคา งานที่เคยติดขัดจะเริ่มมองเห็นทางออก การเงินอาจมีรายจ่ายฉุกเฉินเข้ามาช่วงกลางสัปดาห์ แต่คุณเอาตัวรอดได้สบายๆ ความรักมีเกณฑ์คนเก่าทักมาให้ใจสั่น</p></div></div>
+        </div>
+        <div id="card-weekly-monday" class="sanook-card card-mon" style="display: none;">
+            <div class="horo-header"><h3 style="color:#ffcc00;">ภาพรวมสัปดาห์นี้ (จันทร์)</h3><div class="horo-stars">⭐⭐⭐</div></div>
+            <div class="horo-row"><div class="horo-detail"><h4 style="color: #00d2ff;">สัปดาห์นี้ของคุณ</h4><p>สัปดาห์แห่งอารมณ์ที่แปรปรวนง่าย ให้ระวังคำพูดกับเพื่อนร่วมงานหรือคนใกล้ชิด การเงินอยู่ในเกณฑ์ใช้จ่ายคล่องมือ แต่ยังเก็บไม่อยู่ ความรักคนโสดเสน่ห์แรงสุดๆ มีเกณฑ์ได้สานสัมพันธ์กับคนน่ารัก</p></div></div>
+        </div>
+        <div id="card-weekly-tuesday" class="sanook-card card-tue" style="display: none;">
+            <div class="horo-header"><h3 style="color:#ff66b2;">ภาพรวมสัปดาห์นี้ (อังคาร)</h3><div class="horo-stars">⭐⭐⭐⭐⭐</div></div>
+            <div class="horo-row"><div class="horo-detail"><h4 style="color: #00d2ff;">สัปดาห์นี้ของคุณ</h4><p>สัปดาห์แห่งความพุ่งกระฉูด หยิบจับอะไรก็เป็นเงินเป็นทอง ใครทำธุรกิจจะมีกำไรเข้ามารัวๆ การงานอาจเหนื่อยหน่อยแต่คุ้มค่าเหนื่อยแน่นอน ความรักคนมีคู่จะเข้าใจกันมากขึ้น เป็นกำลังใจให้กันดีมาก</p></div></div>
+        </div>
+        <div id="card-weekly-wednesday" class="sanook-card card-wed" style="display: none;">
+            <div class="horo-header"><h3 style="color:#00e676;">ภาพรวมสัปดาห์นี้ (พุธ)</h3><div class="horo-stars">⭐⭐⭐⭐</div></div>
+            <div class="horo-row"><div class="horo-detail"><h4 style="color: #00d2ff;">สัปดาห์นี้ของคุณ</h4><p>การเจรจาต่อรองในสัปดาห์นี้เด่นมาก ใครจะสอบสัมภาษณ์ นำเสนองาน หรือขายของจะผ่านฉลุย ระวังปัญหาสุขภาพเล็กๆ น้อยๆ เช่น ปวดหลัง ปวดตา ความรักอยู่ในโหมดเงียบเหงา โฟกัสเรื่องทำมาหากินไปก่อน</p></div></div>
+        </div>
+        <div id="card-weekly-thursday" class="sanook-card card-thu" style="display: none;">
+            <div class="horo-header"><h3 style="color:#ff9900;">ภาพรวมสัปดาห์นี้ (พฤหัสบดี)</h3><div class="horo-stars">⭐⭐⭐⭐</div></div>
+            <div class="horo-row"><div class="horo-detail"><h4 style="color: #00d2ff;">สัปดาห์นี้ของคุณ</h4><p>สัปดาห์แห่งการเรียนรู้สิ่งใหม่ๆ ผู้ใหญ่เกื้อหนุนให้โอกาส หากคิดจะเริ่มโปรเจกต์ใหม่นี่คือเวลาที่เหมาะสม การเงินมีโชคจากผู้ใหญ่ใจดี ความรักคนโสดระวังตกหลุมรักคนที่ไม่ควรรัก ต้องเผื่อใจไว้บ้าง</p></div></div>
+        </div>
+        <div id="card-weekly-friday" class="sanook-card card-fri" style="display: none;">
+            <div class="horo-header"><h3 style="color:#3399ff;">ภาพรวมสัปดาห์นี้ (ศุกร์)</h3><div class="horo-stars">⭐⭐⭐</div></div>
+            <div class="horo-row"><div class="horo-detail"><h4 style="color: #00d2ff;">สัปดาห์นี้ของคุณ</h4><p>สัปดาห์ที่ชีพจรลงเท้า มีเกณฑ์ต้องเดินทางบ่อย หรือมีกิจกรรมให้ทำตลอดทั้งสัปดาห์ ระวังกระเป๋าตังค์รั่วไหลไปกับของสวยๆ งามๆ ความรักคนมีคู่อาจมีเวลาให้กันน้อยลง พยายามแชทหาหรือโทรคุยกันบ้าง</p></div></div>
+        </div>
+        <div id="card-weekly-saturday" class="sanook-card card-sat" style="display: none;">
+            <div class="horo-header"><h3 style="color:#b366ff;">ภาพรวมสัปดาห์นี้ (เสาร์)</h3><div class="horo-stars">⭐⭐⭐⭐</div></div>
+            <div class="horo-row"><div class="horo-detail"><h4 style="color: #00d2ff;">สัปดาห์นี้ของคุณ</h4><p>สัปดาห์นี้ความเครียดลดลง เริ่มมองเห็นความสำเร็จในสิ่งที่เพียรพยายามมา การเงินมีเงินก้อนเล็กๆ เข้ามาให้พอชื่นใจ ความรักคนอกหักจะเริ่มมูฟออนได้เต็มตัว ทิ้งความเศร้าไว้กับสัปดาห์นี้แหละ!</p></div></div>
+        </div>
+    </div>
+
+
+    <!-- 🌟 SECTION 3: ดูดวงรายเดือน -->
+    <div id="type-monthly" class="horo-type-section" style="display: none;">
+        <div class="sub-tabs" style="justify-content: center; gap: 8px;">
+            <button class="tab-btn tab-sun" id="btn-monthly-sunday" onclick="showHoroCard('monthly', 'sunday', this)">วันอาทิตย์</button>
+            <button class="tab-btn tab-mon" id="btn-monthly-monday" onclick="showHoroCard('monthly', 'monday', this)">วันจันทร์</button>
+            <button class="tab-btn tab-tue" id="btn-monthly-tuesday" onclick="showHoroCard('monthly', 'tuesday', this)">วันอังคาร</button>
+            <button class="tab-btn tab-wed" id="btn-monthly-wednesday" onclick="showHoroCard('monthly', 'wednesday', this)">วันพุธ</button>
+            <button class="tab-btn tab-thu" id="btn-monthly-thursday" onclick="showHoroCard('monthly', 'thursday', this)">วันพฤหัสฯ</button>
+            <button class="tab-btn tab-fri" id="btn-monthly-friday" onclick="showHoroCard('monthly', 'friday', this)">วันศุกร์</button>
+            <button class="tab-btn tab-sat" id="btn-monthly-saturday" onclick="showHoroCard('monthly', 'saturday', this)">วันเสาร์</button>
+        </div>
+
+        <div id="card-monthly-sunday" class="sanook-card card-sun" style="display: none;">
+            <div class="horo-header"><h3 style="color:#ff4d4d;">ดวงรายเดือนคนเกิดวันอาทิตย์</h3><div class="horo-stars">🌟🌟🌟🌟🌟</div></div>
+            <div class="horo-row"><div class="horo-detail"><h4 style="color: #fff;">บทสรุปประจำเดือน</h4><p>เดือนนี้ถือเป็นนาทีทองของคุณ ดวงดาวส่งผลดีทำให้หยิบจับอะไรก็สำเร็จ การงานมีความก้าวหน้า ผู้ใหญ่เล็งเห็นผลงาน การเงินสะพัด มีโชคลาภลอยแบบฟลุ๊คๆ ความรักลงตัวสุดๆ คนโสดเตรียมสละโสดได้เลย!</p></div></div>
+        </div>
+        <div id="card-monthly-monday" class="sanook-card card-mon" style="display: none;">
+            <div class="horo-header"><h3 style="color:#ffcc00;">ดวงรายเดือนคนเกิดวันจันทร์</h3><div class="horo-stars">🌟🌟🌟🌟</div></div>
+            <div class="horo-row"><div class="horo-detail"><h4 style="color: #fff;">บทสรุปประจำเดือน</h4><p>เดือนนี้เน้นเรื่องการสร้างคอนเนคชั่น การพบปะผู้คนจะนำพาโอกาสทางการเงินและการงานมาให้ ระวังเรื่องความเหนื่อยล้าสะสม พักผ่อนให้เพียงพอ ความรักระวังคนคุยซ้อน เข้ามาทำให้ใจว้าวุ่น</p></div></div>
+        </div>
+        <div id="card-monthly-tuesday" class="sanook-card card-tue" style="display: none;">
+            <div class="horo-header"><h3 style="color:#ff66b2;">ดวงรายเดือนคนเกิดวันอังคาร</h3><div class="horo-stars">🌟🌟🌟</div></div>
+            <div class="horo-row"><div class="horo-detail"><h4 style="color: #fff;">บทสรุปประจำเดือน</h4><p>เดือนแห่งการประคับประคอง การงานอาจมีเรื่องท้าทายความสามารถ ต้องใช้ความอดทนสูง การเงินหมุนเวียนค่อนข้างตึงมือ งดลงทุนก้อนใหญ่ไปก่อน ความรักอาจมีปากเสียงกันบ่อย ต้องถอยคนละก้าว</p></div></div>
+        </div>
+        <div id="card-monthly-wednesday" class="sanook-card card-wed" style="display: none;">
+            <div class="horo-header"><h3 style="color:#00e676;">ดวงรายเดือนคนเกิดวันพุธ</h3><div class="horo-stars">🌟🌟🌟🌟</div></div>
+            <div class="horo-row"><div class="horo-detail"><h4 style="color: #fff;">บทสรุปประจำเดือน</h4><p>เป็นเดือนที่โดดเด่นเรื่องการสื่อสาร ใครทำอาชีพค้าขาย หรือครีเอเตอร์ จะปังมาก ลูกค้าเข้ารัวๆ การเงินจะดีขึ้นกว่าเดือนที่แล้ว ความรักคนมีคู่หวานชื่น คนโสดมีคนแอบมองอยู่ห่างๆ ลองเปิดใจดู</p></div></div>
+        </div>
+        <div id="card-monthly-thursday" class="sanook-card card-thu" style="display: none;">
+            <div class="horo-header"><h3 style="color:#ff9900;">ดวงรายเดือนคนเกิดวันพฤหัสบดี</h3><div class="horo-stars">🌟🌟🌟🌟🌟</div></div>
+            <div class="horo-row"><div class="horo-detail"><h4 style="color: #fff;">บทสรุปประจำเดือน</h4><p>เดือนแห่งการเลื่อนขั้นเลื่อนตำแหน่ง หรือได้รับโปรเจกต์ใหญ่ที่รอคอย การเงินอู้ฟู่ มีโอกาสได้ของชิ้นใหญ่ เช่น รถ หรือ บ้าน ความรักคนโสดเตรียมเจอคนสายเปย์ เข้ามาดูแลเอาใจใส่เป็นอย่างดี</p></div></div>
+        </div>
+        <div id="card-monthly-friday" class="sanook-card card-fri" style="display: none;">
+            <div class="horo-header"><h3 style="color:#3399ff;">ดวงรายเดือนคนเกิดวันศุกร์</h3><div class="horo-stars">🌟🌟🌟</div></div>
+            <div class="horo-row"><div class="horo-detail"><h4 style="color: #fff;">บทสรุปประจำเดือน</h4><p>ระวังอารมณ์ศิลปินในเดือนนี้ ที่อาจทำให้คุณเบื่อหน่ายกับสิ่งรอบตัวง่ายๆ การงานเรื่อยๆ ไม่หวือหวา การเงินหมดไปกับของฟุ่มเฟือยซะเยอะ ความรักคนโสดอยากอยู่เงียบๆ คนเดียวมากกว่ามีใครมาวุ่นวาย</p></div></div>
+        </div>
+        <div id="card-monthly-saturday" class="sanook-card card-sat" style="display: none;">
+            <div class="horo-header"><h3 style="color:#b366ff;">ดวงรายเดือนคนเกิดวันเสาร์</h3><div class="horo-stars">🌟🌟🌟🌟</div></div>
+            <div class="horo-row"><div class="horo-detail"><h4 style="color: #fff;">บทสรุปประจำเดือน</h4><p>เดือนนี้คุณจะแข็งแกร่งขึ้น จัดการปัญหาทุกอย่างได้อยู่หมัด การงานอาจจะหนักในช่วงต้นเดือน แต่ปลายเดือนจะยิ้มออก การเงินเริ่มมีเงินเก็บเป็นกอบเป็นกำ ความรักคนที่มีปัญหากันจะกลับมาปรับความเข้าใจกันได้</p></div></div>
+        </div>
+    </div>
+
 </div>
 
-<div id="articleContent1" class="dark-read-mode" style="display: none;">
-    <button class="back-btn" onclick="backToArticlesList()">⬅ ย้อนกลับไปหน้ารวมบทความ</button>
-    <h2 style="color: #9b5cff; margin-bottom: 25px; font-size: 26px;">5 เพลงเศร้าที่คนอกหักปี 2026 ต้องฟังให้ร้องไห้โฮ</h2>
-    <div class="article-detail-text">เปิดลิสต์เพลงฮิตดิ่งลึกที่รวบรวมไว้ในเว็บ StyleMusicPro สำหรับคนที่ต้องการบำบัดความรู้สึกด้วยเสียงเพลงยามค่ำคืน...</div>
-</div>
 
-<div id="articleContent2" class="dark-read-mode" style="display: none;">
-    <button class="back-btn" onclick="backToArticlesList()">⬅ ย้อนกลับไปหน้ารวมบทความ</button>
-    <h2 style="color: #9b5cff; margin-bottom: 25px; font-size: 26px;">ทำไมเวลาอกหัก เราถึงชอบฟังเพลงตอกย้ำตัวเอง?</h2>
-    <div class="article-detail-text">บทความเชิงจิตวิทยาที่เล่าถึงกลไกของสมองมนุษย์ เมื่อเราฟังเพลง Sad Pop จังหวะหน่วง ๆ ความเศร้าจะช่วยเยียวยาจิตใจได้อย่างไร...</div>
-</div>
-
+<!-- ============================================ -->
+<!-- หน้าเนื้อเพลง (ซ่อนไว้รอคลิกเมนู) -->
+<!-- ============================================ -->
 <div id="lyricsMainSection" class="lyrics-container" style="display: none;">
     <h2 style="color: #9b5cff; margin-bottom: 20px; font-size: 24px;">📝 คลังเนื้อเพลงทั้งหมด</h2>
     <p style="color: #bbb; margin-bottom: 20px; font-size: 15px;">เลือกรายชื่อเพลงที่ต้องการอ่านเนื้อร้องด้านล่างนี้:</p>
@@ -963,6 +728,9 @@ padding:8px 0;
     </div>
 </div>
 
+<!-- ============================================ -->
+<!-- กล่องเนื้อเพลง 1-12 -->
+<!-- ============================================ -->
 <div id="songLyric1" class="dark-read-mode" style="display: none;">
     <button class="back-btn" onclick="backToLyricsList()">⬅ ย้อนกลับไปรายชื่อเพลง</button>
     <h2 style="color: #9b5cff; margin-bottom: 20px; font-size: 24px;">📝 เนื้อเพลง: ได้แค่มองเธอ</h2>
@@ -1018,10 +786,6 @@ padding:8px 0;
     <div class="lyrics-block"><div class="lyrics-section-title">Bridge</div><div class="lyrics-text">(ดนตรีบิ้วอารมณ์ขึ้นมา เสียงกลองจังหวะหนักและช้า เสียงซินธ์หม่นๆ)<br>ขอให้คืนนี้ยาวนานกว่านี้ได้ไหม<br>หยุดเวลาเอาไว้ตรงนี้ จะแลกด้วยอะไรก็ยอม<br>ไม่อยากให้พรุ่งนี้มาถึง ไม่อยากให้เธอต้องไป!</div></div>
     <div class="lyrics-block"><div class="lyrics-section-title">Chorus</div><div class="lyrics-text">(เสียงร้องเค้นอารมณ์ พุ่งทะยานเต็มที่เจ็บปวดสุดขีด)<br>เพราะต่อจากคืนนี้ไป... ฉันจะไม่มีเธอให้กอดอีกแล้ว!<br>ตื่นมาพบกับความว่างเปล่า ในห้องที่เคยมีเรา<br>แค่หลับตาลงยังกลัว เพราะรู้ว่าพรุ่งนี้จะทรมานแค่ไหน<br>เมื่อต้องยอมรับความจริงว่าใจของเธอ...<br>มันจากฉันไป... ตั้งแต่คืนนี้</div></div>
     <div class="lyrics-block"><div class="lyrics-section-title">Outro</div><div class="lyrics-text">(ดนตรีค่อยๆ ลดระดับลง เหลือเพียงเสียงร้องและเปียโนหม่นๆ)<br>แสงเช้ากำลังจะมา...<br>พร้อมกับคำลา... ของเธอ<br>(ดนตรี Fade out จบลงด้วยความเงียบ)</div></div>
-    <div class="lyrics-block" style="background-color: #1e1e24; padding: 15px; border-radius: 8px; margin-top: 25px; border-left: 4px solid #9b5cff;">
-        <div class="lyrics-section-title" style="color: #d4a5ff; font-size: 14px; margin-bottom: 5px;">🎛️ Prompt แนวทางดนตรี (Suno AI)</div>
-        <div class="lyrics-text" style="color: #a0a0b0; font-family: monospace; line-height: 1.5;">Modern Thai gloomy sad pop, highly emotional vocal, vocal-centric, minimalist soft piano, deep ambient synth, slow tempo, heartbreak, breathy intimate voice, cinematic sad build-up, dark and melancholic atmosphere, fading ending</div>
-    </div>
 </div>
 
 <div id="songLyric5" class="dark-read-mode" style="display: none;">
@@ -1035,10 +799,6 @@ padding:8px 0;
     <div class="lyrics-block"><div class="lyrics-section-title">Bridge</div><div class="lyrics-text">ถ้าตอนนั้นเราเลือกอีกทาง<br>ผลลัพธ์จะเปลี่ยนไปไหม<br>คำตอบนั้นไม่สำคัญแล้ว<br>เพราะวันนี้ฉันเข้าใจทุกอย่าง</div></div>
     <div class="lyrics-block"><div class="lyrics-section-title">Chorus - Final</div><div class="lyrics-text">หากวันหนึ่งเราได้พบกัน<br>ฉันจะไม่ร้องไห้อีกแล้ว<br>จะยิ้มให้เธอเหมือนคนหนึ่ง<br>ที่เคยเป็นโลกทั้งใบของฉัน<br>และไม่ว่าเรื่องราวจะจบแบบไหน<br>ฉันยังขอบคุณทุกวันเวลา<br>ที่ครั้งหนึ่งบนโลกใบนี้<br>เราเคยรักกันจริงๆ</div></div>
     <div class="lyrics-block"><div class="lyrics-section-title">Outro</div><div class="lyrics-text">หากวันหนึ่งเราได้พบกัน...<br>ขอให้วันนั้นเรายิ้มให้กันก็พอ</div></div>
-    <div class="lyrics-block" style="background-color: #1e1e24; padding: 15px; border-radius: 8px; margin-top: 25px; border-left: 4px solid #9b5cff;">
-        <div class="lyrics-section-title" style="color: #d4a5ff; font-size: 14px; margin-bottom: 5px;">🎛️ Prompt แนวทางดนตรี (Suno AI)</div>
-        <div class="lyrics-text" style="color: #a0a0b0; font-family: monospace; line-height: 1.5;">100% original Thai modern pop sad emotional ballad, tempo 72-84 BPM, emotional male vocal, heartfelt and nostalgic singing, piano intro, ambient synth pads, soft electric guitar, cinematic strings, deep emotional bass, gradual build-up, bittersweet and hopeful atmosphere, theme of meeting an old love again in the future, gratitude, memories, emotional growth, powerful chorus, modern Thai pop production, radio-ready mix, touching and cinematic feeling, completely original melody and lyrics, avoid similarity to existing songs</div>
-    </div>
 </div>
 
 <div id="songLyric6" class="dark-read-mode" style="display: none;">
@@ -1051,10 +811,6 @@ padding:8px 0;
     <div class="lyrics-block"><div class="lyrics-section-title">Verse 2</div><div class="lyrics-text">ทุกคืนยังย้อนกลับไปคิด<br>ว่าถ้าวันนั้นฉันหยุดทันไหม<br>ถ้าฉันไม่ปล่อยใจไปไกล<br>คงไม่ต้องเจ็บขนาดนี้<br>แต่เวลาคงไม่ย้อนกลับ<br>ให้แก้ไขเรื่องราวที่ผ่านมา<br>สิ่งเดียวที่เหลือในวันนี้<br>คือเรียนรู้และยอมรับมัน</div></div>
     <div class="lyrics-block"><div class="lyrics-section-title">Bridge</div><div class="lyrics-text">บางบทเรียนต้องแลกด้วยน้ำตา<br>บางความรักต้องจบเพื่อเข้าใจ<br>ว่าหัวใจไม่ควรวิ่งตามใคร<br>จนลืมดูแลตัวเอง</div></div>
     <div class="lyrics-block"><div class="lyrics-section-title">Outro</div><div class="lyrics-text">วันนี้ฉันฟังหัวใจตัวเองแล้ว<br>แม้มันจะสายไปก็ตาม...</div></div>
-    <div class="lyrics-block" style="background-color: #1e1e24; padding: 15px; border-radius: 8px; margin-top: 25px; border-left: 4px solid #9b5cff;">
-        <div class="lyrics-section-title" style="color: #d4a5ff; font-size: 14px; margin-bottom: 5px;">🎛️ Prompt แนวทางดนตรี (Suno AI)</div>
-        <div class="lyrics-text" style="color: #a0a0b0; font-family: monospace; line-height: 1.5;">100% original Thai modern pop sad ballad, completely original melody and lyrics, tempo 74-88 BPM, emotional male vocal, intimate and heartfelt singing, piano intro with ambient synth pads, soft electric guitar, deep bass, subtle strings, modern emotional drums, strong memorable hook at the beginning, cinematic atmosphere, theme of ignoring warning signs in love and learning from heartbreak, emotional growth, regret, modern Thai pop production, radio-ready mix, layered harmonies, emotional climax, touching and reflective mood, avoid similarity to any existing copyrighted song, melody, lyrics, artist, or arrangement</div>
-    </div>
 </div>
 
 <div id="songLyric7" class="dark-read-mode" style="display: none;">
@@ -1067,10 +823,6 @@ padding:8px 0;
     <div class="lyrics-block"><div class="lyrics-section-title">Verse 2</div><div class="lyrics-text">ฉันไม่รู้ว่าตอนนี้<br>เธอยังจำฉันได้ไหม<br>หรือปล่อยทุกอย่างเอาไว้<br>ในวันเวลาที่ผ่านไป<br>แต่ฉันยังเก็บภาพเหล่านั้น<br>เอาไว้ในหัวใจเงียบๆ<br>เหมือนเพลงบทหนึ่ง<br>ที่ไม่มีวันลืม</div></div>
     <div class="lyrics-block"><div class="lyrics-section-title">Bridge</div><div class="lyrics-text">หากลมพาคำพูดไปถึงเธอ<br>อยากให้รู้เพียงเรื่องเดียว<br>ว่าบนโลกใบนี้ยังมีคนหนึ่ง<br>หวังดีต่อเธอเสมอ</div></div>
     <div class="lyrics-block"><div class="lyrics-section-title">Outro</div><div class="lyrics-text">ฝากลมคืนนี้ไปบอกเธอ<br>ว่าฉันยังคิดถึงอยู่ตรงนี้...</div></div>
-    <div class="lyrics-block" style="background-color: #1e1e24; padding: 15px; border-radius: 8px; margin-top: 25px; border-left: 4px solid #9b5cff;">
-        <div class="lyrics-section-title" style="color: #d4a5ff; font-size: 14px; margin-bottom: 5px;">🎛️ Prompt แนวทางดนตรี (Suno AI)</div>
-        <div class="lyrics-text" style="color: #a0a0b0; font-family: monospace; line-height: 1.5;">100% original Thai modern pop sad ballad, completely unique melody and lyrics, tempo 72-86 BPM, emotional male vocal, warm and atmospheric singing, piano intro, ambient synth pads, soft electric guitar with delay, cinematic strings, deep emotional bass, gradual build-up, strong memorable hook at the beginning, theme of sending thoughts and memories through the wind, longing, nostalgia, emotional distance, modern Thai pop production, radio-ready mix, layered harmonies, emotional climax, dreamy and touching atmosphere, avoid similarity to any existing copyrighted song, melody, lyrics, artist style, or arrangement</div>
-    </div>
 </div>
 
 <div id="songLyric8" class="dark-read-mode" style="display: none;">
@@ -1084,10 +836,6 @@ padding:8px 0;
     <div class="lyrics-block"><div class="lyrics-section-title">Bridge</div><div class="lyrics-text">บางความรักไม่ได้ผิด<br>แค่เกิดขึ้นในเวลาที่ไม่ใช่<br>และบางคนก็เข้ามา<br>เพื่อเป็นความทรงจำตลอดไป</div></div>
     <div class="lyrics-block"><div class="lyrics-section-title">Final Chorus</div><div class="lyrics-text">เธอคือคนที่ฉันควรลืมไป<br>แต่กลับเป็นคนที่จำได้ดีที่สุด<br>แม้วันนี้จะไม่มีวันของเรา<br>แต่ฉันก็ยังรักเธออยู่ดี</div></div>
     <div class="lyrics-block"><div class="lyrics-section-title">Outro</div><div class="lyrics-text">คงต้องปล่อยให้เธอเป็นเพียง<br>ความทรงจำที่สวยงาม...</div></div>
-    <div class="lyrics-block" style="background-color: #1e1e24; padding: 15px; border-radius: 8px; margin-top: 25px; border-left: 4px solid #9b5cff;">
-        <div class="lyrics-section-title" style="color: #d4a5ff; font-size: 14px; margin-bottom: 5px;">🎛️ Prompt แนวทางดนตรี (Suno AI)</div>
-        <div class="lyrics-text" style="color: #a0a0b0; font-family: monospace; line-height: 1.5;">100% original Thai modern pop sad emotional ballad, completely unique melody and lyrics, tempo 74-90 BPM, emotional male vocal, heartfelt and intimate singing, piano intro, ambient synth pads, soft electric guitar, cinematic strings, deep bass, modern emotional drums, strong original hook at the beginning, theme of loving someone who was never meant to be, longing, emotional conflict, bittersweet memories, modern Thai pop production, radio-ready mix, layered harmonies, emotional climax, touching and reflective atmosphere, avoid similarity to any existing copyrighted song, melody, lyrics, artist style, or arrangement</div>
-    </div>
 </div>
 
 <div id="songLyric9" class="dark-read-mode" style="display: none;">
@@ -1101,10 +849,6 @@ padding:8px 0;
     <div class="lyrics-block"><div class="lyrics-section-title">Bridge</div><div class="lyrics-text">บางคนเข้ามาเพื่ออยู่ตลอดไป<br>บางคนเข้ามาเพื่อสอนหัวใจ<br>ให้รู้จักความรักและการจากลา<br>ก่อนจะกลายเป็นเรื่องราวแสนงดงาม</div></div>
     <div class="lyrics-block"><div class="lyrics-section-title">Final Chorus</div><div class="lyrics-text">บางความรักไม่ได้ผิด<br>แค่ฟ้ากำหนดเวลาไว้ต่างกัน<br>และแม้เราจะไม่ได้ลงเอย<br>อย่างที่เคยวาดฝัน<br>ฉันก็ยังขอบคุณเสมอ<br>ที่เธอเคยเดินเข้ามา<br>และกลายเป็นบทหนึ่งของชีวิต<br>ที่ฉันไม่มีวันลืม</div></div>
     <div class="lyrics-block"><div class="lyrics-section-title">Outro</div><div class="lyrics-text">หากวันหนึ่งคิดถึงกันขึ้นมา<br>ขอให้ยิ้มกับความทรงจำเหล่านั้น<br>เพราะอย่างน้อยครั้งหนึ่ง<br>เราเคยรักกันจริงๆ</div></div>
-    <div class="lyrics-block" style="background-color: #1e1e24; padding: 15px; border-radius: 8px; margin-top: 25px; border-left: 4px solid #9b5cff;">
-        <div class="lyrics-section-title" style="color: #d4a5ff; font-size: 14px; margin-bottom: 5px;">🎛️ Prompt แนวทางดนตรี (Suno AI)</div>
-        <div class="lyrics-text" style="color: #a0a0b0; font-family: monospace; line-height: 1.5;">100% original Thai modern pop sad ballad, emotional male vocal, warm heartfelt singing, tempo 72-84 BPM, piano intro, ambient synth pads, soft electric guitar, emotional strings, cinematic atmosphere, bittersweet mood, theme of two people who met at the wrong time but truly loved each other, nostalgia, acceptance, emotional growth, powerful chorus, modern Thai pop production, layered harmonies, touching emotional climax, completely original melody and lyrics, avoid similarity to any existing copyrighted songs</div>
-    </div>
 </div>
 
 <div id="songLyric10" class="dark-read-mode" style="display: none;">
@@ -1117,10 +861,6 @@ padding:8px 0;
     <div class="lyrics-block"><div class="lyrics-section-title">Verse 2</div><div class="lyrics-text">อาจจะเป็นฉันที่คาดหวังเอง<br>วาดภาพสวยงามไปไกลเกินจริง<br>ลืมไปว่าในละครเรื่องนี้<br>ฉันไม่ใช่ตัวเอกของเธอ</div></div>
     <div class="lyrics-block"><div class="lyrics-section-title">Bridge</div><div class="lyrics-text">บางครั้งการเดินจากไปเงียบๆ<br>อาจเป็นคำตอบที่ดีที่สุด<br>ดีกว่ายืนอยู่ตรงนี้<br>แต่ไม่มีความหมายอะไรเลย</div></div>
     <div class="lyrics-block"><div class="lyrics-section-title">Outro</div><div class="lyrics-text">ในวันที่ฉันหายไป...<br>ขอให้เธอมีความสุขกับทางที่เลือกเดิน...</div></div>
-    <div class="lyrics-block" style="background-color: #1e1e24; padding: 15px; border-radius: 8px; margin-top: 25px; border-left: 4px solid #9b5cff;">
-        <div class="lyrics-section-title" style="color: #d4a5ff; font-size: 14px; margin-bottom: 5px;">🎛️ Prompt แนวทางดนตรี (Suno AI)</div>
-        <div class="lyrics-text" style="color: #a0a0b0; font-family: monospace; line-height: 1.5;">100% original Thai modern pop sad emotional ballad, tempo 70-82 BPM, emotional male vocal, piano intro, ambient synth pads, soft electric guitar, cinematic strings, deep emotional bass, theme of disappearing, feeling invisible and being forgotten, melancholy, touching and cinematic feeling, completely original melody and lyrics, modern Thai pop production, strong radio-ready mix, fading ending</div>
-    </div>
 </div>
 
 <div id="songLyric11" class="dark-read-mode" style="display: none;">
@@ -1133,10 +873,6 @@ padding:8px 0;
     <div class="lyrics-block"><div class="lyrics-section-title">Verse 2</div><div class="lyrics-text">ฉันลบทุกสิ่งที่เป็นของเธอทิ้งไป<br>แต่ลืมลบความทรงจำในหัวใจ<br>มันคงฝังลึกจนเกินจะดึงออก<br>เหมือนรอยสักที่ไม่มีวันจาง</div></div>
     <div class="lyrics-block"><div class="lyrics-section-title">Bridge</div><div class="lyrics-text">หรือบางทีการพยายามลืม<br>คือการตอกย้ำให้ยิ่งจดจำ<br>ถ้ายอมรับว่าเธอยังอยู่ในใจ<br>มันอาจจะเจ็บน้อยกว่านี้ไหม</div></div>
     <div class="lyrics-block"><div class="lyrics-section-title">Outro</div><div class="lyrics-text">คนที่ควรลืมที่สุด...<br>แต่ก็รักที่สุดเหมือนกัน...</div></div>
-    <div class="lyrics-block" style="background-color: #1e1e24; padding: 15px; border-radius: 8px; margin-top: 25px; border-left: 4px solid #9b5cff;">
-        <div class="lyrics-section-title" style="color: #d4a5ff; font-size: 14px; margin-bottom: 5px;">🎛️ Prompt แนวทางดนตรี (Suno AI)</div>
-        <div class="lyrics-text" style="color: #a0a0b0; font-family: monospace; line-height: 1.5;">100% original Thai modern pop sad emotional ballad, tempo 74-86 BPM, emotional male vocal, intimate singing, piano intro, ambient synth, subtle electric guitar, emotional strings, modern emotional drums, theme of trying to forget someone, emotional conflict, bittersweet memories, modern Thai pop production, strong original melody and lyrics, powerful build-up to chorus, reflective and heartbroken mood</div>
-    </div>
 </div>
 
 <div id="songLyric12" class="dark-read-mode" style="display: none;">
@@ -1149,10 +885,6 @@ padding:8px 0;
     <div class="lyrics-block"><div class="lyrics-section-title">Verse 2</div><div class="lyrics-text">เช็ดน้ำตาแล้วลุกขึ้นยืนใหม่อีกครั้ง<br>กอดตัวเองให้แน่นกว่าที่เคยทำ<br>ความเสียใจวันนี้จะกลายเป็นพลัง<br>ให้ฉันรักตัวเองให้มากกว่าเดิม</div></div>
     <div class="lyrics-block"><div class="lyrics-section-title">Bridge</div><div class="lyrics-text">ขอบคุณความเจ็บปวดที่เข้ามา<br>ขอบคุณน้ำตาที่คอยล้างใจ<br>ต่อจากนี้คนเดิมที่อ่อนแอ<br>จะไม่มีอีกต่อไป</div></div>
     <div class="lyrics-block"><div class="lyrics-section-title">Outro</div><div class="lyrics-text">บทเรียนของหัวใจ...<br>จบลงแล้วในวันนี้...</div></div>
-    <div class="lyrics-block" style="background-color: #1e1e24; padding: 15px; border-radius: 8px; margin-top: 25px; border-left: 4px solid #9b5cff;">
-        <div class="lyrics-section-title" style="color: #d4a5ff; font-size: 14px; margin-bottom: 5px;">🎛️ Prompt แนวทางดนตรี (Suno AI)</div>
-        <div class="lyrics-text" style="color: #a0a0b0; font-family: monospace; line-height: 1.5;">100% original Thai modern pop sad ballad, tempo 76-88 BPM, emotional male vocal, warm heartfelt singing, piano intro, ambient synth pads, soft acoustic guitar, cinematic strings, theme of learning from heartbreak, acceptance, emotional growth, self-love, powerful chorus, modern Thai pop production, layered harmonies, touching emotional climax, completely original melody and lyrics, hopeful resolution</div>
-    </div>
 </div>
 
 </div>
@@ -1168,98 +900,52 @@ padding:8px 0;
 </div>
 
 <script>
-function toggleMenu() {
-    document.getElementById('sidebar').classList.toggle('active');
-}
+function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); }
 
 function shareSong(song){
-const shareData = {
-title: "Style Music",
-text: "🎵 ฟังเพลง: " + song,
-url: window.location.href
-};
-if(navigator.share){
-navigator.share(shareData);
-}else{
-navigator.clipboard.writeText(window.location.href);
-alert("🔗 คัดลอกลิงก์แล้ว");
-}
+    const shareData = { title: "Style Music", text: "🎵 ฟังเพลง: " + song, url: window.location.href };
+    if(navigator.share){ navigator.share(shareData); }
+    else{ navigator.clipboard.writeText(window.location.href); alert("🔗 คัดลอกลิงก์แล้ว"); }
 }
 
 const search = document.getElementById("search");
 search.addEventListener("keyup", () => {
-let filter = search.value.toLowerCase();
-let rows = document.querySelectorAll(".song-row");
-rows.forEach(row => {
-let title = row.querySelector(".song-title").innerText.toLowerCase();
-if(title.includes(filter)){
-row.style.display = "";
-}else{
-row.style.display = "none";
-}
-});
-updateLiveSongCount();
+    let filter = search.value.toLowerCase();
+    let rows = document.querySelectorAll(".song-row");
+    rows.forEach(row => {
+        let title = row.querySelector(".song-title").innerText.toLowerCase();
+        row.style.display = title.includes(filter) ? "" : "none";
+    });
+    updateLiveSongCount();
 });
 
 const players = document.querySelectorAll("audio");
 let currentIndex = 0;
 
 players.forEach((player,index)=>{
-player.addEventListener("play",()=>{
-currentIndex = index;
-players.forEach((p,i)=>{
-if(i !== index){
-p.pause();
-}
+    player.addEventListener("play",()=>{
+        currentIndex = index;
+        players.forEach((p,i)=>{ if(i !== index) p.pause(); });
+        let views = localStorage.getItem('views'+(index+1)) || 0;
+        views++;
+        localStorage.setItem('views'+(index+1), views);
+        let viewEl = document.getElementById('views'+(index+1));
+        if(viewEl) viewEl.innerHTML = '👁 ' + views;
+    });
+    player.addEventListener("ended",()=>{
+        currentIndex++;
+        if(currentIndex >= players.length) currentIndex = 0;
+        players[currentIndex].play();
+    });
 });
-let views = localStorage.getItem('views'+(index+1)) || 0;
-views++;
-localStorage.setItem('views'+(index+1), views);
-let viewEl = document.getElementById('views'+(index+1));
-if(viewEl){
-viewEl.innerHTML = '👁 ' + views;
-}
-});
-});
 
-function nextSong(){
-players[currentIndex].pause();
-currentIndex++;
-if(currentIndex >= players.length){
-currentIndex = 0;
-}
-players[currentIndex].play();
-}
-
-function prevSong(){
-players[currentIndex].pause();
-currentIndex--;
-if(currentIndex < 0){
-currentIndex = players.length - 1;
-}
-players[currentIndex].play();
-}
-
-function togglePlay(){
-if(players[currentIndex].paused){
-players[currentIndex].play();
-}else{
-players[currentIndex].pause();
-}
-}
-
-function likeSong(id){
-let likes = localStorage.getItem("likes"+id) || 0;
-likes++;
-localStorage.setItem("likes"+id, likes);
-let likeEl = document.getElementById("likes"+id);
-if(likeEl){
-likeEl.innerText = likes;
-}
-}
+function nextSong(){ players[currentIndex].pause(); currentIndex++; if(currentIndex >= players.length) currentIndex = 0; players[currentIndex].play(); }
+function prevSong(){ players[currentIndex].pause(); currentIndex--; if(currentIndex < 0) currentIndex = players.length - 1; players[currentIndex].play(); }
+function togglePlay(){ if(players[currentIndex].paused) players[currentIndex].play(); else players[currentIndex].pause(); }
+function likeSong(id){ let likes = localStorage.getItem("likes"+id) || 0; likes++; localStorage.setItem("likes"+id, likes); let likeEl = document.getElementById("likes"+id); if(likeEl) likeEl.innerText = likes; }
 
 // ============================================
-// ระบบจัดการหน้าจอและนำทางข้อมูล
+// UI Navigation
 // ============================================
 const allMenus = document.querySelectorAll('.sidebar .menu');
 const allSongRows = document.querySelectorAll('.song-row');
@@ -1272,30 +958,19 @@ const songCountDisplay = document.getElementById('songCountDisplay');
 const lyricsMainSection = document.getElementById('lyricsMainSection');
 const allLyricDetails = document.querySelectorAll('[id^="songLyric"]');
 const articlesMainSection = document.getElementById('articlesMainSection');
-const allArticleDetails = document.querySelectorAll('[id^="articleContent"]');
 
 function updateLiveSongCount() {
     let currentVisibleSongs = 0;
-    allSongRows.forEach(row => {
-        if (row.style.display !== "none") {
-            currentVisibleSongs++;
-        }
-    });
+    allSongRows.forEach(row => { if (row.style.display !== "none") currentVisibleSongs++; });
     songCountDisplay.innerText = currentVisibleSongs; 
 }
 
 function filterSubGenre(subTag) {
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    tabBtns.forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('#genreTabs .tab-btn').forEach(btn => btn.classList.remove('active'));
     event.target.classList.add('active');
-
     allSongRows.forEach(row => {
         const tags = row.getAttribute('data-tags') || "";
-        if (subTag === "all" || tags.includes(subTag)) {
-            row.style.display = "";
-        } else {
-            row.style.display = "none";
-        }
+        row.style.display = (subTag === "all" || tags.includes(subTag)) ? "" : "none";
     });
     updateLiveSongCount();
 }
@@ -1310,23 +985,11 @@ function backToLyricsList() {
     lyricsMainSection.style.display = "block";
 }
 
-function showSpecificArticle(articleId) {
-    articlesMainSection.style.display = "none";
-    allArticleDetails.forEach(sec => sec.style.display = "none");
-    document.getElementById(articleId).style.display = "block";
-}
-function backToArticlesList() {
-    allArticleDetails.forEach(sec => sec.style.display = "none");
-    articlesMainSection.style.display = "block";
-}
-
 function selectMenu(menuId, titleText, descText, filterMode = "all") {
     allMenus.forEach(menu => menu.classList.remove('active'));
     document.getElementById(menuId).classList.add('active');
-    
     mainTitle.innerHTML = titleText;
     mainDesc.innerHTML = descText;
-    
     document.getElementById('sidebar').classList.remove('active');
     
     mainSongTable.style.display = "none";
@@ -1334,7 +997,6 @@ function selectMenu(menuId, titleText, descText, filterMode = "all") {
     lyricsMainSection.style.display = "none";
     articlesMainSection.style.display = "none";
     allLyricDetails.forEach(sec => sec.style.display = "none");
-    allArticleDetails.forEach(sec => sec.style.display = "none");
 
     if (filterMode === "lyrics") {
         lyricsMainSection.style.display = "block";
@@ -1342,97 +1004,92 @@ function selectMenu(menuId, titleText, descText, filterMode = "all") {
     } else if (filterMode === "articles") {
         articlesMainSection.style.display = "block";
         songCountDisplay.innerText = "0";
+        // Auto click Daily Tab when entering Horoscope Menu
+        document.getElementById('btn-type-daily').click(); 
     } else {
         mainSongTable.style.display = "table";
-        
         if (filterMode === "songs") {
             genreTabs.style.display = "flex";
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-            document.querySelectorAll('.tab-btn')[0].classList.add('active');
+            document.querySelectorAll('#genreTabs .tab-btn').forEach(b => b.classList.remove('active'));
+            if(document.querySelectorAll('#genreTabs .tab-btn')[0]) document.querySelectorAll('#genreTabs .tab-btn')[0].classList.add('active');
         }
-
-        allSongRows.forEach(row => {
-            row.style.display = ""; 
-        });
+        allSongRows.forEach(row => row.style.display = ""); 
         updateLiveSongCount();
     }
 }
 
-document.getElementById('menuHome').addEventListener('click', function() {
-    selectMenu('menuHome', 'StyleMusicPro 💜', 'เว็บรวมเพลงเศร้า เพลงอกหัก ฟังออนไลน์', 'all');
-});
-document.getElementById('menuArticles').addEventListener('click', function() {
-    selectMenu('menuArticles', 'Articles & Reviews 📰', 'อ่านบทความเชิงจิตวิทยาและรีวิวเพลงเศร้าโดนใจ', 'articles');
-});
-document.getElementById('menuSongs').addEventListener('click', function() {
-    selectMenu('menuSongs', 'Music Library 🎵', 'คลังเพลงทั้งหมด เลือกฟังตามสไตล์อารมณ์ของคุณ', 'songs');
-});
-document.getElementById('lyricsMenu').addEventListener('click', function() {
-    selectMenu('lyricsMenu', 'Lyrics คลังเนื้อเพลง 📝', 'อ่านเนื้อเพลงเศร้าโดนใจ อินไปกับทุกบทเพลง', 'lyrics');
-});
+// Menu Listeners
+document.getElementById('menuHome').addEventListener('click', () => selectMenu('menuHome', 'StyleMusicPro 💜', 'เว็บรวมเพลงเศร้า เพลงอกหัก ฟังออนไลน์', 'all'));
+document.getElementById('menuArticles').addEventListener('click', () => selectMenu('menuArticles', 'ดูดวงครบวงจร 🔮', 'เช็กดวงรายวัน รายสัปดาห์ และรายเดือน', 'articles'));
+document.getElementById('menuSongs').addEventListener('click', () => selectMenu('menuSongs', 'Music Library 🎵', 'คลังเพลงทั้งหมด เลือกฟังตามสไตล์อารมณ์ของคุณ', 'songs'));
+document.getElementById('lyricsMenu').addEventListener('click', () => selectMenu('lyricsMenu', 'Lyrics คลังเนื้อเพลง 📝', 'อ่านเนื้อเพลงเศร้าโดนใจ อินไปกับทุกบทเพลง', 'lyrics'));
 
+
+// =========================================================
+// Horoscope Tab System (Daily, Weekly, Monthly)
+// =========================================================
+function switchHoroType(type, btn) {
+    // 1. เปลี่ยนสีปุ่มเมนูหลัก
+    document.querySelectorAll('.type-tabs .tab-btn').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    
+    // 2. ซ่อน Section ทั้งหมด แล้วเปิดเฉพาะที่เลือก
+    document.querySelectorAll('.horo-type-section').forEach(sec => sec.style.display = 'none');
+    document.getElementById('type-' + type).style.display = 'block';
+    
+    // 3. จำลองการคลิกให้ตรงกับ "วันปัจจุบัน" ในหมวดหมู่นั้นๆ อัตโนมัติ
+    const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+    const currentDayName = days[new Date().getDay()];
+    
+    const dayBtn = document.getElementById(`btn-${type}-${currentDayName}`);
+    if(dayBtn) dayBtn.click();
+}
+
+function showHoroCard(type, day, btn) {
+    const section = document.getElementById('type-' + type);
+    // รีเซ็ตปุ่มวันในหมวดนั้นๆ
+    section.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    
+    // ซ่อนการ์ดทั้งหมดในหมวดนั้น แล้วโชว์เฉพาะวันที่เลือก
+    section.querySelectorAll('.sanook-card').forEach(c => c.style.display = 'none');
+    document.getElementById(`card-${type}-${day}`).style.display = 'block';
+}
+
+// Initial Load
 window.addEventListener('DOMContentLoaded', () => {
     updateLiveSongCount();
 });
-
-players.forEach((player,index)=>{
-player.addEventListener("ended",()=>{
-currentIndex++;
-if(currentIndex >= players.length){
-currentIndex = 0;
-}
-players[currentIndex].play();
-});
-});
 </script>
 
+<!-- Firebase Module -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
-const firebaseConfig = {
-apiKey: "AIzaSyA3Hl-RoqK9RvqF2KiYrRg7GC6EmyOuMVo",
-authDomain: "stylemusic-72ef9.firebaseapp.com",
-databaseURL: "https://stylemusic-72ef9-default-rtdb.asia-southeast1.firebasedatabase.app",
-projectId: "stylemusic-72ef9",
-storageBucket: "stylemusic-72ef9.firebasestorage.app",
-messagingSenderId: "224408363563",
-appId: "1:224408363563:web:2fd5b7a83bbd1b8936406e",
-measurementId: "G-7MRFWKW6Y6"
-};
-
+const firebaseConfig = { apiKey: "AIzaSyA3Hl-RoqK9RvqF2KiYrRg7GC6EmyOuMVo", authDomain: "stylemusic-72ef9.firebaseapp.com", databaseURL: "https://stylemusic-72ef9-default-rtdb.asia-southeast1.firebasedatabase.app", projectId: "stylemusic-72ef9", storageBucket: "stylemusic-72ef9.firebasestorage.app", messagingSenderId: "224408363563", appId: "1:224408363563:web:2fd5b7a83bbd1b8936406e", measurementId: "G-7MRFWKW6Y6" };
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
-console.log("Firebase Connected");
 
 document.querySelectorAll("audio").forEach((audio,index)=>{
-audio.addEventListener("play",()=>{
-const songId = "song" + (index + 1);
-const songRef = ref(db, songId);
-get(songRef).then((snapshot)=>{
-let views = 0;
-if(snapshot.exists()){
-views = snapshot.val().views || 0;
-}
-views++;
-set(songRef,{ views: views });
-const el = document.getElementById("views"+(index+1));
-if(el){ el.innerHTML = "👁 " + views; }
-});
-});
+    audio.addEventListener("play",()=>{
+        const songRef = ref(db, "song" + (index + 1));
+        get(songRef).then((snapshot)=>{
+            let views = snapshot.exists() ? snapshot.val().views || 0 : 0;
+            views++;
+            set(songRef,{ views: views });
+            const el = document.getElementById("views"+(index+1));
+            if(el) el.innerHTML = "👁 " + views;
+        });
+    });
 });
 
 window.addEventListener("load",()=>{
-document.querySelectorAll("[id^='views']").forEach((el,index)=>{
-const songId = "song" + (index + 1);
-const songRef = ref(db, songId);
-get(songRef).then((snapshot)=>{
-if(snapshot.exists()){
-const views = snapshot.val().views || 0;
-el.innerHTML = "👁 " + views;
-}
-});
-});
+    document.querySelectorAll("[id^='views']").forEach((el,index)=>{
+        get(ref(db, "song" + (index + 1))).then((snapshot)=>{
+            if(snapshot.exists()) el.innerHTML = "👁 " + (snapshot.val().views || 0);
+        });
+    });
 });
 </script>
 </body>
