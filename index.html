@@ -3,7 +3,7 @@
 <head>
 <meta name="pushsdk" content="fda6941e9c3d841eda4672176755a786">
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>StyleMusicPro - ฟังเพลงเศร้า เพลงอกหัก ออนไลน์ฟรี</title>
 
 <meta name="description" content="เว็บฟังเพลงเศร้า เพลงอกหัก เพลงใหม่ ฟังออนไลน์ฟรี ทั้งเพลงไทย เพลงลาว Sad Pop และ Lo-fi">
@@ -18,7 +18,6 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 
-<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PZHXG2Y1PY"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -34,13 +33,6 @@ gtag('config', 'G-PZHXG2Y1PY');
    Global & Layout Styles
 ============================================ */
 .menu-toggle{ display:none; position:fixed; top:15px; left:15px; z-index:9999; width:42px; height:42px; border:none; border-radius:12px; background:#9b5cff; color:white; font-size:28px; cursor:pointer; box-shadow:0 0 20px rgba(155,92,255,.5); }
-@media(max-width:768px){
-.menu-toggle{ display:block; }
-.sidebar{ position:fixed; left:-260px; top:0; height:100%; z-index:999; transition:.3s; }
-.sidebar.active{ left:0; }
-.main{ width:100%; padding-top:80px; }
-.bottom-player{ left:0; }
-}
 
 *{ margin:0; padding:0; box-sizing:border-box; }
 body{ font-family:'Poppins',sans-serif; background:#050816; color:white; overflow-x:hidden; scroll-behavior:smooth; }
@@ -48,7 +40,7 @@ body{ font-family:'Poppins',sans-serif; background:#050816; color:white; overflo
 
 /* Sidebar */
 .sidebar{ width:240px; background:rgba(7,11,24,.88); backdrop-filter:blur(12px); padding:25px; display:flex; flex-direction:column; gap:18px; border-right:1px solid rgba(255,255,255,.05); }
-.logo{ font-size:30px; font-weight:700; color:#9b5cff; margin-bottom:20px; }
+.logo{ font-size:30px; font-weight:700; color:#9b5cff; margin-bottom:20px; line-height: 1.2; }
 .menu{ padding:14px; border-radius:14px; cursor:pointer; transition:.3s; background:rgba(255,255,255,.03); }
 .menu:hover, .menu.active { background:#9b5cff; transform:translateX(5px); }
 
@@ -66,12 +58,12 @@ body{ font-family:'Poppins',sans-serif; background:#050816; color:white; overflo
 .hero-desc{ color:#ddd; margin-bottom:15px; }
 .hero-tags{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:20px; }
 .hero-tags span{ color:#b77dff; }
-.hero-stats{ display:flex; gap:40px; margin-bottom:20px; }
+.hero-stats{ display:flex; gap:40px; margin-bottom:20px; flex-wrap: wrap; }
 .hero-stats div{ display:flex; flex-direction:column; }
 .hero-stats b{ font-size:28px; }
 .hero-stats span{ color:#bbb; }
-.hero-buttons{ display:flex; gap:15px; }
-.follow-btn{ padding:14px 35px; border:none; border-radius:16px; background:#7c4dff; color:white; font-size:18px; cursor:pointer; text-decoration:none; }
+.hero-buttons{ display:flex; gap:15px; flex-wrap: wrap; }
+.follow-btn{ padding:14px 35px; border:none; border-radius:16px; background:#7c4dff; color:white; font-size:18px; cursor:pointer; text-decoration:none; display: inline-block; text-align: center; }
 .share-btn{ padding:14px 25px; border:none; border-radius:16px; background:rgba(255,255,255,.08); color:white; cursor:pointer; }
 .hero-social{ display:flex; gap:15px; overflow-x:auto; padding-bottom:10px; scroll-behavior:smooth; width:100%; }
 .hero-social iframe{ width:33%; min-width: 280px; height:220px; border-radius:16px; border:none; flex-shrink:0; }
@@ -100,7 +92,7 @@ body{ font-family:'Poppins',sans-serif; background:#050816; color:white; overflo
 
 /* Common UI Elements */
 .sub-tabs { display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
-.tab-btn { padding: 8px 18px; border-radius: 20px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #fff; cursor: pointer; font-size: 14px; transition: 0.2s; }
+.tab-btn { padding: 8px 18px; border-radius: 20px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #fff; cursor: pointer; font-size: 14px; transition: 0.2s; white-space: nowrap; }
 .tab-btn:hover, .tab-btn.active { background: #9b5cff; border-color: #9b5cff; }
 
 /* Main Horo Types Tabs (Daily/Weekly/Monthly) */
@@ -117,16 +109,7 @@ body{ font-family:'Poppins',sans-serif; background:#050816; color:white; overflo
 .tab-sat.active { background: #b366ff; border-color: #b366ff; box-shadow: 0 0 15px rgba(179,102,255,0.4); }
 
 /* Horoscope Card Layout */
-.sanook-card {
-    background: #0a0d1d;
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 24px;
-    padding: 30px;
-    margin-top: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    position: relative;
-    overflow: hidden;
-}
+.sanook-card { background: #0a0d1d; border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 30px; margin-top: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
 .card-sun { border-left: 6px solid #ff4d4d; }
 .card-mon { border-left: 6px solid #ffcc00; }
 .card-tue { border-left: 6px solid #ff66b2; }
@@ -161,52 +144,70 @@ body{ font-family:'Poppins',sans-serif; background:#050816; color:white; overflo
 .back-btn { padding: 10px 18px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.1); color: #fff; border-radius: 10px; cursor: pointer; margin-bottom: 25px; font-size: 14px; transition: 0.2s; display: inline-flex; align-items: center; gap: 8px; }
 .back-btn:hover { background: #ff2d55; border-color: #ff2d55; }
 
+/* ============================================
+   MOBILE RESPONSIVE (หน้าจอมือถือ)
+============================================ */
 @media(max-width:768px){
-.song-stats{ display:flex; align-items:center; gap:10px; font-size:14px; }
-.song-table td:nth-child(2){ width:70px; }
-.song-table td:nth-child(3){ width:130px; }
-.share-btn{ display:inline-flex; align-items:center; gap:5px; padding:10px 16px; border:none; border-radius:16px; background:rgba(255,255,255,.08); backdrop-filter:blur(10px); color:#00d2ff; cursor:pointer; font-size:15px; white-space:nowrap; }
-body{ overflow-x:hidden; }
-.container{ flex-direction:column; }
-.main{ padding:15px; padding-top:90px; padding-bottom:140px; }
-.hero-banner{ padding:20px; border-radius:20px; }
-.hero-left{ flex-direction:column; align-items:flex-start; gap:15px; }
-.hero-logo{ width:100px; height:100px; }
-.hero-info h1{ font-size:28px; }
-.song-table, .song-table tbody, .song-table tr, .song-table td{ display:block; width:100%; }
-.song-row{ padding:15px 0; display:block; }
-.song-info{ flex-direction:column; align-items:flex-start; gap:12px; width:100%; }
-.song-info img{ width:300px; height:90px; }
-audio {
-    flex-grow: 1; /* ให้มันขยายตัวเท่าที่จะมีที่ว่างเหลือ */
-    width: 100% !important;
-    max-width: 100% !important;
-    height: 45px !important; /* ลดความสูงลงนิดนึงเพื่อให้พอดีกับแถบ 70px */
-}
-.song-stats{ margin-top:10px; display:flex; gap:15px; }
-.bottom-player {
-    position: fixed;
-    bottom: 0;
-    left: 0 !important;
-    right: 0 !important;
-    width: 100% !important; /* บังคับให้ยาวเต็มจอ */
-    height: 70px;
-    padding: 0 15px;      /* ปรับระยะห่างขอบซ้าย-ขวา */
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between; /* กระจายเนื้อหาให้อยู่ซ้าย-ขวา */
-    align-items: center;
-    background: #070b18;
-    z-index: 999;
-}
-.player-controls button{ width:45px; height:45px; font-size:18px; }
-.sidebar.active{ left:0; width:240px; box-shadow:0 0 30px rgba(0,0,0,.7); }
-.hero-social{ display:flex; overflow-x:auto; gap:12px; padding-bottom:10px; scroll-behavior:smooth; }
-.hero-social iframe{ min-width:300px; height:170px; flex-shrink:0; border-radius:16px; }
-.song-table td{ border:none; padding:8px 0; }
-.horo-header { flex-direction: column; align-items: flex-start; gap: 10px; }
-.lucky-box { flex-direction: column; }
-.type-tabs .tab-btn { padding: 10px 15px; font-size: 14px; flex: 1; text-align: center;}
+    .menu-toggle{ display:block; }
+    
+    /* Sidebar Mobile */
+    .sidebar{ position:fixed; left:-280px; top:0; width:260px; height:100%; z-index:1000; transition:.3s; box-shadow:none; }
+    .sidebar.active{ left:0; box-shadow:0 0 30px rgba(0,0,0,.9); }
+    
+    /* Layout */
+    .container{ flex-direction:column; }
+    .main{ width:100%; padding: 15px; padding-top: 80px; padding-bottom: calc(90px + env(safe-area-inset-bottom)); } /* รองรับแถบ iPhone */
+    
+    /* Hero Banner Mobile */
+    .hero-banner{ padding:20px; border-radius:20px; }
+    .hero-left{ flex-direction:column; align-items:flex-start; gap:15px; }
+    .hero-logo{ width:100px; height:100px; }
+    .hero-info h1{ font-size:28px; }
+    .hero-stats { gap: 20px; }
+    
+    /* YouTube IFrames Mobile */
+    .hero-social { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 15px; }
+    .hero-social::-webkit-scrollbar { display: none; }
+    .hero-social iframe { min-width: 80vw; height: 180px; }
+    
+    /* Song Table to Mobile List (แก้ไขให้สวยงาม ไม่ทะลุจอ) */
+    .song-table, .song-table tbody, .song-table tr, .song-table td { display:block; width:100%; border: none; }
+    .song-table thead { display: none; } /* ซ่อนหัวตารางบนมือถือ */
+    .song-row{ padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+    
+    /* จุดสำคัญ: จัดรูปและชื่อเพลงให้อยู่ในแนวนอน (Row) */
+    .song-info { display: flex; flex-direction: row; align-items: center; flex-wrap: wrap; gap: 12px; width: 100%; }
+    .song-info img { width: 60px; height: 60px; border-radius: 10px; flex-shrink: 0; }
+    .song-info > div { flex: 1; min-width: 150px; }
+    
+    /* เครื่องเล่น Audio บนมือถือ */
+    audio { width: 100% !important; max-width: 100% !important; height: 40px !important; margin-top: 5px; flex-basis: 100%; }
+    
+    /* สถิติและแชร์บนมือถือ */
+    .song-stats{ margin-top: 10px; display:flex; gap:15px; font-size: 14px; justify-content: flex-start; }
+    .share-btn{ padding: 8px 14px; font-size: 13px; }
+    
+    /* Bottom Player (รองรับ iPhone Notch) */
+    .bottom-player {
+        left: 0 !important;
+        width: 100% !important;
+        height: calc(70px + env(safe-area-inset-bottom));
+        padding-bottom: env(safe-area-inset-bottom);
+        padding-left: 15px; padding-right: 15px;
+    }
+    .player-controls button{ width:45px; height:45px; font-size:18px; }
+    
+    /* Horoscope Tabs Mobile (ให้เลื่อนซ้ายขวาได้ ไม่บีบกัน) */
+    .horo-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .lucky-box { flex-direction: column; }
+    
+    .type-tabs { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start !important; padding-bottom: 10px; }
+    .type-tabs::-webkit-scrollbar { display: none; }
+    .type-tabs .tab-btn { flex: 0 0 auto; padding: 10px 20px; font-size: 14px; }
+    
+    .horo-type-section .sub-tabs { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start !important; padding-bottom: 10px; }
+    .horo-type-section .sub-tabs::-webkit-scrollbar { display: none; }
+    .horo-type-section .tab-btn { flex: 0 0 auto; }
 }
 </style>
 </head>
@@ -216,7 +217,6 @@ audio {
 
 <div class="container">
 
-<!-- แถบเมนูด้านซ้าย -->
 <div class="sidebar" id="sidebar">
 <div class="logo">🎵 StyleMusicPro</div>
 <div class="menu active" id="menuHome">🏠 หน้าแรก</div>
@@ -232,7 +232,6 @@ audio {
 </div>
 </div>
 
-<!-- ฮีโร่แบนเนอร์ หน้าแรก -->
 <div class="hero-banner">
 <div class="hero-overlay">
 <div class="hero-left">
@@ -267,23 +266,22 @@ audio {
 </div>
 
 <div class="sub-tabs" id="genreTabs" style="display: none;">
-    <button class="tab-btn active" onclick="filterSubGenre('all')">ทั้งหมด</button>
-    <button class="tab-btn" onclick="filterSubGenre('sadpop')">Sad Pop</button>
-    <button class="tab-btn" onclick="filterSubGenre('pop')">Pop บิตสนุก</button>
-    <button class="tab-btn" onclick="filterSubGenre('lonely')">เพลงเหงา</button>
+    <button class="tab-btn active" onclick="filterSubGenre('all', this)">ทั้งหมด</button>
+    <button class="tab-btn" onclick="filterSubGenre('sadpop', this)">Sad Pop</button>
+    <button class="tab-btn" onclick="filterSubGenre('pop', this)">Pop บิตสนุก</button>
+    <button class="tab-btn" onclick="filterSubGenre('lonely', this)">เพลงเหงา</button>
 </div>
 
 <table class="song-table" id="mainSongTable">
 <thead>
 <tr>
-<th style="width:75%;">เพลง</th>
-<th style="width:10%;">เวลา</th>
-<th style="width:15%;">สถิติ</th>
+<th style="width:75%; text-align: left;">เพลง</th>
+<th style="width:10%; text-align: left;">เวลา</th>
+<th style="width:15%; text-align: left;">สถิติ</th>
 </tr>
 </thead>
 <tbody id="songList">
 
-<!-- เพลงที่ 1 -->
 <tr class="song-row" data-tags="sadpop">
 <td>
 <div class="song-info">
@@ -542,9 +540,6 @@ audio {
 </table>
 
 
-<!-- ============================================ -->
-<!-- ดูดวง ครบวงจร (รายวัน / รายสัปดาห์ / รายเดือน) -->
-<!-- ============================================ -->
 <div id="articlesMainSection" class="articles-container" style="display: none; padding: 20px 10px;">
     
     <div style="text-align: center; margin-bottom: 25px;">
@@ -552,14 +547,12 @@ audio {
         <p style="color: #bbb; margin-top: 5px;">เช็กดวงแม่นๆ ครบทุกมิติ การงาน การเงิน ความรัก</p>
     </div>
 
-    <!-- เมนูหลัก เลือกว่าจะดูแบบ วัน/สัปดาห์/เดือน -->
     <div class="sub-tabs type-tabs" id="horoTypeTabs" style="justify-content: center; gap: 15px; margin-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px;">
         <button class="tab-btn active" id="btn-type-daily" onclick="switchHoroType('daily', this)">📅 รายวัน</button>
         <button class="tab-btn" id="btn-type-weekly" onclick="switchHoroType('weekly', this)">📆 รายสัปดาห์</button>
         <button class="tab-btn" id="btn-type-monthly" onclick="switchHoroType('monthly', this)">🗓️ รายเดือน</button>
     </div>
 
-    <!-- 🌟 SECTION 1: ดูดวงรายวัน -->
     <div id="type-daily" class="horo-type-section" style="display: block;">
         <div class="sub-tabs" style="justify-content: center; gap: 8px;">
             <button class="tab-btn tab-sun" id="btn-daily-sunday" onclick="showHoroCard('daily', 'sunday', this)">วันอาทิตย์</button>
@@ -571,7 +564,6 @@ audio {
             <button class="tab-btn tab-sat" id="btn-daily-saturday" onclick="showHoroCard('daily', 'saturday', this)">วันเสาร์</button>
         </div>
 
-        <!-- การ์ดรายวัน วันอาทิตย์ -->
         <div id="card-daily-sunday" class="sanook-card card-sun" style="display: none;">
             <div class="horo-header"><h3 style="color:#ff4d4d;">ดวงประจำวัน (อาทิตย์) ❤️</h3><div class="horo-stars">⭐⭐⭐⭐⭐</div></div>
             <div class="horo-row"><div class="horo-icon-box" style="color: #00d2ff;">💼</div><div class="horo-detail"><h4 style="color: #00d2ff;">การงาน</h4><p>เตรียมตัวรับมือกับโปรเจกต์ใหม่ๆ อาจมีเรื่องให้คิดเยอะ หรือต้องแบกรับภาระหนักกว่าเพื่อนร่วมงาน แต่ผลลัพธ์จะออกมาดีเกินคาด</p></div></div>
@@ -580,7 +572,6 @@ audio {
             <div class="lucky-box"><div class="lucky-item"><span>🎨</span><div><h5>สีมงคลประจำวัน</h5><p style="color:#ff4d4d;">แดง, ชมพู, ดำ</p></div></div><div class="lucky-item"><span>🔢</span><div><h5>เลขนำโชค</h5><p>1, 4, 7</p></div></div></div>
         </div>
 
-        <!-- การ์ดรายวัน วันจันทร์ -->
         <div id="card-daily-monday" class="sanook-card card-mon" style="display: none;">
             <div class="horo-header"><h3 style="color:#ffcc00;">ดวงประจำวัน (จันทร์) 💛</h3><div class="horo-stars">⭐⭐⭐⭐</div></div>
             <div class="horo-row"><div class="horo-icon-box" style="color: #00d2ff;">💼</div><div class="horo-detail"><h4 style="color: #00d2ff;">การงาน</h4><p>เริ่มต้นสัปดาห์ด้วยความวุ่นวาย มีงานด่วนเข้ามาแทรก ต้องอาศัยการจัดลำดับความสำคัญให้ดี แต่คุณจะจัดการมันได้ด้วยความใจเย็น</p></div></div>
@@ -589,7 +580,6 @@ audio {
             <div class="lucky-box"><div class="lucky-item"><span>🎨</span><div><h5>สีมงคลประจำวัน</h5><p style="color:#ffcc00;">เหลือง, ส้ม, ม่วง</p></div></div><div class="lucky-item"><span>🔢</span><div><h5>เลขนำโชค</h5><p>2, 5, 8</p></div></div></div>
         </div>
 
-        <!-- การ์ดรายวัน วันอังคาร -->
         <div id="card-daily-tuesday" class="sanook-card card-tue" style="display: none;">
             <div class="horo-header"><h3 style="color:#ff66b2;">ดวงประจำวัน (อังคาร) 💗</h3><div class="horo-stars">⭐⭐⭐</div></div>
             <div class="horo-row"><div class="horo-icon-box" style="color: #00d2ff;">💼</div><div class="horo-detail"><h4 style="color: #00d2ff;">การงาน</h4><p>ราบรื่นดี แต่ระวังมีคนคอยขัดใจหรือพูดจาไม่เข้าหู ทำหูทวนลมไปบ้างจะดีที่สุด โฟกัสแค่งานของตัวเองก็พอ</p></div></div>
@@ -598,7 +588,6 @@ audio {
             <div class="lucky-box"><div class="lucky-item"><span>🎨</span><div><h5>สีมงคลประจำวัน</h5><p style="color:#ff66b2;">ชมพู, ดำ, เทา</p></div></div><div class="lucky-item"><span>🔢</span><div><h5>เลขนำโชค</h5><p>3, 6, 9</p></div></div></div>
         </div>
 
-        <!-- การ์ดรายวัน วันพุธ -->
         <div id="card-daily-wednesday" class="sanook-card card-wed" style="display: none;">
             <div class="horo-header"><h3 style="color:#00e676;">ดวงประจำวัน (พุธ) 💚</h3><div class="horo-stars">⭐⭐⭐⭐⭐</div></div>
             <div class="horo-row"><div class="horo-icon-box" style="color: #00d2ff;">💼</div><div class="horo-detail"><h4 style="color: #00d2ff;">การงาน</h4><p>มีเรื่องให้ต้องตัดสินใจสำคัญ หากไม่แน่ใจลองปรึกษาผู้ใหญ่หรือคนที่ไว้ใจได้ จะได้คำตอบที่ดี การเจรจาต่อรองจะสำเร็จ</p></div></div>
@@ -607,7 +596,6 @@ audio {
             <div class="lucky-box"><div class="lucky-item"><span>🎨</span><div><h5>สีมงคลประจำวัน</h5><p style="color:#00e676;">เขียว, ฟ้า, ขาว</p></div></div><div class="lucky-item"><span>🔢</span><div><h5>เลขนำโชค</h5><p>4, 2, 8</p></div></div></div>
         </div>
 
-        <!-- การ์ดรายวัน วันพฤหัสบดี -->
         <div id="card-daily-thursday" class="sanook-card card-thu" style="display: none;">
             <div class="horo-header"><h3 style="color:#ff9900;">ดวงประจำวัน (พฤหัสบดี) 🧡</h3><div class="horo-stars">⭐⭐⭐⭐</div></div>
             <div class="horo-row"><div class="horo-icon-box" style="color: #00d2ff;">💼</div><div class="horo-detail"><h4 style="color: #00d2ff;">การงาน</h4><p>ผู้ใหญ่ให้ความเมตตาเอ็นดู หากติดขัดปัญหาอะไรให้ออกปากขอความช่วยเหลือ จะผ่านไปได้ฉลุย ได้รับคำชมจากหัวหน้า</p></div></div>
@@ -616,7 +604,6 @@ audio {
             <div class="lucky-box"><div class="lucky-item"><span>🎨</span><div><h5>สีมงคลประจำวัน</h5><p style="color:#ff9900;">ส้ม, ทอง, แดง</p></div></div><div class="lucky-item"><span>🔢</span><div><h5>เลขนำโชค</h5><p>5, 1, 9</p></div></div></div>
         </div>
 
-        <!-- การ์ดรายวัน วันศุกร์ -->
         <div id="card-daily-friday" class="sanook-card card-fri" style="display: none;">
             <div class="horo-header"><h3 style="color:#3399ff;">ดวงประจำวัน (ศุกร์) 💙</h3><div class="horo-stars">⭐⭐⭐</div></div>
             <div class="horo-row"><div class="horo-icon-box" style="color: #00d2ff;">💼</div><div class="horo-detail"><h4 style="color: #00d2ff;">การงาน</h4><p>จิตใจลอยไปถึงวันหยุดแล้ว! งานเดินช้าลงนิดหน่อย แต่ระวังอย่าให้พลาดจุดเล็กๆ น้อยๆ นะ รีบเคลียร์ให้เสร็จก่อนเลิกงาน</p></div></div>
@@ -625,7 +612,6 @@ audio {
             <div class="lucky-box"><div class="lucky-item"><span>🎨</span><div><h5>สีมงคลประจำวัน</h5><p style="color:#3399ff;">ฟ้า, น้ำเงิน, ชมพู</p></div></div><div class="lucky-item"><span>🔢</span><div><h5>เลขนำโชค</h5><p>6, 3, 5</p></div></div></div>
         </div>
 
-        <!-- การ์ดรายวัน วันเสาร์ -->
         <div id="card-daily-saturday" class="sanook-card card-sat" style="display: none;">
             <div class="horo-header"><h3 style="color:#b366ff;">ดวงประจำวัน (เสาร์) 💜</h3><div class="horo-stars">⭐⭐⭐⭐</div></div>
             <div class="horo-row"><div class="horo-icon-box" style="color: #00d2ff;">💼</div><div class="horo-detail"><h4 style="color: #00d2ff;">การงาน</h4><p>วันพักผ่อนแต่สมองก็ยังแอบคิดเรื่องงานอยู่ดี ปล่อยวางบ้าง ชาร์จแบตให้ตัวเองด่วนๆ อย่าเอางานกลับมาทำที่บ้าน</p></div></div>
@@ -636,7 +622,6 @@ audio {
     </div>
 
 
-    <!-- 🌟 SECTION 2: ดูดวงรายสัปดาห์ -->
     <div id="type-weekly" class="horo-type-section" style="display: none;">
         <div class="sub-tabs" style="justify-content: center; gap: 8px;">
             <button class="tab-btn tab-sun" id="btn-weekly-sunday" onclick="showHoroCard('weekly', 'sunday', this)">วันอาทิตย์</button>
@@ -679,7 +664,6 @@ audio {
     </div>
 
 
-    <!-- 🌟 SECTION 3: ดูดวงรายเดือน -->
     <div id="type-monthly" class="horo-type-section" style="display: none;">
         <div class="sub-tabs" style="justify-content: center; gap: 8px;">
             <button class="tab-btn tab-sun" id="btn-monthly-sunday" onclick="showHoroCard('monthly', 'sunday', this)">วันอาทิตย์</button>
@@ -724,9 +708,6 @@ audio {
 </div>
 
 
-<!-- ============================================ -->
-<!-- หน้าเนื้อเพลง (ซ่อนไว้รอคลิกเมนู) -->
-<!-- ============================================ -->
 <div id="lyricsMainSection" class="lyrics-container" style="display: none;">
     <h2 style="color: #9b5cff; margin-bottom: 20px; font-size: 24px;">📝 คลังเนื้อเพลงทั้งหมด</h2>
     <p style="color: #bbb; margin-bottom: 20px; font-size: 15px;">เลือกรายชื่อเพลงที่ต้องการอ่านเนื้อร้องด้านล่างนี้:</p>
@@ -747,9 +728,6 @@ audio {
     </div>
 </div>
 
-<!-- ============================================ -->
-<!-- กล่องเนื้อเพลง 1-12 -->
-<!-- ============================================ -->
 <div id="songLyric1" class="dark-read-mode" style="display: none;">
     <button class="back-btn" onclick="backToLyricsList()">⬅ ย้อนกลับไปรายชื่อเพลง</button>
     <h2 style="color: #9b5cff; margin-bottom: 20px; font-size: 24px;">📝 เนื้อเพลง: ได้แค่มองเธอ</h2>
@@ -984,9 +962,11 @@ function updateLiveSongCount() {
     songCountDisplay.innerText = currentVisibleSongs; 
 }
 
-function filterSubGenre(subTag) {
-    document.querySelectorAll('#genreTabs .tab-btn').forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
+// แก้ไขฟังก์ชันรับค่า this เพื่อป้องกัน Error
+function filterSubGenre(subTag, btn) {
+    document.querySelectorAll('#genreTabs .tab-btn').forEach(b => b.classList.remove('active'));
+    if(btn) btn.classList.add('active');
+    
     allSongRows.forEach(row => {
         const tags = row.getAttribute('data-tags') || "";
         row.style.display = (subTag === "all" || tags.includes(subTag)) ? "" : "none";
@@ -998,6 +978,7 @@ function showSpecificLyric(lyricId) {
     lyricsMainSection.style.display = "none";
     allLyricDetails.forEach(sec => sec.style.display = "none");
     document.getElementById(lyricId).style.display = "block";
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 function backToLyricsList() {
     allLyricDetails.forEach(sec => sec.style.display = "none");
@@ -1009,7 +990,11 @@ function selectMenu(menuId, titleText, descText, filterMode = "all") {
     document.getElementById(menuId).classList.add('active');
     mainTitle.innerHTML = titleText;
     mainDesc.innerHTML = descText;
-    document.getElementById('sidebar').classList.remove('active');
+    
+    // ปิดเมนูด้านซ้ายอัตโนมัติบนมือถือเมื่อกดเลือกเมนูแล้ว
+    if(window.innerWidth <= 768){
+        document.getElementById('sidebar').classList.remove('active');
+    }
     
     mainSongTable.style.display = "none";
     genreTabs.style.display = "none";
@@ -1035,6 +1020,7 @@ function selectMenu(menuId, titleText, descText, filterMode = "all") {
         allSongRows.forEach(row => row.style.display = ""); 
         updateLiveSongCount();
     }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 // Menu Listeners
@@ -1048,15 +1034,12 @@ document.getElementById('lyricsMenu').addEventListener('click', () => selectMenu
 // Horoscope Tab System (Daily, Weekly, Monthly)
 // =========================================================
 function switchHoroType(type, btn) {
-    // 1. เปลี่ยนสีปุ่มเมนูหลัก
     document.querySelectorAll('.type-tabs .tab-btn').forEach(t => t.classList.remove('active'));
-    btn.classList.add('active');
+    if(btn) btn.classList.add('active');
     
-    // 2. ซ่อน Section ทั้งหมด แล้วเปิดเฉพาะที่เลือก
     document.querySelectorAll('.horo-type-section').forEach(sec => sec.style.display = 'none');
     document.getElementById('type-' + type).style.display = 'block';
     
-    // 3. จำลองการคลิกให้ตรงกับ "วันปัจจุบัน" ในหมวดหมู่นั้นๆ อัตโนมัติ
     const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
     const currentDayName = days[new Date().getDay()];
     
@@ -1066,11 +1049,9 @@ function switchHoroType(type, btn) {
 
 function showHoroCard(type, day, btn) {
     const section = document.getElementById('type-' + type);
-    // รีเซ็ตปุ่มวันในหมวดนั้นๆ
     section.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
-    btn.classList.add('active');
+    if(btn) btn.classList.add('active');
     
-    // ซ่อนการ์ดทั้งหมดในหมวดนั้น แล้วโชว์เฉพาะวันที่เลือก
     section.querySelectorAll('.sanook-card').forEach(c => c.style.display = 'none');
     document.getElementById(`card-${type}-${day}`).style.display = 'block';
 }
@@ -1081,7 +1062,6 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-<!-- Firebase Module -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
