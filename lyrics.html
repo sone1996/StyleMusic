@@ -35,7 +35,7 @@ a { text-decoration: none; color: inherit; }
 .song-content p { color: #ccc; line-height: 1.8; font-size: 15px; margin-bottom: 20px; }
 
 /* คลาสที่ใช้ตอนถูกคลิก (เปิดเนื้อหา) */
-.song-summary-card.active .song-content { max-height: 200px; opacity: 1; padding-top: 10px; }
+.song-summary-card.active .song-content { max-height: 300px; opacity: 1; padding-top: 10px; }
 .song-summary-card.active .toggle-icon { transform: rotate(180deg); color: #ff2d55; }
 
 /* Mobile */
@@ -57,7 +57,6 @@ a { text-decoration: none; color: inherit; }
 <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
 <div class="container">
-    <!-- แถบเมนูด้านซ้าย (เปิดแท็บใหม่) -->
     <div class="sidebar" id="sidebar">
         <div class="logo">🎵 StyleMusicPro</div>
         <a href="index.html" class="menu">🏠 หน้าแรก / ฟังเพลง</a>
@@ -65,7 +64,6 @@ a { text-decoration: none; color: inherit; }
         <a href="lyrics.html" class="menu active">📖 สรุปความหมายเพลง</a>
     </div>
 
-    <!-- เนื้อหาหลัก -->
     <div class="main">
         <div class="lyrics-container">
             <div style="text-align: center; margin-bottom: 30px;">
@@ -333,41 +331,100 @@ a { text-decoration: none; color: inherit; }
                 </div>
             </div>
 
-        </div>
-    </div>
-</div>
-<div class="song-summary-card" onclick="toggleSummary(this)">
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 เชื่อเกินไป</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>การเชื่อใจอย่างบริสุทธิ์ใจไม่ใช่ความผิด แต่เราควรเรียนรู้ที่จะมองความจริงควบคู่ไปกับความรู้สึก เพื่อไม่ให้หัวใจต้องเจ็บซ้ำจากความคาดหวังที่ไม่มีวันเป็นจริง</p>
+                </div>
+            </div>
+
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 เรื่องธรรมดาที่พิเศษ</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>ความสุขไม่ได้เกิดจากสิ่งยิ่งใหญ่เสมอไป แต่เกิดจากการมีคนสำคัญอยู่เคียงข้างในวันธรรมดาๆ ของชีวิต</p>
+                </div>
+            </div>
+
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 ถึงเวลาต้องไป</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>บางความสัมพันธ์ไม่ได้จบลงเพราะหมดรัก แต่จบลงเพราะการปล่อยมือคือสิ่งที่ดีที่สุดสำหรับทั้งสองคน</p>
+                </div>
+            </div>
+
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 บทเรียน</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>บางบทเรียนของชีวิตต้องแลกมาด้วยน้ำตา แต่ความเจ็บปวดเหล่านั้นจะสอนให้เราเข้าใจความรัก การสูญเสีย และการเติบโตมากขึ้น</p>
+                </div>
+            </div>
+
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 บทเรียนราคาแพง</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>การฝากหัวใจไว้กับคนผิด อาจทำให้เราเจ็บปวด แต่สิ่งสำคัญคือการนำความเจ็บนั้นมาเป็นบทเรียน ไม่ใช่ปล่อยให้มันเป็นแผลไปตลอดชีวิต</p>
+                </div>
+            </div>
+
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 ยังอยู่ในทุกวัน</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>บางคนอาจไม่ได้อยู่ในชีวิตเราอีกแล้ว แต่ยังคงเป็นส่วนหนึ่งของหัวใจและความทรงจำที่งดงามเสมอ</p>
+                </div>
+            </div>
+
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 ร่องรอยของเธอ</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>แม้เวลาจะพาผู้คนจากไป แต่ความทรงจำและความหมายที่พวกเขาทิ้งไว้ อาจยังคงอยู่ในหัวใจตลอดไป</p>
+                </div>
+            </div>
+
+            <div class="song-summary-card" onclick="toggleSummary(this)">
                 <div class="song-header">
                     <h3>🎵 สายเกินจะขอโทษ</h3>
                     <span class="toggle-icon">▼</span>
                 </div>
                 <div class="song-content">
-                    <p>ข้อคิดจากเพลง
-อย่ารอให้เสียใครไปก่อน จึงค่อยเห็นคุณค่าของเขา
-คนที่รักเราและหวังดีกับเรา อาจเป็นคนที่เรามองข้ามมากที่สุด
-ทุกการกระทำมีผลตามมา บางความผิดพลาดไม่สามารถย้อนกลับไปแก้ไขได้
-คำขอโทษมีค่าที่สุดเมื่อยังมีคนรอฟัง
-การรักษาคนดีๆ ไว้ สำคัญกว่าการมานั่งเสียใจในวันที่สูญเสียเขาไปแล้ว
-ความเสียใจอาจเป็นบทเรียนราคาแพง ที่สอนให้เราเติบโตและรู้จักคุณค่าของความรัก
-เวลาไม่เคยรอใคร และโอกาสบางอย่างมีเพียงครั้งเดียวในชีวิต
-จงดูแลคนที่อยู่ข้างๆ ให้ดีที่สุด ก่อนที่เขาจะกลายเป็นเพียงความทรงจำ
-สาระสำคัญของเพลง
+                    <p>อย่ามองข้ามคนที่รักและหวังดีกับเรา เพราะวันที่เราเห็นคุณค่าของเขา อาจเป็นวันที่ไม่มีเขาอยู่ให้เรารักษาอีกแล้ว บางครั้ง...เราจะรู้คุณค่าของใครสักคน ก็ต่อเมื่อเขาไม่อยู่ให้เรารักอีกแล้ว</p>
+                </div>
+            </div>
 
-"อย่ามองข้ามคนที่รักและหวังดีกับเรา เพราะวันที่เราเห็นคุณค่าของเขา อาจเป็นวันที่ไม่มีเขาอยู่ให้เรารักษาอีกแล้ว"
-
-หรือในรูปแบบประโยคสั้นๆ สำหรับใช้เป็นคำโปรยเพลง:
-
-"บางครั้ง...เราจะรู้คุณค่าของใครสักคน ก็ต่อเมื่อเขาไม่อยู่ให้เรารักอีกแล้ว"
-
-"คำขอโทษที่ช้าที่สุด คือคำขอโทษที่ไม่มีคนฟังอีกต่อไป"
-
-"อย่าปล่อยให้ความรักกลายเป็นบทเรียนราคาแพงของชีวิต" ❤️‍🩹🎵</p>
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 ห้องที่ไม่มีเธอ</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>บางคนอาจจากไปจากชีวิต แต่ความรักและความทรงจำที่เขาทิ้งไว้ จะยังคงอยู่ในหัวใจตลอดไป</p>
                 </div>
             </div>
 
         </div>
     </div>
 </div>
+
 <script>
     // ฟังก์ชันเปิด/ปิดเมนูบนมือถือ
     function toggleMenu() { 
