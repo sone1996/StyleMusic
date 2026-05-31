@@ -4,72 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>🔮 เช็กดวงรายวัน - StyleMusicPro</title>
-<meta name="description" content="ดูดวงชะตารายวัน รายสัปดาห์ และรายเดือน สไตล์คนฟังเพลงเศร้า">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* Global & Layout Styles */
+/* ... (สไตล์เดิมของคุณให้คงไว้เหมือนเดิม) ... */
 .menu-toggle{ display:none; position:fixed; top:15px; left:15px; z-index:9999; width:42px; height:42px; border:none; border-radius:12px; background:#9b5cff; color:white; font-size:28px; cursor:pointer; }
 *{ margin:0; padding:0; box-sizing:border-box; }
 body{ font-family:'Poppins',sans-serif; background:#050816; color:white; overflow-x:hidden; width: 100vw; }
 .container{ display:flex; height:100vh; max-width: 100%; }
-a { text-decoration: none; color: inherit; }
-
-/* Sidebar */
 .sidebar{ width:240px; background:rgba(7,11,24,.88); backdrop-filter:blur(12px); padding:25px; display:flex; flex-direction:column; gap:18px; border-right:1px solid rgba(255,255,255,.05); }
-.logo{ font-size:30px; font-weight:700; color:#9b5cff; margin-bottom:20px; line-height: 1.2; }
-.menu{ padding:14px; border-radius:14px; cursor:pointer; transition:.3s; background:rgba(255,255,255,.03); display: block; }
-.menu:hover, .menu.active { background:#9b5cff; transform:translateX(5px); }
+.logo{ font-size:30px; font-weight:700; color:#9b5cff; margin-bottom:20px; }
+.menu{ padding:14px; border-radius:14px; cursor:pointer; background:rgba(255,255,255,.03); display: block; text-decoration: none; color: white; }
+.menu.active { background:#9b5cff; }
+.main{ flex:1; overflow-y:auto; padding:30px; }
 
-/* Main Content */
-.main{ flex:1; overflow-y:auto; overflow-x:hidden; padding:30px; padding-bottom:120px; background:#050816; }
+.horo-wrapper { max-width: 600px; margin: 0 auto; text-align: center; }
+.random-btn { padding: 15px 40px; font-size: 18px; border-radius: 30px; background: #9b5cff; color: white; border: none; cursor: pointer; margin-bottom: 30px; transition: 0.3s; }
+.random-btn:hover { background: #7c4dff; transform: scale(1.05); }
+.sanook-card { background: #0a0d1d; border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 30px; text-align: left; }
+.horo-header { font-size: 22px; margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 10px; }
 
-/* Horo Styles */
-.articles-container { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 20px; padding: 30px; backdrop-filter: blur(10px); width: 100%; }
-.sub-tabs { display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; justify-content: center; }
-.tab-btn { padding: 8px 18px; border-radius: 20px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #fff; cursor: pointer; font-size: 14px; transition: 0.2s; white-space: nowrap; }
-.tab-btn:hover, .tab-btn.active { background: #9b5cff; border-color: #9b5cff; }
-.type-tabs .tab-btn { padding: 12px 25px; font-size: 16px; border-radius: 30px; font-weight: 500; }
-.type-tabs .tab-btn.active { background: #ff2d55; border-color: #ff2d55; box-shadow: 0 0 20px rgba(255,45,85,0.4); }
-
-.tab-sun.active { background: #ff4d4d; border-color: #ff4d4d; }
-.tab-mon.active { background: #ffcc00; border-color: #ffcc00; color: #000; }
-.tab-tue.active { background: #ff66b2; border-color: #ff66b2; }
-.tab-wed.active { background: #00e676; border-color: #00e676; color: #000; }
-.tab-thu.active { background: #ff9900; border-color: #ff9900; }
-.tab-fri.active { background: #3399ff; border-color: #3399ff; }
-.tab-sat.active { background: #b366ff; border-color: #b366ff; }
-
-.sanook-card { background: #0a0d1d; border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 30px; margin-top: 15px; width: 100%; }
-.card-sun { border-left: 6px solid #ff4d4d; }
-.card-mon { border-left: 6px solid #ffcc00; }
-.card-tue { border-left: 6px solid #ff66b2; }
-.card-wed { border-left: 6px solid #00e676; }
-.card-thu { border-left: 6px solid #ff9900; }
-.card-fri { border-left: 6px solid #3399ff; }
-.card-sat { border-left: 6px solid #b366ff; }
-
-.horo-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; margin-bottom: 25px; }
-.horo-row { display: flex; gap: 20px; margin-bottom: 25px; align-items: flex-start; }
-.horo-icon-box { width: 55px; height: 55px; border-radius: 16px; display: flex; justify-content: center; align-items: center; font-size: 26px; background: rgba(255,255,255,0.05); flex-shrink: 0; }
-.horo-detail h4 { font-size: 18px; margin-bottom: 5px; }
-.horo-detail p { font-size: 15px; color: #ccc; line-height: 1.6; }
-.lucky-box { display: flex; gap: 15px; margin-top: 30px; flex-wrap: wrap; }
-.lucky-item { flex: 1; min-width: 200px; background: rgba(255,255,255,0.03); border-radius: 16px; padding: 15px 20px; display: flex; align-items: center; gap: 15px; border: 1px solid rgba(255,255,255,0.05); }
-.lucky-item span { font-size: 24px; }
-
-/* Mobile */
-@media(max-width:768px){
-    .menu-toggle{ display:block; }
-    .sidebar{ position:fixed; left:-280px; top:0; width:260px; height:100%; z-index:1000; transition:.3s; }
-    .sidebar.active{ left:0; box-shadow:0 0 30px rgba(0,0,0,.9); }
-    .container{ flex-direction:column; }
-    .main{ padding: 10px; padding-top: 70px; }
-    .articles-container { padding: 15px 10px; }
-    .sanook-card { padding: 15px; border-radius: 16px; }
-    .horo-header { flex-direction: column; align-items: flex-start; gap: 5px; }
-    .type-tabs, .horo-type-section .sub-tabs { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; padding-bottom: 8px; }
-    .type-tabs::-webkit-scrollbar, .horo-type-section .sub-tabs::-webkit-scrollbar { display: none; }
-}
+@media(max-width:768px){ .menu-toggle{ display:block; } .sidebar{ position:fixed; left:-280px; top:0; width:260px; height:100%; z-index:1000; } .sidebar.active{ left:0; } .container{ flex-direction:column; } .main{ padding-top: 70px; } }
 </style>
 </head>
 <body>
@@ -77,7 +31,6 @@ a { text-decoration: none; color: inherit; }
 <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
 <div class="container">
-    <!-- แถบเมนูด้านซ้าย (เปิดแท็บใหม่) -->
     <div class="sidebar" id="sidebar">
         <div class="logo">🎵 StyleMusicPro</div>
         <a href="index.html" class="menu">🏠 หน้าแรก / ฟังเพลง</a>
@@ -85,81 +38,44 @@ a { text-decoration: none; color: inherit; }
         <a href="lyrics.html" target="_blank" class="menu">📖 สรุปความหมายเพลง</a>
     </div>
 
-    <!-- เนื้อหาหลัก -->
     <div class="main">
-        <div class="articles-container">
-            <div style="text-align: center; margin-bottom: 25px;">
-                <h1 style="color: #fff; font-size: 28px;">🔮 เช็กดวงรายวัน ฉบับคนเหงา</h1>
-                <p style="color: #bbb; margin-top: 5px;">ตรวจชะตาหัวใจ สไตล์ StyleMusicPro</p>
-            </div>
-
-            <div class="sub-tabs type-tabs">
-                <button class="tab-btn active" id="btn-type-daily" onclick="switchHoroType('daily', this)">📅 รายวัน</button>
-                <button class="tab-btn" id="btn-type-weekly" onclick="switchHoroType('weekly', this)">📆 รายสัปดาห์</button>
-                <button class="tab-btn" id="btn-type-monthly" onclick="switchHoroType('monthly', this)">🗓️ รายเดือน</button>
-            </div>
-
-            <!-- ส่วนของเนื้อหาดูดวงรายวัน -->
-            <div id="type-daily" class="horo-type-section" style="display: block;">
-                <div class="sub-tabs">
-                    <button class="tab-btn tab-sun active" onclick="showHoroCard('daily', 'sunday', this)">วันอาทิตย์</button>
-                    <button class="tab-btn tab-mon" onclick="showHoroCard('daily', 'monday', this)">วันจันทร์</button>
-                    <button class="tab-btn tab-tue" onclick="showHoroCard('daily', 'tuesday', this)">วันอังคาร</button>
-                    <button class="tab-btn tab-wed" onclick="showHoroCard('daily', 'wednesday', this)">วันพุธ</button>
-                    <button class="tab-btn tab-thu" onclick="showHoroCard('daily', 'thursday', this)">วันพฤหัสฯ</button>
-                    <button class="tab-btn tab-fri" onclick="showHoroCard('daily', 'friday', this)">วันศุกร์</button>
-                    <button class="tab-btn tab-sat" onclick="showHoroCard('daily', 'saturday', this)">วันเสาร์</button>
-                </div>
-                
-                <div id="card-daily-sunday" class="sanook-card card-sun" style="display: block;">
-                    <div class="horo-header"><h3 style="color:#ff4d4d;">ดวงประจำวัน (อาทิตย์) ❤️</h3></div>
-                    <div class="horo-row"><div class="horo-icon-box" style="color: #00d2ff;">💼</div><div class="horo-detail"><h4 style="color: #00d2ff;">การงาน</h4><p>งานหนักจนแทบไม่มีเวลาเศร้า ถือเป็นเรื่องดีที่คุณจะได้ไม่ฟุ้งซ่าน โฟกัสกับสิ่งที่อยู่ตรงหน้าให้เต็มที่</p></div></div>
-                    <div class="horo-row"><div class="horo-icon-box" style="color: #ffcc00;">💰</div><div class="horo-detail"><h4 style="color: #ffcc00;">การเงิน</h4><p>เปย์เยียวยาจิตใจไปเยอะ ระวังเงินเก็บร่อยหรอ แนะนำให้ดื่มกาแฟเงียบๆ ใส่หูฟังฟังเพลงดีกว่า</p></div></div>
-                    <div class="horo-row"><div class="horo-icon-box" style="color: #ff66b2;">💖</div><div class="horo-detail"><h4 style="color: #ff66b2;">ความรัก</h4><p>ยังคงเปิด Playlist เพลงอกหักวนไป ร้องไห้ให้พอแล้วพรุ่งนี้ค่อยเริ่มใหม่นะ</p></div></div>
-                    <div class="lucky-box">
-                        <div class="lucky-item"><span>🎨</span><div><h5 style="color:#888; font-size:14px;">สีฮีลใจประจำวัน</h5><p style="color:#ff4d4d; font-size:18px; font-weight:bold;">แดง, เทา, ดำ</p></div></div>
-                    </div>
-                </div>
-
-                <div id="card-daily-monday" class="sanook-card card-mon" style="display: none;">
-                    <div class="horo-header"><h3 style="color:#ffcc00;">ดวงประจำวัน (จันทร์) 💛</h3></div>
-                    <div class="horo-row"><div class="horo-icon-box" style="color: #00d2ff;">💼</div><div class="horo-detail"><h4 style="color: #00d2ff;">การงาน</h4><p>เริ่มต้นสัปดาห์ด้วยความรู้สึกหน่วงๆ ใส่หูฟังเปิดเพลง Lo-fi เบาๆ จะช่วยดึงสติและสมาธิให้กลับมา</p></div></div>
-                    <div class="horo-row"><div class="horo-icon-box" style="color: #ffcc00;">💰</div><div class="horo-detail"><h4 style="color: #ffcc00;">การเงิน</h4><p>มีเกณฑ์เสียเงินกับของจุกจิกเพื่อหวังให้ตัวเองยิ้มออก ถือว่าคุ้มค่า</p></div></div>
-                    <div class="horo-row"><div class="horo-icon-box" style="color: #ff66b2;">💖</div><div class="horo-detail"><h4 style="color: #ff66b2;">ความรัก</h4><p>คนเก่ายังแวะเวียนเข้ามาในความคิด อย่าเพิ่งรีบดึงใครเข้ามาแทนที่</p></div></div>
-                </div>
-            </div>
-            
-            <div id="type-weekly" class="horo-type-section" style="display: none;">
-                <div style="text-align: center; margin-top: 20px;"><p>เลือกวันเกิดของคุณเพื่อดูภาพรวมรายสัปดาห์</p></div>
-            </div>
-
-            <div id="type-monthly" class="horo-type-section" style="display: none;">
-                <div style="text-align: center; margin-top: 20px;"><p>เลือกวันเกิดของคุณเพื่อดูภาพรวมรายเดือน</p></div>
-            </div>
-            
+        <div class="horo-wrapper">
+            <h1 style="margin-bottom:20px;">🔮 ดวงคนเหงาประจำวัน</h1>
+            <button class="random-btn" onclick="generateRandomHoro()">🎲 สุ่มคำทำนายดวงชะตา</button>
+            <div id="horo-display"></div>
         </div>
     </div>
 </div>
 
 <script>
-    function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); }
+function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); }
 
-    function switchHoroType(type, btn) {
-        document.querySelectorAll('.type-tabs .tab-btn').forEach(t => t.classList.remove('active'));
-        btn.classList.add('active');
-        document.querySelectorAll('.horo-type-section').forEach(sec => sec.style.display = 'none');
-        document.getElementById('type-' + type).style.display = 'block';
-    }
+// 1. เก็บคำทำนายทั้ง 7 วันไว้ในที่เดียว
+const horoData = [
+    { title: "วันอาทิตย์", color: "#ff4d4d", work: "งานหนักจนแทบไม่มีเวลาเศร้า โฟกัสกับงานให้เต็มที่นะ", money: "เปย์ตัวเองไปเยอะ ระวังเงินเก็บร่อยหรอ", love: "เปิด Playlist เพลงอกหักวนไป ร้องไห้ให้พอแล้วเริ่มใหม่" },
+    { title: "วันจันทร์", color: "#ffcc00", work: "เริ่มต้นสัปดาห์ด้วยความรู้สึกหน่วงๆ เปิดเพลง Lo-fi ช่วยได้", money: "มีเกณฑ์เสียเงินกับของจุกจิกเพื่อความสุขเล็กๆ", love: "คนเก่ายังแวะมาในความคิด แต่อย่าเพิ่งรีบดึงใครเข้ามาแทนที่" },
+    { title: "วันอังคาร", color: "#ff66b2", work: "เพื่อนร่วมงานจะเป็นที่ปรึกษาที่ดีในวันที่ใจเราอ่อนแอ", money: "การเงินนิ่งๆ ไม่หวือหวา เหมาะแก่การเก็บออม", love: "ความรักแบบเพื่อนอาจจะพัฒนา แต่ใจเย็นๆ ไว้ก่อน" },
+    { title: "วันพุธ", color: "#00e676", work: "ไอเดียใหม่ๆ จะเกิดขึ้นถ้าลองเปลี่ยนบรรยากาศที่นั่งทำงาน", money: "มีโชคลาภเล็กๆ น้อยๆ จากสิ่งที่ไม่ได้ตั้งใจ", love: "คนที่ใช่จะเข้ามาในจังหวะที่คุณเริ่มรักตัวเอง" },
+    { title: "วันพฤหัสฯ", color: "#ff9900", work: "งานราบรื่นดี แต่ระวังการสื่อสารที่อาจเข้าใจผิด", money: "ระวังรายจ่ายที่เกิดจากการตัดสินใจวู่วาม", love: "คนโสดมีเกณฑ์ได้คุยกับคนใหม่ที่คุยสนุกจนลืมเรื่องเศร้า" },
+    { title: "วันศุกร์", color: "#3399ff", work: "งานมีความท้าทายสูง แต่อย่าแบกไว้คนเดียว", money: "มีเงินก้อนผ่านมือมาให้ชื่นใจ แต่ก็มีรายจ่ายรออยู่", love: "ใครที่เคยทำให้เสียใจ วันนี้เขาอาจจะไม่ได้อยู่ในใจคุณอีกต่อไป" },
+    { title: "วันเสาร์", color: "#b366ff", work: "วันพักผ่อนที่ควรชาร์จแบตให้ตัวเองเต็มที่ที่สุด", money: "งดลงทุนใหญ่ๆ ในช่วงนี้ รักษาเงินไว้กับตัวดีที่สุด", love: "การอยู่คนเดียวในวันนี้ อาจทำให้คุณมองเห็นความรักชัดขึ้น" }
+];
 
-    function showHoroCard(type, day, btn) {
-        const section = document.getElementById('type-' + type);
-        section.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
-        btn.classList.add('active');
-        section.querySelectorAll('.sanook-card').forEach(c => c.style.display = 'none');
-        let targetCard = document.getElementById(`card-${type}-${day}`);
-        if(targetCard) targetCard.style.display = 'block';
-    }
+// 2. ฟังก์ชันสุ่มดวง
+function generateRandomHoro() {
+    const random = horoData[Math.floor(Math.random() * horoData.length)];
+    document.getElementById("horo-display").innerHTML = `
+        <div class="sanook-card" style="border-left: 6px solid ${random.color}">
+            <div class="horo-header" style="color:${random.color}">ดวงประจำ${random.title}</div>
+            <p style="margin-bottom:15px;"><strong>💼 การงาน:</strong> ${random.work}</p>
+            <p style="margin-bottom:15px;"><strong>💰 การเงิน:</strong> ${random.money}</p>
+            <p><strong>💖 ความรัก:</strong> ${random.love}</p>
+        </div>
+    `;
+}
+
+// 3. สุ่มให้ทันทีที่เข้าหน้าเว็บ
+window.onload = generateRandomHoro;
 </script>
-
 </body>
 </html>
