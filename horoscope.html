@@ -77,12 +77,12 @@ a { text-decoration: none; color: inherit; }
 <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
 <div class="container">
-    <!-- แถบเมนูด้านซ้าย -->
+    <!-- แถบเมนูด้านซ้าย (เปิดแท็บใหม่) -->
     <div class="sidebar" id="sidebar">
         <div class="logo">🎵 StyleMusicPro</div>
         <a href="index.html" class="menu">🏠 หน้าแรก / ฟังเพลง</a>
         <a href="horoscope.html" class="menu active">🔮 เช็กดวงรายวัน</a>
-        <a href="lyrics.html" class="menu">📖 สรุปความหมายเพลง</a>
+        <a href="lyrics.html" target="_blank" class="menu">📖 สรุปความหมายเพลง</a>
     </div>
 
     <!-- เนื้อหาหลัก -->
@@ -127,19 +127,14 @@ a { text-decoration: none; color: inherit; }
                     <div class="horo-row"><div class="horo-icon-box" style="color: #ffcc00;">💰</div><div class="horo-detail"><h4 style="color: #ffcc00;">การเงิน</h4><p>มีเกณฑ์เสียเงินกับของจุกจิกเพื่อหวังให้ตัวเองยิ้มออก ถือว่าคุ้มค่า</p></div></div>
                     <div class="horo-row"><div class="horo-icon-box" style="color: #ff66b2;">💖</div><div class="horo-detail"><h4 style="color: #ff66b2;">ความรัก</h4><p>คนเก่ายังแวะเวียนเข้ามาในความคิด อย่าเพิ่งรีบดึงใครเข้ามาแทนที่</p></div></div>
                 </div>
-
-                <!-- คุณสามารถนำโค้ดดวงวันอื่นๆ ที่ผมเคยให้ไว้มาต่อตรงนี้ได้เลยครับ -->
-                <!-- เพื่อความกระชับ ผมใส่โครงสร้าง 2 วันไว้เป็นตัวอย่างให้มันทำงานได้ทันที -->
             </div>
             
             <div id="type-weekly" class="horo-type-section" style="display: none;">
                 <div style="text-align: center; margin-top: 20px;"><p>เลือกวันเกิดของคุณเพื่อดูภาพรวมรายสัปดาห์</p></div>
-                <!-- ใส่เนื้อหารายสัปดาห์ -->
             </div>
 
             <div id="type-monthly" class="horo-type-section" style="display: none;">
                 <div style="text-align: center; margin-top: 20px;"><p>เลือกวันเกิดของคุณเพื่อดูภาพรวมรายเดือน</p></div>
-                <!-- ใส่เนื้อหารายเดือน -->
             </div>
             
         </div>
