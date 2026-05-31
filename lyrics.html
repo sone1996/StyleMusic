@@ -22,13 +22,21 @@ a { text-decoration: none; color: inherit; }
 /* Main Content */
 .main{ flex:1; overflow-y:auto; overflow-x:hidden; padding:30px; padding-bottom:120px; background:#050816; }
 
-/* Lyrics Styles */
+/* Lyrics Styles - อัปเดตใหม่สำหรับระบบคลิกเพื่อเปิด */
 .lyrics-container { background: rgba(255, 255, 255, 0.03); border-radius: 20px; padding: 30px; border: 1px solid rgba(255,255,255,0.1); width: 100%; }
-.song-summary-card { background: rgba(255,255,255,0.04); border-radius: 16px; padding: 25px; margin-bottom: 20px; border-left: 5px solid #9b5cff; transition: 0.3s; }
-.song-summary-card:hover { transform: translateY(-3px); background: rgba(255,255,255,0.07); }
-h2 { color: #9b5cff; margin-bottom: 10px; }
-h3 { color: #fff; font-size: 20px; margin-bottom: 10px; }
-p { color: #ccc; line-height: 1.8; font-size: 15px; }
+.song-summary-card { background: rgba(255,255,255,0.04); border-radius: 16px; margin-bottom: 20px; border-left: 5px solid #9b5cff; transition: 0.3s; cursor: pointer; overflow: hidden; }
+.song-summary-card:hover { background: rgba(255,255,255,0.07); }
+
+.song-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 25px; }
+.song-header h3 { color: #fff; font-size: 18px; margin: 0; pointer-events: none; }
+.toggle-icon { font-size: 16px; color: #9b5cff; transition: transform 0.3s ease; pointer-events: none; }
+
+.song-content { padding: 0 25px; max-height: 0; opacity: 0; overflow: hidden; transition: all 0.4s ease; }
+.song-content p { color: #ccc; line-height: 1.8; font-size: 15px; margin-bottom: 20px; }
+
+/* คลาสที่ใช้ตอนถูกคลิก (เปิดเนื้อหา) */
+.song-summary-card.active .song-content { max-height: 200px; opacity: 1; padding-top: 10px; }
+.song-summary-card.active .toggle-icon { transform: rotate(180deg); color: #ff2d55; }
 
 /* Mobile */
 @media(max-width:768px){
@@ -38,7 +46,9 @@ p { color: #ccc; line-height: 1.8; font-size: 15px; }
     .container{ flex-direction:column; }
     .main{ padding: 10px; padding-top: 70px; }
     .lyrics-container { padding: 15px 10px; }
-    .song-summary-card { padding: 15px; border-radius: 12px; }
+    .song-header { padding: 15px; }
+    .song-header h3 { font-size: 16px; }
+    .song-content { padding: 0 15px; }
 }
 </style>
 </head>
@@ -60,47 +70,293 @@ p { color: #ccc; line-height: 1.8; font-size: 15px; }
         <div class="lyrics-container">
             <div style="text-align: center; margin-bottom: 30px;">
                 <h1 style="color: #fff; font-size: 28px;">📖 สรุปใจความบทเพลง</h1>
-                <p style="color: #bbb; margin-top: 5px;">เจาะลึกความหมายและอารมณ์ของทุกบทเพลง</p>
+                <p style="color: #bbb; margin-top: 5px;">คลิกที่ชื่อเพลงเพื่ออ่านความหมายและอารมณ์ของเพลง</p>
             </div>
             
-            <div class="song-summary-card">
-                <h3>🎵 แสงเช้าที่ว่างเปล่า</h3>
-                <p>ความรู้สึกอ้างว้างในยามเช้า เมื่อตื่นมาแล้วพบว่าความอบอุ่นที่เคยมีได้หายไป เหลือเพียงความจริงที่ต้องอยู่คนเดียว</p>
+            <!-- ข้อมูลเพลงทั้ง 26 เพลง -->
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 แสงเช้าที่ว่างเปล่า</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>ความรู้สึกอ้างว้างในยามเช้า เมื่อตื่นมาแล้วพบว่าความอบอุ่นที่เคยมีได้หายไป เหลือเพียงความจริงที่ต้องอยู่คนเดียว</p>
+                </div>
             </div>
             
-            <div class="song-summary-card">
-                <h3>🎵 แค่ฝุ่นที่เลือนลาง</h3>
-                <p>ความรักที่เคยสวยงามค่อยๆ จางหายไปเหมือนฝุ่น ไม่เหลือร่องรอยนอกจากความทรงจำสีจางๆ</p>
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 แค่ฝุ่นที่เลือนลาง</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>ความรักที่เคยสวยงามค่อยๆ จางหายไปเหมือนฝุ่น ไม่เหลือร่องรอยนอกจากความทรงจำสีจางๆ</p>
+                </div>
             </div>
 
-            <div class="song-summary-card">
-                <h3>🎵 คนที่พลาดเอง</h3>
-                <p>เพลงของคนขี้แพ้ที่โทษตัวเองที่ทำร้ายและปล่อยมือคนรักไป จนเสียเขาไปตลอดกาล</p>
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 คนที่พลาดเอง</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>เพลงของคนขี้แพ้ที่โทษตัวเองที่ทำร้ายและปล่อยมือคนรักไป จนเสียเขาไปตลอดกาล</p>
+                </div>
             </div>
 
-            <div class="song-summary-card">
-                <h3>🎵 ได้แค่มองเธอ</h3>
-                <p>อารมณ์ของการแอบรักในสถานะที่ไม่มีสิทธิ์เรียกร้อง ทำได้แค่เฝ้ามองดูเธอมีความสุขจากมุมไกลๆ</p>
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 ได้แค่มองเธอ</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>อารมณ์ของการแอบรักในสถานะที่ไม่มีสิทธิ์เรียกร้อง ทำได้แค่เฝ้ามองดูเธอมีความสุขจากมุมไกลๆ</p>
+                </div>
             </div>
             
-            <div class="song-summary-card">
-                <h3>🎵 วันที่ไม่มีเธอ</h3>
-                <p>โลกที่มืดมน ไร้ทิศทาง ขาดแสงสว่างและแรงบันดาลใจ เมื่อคนที่เคยเป็นทุกอย่างได้เดินจากไป</p>
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 วันที่ไม่มีเธอ</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>โลกที่มืดมน ไร้ทิศทาง ขาดแสงสว่างและแรงบันดาลใจ เมื่อคนที่เคยเป็นทุกอย่างได้เดินจากไป</p>
+                </div>
             </div>
 
-            <div class="song-summary-card">
-                <h3>🎵 ภาพจำที่ไม่ได้ลืม</h3>
-                <p>ความทรมานของการพยายามลืม ยิ่งลบภาพเขาทิ้ง ใจกลับยิ่งจดจำทุกรายละเอียดได้ชัดเจนขึ้น</p>
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 ภาพจำที่ไม่ได้ลืม</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>ความทรมานของการพยายามลืม ยิ่งลบภาพเขาทิ้ง ใจกลับยิ่งจดจำทุกรายละเอียดได้ชัดเจนขึ้น</p>
+                </div>
             </div>
-            
-            <!-- เพิ่มเพลงอื่นๆ ลงไปด้านล่างได้เลยครับ โครงสร้างเว็บจัดไว้รอแล้ว -->
+
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 ทางที่ไม่มีเธอ</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>การฝืนก้าวเดินต่อไปบนเส้นทางชีวิตที่เคยมีเขาเคียงข้าง แต่ปัจจุบันต้องเผชิญหน้าคนเดียวอย่างเคว้งคว้าง</p>
+                </div>
+            </div>
+
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 ให้หมดแล้ว</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>ความรู้สึกพังทลายหลังจากทุ่มเทความรักทั้งหมดให้คนหนึ่ง แต่สิ่งที่ได้ตอบแทนกลับมาคือความว่างเปล่า</p>
+                </div>
+            </div>
+
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 ข้อความสุดท้าย</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>ความรู้สึกค้างคาในแชทที่พิมพ์ค้างไว้ แต่ไม่มีโอกาสได้กดส่ง เพราะคนที่รออ่านได้หายไปจากชีวิตแล้ว</p>
+                </div>
+            </div>
+
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 หากวันหนึ่งเราได้พบกัน</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>ซ่อนความหวังว่าหากโชคชะตาพาเราวนกลับมาเจอกันอีกครั้ง จะสามารถยิ้มให้กันได้โดยไม่มีน้ำตา</p>
+                </div>
+            </div>
+
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 ไม่ฟังหัวใจตัวเอง</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>การฝืนทนในความสัมพันธ์ที่เป็นพิษ แม้สมองจะสั่งให้ถอย แต่หัวใจกลับดื้อรั้นยอมเจ็บซ้ำๆ เพราะรัก</p>
+                </div>
+            </div>
+
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 ฝากลมไปบอก</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>อารมณ์เหงาในยามค่ำคืนที่ทำได้เพียงฝากความคิดถึงไปกับสายลม หวังว่าเขาจะสัมผัสได้ถึงความรู้สึกนี้</p>
+                </div>
+            </div>
+
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 คนที่ควรผ่านไป</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>การติดกับดักคนที่รู้อยู่เต็มอกว่าไม่ใช่ แต่กลับเลือกที่จะจดจำและผูกพันอย่างถอนตัวไม่ขึ้น</p>
+                </div>
+            </div>
+
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 เวลาที่ไม่ใช่</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>ความรักที่สวยงามแต่น่าเสียดายที่เกิดขึ้นในจังหวะชีวิตที่ไม่ตรงกัน จนต้องยอมปล่อยมือกันไป</p>
+                </div>
+            </div>
+
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 ในวันที่ฉันหายไป</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>คำถามเชิงตัดพ้อว่าหากวันหนึ่งเราหายไปจากชีวิตเขา เขาจะรู้สึกกระวนกระวายหรือตามหาเราบ้างไหม</p>
+                </div>
+            </div>
+
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 คนที่ควรลืม</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>ความย้อนแย้งที่ยิ่งพยายามลบคนที่ทำร้ายเราออกไปจากใจ กลับเป็นการสลักชื่อเขาไว้ในใจลึกกว่าเดิม</p>
+                </div>
+            </div>
+
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 บทเรียนของหัวใจ</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>บทสรุปความรักที่พังทลาย ซึ่งสอนให้รู้ว่าการมอบใจให้ใครอย่าลืมเผื่อใจไว้ให้ตัวเองบ้าง</p>
+                </div>
+            </div>
+
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 สัญญาที่ไม่เคยเกิดขึ้น</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>ถูกหลอกให้อยู่กับความหวังด้วยคำมั่นสัญญาที่ให้ไว้เพื่อยื้อเวลา แต่ไม่เคยเป็นจริง</p>
+                </div>
+            </div>
+
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 โทรมาแค่ตอนเหงา</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>สถานะคนคั่นเวลาที่เขาจะนึกถึงเฉพาะตอนไม่มีใคร แต่พอทุกอย่างดีขึ้นเขาก็ทิ้งเราไปเหมือนเดิม</p>
+                </div>
+            </div>
+
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 ยังรักษาไม่หาย</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>แผลใจที่เรื้อรัง ต่อให้เวลาผ่านไปแค่ไหน ก็ไม่มียาอะไรมารักษาให้หายขาดได้</p>
+                </div>
+            </div>
+
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 ใจยังย้อนกลับไป</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>ปากบอกว่ามูฟออน แต่หัวใจยังคงวนเวียนกลับไปหาอดีตและภาพจำเดิมๆ ซ้ำแล้วซ้ำเล่า</p>
+                </div>
+            </div>
+
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 แผลเดิมในใจ</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>การยอมทนเจ็บกับเรื่องเดิมและคนเดิม สะกิดนิดเดียวก็กลับมาเจ็บปวดอีกครั้ง</p>
+                </div>
+            </div>
+
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 แค่ทางผ่าน</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>การยอมรับว่าเราเป็นได้แค่ป้ายพักพิงใจชั่วคราว เมื่อเขาเจอเป้าหมายที่แท้จริง เขาก็พร้อมจากไป</p>
+                </div>
+            </div>
+
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 เชื่อหัวใจมากเกินไป</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>ความผิดหวังที่ทุ่มใจให้ร้อยเปอร์เซ็นต์โดยไม่เผื่อใจ สุดท้ายจึงต้องเจ็บหนักกว่าที่คิด</p>
+                </div>
+            </div>
+
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 ทางออกไม่มีจริง</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>เหมือนติดอยู่ในเขาวงกตที่ยิ่งพยายามลืม ยิ่งหาทางออก ก็ยิ่งมืดมนและวนเวียนอยู่กับความช้ำเดิม</p>
+                </div>
+            </div>
+
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 หมดทั้งหัวใจ</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    <p>ความสูญเสียเมื่อมอบทุกอย่างให้ใครสักคนจนหมดหน้าตัก แต่สิ่งที่ได้คืนมากลับมีแค่ความทรมานและความว่างเปล่า</p>
+                </div>
+            </div>
 
         </div>
     </div>
 </div>
 
 <script>
-    function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); }
+    // ฟังก์ชันเปิด/ปิดเมนูบนมือถือ
+    function toggleMenu() { 
+        document.getElementById('sidebar').classList.toggle('active'); 
+    }
+
+    // ฟังก์ชันเปิด/ปิดกล่องข้อความสรุปเพลง (Accordion)
+    function toggleSummary(card) {
+        // ออปชั่นเสริม: ถ้าอยากให้เปิดได้แค่ทีละ 1 กล่อง (กล่องอื่นจะพับเก็บอัตโนมัติ) ให้เปิดคอมเมนต์โค้ดด้านล่างนี้
+        /*
+        let allCards = document.querySelectorAll('.song-summary-card');
+        allCards.forEach(c => {
+            if(c !== card) c.classList.remove('active');
+        });
+        */
+        
+        // สลับสถานะเปิด/ปิดของการ์ดที่คลิก
+        card.classList.toggle('active');
+    }
 </script>
 
 </body>
