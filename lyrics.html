@@ -22,7 +22,7 @@ a { text-decoration: none; color: inherit; }
 /* Main Content */
 .main{ flex:1; overflow-y:auto; overflow-x:hidden; padding:30px; padding-bottom:120px; background:#050816; }
 
-/* Lyrics Styles - อัปเดตใหม่สำหรับระบบคลิกเพื่อเปิด */
+/* Lyrics Styles - ระบบคลิกเพื่อเปิด */
 .lyrics-container { background: rgba(255, 255, 255, 0.03); border-radius: 20px; padding: 30px; border: 1px solid rgba(255,255,255,0.1); width: 100%; }
 .song-summary-card { background: rgba(255,255,255,0.04); border-radius: 16px; margin-bottom: 20px; border-left: 5px solid #9b5cff; transition: 0.3s; cursor: pointer; overflow: hidden; }
 .song-summary-card:hover { background: rgba(255,255,255,0.07); }
@@ -57,11 +57,11 @@ a { text-decoration: none; color: inherit; }
 <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
 <div class="container">
-    <!-- แถบเมนูด้านซ้าย -->
+    <!-- แถบเมนูด้านซ้าย (เปิดแท็บใหม่) -->
     <div class="sidebar" id="sidebar">
         <div class="logo">🎵 StyleMusicPro</div>
         <a href="index.html" class="menu">🏠 หน้าแรก / ฟังเพลง</a>
-        <a href="horoscope.html" class="menu">🔮 เช็กดวงรายวัน</a>
+        <a href="horoscope.html" target="_blank" class="menu">🔮 เช็กดวงรายวัน</a>
         <a href="lyrics.html" class="menu active">📖 สรุปความหมายเพลง</a>
     </div>
 
@@ -73,7 +73,6 @@ a { text-decoration: none; color: inherit; }
                 <p style="color: #bbb; margin-top: 5px;">คลิกที่ชื่อเพลงเพื่ออ่านความหมายและอารมณ์ของเพลง</p>
             </div>
             
-            <!-- ข้อมูลเพลงทั้ง 26 เพลง -->
             <div class="song-summary-card" onclick="toggleSummary(this)">
                 <div class="song-header">
                     <h3>🎵 แสงเช้าที่ว่างเปล่า</h3>
