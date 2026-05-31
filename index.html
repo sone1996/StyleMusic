@@ -11,6 +11,7 @@
 <meta name="author" content="StyleMusicPro">
 <meta name="robots" content="index, follow">
 
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PZHXG2Y1PY"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -99,6 +100,9 @@ a { text-decoration: none; color: inherit; }
 .site-links { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; display: flex; justify-content: center; gap: 20px; }
 .site-links a { color: #ff2d55; font-size: 14px; }
 
+/* =======================================
+   Responsive (หน้าจอมือถือ) 
+======================================= */
 @media(max-width:768px){
     .menu-toggle{ display:block; }
     .sidebar{ position:fixed; left:-280px; top:0; width:260px; height:100%; z-index:1000; transition:.3s; }
@@ -123,11 +127,12 @@ a { text-decoration: none; color: inherit; }
 
 <div class="container">
 
+<!-- แถบเมนูด้านซ้าย (เปิดแท็บใหม่เมื่อกดดูดวงหรือเนื้อเพลง) -->
 <div class="sidebar" id="sidebar">
     <div class="logo">🎵 StyleMusicPro</div>
     <a href="index.html" class="menu active">🏠 หน้าแรก / ฟังเพลง</a>
-    <a href="horoscope.html" class="menu">🔮 เช็กดวงรายวัน</a>
-    <a href="lyrics.html" class="menu">📖 สรุปความหมายเพลง</a>
+    <a href="horoscope.html" target="_blank" class="menu">🔮 เช็กดวงรายวัน</a>
+    <a href="lyrics.html" target="_blank" class="menu">📖 สรุปความหมายเพลง</a>
 </div>
 
 <div class="main">
@@ -137,6 +142,7 @@ a { text-decoration: none; color: inherit; }
         </div>
     </div>
 
+    <!-- ฮีโร่แบนเนอร์ -->
     <div class="hero-banner">
         <div class="hero-overlay">
             <div class="hero-left">
@@ -166,6 +172,7 @@ a { text-decoration: none; color: inherit; }
         </div>
     </div>
 
+    <!-- เมนูคัดกรองเพลง -->
     <div class="sub-tabs" id="genreTabs">
         <button class="tab-btn active" onclick="filterSubGenre('all', this)">ทั้งหมด</button>
         <button class="tab-btn" onclick="filterSubGenre('sadpop', this)">Sad Pop</button>
@@ -173,6 +180,7 @@ a { text-decoration: none; color: inherit; }
         <button class="tab-btn" onclick="filterSubGenre('lonely', this)">เพลงเหงา</button>
     </div>
 
+    <!-- แถบเพลงแนะนำสำหรับคุณ -->
     <div class="recommended-section" id="recommendedSection" style="display: none;">
         <div class="recommended-title">✨ เพลงแนะนำสำหรับคุณ</div>
         <div class="recommended-scroll" id="recommendedList"></div>
@@ -183,6 +191,7 @@ a { text-decoration: none; color: inherit; }
             <tr><th style="width:75%; text-align: left;">เพลง</th><th style="width:10%; text-align: left;">เวลา</th><th style="width:15%; text-align: left;">สถิติ</th></tr>
         </thead>
         <tbody id="songList">
+            <!-- ข้อมูลเพลง 26 เพลง -->
             <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">แสงเช้าที่ว่างเปล่า</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/แสงเช้าที่ว่างเปล่า.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views1">👁 0</span><span class="like-btn" onclick="likeSong(1)">❤️ <span id="likes1">0</span></span></div></td></tr>
             <tr class="song-row" data-tags="pop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">แค่ฝุ่นที่เลือนลาง</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/แค่ฝุ่นที่เลือนลาง.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views2">👁 0</span><span class="like-btn" onclick="likeSong(2)">❤️ <span id="likes2">0</span></span></div></td></tr>
             <tr class="song-row" data-tags="lonely"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">คนที่พลาดเอง</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คนที่พลาดเอง.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views3">👁 0</span><span class="like-btn" onclick="likeSong(3)">❤️ <span id="likes3">0</span></span></div></td></tr>
@@ -209,31 +218,14 @@ a { text-decoration: none; color: inherit; }
             <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">เชื่อหัวใจมากเกินไป</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เชื่อหัวใจมากเกินไป.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views24">👁 0</span><span class="like-btn" onclick="likeSong(24)">❤️ <span id="likes24">0</span></span></div></td></tr>
             <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ทางออกไม่มีจริง</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ทางออกไม่มีจริง.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views25">👁 0</span><span class="like-btn" onclick="likeSong(25)">❤️ <span id="likes25">0</span></span></div></td></tr>
             <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">หมดทั้งหัวใจ</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/หมดทั้งหัวใจ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views26">👁 0</span><span class="like-btn" onclick="likeSong(26)">❤️ <span id="likes26">0</span></span></div></td></tr>
-
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">เชื่อเกินไป</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เชื่อเกินไป.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views27">👁 0</span><span class="like-btn" onclick="likeSong(27)">❤️ <span id="likes27">0</span></span></div></td></tr>
-
-<tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">เรื่องธรรมดาที่พิเศษ</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เรื่องธรรมดาที่พิเศษ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views28">👁 0</span><span class="like-btn" onclick="likeSong(28)">❤️ <span id="likes28">0</span></span></div></td></tr>
-
-<tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ถึงเวลาต้องไป</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ถึงเวลาต้องไป.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views29">👁 0</span><span class="like-btn" onclick="likeSong(29)">❤️ <span id="likes29">0</span></span></div></td></tr>
-
-<tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">บทเรียน</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/บทเรียน.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views30">👁 0</span><span class="like-btn" onclick="likeSong(30)">❤️ <span id="likes30">0</span></span></div></td></tr>
-
-<tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">บทเรียนราคาแพง</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/บทเรียนราคาแพง.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views31">👁 0</span><span class="like-btn" onclick="likeSong(31)">❤️ <span id="likes31">0</span></span></div></td></tr>
-
-<tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ยังอยู่ในทุกวัน</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ยังอยู่ในทุกวัน.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views32">👁 0</span><span class="like-btn" onclick="likeSong(32)">❤️ <span id="likes32">0</span></span></div></td></tr>
-
-<tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ร่องรอยของเธอ</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ร่องรอยของเธอ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views33">👁 0</span><span class="like-btn" onclick="likeSong(33)">❤️ <span id="likes33">0</span></span></div></td></tr>
-
-<tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">สายเกินจะขอโทษ</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/สายเกินจะขอโทษ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views34">👁 0</span><span class="like-btn" onclick="likeSong(34)">❤️ <span id="likes34">0</span></span></div></td></tr>
-
-<tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ห้องที่ไม่มีเธอ</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ห้องที่ไม่มีเธอ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views35">👁 0</span><span class="like-btn" onclick="likeSong(35)">❤️ <span id="likes35">0</span></span></div></td></tr>
         </tbody>
     </table>
 
+    <!-- SEO Footer -->
     <div class="seo-footer">
         <h2>เกี่ยวกับ StyleMusicPro: พื้นที่ของคนเหงาและเสียงดนตรี</h2>
-        <p>ยินดีต้อนรับสู่ <b>StyleMusicPro</b> คลังเพลงออนไลน์ที่รวบรวมบทเพลงเศร้า เพลงอกหัก และเพลงสไตล์ Sad Pop, Lo-fi ที่สร้างสรรค์ขึ้นมาเพื่อเป็นเพื่อนในวันที่คุณรู้สึกโดดเดี่ยว ไม่ว่าคุณจะเพิ่งผ่านการเลิกรา กำลังแอบรัก หรือแค่ต้องการพื้นที่เงียบๆ เพื่อทบทวนความทรงจำ บทเพลงทั้งหมดในเว็บไซต์ของเราเป็น Original Content ที่สร้างขึ้นมาใหม่เพื่อถ่ายทอดอารมณ์ความรู้สึกอย่างลึกซึ้ง คุณสามารถฟังออนไลน์ได้ฟรีทุกที่ทุกเวลาตลอด 24 ชั่วโมง</p>
-        <p>นอกจากเสียงดนตรีแล้ว เรายังมีบริการ <b>เช็กดวงรายวัน</b> ที่ออกแบบมาพิเศษสำหรับคนมีความรักและคนอกหักโดยเฉพาะ เพื่อเป็นแนวทางในการก้าวเดินต่อไปในแต่ละวัน และยังมีคลัง <b>สรุปความหมายเพลง</b> ที่ช่วยเจาะลึกถึงอารมณ์ที่ซ่อนอยู่ในแต่ละบทเพลงให้คุณได้อินไปกับทุกตัวโน้ตมากยิ่งขึ้น</p>
+        <p>ยินดีต้อนรับสู่ <b>StyleMusicPro</b> คลังเพลงออนไลน์ที่รวบรวมบทเพลงเศร้า เพลงอกหัก และเพลงสไตล์ Sad Pop, Lo-fi ที่สร้างสรรค์ขึ้นมาเพื่อเป็นเพื่อนในวันที่คุณรู้สึกโดดเดี่ยว บทเพลงทั้งหมดในเว็บไซต์ของเราเป็น Original Content ที่สร้างขึ้นมาใหม่เพื่อถ่ายทอดอารมณ์ความรู้สึกอย่างลึกซึ้ง คุณสามารถฟังออนไลน์ได้ฟรีทุกที่ทุกเวลา</p>
+        <p>นอกจากเสียงดนตรีแล้ว เรายังมีบริการ <b>เช็กดวงรายวัน</b> ที่ออกแบบมาพิเศษสำหรับคนมีความรักและคนอกหักโดยเฉพาะ และยังมีคลัง <b>สรุปความหมายเพลง</b> ที่ช่วยเจาะลึกถึงอารมณ์ที่ซ่อนอยู่ในแต่ละบทเพลงให้คุณได้อินไปกับทุกตัวโน้ตมากยิ่งขึ้น</p>
         
         <div class="site-links">
             <a href="privacy-policy.html">นโยบายความเป็นส่วนตัว (Privacy Policy)</a>
@@ -365,6 +357,7 @@ function likeSong(id){ let likes = localStorage.getItem("likes"+id) || 0; likes+
 window.addEventListener('DOMContentLoaded', () => { updateRecommendations(); });
 </script>
 
+<!-- Firebase Module -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
