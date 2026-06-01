@@ -101,29 +101,29 @@ a { text-decoration: none; color: inherit; }
 .site-links a { color: #ff2d55; font-size: 14px; }
 
 /* =======================================
-   Responsive (หน้าจอมือถือ) 
+   Responsive (หน้าจอมือถือ) 
 ======================================= */
 @media(max-width:768px){
-    .menu-toggle{ display:block; }
-    .sidebar{ position:fixed; left:-280px; top:0; width:260px; height:100%; z-index:1000; transition:.3s; }
-    .sidebar.active{ left:0; box-shadow:0 0 30px rgba(0,0,0,.9); }
-    .container{ flex-direction:column; }
-    .main{ padding: 10px; padding-top: 70px; padding-bottom: 90px; }
-    .hero-banner{ padding:15px; }
-    .hero-left{ flex-direction:column; align-items:flex-start; }
-    .hero-social iframe { min-width: 85vw; height: 180px; }
-    .song-table, .song-table tbody, .song-table tr, .song-table td { display:block; width:100%; border: none; }
-    .song-table thead { display: none; }
-    .song-row{ padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
-    
-    /* --- ส่วนที่ต้องแก้ให้แถบยาวและรูปไม่เบี้ยว --- */
-    .song-info { flex-direction: row; gap: 12px; align-items: center; }
-    .song-info img { width: 50px; height: 50px; flex-shrink: 0; }
-    .song-info > div { flex: 1; min-width: 0; }
-    audio { width: 100% !important; height: 40px; margin-top: 8px; display: block; }
-    /* ------------------------------------------- */
-    
-    .bottom-player { left: 0; padding-left: 12px; padding-right: 12px; width: 100%; }
+    .menu-toggle{ display:block; }
+    .sidebar{ position:fixed; left:-280px; top:0; width:260px; height:100%; z-index:1000; transition:.3s; }
+    .sidebar.active{ left:0; box-shadow:0 0 30px rgba(0,0,0,.9); }
+    .container{ flex-direction:column; }
+    .main{ padding: 10px; padding-top: 70px; padding-bottom: 90px; }
+    .hero-banner{ padding:15px; }
+    .hero-left{ flex-direction:column; align-items:flex-start; }
+    .hero-social iframe { min-width: 85vw; height: 180px; }
+    .song-table, .song-table tbody, .song-table tr, .song-table td { display:block; width:100%; border: none; }
+    .song-table thead { display: none; }
+    .song-row{ padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+    
+    /* --- ส่วนที่ต้องแก้ให้แถบยาวและรูปไม่เบี้ยว --- */
+    .song-info { flex-direction: row; gap: 12px; align-items: center; }
+    .song-info img { width: 50px; height: 50px; flex-shrink: 0; }
+    .song-info > div { flex: 1; min-width: 0; }
+    audio { width: 100% !important; height: 40px; margin-top: 8px; display: block; }
+    /* ------------------------------------------- */
+    
+    .bottom-player { left: 0; padding-left: 12px; padding-right: 12px; width: 100%; }
 }
 </style>
 </head>
@@ -135,236 +135,240 @@ a { text-decoration: none; color: inherit; }
 
 <!-- แถบเมนูด้านซ้าย (เปิดแท็บใหม่เมื่อกดดูดวงหรือเนื้อเพลง) -->
 <div class="sidebar" id="sidebar">
-    <div class="logo">🎵 StyleMusicPro</div>
-    <a href="index.html" class="menu active">🏠 หน้าแรก / ฟังเพลง</a>
-    <a href="horoscope.html" target="_blank" class="menu">🔮 เช็กดวงรายวัน</a>
-    <a href="lyrics.html" target="_blank" class="menu">📖 สรุปความหมายเพลง</a>
+    <div class="logo">🎵 StyleMusicPro</div>
+    <a href="index.html" class="menu active">🏠 หน้าแรก / ฟังเพลง</a>
+    <a href="horoscope.html" target="_blank" class="menu">🔮 เช็กดวงรายวัน</a>
+    <a href="lyrics.html" target="_blank" class="menu">📖 สรุปความหมายเพลง</a>
 </div>
 
 <div class="main">
-    <div class="topbar">
-        <div class="search-box" style="flex:1;">
-            <input type="text" id="search" placeholder="ค้นหาเพลง...">
-        </div>
-    </div>
+    <div class="topbar">
+        <div class="search-box" style="flex:1;">
+            <input type="text" id="search" placeholder="ค้นหาเพลง...">
+        </div>
+    </div>
 
-    <!-- ฮีโร่แบนเนอร์ -->
-    <div class="hero-banner">
-        <div class="hero-overlay">
-            <div class="hero-left">
-                <img src="songs/stylemusic.png" class="hero-logo">
-                <div class="hero-info">
-                    <h1>StyleMusicPro 💜</h1>
-                    <p class="hero-desc">เว็บรวมเพลงเศร้า เพลงอกหัก ฟังออนไลน์</p>
-                    <div class="hero-tags">
-                        <span>Sad Pop</span><span>Lo-fi</span><span>Thai</span><span>Lao</span><span>Chill</span>
-                    </div>
-                    <div class="hero-stats">
-                        <div><b id="songCountDisplay">35</b><span>เพลง</span></div>
-                        <div><b>12.5M</b><span>ผู้ติดตาม</span></div>
-                    </div>
-                    <div class="hero-buttons">
-                        <a href="https://www.youtube.com/channel/UCzWN7WZwTU_QCUustb7QP9w" target="_blank" class="follow-btn">+ ติดตาม</a>
-                        <button class="share-btn" onclick="shareSong('StyleMusicPro Website')">แชร์</button>
-                    </div>
-                </div>
-            </div>
+    <!-- ฮีโร่แบนเนอร์ -->
+    <div class="hero-banner">
+        <div class="hero-overlay">
+            <div class="hero-left">
+                <img src="songs/stylemusic.png" class="hero-logo">
+                <div class="hero-info">
+                    <h1>StyleMusicPro 💜</h1>
+                    <p class="hero-desc">เว็บรวมเพลงเศร้า เพลงอกหัก ฟังออนไลน์</p>
+                    <div class="hero-tags">
+                        <span>Sad Pop</span><span>Lo-fi</span><span>Thai</span><span>Lao</span><span>Chill</span>
+                    </div>
+                    <div class="hero-stats">
+                        <div><b id="songCountDisplay">41</b><span>เพลง</span></div>
+                        <div><b>12.5M</b><span>ผู้ติดตาม</span></div>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="https://www.youtube.com/channel/UCzWN7WZwTU_QCUustb7QP9w" target="_blank" class="follow-btn">+ ติดตาม</a>
+                        <button class="share-btn" onclick="shareSong('StyleMusicPro Website')">แชร์</button>
+                    </div>
+                </div>
+            </div>
 
-            <div class="hero-social">
-                <iframe src="https://www.youtube.com/embed/948N259yu-A" frameborder="0" allowfullscreen></iframe>
-                <iframe src="https://www.youtube.com/embed/9heGivXfYgw" frameborder="0" allowfullscreen></iframe>
-                <iframe src="https://www.youtube.com/embed/jCO7IGr0SBY" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
+            <div class="hero-social">
+                <iframe src="https://www.youtube.com/embed/948N259yu-A" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/9heGivXfYgw" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/jCO7IGr0SBY" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
 
-    <!-- เมนูคัดกรองเพลง -->
-    <div class="sub-tabs" id="genreTabs">
-        <button class="tab-btn active" onclick="filterSubGenre('all', this)">ทั้งหมด</button>
-        <button class="tab-btn" onclick="filterSubGenre('sadpop', this)">Sad Pop</button>
-        <button class="tab-btn" onclick="filterSubGenre('pop', this)">Pop บิตสนุก</button>
-        <button class="tab-btn" onclick="filterSubGenre('lonely', this)">เพลงเหงา</button>
-    </div>
+    <!-- เมนูคัดกรองเพลง -->
+    <div class="sub-tabs" id="genreTabs">
+        <button class="tab-btn active" onclick="filterSubGenre('all', this)">ทั้งหมด</button>
+        <button class="tab-btn" onclick="filterSubGenre('sadpop', this)">Sad Pop</button>
+        <button class="tab-btn" onclick="filterSubGenre('pop', this)">Pop บิตสนุก</button>
+        <button class="tab-btn" onclick="filterSubGenre('lonely', this)">เพลงเหงา</button>
+    </div>
 
-    <!-- แถบเพลงแนะนำสำหรับคุณ -->
-    <div class="recommended-section" id="recommendedSection" style="display: none;">
-        <div class="recommended-title">✨ เพลงแนะนำสำหรับคุณ</div>
-        <div class="recommended-scroll" id="recommendedList"></div>
-    </div>
+    <!-- แถบเพลงแนะนำสำหรับคุณ -->
+    <div class="recommended-section" id="recommendedSection" style="display: none;">
+        <div class="recommended-title">✨ เพลงแนะนำสำหรับคุณ</div>
+        <div class="recommended-scroll" id="recommendedList"></div>
+    </div>
 
-    <table class="song-table" id="mainSongTable">
-        <thead>
-            <tr><th style="width:75%; text-align: left;">เพลง</th><th style="width:10%; text-align: left;">เวลา</th><th style="width:15%; text-align: left;">สถิติ</th></tr>
-        </thead>
-        <tbody id="songList">
-            <!-- ข้อมูลเพลง 35 เพลง -->
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">แสงเช้าที่ว่างเปล่า</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/แสงเช้าที่ว่างเปล่า.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views1">👁 0</span><span class="like-btn" onclick="likeSong(1)">❤️ <span id="likes1">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="pop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">แค่ฝุ่นที่เลือนลาง</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/แค่ฝุ่นที่เลือนลาง.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views2">👁 0</span><span class="like-btn" onclick="likeSong(2)">❤️ <span id="likes2">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="lonely"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">คนที่พลาดเอง</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คนที่พลาดเอง.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views3">👁 0</span><span class="like-btn" onclick="likeSong(3)">❤️ <span id="likes3">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ได้แค่มองเธอ</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ได้แค่มองเธอ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views4">👁 0</span><span class="like-btn" onclick="likeSong(4)">❤️ <span id="likes4">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="lonely"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">วันที่ไม่มีเธอ</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/วันที่ไม่มีเธอ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views5">👁 0</span><span class="like-btn" onclick="likeSong(5)">❤️ <span id="likes5">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ภาพจำที่ไม่ได้ลืม</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ภาพจำที่ไม่ได้ลืม.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views6">👁 0</span><span class="like-btn" onclick="likeSong(6)">❤️ <span id="likes6">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ทางที่ไม่มีเธอ</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ทางที่ไม่มีเธอ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views7">👁 0</span><span class="like-btn" onclick="likeSong(7)">❤️ <span id="likes7">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ให้หมดแล้ว</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ให้หมดแล้ว.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views8">👁 0</span><span class="like-btn" onclick="likeSong(8)">❤️ <span id="likes8">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ข้อความสุดท้าย</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ข้อความสุดท้าย.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views9">👁 0</span><span class="like-btn" onclick="likeSong(9)">❤️ <span id="likes9">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">หากวันหนึ่งเราได้พบกัน</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/หากวันหนึ่งเราได้พบกัน.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views10">👁 0</span><span class="like-btn" onclick="likeSong(10)">❤️ <span id="likes10">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ไม่ฟังหัวใจตัวเอง</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ไม่ฟังหัวใจตัวเอง.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views11">👁 0</span><span class="like-btn" onclick="likeSong(11)">❤️ <span id="likes11">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ฝากลมไปบอก</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ฝากลมไปบอก.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views12">👁 0</span><span class="like-btn" onclick="likeSong(12)">❤️ <span id="likes12">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">คนที่ควรผ่านไป</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คนที่ควรผ่านไป.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views13">👁 0</span><span class="like-btn" onclick="likeSong(13)">❤️ <span id="likes13">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">เวลาที่ไม่ใช่</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เวลาที่ไม่ใช่.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views14">👁 0</span><span class="like-btn" onclick="likeSong(14)">❤️ <span id="likes14">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ในวันที่ฉันหายไป</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ในวันที่ฉันหายไป.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views15">👁 0</span><span class="like-btn" onclick="likeSong(15)">❤️ <span id="likes15">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">คนที่ควรลืม</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คนที่ควรลืม.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views16">👁 0</span><span class="like-btn" onclick="likeSong(16)">❤️ <span id="likes16">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">บทเรียนของหัวใจ</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/บทเรียนของหัวใจ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views17">👁 0</span><span class="like-btn" onclick="likeSong(17)">❤️ <span id="likes17">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">สัญญาที่ไม่เคยเกิดขึ้น</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/สัญญาที่ไม่เคยเกิดขึ้น.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views18">👁 0</span><span class="like-btn" onclick="likeSong(18)">❤️ <span id="likes18">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">โทรมาแค่ตอนเหงา</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/โทรมาแค่ตอนเหงา.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views19">👁 0</span><span class="like-btn" onclick="likeSong(19)">❤️ <span id="likes19">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ยังรักษาไม่หาย</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ยังรักษาไม่หาย.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views20">👁 0</span><span class="like-btn" onclick="likeSong(20)">❤️ <span id="likes20">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ใจยังย้อนกลับไป</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ใจยังย้อนกลับไป.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views21">👁 0</span><span class="like-btn" onclick="likeSong(21)">❤️ <span id="likes21">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">แผลเดิมในใจ</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/แผลเดิมในใจ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views22">👁 0</span><span class="like-btn" onclick="likeSong(22)">❤️ <span id="likes22">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">แค่ทางผ่าน</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/แค่ทางผ่าน.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views23">👁 0</span><span class="like-btn" onclick="likeSong(23)">❤️ <span id="likes23">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">เชื่อหัวใจมากเกินไป</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เชื่อหัวใจมากเกินไป.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views24">👁 0</span><span class="like-btn" onclick="likeSong(24)">❤️ <span id="likes24">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ทางออกไม่มีจริง</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ทางออกไม่มีจริง.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views25">👁 0</span><span class="like-btn" onclick="likeSong(25)">❤️ <span id="likes25">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">หมดทั้งหัวใจ</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/หมดทั้งหัวใจ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views26">👁 0</span><span class="like-btn" onclick="likeSong(26)">❤️ <span id="likes26">0</span></span></div></td></tr>
+    <table class="song-table" id="mainSongTable">
+        <thead>
+            <tr><th style="width:75%; text-align: left;">เพลง</th><th style="width:10%; text-align: left;">เวลา</th><th style="width:15%; text-align: left;">สถิติ</th></tr>
+        </thead>
+        <tbody id="songList">
+            <!-- ข้อมูลเพลง -->
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">แสงเช้าที่ว่างเปล่า</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/แสงเช้าที่ว่างเปล่า.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views1">👁 0</span><span class="like-btn" onclick="likeSong(1)">❤️ <span id="likes1">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="pop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">แค่ฝุ่นที่เลือนลาง</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/แค่ฝุ่นที่เลือนลาง.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views2">👁 0</span><span class="like-btn" onclick="likeSong(2)">❤️ <span id="likes2">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="lonely"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">คนที่พลาดเอง</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คนที่พลาดเอง.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views3">👁 0</span><span class="like-btn" onclick="likeSong(3)">❤️ <span id="likes3">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ได้แค่มองเธอ</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ได้แค่มองเธอ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views4">👁 0</span><span class="like-btn" onclick="likeSong(4)">❤️ <span id="likes4">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="lonely"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">วันที่ไม่มีเธอ</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/วันที่ไม่มีเธอ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views5">👁 0</span><span class="like-btn" onclick="likeSong(5)">❤️ <span id="likes5">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ภาพจำที่ไม่ได้ลืม</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ภาพจำที่ไม่ได้ลืม.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views6">👁 0</span><span class="like-btn" onclick="likeSong(6)">❤️ <span id="likes6">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ทางที่ไม่มีเธอ</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ทางที่ไม่มีเธอ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views7">👁 0</span><span class="like-btn" onclick="likeSong(7)">❤️ <span id="likes7">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ให้หมดแล้ว</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ให้หมดแล้ว.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views8">👁 0</span><span class="like-btn" onclick="likeSong(8)">❤️ <span id="likes8">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ข้อความสุดท้าย</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ข้อความสุดท้าย.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views9">👁 0</span><span class="like-btn" onclick="likeSong(9)">❤️ <span id="likes9">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">หากวันหนึ่งเราได้พบกัน</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/หากวันหนึ่งเราได้พบกัน.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views10">👁 0</span><span class="like-btn" onclick="likeSong(10)">❤️ <span id="likes10">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ไม่ฟังหัวใจตัวเอง</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ไม่ฟังหัวใจตัวเอง.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views11">👁 0</span><span class="like-btn" onclick="likeSong(11)">❤️ <span id="likes11">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ฝากลมไปบอก</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ฝากลมไปบอก.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views12">👁 0</span><span class="like-btn" onclick="likeSong(12)">❤️ <span id="likes12">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">คนที่ควรผ่านไป</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คนที่ควรผ่านไป.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views13">👁 0</span><span class="like-btn" onclick="likeSong(13)">❤️ <span id="likes13">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">เวลาที่ไม่ใช่</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เวลาที่ไม่ใช่.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views14">👁 0</span><span class="like-btn" onclick="likeSong(14)">❤️ <span id="likes14">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ในวันที่ฉันหายไป</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ในวันที่ฉันหายไป.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views15">👁 0</span><span class="like-btn" onclick="likeSong(15)">❤️ <span id="likes15">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">คนที่ควรลืม</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คนที่ควรลืม.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views16">👁 0</span><span class="like-btn" onclick="likeSong(16)">❤️ <span id="likes16">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">บทเรียนของหัวใจ</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/บทเรียนของหัวใจ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views17">👁 0</span><span class="like-btn" onclick="likeSong(17)">❤️ <span id="likes17">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">สัญญาที่ไม่เคยเกิดขึ้น</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/สัญญาที่ไม่เคยเกิดขึ้น.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views18">👁 0</span><span class="like-btn" onclick="likeSong(18)">❤️ <span id="likes18">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">โทรมาแค่ตอนเหงา</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/โทรมาแค่ตอนเหงา.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views19">👁 0</span><span class="like-btn" onclick="likeSong(19)">❤️ <span id="likes19">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ยังรักษาไม่หาย</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ยังรักษาไม่หาย.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views20">👁 0</span><span class="like-btn" onclick="likeSong(20)">❤️ <span id="likes20">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ใจยังย้อนกลับไป</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ใจยังย้อนกลับไป.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views21">👁 0</span><span class="like-btn" onclick="likeSong(21)">❤️ <span id="likes21">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">แผลเดิมในใจ</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/แผลเดิมในใจ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views22">👁 0</span><span class="like-btn" onclick="likeSong(22)">❤️ <span id="likes22">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">แค่ทางผ่าน</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/แค่ทางผ่าน.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views23">👁 0</span><span class="like-btn" onclick="likeSong(23)">❤️ <span id="likes23">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">เชื่อหัวใจมากเกินไป</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เชื่อหัวใจมากเกินไป.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views24">👁 0</span><span class="like-btn" onclick="likeSong(24)">❤️ <span id="likes24">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ทางออกไม่มีจริง</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ทางออกไม่มีจริง.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views25">👁 0</span><span class="like-btn" onclick="likeSong(25)">❤️ <span id="likes25">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">หมดทั้งหัวใจ</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/หมดทั้งหัวใจ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views26">👁 0</span><span class="like-btn" onclick="likeSong(26)">❤️ <span id="likes26">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">เชื่อเกินไป</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เชื่อเกินไป.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views27">👁 0</span><span class="like-btn" onclick="likeSong(27)">❤️ <span id="likes27">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">เรื่องธรรมดาที่พิเศษ</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เรื่องธรรมดาที่พิเศษ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views28">👁 0</span><span class="like-btn" onclick="likeSong(28)">❤️ <span id="likes28">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ถึงเวลาต้องไป</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ถึงเวลาต้องไป.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views29">👁 0</span><span class="like-btn" onclick="likeSong(29)">❤️ <span id="likes29">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">บทเรียน</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/บทเรียน.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views30">👁 0</span><span class="like-btn" onclick="likeSong(30)">❤️ <span id="likes30">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">บทเรียนราคาแพง</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/บทเรียนราคาแพง.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views31">👁 0</span><span class="like-btn" onclick="likeSong(31)">❤️ <span id="likes31">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ยังอยู่ในทุกวัน</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ยังอยู่ในทุกวัน.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views32">👁 0</span><span class="like-btn" onclick="likeSong(32)">❤️ <span id="likes32">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ร่องรอยของเธอ</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ร่องรอยของเธอ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views33">👁 0</span><span class="like-btn" onclick="likeSong(33)">❤️ <span id="likes33">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">สายเกินจะขอโทษ</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/สายเกินจะขอโทษ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views34">👁 0</span><span class="like-btn" onclick="likeSong(34)">❤️ <span id="likes34">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ห้องที่ไม่มีเธอ</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ห้องที่ไม่มีเธอ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views35">👁 0</span><span class="like-btn" onclick="likeSong(35)">❤️ <span id="likes35">0</span></span></div></td></tr>
+            <!-- เพิ่มเพลงใหม่ 6 เพลง -->
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ไม่มีคำแปล</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ไม่มีคำแปล.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views36">👁 0</span><span class="like-btn" onclick="likeSong(36)">❤️ <span id="likes36">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">คำขอโทษ</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คำขอโทษ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views37">👁 0</span><span class="like-btn" onclick="likeSong(37)">❤️ <span id="likes37">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ฉันไม่ได้อยู่ในตอนจบตั้งแต่แรก</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ฉันไม่ได้อยู่ในตอนจบตั้งแต่แรก.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views38">👁 0</span><span class="like-btn" onclick="likeSong(38)">❤️ <span id="likes38">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ถอยออกมาก่อน</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ถอยออกมาก่อน.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views39">👁 0</span><span class="like-btn" onclick="likeSong(39)">❤️ <span id="likes39">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ประโยคสุดท้าย</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ประโยคสุดท้าย.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views40">👁 0</span><span class="like-btn" onclick="likeSong(40)">❤️ <span id="likes40">0</span></span></div></td></tr>
+            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">รอยร้าวในหัวใจ</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/รอยร้าวในหัวใจ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views41">👁 0</span><span class="like-btn" onclick="likeSong(41)">❤️ <span id="likes41">0</span></span></div></td></tr>
+        </tbody>
+    </table>
 
-            <!-- เพิ่มเพลงใหม่ 9 เพลง -->
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">เชื่อเกินไป</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เชื่อเกินไป.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views27">👁 0</span><span class="like-btn" onclick="likeSong(27)">❤️ <span id="likes27">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">เรื่องธรรมดาที่พิเศษ</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เรื่องธรรมดาที่พิเศษ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views28">👁 0</span><span class="like-btn" onclick="likeSong(28)">❤️ <span id="likes28">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ถึงเวลาต้องไป</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ถึงเวลาต้องไป.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views29">👁 0</span><span class="like-btn" onclick="likeSong(29)">❤️ <span id="likes29">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">บทเรียน</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/บทเรียน.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views30">👁 0</span><span class="like-btn" onclick="likeSong(30)">❤️ <span id="likes30">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">บทเรียนราคาแพง</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/บทเรียนราคาแพง.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views31">👁 0</span><span class="like-btn" onclick="likeSong(31)">❤️ <span id="likes31">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ยังอยู่ในทุกวัน</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ยังอยู่ในทุกวัน.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views32">👁 0</span><span class="like-btn" onclick="likeSong(32)">❤️ <span id="likes32">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ร่องรอยของเธอ</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ร่องรอยของเธอ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views33">👁 0</span><span class="like-btn" onclick="likeSong(33)">❤️ <span id="likes33">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">สายเกินจะขอโทษ</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/สายเกินจะขอโทษ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views34">👁 0</span><span class="like-btn" onclick="likeSong(34)">❤️ <span id="likes34">0</span></span></div></td></tr>
-            <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ห้องที่ไม่มีเธอ</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ห้องที่ไม่มีเธอ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views35">👁 0</span><span class="like-btn" onclick="likeSong(35)">❤️ <span id="likes35">0</span></span></div></td></tr>
-
-        </tbody>
-    </table>
-
-    <!-- SEO Footer -->
-    <div class="seo-footer">
-        <h2>เกี่ยวกับ StyleMusicPro: พื้นที่ของคนเหงาและเสียงดนตรี</h2>
-        <p>ยินดีต้อนรับสู่ <b>StyleMusicPro</b> คลังเพลงออนไลน์ที่รวบรวมบทเพลงเศร้า เพลงอกหัก และเพลงสไตล์ Sad Pop, Lo-fi ที่สร้างสรรค์ขึ้นมาเพื่อเป็นเพื่อนในวันที่คุณรู้สึกโดดเดี่ยว บทเพลงทั้งหมดในเว็บไซต์ของเราเป็น Original Content ที่สร้างขึ้นมาใหม่เพื่อถ่ายทอดอารมณ์ความรู้สึกอย่างลึกซึ้ง คุณสามารถฟังออนไลน์ได้ฟรีทุกที่ทุกเวลา</p>
-        <p>นอกจากเสียงดนตรีแล้ว เรายังมีบริการ <b>เช็กดวงรายวัน</b> ที่ออกแบบมาพิเศษสำหรับคนมีความรักและคนอกหักโดยเฉพาะ และยังมีคลัง <b>สรุปความหมายเพลง</b> ที่ช่วยเจาะลึกถึงอารมณ์ที่ซ่อนอยู่ในแต่ละบทเพลงให้คุณได้อินไปกับทุกตัวโน้ตมากยิ่งขึ้น</p>
-        
-        <div class="site-links">
-            <a href="privacy-policy.html">นโยบายความเป็นส่วนตัว (Privacy Policy)</a>
-            <a href="mailto:contact@stylemusicpro.com">ติดต่อเรา (Contact Us)</a>
-        </div>
-        <p style="text-align:center; margin-top:15px; font-size:12px;">© 2026 StyleMusicPro. สงวนลิขสิทธิ์เนื้อหาและบทเพลงทั้งหมด</p>
-    </div>
+    <!-- SEO Footer -->
+    <div class="seo-footer">
+        <h2>เกี่ยวกับ StyleMusicPro: พื้นที่ของคนเหงาและเสียงดนตรี</h2>
+        <p>ยินดีต้อนรับสู่ <b>StyleMusicPro</b> คลังเพลงออนไลน์ที่รวบรวมบทเพลงเศร้า เพลงอกหัก และเพลงสไตล์ Sad Pop, Lo-fi ที่สร้างสรรค์ขึ้นมาเพื่อเป็นเพื่อนในวันที่คุณรู้สึกโดดเดี่ยว บทเพลงทั้งหมดในเว็บไซต์ของเราเป็น Original Content ที่สร้างขึ้นมาใหม่เพื่อถ่ายทอดอารมณ์ความรู้สึกอย่างลึกซึ้ง คุณสามารถฟังออนไลน์ได้ฟรีทุกที่ทุกเวลา</p>
+        <p>นอกจากเสียงดนตรีแล้ว เรายังมีบริการ <b>เช็กดวงรายวัน</b> ที่ออกแบบมาพิเศษสำหรับคนมีความรักและคนอกหักโดยเฉพาะ และยังมีคลัง <b>สรุปความหมายเพลง</b> ที่ช่วยเจาะลึกถึงอารมณ์ที่ซ่อนอยู่ในแต่ละบทเพลงให้คุณได้อินไปกับทุกตัวโน้ตมากยิ่งขึ้น</p>
+        
+        <div class="site-links">
+            <a href="privacy-policy.html">นโยบายความเป็นส่วนตัว (Privacy Policy)</a>
+            <a href="mailto:contact@stylemusicpro.com">ติดต่อเรา (Contact Us)</a>
+        </div>
+        <p style="text-align:center; margin-top:15px; font-size:12px;">© 2026 StyleMusicPro. สงวนลิขสิทธิ์เนื้อหาและบทเพลงทั้งหมด</p>
+    </div>
 
 </div>
 </div>
 
 <div class="bottom-player">
-    <div>🎵 StyleMusicPro Player</div>
-    <div class="player-controls">
-        <button onclick="prevSong()">⏮</button>
-        <button onclick="togglePlay()">▶</button>
-        <button onclick="nextSong()">⏭</button>
-    </div>
+    <div>🎵 StyleMusicPro Player</div>
+    <div class="player-controls">
+        <button onclick="prevSong()">⏮</button>
+        <button onclick="togglePlay()">▶</button>
+        <button onclick="nextSong()">⏭</button>
+    </div>
 </div>
 
 <script>
 function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); }
 
 function shareSong(song){
-    const shareData = { title: "Style Music", text: "🎵 ฟังเพลง: " + song, url: window.location.href };
-    if(navigator.share){ navigator.share(shareData); }
-    else{ navigator.clipboard.writeText(window.location.href); alert("🔗 คัดลอกลิงก์แล้ว"); }
+    const shareData = { title: "Style Music", text: "🎵 ฟังเพลง: " + song, url: window.location.href };
+    if(navigator.share){ navigator.share(shareData); }
+    else{ navigator.clipboard.writeText(window.location.href); alert("🔗 คัดลอกลิงก์แล้ว"); }
 }
 
 const search = document.getElementById("search");
 search.addEventListener("keyup", () => {
-    let filter = search.value.toLowerCase();
-    let rows = document.querySelectorAll(".song-row");
-    rows.forEach(row => {
-        let title = row.querySelector(".song-title").innerText.toLowerCase();
-        row.style.display = title.includes(filter) ? "" : "none";
-    });
+    let filter = search.value.toLowerCase();
+    let rows = document.querySelectorAll(".song-row");
+    rows.forEach(row => {
+        let title = row.querySelector(".song-title").innerText.toLowerCase();
+        row.style.display = title.includes(filter) ? "" : "none";
+    });
 });
 
 function filterSubGenre(subTag, btn) {
-    document.querySelectorAll('#genreTabs .tab-btn').forEach(b => b.classList.remove('active'));
-    if(btn) btn.classList.add('active');
-    
-    document.querySelectorAll(".song-row").forEach(row => {
-        const tags = row.getAttribute('data-tags') || "";
-        row.style.display = (subTag === "all" || tags.includes(subTag)) ? "" : "none";
-    });
+    document.querySelectorAll('#genreTabs .tab-btn').forEach(b => b.classList.remove('active'));
+    if(btn) btn.classList.add('active');
+    
+    document.querySelectorAll(".song-row").forEach(row => {
+        const tags = row.getAttribute('data-tags') || "";
+        row.style.display = (subTag === "all" || tags.includes(subTag)) ? "" : "none";
+    });
 }
 
 // Recommendation Engine
 function trackPreference(tags) {
-    if(!tags) return;
-    let prefs = JSON.parse(localStorage.getItem('userPrefs')) || {};
-    let tagArray = tags.split(' ');
-    tagArray.forEach(tag => {
-        let t = tag.trim().toLowerCase();
-        if(t) { prefs[t] = (prefs[t] || 0) + 1; }
-    });
-    localStorage.setItem('userPrefs', JSON.stringify(prefs));
-    updateRecommendations();
+    if(!tags) return;
+    let prefs = JSON.parse(localStorage.getItem('userPrefs')) || {};
+    let tagArray = tags.split(' ');
+    tagArray.forEach(tag => {
+        let t = tag.trim().toLowerCase();
+        if(t) { prefs[t] = (prefs[t] || 0) + 1; }
+    });
+    localStorage.setItem('userPrefs', JSON.stringify(prefs));
+    updateRecommendations();
 }
 
 function updateRecommendations() {
-    let prefs = JSON.parse(localStorage.getItem('userPrefs')) || {};
-    if(Object.keys(prefs).length === 0) return;
+    let prefs = JSON.parse(localStorage.getItem('userPrefs')) || {};
+    if(Object.keys(prefs).length === 0) return;
 
-    let sortedGenres = Object.keys(prefs).sort((a, b) => prefs[b] - prefs[a]);
-    let topGenre = sortedGenres[0]; 
+    let sortedGenres = Object.keys(prefs).sort((a, b) => prefs[b] - prefs[a]);
+    let topGenre = sortedGenres[0]; 
 
-    let allRows = Array.from(document.querySelectorAll('.song-row'));
-    let recSongs = allRows.filter(row => {
-        let tags = (row.getAttribute('data-tags') || "").toLowerCase();
-        return tags.includes(topGenre);
-    });
+    let allRows = Array.from(document.querySelectorAll('.song-row'));
+    let recSongs = allRows.filter(row => {
+        let tags = (row.getAttribute('data-tags') || "").toLowerCase();
+        return tags.includes(topGenre);
+    });
 
-    if(recSongs.length > 0) {
-        document.getElementById('recommendedSection').style.display = 'block';
-        let recList = document.getElementById('recommendedList');
-        recList.innerHTML = '';
+    if(recSongs.length > 0) {
+        document.getElementById('recommendedSection').style.display = 'block';
+        let recList = document.getElementById('recommendedList');
+        recList.innerHTML = '';
 
-        recSongs.slice(0, 5).forEach((row) => {
-            let title = row.querySelector('.song-title').innerText;
-            let artist = row.querySelector('.song-artist').innerText;
-            let imgSrc = row.querySelector('img').src;
-            let originalIndex = allRows.indexOf(row);
+        recSongs.slice(0, 5).forEach((row) => {
+            let title = row.querySelector('.song-title').innerText;
+            let artist = row.querySelector('.song-artist').innerText;
+            let imgSrc = row.querySelector('img').src;
+            let originalIndex = allRows.indexOf(row);
 
-            let card = document.createElement('div');
-            card.className = 'recommend-card';
-            card.onclick = () => {
-                players[currentIndex].pause();
-                currentIndex = originalIndex;
-                players[currentIndex].play();
-                window.scrollTo({ top: document.getElementById('mainSongTable').offsetTop, behavior: 'smooth' });
-            };
-            card.innerHTML = `<img src="${imgSrc}"><div class="r-title">${title}</div><div class="r-artist">${artist}</div>`;
-            recList.appendChild(card);
-        });
-    }
+            let card = document.createElement('div');
+            card.className = 'recommend-card';
+            card.onclick = () => {
+                players[currentIndex].pause();
+                currentIndex = originalIndex;
+                players[currentIndex].play();
+                window.scrollTo({ top: document.getElementById('mainSongTable').offsetTop, behavior: 'smooth' });
+            };
+            card.innerHTML = `<img src="${imgSrc}"><div class="r-title">${title}</div><div class="r-artist">${artist}</div>`;
+            recList.appendChild(card);
+        });
+    }
 }
 
 const players = document.querySelectorAll("audio");
 let currentIndex = 0;
 
 players.forEach((player,index)=>{
-    player.addEventListener("play",()=>{
-        currentIndex = index;
-        players.forEach((p,i)=>{ if(i !== index) p.pause(); });
-        let views = localStorage.getItem('views'+(index+1)) || 0;
-        views++;
-        localStorage.setItem('views'+(index+1), views);
-        let viewEl = document.getElementById('views'+(index+1));
-        if(viewEl) viewEl.innerHTML = '👁 ' + views;
-        
-        let row = player.closest('.song-row');
-        if(row) trackPreference(row.getAttribute('data-tags'));
-    });
-    player.addEventListener("ended",()=>{
-        currentIndex++;
-        if(currentIndex >= players.length) currentIndex = 0;
-        players[currentIndex].play();
-    });
+    player.addEventListener("play",()=>{
+        currentIndex = index;
+        players.forEach((p,i)=>{ if(i !== index) p.pause(); });
+        let views = localStorage.getItem('views'+(index+1)) || 0;
+        views++;
+        localStorage.setItem('views'+(index+1), views);
+        let viewEl = document.getElementById('views'+(index+1));
+        if(viewEl) viewEl.innerHTML = '👁 ' + views;
+        
+        let row = player.closest('.song-row');
+        if(row) trackPreference(row.getAttribute('data-tags'));
+    });
+    player.addEventListener("ended",()=>{
+        currentIndex++;
+        if(currentIndex >= players.length) currentIndex = 0;
+        players[currentIndex].play();
+    });
 });
 
 function nextSong(){ players[currentIndex].pause(); currentIndex++; if(currentIndex >= players.length) currentIndex = 0; players[currentIndex].play(); }
@@ -385,24 +389,24 @@ const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
 document.querySelectorAll("audio").forEach((audio,index)=>{
-    audio.addEventListener("play",()=>{
-        const songRef = ref(db, "song" + (index + 1));
-        get(songRef).then((snapshot)=>{
-            let views = snapshot.exists() ? snapshot.val().views || 0 : 0;
-            views++;
-            set(songRef,{ views: views });
-            const el = document.getElementById("views"+(index+1));
-            if(el) el.innerHTML = "👁 " + views;
-        });
-    });
+    audio.addEventListener("play",()=>{
+        const songRef = ref(db, "song" + (index + 1));
+        get(songRef).then((snapshot)=>{
+            let views = snapshot.exists() ? snapshot.val().views || 0 : 0;
+            views++;
+            set(songRef,{ views: views });
+            const el = document.getElementById("views"+(index+1));
+            if(el) el.innerHTML = "👁 " + views;
+        });
+    });
 });
 
 window.addEventListener("load",()=>{
-    document.querySelectorAll("[id^='views']").forEach((el,index)=>{
-        get(ref(db, "song" + (index + 1))).then((snapshot)=>{
-            if(snapshot.exists()) el.innerHTML = "👁 " + (snapshot.val().views || 0);
-        });
-    });
+    document.querySelectorAll("[id^='views']").forEach((el,index)=>{
+        get(ref(db, "song" + (index + 1))).then((snapshot)=>{
+            if(snapshot.exists()) el.innerHTML = "👁 " + (snapshot.val().views || 0);
+        });
+    });
 });
 </script>
 </body>
