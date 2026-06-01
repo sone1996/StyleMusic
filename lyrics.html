@@ -7,15 +7,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* Global & Layout Styles */
-.menu-toggle{ display:none; position:fixed; top:15px; left:15px; z-index:9999; width:42px; height:42px; border:none; border-radius:12px; background:#9b5cff; color:white; font-size:28px; cursor:pointer; }
+.menu-toggle{ display:none; position:fixed; top:15px; left:15px; z-index:9999; width:42px; height:42px; border:none; border-radius:12px; background:#9b5cff; color:white; font-size:24px; cursor:pointer; display: flex; align-items: center; justify-content: center; }
 *{ margin:0; padding:0; box-sizing:border-box; }
 body{ font-family:'Poppins',sans-serif; background:#050816; color:white; overflow-x:hidden; width: 100vw; }
 .container{ display:flex; height:100vh; max-width: 100%; }
 a { text-decoration: none; color: inherit; }
 
 /* Sidebar */
-.sidebar{ width:240px; background:rgba(7,11,24,.88); backdrop-filter:blur(12px); padding:25px; display:flex; flex-direction:column; gap:18px; border-right:1px solid rgba(255,255,255,.05); }
-.logo{ font-size:30px; font-weight:700; color:#9b5cff; margin-bottom:20px; line-height: 1.2; }
+.sidebar{ width:240px; background:rgba(7,11,24,.88); backdrop-filter:blur(12px); padding:25px; display:flex; flex-direction:column; gap:18px; border-right:1px solid rgba(255,255,255,.05); z-index: 1000; }
+.logo-container { display: flex; justify-content: space-between; align-items: center; margin-bottom:20px; }
+.logo{ font-size:26px; font-weight:700; color:#9b5cff; line-height: 1.2; }
+.close-sidebar { display: none; background: none; border: none; color: white; font-size: 24px; cursor: pointer; }
 .menu{ padding:14px; border-radius:14px; cursor:pointer; transition:.3s; background:rgba(255,255,255,.03); display: block; }
 .menu:hover, .menu.active { background:#9b5cff; transform:translateX(5px); }
 
@@ -47,24 +49,33 @@ a { text-decoration: none; color: inherit; }
 .song-content strong { color: #b77dff; display: block; margin-bottom: 5px; }
 
 /* เครื่องเล่นเพลงในหน้าเนื้อหา */
-.inline-audio-player { width: 100%; height: 40px; margin-top: 15px; outline: none; border-radius: 20px; }
+.inline-audio-player { width: 100%; height: 40px; margin-top: 15px; outline: none; border-radius: 20px; display: block; }
 .inline-audio-player::-webkit-media-controls-panel { background-color: rgba(255, 255, 255, 0.9); }
 
 /* คลาสที่ใช้ตอนถูกคลิก (เปิดเนื้อหา) */
 .song-summary-card.active .song-content { max-height: 2000px; opacity: 1; padding-top: 10px; padding-bottom: 25px; }
 .song-summary-card.active .toggle-icon { transform: rotate(180deg); color: #ff2d55; }
 
+/* ซ่อนปุ่ม 3 ขีดในหน้าจอคอมพิวเตอร์ */
+@media(min-width: 769px) {
+    .menu-toggle { display: none !important; }
+}
+
 /* Mobile */
 @media(max-width:768px){
-    .menu-toggle{ display:block; }
-    .sidebar{ position:fixed; left:-280px; top:0; width:260px; height:100%; z-index:1000; transition:.3s; }
+    .menu-toggle{ display:flex; }
+    .sidebar{ position:fixed; left:-280px; top:0; width:260px; height:100%; z-index:1000; transition:.3s; background:rgba(7,11,24,.98); }
     .sidebar.active{ left:0; box-shadow:0 0 30px rgba(0,0,0,.9); }
+    .close-sidebar { display: block; }
+    
     .container{ flex-direction:column; }
-    .main{ padding: 10px; padding-top: 70px; }
+    .main{ padding: 15px; padding-top: 75px; width: 100vw; }
     .lyrics-container { padding: 15px 10px; }
     .song-header { padding: 15px; }
     .song-header h3 { font-size: 16px; }
     .song-content { padding: 0 15px; }
+    .search-box-lyrics { margin-left: 0; width: 100%; }
+    audio { width: 100% !important; max-width: 100%; }
 }
 </style>
 </head>
@@ -73,15 +84,16 @@ a { text-decoration: none; color: inherit; }
 <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
 <div class="container">
-    <!-- แถบเมนูด้านซ้าย -->
     <div class="sidebar" id="sidebar">
-        <div class="logo">🎵 StyleMusicPro</div>
+        <div class="logo-container">
+            <div class="logo">🎵 StyleMusicPro</div>
+            <button class="close-sidebar" onclick="toggleMenu()">✕</button>
+        </div>
         <a href="index.html" class="menu">🏠 หน้าแรก / ฟังเพลง</a>
         <a href="horoscope.html" target="_blank" class="menu">🔮 เช็กดวงรายวัน</a>
         <a href="lyrics.html" class="menu active">📖 สรุปความหมายเพลง</a>
     </div>
 
-    <!-- เนื้อหาหลัก -->
     <div class="main">
         <div class="lyrics-container">
             <div style="text-align: center; margin-bottom: 25px;">
@@ -89,14 +101,12 @@ a { text-decoration: none; color: inherit; }
                 <p style="color: #bbb; margin-top: 5px;">คลิกที่ชื่อเพลงเพื่ออ่านข้อคิดและความหมายแบบเจาะลึก พร้อมฟังเพลง</p>
             </div>
 
-            <!-- กล่องค้นหาเพลง -->
             <div class="search-box-lyrics">
                 <input type="text" id="searchLyrics" placeholder="🔍 ค้นหาชื่อเพลงที่ต้องการสรุป...">
             </div>
             
             <div id="lyricsList">
 
-                <!-- เพลงใหม่ 6 เพลง -->
                 <div class="song-summary-card" onclick="toggleSummary(this)">
                     <div class="song-header">
                         <h3>🎵 ไม่มีคำแปล</h3>
@@ -115,6 +125,138 @@ a { text-decoration: none; color: inherit; }
                         </ul>
                         <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
                             <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ไม่มีคำแปล.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+                </div>
+
+                <div class="song-summary-card" onclick="toggleSummary(this)">
+                    <div class="song-header">
+                        <h3>🎵 ยอมรับคนเดียว</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="song-content">
+                        <p><strong>📌 สาระสำคัญของเพลง</strong>
+                        "ความรักไม่ได้วัดกันที่ว่าเราพยายามมากแค่ไหน แต่อยู่ที่ว่าหัวใจของคนสองคนเดินมาพบกันหรือไม่ และเมื่อไปต่อไม่ได้ การยอมรับความจริงคือการรักตัวเองในรูปแบบหนึ่ง"</p>
+                        <p><strong>💡 ข้อคิดสำคัญจากเพลง</strong></p>
+                        <ul>
+                            <li>"ความรักไม่ใช่สิ่งที่บังคับกันได้ ต่อให้เรารักใครมากแค่ไหน ทุ่มเทมากเพียงใด ก็ไม่ได้หมายความว่าอีกฝ่ายจะต้องรักเรากลับ ความรักที่แท้จริงเกิดจากความรู้สึกของทั้งสองฝ่าย ไม่ใช่ความพยายามของคนใดคนหนึ่ง"</li>
+                            <li>"บางครั้งการยอมแพ้ ไม่ใช่ความอ่อนแอ การยอมรับว่าอีกฝ่ายไม่ได้รักเรา อาจเจ็บปวด แต่เป็นความกล้าหาญรูปแบบหนึ่ง เพราะเป็นการยอมรับความจริงแทนที่จะหลอกตัวเองต่อไป"</li>
+                            <li>"ไม่มีใครผิดในความรักเสมอไป ความสัมพันธ์บางอย่างจบลง ไม่ใช่เพราะมีคนทำผิด แต่เพราะความรู้สึกไม่ตรงกัน การโทษกันไม่ได้ช่วยให้ความเจ็บปวดหายไป"</li>
+                            <li>"ความเจ็บปวดคือบทเรียนของหัวใจ ทุกความผิดหวังสอนให้เราเข้าใจความรักมากขึ้น เข้าใจคุณค่าของตัวเองมากขึ้น และเติบโตเป็นคนที่เข้มแข็งกว่าเดิม"</li>
+                            <li>"การปล่อยมือ อาจเป็นความรักรูปแบบสุดท้าย เมื่อรู้ว่าอีกฝ่ายมีความสุขกับทางเลือกของเขา การยอมปล่อยและอวยพรจากระยะไกล อาจเป็นการรักที่บริสุทธิ์ที่สุด"</li>
+                        </ul>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ยอมรับคนเดียว.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+                </div>
+
+                <div class="song-summary-card" onclick="toggleSummary(this)">
+                    <div class="song-header">
+                        <h3>🎵 ฉากสุดท้าย</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="song-content">
+                        <p><strong>📌 สาระสำคัญของเพลง</strong>
+                        "ไม่ใช่ทุกความรักจะอยู่กับเราตลอดไป แต่ทุกความรักจะทิ้งบทเรียนบางอย่างไว้เสมอ"</p>
+                        <p><strong>💡 ข้อคิดสำคัญจากเพลง</strong></p>
+                        <ul>
+                            <li>"ทุกเรื่องราวมีวันจบ เหมือนการแสดงที่ต้องมีฉากสุดท้าย ความสัมพันธ์บางความสัมพันธ์ก็เช่นกัน ไม่ว่าจะสวยงามแค่ไหน สุดท้ายอาจต้องถึงเวลาปิดม่าน"</li>
+                            <li>"ความรักไม่ได้รับประกันว่าจะอยู่ตลอดไป การรักกันในวันนี้ ไม่ได้หมายความว่าจะได้เดินไปด้วยกันจนถึงปลายทาง บางครั้งความรักก็ไม่อาจเอาชนะเวลา ระยะทาง หรือการเปลี่ยนแปลงของหัวใจคนได้"</li>
+                            <li>"ความทรงจำมีค่า แม้คนในความทรงจำนั้นจะจากไปแล้ว แม้ความสัมพันธ์จะจบลง แต่ช่วงเวลาดี ๆ ที่เคยมีร่วมกันยังคงเป็นส่วนหนึ่งของชีวิต และเป็นสิ่งที่ไม่มีใครพรากไปได้"</li>
+                            <li>"ความเจ็บปวดคือครูของหัวใจ การสูญเสียทำให้เราเรียนรู้ เข้าใจชีวิต เข้าใจความรัก และเข้าใจตัวเองมากขึ้นกว่าที่เคย"</li>
+                            <li>"การเดินต่อ คือชัยชนะของคนที่เคยเจ็บ ตอนท้ายเพลงไม่ได้พูดถึงการลืม แต่พูดถึงการ 'เดินต่อไป' พร้อมรอยแผลและบทเรียน นั่นคือการเติบโตอย่างแท้จริง"</li>
+                        </ul>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ฉากสุดท้าย.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+                </div>
+
+                <div class="song-summary-card" onclick="toggleSummary(this)">
+                    <div class="song-header">
+                        <h3>🎵 ซ่อนไว้</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="song-content">
+                        <p><strong>📌 สาระสำคัญของเพลง</strong>
+                        "บางความรักไม่ได้เกิดมาเพื่อเป็นเจ้าของ แต่เกิดมาเพื่อสอนให้เรารู้จักการรักอย่างบริสุทธิ์ใจ"</p>
+                        <p><strong>💡 ข้อคิดสำคัญจากเพลง</strong></p>
+                        <ul>
+                            <li>"ไม่ใช่ทุกความรักจะต้องถูกบอกออกไป บางครั้งความรักอาจอยู่ในรูปแบบของการเฝ้ามอง การหวังดี และการเก็บความรู้สึกไว้ในใจ โดยไม่จำเป็นต้องได้รับการตอบกลับ"</li>
+                            <li>"ความกลัวอาจทำให้เราพลาดบางโอกาส การไม่กล้าพูดความจริงเพราะกลัวเสียคนสำคัญ อาจทำให้เราอยู่กับคำถามว่า 'ถ้าวันนั้นบอกออกไปจะเป็นอย่างไร'"</li>
+                            <li>"การรักใครสักคน ไม่ได้หมายความว่าต้องครอบครองเขา ความรักที่แท้จริงบางครั้งคือการยินดีที่ได้เห็นอีกฝ่ายมีความสุข แม้เราไม่ได้เป็นคนที่อยู่ข้างเขา"</li>
+                            <li>"ความรู้สึกที่เก็บไว้นาน อาจกลายเป็นภาระของหัวใจ การซ่อนความรักไว้ในความเงียบช่วยรักษาความสัมพันธ์บางอย่าง แต่ก็อาจสร้างความเจ็บปวดให้กับตัวเราเองเช่นกัน"</li>
+                            <li>"คุณค่าของความรัก ไม่ได้อยู่ที่ผลลัพธ์เสมอไป แม้เรื่องราวจะไม่เกิดขึ้นจริง แต่ช่วงเวลาที่ได้รัก ได้คิดถึง และได้เก็บใครบางคนไว้ในหัวใจ ก็เป็นความทรงจำที่มีความหมาย"</li>
+                        </ul>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ซ่อนไว้.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+                </div>
+
+                <div class="song-summary-card" onclick="toggleSummary(this)">
+                    <div class="song-header">
+                        <h3>🎵 ฤดูที่ไม่มีเธอ</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="song-content">
+                        <p><strong>📌 สาระสำคัญของเพลง</strong>
+                        "การจากลาอาจพรากคนคนหนึ่งไปจากชีวิต แต่ไม่อาจพรากความทรงจำดี ๆ ออกจากหัวใจได้"</p>
+                        <p><strong>💡 ข้อคิดสำคัญจากเพลง</strong></p>
+                        <ul>
+                            <li>"ชีวิตต้องเดินต่อ แม้คนสำคัญจะไม่อยู่แล้ว การจากลาเป็นสิ่งที่ไม่มีใครอยากเผชิญ แต่เมื่อมันเกิดขึ้น เราต้องเรียนรู้ที่จะก้าวต่อไปพร้อมกับความทรงจำที่ยังอยู่ในใจ"</li>
+                            <li>"ความคิดถึงไม่ใช่ความอ่อนแอ การยังคงคิดถึงใครสักคนหลังจากเวลาผ่านไป ไม่ได้แปลว่าเราไม่เข้มแข็ง แต่เป็นเพราะคนคนนั้นเคยมีความหมายกับชีวิตเราจริง ๆ"</li>
+                            <li>"บางคนจากไป แต่ไม่เคยหายไปจากหัวใจ แม้ตัวคนจะไม่อยู่แล้ว แต่เรื่องราว รอยยิ้ม และความทรงจำดี ๆ ยังคงเป็นส่วนหนึ่งของชีวิตเราเสมอ"</li>
+                            <li>"การยอมรับไม่ได้หมายถึงการลืม เพลงนี้สอนว่า การยอมรับความจริงว่าเขาไม่กลับมาแล้ว ไม่ได้หมายความว่าเราต้องลืมเขา แต่คือการอยู่กับความทรงจำนั้นอย่างสงบ"</li>
+                            <li>"ความรักที่แท้จริงยังคงงดงาม แม้จะจบลง ช่วงเวลาที่เคยมีร่วมกันไม่ได้สูญเปล่า เพราะมันเคยทำให้ชีวิตอบอุ่น และกลายเป็นบทหนึ่งที่สวยงามของชีวิต"</li>
+                        </ul>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ฤดูที่ไม่มีเธอ.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+                </div>
+
+                <div class="song-summary-card" onclick="toggleSummary(this)">
+                    <div class="song-header">
+                        <h3>🎵 ฝากดาวดูแลเธอ</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="song-content">
+                        <p><strong>📌 สาระสำคัญของเพลง</strong>
+                        "บางความสัมพันธ์จบลงในฐานะคนรัก แต่ยังคงอยู่ในฐานะความปรารถนาดีตลอดไป"</p>
+                        <p><strong>💡 ข้อคิดสำคัญจากเพลง</strong></p>
+                        <ul>
+                            <li>"ความรักที่แท้จริง ไม่จำเป็นต้องครอบครอง บางครั้งการรักใครสักคน ไม่ได้หมายถึงการต้องอยู่ด้วยกันตลอดไป แต่คือการอยากเห็นเขามีความสุข ไม่ว่าเราจะอยู่ในชีวิตเขาหรือไม่ก็ตาม"</li>
+                            <li>"การจากลาไม่ได้ทำลายความรู้สึกดี ๆ แม้ความสัมพันธ์จะจบลง แต่ความห่วงใย ความปรารถนาดี และความทรงจำที่สวยงามยังคงอยู่ได้เสมอ"</li>
+                            <li>"คนบางคนเข้ามาเพื่อสอนบทเรียนสำคัญของชีวิต ไม่ใช่ทุกคนที่เข้ามาจะอยู่ตลอดไป แต่ทุกคนที่ผ่านเข้ามาอาจทิ้งบางสิ่งที่มีค่าไว้ให้เราเติบโต"</li>
+                            <li>"การปล่อยวางไม่ใช่การหมดรัก การยอมรับความจริงและปล่อยให้อีกฝ่ายเดินไปสู่ความสุขของเขา คือความรักในรูปแบบที่โตขึ้นและเข้าใจมากขึ้น"</li>
+                            <li>"ความปรารถนาดีคือของขวัญที่งดงามที่สุด แม้จะไม่มีโอกาสได้ดูแลกันเหมือนเดิม แต่การคอยอวยพรให้เขาพบสิ่งดี ๆ ในชีวิต ก็เป็นความรักที่บริสุทธิ์และมีคุณค่า"</li>
+                        </ul>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ฝากดาวดูแลเธอ.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+                </div>
+
+                <div class="song-summary-card" onclick="toggleSummary(this)">
+                    <div class="song-header">
+                        <h3>🎵 เพิ่งเข้าใจคำว่ารัก</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="song-content">
+                        <p><strong>📌 สาระสำคัญของเพลง</strong>
+                        "บางครั้งเราจะรู้คุณค่าของคนคนหนึ่ง ก็ต่อเมื่อไม่มีเขาอยู่ให้รักอีกแล้ว"</p>
+                        <p><strong>💡 ข้อคิดสำคัญจากเพลง</strong></p>
+                        <ul>
+                            <li>"เรามักเห็นคุณค่าของบางสิ่ง เมื่อมันจากไปแล้ว ในวันที่ยังมีอยู่ เราอาจมองข้ามความสำคัญของคนที่รักเรา แต่เมื่อเขาไม่อยู่แล้ว เราจึงเข้าใจว่าการมีเขาอยู่ข้าง ๆ มีค่ามากเพียงใด"</li>
+                            <li>"อย่ารอให้สายเกินไปที่จะบอกรัก หลายครั้งเราคิดว่ายังมีเวลาอีกมาก แต่ความจริงไม่มีใครรู้ว่าพรุ่งนี้จะเป็นอย่างไร การแสดงความรักและความใส่ใจควรทำในวันที่ยังมีโอกาส"</li>
+                            <li>"ความรักไม่ใช่สิ่งธรรมดา เมื่อคุ้นเคยกับการมีใครสักคนอยู่ข้างกาย เราอาจเผลอคิดว่ามันเป็นเรื่องปกติ แต่แท้จริงแล้วการมีคนที่รักและเข้าใจเราเป็นของขวัญที่มีค่ามาก"</li>
+                            <li>"ความเสียใจสามารถกลายเป็นบทเรียน แม้จะไม่สามารถย้อนเวลากลับไปแก้ไขอดีตได้ แต่ความผิดพลาดและการสูญเสียสามารถสอนให้เราเห็นคุณค่าของคนรอบตัวมากขึ้น"</li>
+                            <li>"ความรักที่แท้จริงจะยังคงอยู่ในความทรงจำ แม้คนคนนั้นจะไม่อยู่แล้ว แต่ความรักที่เคยมอบให้กันยังคงเป็นบทเรียนและความทรงจำที่อยู่ในใจตลอดไป"</li>
+                        </ul>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เพิ่งเข้าใจคำว่ารัก.mp3" type="audio/mpeg">
                         </audio>
                     </div>
                 </div>
@@ -232,7 +374,6 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-                <!-- เพลงอื่นๆ ก่อนหน้านี้ -->
                 <div class="song-summary-card" onclick="toggleSummary(this)">
                     <div class="song-header">
                         <h3>🎵 สายเกินจะขอโทษ</h3>
@@ -259,7 +400,7 @@ a { text-decoration: none; color: inherit; }
                         <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
+                        <p><strong>📌 สาระสำคัญ of เพลง</strong>
                         "บางคนอาจไม่ได้อยู่ในชีวิตเราอีกแล้ว แต่ยังคงเป็นส่วนหนึ่งของหัวใจและความทรงจำที่งดงามเสมอ"</p>
                         <p><strong>💡 คำโปรยแนวข้อคิด</strong></p>
                         <ul>
@@ -750,8 +891,7 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-            </div> <!-- จบ id="lyricsList" -->
-        </div>
+            </div> </div>
     </div>
 </div>
 
@@ -765,7 +905,7 @@ a { text-decoration: none; color: inherit; }
     function toggleSummary(card) {
         card.classList.toggle('active');
         
-        // ทำให้เพลงหยุดเล่นเมื่อปิดการ์ด (Optional แต่แนะนำเพื่อไม่ให้เสียงตีกัน)
+        // ทำให้เพลงหยุดเล่นเมื่อปิดการ์ด
         let audio = card.querySelector('audio');
         if (audio && !card.classList.contains('active')) {
             audio.pause();
@@ -778,7 +918,6 @@ a { text-decoration: none; color: inherit; }
         let cards = document.querySelectorAll(".song-summary-card");
         
         cards.forEach(card => {
-            // ค้นหาจากชื่อเพลงใน h3
             let title = card.querySelector("h3").innerText.toLowerCase();
             if(title.includes(filter)) {
                 card.style.display = "block";
