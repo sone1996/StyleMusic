@@ -11,6 +11,7 @@
 <meta name="author" content="StyleMusicPro">
 <meta name="robots" content="index, follow">
 
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PZHXG2Y1PY"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -60,6 +61,16 @@ a { text-decoration: none; color: inherit; }
 .share-btn{ padding:14px 25px; border:none; border-radius:16px; background:rgba(255,255,255,.08); color:white; cursor:pointer; }
 .hero-social{ display:flex; gap:15px; overflow-x:auto; padding-bottom:10px; width:100%; }
 .hero-social iframe{ width:33%; min-width: 280px; height:220px; border-radius:16px; border:none; flex-shrink:0; }
+
+/* 🌟 บทความพรีวิว (เพิ่มให้ AdSense อ่าน) 🌟 */
+.article-preview-section { margin-bottom: 35px; }
+.article-preview-title { font-size: 20px; font-weight: 600; margin-bottom: 15px; color: #9b5cff; }
+.article-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.article-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 20px; transition: 0.3s; display: flex; flex-direction: column; cursor: pointer; }
+.article-card:hover { transform: translateY(-5px); border-color: #9b5cff; background: rgba(255,255,255,0.05); }
+.article-card h3 { color: #fff; font-size: 16px; margin-bottom: 10px; line-height: 1.4; }
+.article-card p { color: #aaa; font-size: 13px; line-height: 1.6; margin-bottom: 15px; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.read-more { color: #b77dff; font-weight: 500; font-size: 13px; align-self: flex-start; background: rgba(183,125,255,0.1); padding: 5px 12px; border-radius: 20px; }
 
 /* Recommended */
 .recommended-section { margin-bottom: 30px; }
@@ -113,7 +124,7 @@ a { text-decoration: none; color: inherit; }
     .menu-toggle{ display:flex; }
     .sidebar{ position:fixed; left:-280px; top:0; width:260px; height:100%; z-index:1000; transition:.3s; background:rgba(7,11,24,.98); }
     .sidebar.active{ left:0; box-shadow:0 0 30px rgba(0,0,0,.9); }
-    .close-sidebar { display: block; } /* แสดงปุ่มกากบาทปิดเมนูในมือถือ */
+    .close-sidebar { display: block; }
     
     .container{ flex-direction:column; }
     .main{ padding: 15px; padding-top: 75px; padding-bottom: 100px; width: 100vw; }
@@ -121,17 +132,14 @@ a { text-decoration: none; color: inherit; }
     .hero-left{ flex-direction:column; align-items:flex-start; }
     .hero-social iframe { min-width: 85vw; height: 180px; }
     
-    /* จัดการตารางเพลงให้รองรับมือถือ */
     .song-table, .song-table tbody, .song-table tr, .song-table td { display:block; width:100%; border: none; }
     .song-table thead { display: none; }
     .song-row{ padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
     
-    /* แก้ไขส่วนของข้อมูลเพลงและแถบขาวเล่นเพลงให้พอดีหน้าจอ */
     .song-info { flex-direction: column; gap: 12px; align-items: flex-start; width: 100%; }
     .song-info img { width: 55px; height: 55px; flex-shrink: 0; border-radius: 10px; }
     .song-info > div { width: 100%; min-width: 0; }
     
-    /* บังคับแถบเล่นเพลง (สีขาว) ให้ยาวพอดีและไม่ล้นจอ */
     audio { width: 100% !important; max-width: 100%; height: 40px; margin-top: 10px; display: block; }
     
     .bottom-player { left: 0; padding-left: 12px; padding-right: 12px; width: 100%; }
@@ -144,6 +152,7 @@ a { text-decoration: none; color: inherit; }
 
 <div class="container">
 
+<!-- แถบเมนูด้านซ้าย -->
 <div class="sidebar" id="sidebar">
     <div class="logo-container">
         <div class="logo">🎵 StyleMusicPro</div>
@@ -156,10 +165,12 @@ a { text-decoration: none; color: inherit; }
 
 <div class="main">
     <div class="topbar">
-        <div class="search-box" style="flex:1; margin-left: 50px;"> <input type="text" id="search" placeholder="ค้นหาเพลง...">
+        <div class="search-box" style="flex:1; margin-left: 50px;">
+            <input type="text" id="search" placeholder="ค้นหาเพลง...">
         </div>
     </div>
 
+    <!-- ฮีโร่แบนเนอร์ -->
     <div class="hero-banner">
         <div class="hero-overlay">
             <div class="hero-left">
@@ -189,6 +200,30 @@ a { text-decoration: none; color: inherit; }
         </div>
     </div>
 
+    <!-- 🌟 ส่วนที่เพิ่มเข้ามาใหม่: กล่องพรีวิวบทความสำหรับ SEO และ AdSense 🌟 -->
+    <div class="article-preview-section">
+        <div class="article-preview-title">📰 บทความวิเคราะห์ & ข้อคิดจากเพลง</div>
+        <div class="article-grid">
+            <a href="lyrics.html" target="_blank" class="article-card">
+                <h3>ไม่มีคำแปล: เมื่อความสัมพันธ์จบลงโดยไม่มีสถานะ</h3>
+                <p>บางความสัมพันธ์ไม่ได้จบลงด้วยคำตอบที่ชัดเจน แต่จบลงด้วยการที่เราเรียนรู้ที่จะยอมรับความจริง ความเงียบก็เป็นคำตอบรูปแบบหนึ่งที่เราต้องก้าวผ่านไป...</p>
+                <span class="read-more">อ่านข้อคิดเต็ม ➔</span>
+            </a>
+            <a href="lyrics.html" target="_blank" class="article-card">
+                <h3>ยอมรับคนเดียว: ความรักที่ไม่อาจบังคับกันได้</h3>
+                <p>ต่อให้เรารักใครมากแค่ไหน ทุ่มเทมากเพียงใด ก็ไม่ได้หมายความว่าอีกฝ่ายจะต้องรักเรากลับ บทเรียนของการรักตัวเองในวันที่ต้องยอมปล่อยมือ...</p>
+                <span class="read-more">อ่านข้อคิดเต็ม ➔</span>
+            </a>
+            <a href="lyrics.html" target="_blank" class="article-card">
+                <h3>ถอยออกมาก่อน: รักมากจนต้องเลือกปล่อยมือ</h3>
+                <p>บางคนไม่ได้สูญเสียความรักเพราะเลิกรัก แต่สูญเสียมันเพราะรักมากจนต้องเลือกถอยออกมา เพื่อรักษาหัวใจของตัวเองไว้ไม่ให้เจ็บปวดไปมากกว่านี้...</p>
+                <span class="read-more">อ่านข้อคิดเต็ม ➔</span>
+            </a>
+        </div>
+    </div>
+    <!-- 🌟 จบส่วนพรีวิวบทความ 🌟 -->
+
+    <!-- เมนูคัดกรองเพลง -->
     <div class="sub-tabs" id="genreTabs">
         <button class="tab-btn active" onclick="filterSubGenre('all', this)">ทั้งหมด</button>
         <button class="tab-btn" onclick="filterSubGenre('sadpop', this)">Sad Pop</button>
@@ -196,6 +231,7 @@ a { text-decoration: none; color: inherit; }
         <button class="tab-btn" onclick="filterSubGenre('lonely', this)">เพลงเหงา</button>
     </div>
 
+    <!-- แถบเพลงแนะนำสำหรับคุณ -->
     <div class="recommended-section" id="recommendedSection" style="display: none;">
         <div class="recommended-title">✨ เพลงแนะนำสำหรับคุณ</div>
         <div class="recommended-scroll" id="recommendedList"></div>
@@ -206,6 +242,7 @@ a { text-decoration: none; color: inherit; }
             <tr><th style="width:75%; text-align: left;">เพลง</th><th style="width:10%; text-align: left;">เวลา</th><th style="width:15%; text-align: left;">สถิติ</th></tr>
         </thead>
         <tbody id="songList">
+            <!-- ข้อมูลเพลง -->
             <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">แสงเช้าที่ว่างเปล่า</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/แสงเช้าที่ว่างเปล่า.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views1">👁 0</span><span class="like-btn" onclick="likeSong(1)">❤️ <span id="likes1">0</span></span></div></td></tr>
             <tr class="song-row" data-tags="pop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">แค่ฝุ่นที่เลือนลาง</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/แค่ฝุ่นที่เลือนลาง.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views2">👁 0</span><span class="like-btn" onclick="likeSong(2)">❤️ <span id="likes2">0</span></span></div></td></tr>
             <tr class="song-row" data-tags="lonely"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">คนที่พลาดเอง</div><div class="song-artist">Style Music</div><audio controls controlsList="nodownload noplaybackrate"><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คนที่พลาดเอง.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views3">👁 0</span><span class="like-btn" onclick="likeSong(3)">❤️ <span id="likes3">0</span></span></div></td></tr>
@@ -256,6 +293,7 @@ a { text-decoration: none; color: inherit; }
         </tbody>
     </table>
 
+    <!-- SEO Footer -->
     <div class="seo-footer">
         <h2>เกี่ยวกับ StyleMusicPro: พื้นที่ของคนเหงาและเสียงดนตรี</h2>
         <p>ยินดีต้อนรับสู่ <b>StyleMusicPro</b> คลังเพลงออนไลน์ที่รวบรวมบทเพลงเศร้า เพลงอกหัก และเพลงสไตล์ Sad Pop, Lo-fi ที่สร้างสรรค์ขึ้นมาเพื่อเป็นเพื่อนในวันที่คุณรู้สึกโดดเดี่ยว บทเพลงทั้งหมดในเว็บไซต์ของเราเป็น Original Content ที่สร้างขึ้นมาใหม่เพื่อถ่ายทอดอารมณ์ความรู้สึกอย่างลึกซึ้ง คุณสามารถฟังออนไลน์ได้ฟรีทุกที่ทุกเวลา</p>
@@ -281,10 +319,7 @@ a { text-decoration: none; color: inherit; }
 </div>
 
 <script>
-// ฟังก์ชันสลับเปิด-ปิดเมนูแถบข้าง
-function toggleMenu() { 
-    document.getElementById('sidebar').classList.toggle('active'); 
-}
+function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); }
 
 function shareSong(song){
     const shareData = { title: "Style Music", text: "🎵 ฟังเพลง: " + song, url: window.location.href };
@@ -394,6 +429,7 @@ function likeSong(id){ let likes = localStorage.getItem("likes"+id) || 0; likes+
 window.addEventListener('DOMContentLoaded', () => { updateRecommendations(); });
 </script>
 
+<!-- Firebase Module -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
