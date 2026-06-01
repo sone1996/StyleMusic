@@ -46,8 +46,12 @@ a { text-decoration: none; color: inherit; }
 .song-content li { margin-bottom: 5px; }
 .song-content strong { color: #b77dff; display: block; margin-bottom: 5px; }
 
+/* เครื่องเล่นเพลงในหน้าเนื้อหา */
+.inline-audio-player { width: 100%; height: 40px; margin-top: 15px; outline: none; border-radius: 20px; }
+.inline-audio-player::-webkit-media-controls-panel { background-color: rgba(255, 255, 255, 0.9); }
+
 /* คลาสที่ใช้ตอนถูกคลิก (เปิดเนื้อหา) */
-.song-summary-card.active .song-content { max-height: 1500px; opacity: 1; padding-top: 10px; padding-bottom: 20px; }
+.song-summary-card.active .song-content { max-height: 2000px; opacity: 1; padding-top: 10px; padding-bottom: 25px; }
 .song-summary-card.active .toggle-icon { transform: rotate(180deg); color: #ff2d55; }
 
 /* Mobile */
@@ -82,7 +86,7 @@ a { text-decoration: none; color: inherit; }
         <div class="lyrics-container">
             <div style="text-align: center; margin-bottom: 25px;">
                 <h1 style="color: #fff; font-size: 28px;">📖 สรุปใจความบทเพลง</h1>
-                <p style="color: #bbb; margin-top: 5px;">คลิกที่ชื่อเพลงเพื่ออ่านข้อคิดและความหมายแบบเจาะลึก</p>
+                <p style="color: #bbb; margin-top: 5px;">คลิกที่ชื่อเพลงเพื่ออ่านข้อคิดและความหมายแบบเจาะลึก พร้อมฟังเพลง</p>
             </div>
 
             <!-- กล่องค้นหาเพลง -->
@@ -109,6 +113,9 @@ a { text-decoration: none; color: inherit; }
                             <li>"ความรักไม่จำเป็นต้องสมหวังจึงจะมีคุณค่า แม้สุดท้ายจะไม่ได้คบกัน แต่ประสบการณ์นั้นก็สอนให้เราเข้าใจหัวใจตัวเองมากขึ้น"</li>
                             <li>"การยอมรับความจริง คือจุดเริ่มต้นของการก้าวต่อไป เพื่อหลุดพ้นจากการรอคอยคำตอบที่ไม่มีวันมาถึง"</li>
                         </ul>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ไม่มีคำแปล.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -128,6 +135,9 @@ a { text-decoration: none; color: inherit; }
                             <li>"การยอมรับความจริงว่าไม่มีทางกลับไปเป็นเหมือนเดิม คือจุดเริ่มต้นของการเยียวยาหัวใจที่แท้จริง"</li>
                             <li>"บางรอยร้าวจะอยู่กับเราตลอดไป แต่เราสามารถเรียนรู้ที่จะใช้ชีวิตต่อไปได้ โดยไม่ปล่อยให้ความเจ็บปวดมาควบคุมชีวิตเราอีก"</li>
                         </ul>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/รอยร้าวในหัวใจ.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -147,6 +157,9 @@ a { text-decoration: none; color: inherit; }
                             <li>"การไม่โกรธ ไม่ได้แปลว่าไม่เสียใจ แต่สะท้อนถึงวุฒิภาวะทางอารมณ์ที่ยอมรับว่า ความจริงบางอย่างยากเกินจะรับไหวในตอนแรก"</li>
                             <li>"การเยียวยาไม่ใช่การลืม แต่คือการยอมรับ ค่อยๆ เรียนรู้วิธีอยู่กับความทรงจำนั้น โดยไม่ปล่อยให้มันหยุดยั้งชีวิตของเรา"</li>
                         </ul>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ประโยคสุดท้าย.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -167,6 +180,9 @@ a { text-decoration: none; color: inherit; }
                             <li>"ความรักที่ไม่ได้รับการตอบกลับ ก็ยังมีคุณค่า ความรู้สึกที่เคยเกิดขึ้นจริงนั้นสามารถกลายเป็นความทรงจำที่งดงามได้เมื่อเวลาผ่านไป"</li>
                             <li>"การปล่อยวาง ไม่ได้หมายถึงการลืม แต่คือการเก็บรอยยิ้มของเขาไว้ในมุมหนึ่งของหัวใจ โดยที่สามารถก้าวต่อไปข้างหน้าได้"</li>
                         </ul>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ฉันไม่ได้อยู่ในตอนจบตั้งแต่แรก.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -187,6 +203,9 @@ a { text-decoration: none; color: inherit; }
                             <li>"ไม่ใช่ทุกความรู้สึกที่ต้องพูดออกไป บางครั้งการเก็บความรู้สึกไว้ อาจเป็นทางเลือกที่ดีที่สุดเพื่อรักษาความสัมพันธ์หรือลดความลำบากใจ"</li>
                             <li>"ความเข้มแข็งคือการยอมรับความจริง การยอมรับว่าไม่มีทางเป็นไปได้ แล้วเลือกก้าวออกมาทั้งที่ยังเจ็บ เป็นความกล้าหาญที่แท้จริง"</li>
                         </ul>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ถอยออกมาก่อน.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -207,6 +226,9 @@ a { text-decoration: none; color: inherit; }
                             <li>"ความเสียใจสามารถกลายเป็นการเติบโต เปลี่ยนแปลงความผิดหวังและคราบน้ำตาให้กลายเป็นประสบการณ์และพลังในการใช้ชีวิต"</li>
                             <li>"จงรักและดูแลคนสำคัญในวันที่ยังมีโอกาส อย่ารอให้เหลือเพียงรูปถ่ายหรือความทรงจำ เพราะเวลาที่ดีที่สุดในการแสดงความรักคือวันนี้"</li>
                         </ul>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คำขอโทษ.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -225,6 +247,9 @@ a { text-decoration: none; color: inherit; }
                             <li>"คำขอโทษที่ช้าที่สุด คือคำขอโทษที่ไม่มีคนฟังอีกต่อไป"</li>
                             <li>"อย่าปล่อยให้ความรักกลายเป็นบทเรียนราคาแพงของชีวิต"</li>
                         </ul>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/สายเกินจะขอโทษ.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -242,6 +267,9 @@ a { text-decoration: none; color: inherit; }
                             <li>"บางความสัมพันธ์ไม่ได้จบลงด้วยการลืม แต่จบลงด้วยการเก็บไว้ในความทรงจำอย่างสวยงาม"</li>
                             <li>"คนบางคนจากไปจากชีวิต แต่ไม่เคยจากไปจากหัวใจ"</li>
                         </ul>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ยังอยู่ในทุกวัน.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -259,6 +287,9 @@ a { text-decoration: none; color: inherit; }
                             <li>"เวลาเปลี่ยนทุกอย่างได้ ยกเว้นความหมายของบางคนในหัวใจ"</li>
                             <li>"ร่องรอยของความรัก อาจไม่เคยเลือนหาย แม้เจ้าของความทรงจำนั้นจะจากไปนานแล้ว"</li>
                         </ul>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ร่องรอยของเธอ.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -270,6 +301,9 @@ a { text-decoration: none; color: inherit; }
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
                         "บางความสัมพันธ์ไม่ได้จบลงเพราะหมดรัก แต่จบลงเพราะการปล่อยมือคือสิ่งที่ดีที่สุดสำหรับทั้งสองคน"</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ถึงเวลาต้องไป.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -281,6 +315,9 @@ a { text-decoration: none; color: inherit; }
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
                         "บางคนอาจจากไปจากชีวิต แต่ความรักและความทรงจำที่เขาทิ้งไว้ จะยังคงอยู่ในหัวใจตลอดไป"</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ห้องที่ไม่มีเธอ.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -292,6 +329,9 @@ a { text-decoration: none; color: inherit; }
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
                         "การฝากหัวใจไว้กับคนผิด อาจทำให้เราเจ็บปวด แต่สิ่งสำคัญคือการนำความเจ็บนั้นมาเป็นบทเรียน ไม่ใช่ปล่อยให้มันเป็นแผลไปตลอดชีวิต"</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/บทเรียนราคาแพง.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -303,6 +343,9 @@ a { text-decoration: none; color: inherit; }
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
                         "ความสุขไม่ได้เกิดจากสิ่งยิ่งใหญ่เสมอไป แต่เกิดจากการมีคนสำคัญอยู่เคียงข้างในวันธรรมดาๆ ของชีวิต"</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เรื่องธรรมดาที่พิเศษ.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -314,6 +357,9 @@ a { text-decoration: none; color: inherit; }
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
                         "ในโลกที่มีผู้คนมากมาย การได้พบคนที่ทำให้หัวใจมีความสุขและมีความหมาย คือโชคดีที่ควรรักษาไว้"</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/โชคดีที่ได้เจอเธอ.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -325,6 +371,9 @@ a { text-decoration: none; color: inherit; }
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
                         "บางบทเรียนของชีวิตต้องแลกมาด้วยน้ำตา แต่ความเจ็บปวดเหล่านั้นจะสอนให้เราเข้าใจความรัก การสูญเสีย และการเติบโตมากขึ้น"</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/บทเรียนของน้ำตา.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -336,6 +385,9 @@ a { text-decoration: none; color: inherit; }
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
                         "การเชื่อใจอย่างบริสุทธิ์ใจไม่ใช่ความผิด แต่เราควรเรียนรู้ที่จะมองความจริงควบคู่ไปกับความรู้สึก เพื่อไม่ให้หัวใจต้องเจ็บซ้ำจากความคาดหวัง"</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เชื่อเกินไป.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -347,6 +399,9 @@ a { text-decoration: none; color: inherit; }
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
                         "อย่าเชื่อเพียงคำพูดที่สวยงาม แต่จงมองที่การกระทำ เพราะความจริงของความรักไม่ได้อยู่ในคำสัญญา แต่อยู่ในสิ่งที่อีกฝ่ายทำให้เห็นทุกวัน"</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/สัญญาที่ไม่เคยเกิดขึ้น.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -358,6 +413,9 @@ a { text-decoration: none; color: inherit; }
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
                         "อย่ามอบทั้งหัวใจให้กับคนที่เห็นเราเป็นเพียงทางผ่าน เพราะความรักที่แท้จริงควรมีความชัดเจนและให้คุณค่ากันทั้งสองฝ่าย"</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/โทรมาแค่ตอนเหงา.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -369,6 +427,9 @@ a { text-decoration: none; color: inherit; }
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
                         "แม้หัวใจจะยังไม่หายดีจากการสูญเสีย แต่เราสามารถเรียนรู้ที่จะใช้ชีวิตต่อไป และค่อยๆ เติบโตผ่านความเจ็บปวดนั้นได้"</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ยังรักษาไม่หาย.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -380,6 +441,9 @@ a { text-decoration: none; color: inherit; }
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
                         "บางคนอาจจากไปจากชีวิต แต่ยังอยู่ในหัวใจ การเยียวยาไม่ใช่การลืมเขาให้ได้ แต่คือการเรียนรู้ที่จะใช้ชีวิตต่อไป แม้ยังจำได้เสมอ"</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ใจยังย้อนกลับไป.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -391,6 +455,9 @@ a { text-decoration: none; color: inherit; }
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
                         "ความรักไม่ควรเป็นเรื่องที่ต้องคอยเดา หากอีกฝ่ายไม่ชัดเจน เราควรกล้าที่จะยอมรับความจริง เพื่อไม่ให้ติดอยู่กับความหวังที่ไม่มีคำตอบ"</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/สถานะที่ไม่มีชื่อ.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -402,6 +469,9 @@ a { text-decoration: none; color: inherit; }
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
                         "บางความสูญเสียไม่สามารถลืมได้ง่ายๆ แต่เราสามารถเรียนรู้ที่จะอยู่กับมัน และค่อยๆ เดินหน้าต่อไป"</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/แผลเดิมในใจ.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -413,6 +483,9 @@ a { text-decoration: none; color: inherit; }
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
                         "บางครั้งเราอาจเป็นเพียงช่วงเวลาหนึ่งในชีวิตของใครบางคน แต่นั่นไม่ได้หมายความว่าความรักที่เราให้ไปนั้นไร้ค่า"</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/แค่ทางผ่าน.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -424,6 +497,9 @@ a { text-decoration: none; color: inherit; }
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
                         "การฟังหัวใจเป็นสิ่งสำคัญ แต่การมองเห็นความจริงก็สำคัญไม่แพ้กัน เพราะความรักที่ดีต้องมีทั้งความรู้สึกและสติเดินไปพร้อมกัน"</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เชื่อหัวใจมากเกินไป.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -434,6 +510,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                     <div class="song-content">
                         <p>ความรู้สึกอ้างว้างในยามเช้า เมื่อตื่นมาแล้วพบว่าความอบอุ่นที่เคยมีได้หายไป เหลือเพียงความจริงที่ต้องอยู่คนเดียว</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/แสงเช้าที่ว่างเปล่า.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
                 
@@ -444,6 +523,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                     <div class="song-content">
                         <p>ความรักที่เคยสวยงามค่อยๆ จางหายไปเหมือนฝุ่น ไม่เหลือร่องรอยนอกจากความทรงจำสีจางๆ</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/แค่ฝุ่นที่เลือนลาง.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -454,6 +536,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                     <div class="song-content">
                         <p>เพลงของคนขี้แพ้ที่โทษตัวเองที่ทำร้ายและปล่อยมือคนรักไป จนเสียเขาไปตลอดกาล</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คนที่พลาดเอง.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -464,6 +549,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                     <div class="song-content">
                         <p>อารมณ์ของการแอบรักในสถานะที่ไม่มีสิทธิ์เรียกร้อง ทำได้แค่เฝ้ามองดูเธอมีความสุขจากมุมไกลๆ</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ได้แค่มองเธอ.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
                 
@@ -474,6 +562,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                     <div class="song-content">
                         <p>โลกที่มืดมน ไร้ทิศทาง ขาดแสงสว่างและแรงบันดาลใจ เมื่อคนที่เคยเป็นทุกอย่างได้เดินจากไป</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/วันที่ไม่มีเธอ.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -484,6 +575,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                     <div class="song-content">
                         <p>ความทรมานของการพยายามลืม ยิ่งลบภาพเขาทิ้ง ใจกลับยิ่งจดจำทุกรายละเอียดได้ชัดเจนขึ้น</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ภาพจำที่ไม่ได้ลืม.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -494,6 +588,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                     <div class="song-content">
                         <p>การฝืนก้าวเดินต่อไปบนเส้นทางชีวิตที่เคยมีเขาเคียงข้าง แต่ปัจจุบันต้องเผชิญหน้าคนเดียวอย่างเคว้งคว้าง</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ทางที่ไม่มีเธอ.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -504,6 +601,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                     <div class="song-content">
                         <p>ความรู้สึกพังทลายหลังจากทุ่มเทความรักทั้งหมดให้คนหนึ่ง แต่สิ่งที่ได้ตอบแทนกลับมาคือความว่างเปล่า</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ให้หมดแล้ว.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -514,6 +614,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                     <div class="song-content">
                         <p>ความรู้สึกค้างคาในแชทที่พิมพ์ค้างไว้ แต่ไม่มีโอกาสได้กดส่ง เพราะคนที่รออ่านได้หายไปจากชีวิตแล้ว</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ข้อความสุดท้าย.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -524,6 +627,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                     <div class="song-content">
                         <p>ซ่อนความหวังว่าหากโชคชะตาพาเราวนกลับมาเจอกันอีกครั้ง จะสามารถยิ้มให้กันได้โดยไม่มีน้ำตา</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/หากวันหนึ่งเราได้พบกัน.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -534,6 +640,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                     <div class="song-content">
                         <p>การฝืนทนในความสัมพันธ์ที่เป็นพิษ แม้สมองจะสั่งให้ถอย แต่หัวใจกลับดื้อรั้นยอมเจ็บซ้ำๆ เพราะรัก</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ไม่ฟังหัวใจตัวเอง.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -544,6 +653,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                     <div class="song-content">
                         <p>อารมณ์เหงาในยามค่ำคืนที่ทำได้เพียงฝากความคิดถึงไปกับสายลม หวังว่าเขาจะสัมผัสได้ถึงความรู้สึกนี้</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ฝากลมไปบอก.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -554,6 +666,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                     <div class="song-content">
                         <p>การติดกับดักคนที่รู้อยู่เต็มอกว่าไม่ใช่ แต่กลับเลือกที่จะจดจำและผูกพันอย่างถอนตัวไม่ขึ้น</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คนที่ควรผ่านไป.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -564,6 +679,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                     <div class="song-content">
                         <p>ความรักที่สวยงามแต่น่าเสียดายที่เกิดขึ้นในจังหวะชีวิตที่ไม่ตรงกัน จนต้องยอมปล่อยมือกันไป</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เวลาที่ไม่ใช่.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -574,6 +692,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                     <div class="song-content">
                         <p>คำถามเชิงตัดพ้อว่าหากวันหนึ่งเราหายไปจากชีวิตเขา เขาจะรู้สึกกระวนกระวายหรือตามหาเราบ้างไหม</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ในวันที่ฉันหายไป.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -584,6 +705,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                     <div class="song-content">
                         <p>ความย้อนแย้งที่ยิ่งพยายามลบคนที่ทำร้ายเราออกไปจากใจ กลับเป็นการสลักชื่อเขาไว้ในใจลึกกว่าเดิม</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คนที่ควรลืม.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -594,6 +718,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                     <div class="song-content">
                         <p>บทสรุปความรักที่พังทลาย ซึ่งสอนให้รู้ว่าการมอบใจให้ใครอย่าลืมเผื่อใจไว้ให้ตัวเองบ้าง</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/บทเรียนของหัวใจ.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -604,6 +731,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                     <div class="song-content">
                         <p>เหมือนติดอยู่ในเขาวงกตที่ยิ่งพยายามลืม ยิ่งหาทางออก ก็ยิ่งมืดมนและวนเวียนอยู่กับความช้ำเดิม</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ทางออกไม่มีจริง.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -614,6 +744,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                     <div class="song-content">
                         <p>ความสูญเสียเมื่อมอบทุกอย่างให้ใครสักคนจนหมดหน้าตัก แต่สิ่งที่ได้คืนมากลับมีแค่ความทรมาน</p>
+                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/หมดทั้งหัวใจ.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
 
@@ -631,6 +764,12 @@ a { text-decoration: none; color: inherit; }
     // ฟังก์ชันเปิด/ปิดกล่องข้อความสรุปเพลง (Accordion)
     function toggleSummary(card) {
         card.classList.toggle('active');
+        
+        // ทำให้เพลงหยุดเล่นเมื่อปิดการ์ด (Optional แต่แนะนำเพื่อไม่ให้เสียงตีกัน)
+        let audio = card.querySelector('audio');
+        if (audio && !card.classList.contains('active')) {
+            audio.pause();
+        }
     }
 
     // ระบบค้นหาเพลง
