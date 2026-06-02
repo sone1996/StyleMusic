@@ -10,7 +10,6 @@
 <meta name="keywords" content="เพลงเศร้า, เพลงอกหัก, ฟังเพลงออนไลน์, เพลงใหม่, เพลงลาว, Sad Pop, เพลงเหงา">
 <meta name="author" content="StyleMusicPro">
 
-<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PZHXG2Y1PY"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -22,7 +21,7 @@ gtag('config', 'G-PZHXG2Y1PY');
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* นำ CSS เดิมของคุณมาใส่ได้เลย ผมคงรูปแบบเดิมไว้ทั้งหมดเพื่อความสวยงาม */
+/* Global Styles */
 .menu-toggle{ display:none; position:fixed; top:15px; left:15px; z-index:9999; width:42px; height:42px; border:none; border-radius:12px; background:#9b5cff; color:white; font-size:24px; cursor:pointer; align-items: center; justify-content: center; }
 *{ margin:0; padding:0; box-sizing:border-box; }
 body{ font-family:'Poppins',sans-serif; background:#050816; color:white; overflow-x:hidden; width: 100vw; scroll-behavior:smooth; padding-bottom: 100px; }
@@ -110,6 +109,21 @@ a { text-decoration: none; color: inherit; }
 .progress-bar { flex: 1; -webkit-appearance: none; height: 4px; background: rgba(255,255,255,0.2); border-radius: 5px; cursor: pointer; outline: none; }
 .progress-bar::-webkit-slider-thumb { -webkit-appearance: none; width: 12px; height: 12px; border-radius: 50%; background: #9b5cff; cursor: pointer; }
 
+/* Custom Comments Section Styles */
+.custom-comment-box { background: rgba(0,0,0,0.3); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); margin-bottom: 30px; display: flex; flex-direction: column; gap: 12px; text-align: left; }
+.comment-input, .comment-textarea { width: 100%; padding: 12px 15px; border-radius: 8px; border: none; background: rgba(255,255,255,0.05); color: white; font-family: 'Poppins', sans-serif; outline: none; font-size: 14px; }
+.comment-input:focus, .comment-textarea:focus { border: 1px solid #9b5cff; background: rgba(255,255,255,0.08); }
+.comment-textarea { resize: vertical; min-height: 80px; }
+.comment-btn { align-self: flex-end; background: #9b5cff; color: white; border: none; padding: 10px 25px; border-radius: 20px; cursor: pointer; font-weight: 600; transition: 0.3s; font-family: 'Poppins', sans-serif; }
+.comment-btn:hover { background: #b77dff; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(155,92,255,0.3); }
+.comments-list { display: flex; flex-direction: column; gap: 15px; text-align: left; }
+.comment-item { background: rgba(255,255,255,0.03); padding: 15px 20px; border-radius: 10px; border-left: 4px solid #9b5cff; transition: 0.3s; }
+.comment-item:hover { background: rgba(255,255,255,0.05); }
+.comment-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 8px; }
+.comment-author { font-weight: 600; color: #fff; font-size: 14px; }
+.comment-date { font-size: 11px; color: #888; }
+.comment-body { font-size: 14px; color: #ccc; line-height: 1.6; white-space: pre-wrap; word-break: break-word; }
+
 /* Responsive */
 @media(max-width:768px){
     .menu-toggle { display: flex; }
@@ -135,7 +149,6 @@ a { text-decoration: none; color: inherit; }
 <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
 <div class="container">
-    <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
         <div class="logo-container">
             <div class="logo">🎵 StyleMusicPro</div>
@@ -157,7 +170,6 @@ a { text-decoration: none; color: inherit; }
             </div>
         </div>
 
-        <!-- Hero Section (เพิ่ม Alt ให้รูปภาพ) -->
         <div class="hero-banner">
             <div class="hero-overlay">
                 <div class="hero-left">
@@ -178,7 +190,6 @@ a { text-decoration: none; color: inherit; }
             </div>
         </div>
 
-        <!-- Article Preview -->
         <div class="article-preview-section">
             <div class="article-preview-title">📰 บทความวิเคราะห์ & ข้อคิดจากเพลง</div>
             <div class="article-grid">
@@ -200,7 +211,6 @@ a { text-decoration: none; color: inherit; }
             </div>
         </div>
 
-        <!-- เมนูคัดกรองเพลง -->
         <div class="sub-tabs" id="genreTabs">
             <button class="tab-btn active" onclick="filterSubGenre('all', this)">ทั้งหมด</button>
             <button class="tab-btn" onclick="filterSubGenre('sadpop', this)">Sad Pop</button>
@@ -210,35 +220,28 @@ a { text-decoration: none; color: inherit; }
 
         <h2 id="sectionTitle" style="margin-bottom: 20px; font-size: 20px;">🎶 รายการเพลงทั้งหมด (กำลังโหลด...)</h2>
 
-        <!-- Table สำหรับแสดงเพลงแบบ Dynamic -->
         <table class="song-table">
             <thead>
                 <tr><th style="width:70%;">เพลง</th><th style="width:15%;">เวลา</th><th style="width:15%;">สถิติ / บันทึก</th></tr>
             </thead>
-            <!-- ปล่อยให้ตารางว่างไว้ JavaScript จะสร้างเนื้อหาเพลงอัตโนมัติ -->
             <tbody id="songList">
             </tbody>
         </table>
 
-        <!-- โซนคอมเมนต์ Disqus -->
         <div class="comments-section">
             <h3 style="color:#9b5cff; margin-bottom: 10px;">💬 พื้นที่คนเหงา</h3>
-            <p style="color:#888; font-size: 14px; margin-bottom: 20px;">มีเพลงไหนที่ตรงกับเรื่องราวของคุณบ้าง แชร์ให้พวกเราฟังได้นะ</p>
-            <div style="background: rgba(0,0,0,0.3); padding: 30px; border-radius: 12px; border: 1px dashed rgba(255,255,255,0.1); color: #555;">
-                <div id="disqus_thread"></div>
-                <script>
-                    (function() {
-                    var d = document, s = d.createElement('script');
-                    s.src = 'https://stylemusicpro.disqus.com/embed.js'; 
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
-                    })();
-                </script>
-                <noscript>Please enable JavaScript to view the comments.</noscript>
+            <p style="color:#888; font-size: 14px; margin-bottom: 20px;">มีเพลงไหนที่ตรงกับเรื่องราวของคุณบ้าง แชร์ให้พวกเราฟังได้นะ (ไม่ระบุตัวตนก็ได้)</p>
+            
+            <div class="custom-comment-box">
+                <input type="text" id="commentName" placeholder="ชื่อของคุณ (หรือเว้นว่างเพื่อเป็นคนแปลกหน้า)" class="comment-input" maxlength="30">
+                <textarea id="commentText" placeholder="ระบายความรู้สึกของคุณที่นี่..." class="comment-textarea" maxlength="500"></textarea>
+                <button id="submitCommentBtn" class="comment-btn">ส่งข้อความ 💌</button>
+            </div>
+
+            <div id="commentsList" class="comments-list">
             </div>
         </div>
 
-        <!-- Footer -->
         <div style="text-align: center; padding: 30px 20px; margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1);">
             <p style="color: #ccc; font-size: 14px; margin-bottom: 10px;">© 2026 StyleMusicPro. All rights reserved.</p>
             <a href="privacy-policy.html" style="color: #9b5cff; text-decoration: none; font-size: 14px; font-weight: 500;">📜 นโยบายความเป็นส่วนตัว (Privacy Policy)</a>
@@ -246,7 +249,6 @@ a { text-decoration: none; color: inherit; }
     </div>
 </div>
 
-<!-- เครื่องเล่นเพลงล้ำสมัย (Bottom Player) เพิ่ม alt tag -->
 <div class="bottom-player">
     <div class="now-playing">
         <img id="npImg" src="songs/stylemusic.png" alt="ปกเพลงกำลังเล่น">
@@ -277,12 +279,11 @@ a { text-decoration: none; color: inherit; }
 function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); }
 function copyLink() { navigator.clipboard.writeText(window.location.href); alert("🔗 คัดลอกลิงก์เรียบร้อยแล้ว!"); }
 
-// --- Database ข้อมูลเพลงทั้งหมด (Scalability Improvement) ---
+// --- Database ข้อมูลเพลงทั้งหมด ---
 const baseUrl = "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/";
-// วิธีใช้: แค่ใส่ชื่อเพลง ระบบจะดึงลิงก์ mp3 อัตโนมัติตามชื่อเพลง
 const songsDatabase = [
     { id: 1, title: "แสงเช้าที่ว่างเปล่า", artist: "Style Music", tags: "sadpop", time: "4:12" },
-    { id: 2, title: "แค่ฝุ่นที่เลือนลาง", artist: "Style Music", tags: "pop", time: "4:12" },
+    { id: 2, title: "แค่นฝุ่นที่เลือนลาง", artist: "Style Music", tags: "pop", time: "4:12" },
     { id: 3, title: "คนที่พลาดเอง", artist: "Style Music", tags: "lonely", time: "4:12" },
     { id: 4, title: "ได้แค่มองเธอ", artist: "Style Music", tags: "sadpop", time: "4:12" },
     { id: 5, title: "วันที่ไม่มีเธอ", artist: "Style Music", tags: "lonely", time: "4:12" },
@@ -344,14 +345,12 @@ let isPlaying = false;
 let isShuffle = false;
 let repeatMode = 0; 
 
-// ฟังก์ชันสร้างรายการเพลงลงในหน้าเว็บ
 function renderSongs() {
     const songListElement = document.getElementById("songList");
     songListElement.innerHTML = "";
     document.getElementById("sectionTitle").innerText = `🎶 รายการเพลงทั้งหมด (${songsDatabase.length} เพลง)`;
 
     songsDatabase.forEach((song, index) => {
-        // สร้าง tr tag อัตโนมัติ (Performance Improvement: ไม่มีแท็ก audio กวนใจ)
         const tr = document.createElement("tr");
         tr.className = "song-row";
         tr.setAttribute("data-tags", song.tags);
@@ -374,7 +373,6 @@ function renderSongs() {
             </td>
         `;
 
-        // ปุ่มเพิ่มเพลงโปรด
         const statsDiv = tr.querySelector(".song-stats");
         const favBtn = document.createElement("button");
         favBtn.className = "fav-btn";
@@ -382,18 +380,16 @@ function renderSongs() {
         favBtn.onclick = (e) => { e.stopPropagation(); toggleFav(song.id, favBtn); };
         statsDiv.appendChild(favBtn);
 
-        // ให้กดที่แถวเพื่อเล่นเพลงได้
         tr.onclick = () => playSong(index);
         songListElement.appendChild(tr);
 
-        // เพิ่มเข้า Playlist Array สำหรับการควบคุมระบบเล่นเพลง
         playlist.push({
             id: song.id,
             index: index,
             title: song.title,
             artist: song.artist,
             img: "songs/stylemusic.png",
-            src: `${baseUrl}${encodeURIComponent(song.title)}.mp3`, // ดึงลิงก์เสียงตามชื่อเพลง
+            src: `${baseUrl}${encodeURIComponent(song.title)}.mp3`,
             tags: song.tags,
             rowElement: tr
         });
@@ -401,7 +397,7 @@ function renderSongs() {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-    renderSongs(); // สร้างหน้าเว็บเมื่อโหลด
+    renderSongs();
     if(playlist.length > 0) loadSongData(0);
 });
 
@@ -423,7 +419,6 @@ function playSong(index) {
     document.querySelectorAll(".song-row").forEach(r => r.style.background = "");
     song.rowElement.style.background = "rgba(155,92,255,0.2)";
     
-    // แจ้ง Firebase เพื่อปั่นยอดวิว
     if(window.incrementFirebaseView) {
         window.incrementFirebaseView(song.id);
     }
@@ -562,11 +557,9 @@ function filterSubGenre(subTag, btn) {
 }
 </script>
 
-<!-- 🌟 Firebase Module 🌟 -->
 <script type="module">
-// เพิ่มตัวแปร update และ increment จาก Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getDatabase, ref, get, update, increment } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+import { getDatabase, ref, get, update, increment, push, set, onChildAdded, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
 const firebaseConfig = { 
     apiKey: "AIzaSyA3Hl-RoqK9RvqF2KiYrRg7GC6EmyOuMVo", 
@@ -581,9 +574,10 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-// ดึงยอดวิวทั้งหมดมาแสดงเมื่อโหลดหน้าเว็บ
+// ==========================================
+// 1. ระบบจัดการยอดวิว (กันสแปม + กันค่าทับซ้อน)
+// ==========================================
 window.addEventListener("load", () => {
-    // วนลูปตามจำนวนข้อมูลที่มีจริงใน songsDatabase
     songsDatabase.forEach(song => {
         const el = document.getElementById("views" + song.id);
         if(el) {
@@ -594,27 +588,86 @@ window.addEventListener("load", () => {
     });
 });
 
-let viewTimer = null; // ตัวแปรสำหรับจับเวลาการปั่นวิว
-
-// อัปเดตฟังก์ชันเพิ่มยอดวิวแบบใหม่ (ป้องกัน Spam และ Race Condition)
+let viewTimer = null;
 window.incrementFirebaseView = function(songId) {
-    // ถ้าย้ายเพลงไวๆ ก่อน 10 วินาที จะไม่นับยอดวิวให้ (เคลียร์เวลาทิ้ง)
     clearTimeout(viewTimer);
-    
-    // ต้องเปิดฟังทิ้งไว้เกิน 10 วินาที ยอดวิวถึงจะถูกบันทึกขึ้นฐานข้อมูล
     viewTimer = setTimeout(() => {
         const songRef = ref(db, "song" + songId);
-        
-        // ใช้คำสั่ง update + increment เพื่อบวกค่าบนเซิร์ฟเวอร์โดยตรง ไม่ทับซ้อนกัน
         update(songRef, { views: increment(1) }).then(() => {
-            // อัปเดตค่าล่าสุดมาแสดงที่หน้าเว็บ
             get(songRef).then((snapshot)=>{
                 const el = document.getElementById("views" + songId);
                 if(el && snapshot.exists()) el.innerHTML = "👁 " + (snapshot.val().views || 0);
             });
         });
-    }, 10000); // 10000 มิลลิวินาที = 10 วินาที
+    }, 10000); 
 };
+
+// ==========================================
+// 2. ระบบคอมเมนต์แบบ Realtime (พื้นที่คนเหงา)
+// ==========================================
+const commentsRef = ref(db, "global_comments");
+const btnSubmit = document.getElementById("submitCommentBtn");
+const commentsList = document.getElementById("commentsList");
+
+function escapeHTML(str) {
+    return str.replace(/[&<>'"]/g, tag => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
+    }[tag] || tag));
+}
+
+btnSubmit.addEventListener("click", () => {
+    let nameInput = document.getElementById("commentName").value.trim();
+    let textInput = document.getElementById("commentText").value.trim();
+    
+    if(!textInput) {
+        alert("กรุณาพิมพ์ข้อความก่อนส่งนะครับ 🥺");
+        return;
+    }
+    if(!nameInput) nameInput = "คนแปลกหน้าที่กำลังเหงา";
+
+    btnSubmit.disabled = true;
+    btnSubmit.innerText = "กำลังส่ง... ⏳";
+
+    const newCommentRef = push(commentsRef);
+    set(newCommentRef, {
+        name: nameInput,
+        text: textInput,
+        timestamp: serverTimestamp()
+    }).then(() => {
+        document.getElementById("commentText").value = "";
+        btnSubmit.disabled = false;
+        btnSubmit.innerText = "ส่งข้อความ 💌";
+    }).catch((error) => {
+        alert("เกิดข้อผิดพลาดในการส่งข้อความครับ");
+        btnSubmit.disabled = false;
+        btnSubmit.innerText = "ส่งข้อความ 💌";
+    });
+});
+
+onChildAdded(commentsRef, (snapshot) => {
+    const data = snapshot.val();
+    
+    let timeString = "เมื่อสักครู่";
+    if (data.timestamp) {
+        const date = new Date(data.timestamp);
+        timeString = date.toLocaleString('th-TH', { 
+            day: '2-digit', month: 'short', year: 'numeric', 
+            hour: '2-digit', minute: '2-digit' 
+        });
+    }
+
+    const commentDiv = document.createElement("div");
+    commentDiv.className = "comment-item";
+    commentDiv.innerHTML = `
+        <div class="comment-header">
+            <span class="comment-author">👤 ${escapeHTML(data.name)}</span>
+            <span class="comment-date">${timeString}</span>
+        </div>
+        <div class="comment-body">${escapeHTML(data.text)}</div>
+    `;
+    
+    commentsList.prepend(commentDiv);
+});
 </script>
 
 </body>
