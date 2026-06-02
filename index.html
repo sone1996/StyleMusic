@@ -74,7 +74,7 @@ a { text-decoration: none; color: inherit; }
 .song-table td, .song-table th{ padding:12px 8px; border-bottom:1px solid rgba(255,255,255,.08); text-align: left; }
 .song-row{ transition:.25s; cursor: pointer; }
 .song-row:hover{ background:rgba(255,255,255,.05); transform:scale(1.01); }
-.song-row audio { display: none !important; } /* ซ่อนเครื่องเล่นเดิม */
+.song-row audio { display: none !important; }
 .song-info{ display:flex; align-items:center; gap:15px; pointer-events: none; }
 .song-info img{ width:55px; height:55px; border-radius:12px; object-fit:cover; }
 .song-title{ font-weight:700; color: #fff; }
@@ -209,7 +209,8 @@ a { text-decoration: none; color: inherit; }
             <button class="tab-btn" onclick="filterSubGenre('lonely', this)">เพลงเหงา</button>
         </div>
 
-        <h2 id="sectionTitle" style="margin-bottom: 20px; font-size: 20px;">🎶 รายการเพลงทั้งหมด (47 เพลง)</h2>
+        <!-- อัปเดตหัวข้อเป็น 53 เพลง -->
+        <h2 id="sectionTitle" style="margin-bottom: 20px; font-size: 20px;">🎶 รายการเพลงทั้งหมด (53 เพลง)</h2>
 
         <!-- Table -->
         <table class="song-table">
@@ -218,7 +219,7 @@ a { text-decoration: none; color: inherit; }
             </thead>
             <tbody id="songList">
 
-                <!-- 🌟 47 เพลง เต็มรูปแบบ 🌟 -->
+                <!-- 🌟 53 เพลง เต็มรูปแบบ 🌟 -->
                 <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">แสงเช้าที่ว่างเปล่า</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/แสงเช้าที่ว่างเปล่า.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views1">👁 0</span></div></td></tr>
                 <tr class="song-row" data-tags="pop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">แค่ฝุ่นที่เลือนลาง</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/แค่ฝุ่นที่เลือนลาง.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views2">👁 0</span></div></td></tr>
                 <tr class="song-row" data-tags="lonely"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">คนที่พลาดเอง</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คนที่พลาดเอง.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views3">👁 0</span></div></td></tr>
@@ -275,14 +276,34 @@ a { text-decoration: none; color: inherit; }
             </tbody>
         </table>
 
-        <!-- โซนคอมเมนต์ (สามารถเอา Facebook Comments มาแปะที่นี่ได้ในอนาคต) -->
+        <!-- โซนคอมเมนต์ Disqus -->
         <div class="comments-section">
             <h3 style="color:#9b5cff; margin-bottom: 10px;">💬 พื้นที่คนเหงา</h3>
             <p style="color:#888; font-size: 14px; margin-bottom: 20px;">มีเพลงไหนที่ตรงกับเรื่องราวของคุณบ้าง แชร์ให้พวกเราฟังได้นะ</p>
             <div style="background: rgba(0,0,0,0.3); padding: 30px; border-radius: 12px; border: 1px dashed rgba(255,255,255,0.1); color: #555;">
-                [ โซนระบบคอมเมนต์ ]
+                
+                <!-- Disqus Code -->
+                <div id="disqus_thread"></div>
+                <script>
+                    (function() {
+                    var d = document, s = d.createElement('script');
+                    // ถ้าคุณสมัคร Disqus แล้ว ให้เปลี่ยนคำว่า stylemusicpro เป็น Shortname ของคุณ
+                    s.src = 'https://stylemusicpro.disqus.com/embed.js'; 
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
             </div>
         </div>
+
+        <!-- Footer / Privacy Policy Link -->
+        <div style="text-align: center; padding: 30px 20px; margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1);">
+            <p style="color: #ccc; font-size: 14px; margin-bottom: 10px;">© 2026 StyleMusicPro. All rights reserved.</p>
+            <a href="privacy.html" style="color: #9b5cff; text-decoration: none; font-size: 14px; font-weight: 500;">📜 นโยบายความเป็นส่วนตัว (Privacy Policy)</a>
+        </div>
+
     </div>
 </div>
 
@@ -329,7 +350,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const rows = document.querySelectorAll(".song-row");
     
     rows.forEach((row, index) => {
-        // ดึง src จาก audio tag เดิมที่ซ่อนไว้
         const audioTag = row.querySelector("audio source");
         const title = row.querySelector(".song-title").innerText;
         const artist = row.querySelector(".song-artist").innerText;
@@ -338,7 +358,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
         playlist.push({ id: index, title, artist, img, src, rowElement: row });
 
-        // สร้างปุ่มหัวใจ (Favorites) ต่อท้ายช่องสถิติ
         const statsDiv = row.querySelector(".song-stats");
         const favBtn = document.createElement("button");
         favBtn.className = "fav-btn";
@@ -346,7 +365,6 @@ window.addEventListener('DOMContentLoaded', () => {
         favBtn.onclick = (e) => { e.stopPropagation(); toggleFav(index, favBtn); };
         statsDiv.appendChild(favBtn);
 
-        // กดที่แถวเพื่อเล่นเพลง
         row.onclick = () => playSong(index);
     });
 
@@ -372,7 +390,6 @@ function playSong(index) {
     document.querySelectorAll(".song-row").forEach(r => r.style.background = "");
     song.rowElement.style.background = "rgba(155,92,255,0.2)";
     
-    // เรียกใช้ฟังก์ชันอัปเดตวิวของ Firebase (ถ้าเชื่อมต่อแล้ว)
     if(window.incrementFirebaseView) {
         window.incrementFirebaseView(index);
     }
@@ -489,7 +506,7 @@ function showFavorites() {
 // --- ค้นหา & กรองหมวดหมู่ (Search & Filter) ---
 document.getElementById("search").addEventListener("keyup", function() {
     let filter = this.value.toLowerCase();
-    document.getElementById("sectionTitle").innerText = filter ? "🔍 ผลการค้นหา" : "🎶 รายการเพลงทั้งหมด";
+    document.getElementById("sectionTitle").innerText = filter ? "🔍 ผลการค้นหา" : "🎶 รายการเพลงทั้งหมด (53 เพลง)";
     
     playlist.forEach(song => {
         if(song.title.toLowerCase().includes(filter) || song.artist.toLowerCase().includes(filter)) {
@@ -504,7 +521,7 @@ function filterSubGenre(subTag, btn) {
     document.querySelectorAll('#genreTabs .tab-btn').forEach(b => b.classList.remove('active'));
     if(btn) btn.classList.add('active');
     
-    document.getElementById("sectionTitle").innerText = "🎶 รายการเพลงทั้งหมด";
+    document.getElementById("sectionTitle").innerText = "🎶 รายการเพลงทั้งหมด (53 เพลง)";
     playlist.forEach(song => {
         const tags = song.rowElement.getAttribute('data-tags') || "";
         song.rowElement.style.display = (subTag === "all" || tags.includes(subTag)) ? "" : "none";
@@ -532,7 +549,7 @@ const db = getDatabase(app);
 
 // ดึงยอดวิวทั้งหมดมาแสดงเมื่อโหลดหน้าเว็บ
 window.addEventListener("load", () => {
-    for(let i=0; i<47; i++){
+    for(let i=0; i<53; i++){ // อัปเดตจาก 47 เป็น 53 เพลง
         const el = document.getElementById("views" + (i + 1));
         if(el) {
             get(ref(db, "song" + (i + 1))).then((snapshot)=>{
