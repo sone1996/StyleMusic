@@ -22,7 +22,7 @@ gtag('config', 'G-PZHXG2Y1PY');
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* Global Styles */
+/* นำ CSS เดิมของคุณมาใส่ได้เลย ผมคงรูปแบบเดิมไว้ทั้งหมดเพื่อความสวยงาม */
 .menu-toggle{ display:none; position:fixed; top:15px; left:15px; z-index:9999; width:42px; height:42px; border:none; border-radius:12px; background:#9b5cff; color:white; font-size:24px; cursor:pointer; align-items: center; justify-content: center; }
 *{ margin:0; padding:0; box-sizing:border-box; }
 body{ font-family:'Poppins',sans-serif; background:#050816; color:white; overflow-x:hidden; width: 100vw; scroll-behavior:smooth; padding-bottom: 100px; }
@@ -74,7 +74,6 @@ a { text-decoration: none; color: inherit; }
 .song-table td, .song-table th{ padding:12px 8px; border-bottom:1px solid rgba(255,255,255,.08); text-align: left; }
 .song-row{ transition:.25s; cursor: pointer; }
 .song-row:hover{ background:rgba(255,255,255,.05); transform:scale(1.01); }
-.song-row audio { display: none !important; }
 .song-info{ display:flex; align-items:center; gap:15px; pointer-events: none; }
 .song-info img{ width:55px; height:55px; border-radius:12px; object-fit:cover; }
 .song-title{ font-weight:700; color: #fff; }
@@ -158,11 +157,11 @@ a { text-decoration: none; color: inherit; }
             </div>
         </div>
 
-        <!-- Hero Section -->
+        <!-- Hero Section (เพิ่ม Alt ให้รูปภาพ) -->
         <div class="hero-banner">
             <div class="hero-overlay">
                 <div class="hero-left">
-                    <img src="songs/stylemusic.png" class="hero-logo">
+                    <img src="songs/stylemusic.png" alt="โลโก้ StyleMusicPro" class="hero-logo">
                     <div class="hero-info">
                         <h1>StyleMusicPro 💜</h1>
                         <p class="hero-desc">เว็บรวมเพลงเศร้า เพลงอกหัก ฟังออนไลน์</p>
@@ -209,70 +208,15 @@ a { text-decoration: none; color: inherit; }
             <button class="tab-btn" onclick="filterSubGenre('lonely', this)">เพลงเหงา</button>
         </div>
 
-        <!-- อัปเดตหัวข้อเป็น 53 เพลง -->
-        <h2 id="sectionTitle" style="margin-bottom: 20px; font-size: 20px;">🎶 รายการเพลงทั้งหมด (53 เพลง)</h2>
+        <h2 id="sectionTitle" style="margin-bottom: 20px; font-size: 20px;">🎶 รายการเพลงทั้งหมด (กำลังโหลด...)</h2>
 
-        <!-- Table -->
+        <!-- Table สำหรับแสดงเพลงแบบ Dynamic -->
         <table class="song-table">
             <thead>
                 <tr><th style="width:70%;">เพลง</th><th style="width:15%;">เวลา</th><th style="width:15%;">สถิติ / บันทึก</th></tr>
             </thead>
+            <!-- ปล่อยให้ตารางว่างไว้ JavaScript จะสร้างเนื้อหาเพลงอัตโนมัติ -->
             <tbody id="songList">
-
-                <!-- 🌟 53 เพลง เต็มรูปแบบ 🌟 -->
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">แสงเช้าที่ว่างเปล่า</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/แสงเช้าที่ว่างเปล่า.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views1">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="pop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">แค่ฝุ่นที่เลือนลาง</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/แค่ฝุ่นที่เลือนลาง.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views2">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="lonely"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">คนที่พลาดเอง</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คนที่พลาดเอง.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views3">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ได้แค่มองเธอ</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ได้แค่มองเธอ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views4">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="lonely"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">วันที่ไม่มีเธอ</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/วันที่ไม่มีเธอ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views5">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ภาพจำที่ไม่ได้ลืม</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ภาพจำที่ไม่ได้ลืม.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views6">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ทางที่ไม่มีเธอ</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ทางที่ไม่มีเธอ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views7">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ให้หมดแล้ว</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ให้หมดแล้ว.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views8">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ข้อความสุดท้าย</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ข้อความสุดท้าย.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views9">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">หากวันหนึ่งเราได้พบกัน</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/หากวันหนึ่งเราได้พบกัน.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views10">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ไม่ฟังหัวใจตัวเอง</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ไม่ฟังหัวใจตัวเอง.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views11">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ฝากลมไปบอก</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ฝากลมไปบอก.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views12">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">คนที่ควรผ่านไป</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คนที่ควรผ่านไป.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views13">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">เวลาที่ไม่ใช่</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เวลาที่ไม่ใช่.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views14">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ในวันที่ฉันหายไป</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ในวันที่ฉันหายไป.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views15">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">คนที่ควรลืม</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คนที่ควรลืม.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views16">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">บทเรียนของหัวใจ</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/บทเรียนของหัวใจ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views17">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">สัญญาที่ไม่เคยเกิดขึ้น</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/สัญญาที่ไม่เคยเกิดขึ้น.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views18">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">โทรมาแค่ตอนเหงา</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/โทรมาแค่ตอนเหงา.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views19">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ยังรักษาไม่หาย</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ยังรักษาไม่หาย.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views20">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ใจยังย้อนกลับไป</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ใจยังย้อนกลับไป.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views21">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">แผลเดิมในใจ</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/แผลเดิมในใจ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views22">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">แค่ทางผ่าน</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/แค่ทางผ่าน.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views23">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">เชื่อหัวใจมากเกินไป</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เชื่อหัวใจมากเกินไป.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views24">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ทางออกไม่มีจริง</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ทางออกไม่มีจริง.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views25">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">หมดทั้งหัวใจ</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/หมดทั้งหัวใจ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views26">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">เชื่อเกินไป</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เชื่อเกินไป.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views27">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">เรื่องธรรมดาที่พิเศษ</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เรื่องธรรมดาที่พิเศษ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views28">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ถึงเวลาต้องไป</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ถึงเวลาต้องไป.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views29">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">บทเรียน</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/บทเรียน.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views30">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">บทเรียนราคาแพง</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/บทเรียนราคาแพง.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views31">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ยังอยู่ในทุกวัน</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ยังอยู่ในทุกวัน.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views32">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ร่องรอยของเธอ</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ร่องรอยของเธอ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views33">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">สายเกินจะขอโทษ</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/สายเกินจะขอโทษ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views34">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ห้องที่ไม่มีเธอ</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ห้องที่ไม่มีเธอ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views35">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ไม่มีคำแปล</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ไม่มีคำแปล.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views36">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">คำขอโทษ</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คำขอโทษ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views37">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ฉันไม่ได้อยู่ในตอนจบตั้งแต่แรก</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ฉันไม่ได้อยู่ในตอนจบตั้งแต่แรก.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views38">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ถอยออกมาก่อน</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ถอยออกมาก่อน.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views39">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ประโยคสุดท้าย</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ประโยคสุดท้าย.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views40">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">รอยร้าวในหัวใจ</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/รอยร้าวในหัวใจ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views41">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">เพิ่งเข้าใจคำว่ารัก</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เพิ่งเข้าใจคำว่ารัก.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views42">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ฉากสุดท้าย</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ฉากสุดท้าย.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views43">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ซ่อนไว้</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ซ่อนไว้.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views44">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ฝากดาวดูแลเธอ</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ฝากดาวดูแลเธอ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views45">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ยอมรับคนเดียว</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ยอมรับคนเดียว.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views46">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ฤดูที่ไม่มีเธอ</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ฤดูที่ไม่มีเธอ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:12</td><td><div class="song-stats"><span id="views47">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">คนที่เดินต่อ</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คนที่เดินต่อ.mp3" type="audio/mpeg"></audio></div></div></td><td>3:45</td><td><div class="song-stats"><span id="views48">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ซ่อนไม่เก่ง</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ซ่อนไม่เก่ง.mp3" type="audio/mpeg"></audio></div></div></td><td>4:02</td><td><div class="song-stats"><span id="views49">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">ปล่อยให้เวลาเป็นคนตอบ</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ปล่อยให้เวลาเป็นคนตอบ.mp3" type="audio/mpeg"></audio></div></div></td><td>4:15</td><td><div class="song-stats"><span id="views50">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">รู้ทั้งรู้</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/รู้ทั้งรู้.mp3" type="audio/mpeg"></audio></div></div></td><td>3:50</td><td><div class="song-stats"><span id="views51">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">วนกลับมาที่เดิม</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/วนกลับมาที่เดิม.mp3" type="audio/mpeg"></audio></div></div></td><td>4:30</td><td><div class="song-stats"><span id="views52">👁 0</span></div></td></tr>
-                <tr class="song-row" data-tags="sadpop"><td><div class="song-info"><img src="songs/stylemusic.png"><div><div class="song-title">วันที่หัวใจเริ่มเดิน</div><div class="song-artist">Style Music</div><audio><source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/วันที่หัวใจเริ่มเดิน.mp3" type="audio/mpeg"></audio></div></div></td><td>4:08</td><td><div class="song-stats"><span id="views53">👁 0</span></div></td></tr>
             </tbody>
         </table>
 
@@ -281,36 +225,31 @@ a { text-decoration: none; color: inherit; }
             <h3 style="color:#9b5cff; margin-bottom: 10px;">💬 พื้นที่คนเหงา</h3>
             <p style="color:#888; font-size: 14px; margin-bottom: 20px;">มีเพลงไหนที่ตรงกับเรื่องราวของคุณบ้าง แชร์ให้พวกเราฟังได้นะ</p>
             <div style="background: rgba(0,0,0,0.3); padding: 30px; border-radius: 12px; border: 1px dashed rgba(255,255,255,0.1); color: #555;">
-                
-                <!-- Disqus Code -->
                 <div id="disqus_thread"></div>
                 <script>
                     (function() {
                     var d = document, s = d.createElement('script');
-                    // ถ้าคุณสมัคร Disqus แล้ว ให้เปลี่ยนคำว่า stylemusicpro เป็น Shortname ของคุณ
                     s.src = 'https://stylemusicpro.disqus.com/embed.js'; 
                     s.setAttribute('data-timestamp', +new Date());
                     (d.head || d.body).appendChild(s);
                     })();
                 </script>
-                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
+                <noscript>Please enable JavaScript to view the comments.</noscript>
             </div>
         </div>
 
-        <!-- Footer / Privacy Policy Link -->
+        <!-- Footer -->
         <div style="text-align: center; padding: 30px 20px; margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1);">
             <p style="color: #ccc; font-size: 14px; margin-bottom: 10px;">© 2026 StyleMusicPro. All rights reserved.</p>
             <a href="privacy-policy.html" style="color: #9b5cff; text-decoration: none; font-size: 14px; font-weight: 500;">📜 นโยบายความเป็นส่วนตัว (Privacy Policy)</a>
         </div>
-
     </div>
 </div>
 
-<!-- 🌟 เครื่องเล่นเพลงล้ำสมัย (Bottom Player) 🌟 -->
+<!-- เครื่องเล่นเพลงล้ำสมัย (Bottom Player) เพิ่ม alt tag -->
 <div class="bottom-player">
     <div class="now-playing">
-        <img id="npImg" src="songs/stylemusic.png" alt="cover">
+        <img id="npImg" src="songs/stylemusic.png" alt="ปกเพลงกำลังเล่น">
         <div class="np-texts">
             <div class="np-title" id="npTitle">🎵 ยังไม่ได้เลือกเพลง</div>
             <div class="np-artist" id="npArtist">StyleMusicPro</div>
@@ -338,40 +277,134 @@ a { text-decoration: none; color: inherit; }
 function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); }
 function copyLink() { navigator.clipboard.writeText(window.location.href); alert("🔗 คัดลอกลิงก์เรียบร้อยแล้ว!"); }
 
+// --- Database ข้อมูลเพลงทั้งหมด (Scalability Improvement) ---
+const baseUrl = "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/";
+// วิธีใช้: แค่ใส่ชื่อเพลง ระบบจะดึงลิงก์ mp3 อัตโนมัติตามชื่อเพลง
+const songsDatabase = [
+    { id: 1, title: "แสงเช้าที่ว่างเปล่า", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 2, title: "แค่ฝุ่นที่เลือนลาง", artist: "Style Music", tags: "pop", time: "4:12" },
+    { id: 3, title: "คนที่พลาดเอง", artist: "Style Music", tags: "lonely", time: "4:12" },
+    { id: 4, title: "ได้แค่มองเธอ", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 5, title: "วันที่ไม่มีเธอ", artist: "Style Music", tags: "lonely", time: "4:12" },
+    { id: 6, title: "ภาพจำที่ไม่ได้ลืม", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 7, title: "ทางที่ไม่มีเธอ", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 8, title: "ให้หมดแล้ว", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 9, title: "ข้อความสุดท้าย", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 10, title: "หากวันหนึ่งเราได้พบกัน", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 11, title: "ไม่ฟังหัวใจตัวเอง", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 12, title: "ฝากลมไปบอก", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 13, title: "คนที่ควรผ่านไป", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 14, title: "เวลาที่ไม่ใช่", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 15, title: "ในวันที่ฉันหายไป", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 16, title: "คนที่ควรลืม", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 17, title: "บทเรียนของหัวใจ", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 18, title: "สัญญาที่ไม่เคยเกิดขึ้น", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 19, title: "โทรมาแค่ตอนเหงา", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 20, title: "ยังรักษาไม่หาย", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 21, title: "ใจยังย้อนกลับไป", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 22, title: "แผลเดิมในใจ", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 23, title: "แค่ทางผ่าน", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 24, title: "เชื่อหัวใจมากเกินไป", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 25, title: "ทางออกไม่มีจริง", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 26, title: "หมดทั้งหัวใจ", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 27, title: "เชื่อเกินไป", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 28, title: "เรื่องธรรมดาที่พิเศษ", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 29, title: "ถึงเวลาต้องไป", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 30, title: "บทเรียน", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 31, title: "บทเรียนราคาแพง", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 32, title: "ยังอยู่ในทุกวัน", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 33, title: "ร่องรอยของเธอ", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 34, title: "สายเกินจะขอโทษ", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 35, title: "ห้องที่ไม่มีเธอ", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 36, title: "ไม่มีคำแปล", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 37, title: "คำขอโทษ", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 38, title: "ฉันไม่ได้อยู่ในตอนจบตั้งแต่แรก", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 39, title: "ถอยออกมาก่อน", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 40, title: "ประโยคสุดท้าย", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 41, title: "รอยร้าวในหัวใจ", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 42, title: "เพิ่งเข้าใจคำว่ารัก", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 43, title: "ฉากสุดท้าย", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 44, title: "ซ่อนไว้", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 45, title: "ฝากดาวดูแลเธอ", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 46, title: "ยอมรับคนเดียว", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 47, title: "ฤดูที่ไม่มีเธอ", artist: "Style Music", tags: "sadpop", time: "4:12" },
+    { id: 48, title: "คนที่เดินต่อ", artist: "Style Music", tags: "sadpop", time: "3:45" },
+    { id: 49, title: "ซ่อนไม่เก่ง", artist: "Style Music", tags: "sadpop", time: "4:02" },
+    { id: 50, title: "ปล่อยให้เวลาเป็นคนตอบ", artist: "Style Music", tags: "sadpop", time: "4:15" },
+    { id: 51, title: "รู้ทั้งรู้", artist: "Style Music", tags: "sadpop", time: "3:50" },
+    { id: 52, title: "วนกลับมาที่เดิม", artist: "Style Music", tags: "sadpop", time: "4:30" },
+    { id: 53, title: "วันที่หัวใจเริ่มเดิน", artist: "Style Music", tags: "sadpop", time: "4:08" }
+];
+
 // --- Music Player Logic ---
 const mainAudio = new Audio();
 let playlist = [];
 let currentIndex = -1;
 let isPlaying = false;
 let isShuffle = false;
-let repeatMode = 0; // 0 = no repeat, 1 = repeat all, 2 = repeat one
+let repeatMode = 0; 
 
-window.addEventListener('DOMContentLoaded', () => {
-    const rows = document.querySelectorAll(".song-row");
-    
-    rows.forEach((row, index) => {
-        const audioTag = row.querySelector("audio source");
-        const title = row.querySelector(".song-title").innerText;
-        const artist = row.querySelector(".song-artist").innerText;
-        const img = row.querySelector("img").src;
-        const src = audioTag ? audioTag.src : "";
+// ฟังก์ชันสร้างรายการเพลงลงในหน้าเว็บ
+function renderSongs() {
+    const songListElement = document.getElementById("songList");
+    songListElement.innerHTML = "";
+    document.getElementById("sectionTitle").innerText = `🎶 รายการเพลงทั้งหมด (${songsDatabase.length} เพลง)`;
 
-        playlist.push({ id: index, title, artist, img, src, rowElement: row });
+    songsDatabase.forEach((song, index) => {
+        // สร้าง tr tag อัตโนมัติ (Performance Improvement: ไม่มีแท็ก audio กวนใจ)
+        const tr = document.createElement("tr");
+        tr.className = "song-row";
+        tr.setAttribute("data-tags", song.tags);
+        
+        tr.innerHTML = `
+            <td>
+                <div class="song-info">
+                    <img src="songs/stylemusic.png" alt="ปกเพลง ${song.title}">
+                    <div>
+                        <div class="song-title">${song.title}</div>
+                        <div class="song-artist">${song.artist}</div>
+                    </div>
+                </div>
+            </td>
+            <td>${song.time}</td>
+            <td>
+                <div class="song-stats">
+                    <span id="views${song.id}">👁 0</span>
+                </div>
+            </td>
+        `;
 
-        const statsDiv = row.querySelector(".song-stats");
+        // ปุ่มเพิ่มเพลงโปรด
+        const statsDiv = tr.querySelector(".song-stats");
         const favBtn = document.createElement("button");
         favBtn.className = "fav-btn";
-        favBtn.innerHTML = isFavorite(index) ? "❤️" : "🤍";
-        favBtn.onclick = (e) => { e.stopPropagation(); toggleFav(index, favBtn); };
+        favBtn.innerHTML = isFavorite(song.id) ? "❤️" : "🤍";
+        favBtn.onclick = (e) => { e.stopPropagation(); toggleFav(song.id, favBtn); };
         statsDiv.appendChild(favBtn);
 
-        row.onclick = () => playSong(index);
-    });
+        // ให้กดที่แถวเพื่อเล่นเพลงได้
+        tr.onclick = () => playSong(index);
+        songListElement.appendChild(tr);
 
+        // เพิ่มเข้า Playlist Array สำหรับการควบคุมระบบเล่นเพลง
+        playlist.push({
+            id: song.id,
+            index: index,
+            title: song.title,
+            artist: song.artist,
+            img: "songs/stylemusic.png",
+            src: `${baseUrl}${encodeURIComponent(song.title)}.mp3`, // ดึงลิงก์เสียงตามชื่อเพลง
+            tags: song.tags,
+            rowElement: tr
+        });
+    });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    renderSongs(); // สร้างหน้าเว็บเมื่อโหลด
     if(playlist.length > 0) loadSongData(0);
 });
 
-// ฟังก์ชันเล่นเพลง
 function playSong(index) {
     if (index < 0 || index >= playlist.length) return;
     currentIndex = index;
@@ -390,8 +423,9 @@ function playSong(index) {
     document.querySelectorAll(".song-row").forEach(r => r.style.background = "");
     song.rowElement.style.background = "rgba(155,92,255,0.2)";
     
+    // แจ้ง Firebase เพื่อปั่นยอดวิว
     if(window.incrementFirebaseView) {
-        window.incrementFirebaseView(index);
+        window.incrementFirebaseView(song.id);
     }
 }
 
@@ -440,7 +474,6 @@ function toggleRepeat() {
     else if (repeatMode === 2) { btn.classList.add("active"); btn.innerText = "🔂"; }
 }
 
-// อัปเดตแถบเวลา (Progress Bar)
 mainAudio.addEventListener('timeupdate', () => {
     const progress = document.getElementById("progressBar");
     const currentT = document.getElementById("currentTime");
@@ -503,10 +536,10 @@ function showFavorites() {
     if(window.innerWidth <= 768) toggleMenu(); 
 }
 
-// --- ค้นหา & กรองหมวดหมู่ (Search & Filter) ---
+// --- ค้นหา & กรองหมวดหมู่ ---
 document.getElementById("search").addEventListener("keyup", function() {
     let filter = this.value.toLowerCase();
-    document.getElementById("sectionTitle").innerText = filter ? "🔍 ผลการค้นหา" : "🎶 รายการเพลงทั้งหมด (53 เพลง)";
+    document.getElementById("sectionTitle").innerText = filter ? "🔍 ผลการค้นหา" : `🎶 รายการเพลงทั้งหมด (${playlist.length} เพลง)`;
     
     playlist.forEach(song => {
         if(song.title.toLowerCase().includes(filter) || song.artist.toLowerCase().includes(filter)) {
@@ -521,9 +554,9 @@ function filterSubGenre(subTag, btn) {
     document.querySelectorAll('#genreTabs .tab-btn').forEach(b => b.classList.remove('active'));
     if(btn) btn.classList.add('active');
     
-    document.getElementById("sectionTitle").innerText = "🎶 รายการเพลงทั้งหมด (53 เพลง)";
+    document.getElementById("sectionTitle").innerText = `🎶 รายการเพลงทั้งหมด (${playlist.length} เพลง)`;
     playlist.forEach(song => {
-        const tags = song.rowElement.getAttribute('data-tags') || "";
+        const tags = song.tags || "";
         song.rowElement.style.display = (subTag === "all" || tags.includes(subTag)) ? "" : "none";
     });
 }
@@ -531,8 +564,9 @@ function filterSubGenre(subTag, btn) {
 
 <!-- 🌟 Firebase Module 🌟 -->
 <script type="module">
+// เพิ่มตัวแปร update และ increment จาก Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+import { getDatabase, ref, get, update, increment } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
 const firebaseConfig = { 
     apiKey: "AIzaSyA3Hl-RoqK9RvqF2KiYrRg7GC6EmyOuMVo", 
@@ -549,26 +583,37 @@ const db = getDatabase(app);
 
 // ดึงยอดวิวทั้งหมดมาแสดงเมื่อโหลดหน้าเว็บ
 window.addEventListener("load", () => {
-    for(let i=0; i<53; i++){ // อัปเดตจาก 47 เป็น 53 เพลง
-        const el = document.getElementById("views" + (i + 1));
+    // วนลูปตามจำนวนข้อมูลที่มีจริงใน songsDatabase
+    songsDatabase.forEach(song => {
+        const el = document.getElementById("views" + song.id);
         if(el) {
-            get(ref(db, "song" + (i + 1))).then((snapshot)=>{
+            get(ref(db, "song" + song.id)).then((snapshot)=>{
                 if(snapshot.exists()) el.innerHTML = "👁 " + (snapshot.val().views || 0);
             });
         }
-    }
+    });
 });
 
-// ฟังก์ชันสำหรับเพิ่มยอดวิว (ถูกเรียกใช้งานจาก playSong)
-window.incrementFirebaseView = function(index) {
-    const songRef = ref(db, "song" + (index + 1));
-    get(songRef).then((snapshot)=>{
-        let views = snapshot.exists() ? snapshot.val().views || 0 : 0;
-        views++;
-        set(songRef,{ views: views });
-        const el = document.getElementById("views"+(index+1));
-        if(el) el.innerHTML = "👁 " + views;
-    });
+let viewTimer = null; // ตัวแปรสำหรับจับเวลาการปั่นวิว
+
+// อัปเดตฟังก์ชันเพิ่มยอดวิวแบบใหม่ (ป้องกัน Spam และ Race Condition)
+window.incrementFirebaseView = function(songId) {
+    // ถ้าย้ายเพลงไวๆ ก่อน 10 วินาที จะไม่นับยอดวิวให้ (เคลียร์เวลาทิ้ง)
+    clearTimeout(viewTimer);
+    
+    // ต้องเปิดฟังทิ้งไว้เกิน 10 วินาที ยอดวิวถึงจะถูกบันทึกขึ้นฐานข้อมูล
+    viewTimer = setTimeout(() => {
+        const songRef = ref(db, "song" + songId);
+        
+        // ใช้คำสั่ง update + increment เพื่อบวกค่าบนเซิร์ฟเวอร์โดยตรง ไม่ทับซ้อนกัน
+        update(songRef, { views: increment(1) }).then(() => {
+            // อัปเดตค่าล่าสุดมาแสดงที่หน้าเว็บ
+            get(songRef).then((snapshot)=>{
+                const el = document.getElementById("views" + songId);
+                if(el && snapshot.exists()) el.innerHTML = "👁 " + (snapshot.val().views || 0);
+            });
+        });
+    }, 10000); // 10000 มิลลิวินาที = 10 วินาที
 };
 </script>
 
