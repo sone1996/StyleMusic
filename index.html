@@ -124,23 +124,45 @@ a { text-decoration: none; color: inherit; }
 .comment-date { font-size: 11px; color: #888; }
 .comment-body { font-size: 14px; color: #ccc; line-height: 1.6; white-space: pre-wrap; word-break: break-word; }
 
-/* Responsive */
+/* -------------------------------------------
+   CSS สำหรับหน้าวิดีโอ (Videos Section)
+------------------------------------------- */
+.page-header { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.page-title { font-size: 28px; color: #fff; margin-bottom: 10px; }
+.page-subtitle { color: #aaa; font-size: 14px; }
+.video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-bottom: 50px; }
+.video-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 15px; transition: 0.3s; }
+.video-card:hover { transform: translateY(-5px); border-color: #9b5cff; background: rgba(255,255,255,0.05); box-shadow: 0 10px 20px rgba(155,92,255,0.1); }
+.video-card iframe { width: 100%; height: 220px; border-radius: 12px; border: none; margin-bottom: 15px; }
+.video-title { font-size: 16px; font-weight: 600; color: #fff; line-height: 1.4; margin-bottom: 8px; }
+.video-channel { font-size: 13px; color: #9b5cff; }
+
+/* Responsive (Mobile Version) อัปเดตใหม่ */
 @media(max-width:768px){
     .menu-toggle { display: flex; }
     .sidebar { left: -280px; width: 260px; transition: .3s; }
     .sidebar.active { left: 0; box-shadow: 0 0 30px rgba(0,0,0,.9); }
     .close-sidebar { display: block; }
-    .main { margin-left: 0; padding: 15px; padding-top: 75px; padding-bottom: 130px; width: 100vw; }
-    .hero-left { flex-direction: column; align-items: flex-start; }
     
-    .song-table, .song-table tbody, .song-table tr, .song-table td { display: block; width: 100%; border: none; }
+    .main { margin-left: 0; padding: 15px; padding-top: 75px; padding-bottom: 140px; width: 100%; }
+    
+    .hero-left { flex-direction: column; align-items: center; text-align: center; }
+    .hero-tags { justify-content: center; }
+    .social-share-group { justify-content: center; }
+    
     .song-table thead { display: none; }
-    .song-row { padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,.08); display: flex; justify-content: space-between; align-items: center; }
+    .song-table, .song-table tbody, .song-table tr, .song-table td { display: block; width: 100%; border: none; }
+    .song-row { padding: 15px 10px; border-bottom: 1px solid rgba(255,255,255,.08); position: relative; display: block; }
+    .song-row td { padding: 5px 0; }
+    .song-row td:nth-child(2) { position: absolute; right: 15px; top: 15px; color: #888; font-size: 12px; }
+    .song-row td:nth-child(3) { margin-top: 5px; border-top: 1px dashed rgba(255,255,255,0.05); padding-top: 10px; }
     
-    .bottom-player { left: 0; padding: 10px 15px; height: 110px; flex-direction: column; gap: 10px; border-top-left-radius: 20px; border-top-right-radius: 20px; }
-    .now-playing { width: 100%; justify-content: center; text-align: center; display: none; }
-    .player-center { width: 100%; gap: 12px; }
-    .progress-container { margin-bottom: 5px; }
+    .bottom-player { left: 0; padding: 10px 15px; height: 130px; flex-direction: column; gap: 8px; justify-content: center; border-radius: 20px 20px 0 0; }
+    .now-playing { width: 100%; display: flex; flex-direction: column; gap: 2px; align-items: center; justify-content: center; }
+    .now-playing img { display: none !important; }
+    .np-texts { align-items: center; text-align: center; }
+    .player-center { width: 100%; gap: 10px; }
+    .progress-container { margin-bottom: 2px; }
 }
 </style>
 </head>
@@ -154,7 +176,9 @@ a { text-decoration: none; color: inherit; }
             <div class="logo">🎵 StyleMusicPro</div>
             <button class="close-sidebar" onclick="toggleMenu()">✕</button>
         </div>
-        <a href="index.html" class="menu active" id="menuHome">🏠 หน้าแรก / ฟังเพลง</a>
+        <!-- ใช้ onclick เพื่อสลับหน้าแบบ SPA -->
+        <a href="#" class="menu active" id="menuHome" onclick="showHome()">🏠 หน้าแรก / ฟังเพลง</a>
+        <a href="#" class="menu" id="menuVideo" onclick="showVideos()">📺 เพลงฮิต YouTube</a>
         <a href="#" class="menu" id="menuFav" onclick="showFavorites()">💖 เพลงโปรดของฉัน</a>
         <div class="menu-divider"></div>
         <a href="horoscope.html" target="_blank" class="menu">🔮 เช็กดวงรายวัน</a>
@@ -170,78 +194,119 @@ a { text-decoration: none; color: inherit; }
             </div>
         </div>
 
-        <div class="hero-banner">
-            <div class="hero-overlay">
-                <div class="hero-left">
-                    <img src="songs/stylemusic.png" alt="โลโก้ StyleMusicPro" class="hero-logo">
-                    <div class="hero-info">
-                        <h1>StyleMusicPro 💜</h1>
-                        <p class="hero-desc">เว็บรวมเพลงเศร้า เพลงอกหัก ฟังออนไลน์</p>
-                        <div class="hero-tags">
-                            <span>Sad Pop</span><span>Lo-fi</span><span>Thai</span><span>Lao</span>
-                        </div>
-                        <div class="social-share-group">
-                            <button class="social-btn btn-fb" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location.href))">แชร์ลง Facebook</button>
-                            <button class="social-btn btn-x" onclick="window.open('https://twitter.com/intent/tweet?text=ฟังเพลงเศร้าที่ StyleMusicPro&url='+encodeURIComponent(window.location.href))">แชร์ลง X</button>
-                            <button class="social-btn btn-link" onclick="copyLink()">🔗 คัดลอกลิงก์</button>
+        <!-- ================= โซนฟังเพลง (หน้าแรก) ================= -->
+        <div id="musicSection">
+            <div class="hero-banner">
+                <div class="hero-overlay">
+                    <div class="hero-left">
+                        <img src="songs/stylemusic.png" alt="โลโก้ StyleMusicPro" class="hero-logo">
+                        <div class="hero-info">
+                            <h1>StyleMusicPro 💜</h1>
+                            <p class="hero-desc">เว็บรวมเพลงเศร้า เพลงอกหัก ฟังออนไลน์</p>
+                            <div class="hero-tags">
+                                <span>Sad Pop</span><span>Lo-fi</span><span>Thai</span><span>Lao</span>
+                            </div>
+                            <div class="social-share-group">
+                                <button class="social-btn btn-fb" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location.href))">แชร์ลง Facebook</button>
+                                <button class="social-btn btn-x" onclick="window.open('https://twitter.com/intent/tweet?text=ฟังเพลงเศร้าที่ StyleMusicPro&url='+encodeURIComponent(window.location.href))">แชร์ลง X</button>
+                                <button class="social-btn btn-link" onclick="copyLink()">🔗 คัดลอกลิงก์</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="article-preview-section">
-            <div class="article-preview-title">📰 บทความวิเคราะห์ & ข้อคิดจากเพลง</div>
-            <div class="article-grid">
-                <a href="lyrics.html" target="_blank" class="article-card">
-                    <h3>ไม่มีคำแปล: เมื่อความสัมพันธ์จบลงโดยไม่มีสถานะ</h3>
-                    <p>บางความสัมพันธ์ไม่ได้จบลงด้วยคำตอบที่ชัดเจน แต่จบลงด้วยการที่เราเรียนรู้ที่จะยอมรับความจริง ความเงียบก็เป็นคำตอบรูปแบบหนึ่งที่เราต้องก้าวผ่านไป...</p>
-                    <span class="read-more">อ่านข้อคิดเต็ม ➔</span>
-                </a>
-                <a href="lyrics.html" target="_blank" class="article-card">
-                    <h3>ยอมรับคนเดียว: ความรักที่ไม่อาจบังคับกันได้</h3>
-                    <p>ต่อให้เรารักใครมากแค่ไหน ทุ่มเทมากเพียงใด ก็ไม่ได้หมายความว่าอีกฝ่ายจะต้องรักเรากลับ บทเรียนของการรักตัวเองในวันที่ต้องยอมปล่อยมือ...</p>
-                    <span class="read-more">อ่านข้อคิดเต็ม ➔</span>
-                </a>
-                <a href="lyrics.html" target="_blank" class="article-card">
-                    <h3>ถอยออกมาก่อน: รักมากจนต้องเลือกปล่อยมือ</h3>
-                    <p>บางคนไม่ได้สูญเสียความรักเพราะเลิกรัก แต่สูญเสียมันเพราะรักมากจนต้องเลือกถอยออกมา เพื่อรักษาหัวใจของตัวเองไว้ไม่ให้เจ็บปวดไปมากกว่านี้...</p>
-                    <span class="read-more">อ่านข้อคิดเต็ม ➔</span>
-                </a>
-            </div>
-        </div>
-
-        <div class="sub-tabs" id="genreTabs">
-            <button class="tab-btn active" onclick="filterSubGenre('all', this)">ทั้งหมด</button>
-            <button class="tab-btn" onclick="filterSubGenre('sadpop', this)">Sad Pop</button>
-            <button class="tab-btn" onclick="filterSubGenre('pop', this)">Pop บิตสนุก</button>
-            <button class="tab-btn" onclick="filterSubGenre('lonely', this)">เพลงเหงา</button>
-        </div>
-
-        <h2 id="sectionTitle" style="margin-bottom: 20px; font-size: 20px;">🎶 รายการเพลงทั้งหมด (กำลังโหลด...)</h2>
-
-        <table class="song-table">
-            <thead>
-                <tr><th style="width:70%;">เพลง</th><th style="width:15%;">เวลา</th><th style="width:15%;">สถิติ / บันทึก</th></tr>
-            </thead>
-            <tbody id="songList">
-            </tbody>
-        </table>
-
-        <div class="comments-section">
-            <h3 style="color:#9b5cff; margin-bottom: 10px;">💬 พื้นที่คนเหงา</h3>
-            <p style="color:#888; font-size: 14px; margin-bottom: 20px;">มีเพลงไหนที่ตรงกับเรื่องราวของคุณบ้าง แชร์ให้พวกเราฟังได้นะ (ไม่ระบุตัวตนก็ได้)</p>
-            
-            <div class="custom-comment-box">
-                <input type="text" id="commentName" placeholder="ชื่อของคุณ (หรือเว้นว่างเพื่อเป็นคนแปลกหน้า)" class="comment-input" maxlength="30">
-                <textarea id="commentText" placeholder="ระบายความรู้สึกของคุณที่นี่..." class="comment-textarea" maxlength="500"></textarea>
-                <button id="submitCommentBtn" class="comment-btn">ส่งข้อความ 💌</button>
+            <div class="article-preview-section">
+                <div class="article-preview-title">📰 บทความวิเคราะห์ & ข้อคิดจากเพลง</div>
+                <div class="article-grid">
+                    <a href="lyrics.html" target="_blank" class="article-card">
+                        <h3>ไม่มีคำแปล: เมื่อความสัมพันธ์จบลงโดยไม่มีสถานะ</h3>
+                        <p>บางความสัมพันธ์ไม่ได้จบลงด้วยคำตอบที่ชัดเจน แต่จบลงด้วยการที่เราเรียนรู้ที่จะยอมรับความจริง ความเงียบก็เป็นคำตอบรูปแบบหนึ่งที่เราต้องก้าวผ่านไป...</p>
+                        <span class="read-more">อ่านข้อคิดเต็ม ➔</span>
+                    </a>
+                    <a href="lyrics.html" target="_blank" class="article-card">
+                        <h3>ยอมรับคนเดียว: ความรักที่ไม่อาจบังคับกันได้</h3>
+                        <p>ต่อให้เรารักใครมากแค่ไหน ทุ่มเทมากเพียงใด ก็ไม่ได้หมายความว่าอีกฝ่ายจะต้องรักเรากลับ บทเรียนของการรักตัวเองในวันที่ต้องยอมปล่อยมือ...</p>
+                        <span class="read-more">อ่านข้อคิดเต็ม ➔</span>
+                    </a>
+                    <a href="lyrics.html" target="_blank" class="article-card">
+                        <h3>ถอยออกมาก่อน: รักมากจนต้องเลือกปล่อยมือ</h3>
+                        <p>บางคนไม่ได้สูญเสียความรักเพราะเลิกรัก แต่สูญเสียมันเพราะรักมากจนต้องเลือกถอยออกมา เพื่อรักษาหัวใจของตัวเองไว้ไม่ให้เจ็บปวดไปมากกว่านี้...</p>
+                        <span class="read-more">อ่านข้อคิดเต็ม ➔</span>
+                    </a>
+                </div>
             </div>
 
-            <div id="commentsList" class="comments-list">
+            <div class="sub-tabs" id="genreTabs">
+                <button class="tab-btn active" onclick="filterSubGenre('all', this)">ทั้งหมด</button>
+                <button class="tab-btn" onclick="filterSubGenre('sadpop', this)">Sad Pop</button>
+                <button class="tab-btn" onclick="filterSubGenre('pop', this)">Pop บิตสนุก</button>
+                <button class="tab-btn" onclick="filterSubGenre('lonely', this)">เพลงเหงา</button>
+            </div>
+
+            <h2 id="sectionTitle" style="margin-bottom: 20px; font-size: 20px;">🎶 รายการเพลงทั้งหมด (กำลังโหลด...)</h2>
+
+            <table class="song-table">
+                <thead>
+                    <tr><th style="width:70%;">เพลง</th><th style="width:15%;">เวลา</th><th style="width:15%;">สถิติ / บันทึก</th></tr>
+                </thead>
+                <tbody id="songList">
+                </tbody>
+            </table>
+
+            <div class="comments-section">
+                <h3 style="color:#9b5cff; margin-bottom: 10px;">💬 พื้นที่คนเหงา</h3>
+                <p style="color:#888; font-size: 14px; margin-bottom: 20px;">มีเพลงไหนที่ตรงกับเรื่องราวของคุณบ้าง แชร์ให้พวกเราฟังได้นะ (ไม่ระบุตัวตนก็ได้)</p>
+                
+                <div class="custom-comment-box">
+                    <input type="text" id="commentName" placeholder="ชื่อของคุณ (หรือเว้นว่างเพื่อเป็นคนแปลกหน้า)" class="comment-input" maxlength="30">
+                    <textarea id="commentText" placeholder="ระบายความรู้สึกของคุณที่นี่..." class="comment-textarea" maxlength="500"></textarea>
+                    <button id="submitCommentBtn" class="comment-btn">ส่งข้อความ 💌</button>
+                </div>
+
+                <div id="commentsList" class="comments-list">
+                </div>
             </div>
         </div>
+        <!-- ================= จบโซนฟังเพลง ================= -->
 
+        <!-- ================= โซนวิดีโอ (ซ่อนไว้ก่อน) ================= -->
+        <div id="videoSection" style="display: none;">
+            <div class="page-header">
+                <h1 class="page-title">📺 เพลงฮิตจาก YouTube</h1>
+                <p class="page-subtitle">รวมวิดีโอเพลงเศร้า เพลงอกหัก และเพลงฮิต TikTok จากช่อง <b>khoun chanel</b></p>
+            </div>
+
+            <div class="video-grid">
+                <!-- วิดีโอ 1 -->
+                <div class="video-card">
+                    <iframe width="100%" height="220" src="https://www.youtube.com/embed/rXsbhNzHbH8" title="รวมเพลงดังใน tiktok 2026 Vol.1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-title">รวมเพลงดังใน tiktok 2026 (Vol.1)</div>
+                    <div class="video-channel">👤 khoun chanel</div>
+                </div>
+                <!-- วิดีโอ 2 -->
+                <div class="video-card">
+                    <iframe width="100%" height="220" src="https://www.youtube.com/embed/gHJ9FdzcyEU" title="รวมเพลงดังใน tiktok 2026 Vol.2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-title">รวมเพลงดังใน tiktok 2026 (Vol.2)</div>
+                    <div class="video-channel">👤 khoun chanel</div>
+                </div>
+                <!-- วิดีโอ 3 -->
+                <div class="video-card">
+                    <iframe width="100%" height="220" src="https://www.youtube.com/embed/jCO7IGr0SBY" title="รวมเพลงดังใน tiktok 2026 Vol.3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-title">รวมเพลงดังใน tiktok 2026 (Vol.3)</div>
+                    <div class="video-channel">👤 khoun chanel</div>
+                </div>
+                <!-- วิดีโอ 4 -->
+                <div class="video-card">
+                    <iframe width="100%" height="220" src="https://www.youtube.com/embed/g-vHSyyR7l8" title="รวมเพลงดังใน tiktok 2026 Vol.4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-title">รวมเพลงดังใน tiktok 2026 (Vol.4)</div>
+                    <div class="video-channel">👤 khoun chanel</div>
+                </div>
+            </div>
+        </div>
+        <!-- ================= จบโซนวิดีโอ ================= -->
+
+        <!-- Footer -->
         <div style="text-align: center; padding: 30px 20px; margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1);">
             <p style="color: #ccc; font-size: 14px; margin-bottom: 10px;">© 2026 StyleMusicPro. All rights reserved.</p>
             <a href="privacy-policy.html" style="color: #9b5cff; text-decoration: none; font-size: 14px; font-weight: 500;">📜 นโยบายความเป็นส่วนตัว (Privacy Policy)</a>
@@ -278,6 +343,48 @@ a { text-decoration: none; color: inherit; }
 // --- UI & Utility Functions ---
 function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); }
 function copyLink() { navigator.clipboard.writeText(window.location.href); alert("🔗 คัดลอกลิงก์เรียบร้อยแล้ว!"); }
+
+// --- ระบบสลับหน้าจอ (SPA) ---
+function showHome() {
+    document.querySelectorAll('.menu').forEach(m => m.classList.remove('active'));
+    document.getElementById('menuHome').classList.add('active');
+    
+    document.getElementById('musicSection').style.display = 'block';
+    document.getElementById('videoSection').style.display = 'none';
+    
+    document.getElementById("sectionTitle").innerText = `🎶 รายการเพลงทั้งหมด (${playlist.length} เพลง)`;
+    playlist.forEach(song => song.rowElement.style.display = "");
+    
+    if(window.innerWidth <= 768) toggleMenu(); 
+}
+
+function showVideos() {
+    document.querySelectorAll('.menu').forEach(m => m.classList.remove('active'));
+    document.getElementById('menuVideo').classList.add('active');
+    
+    document.getElementById('musicSection').style.display = 'none';
+    document.getElementById('videoSection').style.display = 'block';
+    
+    if(window.innerWidth <= 768) toggleMenu(); 
+}
+
+function showFavorites() {
+    document.querySelectorAll('.menu').forEach(m => m.classList.remove('active'));
+    document.getElementById('menuFav').classList.add('active');
+    
+    document.getElementById('musicSection').style.display = 'block';
+    document.getElementById('videoSection').style.display = 'none';
+    
+    document.getElementById("sectionTitle").innerText = "💖 เพลงโปรดของฉัน";
+    
+    const favs = getFavs();
+    playlist.forEach(song => {
+        if (favs.includes(song.id)) song.rowElement.style.display = "";
+        else song.rowElement.style.display = "none";
+    });
+    
+    if(window.innerWidth <= 768) toggleMenu(); 
+}
 
 // --- Database ข้อมูลเพลงทั้งหมด ---
 const baseUrl = "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/";
@@ -384,14 +491,9 @@ function renderSongs() {
         songListElement.appendChild(tr);
 
         playlist.push({
-            id: song.id,
-            index: index,
-            title: song.title,
-            artist: song.artist,
-            img: "songs/stylemusic.png",
-            src: `${baseUrl}${encodeURIComponent(song.title)}.mp3`,
-            tags: song.tags,
-            rowElement: tr
+            id: song.id, index: index, title: song.title, artist: song.artist,
+            img: "songs/stylemusic.png", src: `${baseUrl}${encodeURIComponent(song.title)}.mp3`,
+            tags: song.tags, rowElement: tr
         });
     });
 }
@@ -419,9 +521,7 @@ function playSong(index) {
     document.querySelectorAll(".song-row").forEach(r => r.style.background = "");
     song.rowElement.style.background = "rgba(155,92,255,0.2)";
     
-    if(window.incrementFirebaseView) {
-        window.incrementFirebaseView(song.id);
-    }
+    if(window.incrementFirebaseView) window.incrementFirebaseView(song.id);
 }
 
 function loadSongData(index) {
@@ -512,23 +612,7 @@ function toggleFav(id, btn) {
     }
     localStorage.setItem('myFavs', JSON.stringify(favs));
     
-    if (document.getElementById("sectionTitle").innerText.includes("เพลงโปรด")) {
-        showFavorites();
-    }
-}
-
-function showFavorites() {
-    document.getElementById("menuHome").classList.remove("active");
-    document.getElementById("menuFav").classList.add("active");
-    document.getElementById("sectionTitle").innerText = "💖 เพลงโปรดของฉัน";
-    
-    const favs = getFavs();
-    playlist.forEach(song => {
-        if (favs.includes(song.id)) song.rowElement.style.display = "";
-        else song.rowElement.style.display = "none";
-    });
-    
-    if(window.innerWidth <= 768) toggleMenu(); 
+    if (document.getElementById("sectionTitle").innerText.includes("เพลงโปรด")) showFavorites();
 }
 
 // --- ค้นหา & กรองหมวดหมู่ ---
@@ -537,11 +621,8 @@ document.getElementById("search").addEventListener("keyup", function() {
     document.getElementById("sectionTitle").innerText = filter ? "🔍 ผลการค้นหา" : `🎶 รายการเพลงทั้งหมด (${playlist.length} เพลง)`;
     
     playlist.forEach(song => {
-        if(song.title.toLowerCase().includes(filter) || song.artist.toLowerCase().includes(filter)) {
-            song.rowElement.style.display = "";
-        } else {
-            song.rowElement.style.display = "none";
-        }
+        if(song.title.toLowerCase().includes(filter) || song.artist.toLowerCase().includes(filter)) song.rowElement.style.display = "";
+        else song.rowElement.style.display = "none";
     });
 });
 
@@ -574,9 +655,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-// ==========================================
-// 1. ระบบจัดการยอดวิว (กันสแปม + กันค่าทับซ้อน)
-// ==========================================
 window.addEventListener("load", () => {
     songsDatabase.forEach(song => {
         const el = document.getElementById("views" + song.id);
@@ -602,9 +680,6 @@ window.incrementFirebaseView = function(songId) {
     }, 10000); 
 };
 
-// ==========================================
-// 2. ระบบคอมเมนต์แบบ Realtime (พื้นที่คนเหงา)
-// ==========================================
 const commentsRef = ref(db, "global_comments");
 const btnSubmit = document.getElementById("submitCommentBtn");
 const commentsList = document.getElementById("commentsList");
@@ -619,21 +694,15 @@ btnSubmit.addEventListener("click", () => {
     let nameInput = document.getElementById("commentName").value.trim();
     let textInput = document.getElementById("commentText").value.trim();
     
-    if(!textInput) {
-        alert("กรุณาพิมพ์ข้อความก่อนส่งนะครับ 🥺");
-        return;
-    }
+    if(!textInput) { alert("กรุณาพิมพ์ข้อความก่อนส่งนะครับ 🥺"); return; }
     if(!nameInput) nameInput = "คนแปลกหน้าที่กำลังเหงา";
 
     btnSubmit.disabled = true;
     btnSubmit.innerText = "กำลังส่ง... ⏳";
 
     const newCommentRef = push(commentsRef);
-    set(newCommentRef, {
-        name: nameInput,
-        text: textInput,
-        timestamp: serverTimestamp()
-    }).then(() => {
+    set(newCommentRef, { name: nameInput, text: textInput, timestamp: serverTimestamp() })
+    .then(() => {
         document.getElementById("commentText").value = "";
         btnSubmit.disabled = false;
         btnSubmit.innerText = "ส่งข้อความ 💌";
@@ -646,13 +715,11 @@ btnSubmit.addEventListener("click", () => {
 
 onChildAdded(commentsRef, (snapshot) => {
     const data = snapshot.val();
-    
     let timeString = "เมื่อสักครู่";
     if (data.timestamp) {
         const date = new Date(data.timestamp);
         timeString = date.toLocaleString('th-TH', { 
-            day: '2-digit', month: 'short', year: 'numeric', 
-            hour: '2-digit', minute: '2-digit' 
+            day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' 
         });
     }
 
@@ -665,7 +732,6 @@ onChildAdded(commentsRef, (snapshot) => {
         </div>
         <div class="comment-body">${escapeHTML(data.text)}</div>
     `;
-    
     commentsList.prepend(commentDiv);
 });
 </script>
