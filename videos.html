@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>📺 เพลงฮิตจาก YouTube - StyleMusicPro</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* นำสไตล์หลักของเว็บมาใช้ */
+.menu-toggle{ display:none; position:fixed; top:15px; left:15px; z-index:9999; width:42px; height:42px; border:none; border-radius:12px; background:#9b5cff; color:white; font-size:24px; cursor:pointer; align-items: center; justify-content: center; }
+*{ margin:0; padding:0; box-sizing:border-box; }
+body{ font-family:'Poppins',sans-serif; background:#050816; color:white; overflow-x:hidden; width: 100vw; scroll-behavior:smooth; }
+.container{ display:flex; min-height:100vh; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+
+/* Sidebar */
+.sidebar{ width:240px; background:rgba(7,11,24,.88); backdrop-filter:blur(12px); padding:25px; display:flex; flex-direction:column; gap:15px; border-right:1px solid rgba(255,255,255,.05); z-index: 1000; position: fixed; height: 100vh; }
+.logo-container { display: flex; justify-content: space-between; align-items: center; margin-bottom:20px; }
+.logo{ font-size:24px; font-weight:700; color:#9b5cff; line-height: 1.2; }
+.close-sidebar { display: none; background: none; border: none; color: white; font-size: 24px; cursor: pointer; }
+.menu{ padding:12px 14px; border-radius:14px; cursor:pointer; transition:.3s; background:rgba(255,255,255,.03); display: block; font-size: 14px; }
+.menu:hover, .menu.active { background:#9b5cff; transform:translateX(5px); }
+.menu-divider { height: 1px; background: rgba(255,255,255,0.1); margin: 5px 0; }
+
+/* Main Content */
+.main{ flex:1; margin-left: 240px; padding:30px; }
+.page-header { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.page-title { font-size: 28px; color: #fff; margin-bottom: 10px; }
+.page-subtitle { color: #aaa; font-size: 14px; }
+
+/* YouTube Video Grid */
+.video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-bottom: 50px; }
+.video-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 15px; transition: 0.3s; }
+.video-card:hover { transform: translateY(-5px); border-color: #9b5cff; background: rgba(255,255,255,0.05); box-shadow: 0 10px 20px rgba(155,92,255,0.1); }
+.video-card iframe { width: 100%; height: 220px; border-radius: 12px; border: none; margin-bottom: 15px; }
+.video-title { font-size: 16px; font-weight: 600; color: #fff; line-height: 1.4; margin-bottom: 8px; }
+.video-channel { font-size: 13px; color: #9b5cff; }
+
+/* Responsive */
+@media(max-width:768px){
+    .menu-toggle { display: flex; }
+    .sidebar { left: -280px; width: 260px; transition: .3s; }
+    .sidebar.active { left: 0; box-shadow: 0 0 30px rgba(0,0,0,.9); }
+    .close-sidebar { display: block; }
+    .main { margin-left: 0; padding: 20px; padding-top: 75px; }
+}
+</style>
+</head>
+<body>
+
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+<div class="container">
+    <!-- เมนูด้านข้าง -->
+    <div class="sidebar" id="sidebar">
+        <div class="logo-container">
+            <div class="logo">🎵 StyleMusicPro</div>
+            <button class="close-sidebar" onclick="toggleMenu()">✕</button>
+        </div>
+        <a href="index.html" class="menu">🏠 หน้าแรก / ฟังเพลง</a>
+        <!-- สังเกตว่าหน้าปัจจุบัน (videos.html) จะมี class="active" -->
+        <a href="videos.html" class="menu active">📺 เพลงฮิต YouTube</a>
+        <div class="menu-divider"></div>
+        <a href="horoscope.html" class="menu">🔮 เช็กดวงรายวัน</a>
+        <a href="lyrics.html" class="menu">📖 สรุปความหมายเพลง</a>
+        <div class="menu-divider"></div>
+        <a href="mailto:contact@stylemusicpro.com" class="menu">📝 ขอเพลง / เสนอแนะ</a>
+    </div>
+
+    <!-- พื้นที่เนื้อหาหลัก -->
+    <div class="main">
+        <div class="page-header">
+            <h1 class="page-title">📺 เพลงฮิตจาก YouTube</h1>
+            <p class="page-subtitle">รวมวิดีโอเพลงเศร้า เพลงอกหัก และเพลงฮิต TikTok จากช่อง <b>khoun chanel</b></p>
+        </div>
+
+        <div class="video-grid">
+            <!-- วิดีโอ 1 -->
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/3L8bicNMXDU" title="รวมเพลงดังใน tiktok 2026 Vol.1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="video-title">รวมเพลงดังใน tiktok 2026 (Vol.1)</div>
+                <div class="video-channel">👤 khoun chanel</div>
+            </div>
+
+            <!-- วิดีโอ 2 -->
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/rXsbhNzHbH8" title="รวมเพลงดังใน tiktok 2026 Vol.2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="video-title">รวมเพลงดังใน tiktok 2026 (Vol.2)</div>
+                <div class="video-channel">👤 khoun chanel</div>
+            </div>
+
+            <!-- วิดีโอ 3 -->
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/gHJ9FdzcyEU" title="รวมเพลงดังใน tiktok 2026 Vol.3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="video-title">รวมเพลงดังใน tiktok 2026 (Vol.3)</div>
+                <div class="video-channel">👤 khoun chanel</div>
+            </div>
+
+            <!-- วิดีโอ 4 -->
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/jCO7IGr0SBY" title="รวมเพลงดังใน tiktok 2026 Vol.4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="video-title">รวมเพลงดังใน tiktok 2026 (Vol.4)</div>
+                <div class="video-channel">👤 khoun chanel</div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div style="text-align: center; padding: 30px 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+            <p style="color: #ccc; font-size: 14px; margin-bottom: 10px;">© 2026 StyleMusicPro. All rights reserved.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+// สคริปต์เปิดปิดเมนูสำหรับมือถือ
+function toggleMenu() { 
+    document.getElementById('sidebar').classList.toggle('active'); 
+}
+</script>
+
+</body>
+</html>
