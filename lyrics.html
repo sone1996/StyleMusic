@@ -4,10 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>📖 สรุปใจความบทเพลง - StyleMusicPro</title>
+
+<!-- เริ่มโค้ด Google Analytics สำหรับเก็บสถิติ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PZHXG2Y1PY"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-PZHXG2Y1PY');
+</script>
+<!-- จบโค้ด Google Analytics -->
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* Global & Layout Styles */
-.menu-toggle{ display:none; position:fixed; top:15px; left:15px; z-index:9999; width:42px; height:42px; border:none; border-radius:12px; background:#9b5cff; color:white; font-size:24px; cursor:pointer; display: flex; align-items: center; justify-content: center; }
+.menu-toggle{ display:none; position:fixed; top:15px; left:15px; z-index:9999; width:42px; height:42px; border:none; border-radius:12px; background:#9b5cff; color:white; font-size:24px; cursor:pointer; align-items: center; justify-content: center; }
 *{ margin:0; padding:0; box-sizing:border-box; }
 body{ font-family:'Poppins',sans-serif; background:#050816; color:white; overflow-x:hidden; width: 100vw; }
 .container{ display:flex; height:100vh; max-width: 100%; }
@@ -24,7 +35,7 @@ a { text-decoration: none; color: inherit; }
 /* Main Content */
 .main{ flex:1; overflow-y:auto; overflow-x:hidden; padding:30px; padding-bottom:120px; background:#050816; }
 
-/* Lyrics Styles - ระบบคลิกเพื่อเปิด */
+/* Lyrics Styles */
 .lyrics-container { background: rgba(255, 255, 255, 0.03); border-radius: 20px; padding: 30px; border: 1px solid rgba(255,255,255,0.1); width: 100%; }
 
 /* Search Box */
@@ -106,1204 +117,732 @@ a { text-decoration: none; color: inherit; }
             </div>
             
             <div id="lyricsList">
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 ไม่มีคำแปล</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "บางความสัมพันธ์ไม่ได้จบลงด้วยคำตอบที่ชัดเจน แต่จบลงด้วยการที่เราเรียนรู้ที่จะยอมรับความจริง และเติบโตจากความรู้สึกนั้น"</p>
-                        <p><strong>💡 ข้อคิดสำคัญจากเพลง</strong></p>
-                        <ul>
-                            <li>"ความรักไม่ใช่ทุกครั้งที่จะมีสถานะชัดเจน บางความสัมพันธ์ใกล้ชิดเกินกว่าเพื่อน แต่ก็ไม่ใช่คนรัก ทำให้เกิดความสับสนและความคาดหวังที่ไม่มีคำตอบ"</li>
-                            <li>"การคิดแทนอีกฝ่ายมากเกินไป ทำให้เราเจ็บปวด เพราะคำตอบที่แท้จริงอาจไม่ได้อยู่ในจินตนาการ แต่อยู่ในการกระทำที่ชัดเจน"</li>
-                            <li>"ความเงียบก็เป็นคำตอบรูปแบบหนึ่ง บางครั้งการไม่ได้รับคำตอบ ก็คือคำตอบที่เราต้องยอมรับแล้ว"</li>
-                            <li>"ความรักไม่จำเป็นต้องสมหวังจึงจะมีคุณค่า แม้สุดท้ายจะไม่ได้คบกัน แต่ประสบการณ์นั้นก็สอนให้เราเข้าใจหัวใจตัวเองมากขึ้น"</li>
-                            <li>"การยอมรับความจริง คือจุดเริ่มต้นของการก้าวต่อไป เพื่อหลุดพ้นจากการรอคอยคำตอบที่ไม่มีวันมาถึง"</li>
-                        </ul>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ไม่มีคำแปล.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 ยอมรับคนเดียว</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "ความรักไม่ได้วัดกันที่ว่าเราพยายามมากแค่ไหน แต่อยู่ที่ว่าหัวใจของคนสองคนเดินมาพบกันหรือไม่ และเมื่อไปต่อไม่ได้ การยอมรับความจริงคือการรักตัวเองในรูปแบบหนึ่ง"</p>
-                        <p><strong>💡 ข้อคิดสำคัญจากเพลง</strong></p>
-                        <ul>
-                            <li>"ความรักไม่ใช่สิ่งที่บังคับกันได้ ต่อให้เรารักใครมากแค่ไหน ทุ่มเทมากเพียงใด ก็ไม่ได้หมายความว่าอีกฝ่ายจะต้องรักเรากลับ ความรักที่แท้จริงเกิดจากความรู้สึกของทั้งสองฝ่าย ไม่ใช่ความพยายามของคนใดคนหนึ่ง"</li>
-                            <li>"บางครั้งการยอมแพ้ ไม่ใช่ความอ่อนแอ การยอมรับว่าอีกฝ่ายไม่ได้รักเรา อาจเจ็บปวด แต่เป็นความกล้าหาญรูปแบบหนึ่ง เพราะเป็นการยอมรับความจริงแทนที่จะหลอกตัวเองต่อไป"</li>
-                            <li>"ไม่มีใครผิดในความรักเสมอไป ความสัมพันธ์บางอย่างจบลง ไม่ใช่เพราะมีคนทำผิด แต่เพราะความรู้สึกไม่ตรงกัน การโทษกันไม่ได้ช่วยให้ความเจ็บปวดหายไป"</li>
-                            <li>"ความเจ็บปวดคือบทเรียนของหัวใจ ทุกความผิดหวังสอนให้เราเข้าใจความรักมากขึ้น เข้าใจคุณค่าของตัวเองมากขึ้น และเติบโตเป็นคนที่เข้มแข็งกว่าเดิม"</li>
-                            <li>"การปล่อยมือ อาจเป็นความรักรูปแบบสุดท้าย เมื่อรู้ว่าอีกฝ่ายมีความสุขกับทางเลือกของเขา การยอมปล่อยและอวยพรจากระยะไกล อาจเป็นการรักที่บริสุทธิ์ที่สุด"</li>
-                        </ul>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ยอมรับคนเดียว.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 ฉากสุดท้าย</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "ไม่ใช่ทุกความรักจะอยู่กับเราตลอดไป แต่ทุกความรักจะทิ้งบทเรียนบางอย่างไว้เสมอ"</p>
-                        <p><strong>💡 ข้อคิดสำคัญจากเพลง</strong></p>
-                        <ul>
-                            <li>"ทุกเรื่องราวมีวันจบ เหมือนการแสดงที่ต้องมีฉากสุดท้าย ความสัมพันธ์บางความสัมพันธ์ก็เช่นกัน ไม่ว่าจะสวยงามแค่ไหน สุดท้ายอาจต้องถึงเวลาปิดม่าน"</li>
-                            <li>"ความรักไม่ได้รับประกันว่าจะอยู่ตลอดไป การรักกันในวันนี้ ไม่ได้หมายความว่าจะได้เดินไปด้วยกันจนถึงปลายทาง บางครั้งความรักก็ไม่อาจเอาชนะเวลา ระยะทาง หรือการเปลี่ยนแปลงของหัวใจคนได้"</li>
-                            <li>"ความทรงจำมีค่า แม้คนในความทรงจำนั้นจะจากไปแล้ว แม้ความสัมพันธ์จะจบลง แต่ช่วงเวลาดี ๆ ที่เคยมีร่วมกันยังคงเป็นส่วนหนึ่งของชีวิต และเป็นสิ่งที่ไม่มีใครพรากไปได้"</li>
-                            <li>"ความเจ็บปวดคือครูของหัวใจ การสูญเสียทำให้เราเรียนรู้ เข้าใจชีวิต เข้าใจความรัก และเข้าใจตัวเองมากขึ้นกว่าที่เคย"</li>
-                            <li>"การเดินต่อ คือชัยชนะของคนที่เคยเจ็บ ตอนท้ายเพลงไม่ได้พูดถึงการลืม แต่พูดถึงการ 'เดินต่อไป' พร้อมรอยแผลและบทเรียน นั่นคือการเติบโตอย่างแท้จริง"</li>
-                        </ul>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ฉากสุดท้าย.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 ซ่อนไว้</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "บางความรักไม่ได้เกิดมาเพื่อเป็นเจ้าของ แต่เกิดมาเพื่อสอนให้เรารู้จักการรักอย่างบริสุทธิ์ใจ"</p>
-                        <p><strong>💡 ข้อคิดสำคัญจากเพลง</strong></p>
-                        <ul>
-                            <li>"ไม่ใช่ทุกความรักจะต้องถูกบอกออกไป บางครั้งความรักอาจอยู่ในรูปแบบของการเฝ้ามอง การหวังดี และการเก็บความรู้สึกไว้ในใจ โดยไม่จำเป็นต้องได้รับการตอบกลับ"</li>
-                            <li>"ความกลัวอาจทำให้เราพลาดบางโอกาส การไม่กล้าพูดความจริงเพราะกลัวเสียคนสำคัญ อาจทำให้เราอยู่กับคำถามว่า 'ถ้าวันนั้นบอกออกไปจะเป็นอย่างไร'"</li>
-                            <li>"การรักใครสักคน ไม่ได้หมายความว่าต้องครอบครองเขา ความรักที่แท้จริงบางครั้งคือการยินดีที่ได้เห็นอีกฝ่ายมีความสุข แม้เราไม่ได้เป็นคนที่อยู่ข้างเขา"</li>
-                            <li>"ความรู้สึกที่เก็บไว้นาน อาจกลายเป็นภาระของหัวใจ การซ่อนความรักไว้ในความเงียบช่วยรักษาความสัมพันธ์บางอย่าง แต่ก็อาจสร้างความเจ็บปวดให้กับตัวเราเองเช่นกัน"</li>
-                            <li>"คุณค่าของความรัก ไม่ได้อยู่ที่ผลลัพธ์เสมอไป แม้เรื่องราวจะไม่เกิดขึ้นจริง แต่ช่วงเวลาที่ได้รัก ได้คิดถึง และได้เก็บใครบางคนไว้ในหัวใจ ก็เป็นความทรงจำที่มีความหมาย"</li>
-                        </ul>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ซ่อนไว้.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 ฤดูที่ไม่มีเธอ</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "การจากลาอาจพรากคนคนหนึ่งไปจากชีวิต แต่ไม่อาจพรากความทรงจำดี ๆ ออกจากหัวใจได้"</p>
-                        <p><strong>💡 ข้อคิดสำคัญจากเพลง</strong></p>
-                        <ul>
-                            <li>"ชีวิตต้องเดินต่อ แม้คนสำคัญจะไม่อยู่แล้ว การจากลาเป็นสิ่งที่ไม่มีใครอยากเผชิญ แต่เมื่อมันเกิดขึ้น เราต้องเรียนรู้ที่จะก้าวต่อไปพร้อมกับความทรงจำที่ยังอยู่ในใจ"</li>
-                            <li>"ความคิดถึงไม่ใช่ความอ่อนแอ การยังคงคิดถึงใครสักคนหลังจากเวลาผ่านไป ไม่ได้แปลว่าเราไม่เข้มแข็ง แต่เป็นเพราะคนคนนั้นเคยมีความหมายกับชีวิตเราจริง ๆ"</li>
-                            <li>"บางคนจากไป แต่ไม่เคยหายไปจากหัวใจ แม้ตัวคนจะไม่อยู่แล้ว แต่เรื่องราว รอยยิ้ม และความทรงจำดี ๆ ยังคงเป็นส่วนหนึ่งของชีวิตเราเสมอ"</li>
-                            <li>"การยอมรับไม่ได้หมายถึงการลืม เพลงนี้สอนว่า การยอมรับความจริงว่าเขาไม่กลับมาแล้ว ไม่ได้หมายความว่าเราต้องลืมเขา แต่คือการอยู่กับความทรงจำนั้นอย่างสงบ"</li>
-                            <li>"ความรักที่แท้จริงยังคงงดงาม แม้จะจบลง ช่วงเวลาที่เคยมีร่วมกันไม่ได้สูญเปล่า เพราะมันเคยทำให้ชีวิตอบอุ่น และกลายเป็นบทหนึ่งที่สวยงามของชีวิต"</li>
-                        </ul>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ฤดูที่ไม่มีเธอ.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 ฝากดาวดูแลเธอ</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "บางความสัมพันธ์จบลงในฐานะคนรัก แต่ยังคงอยู่ในฐานะความปรารถนาดีตลอดไป"</p>
-                        <p><strong>💡 ข้อคิดสำคัญจากเพลง</strong></p>
-                        <ul>
-                            <li>"ความรักที่แท้จริง ไม่จำเป็นต้องครอบครอง บางครั้งการรักใครสักคน ไม่ได้หมายถึงการต้องอยู่ด้วยกันตลอดไป แต่คือการอยากเห็นเขามีความสุข ไม่ว่าเราจะอยู่ในชีวิตเขาหรือไม่ก็ตาม"</li>
-                            <li>"การจากลาไม่ได้ทำลายความรู้สึกดี ๆ แม้ความสัมพันธ์จะจบลง แต่ความห่วงใย ความปรารถนาดี และความทรงจำที่สวยงามยังคงอยู่ได้เสมอ"</li>
-                            <li>"คนบางคนเข้ามาเพื่อสอนบทเรียนสำคัญของชีวิต ไม่ใช่ทุกคนที่เข้ามาจะอยู่ตลอดไป แต่ทุกคนที่ผ่านเข้ามาอาจทิ้งบางสิ่งที่มีค่าไว้ให้เราเติบโต"</li>
-                            <li>"การปล่อยวางไม่ใช่การหมดรัก การยอมรับความจริงและปล่อยให้อีกฝ่ายเดินไปสู่ความสุขของเขา คือความรักในรูปแบบที่โตขึ้นและเข้าใจมากขึ้น"</li>
-                            <li>"ความปรารถนาดีคือของขวัญที่งดงามที่สุด แม้จะไม่มีโอกาสได้ดูแลกันเหมือนเดิม แต่การคอยอวยพรให้เขาพบสิ่งดี ๆ ในชีวิต ก็เป็นความรักที่บริสุทธิ์และมีคุณค่า"</li>
-                        </ul>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ฝากดาวดูแลเธอ.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 เพิ่งเข้าใจคำว่ารัก</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "บางครั้งเราจะรู้คุณค่าของคนคนหนึ่ง ก็ต่อเมื่อไม่มีเขาอยู่ให้รักอีกแล้ว"</p>
-                        <p><strong>💡 ข้อคิดสำคัญจากเพลง</strong></p>
-                        <ul>
-                            <li>"เรามักเห็นคุณค่าของบางสิ่ง เมื่อมันจากไปแล้ว ในวันที่ยังมีอยู่ เราอาจมองข้ามความสำคัญของคนที่รักเรา แต่เมื่อเขาไม่อยู่แล้ว เราจึงเข้าใจว่าการมีเขาอยู่ข้าง ๆ มีค่ามากเพียงใด"</li>
-                            <li>"อย่ารอให้สายเกินไปที่จะบอกรัก หลายครั้งเราคิดว่ายังมีเวลาอีกมาก แต่ความจริงไม่มีใครรู้ว่าพรุ่งนี้จะเป็นอย่างไร การแสดงความรักและความใส่ใจควรทำในวันที่ยังมีโอกาส"</li>
-                            <li>"ความรักไม่ใช่สิ่งธรรมดา เมื่อคุ้นเคยกับการมีใครสักคนอยู่ข้างกาย เราอาจเผลอคิดว่ามันเป็นเรื่องปกติ แต่แท้จริงแล้วการมีคนที่รักและเข้าใจเราเป็นของขวัญที่มีค่ามาก"</li>
-                            <li>"ความเสียใจสามารถกลายเป็นบทเรียน แม้จะไม่สามารถย้อนเวลากลับไปแก้ไขอดีตได้ แต่ความผิดพลาดและการสูญเสียสามารถสอนให้เราเห็นคุณค่าของคนรอบตัวมากขึ้น"</li>
-                            <li>"ความรักที่แท้จริงจะยังคงอยู่ในความทรงจำ แม้คนคนนั้นจะไม่อยู่แล้ว แต่ความรักที่เคยมอบให้กันยังคงเป็นบทเรียนและความทรงจำที่อยู่ในใจตลอดไป"</li>
-                        </ul>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เพิ่งเข้าใจคำว่ารัก.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 รอยร้าวในหัวใจ</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "การเติบโตไม่ได้หมายถึงการลืมอดีต แต่คือการยอมรับความจริง และเดินหน้าต่อไปพร้อมบทเรียนที่ได้รับในชีวิต"</p>
-                        <p><strong>💡 ข้อคิดสำคัญจากเพลง</strong></p>
-                        <ul>
-                            <li>"การลืมใครสักคนไม่ใช่เรื่องง่าย บางบาดแผลไม่ได้หายเพราะเวลา แต่จะค่อยๆ เบาลงเมื่อเราเรียนรู้ที่จะอยู่กับมัน"</li>
-                            <li>"ความคิดถึงไม่ใช่ความอ่อนแอ การยังคิดถึงไม่ได้หมายความว่าเราไม่เข้มแข็ง แต่เป็นเพราะเขาเคยมีความหมายต่อชีวิตเราจริงๆ"</li>
-                            <li>"ความทรงจำที่ดีไม่จำเป็นต้องถูกลบทิ้ง แม้ความรักจะจบลงด้วยความเสียใจ แต่ช่วงเวลาดีๆ ที่เคยมีร่วมกันก็ยังมีคุณค่าเสมอ"</li>
-                            <li>"การยอมรับความจริงว่าไม่มีทางกลับไปเป็นเหมือนเดิม คือจุดเริ่มต้นของการเยียวยาหัวใจที่แท้จริง"</li>
-                            <li>"บางรอยร้าวจะอยู่กับเราตลอดไป แต่เราสามารถเรียนรู้ที่จะใช้ชีวิตต่อไปได้ โดยไม่ปล่อยให้ความเจ็บปวดมาควบคุมชีวิตเราอีก"</li>
-                        </ul>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/รอยร้าวในหัวใจ.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 ประโยคสุดท้าย</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "บางคำพูดอาจจบความสัมพันธ์ลงในวันนั้น แต่บทเรียนและความรู้สึกจากคำพูดคำนั้นจะอยู่กับเราไปตลอดชีวิต"</p>
-                        <p><strong>💡 ข้อคิดสำคัญจากเพลง</strong></p>
-                        <ul>
-                            <li>"คำพูดบางคำมีผลมากกว่าที่คิด คำพูดอาจจบลงในไม่กี่วินาที แต่ผลของมันอาจสร้างบาดแผลลึกอยู่ในใจใครบางคนไปอีกหลายปี"</li>
-                            <li>"ไม่มีใครรู้ล่วงหน้าว่าช่วงเวลาธรรมดาจะกลายเป็นครั้งสุดท้าย ในวันที่ทุกอย่างดูปกติ อาจเป็นวันสุดท้ายของความสัมพันธ์ จึงควรให้คุณค่ากับคนที่อยู่ข้างเราในวันนี้"</li>
-                            <li>"บาดแผลทางใจมองไม่เห็น แต่เจ็บปวดจริง ความเจ็บปวดบางอย่างไม่มีรอยแผลภายนอก แต่ส่งผลต่อชีวิตอย่างลึกซึ้ง"</li>
-                            <li>"การไม่โกรธ ไม่ได้แปลว่าไม่เสียใจ แต่สะท้อนถึงวุฒิภาวะทางอารมณ์ที่ยอมรับว่า ความจริงบางอย่างยากเกินจะรับไหวในตอนแรก"</li>
-                            <li>"การเยียวยาไม่ใช่การลืม แต่คือการยอมรับ ค่อยๆ เรียนรู้วิธีอยู่กับความทรงจำนั้น โดยไม่ปล่อยให้มันหยุดยั้งชีวิตของเรา"</li>
-                        </ul>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ประโยคสุดท้าย.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 ฉันไม่ได้อยู่ในตอนจบตั้งแต่แรก</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "คนบางคนไม่ได้เข้ามาเพื่ออยู่ในตอนจบของชีวิตเรา แต่เข้ามาเพื่อสอนให้เรารู้จักความรัก การยอมรับความจริง และการเติบโต"</p>
-                        <p><strong>💡 ข้อคิดสำคัญจากเพลง</strong></p>
-                        <ul>
-                            <li>"บางครั้งเรารู้คำตอบตั้งแต่ต้น แต่หัวใจก็ยังเลือกที่จะรัก มนุษย์ไม่ได้ใช้เหตุผลกับความรักเสมอไป แม้จะรู้ว่าเขาไม่ได้เลือกเราก็ตาม"</li>
-                            <li>"ความรักไม่สามารถบังคับได้ ต่อให้รักมากแค่ไหน ก็ไม่สามารถเปลี่ยนหัวใจของอีกคนได้ ความรักที่แท้จริงคือการยอมรับความจริง"</li>
-                            <li>"ไม่ใช่ทุกคนที่จะเป็นตอนจบของเรื่องราว บางคนเข้ามาเพื่อเป็นบทเรียน เป็นความทรงจำ หรือเป็นช่วงเวลาสวยงามในชีวิตเท่านั้น"</li>
-                            <li>"การถอยออกมา ไม่ใช่ความพ่ายแพ้ การเลือกเดินออกจากพื้นที่ของความหวังลมๆ แล้งๆ เพื่อมารักตัวเอง คือความกล้าหาญที่ยิ่งใหญ่"</li>
-                            <li>"ความรักที่ไม่ได้รับการตอบกลับ ก็ยังมีคุณค่า ความรู้สึกที่เคยเกิดขึ้นจริงนั้นสามารถกลายเป็นความทรงจำที่งดงามได้เมื่อเวลาผ่านไป"</li>
-                            <li>"การปล่อยวาง ไม่ได้หมายถึงการลืม แต่คือการเก็บรอยยิ้มของเขาไว้ในมุมหนึ่งของหัวใจ โดยที่สามารถก้าวต่อไปข้างหน้าได้"</li>
-                        </ul>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ฉันไม่ได้อยู่ในตอนจบตั้งแต่แรก.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 ถอยออกมาก่อน</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "บางคนไม่ได้สูญเสียความรักเพราะเลิกรัก แต่สูญเสียมันเพราะรักมากจนต้องเลือกถอยออกมา เพื่อรักษาหัวใจของตัวเองไว้"</p>
-                        <p><strong>💡 ข้อคิดสำคัญจากเพลง</strong></p>
-                        <ul>
-                            <li>"บางครั้งการเดินจากไป ไม่ได้แปลว่าหมดรัก การปล่อยมือไม่ได้หมายความว่ารักน้อยลง แต่บางครั้งคือการรักอย่างมีสติเพื่อไม่ให้ทำร้ายกันไปมากกว่านี้"</li>
-                            <li>"ความรักไม่จำเป็นต้องครอบครอง บางคนเข้ามาเพื่อสร้างความทรงจำดีๆ แค่ได้พบและช่วงเวลาดีๆ ร่วมกันก็อาจเป็นโชคดีแล้ว"</li>
-                            <li>"การรักตัวเองไม่ใช่ความเห็นแก่ตัว การเลือกถอยออกมาดูแลความรู้สึกของตัวเองก่อนที่จะพังจนไม่เหลืออะไร คือสิ่งที่เราควรทำ"</li>
-                            <li>"ความรักที่แท้จริงคือการหวังดี แม้ไม่ได้เป็นเจ้าของ สามารถยินดีและมีความสุขเมื่อเห็นอีกฝ่ายเติบโตและมีความสุขในเส้นทางของเขา"</li>
-                            <li>"ไม่ใช่ทุกความรู้สึกที่ต้องพูดออกไป บางครั้งการเก็บความรู้สึกไว้ อาจเป็นทางเลือกที่ดีที่สุดเพื่อรักษาความสัมพันธ์หรือลดความลำบากใจ"</li>
-                            <li>"ความเข้มแข็งคือการยอมรับความจริง การยอมรับว่าไม่มีทางเป็นไปได้ แล้วเลือกก้าวออกมาทั้งที่ยังเจ็บ เป็นความกล้าหาญที่แท้จริง"</li>
-                        </ul>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ถอยออกมาก่อน.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 คำขอโทษ</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "ความเสียใจที่หนักที่สุดในชีวิต มักไม่ใช่สิ่งที่เราได้ทำลงไป แต่คือสิ่งที่เราควรทำแต่กลับไม่ได้ทำ ในวันที่มีโอกาสอยู่ตรงหน้า"</p>
-                        <p><strong>💡 ข้อคิดสำคัญจากเพลง</strong></p>
-                        <ul>
-                            <li>"เรามักเห็นคุณค่าของบางสิ่งเมื่อมันไม่อยู่แล้ว ในวันที่มีอยู่เราอาจมองว่าเป็นเรื่องธรรมดา แต่เมื่อสูญเสียไปจึงรู้ว่าสิ่งนั้นมีค่าที่สุด"</li>
-                            <li>"ความรักต้องการการใส่ใจ ไม่ใช่แค่ความรู้สึก ลำพังแค่ความรักนั้นไม่เพียงพอ หากขาดการแสดงออก การดูแล และการรับฟังกัน"</li>
-                            <li>"คำขอโทษบางคำ มาช้าเกินไป เพลงนี้เตือนให้เรากล้าที่จะขอโทษ กล้าที่จะปรับปรุง และบอกรัก ในวันที่อีกฝ่ายยังอยู่ฟัง"</li>
-                            <li>"อดีตเปลี่ยนไม่ได้ แต่บทเรียนยังมีค่า ความผิดพลาดในอดีตสามารถสอนและหล่อหลอมให้เรากลายเป็นคนที่ดีขึ้นในอนาคตได้"</li>
-                            <li>"ความเสียใจสามารถกลายเป็นการเติบโต เปลี่ยนแปลงความผิดหวังและคราบน้ำตาให้กลายเป็นประสบการณ์และพลังในการใช้ชีวิต"</li>
-                            <li>"จงรักและดูแลคนสำคัญในวันที่ยังมีโอกาส อย่ารอให้เหลือเพียงรูปถ่ายหรือความทรงจำ เพราะเวลาที่ดีที่สุดในการแสดงความรักคือวันนี้"</li>
-                        </ul>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คำขอโทษ.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 สายเกินจะขอโทษ</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "อย่ามองข้ามคนที่รักและหวังดีกับเรา เพราะวันที่เราเห็นคุณค่าของเขา อาจเป็นวันที่ไม่มีเขาอยู่ให้เรารักอีกแล้ว"</p>
-                        <p><strong>💡 คำโปรยแนวข้อคิด</strong></p>
-                        <ul>
-                            <li>"บางครั้ง...เราจะรู้คุณค่าของใครสักคน ก็ต่อเมื่อเขาไม่อยู่ให้เรารักอีกแล้ว"</li>
-                            <li>"คำขอโทษที่ช้าที่สุด คือคำขอโทษที่ไม่มีคนฟังอีกต่อไป"</li>
-                            <li>"อย่าปล่อยให้ความรักกลายเป็นบทเรียนราคาแพงของชีวิต"</li>
-                        </ul>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/สายเกินจะขอโทษ.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 ยังอยู่ในทุกวัน</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญ of เพลง</strong>
-                        "บางคนอาจไม่ได้อยู่ในชีวิตเราอีกแล้ว แต่ยังคงเป็นส่วนหนึ่งของหัวใจและความทรงจำที่งดงามเสมอ"</p>
-                        <p><strong>💡 คำโปรยแนวข้อคิด</strong></p>
-                        <ul>
-                            <li>"การจากลาไม่ได้ลบความหมายของการเคยรักกัน"</li>
-                            <li>"บางความสัมพันธ์ไม่ได้จบลงด้วยการลืม แต่จบลงด้วยการเก็บไว้ในความทรงจำอย่างสวยงาม"</li>
-                            <li>"คนบางคนจากไปจากชีวิต แต่ไม่เคยจากไปจากหัวใจ"</li>
-                        </ul>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ยังอยู่ในทุกวัน.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 ร่องรอยของเธอ</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "แม้เวลาจะพาผู้คนจากไป แต่ความทรงจำและความหมายที่พวกเขาทิ้งไว้ อาจยังคงอยู่ในหัวใจตลอดไป"</p>
-                        <p><strong>💡 คำโปรยแนวข้อคิด</strong></p>
-                        <ul>
-                            <li>"บางคนจากไปจากชีวิต แต่ไม่เคยจากไปจากความทรงจำ"</li>
-                            <li>"เวลาเปลี่ยนทุกอย่างได้ ยกเว้นความหมายของบางคนในหัวใจ"</li>
-                            <li>"ร่องรอยของความรัก อาจไม่เคยเลือนหาย แม้เจ้าของความทรงจำนั้นจะจากไปนานแล้ว"</li>
-                        </ul>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ร่องรอยของเธอ.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 ถึงเวลาต้องไป</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "บางความสัมพันธ์ไม่ได้จบลงเพราะหมดรัก แต่จบลงเพราะการปล่อยมือคือสิ่งที่ดีที่สุดสำหรับทั้งสองคน"</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ถึงเวลาต้องไป.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 ห้องที่ไม่มีเธอ</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "บางคนอาจจากไปจากชีวิต แต่ความรักและความทรงจำที่เขาทิ้งไว้ จะยังคงอยู่ในหัวใจตลอดไป"</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ห้องที่ไม่มีเธอ.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 บทเรียนราคาแพง</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "การฝากหัวใจไว้กับคนผิด อาจทำให้เราเจ็บปวด แต่สิ่งสำคัญคือการนำความเจ็บนั้นมาเป็นบทเรียน ไม่ใช่ปล่อยให้มันเป็นแผลไปตลอดชีวิต"</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/บทเรียนราคาแพง.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 เรื่องธรรมดาที่พิเศษ</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "ความสุขไม่ได้เกิดจากสิ่งยิ่งใหญ่เสมอไป แต่เกิดจากการมีคนสำคัญอยู่เคียงข้างในวันธรรมดาๆ ของชีวิต"</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เรื่องธรรมดาที่พิเศษ.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 โชคดีที่ได้เจอเธอ</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "ในโลกที่มีผู้คนมากมาย การได้พบคนที่ทำให้หัวใจมีความสุขและมีความหมาย คือโชคดีที่ควรรักษาไว้"</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/โชคดีที่ได้เจอเธอ.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 บทเรียนของน้ำตา</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "บางบทเรียนของชีวิตต้องแลกมาด้วยน้ำตา แต่ความเจ็บปวดเหล่านั้นจะสอนให้เราเข้าใจความรัก การสูญเสีย และการเติบโตมากขึ้น"</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/บทเรียนของน้ำตา.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 เชื่อเกินไป</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "การเชื่อใจอย่างบริสุทธิ์ใจไม่ใช่ความผิด แต่เราควรเรียนรู้ที่จะมองความจริงควบคู่ไปกับความรู้สึก เพื่อไม่ให้หัวใจต้องเจ็บซ้ำจากความคาดหวัง"</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เชื่อเกินไป.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 สัญญาที่ไม่เคยเกิดขึ้น</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "อย่าเชื่อเพียงคำพูดที่สวยงาม แต่จงมองที่การกระทำ เพราะความจริงของความรักไม่ได้อยู่ในคำสัญญา แต่อยู่ในสิ่งที่อีกฝ่ายทำให้เห็นทุกวัน"</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/สัญญาที่ไม่เคยเกิดขึ้น.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 โทรมาแค่ตอนเหงา</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "อย่ามอบทั้งหัวใจให้กับคนที่เห็นเราเป็นเพียงทางผ่าน เพราะความรักที่แท้จริงควรมีความชัดเจนและให้คุณค่ากันทั้งสองฝ่าย"</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/โทรมาแค่ตอนเหงา.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 ยังรักษาไม่หาย</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "แม้หัวใจจะยังไม่หายดีจากการสูญเสีย แต่เราสามารถเรียนรู้ที่จะใช้ชีวิตต่อไป และค่อยๆ เติบโตผ่านความเจ็บปวดนั้นได้"</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ยังรักษาไม่หาย.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 ใจยังย้อนกลับไป</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "บางคนอาจจากไปจากชีวิต แต่ยังอยู่ในหัวใจ การเยียวยาไม่ใช่การลืมเขาให้ได้ แต่คือการเรียนรู้ที่จะใช้ชีวิตต่อไป แม้ยังจำได้เสมอ"</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ใจยังย้อนกลับไป.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 สถานะที่ไม่มีชื่อ</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "ความรักไม่ควรเป็นเรื่องที่ต้องคอยเดา หากอีกฝ่ายไม่ชัดเจน เราควรกล้าที่จะยอมรับความจริง เพื่อไม่ให้ติดอยู่กับความหวังที่ไม่มีคำตอบ"</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/สถานะที่ไม่มีชื่อ.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 แผลเดิมในใจ</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "บางความสูญเสียไม่สามารถลืมได้ง่ายๆ แต่เราสามารถเรียนรู้ที่จะอยู่กับมัน และค่อยๆ เดินหน้าต่อไป"</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/แผลเดิมในใจ.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 แค่ทางผ่าน</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "บางครั้งเราอาจเป็นเพียงช่วงเวลาหนึ่งในชีวิตของใครบางคน แต่นั่นไม่ได้หมายความว่าความรักที่เราให้ไปนั้นไร้ค่า"</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/แค่ทางผ่าน.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 เชื่อหัวใจมากเกินไป</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "การฟังหัวใจเป็นสิ่งสำคัญ แต่การมองเห็นความจริงก็สำคัญไม่แพ้กัน เพราะความรักที่ดีต้องมีทั้งความรู้สึกและสติเดินไปพร้อมกัน"</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เชื่อหัวใจมากเกินไป.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 แสงเช้าที่ว่างเปล่า</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p>ความรู้สึกอ้างว้างในยามเช้า เมื่อตื่นมาแล้วพบว่าความอบอุ่นที่เคยมีได้หายไป เหลือเพียงความจริงที่ต้องอยู่คนเดียว</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/แสงเช้าที่ว่างเปล่า.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-                
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 แค่ฝุ่นที่เลือนลาง</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p>ความรักที่เคยสวยงามค่อยๆ จางหายไปเหมือนฝุ่น ไม่เหลือร่องรอยนอกจากความทรงจำสีจางๆ</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/แค่ฝุ่นที่เลือนลาง.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 คนที่พลาดเอง</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p>เพลงของคนขี้แพ้ที่โทษตัวเองที่ทำร้ายและปล่อยมือคนรักไป จนเสียเขาไปตลอดกาล</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คนที่พลาดเอง.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 ได้แค่มองเธอ</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p>อารมณ์ของการแอบรักในสถานะที่ไม่มีสิทธิ์เรียกร้อง ทำได้แค่เฝ้ามองดูเธอมีความสุขจากมุมไกลๆ</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ได้แค่มองเธอ.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-                
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 วันที่ไม่มีเธอ</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p>โลกที่มืดมน ไร้ทิศทาง ขาดแสงสว่างและแรงบันดาลใจ เมื่อคนที่เคยเป็นทุกอย่างได้เดินจากไป</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/วันที่ไม่มีเธอ.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 ภาพจำที่ไม่ได้ลืม</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p>ความทรมานของการพยายามลืม ยิ่งลบภาพเขาทิ้ง ใจกลับยิ่งจดจำทุกรายละเอียดได้ชัดเจนขึ้น</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ภาพจำที่ไม่ได้ลืม.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 ทางที่ไม่มีเธอ</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p>การฝืนก้าวเดินต่อไปบนเส้นทางชีวิตที่เคยมีเขาเคียงข้าง แต่ปัจจุบันต้องเผชิญหน้าคนเดียวอย่างเคว้งคว้าง</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ทางที่ไม่มีเธอ.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 ให้หมดแล้ว</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p>ความรู้สึกพังทลายหลังจากทุ่มเทความรักทั้งหมดให้คนหนึ่ง แต่สิ่งที่ได้ตอบแทนกลับมาคือความว่างเปล่า</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ให้หมดแล้ว.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 ข้อความสุดท้าย</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p>ความรู้สึกค้างคาในแชทที่พิมพ์ค้างไว้ แต่ไม่มีโอกาสได้กดส่ง เพราะคนที่รออ่านได้หายไปจากชีวิตแล้ว</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ข้อความสุดท้าย.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 หากวันหนึ่งเราได้พบกัน</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p>ซ่อนความหวังว่าหากโชคชะตาพาเราวนกลับมาเจอกันอีกครั้ง จะสามารถยิ้มให้กันได้โดยไม่มีน้ำตา</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/หากวันหนึ่งเราได้พบกัน.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 ไม่ฟังหัวใจตัวเอง</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p>การฝืนทนในความสัมพันธ์ที่เป็นพิษ แม้สมองจะสั่งให้ถอย แต่หัวใจกลับดื้อรั้นยอมเจ็บซ้ำๆ เพราะรัก</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ไม่ฟังหัวใจตัวเอง.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 ฝากลมไปบอก</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p>อารมณ์เหงาในยามค่ำคืนที่ทำได้เพียงฝากความคิดถึงไปกับสายลม หวังว่าเขาจะสัมผัสได้ถึงความรู้สึกนี้</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ฝากลมไปบอก.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 คนที่ควรผ่านไป</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p>การติดกับดักคนที่รู้อยู่เต็มอกว่าไม่ใช่ แต่กลับเลือกที่จะจดจำและผูกพันอย่างถอนตัวไม่ขึ้น</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คนที่ควรผ่านไป.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 เวลาที่ไม่ใช่</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p>ความรักที่สวยงามแต่น่าเสียดายที่เกิดขึ้นในจังหวะชีวิตที่ไม่ตรงกัน จนต้องยอมปล่อยมือกันไป</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เวลาที่ไม่ใช่.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 ในวันที่ฉันหายไป</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p>คำถามเชิงตัดพ้อว่าหากวันหนึ่งเราหายไปจากชีวิตเขา เขาจะรู้สึกกระวนกระวายหรือตามหาเราบ้างไหม</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ในวันที่ฉันหายไป.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 คนที่ควรลืม</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p>ความย้อนแย้งที่ยิ่งพยายามลบคนที่ทำร้ายเราออกไปจากใจ กลับเป็นการสลักชื่อเขาไว้ในใจลึกกว่าเดิม</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คนที่ควรลืม.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 บทเรียนของหัวใจ</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p>บทสรุปความรักที่พังทลาย ซึ่งสอนให้รู้ว่าการมอบใจให้ใครอย่าลืมเผื่อใจไว้ให้ตัวเองบ้าง</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/บทเรียนของหัวใจ.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 ทางออกไม่มีจริง</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p>เหมือนติดอยู่ในเขาวงกตที่ยิ่งพยายามลืม ยิ่งหาทางออก ก็ยิ่งมืดมนและวนเวียนอยู่กับความช้ำเดิม</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ทางออกไม่มีจริง.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 หมดทั้งหัวใจ</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p>ความสูญเสียเมื่อมอบทุกอย่างให้ใครสักคนจนหมดหน้าตัก แต่สิ่งที่ได้คืนมากลับมีแค่ความทรมาน</p>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/หมดทั้งหัวใจ.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-    <div class="song-header">
-        <h3>🎵 รู้ทั้งรู้</h3>
-        <span class="toggle-icon">▼</span>
-    </div>
-    <div class="song-content">
-        <p><strong>📌 สาระสำคัญของเพลง</strong>
-        "บางครั้งเรารู้ว่าต้องปล่อยมือ แต่หัวใจก็ยังต้องใช้เวลาในการยอมรับ"</p>
-        <p><strong>💡 ข้อคิดสำคัญจากเพลง</strong></p>
-        <ul>
-            <li><strong>หัวใจกับเหตุผลมักเดินคนละทาง:</strong> หลายครั้งเรารู้ว่าอะไรถูก อะไรควรทำ แต่ความรู้สึกกลับไม่ยอมทำตามเหตุผล ความรักจึงเป็นเรื่องที่เข้าใจได้ แต่ควบคุมได้ยาก</li>
-            <li><strong>การยอมรับความจริง ไม่ได้แปลว่าจะตัดใจได้ทันที:</strong> เราอาจรู้ว่าความสัมพันธ์นั้นไม่มีอนาคต แต่การปล่อยวางความรู้สึกต้องใช้เวลา หัวใจไม่ได้เข้มแข็งขึ้นเพียงเพราะเรารับรู้ความจริง</li>
-            <li><strong>ความรักไม่จำเป็นต้องสมหวังจึงจะมีความหมาย:</strong> แม้จะไม่ได้ครอบครอง ไม่ได้ลงเอยด้วยกัน แต่ความรักที่เกิดขึ้นจริงก็ยังเป็นประสบการณ์ที่มีคุณค่า</li>
-            <li><strong>การรักใครสักคนอย่างสุดหัวใจ ไม่ใช่เรื่องน่าเสียใจ:</strong> สิ่งที่น่าเสียดายไม่ใช่การรัก แต่คือการไม่กล้ารัก หรือไม่เคยได้มอบความรู้สึกดี ๆ ให้ใครเลย</li>
-            <li><strong>เวลาเป็นส่วนหนึ่งของการเยียวยา:</strong> เพลงยอมรับว่าการก้าวผ่านความเจ็บปวดไม่ใช่เรื่องง่าย แต่สักวันหนึ่งหัวใจจะเรียนรู้และเข้มแข็งพอที่จะปล่อยวางได้</li>
-        </ul>
-        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/รู้ทั้งรู้.mp3" type="audio/mpeg">
-        </audio>
-    </div>
-</div>
-
-<div class="song-summary-card" onclick="toggleSummary(this)">
-    <div class="song-header">
-        <h3>🎵 วันที่หัวใจเริ่มเดิน</h3>
-        <span class="toggle-icon">▼</span>
-    </div>
-    <div class="song-content">
-        <p><strong>📌 สาระสำคัญของเพลง</strong>
-        "การเยียวยาไม่ใช่การลืมอดีต แต่คือการเรียนรู้ที่จะอยู่กับมันโดยไม่เจ็บปวดเหมือนเดิม"</p>
-        <p><strong>💡 ข้อคิดสำคัญจากเพลง</strong></p>
-        <ul>
-            <li><strong>เวลาไม่ได้ลบความทรงจำ แต่ช่วยเยียวยาความเจ็บปวด:</strong> แม้เราจะยังจำเรื่องราวในอดีตได้ แต่เมื่อเวลาผ่านไป ความเจ็บปวดจะค่อย ๆ เบาลง จนเราสามารถมองย้อนกลับไปได้โดยไม่ทรมานเหมือนเดิม</li>
-            <li><strong>การก้าวต่อไป ไม่ได้หมายถึงการลืม:</strong> การเดินหน้าชีวิตไม่ได้แปลว่าเราต้องลืมทุกอย่าง แต่คือการยอมรับสิ่งที่เกิดขึ้น และนำบทเรียนเหล่านั้นติดตัวไปด้วย</li>
-            <li><strong>ความเสียใจสามารถทำให้เราเติบโต:</strong> ทุกบาดแผล ทุกความผิดหวัง และทุกน้ำตา ล้วนเป็นส่วนหนึ่งที่หล่อหลอมให้เราแข็งแกร่งและเข้าใจชีวิตมากขึ้น</li>
-            <li><strong>ชีวิตยังมีโอกาสใหม่เสมอ:</strong> แม้บางความฝันจะพังทลาย หรือบางคนจะเดินจากไป แต่ชีวิตยังมีวันพรุ่งนี้ และยังมีโอกาสให้เราเริ่มต้นใหม่อีกครั้ง</li>
-            <li><strong>วันที่ยากที่สุด จะกลายเป็นวันที่เราภูมิใจที่สุด:</strong> วันหนึ่งเมื่อมองย้อนกลับมา เราอาจยิ้มให้กับตัวเอง ที่เคยผ่านช่วงเวลาที่คิดว่าไม่มีทางผ่านไปได้</li>
-        </ul>
-        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/วันที่หัวใจเริ่มเดิน.mp3" type="audio/mpeg">
-        </audio>
-    </div>
-</div>
-
-<div class="song-summary-card" onclick="toggleSummary(this)">
-    <div class="song-header">
-        <h3>🎵 วนกลับมาที่เดิม</h3>
-        <span class="toggle-icon">▼</span>
-    </div>
-    <div class="song-content">
-        <p><strong>📌 สาระสำคัญของเพลง</strong>
-        "การกลับไปเจ็บซ้ำที่เดิม ไม่ใช่เพราะไม่รู้ความจริง แต่เพราะยังไม่พร้อมยอมรับความจริงนั้น"</p>
-        <p><strong>💡 ข้อคิดสำคัญจากเพลง</strong></p>
-        <ul>
-            <li><strong>ความรักอย่างเดียว ไม่เพียงพอเสมอไป:</strong> แม้เราจะรักใครมากแค่ไหน แต่ถ้าความสัมพันธ์นั้นทำร้ายหัวใจซ้ำ ๆ ความรักเพียงอย่างเดียวอาจไม่สามารถรักษาทุกอย่างได้</li>
-            <li><strong>การให้อภัย ไม่ได้แปลว่าต้องกลับไปเจ็บอีก:</strong> หลายคนให้อภัยเพราะรัก แต่การให้อภัยควรเป็นการปลดปล่อยตัวเอง ไม่ใช่การเปิดโอกาสให้บาดแผลเดิมเกิดขึ้นซ้ำแล้วซ้ำเล่า</li>
-            <li><strong>บางครั้งศัตรูของเรา คือความหวังที่ไม่ยอมปล่อย:</strong> การหวังว่าอีกคนจะเปลี่ยน หรือหวังว่าครั้งนี้จะต่างออกไป อาจทำให้เราติดอยู่ในวงจรเดิมนานกว่าที่ควร</li>
-            <li><strong>การยอมรับความจริง คือจุดเริ่มต้นของการเยียวยา:</strong> เมื่อเราเลิกหลอกตัวเองและกล้ายอมรับว่า "มันไปต่อไม่ได้แล้ว" หัวใจจึงเริ่มฟื้นตัวและเดินต่อได้จริง</li>
-            <li><strong>การเดินจากมา คือการเคารพคุณค่าของตัวเอง:</strong> การจากลาไม่ใช่ความพ่ายแพ้เสมอไป บางครั้งมันคือการปกป้องหัวใจของตัวเองจากความเจ็บปวดที่ไม่จำเป็น</li>
-        </ul>
-        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/วนกลับมาที่เดิม.mp3" type="audio/mpeg">
-        </audio>
-    </div>
-</div>
-
-<div class="song-summary-card" onclick="toggleSummary(this)">
-    <div class="song-header">
-        <h3>🎵 ปล่อยให้เวลาเป็นคนตอบ</h3>
-        <span class="toggle-icon">▼</span>
-    </div>
-    <div class="song-content">
-        <p><strong>📌 สาระสำคัญของเพลง</strong>
-        "บางความรู้สึกไม่จำเป็นต้องรีบหาย แค่ค่อย ๆ ดีขึ้นในทุกวันก็เพียงพอแล้ว"</p>
-        <p><strong>💡 ข้อคิดสำคัญจากเพลง</strong></p>
-        <ul>
-            <li><strong>การเยียวยาต้องใช้เวลา:</strong> ไม่มีใครสามารถลืมคนสำคัญได้ในชั่วข้ามคืน ความเจ็บปวดไม่ใช่สิ่งที่ต้องรีบกำจัด แต่เป็นสิ่งที่ต้องค่อย ๆ เรียนรู้ที่จะอยู่กับมัน</li>
-            <li><strong>การคิดถึง ไม่ได้แปลว่าเรายังติดอยู่กับอดีต:</strong> บางครั้งเรายังคิดถึงใครบางคนได้ แม้จะยอมรับการจากลาแล้ว เพราะความทรงจำดี ๆ ยังคงมีความหมายเสมอ</li>
-            <li><strong>ไม่ใช่ทุกการจากลาจะมีคนผิด:</strong> ความสัมพันธ์บางอย่างจบลงเพราะเวลา สถานการณ์ หรือเส้นทางชีวิตที่เปลี่ยนไป ไม่จำเป็นต้องมีผู้ร้ายในทุกเรื่องราว</li>
-            <li><strong>การปล่อยวางไม่ใช่การลืม:</strong> การวางลงไม่ได้หมายถึงการลบความทรงจำออกไป แต่คือการมองมันได้โดยไม่เจ็บปวดเหมือนเดิม</li>
-            <li><strong>ทุกบาดแผลสามารถกลายเป็นบทเรียน:</strong> วันหนึ่งเมื่อมองย้อนกลับมา เราอาจพบว่าความเจ็บปวดในวันนั้นทำให้เราเติบโต เข้าใจชีวิต และเข้มแข็งมากขึ้น</li>
-        </ul>
-        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ปล่อยให้เวลาเป็นคนตอบ.mp3" type="audio/mpeg">
-        </audio>
-    </div>
-</div>
-
-<div class="song-summary-card" onclick="toggleSummary(this)">
-    <div class="song-header">
-        <h3>🎵 คนที่เดินต่อ</h3>
-        <span class="toggle-icon">▼</span>
-    </div>
-    <div class="song-content">
-        <p><strong>📌 สาระสำคัญของเพลง</strong>
-        "การเติบโตไม่ได้หมายถึงการลืมอดีต แต่คือการมองอดีตด้วยรอยยิ้มแทนน้ำตา"</p>
-        <p><strong>💡 ข้อคิดสำคัญจากเพลง</strong></p>
-        <ul>
-            <li><strong>การจากลาไม่ใช่จุดจบของชีวิต:</strong> แม้คนสำคัญจะจากไป แต่ชีวิตยังคงดำเนินต่อ และเรายังมีโอกาสพบสิ่งดี ๆ ในวันข้างหน้า</li>
-            <li><strong>ความคิดถึงกับการก้าวต่อไป สามารถอยู่ร่วมกันได้:</strong> การเดินต่อไม่ได้หมายความว่าต้องลืมทั้งหมด เราสามารถคิดถึงใครบางคนได้ โดยไม่ต้องย้อนกลับไปอยู่ในความเจ็บปวดเดิม</li>
-            <li><strong>เวลาเปลี่ยนบาดแผลให้กลายเป็นบทเรียน:</strong> สิ่งที่เคยทำให้ร้องไห้ทุกคืน วันหนึ่งอาจกลายเป็นเพียงความทรงจำที่ทำให้เราเข้าใจชีวิตมากขึ้น</li>
-            <li><strong>ทุกความสัมพันธ์มีคุณค่า แม้จะไม่ลงเอยด้วยกัน:</strong> คนบางคนเข้ามาเพื่อสร้างความสุข สอนบทเรียน หรือเปลี่ยนแปลงเราให้เติบโตขึ้น แม้สุดท้ายจะไม่ได้อยู่ด้วยกันก็ตาม</li>
-            <li><strong>การก้าวต่อคือความกล้าหาญรูปแบบหนึ่ง:</strong> ไม่ใช่ทุกคนที่จะลุกขึ้นยืนได้หลังจากหัวใจแตกสลาย แต่คนที่เลือกเดินต่อ คือคนที่กล้ารับมือกับความจริงและสร้างอนาคตใหม่ให้ตัวเอง</li>
-        </ul>
-        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คนที่เดินต่อ.mp3" type="audio/mpeg">
-        </audio>
-    </div>
-</div>
-
-<div class="song-summary-card" onclick="toggleSummary(this)">
-    <div class="song-header">
-        <h3>🎵 ซ่อนไม่เก่ง</h3>
-        <span class="toggle-icon">▼</span>
-    </div>
-    <div class="song-content">
-        <p><strong>📌 สาระสำคัญของเพลง</strong>
-        "ความรักที่ไม่ถูกพูดออกไป อาจกลายเป็นความเสียดายที่อยู่กับเราไปอีกนาน"</p>
-        <p><strong>💡 ข้อคิดสำคัญจากเพลง</strong></p>
-        <ul>
-            <li><strong>ความรู้สึกที่แท้จริง มักซ่อนได้ไม่นาน:</strong> แม้เราจะพยายามปิดบังแค่ไหน แต่ความรักมักแสดงออกผ่านสายตา การกระทำ และความใส่ใจ จนคนรอบข้างมองเห็นได้</li>
-            <li><strong>ความกลัวคำตอบ อาจทำให้เราพลาดโอกาส:</strong> หลายคนไม่กล้าพูดความในใจ เพราะกลัวการถูกปฏิเสธ แต่บางครั้งการไม่พูดอะไรเลย อาจทำให้เราต้องอยู่กับความเสียดายนานกว่า</li>
-            <li><strong>การซื่อตรงกับหัวใจตัวเองเป็นเรื่องสำคัญ:</strong> ไม่ว่าผลลัพธ์จะออกมาอย่างไร การยอมรับความรู้สึกของตัวเอง คือจุดเริ่มต้นของความกล้าหาญและการเติบโตทางอารมณ์</li>
-            <li><strong>ความรักไม่จำเป็นต้องมีคำอธิบายมากมาย:</strong> บางครั้งความรู้สึกที่จริงใจ ไม่ได้ต้องการเหตุผลหรือคำพูดสวยหรู แค่ความจริงใจและความกล้าที่จะสื่อสารก็เพียงพอ</li>
-            <li><strong>การเปิดใจดีกว่าการเก็บความเสียดายไว้ตลอดชีวิต:</strong> แม้คำตอบอาจไม่เป็นอย่างที่หวัง แต่การได้พูดความจริงออกไป อย่างน้อยก็ทำให้เราไม่ต้องตั้งคำถามกับตัวเองในอนาคตว่า "ถ้าวันนั้นกล้าพูด จะเป็นอย่างไร"</li>
-        </ul>
-        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ซ่อนไม่เก่ง.mp3" type="audio/mpeg">
-        </audio>
-    </div>
-</div>
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 เก็บเศษหัวใจ</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "เพลงนี้ไม่ได้เล่าแค่เรื่องความอกหัก แต่เล่าถึงการเยียวยาตัวเองหลังจากสูญเสียสิ่งสำคัญในชีวิต เป็นเรื่องของการลุกขึ้นยืนอีกครั้งหลังจากวันที่พังทลาย"</p>
-                        <p><strong>💡 ข้อคิดสำคัญจากเพลง</strong></p>
-                        <ul>
-                            <li>"เมื่อเรามอบทุกอย่างให้ใครสักคนจนหมด ทั้งความสุข ความหวัง และคุณค่าของตัวเอง หากวันหนึ่งเขาจากไป เราอาจรู้สึกเหมือนสูญเสียทุกอย่างไปพร้อมกัน"</li>
-                            <li>"การแตกสลายไม่ใช่ความล้มเหลว แต่เป็นส่วนหนึ่งของการเติบโต"</li>
-                            <li>"รอยแผลบางรอยอาจไม่หายไปตลอดชีวิต แต่เราจะเรียนรู้ที่จะอยู่กับมันโดยไม่เจ็บเหมือนเดิม"</li>
-                            <li>"แม้ในวันที่มืดมนที่สุด ชีวิตก็ยังมีบางอย่างให้เราเรียนรู้"</li>
-                            <li>"เมื่อผ่านความเจ็บปวดมาได้ เราจะเริ่มเห็นคุณค่าของตัวเองมากขึ้น"</li>
-                        </ul>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เก็บเศษหัวใจ.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
- 
-<div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 คำตอบที่หาไม่เจอ</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "อย่าให้ความผิดหวังในอดีต ทำลายความหวังทั้งหมดของอนาคตบางครั้งสิ่งที่เราตามหาอาจยังมาไม่ถึง ไม่ใช่เพราะมันไม่มีอยู่จริง แต่เพราะยังไม่ถึงเวลาที่เหมาะสมที่จะพบมันเท่านั้น"</p>
-                        <p><strong>💡 ข้อคิดสำคัญจากเพลง</strong></p>
-                        <ul>
-                            <li>"บางเรื่องต้องใช้เวลาเรียนรู้ บางครั้งอาจต้องใช้ทั้งชีวิตกว่าจะเข้าใจว่าทำไมเราถึงต้องพบเจอเรื่องราวต่าง ๆ"</li>
-                            <li>"การที่เราเคยเจ็บปวดจากความรัก ไม่ได้แปลว่าความรักไม่มีอยู่จริง เพียงแค่เรายังไม่พบสิ่งที่ใช่ในเวลานั้น"</li>
-                            <li>"คนที่กล้ารักย่อมมีโอกาสเจ็บ แต่ถ้าปิดหัวใจเพราะกลัวความเจ็บ ก็อาจพลาดโอกาสพบความสุขเช่นกัน"</li>
-                            <li>"การรู้สึกท้อ หมดแรง หรือสับสน เป็นเรื่องปกติของมนุษย์ ไม่ได้หมายความว่าเราต้องหยุดเดินต่อ"</li>
-                            <li>"แม้วันนี้จะยังไม่พบสิ่งที่ตามหา แต่อนาคตยังมีความเป็นไปได้เสมอ"</li>
-                        </ul>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เก็บเศษหัวใจ.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-<div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 ยิ้มทั้งที่เจ็บ</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "เพลงนี้สะท้อนความจริงของคนจำนวนมากที่ภายนอกดูเข้มแข็ง ดูมีความสุข แต่ภายในยังเต็มไปด้วยบาดแผลและความคิดถึง เป็นเพลงที่พูดถึงการเยียวยาหัวใจอย่างเงียบ ๆ"</p>
-                        <p><strong>💡 ข้อคิดสำคัญจากเพลง</strong></p>
-                        <ul>
-                            <li>"หลายคนเลือกยิ้มเพื่อให้คนรอบข้างสบายใจ ทั้งที่ในใจยังเจ็บปวดอยู่มาก"</li>
-                            <li>"บางคนผ่านวันทั้งวันได้อย่างปกติ แต่พอกลับมาอยู่คนเดียว ความเจ็บปวดทั้งหมดก็กลับมาอีกครั้ง"</li>
-                            <li>"ความรักไม่ใช่สิ่งที่ลบออกจากใจได้เพียงชั่วข้ามคืน"</li>
-                            <li>"แม้จะไม่มีร่องรอยภายนอก แต่ความเสียใจสามารถอยู่กับเราได้นานกว่าที่คนอื่นคิด"</li>
-                            <li>"แม้วันนี้จะยังร้องไห้ ยังคิดถึง ยังอ่อนแอ แต่เชื่อว่าสักวันหนึ่งทุกอย่างจะดีขึ้น"</li>
-                        </ul>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ยิ้มทั้งที่เจ็บ.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-<div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 ขอให้เธอเจอวันที่ดี</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "เพลงนี้พูดถึงความรักในรูปแบบที่เติบโตที่สุด คือการรักโดยไม่ยึดติด รักโดยไม่จำเป็นต้องครอบครอง และยินดีกับความสุขของอีกฝ่าย แม้สุดท้ายเราจะไม่ได้เดินไปด้วยกัน"</p>
-                        <p><strong>💡 ข้อคิดสำคัญจากเพลง</strong></p>
-                        <ul>
-                            <li>"หลายคนเข้าใจว่าความรักต้องจบลงด้วยการได้อยู่ด้วยกัน แต่ความจริงแล้ว ความรักที่แท้จริงอาจเป็นเพียงการหวังดีต่อกันก็ได้"</li>
-                            <li>"บางครั้งการปล่อยให้คนที่เรารักเดินไปในทางที่เขามีความสุข คือรูปแบบหนึ่งของความรักที่ยิ่งใหญ่"</li>
-                            <li>"ไม่ใช่ทุกความรักจะต้องลงเอยด้วยคำว่า "แฟน" หรือ "คู่ชีวิต"</li>
-                            <li>"เมื่อความสัมพันธ์จบลง สิ่งสำคัญไม่ใช่การยื้อไว้ แต่คือการเรียนรู้ที่จะก้าวต่อไป"</li>
-                            <li>"เราไม่จำเป็นต้องเกลียดใครเพื่อจะเดินจากมาได้"</li>
-                        </ul>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ขอให้เธอเจอวันที่ดี.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-<div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 คำที่พูดไม่พอ</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "เพลงนี้สะท้อนความรู้สึกของคนที่มีบางอย่างอยู่เต็มหัวใจ แต่ไม่สามารถถ่ายทอดออกมาเป็นคำพูดได้ ไม่ใช่เพราะไม่อยากบอก แต่เพราะความรู้สึกนั้นลึกซึ้ง ซับซ้อน และเปราะบางเกินกว่าจะอธิบาย"</strong></p>
-                        <ul>
-                            <li>"บางครั้งหัวใจรู้สึกมากกว่าที่ภาษาใดจะบรรยายได้"</li>
-                            <li>"หลายครั้งคนที่เงียบที่สุด อาจเป็นคนที่มีเรื่องอยู่ในใจมากที่สุด"</li>
-                            <li>"ความจริงบางอย่างอาจเปลี่ยนความสัมพันธ์ไปตลอดกาล"</li>
-                            <li>"บางคนแสดงความรักผ่านการอยู่ข้าง ๆ การดูแล หรือการหวังดีเงียบ ๆ"</li>
-                            <li>"สิ่งที่หลายคนต้องการมากที่สุด อาจไม่ใช่คำตอบ แต่คือคนที่เข้าใจความรู้สึกของเรา แม้เราไม่ได้พูดออกมา"</li>
-                        </ul>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คำที่พูดไม่พอ.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-<div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 ลบได้แค่หน้าจอ</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "เพลงนี้พูดถึงความจริงของการจากลาและการเยียวยาหัวใจ หลังจากความสัมพันธ์จบลง แม้เราจะลบทุกอย่างที่มองเห็นได้ แต่บางความรู้สึกยังคงอยู่ในใจ และนั่นไม่ใช่เรื่องผิด"</strong></p>
-                        <ul>
-                            <li>"เราสามารถลบรูป ลบข้อความ หรือเก็บของที่เกี่ยวข้องกับใครบางคนได้ แต่ไม่สามารถสั่งให้หัวใจลืมได้ทันที"</li>
-                            <li>"เมื่อคนคนหนึ่งไม่อยู่ในชีวิตแล้ว เขาอาจไม่ได้หายไปจากใจทั้งหมด แต่ย้ายจาก "ปัจจุบัน" ไปเป็น "ความทรงจำ"</li>
-                            <li>"เมื่อเราบังคับตัวเองให้ลืมมากเกินไป เรามักจะยิ่งนึกถึงเรื่องนั้นบ่อยขึ้น"</li>
-                            <li>"เราสามารถคิดถึงใครบางคนได้ โดยไม่จำเป็นต้องกลับไปใช้ชีวิตแบบเดิม"</li>
-                            <li>"หลายคนเข้าใจว่าการเยียวยาคือการลืม แต่ความจริงแล้วคือการอยู่กับความทรงจำนั้นได้ โดยไม่เจ็บเหมือนเดิม"</li>
-                        </ul>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ลบได้แค่หน้าจอ.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-                <div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 เวันที่เข้าใจ</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        เพลงนี้สะท้อนความจริงที่เจ็บปวดที่สุดอย่างหนึ่งของชีวิต คือ เรามักเห็นคุณค่าของบางคนหรือบางสิ่ง เมื่อมันไม่อยู่กับเราแล้ว เป็นบทเพลงแห่งความคิดถึง การยอมรับ และการเติบโตจากการสูญเสีย"</p>
-                        <p><strong>💡 ข้อคิดสำคัญจากเพลง</strong></p>
-                        <ul>
-                            <li>"หลายครั้งเราคิดว่าคนบางคนจะอยู่กับเราเสมอ จนละเลยคำพูด การดูแล หรือช่วงเวลาที่มีร่วมกัน"</li>
-                            <li>"สิ่งที่เราคิดว่าเป็นเรื่องธรรมดาในวันนั้น อาจกลายเป็นสิ่งที่คิดถึงที่สุดในวันข้างหน้า"</li>
-                            <li>"เมื่อคนคนหนึ่งจากไป ไม่ว่าจะจากด้วยเหตุผลใด คำพูดที่ไม่ได้บอกก็อาจกลายเป็นความเสียดายตลอดชีวิต"</li>
-                            <li>"ราสามารถก้าวต่อไปได้ พร้อมกับเก็บใครบางคนไว้ในความทรงจำ"</li>
-                            <li>"สิ่งที่ผ่านไปแล้วไม่อาจกลับคืนมาได้ แต่เราสามารถใช้บทเรียนเหล่านั้นดูแลคนที่ยังอยู่ในชีวิตปัจจุบัน"</li>
-                        </ul>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/วันที่เข้าใจ.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
- 
-<div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 ขอเก็บไว้คนเดียว</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "เพลงนี้ถ่ายทอดความรักในมุมที่อ่อนโยนและสวยงามที่สุดคือการรักใครสักคนโดยไม่เรียกร้องไม่คาดหวัง และไม่จำเป็นต้องได้ครอบครองเป็นความรักที่อยู่ในใจเงียบๆ แต่มีคุณค่าอย่างมาก"</p>
-                        <p><strong>💡 ข้อคิดสำคัญจากเพลง</strong></p>
-                        <ul>
-                            <li>"หลายคนคิดว่าความรักที่สมหวังคือความรักที่ได้อยู่ด้วยกัน แต่ความจริงแล้ว ความรู้สึกดี ๆ ที่มีต่อใครสักคนก็มีคุณค่าในตัวมันเอง"</li>
-                            <li>"บางคนเข้ามาในชีวิตเพียงเพื่อทำให้เรากลับมายิ้มได้อีกครั้ง"</li>
-                            <li>"การรักใครไม่ได้หมายความว่าต้องบอกออกไปเสมอ"</li>
-                            <li>"อกไม้บางดอกสวยที่สุดตอนที่มันยังอยู่บนต้น ความรู้สึกบางอย่างก็เช่นกัน"</li>
-                            <li>"แม้ความรักนั้นจะไม่มีวันเริ่มต้นหรือสมหวัง แต่การได้รู้สึกก็เป็นประสบการณ์ที่มีค่า"</li>
-                        </ul>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ขอเก็บไว้คนเดียว.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-<div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 ไม่ต้องมีคำตอบ</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "เพลงนี้สะท้อนการเติบโตของหัวใจหลังการสูญเสีย เป็นช่วงเวลาที่คนคนหนึ่งเลิกวิ่งตามหาคำตอบ และเริ่มเรียนรู้ที่จะยอมรับความจริง แม้จะไม่เข้าใจทุกอย่างก็ตาม"</p>
-                        <p><strong>💡 ข้อคิดสำคัญจากเพลง</strong></p>
-                        <ul>
-                            <li>"หลายครั้งเราพยายามหาสาเหตุว่าทำไมความสัมพันธ์ถึงจบลง แต่สุดท้ายกลับไม่พบคำตอบที่ชัดเจน"</li>
-                            <li>"บางคนใช้เวลาหลายปีตามหาคำอธิบาย ทั้งที่สิ่งที่หัวใจต้องการจริง ๆ คือการยอมรับความจริง"</li>
-                            <li>"การปล่อยมือจากอดีต ไม่ได้หมายถึงการลบความทรงจำ แต่คือการหยุดแบกมันไว้ด้วยความเจ็บปวด"</li>
-                            <li>"มีคำถามบางข้อที่ไม่มีคำตอบที่สมบูรณ์ และนั่นไม่ใช่ความผิดของใคร"</li>
-                            <li>"แม้ความสัมพันธ์จะจบลง แต่สิ่งที่เราได้รับอาจเป็นบทเรียน ประสบการณ์ หรือมุมมองใหม่เกี่ยวกับ"</li>
-                        </ul>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ไม่ต้องมีคำตอบ.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-<div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 ฉากที่ไม่มีอยู่จริง</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "พลงนี้พูดถึงความเจ็บปวดในรูปแบบที่ลึกมาก เพราะไม่ใช่การสูญเสียคนที่เคยเป็นของเรา แต่เป็นการสูญเสีย "ภาพฝัน" ที่เราเคยสร้างขึ้นในใจ 
-                          เป็นการเรียนรู้ว่าบางครั้งสิ่งที่ทำให้เราเจ็บที่สุด ไม่ใช่ความจริง แต่คือความคาดหวังที่เราใส่ลงไป"</p>
-                        <p><strong>💡 ข้อคิดสำคัญจากเพลง</strong></p>
-                        <ul>
-                            <li>"หลายครั้งหัวใจไม่ได้ตกหลุมรักความจริง แต่ตกหลุมรักอนาคตที่จินตนาการขึ้นมา"</li>
-                            <li>"ความผิดหวังไม่ได้เกิดจากการที่อีกฝ่ายเปลี่ยนไปเสมอ แต่บางครั้งเกิดจากการที่เราคาดหวังมากเกินกว่าสิ่งที่เขาเคยให้"</li>
-                            <li>"หลายคนพยายามหาคนรับผิดชอบเมื่อความรักจบลง แต่บางครั้งไม่มีใครผิดเลย"</li>
-                            <li>"ตราบใดที่เรายังอยู่ในโลกของความฝัน เราจะยังเจ็บปวดกับความจริง"</li>
-                            <li>"การมีความหวังเป็นเรื่องดี แต่ต้องไม่ปล่อยให้ความหวังกลายเป็นกำแพงที่บดบังความจริง"</li>
-                        </ul>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ฉากที่ไม่มีอยู่จริง.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-<div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 คนนอกเส้นทาง</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "เพลงนี้พูดถึงความรักที่เต็มไปด้วยความเข้าใจ การยอมรับ และการเสียสละ เป็นความรักของคนที่รู้ว่าตัวเองอาจไม่ใช่คนที่จะได้เดินไปถึงปลายทางกับอีกฝ่าย
-                        แต่ยังคงหวังดีและยินดีกับความสำเร็จของเขาเสมอ"</strong></p>
-                        <ul>
-                            <li>"บางคนเข้ามาเพื่อเปลี่ยนมุมมอง เปลี่ยนความคิด หรือเปลี่ยนชีวิตเรา แต่ไม่ได้ถูกกำหนดให้เป็นคนที่อยู่จนถึงตอนจบ"</li>
-                            <li>"บางครั้งเรารักกัน แต่มีเส้นทางชีวิตที่แตกต่างกันเกินกว่าจะเดินร่วมกันได้"</li>
-                            <li>"การยอมให้คนที่เรารักเดินไปตามเส้นทางของเขา ไม่ใช่ความพ่ายแพ้ แต่เป็นความกล้าหาญอย่างหนึ่ง"</li>
-                            <li>"เมื่อเรารักใครจริง ๆ เราจะอยากเห็นเขาได้เป็นในสิ่งที่เขาฝัน แม้เราอาจไม่ได้อยู่ในภาพนั้น"</li>
-                            <li>"บางครั้งบทบาทของเราในชีวิตใครสักคน อาจเป็นเพียงผู้ร่วมทางช่วงสั้น ๆ แต่ก็สำคัญมาก"</li>
-                        </ul>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คนนอกเส้นทาง.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-
-<div class="song-summary-card" onclick="toggleSummary(this)">
-                    <div class="song-header">
-                        <h3>🎵 ค่อย ๆ หายดี</h3>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="song-content">
-                        <p><strong>📌 สาระสำคัญของเพลง</strong>
-                        "เพลงนี้พูดถึงความจริงของการจากลาและการเยียวยาหัวใจ หลังจากความสัมพันธ์จบลง แม้เราจะลบทุกอย่างที่มองเห็นได้ แต่บางความรู้สึกยังคงอยู่ในใจ และนั่นไม่ใช่เรื่องผิด"</strong></p>
-                        <ul>
-                            <li>"หลายคนกดดันตัวเองว่าต้องลืมให้ได้ ต้องเข้มแข็งให้เร็ว แต่ความจริงแล้วหัวใจแต่ละดวงมีเวลาในการรักษาต่างกัน"</li>
-                            <li>"การที่ยังนึกถึง ยังรู้สึก หรือยังมีน้ำตา ไม่ได้แปลว่าเราอ่อนแอ"</li>
-                            <li>"หลายครั้งแผลในใจไม่ได้หายสนิท แต่เราเรียนรู้ที่จะอยู่กับมันโดยไม่ถูกมันควบคุม"</li>
-                            <li>"วันที่ร้องไห้ วันที่อ่อนแอ และวันที่รู้สึกว่าตัวเองไม่ไหว ล้วนมีคุณค่า"</li>
-                            <li>"ไม่มีใครอยู่กับเราได้ตลอดไป และนั่นไม่ใช่เรื่องผิด"</li>
-                        </ul>
-                        <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
-                            <source src="https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ค่อย ๆ หายดี.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-                
-          </div> </div>
+                <!-- โค้ด JavaScript จะนำการ์ดเพลงมาแทรกที่นี่ -->
+            </div>
+        </div>
     </div>
 </div>
 
 <script>
-    // ฟังก์ชันเปิด/ปิดเมนูบนมือถือ
+    // ฐานข้อมูลเพลงทั้งหมด
+    const songsData = [
+        {
+            title: "ไม่มีคำแปล",
+            type: "full",
+            summary: "บางความสัมพันธ์ไม่ได้จบลงด้วยคำตอบที่ชัดเจน แต่จบลงด้วยการที่เราเรียนรู้ที่จะยอมรับความจริง และเติบโตจากความรู้สึกนั้น",
+            takeawayTitle: "💡 ข้อคิดสำคัญจากเพลง",
+            takeaways: [
+                "ความรักไม่ใช่ทุกครั้งที่จะมีสถานะชัดเจน บางความสัมพันธ์ใกล้ชิดเกินกว่าเพื่อน แต่ก็ไม่ใช่คนรัก ทำให้เกิดความสับสนและความคาดหวังที่ไม่มีคำตอบ",
+                "การคิดแทนอีกฝ่ายมากเกินไป ทำให้เราเจ็บปวด เพราะคำตอบที่แท้จริงอาจไม่ได้อยู่ในจินตนาการ แต่อยู่ในการกระทำที่ชัดเจน",
+                "ความเงียบก็เป็นคำตอบรูปแบบหนึ่ง บางครั้งการไม่ได้รับคำตอบ ก็คือคำตอบที่เราต้องยอมรับแล้ว",
+                "ความรักไม่จำเป็นต้องสมหวังจึงจะมีคุณค่า แม้สุดท้ายจะไม่ได้คบกัน แต่ประสบการณ์นั้นก็สอนให้เราเข้าใจหัวใจตัวเองมากขึ้น",
+                "การยอมรับความจริง คือจุดเริ่มต้นของการก้าวต่อไป เพื่อหลุดพ้นจากการรอคอยคำตอบที่ไม่มีวันมาถึง"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ไม่มีคำแปล.mp3"
+        },
+        {
+            title: "ยอมรับคนเดียว",
+            type: "full",
+            summary: "ความรักไม่ได้วัดกันที่ว่าเราพยายามมากแค่ไหน แต่อยู่ที่ว่าหัวใจของคนสองคนเดินมาพบกันหรือไม่ และเมื่อไปต่อไม่ได้ การยอมรับความจริงคือการรักตัวเองในรูปแบบหนึ่ง",
+            takeawayTitle: "💡 ข้อคิดสำคัญจากเพลง",
+            takeaways: [
+                "ความรักไม่ใช่สิ่งที่บังคับกันได้ ต่อให้เรารักใครมากแค่ไหน ทุ่มเทมากเพียงใด ก็ไม่ได้หมายความว่าอีกฝ่ายจะต้องรักเรากลับ ความรักที่แท้จริงเกิดจากความรู้สึกของทั้งสองฝ่าย ไม่ใช่ความพยายามของคนใดคนหนึ่ง",
+                "บางครั้งการยอมแพ้ ไม่ใช่ความอ่อนแอ การยอมรับว่าอีกฝ่ายไม่ได้รักเรา อาจเจ็บปวด แต่เป็นความกล้าหาญรูปแบบหนึ่ง เพราะเป็นการยอมรับความจริงแทนที่จะหลอกตัวเองต่อไป",
+                "ไม่มีใครผิดในความรักเสมอไป ความสัมพันธ์บางอย่างจบลง ไม่ใช่เพราะมีคนทำผิด แต่เพราะความรู้สึกไม่ตรงกัน การโทษกันไม่ได้ช่วยให้ความเจ็บปวดหายไป",
+                "ความเจ็บปวดคือบทเรียนของหัวใจ ทุกความผิดหวังสอนให้เราเข้าใจความรักมากขึ้น เข้าใจคุณค่าของตัวเองมากขึ้น และเติบโตเป็นคนที่เข้มแข็งกว่าเดิม",
+                "การปล่อยมือ อาจเป็นความรักรูปแบบสุดท้าย เมื่อรู้ว่าอีกฝ่ายมีความสุขกับทางเลือกของเขา การยอมปล่อยและอวยพรจากระยะไกล อาจเป็นการรักที่บริสุทธิ์ที่สุด"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ยอมรับคนเดียว.mp3"
+        },
+        {
+            title: "ฉากสุดท้าย",
+            type: "full",
+            summary: "ไม่ใช่ทุกความรักจะอยู่กับเราตลอดไป แต่ทุกความรักจะทิ้งบทเรียนบางอย่างไว้เสมอ",
+            takeawayTitle: "💡 ข้อคิดสำคัญจากเพลง",
+            takeaways: [
+                "ทุกเรื่องราวมีวันจบ เหมือนการแสดงที่ต้องมีฉากสุดท้าย ความสัมพันธ์บางความสัมพันธ์ก็เช่นกัน ไม่ว่าจะสวยงามแค่ไหน สุดท้ายอาจต้องถึงเวลาปิดม่าน",
+                "ความรักไม่ได้รับประกันว่าจะอยู่ตลอดไป การรักกันในวันนี้ ไม่ได้หมายความว่าจะได้เดินไปด้วยกันจนถึงปลายทาง บางครั้งความรักก็ไม่อาจเอาชนะเวลา ระยะทาง หรือการเปลี่ยนแปลงของหัวใจคนได้",
+                "ความทรงจำมีค่า แม้คนในความทรงจำนั้นจะจากไปแล้ว แม้ความสัมพันธ์จะจบลง แต่ช่วงเวลาดี ๆ ที่เคยมีร่วมกันยังคงเป็นส่วนหนึ่งของชีวิต และเป็นสิ่งที่ไม่มีใครพรากไปได้",
+                "ความเจ็บปวดคือครูของหัวใจ การสูญเสียทำให้เราเรียนรู้ เข้าใจชีวิต เข้าใจความรัก และเข้าใจตัวเองมากขึ้นกว่าที่เคย",
+                "การเดินต่อ คือชัยชนะของคนที่เคยเจ็บ ตอนท้ายเพลงไม่ได้พูดถึงการลืม แต่พูดถึงการ 'เดินต่อไป' พร้อมรอยแผลและบทเรียน นั่นคือการเติบโตอย่างแท้จริง"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ฉากสุดท้าย.mp3"
+        },
+        {
+            title: "ซ่อนไว้",
+            type: "full",
+            summary: "บางความรักไม่ได้เกิดมาเพื่อเป็นเจ้าของ แต่เกิดมาเพื่อสอนให้เรารู้จักการรักอย่างบริสุทธิ์ใจ",
+            takeawayTitle: "💡 ข้อคิดสำคัญจากเพลง",
+            takeaways: [
+                "ไม่ใช่ทุกความรักจะต้องถูกบอกออกไป บางครั้งความรักอาจอยู่ในรูปแบบของการเฝ้ามอง การหวังดี และการเก็บความรู้สึกไว้ในใจ โดยไม่จำเป็นต้องได้รับการตอบกลับ",
+                "ความกลัวอาจทำให้เราพลาดบางโอกาส การไม่กล้าพูดความจริงเพราะกลัวเสียคนสำคัญ อาจทำให้เราอยู่กับคำถามว่า 'ถ้าวันนั้นบอกออกไปจะเป็นอย่างไร'",
+                "การรักใครสักคน ไม่ได้หมายความว่าต้องครอบครองเขา ความรักที่แท้จริงบางครั้งคือการยินดีที่ได้เห็นอีกฝ่ายมีความสุข แม้เราไม่ได้เป็นคนที่อยู่ข้างเขา",
+                "ความรู้สึกที่เก็บไว้นาน อาจกลายเป็นภาระของหัวใจ การซ่อนความรักไว้ในความเงียบช่วยรักษาความสัมพันธ์บางอย่าง แต่ก็อาจสร้างความเจ็บปวดให้กับตัวเราเองเช่นกัน",
+                "คุณค่าของความรัก ไม่ได้อยู่ที่ผลลัพธ์เสมอไป แม้เรื่องราวจะไม่เกิดขึ้นจริง แต่ช่วงเวลาที่ได้รัก ได้คิดถึง และได้เก็บใครบางคนไว้ในหัวใจ ก็เป็นความทรงจำที่มีความหมาย"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ซ่อนไว้.mp3"
+        },
+        {
+            title: "ฤดูที่ไม่มีเธอ",
+            type: "full",
+            summary: "การจากลาอาจพรากคนคนหนึ่งไปจากชีวิต แต่ไม่อาจพรากความทรงจำดี ๆ ออกจากหัวใจได้",
+            takeawayTitle: "💡 ข้อคิดสำคัญจากเพลง",
+            takeaways: [
+                "ชีวิตต้องเดินต่อ แม้คนสำคัญจะไม่อยู่แล้ว การจากลาเป็นสิ่งที่ไม่มีใครอยากเผชิญ แต่เมื่อมันเกิดขึ้น เราต้องเรียนรู้ที่จะก้าวต่อไปพร้อมกับความทรงจำที่ยังอยู่ในใจ",
+                "ความคิดถึงไม่ใช่ความอ่อนแอ การยังคงคิดถึงใครสักคนหลังจากเวลาผ่านไป ไม่ได้แปลว่าเราไม่เข้มแข็ง แต่เป็นเพราะคนคนนั้นเคยมีความหมายกับชีวิตเราจริง ๆ",
+                "บางคนจากไป แต่ไม่เคยหายไปจากหัวใจ แม้ตัวคนจะไม่อยู่แล้ว แต่เรื่องราว รอยยิ้ม และความทรงจำดี ๆ ยังคงเป็นส่วนหนึ่งของชีวิตเราเสมอ",
+                "การยอมรับไม่ได้หมายถึงการลืม เพลงนี้สอนว่า การยอมรับความจริงว่าเขาไม่กลับมาแล้ว ไม่ได้หมายความว่าเราต้องลืมเขา แต่คือการอยู่กับความทรงจำนั้นอย่างสงบ",
+                "ความรักที่แท้จริงยังคงงดงาม แม้จะจบลง ช่วงเวลาที่เคยมีร่วมกันไม่ได้สูญเปล่า เพราะมันเคยทำให้ชีวิตอบอุ่น และกลายเป็นบทหนึ่งที่สวยงามของชีวิต"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ฤดูที่ไม่มีเธอ.mp3"
+        },
+        {
+            title: "ฝากดาวดูแลเธอ",
+            type: "full",
+            summary: "บางความสัมพันธ์จบลงในฐานะคนรัก แต่ยังคงอยู่ในฐานะความปรารถนาดีตลอดไป",
+            takeawayTitle: "💡 ข้อคิดสำคัญจากเพลง",
+            takeaways: [
+                "ความรักที่แท้จริง ไม่จำเป็นต้องครอบครอง บางครั้งการรักใครสักคน ไม่ได้หมายถึงการต้องอยู่ด้วยกันตลอดไป แต่คือการอยากเห็นเขามีความสุข ไม่ว่าเราจะอยู่ในชีวิตเขาหรือไม่ก็ตาม",
+                "การจากลาไม่ได้ทำลายความรู้สึกดี ๆ แม้ความสัมพันธ์จะจบลง แต่ความห่วงใย ความปรารถนาดี และความทรงจำที่สวยงามยังคงอยู่ได้เสมอ",
+                "คนบางคนเข้ามาเพื่อสอนบทเรียนสำคัญของชีวิต ไม่ใช่ทุกคนที่เข้ามาจะอยู่ตลอดไป แต่ทุกคนที่ผ่านเข้ามาอาจทิ้งบางสิ่งที่มีค่าไว้ให้เราเติบโต",
+                "การปล่อยวางไม่ใช่การหมดรัก การยอมรับความจริงและปล่อยให้อีกฝ่ายเดินไปสู่ความสุขของเขา คือความรักในรูปแบบที่โตขึ้นและเข้าใจมากขึ้น",
+                "ความปรารถนาดีคือของขวัญที่งดงามที่สุด แม้จะไม่มีโอกาสได้ดูแลกันเหมือนเดิม แต่การคอยอวยพรให้เขาพบสิ่งดี ๆ ในชีวิต ก็เป็นความรักที่บริสุทธิ์และมีคุณค่า"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ฝากดาวดูแลเธอ.mp3"
+        },
+        {
+            title: "เพิ่งเข้าใจคำว่ารัก",
+            type: "full",
+            summary: "บางครั้งเราจะรู้คุณค่าของคนคนหนึ่ง ก็ต่อเมื่อไม่มีเขาอยู่ให้รักอีกแล้ว",
+            takeawayTitle: "💡 ข้อคิดสำคัญจากเพลง",
+            takeaways: [
+                "เรามักเห็นคุณค่าของบางสิ่ง เมื่อมันจากไปแล้ว ในวันที่ยังมีอยู่ เราอาจมองข้ามความสำคัญของคนที่รักเรา แต่เมื่อเขาไม่อยู่แล้ว เราจึงเข้าใจว่าการมีเขาอยู่ข้าง ๆ มีค่ามากเพียงใด",
+                "อย่ารอให้สายเกินไปที่จะบอกรัก หลายครั้งเราคิดว่ายังมีเวลาอีกมาก แต่ความจริงไม่มีใครรู้ว่าพรุ่งนี้จะเป็นอย่างไร การแสดงความรักและความใส่ใจควรทำในวันที่ยังมีโอกาส",
+                "ความรักไม่ใช่สิ่งธรรมดา เมื่อคุ้นเคยกับการมีใครสักคนอยู่ข้างกาย เราอาจเผลอคิดว่ามันเป็นเรื่องปกติ แต่แท้จริงแล้วการมีคนที่รักและเข้าใจเราเป็นของขวัญที่มีค่ามาก",
+                "ความเสียใจสามารถกลายเป็นบทเรียน แม้จะไม่สามารถย้อนเวลากลับไปแก้ไขอดีตได้ แต่ความผิดพลาดและการสูญเสียสามารถสอนให้เราเห็นคุณค่าของคนรอบตัวมากขึ้น",
+                "ความรักที่แท้จริงจะยังคงอยู่ในความทรงจำ แม้คนคนนั้นจะไม่อยู่แล้ว แต่ความรักที่เคยมอบให้กันยังคงเป็นบทเรียนและความทรงจำที่อยู่ในใจตลอดไป"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เพิ่งเข้าใจคำว่ารัก.mp3"
+        },
+        {
+            title: "รอยร้าวในหัวใจ",
+            type: "full",
+            summary: "การเติบโตไม่ได้หมายถึงการลืมอดีต แต่คือการยอมรับความจริง และเดินหน้าต่อไปพร้อมบทเรียนที่ได้รับในชีวิต",
+            takeawayTitle: "💡 ข้อคิดสำคัญจากเพลง",
+            takeaways: [
+                "การลืมใครสักคนไม่ใช่เรื่องง่าย บางบาดแผลไม่ได้หายเพราะเวลา แต่จะค่อยๆ เบาลงเมื่อเราเรียนรู้ที่จะอยู่กับมัน",
+                "ความคิดถึงไม่ใช่ความอ่อนแอ การยังคิดถึงไม่ได้หมายความว่าเราไม่เข้มแข็ง แต่เป็นเพราะเขาเคยมีความหมายต่อชีวิตเราจริงๆ",
+                "ความทรงจำที่ดีไม่จำเป็นต้องถูกลบทิ้ง แม้ความรักจะจบลงด้วยความเสียใจ แต่ช่วงเวลาดีๆ ที่เคยมีร่วมกันก็ยังมีคุณค่าเสมอ",
+                "การยอมรับความจริงว่าไม่มีทางกลับไปเป็นเหมือนเดิม คือจุดเริ่มต้นของการเยียวยาหัวใจที่แท้จริง",
+                "บางรอยร้าวจะอยู่กับเราตลอดไป แต่เราสามารถเรียนรู้ที่จะใช้ชีวิตต่อไปได้ โดยไม่ปล่อยให้ความเจ็บปวดมาควบคุมชีวิตเราอีก"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/รอยร้าวในหัวใจ.mp3"
+        },
+        {
+            title: "ประโยคสุดท้าย",
+            type: "full",
+            summary: "บางคำพูดอาจจบความสัมพันธ์ลงในวันนั้น แต่บทเรียนและความรู้สึกจากคำพูดคำนั้นจะอยู่กับเราไปตลอดชีวิต",
+            takeawayTitle: "💡 ข้อคิดสำคัญจากเพลง",
+            takeaways: [
+                "คำพูดบางคำมีผลมากกว่าที่คิด คำพูดอาจจบลงในไม่กี่วินาที แต่ผลของมันอาจสร้างบาดแผลลึกอยู่ในใจใครบางคนไปอีกหลายปี",
+                "ไม่มีใครรู้ล่วงหน้าว่าช่วงเวลาธรรมดาจะกลายเป็นครั้งสุดท้าย ในวันที่ทุกอย่างดูปกติ อาจเป็นวันสุดท้ายของความสัมพันธ์ จึงควรให้คุณค่ากับคนที่อยู่ข้างเราในวันนี้",
+                "บาดแผลทางใจมองไม่เห็น แต่เจ็บปวดจริง ความเจ็บปวดบางอย่างไม่มีรอยแผลภายนอก แต่ส่งผลต่อชีวิตอย่างลึกซึ้ง",
+                "การไม่โกรธ ไม่ได้แปลว่าไม่เสียใจ แต่สะท้อนถึงวุฒิภาวะทางอารมณ์ที่ยอมรับว่า ความจริงบางอย่างยากเกินจะรับไหวในตอนแรก",
+                "การเยียวยาไม่ใช่การลืม แต่คือการยอมรับ ค่อยๆ เรียนรู้วิธีอยู่กับความทรงจำนั้น โดยไม่ปล่อยให้มันหยุดยั้งชีวิตของเรา"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ประโยคสุดท้าย.mp3"
+        },
+        {
+            title: "ฉันไม่ได้อยู่ในตอนจบตั้งแต่แรก",
+            type: "full",
+            summary: "คนบางคนไม่ได้เข้ามาเพื่ออยู่ในตอนจบของชีวิตเรา แต่เข้ามาเพื่อสอนให้เรารู้จักความรัก การยอมรับความจริง และการเติบโต",
+            takeawayTitle: "💡 ข้อคิดสำคัญจากเพลง",
+            takeaways: [
+                "บางครั้งเรารู้คำตอบตั้งแต่ต้น แต่หัวใจก็ยังเลือกที่จะรัก มนุษย์ไม่ได้ใช้เหตุผลกับความรักเสมอไป แม้จะรู้ว่าเขาไม่ได้เลือกเราก็ตาม",
+                "ความรักไม่สามารถบังคับได้ ต่อให้รักมากแค่ไหน ก็ไม่สามารถเปลี่ยนหัวใจของอีกคนได้ ความรักที่แท้จริงคือการยอมรับความจริง",
+                "ไม่ใช่ทุกคนที่จะเป็นตอนจบของเรื่องราว บางคนเข้ามาเพื่อเป็นบทเรียน เป็นความทรงจำ หรือเป็นช่วงเวลาสวยงามในชีวิตเท่านั้น",
+                "การถอยออกมา ไม่ใช่ความพ่ายแพ้ การเลือกเดินออกจากพื้นที่ของความหวังลมๆ แล้งๆ เพื่อมารักตัวเอง คือความกล้าหาญที่ยิ่งใหญ่",
+                "ความรักที่ไม่ได้รับการตอบกลับ ก็ยังมีคุณค่า ความรู้สึกที่เคยเกิดขึ้นจริงนั้นสามารถกลายเป็นความทรงจำที่งดงามได้เมื่อเวลาผ่านไป",
+                "การปล่อยวาง ไม่ได้หมายถึงการลืม แต่คือการเก็บรอยยิ้มของเขาไว้ในมุมหนึ่งของหัวใจ โดยที่สามารถก้าวต่อไปข้างหน้าได้"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ฉันไม่ได้อยู่ในตอนจบตั้งแต่แรก.mp3"
+        },
+        {
+            title: "ถอยออกมาก่อน",
+            type: "full",
+            summary: "บางคนไม่ได้สูญเสียความรักเพราะเลิกรัก แต่สูญเสียมันเพราะรักมากจนต้องเลือกถอยออกมา เพื่อรักษาหัวใจของตัวเองไว้",
+            takeawayTitle: "💡 ข้อคิดสำคัญจากเพลง",
+            takeaways: [
+                "บางครั้งการเดินจากไป ไม่ได้แปลว่าหมดรัก การปล่อยมือไม่ได้หมายความว่ารักน้อยลง แต่บางครั้งคือการรักอย่างมีสติเพื่อไม่ให้ทำร้ายกันไปมากกว่านี้",
+                "ความรักไม่จำเป็นต้องครอบครอง บางคนเข้ามาเพื่อสร้างความทรงจำดีๆ แค่ได้พบและช่วงเวลาดีๆ ร่วมกันก็อาจเป็นโชคดีแล้ว",
+                "การรักตัวเองไม่ใช่ความเห็นแก่ตัว การเลือกถอยออกมาดูแลความรู้สึกของตัวเองก่อนที่จะพังจนไม่เหลืออะไร คือสิ่งที่เราควรทำ",
+                "ความรักที่แท้จริงคือการหวังดี แม้ไม่ได้เป็นเจ้าของ สามารถยินดีและมีความสุขเมื่อเห็นอีกฝ่ายเติบโตและมีความสุขในเส้นทางของเขา",
+                "ไม่ใช่ทุกความรู้สึกที่ต้องพูดออกไป บางครั้งการเก็บความรู้สึกไว้ อาจเป็นทางเลือกที่ดีที่สุดเพื่อรักษาความสัมพันธ์หรือลดความลำบากใจ",
+                "ความเข้มแข็งคือการยอมรับความจริง การยอมรับว่าไม่มีทางเป็นไปได้ แล้วเลือกก้าวออกมาทั้งที่ยังเจ็บ เป็นความกล้าหาญที่แท้จริง"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ถอยออกมาก่อน.mp3"
+        },
+        {
+            title: "คำขอโทษ",
+            type: "full",
+            summary: "ความเสียใจที่หนักที่สุดในชีวิต มักไม่ใช่สิ่งที่เราได้ทำลงไป แต่คือสิ่งที่เราควรทำแต่กลับไม่ได้ทำ ในวันที่มีโอกาสอยู่ตรงหน้า",
+            takeawayTitle: "💡 ข้อคิดสำคัญจากเพลง",
+            takeaways: [
+                "เรามักเห็นคุณค่าของบางสิ่งเมื่อมันไม่อยู่แล้ว ในวันที่มีอยู่เราอาจมองว่าเป็นเรื่องธรรมดา แต่เมื่อสูญเสียไปจึงรู้ว่าสิ่งนั้นมีค่าที่สุด",
+                "ความรักต้องการการใส่ใจ ไม่ใช่แค่ความรู้สึก ลำพังแค่ความรักนั้นไม่เพียงพอ หากขาดการแสดงออก การดูแล และการรับฟังกัน",
+                "คำขอโทษบางคำ มาช้าเกินไป เพลงนี้เตือนให้เรากล้าที่จะขอโทษ กล้าที่จะปรับปรุง และบอกรัก ในวันที่อีกฝ่ายยังอยู่ฟัง",
+                "อดีตเปลี่ยนไม่ได้ แต่บทเรียนยังมีค่า ความผิดพลาดในอดีตสามารถสอนและหล่อหลอมให้เรากลายเป็นคนที่ดีขึ้นในอนาคตได้",
+                "ความเสียใจสามารถกลายเป็นการเติบโต เปลี่ยนแปลงความผิดหวังและคราบน้ำตาให้กลายเป็นประสบการณ์และพลังในการใช้ชีวิต",
+                "จงรักและดูแลคนสำคัญในวันที่ยังมีโอกาส อย่ารอให้เหลือเพียงรูปถ่ายหรือความทรงจำ เพราะเวลาที่ดีที่สุดในการแสดงความรักคือวันนี้"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คำขอโทษ.mp3"
+        },
+        {
+            title: "สายเกินจะขอโทษ",
+            type: "full",
+            summary: "อย่ามองข้ามคนที่รักและหวังดีกับเรา เพราะวันที่เราเห็นคุณค่าของเขา อาจเป็นวันที่ไม่มีเขาอยู่ให้เรารักอีกแล้ว",
+            takeawayTitle: "💡 คำโปรยแนวข้อคิด",
+            takeaways: [
+                "บางครั้ง...เราจะรู้คุณค่าของใครสักคน ก็ต่อเมื่อเขาไม่อยู่ให้เรารักอีกแล้ว",
+                "คำขอโทษที่ช้าที่สุด คือคำขอโทษที่ไม่มีคนฟังอีกต่อไป",
+                "อย่าปล่อยให้ความรักกลายเป็นบทเรียนราคาแพงของชีวิต"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/สายเกินจะขอโทษ.mp3"
+        },
+        {
+            title: "ยังอยู่ในทุกวัน",
+            type: "full",
+            summary: "บางคนอาจไม่ได้อยู่ในชีวิตเราอีกแล้ว แต่ยังคงเป็นส่วนหนึ่งของหัวใจและความทรงจำที่งดงามเสมอ",
+            takeawayTitle: "💡 คำโปรยแนวข้อคิด",
+            takeaways: [
+                "การจากลาไม่ได้ลบความหมายของการเคยรักกัน",
+                "บางความสัมพันธ์ไม่ได้จบลงด้วยการลืม แต่จบลงด้วยการเก็บไว้ในความทรงจำอย่างสวยงาม",
+                "คนบางคนจากไปจากชีวิต แต่ไม่เคยจากไปจากหัวใจ"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ยังอยู่ในทุกวัน.mp3"
+        },
+        {
+            title: "ร่องรอยของเธอ",
+            type: "full",
+            summary: "แม้เวลาจะพาผู้คนจากไป แต่ความทรงจำและความหมายที่พวกเขาทิ้งไว้ อาจยังคงอยู่ในหัวใจตลอดไป",
+            takeawayTitle: "💡 คำโปรยแนวข้อคิด",
+            takeaways: [
+                "บางคนจากไปจากชีวิต แต่ไม่เคยจากไปจากความทรงจำ",
+                "เวลาเปลี่ยนทุกอย่างได้ ยกเว้นความหมายของบางคนในหัวใจ",
+                "ร่องรอยของความรัก อาจไม่เคยเลือนหาย แม้เจ้าของความทรงจำนั้นจะจากไปนานแล้ว"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ร่องรอยของเธอ.mp3"
+        },
+        {
+            title: "ถึงเวลาต้องไป",
+            type: "short",
+            summary: "บางความสัมพันธ์ไม่ได้จบลงเพราะหมดรัก แต่จบลงเพราะการปล่อยมือคือสิ่งที่ดีที่สุดสำหรับทั้งสองคน",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ถึงเวลาต้องไป.mp3"
+        },
+        {
+            title: "ห้องที่ไม่มีเธอ",
+            type: "short",
+            summary: "บางคนอาจจากไปจากชีวิต แต่ความรักและความทรงจำที่เขาทิ้งไว้ จะยังคงอยู่ในหัวใจตลอดไป",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ห้องที่ไม่มีเธอ.mp3"
+        },
+        {
+            title: "บทเรียนราคาแพง",
+            type: "short",
+            summary: "การฝากหัวใจไว้กับคนผิด อาจทำให้เราเจ็บปวด แต่สิ่งสำคัญคือการนำความเจ็บนั้นมาเป็นบทเรียน ไม่ใช่ปล่อยให้มันเป็นแผลไปตลอดชีวิต",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/บทเรียนราคาแพง.mp3"
+        },
+        {
+            title: "เรื่องธรรมดาที่พิเศษ",
+            type: "short",
+            summary: "ความสุขไม่ได้เกิดจากสิ่งยิ่งใหญ่เสมอไป แต่เกิดจากการมีคนสำคัญอยู่เคียงข้างในวันธรรมดาๆ ของชีวิต",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เรื่องธรรมดาที่พิเศษ.mp3"
+        },
+        {
+            title: "โชคดีที่ได้เจอเธอ",
+            type: "short",
+            summary: "ในโลกที่มีผู้คนมากมาย การได้พบคนที่ทำให้หัวใจมีความสุขและมีความหมาย คือโชคดีที่ควรรักษาไว้",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/โชคดีที่ได้เจอเธอ.mp3"
+        },
+        {
+            title: "บทเรียนของน้ำตา",
+            type: "short",
+            summary: "บางบทเรียนของชีวิตต้องแลกมาด้วยน้ำตา แต่ความเจ็บปวดเหล่านั้นจะสอนให้เราเข้าใจความรัก การสูญเสีย และการเติบโตมากขึ้น",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/บทเรียนของน้ำตา.mp3"
+        },
+        {
+            title: "เชื่อเกินไป",
+            type: "short",
+            summary: "การเชื่อใจอย่างบริสุทธิ์ใจไม่ใช่ความผิด แต่เราควรเรียนรู้ที่จะมองความจริงควบคู่ไปกับความรู้สึก เพื่อไม่ให้หัวใจต้องเจ็บซ้ำจากความคาดหวัง",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เชื่อเกินไป.mp3"
+        },
+        {
+            title: "สัญญาที่ไม่เคยเกิดขึ้น",
+            type: "short",
+            summary: "อย่าเชื่อเพียงคำพูดที่สวยงาม แต่จงมองที่การกระทำ เพราะความจริงของความรักไม่ได้อยู่ในคำสัญญา แต่อยู่ในสิ่งที่อีกฝ่ายทำให้เห็นทุกวัน",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/สัญญาที่ไม่เคยเกิดขึ้น.mp3"
+        },
+        {
+            title: "โทรมาแค่ตอนเหงา",
+            type: "short",
+            summary: "อย่ามอบทั้งหัวใจให้กับคนที่เห็นเราเป็นเพียงทางผ่าน เพราะความรักที่แท้จริงควรมีความชัดเจนและให้คุณค่ากันทั้งสองฝ่าย",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/โทรมาแค่ตอนเหงา.mp3"
+        },
+        {
+            title: "ยังรักษาไม่หาย",
+            type: "short",
+            summary: "แม้หัวใจจะยังไม่หายดีจากการสูญเสีย แต่เราสามารถเรียนรู้ที่จะใช้ชีวิตต่อไป และค่อยๆ เติบโตผ่านความเจ็บปวดนั้นได้",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ยังรักษาไม่หาย.mp3"
+        },
+        {
+            title: "ใจยังย้อนกลับไป",
+            type: "short",
+            summary: "บางคนอาจจากไปจากชีวิต แต่ยังอยู่ในหัวใจ การเยียวยาไม่ใช่การลืมเขาให้ได้ แต่คือการเรียนรู้ที่จะใช้ชีวิตต่อไป แม้ยังจำได้เสมอ",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ใจยังย้อนกลับไป.mp3"
+        },
+        {
+            title: "สถานะที่ไม่มีชื่อ",
+            type: "short",
+            summary: "ความรักไม่ควรเป็นเรื่องที่ต้องคอยเดา หากอีกฝ่ายไม่ชัดเจน เราควรกล้าที่จะยอมรับความจริง เพื่อไม่ให้ติดอยู่กับความหวังที่ไม่มีคำตอบ",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/สถานะที่ไม่มีชื่อ.mp3"
+        },
+        {
+            title: "แผลเดิมในใจ",
+            type: "short",
+            summary: "บางความสูญเสียไม่สามารถลืมได้ง่ายๆ แต่เราสามารถเรียนรู้ที่จะอยู่กับมัน และค่อยๆ เดินหน้าต่อไป",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/แผลเดิมในใจ.mp3"
+        },
+        {
+            title: "แค่ทางผ่าน",
+            type: "short",
+            summary: "บางครั้งเราอาจเป็นเพียงช่วงเวลาหนึ่งในชีวิตของใครบางคน แต่นั่นไม่ได้หมายความว่าความรักที่เราให้ไปนั้นไร้ค่า",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/แค่ทางผ่าน.mp3"
+        },
+        {
+            title: "เชื่อหัวใจมากเกินไป",
+            type: "short",
+            summary: "การฟังหัวใจเป็นสิ่งสำคัญ แต่การมองเห็นความจริงก็สำคัญไม่แพ้กัน เพราะความรักที่ดีต้องมีทั้งความรู้สึกและสติเดินไปพร้อมกัน",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เชื่อหัวใจมากเกินไป.mp3"
+        },
+        {
+            title: "แสงเช้าที่ว่างเปล่า",
+            type: "short",
+            summary: "ความรู้สึกอ้างว้างในยามเช้า เมื่อตื่นมาแล้วพบว่าความอบอุ่นที่เคยมีได้หายไป เหลือเพียงความจริงที่ต้องอยู่คนเดียว",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/แสงเช้าที่ว่างเปล่า.mp3"
+        },
+        {
+            title: "แค่ฝุ่นที่เลือนลาง",
+            type: "short",
+            summary: "ความรักที่เคยสวยงามค่อยๆ จางหายไปเหมือนฝุ่น ไม่เหลือร่องรอยนอกจากความทรงจำสีจางๆ",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/แค่ฝุ่นที่เลือนลาง.mp3"
+        },
+        {
+            title: "คนที่พลาดเอง",
+            type: "short",
+            summary: "เพลงของคนขี้แพ้ที่โทษตัวเองที่ทำร้ายและปล่อยมือคนรักไป จนเสียเขาไปตลอดกาล",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คนที่พลาดเอง.mp3"
+        },
+        {
+            title: "ได้แค่มองเธอ",
+            type: "short",
+            summary: "อารมณ์ของการแอบรักในสถานะที่ไม่มีสิทธิ์เรียกร้อง ทำได้แค่เฝ้ามองดูเธอมีความสุขจากมุมไกลๆ",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ได้แค่มองเธอ.mp3"
+        },
+        {
+            title: "วันที่ไม่มีเธอ",
+            type: "short",
+            summary: "โลกที่มืดมน ไร้ทิศทาง ขาดแสงสว่างและแรงบันดาลใจ เมื่อคนที่เคยเป็นทุกอย่างได้เดินจากไป",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/วันที่ไม่มีเธอ.mp3"
+        },
+        {
+            title: "ภาพจำที่ไม่ได้ลืม",
+            type: "short",
+            summary: "ความทรมานของการพยายามลืม ยิ่งลบภาพเขาทิ้ง ใจกลับยิ่งจดจำทุกรายละเอียดได้ชัดเจนขึ้น",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ภาพจำที่ไม่ได้ลืม.mp3"
+        },
+        {
+            title: "ทางที่ไม่มีเธอ",
+            type: "short",
+            summary: "การฝืนก้าวเดินต่อไปบนเส้นทางชีวิตที่เคยมีเขาเคียงข้าง แต่ปัจจุบันต้องเผชิญหน้าคนเดียวอย่างเคว้งคว้าง",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ทางที่ไม่มีเธอ.mp3"
+        },
+        {
+            title: "ให้หมดแล้ว",
+            type: "short",
+            summary: "ความรู้สึกพังทลายหลังจากทุ่มเทความรักทั้งหมดให้คนหนึ่ง แต่สิ่งที่ได้ตอบแทนกลับมาคือความว่างเปล่า",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ให้หมดแล้ว.mp3"
+        },
+        {
+            title: "ข้อความสุดท้าย",
+            type: "short",
+            summary: "ความรู้สึกค้างคาในแชทที่พิมพ์ค้างไว้ แต่ไม่มีโอกาสได้กดส่ง เพราะคนที่รออ่านได้หายไปจากชีวิตแล้ว",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ข้อความสุดท้าย.mp3"
+        },
+        {
+            title: "หากวันหนึ่งเราได้พบกัน",
+            type: "short",
+            summary: "ซ่อนความหวังว่าหากโชคชะตาพาเราวนกลับมาเจอกันอีกครั้ง จะสามารถยิ้มให้กันได้โดยไม่มีน้ำตา",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/หากวันหนึ่งเราได้พบกัน.mp3"
+        },
+        {
+            title: "ไม่ฟังหัวใจตัวเอง",
+            type: "short",
+            summary: "การฝืนทนในความสัมพันธ์ที่เป็นพิษ แม้สมองจะสั่งให้ถอย แต่หัวใจกลับดื้อรั้นยอมเจ็บซ้ำๆ เพราะรัก",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ไม่ฟังหัวใจตัวเอง.mp3"
+        },
+        {
+            title: "ฝากลมไปบอก",
+            type: "short",
+            summary: "อารมณ์เหงาในยามค่ำคืนที่ทำได้เพียงฝากความคิดถึงไปกับสายลม หวังว่าเขาจะสัมผัสได้ถึงความรู้สึกนี้",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ฝากลมไปบอก.mp3"
+        },
+        {
+            title: "คนที่ควรผ่านไป",
+            type: "short",
+            summary: "การติดกับดักคนที่รู้อยู่เต็มอกว่าไม่ใช่ แต่กลับเลือกที่จะจดจำและผูกพันอย่างถอนตัวไม่ขึ้น",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คนที่ควรผ่านไป.mp3"
+        },
+        {
+            title: "เวลาที่ไม่ใช่",
+            type: "short",
+            summary: "ความรักที่สวยงามแต่น่าเสียดายที่เกิดขึ้นในจังหวะชีวิตที่ไม่ตรงกัน จนต้องยอมปล่อยมือกันไป",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เวลาที่ไม่ใช่.mp3"
+        },
+        {
+            title: "ในวันที่ฉันหายไป",
+            type: "short",
+            summary: "คำถามเชิงตัดพ้อว่าหากวันหนึ่งเราหายไปจากชีวิตเขา เขาจะรู้สึกกระวนกระวายหรือตามหาเราบ้างไหม",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ในวันที่ฉันหายไป.mp3"
+        },
+        {
+            title: "คนที่ควรลืม",
+            type: "short",
+            summary: "ความย้อนแย้งที่ยิ่งพยายามลบคนที่ทำร้ายเราออกไปจากใจ กลับเป็นการสลักชื่อเขาไว้ในใจลึกกว่าเดิม",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คนที่ควรลืม.mp3"
+        },
+        {
+            title: "บทเรียนของหัวใจ",
+            type: "short",
+            summary: "บทสรุปความรักที่พังทลาย ซึ่งสอนให้รู้ว่าการมอบใจให้ใครอย่าลืมเผื่อใจไว้ให้ตัวเองบ้าง",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/บทเรียนของหัวใจ.mp3"
+        },
+        {
+            title: "ทางออกไม่มีจริง",
+            type: "short",
+            summary: "เหมือนติดอยู่ในเขาวงกตที่ยิ่งพยายามลืม ยิ่งหาทางออก ก็ยิ่งมืดมนและวนเวียนอยู่กับความช้ำเดิม",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ทางออกไม่มีจริง.mp3"
+        },
+        {
+            title: "หมดทั้งหัวใจ",
+            type: "short",
+            summary: "ความสูญเสียเมื่อมอบทุกอย่างให้ใครสักคนจนหมดหน้าตัก แต่สิ่งที่ได้คืนมากลับมีแค่ความทรมาน",
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/หมดทั้งหัวใจ.mp3"
+        },
+        {
+            title: "รู้ทั้งรู้",
+            type: "full",
+            summary: "บางครั้งเรารู้ว่าต้องปล่อยมือ แต่หัวใจก็ยังต้องใช้เวลาในการยอมรับ",
+            takeawayTitle: "💡 ข้อคิดสำคัญจากเพลง",
+            takeaways: [
+                "หัวใจกับเหตุผลมักเดินคนละทาง: หลายครั้งเรารู้ว่าอะไรถูก อะไรควรทำ แต่ความรู้สึกกลับไม่ยอมทำตามเหตุผล ความรักจึงเป็นเรื่องที่เข้าใจได้ แต่ควบคุมได้ยาก",
+                "การยอมรับความจริง ไม่ได้แปลว่าจะตัดใจได้ทันที: เราอาจรู้ว่าความสัมพันธ์นั้นไม่มีอนาคต แต่การปล่อยวางความรู้สึกต้องใช้เวลา หัวใจไม่ได้เข้มแข็งขึ้นเพียงเพราะเรารับรู้ความจริง",
+                "ความรักไม่จำเป็นต้องสมหวังจึงจะมีความหมาย: แม้จะไม่ได้ครอบครอง ไม่ได้ลงเอยด้วยกัน แต่ความรักที่เกิดขึ้นจริงก็ยังเป็นประสบการณ์ที่มีคุณค่า",
+                "การรักใครสักคนอย่างสุดหัวใจ ไม่ใช่เรื่องน่าเสียใจ: สิ่งที่น่าเสียดายไม่ใช่การรัก แต่คือการไม่กล้ารัก หรือไม่เคยได้มอบความรู้สึกดี ๆ ให้ใครเลย",
+                "เวลาเป็นส่วนหนึ่งของการเยียวยา: เพลงยอมรับว่าการก้าวผ่านความเจ็บปวดไม่ใช่เรื่องง่าย แต่สักวันหนึ่งหัวใจจะเรียนรู้และเข้มแข็งพอที่จะปล่อยวางได้"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/รู้ทั้งรู้.mp3"
+        },
+        {
+            title: "วันที่หัวใจเริ่มเดิน",
+            type: "full",
+            summary: "การเยียวยาไม่ใช่การลืมอดีต แต่คือการเรียนรู้ที่จะอยู่กับมันโดยไม่เจ็บปวดเหมือนเดิม",
+            takeawayTitle: "💡 ข้อคิดสำคัญจากเพลง",
+            takeaways: [
+                "เวลาไม่ได้ลบความทรงจำ แต่ช่วยเยียวยาความเจ็บปวด: แม้เราจะยังจำเรื่องราวในอดีตได้ แต่เมื่อเวลาผ่านไป ความเจ็บปวดจะค่อย ๆ เบาลง จนเราสามารถมองย้อนกลับไปได้โดยไม่ทรมานเหมือนเดิม",
+                "การก้าวต่อไป ไม่ได้หมายถึงการลืม: การเดินหน้าชีวิตไม่ได้แปลว่าเราต้องลืมทุกอย่าง แต่คือการยอมรับสิ่งที่เกิดขึ้น และนำบทเรียนเหล่านั้นติดตัวไปด้วย",
+                "ความเสียใจสามารถทำให้เราเติบโต: ทุกบาดแผล ทุกความผิดหวัง และทุกน้ำตา ล้วนเป็นส่วนหนึ่งที่หล่อหลอมให้เราแข็งแกร่งและเข้าใจชีวิตมากขึ้น",
+                "ชีวิตยังมีโอกาสใหม่เสมอ: แม้บางความฝันจะพังทลาย หรือบางคนจะเดินจากไป แต่ชีวิตยังมีวันพรุ่งนี้ และยังมีโอกาสให้เราเริ่มต้นใหม่อีกครั้ง",
+                "วันที่ยากที่สุด จะกลายเป็นวันที่เราภูมิใจที่สุด: วันหนึ่งเมื่อมองย้อนกลับมา เราอาจยิ้มให้กับตัวเอง ที่เคยผ่านช่วงเวลาที่คิดว่าไม่มีทางผ่านไปได้"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/วันที่หัวใจเริ่มเดิน.mp3"
+        },
+        {
+            title: "วนกลับมาที่เดิม",
+            type: "full",
+            summary: "การกลับไปเจ็บซ้ำที่เดิม ไม่ใช่เพราะไม่รู้ความจริง แต่เพราะยังไม่พร้อมยอมรับความจริงนั้น",
+            takeawayTitle: "💡 ข้อคิดสำคัญจากเพลง",
+            takeaways: [
+                "ความรักอย่างเดียว ไม่เพียงพอเสมอไป: แม้เราจะรักใครมากแค่ไหน แต่ถ้าความสัมพันธ์นั้นทำร้ายหัวใจซ้ำ ๆ ความรักเพียงอย่างเดียวอาจไม่สามารถรักษาทุกอย่างได้",
+                "การให้อภัย ไม่ได้แปลว่าต้องกลับไปเจ็บอีก: หลายคนให้อภัยเพราะรัก แต่การให้อภัยควรเป็นการปลดปล่อยตัวเอง ไม่ใช่การเปิดโอกาสให้บาดแผลเดิมเกิดขึ้นซ้ำแล้วซ้ำเล่า",
+                "บางครั้งศัตรูของเรา คือความหวังที่ไม่ยอมปล่อย: การหวังว่าอีกคนจะเปลี่ยน หรือหวังว่าครั้งนี้จะต่างออกไป อาจทำให้เราติดอยู่ในวงจรเดิมนานกว่าที่ควร",
+                "การยอมรับความจริง คือจุดเริ่มต้นของการเยียวยา: เมื่อเราเลิกหลอกตัวเองและกล้ายอมรับว่า 'มันไปต่อไม่ได้แล้ว' หัวใจจึงเริ่มฟื้นตัวและเดินต่อได้จริง",
+                "การเดินจากมา คือการเคารพคุณค่าของตัวเอง: การจากลาไม่ใช่ความพ่ายแพ้เสมอไป บางครั้งมันคือการปกป้องหัวใจของตัวเองจากความเจ็บปวดที่ไม่จำเป็น"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/วนกลับมาที่เดิม.mp3"
+        },
+        {
+            title: "ปล่อยให้เวลาเป็นคนตอบ",
+            type: "full",
+            summary: "บางความรู้สึกไม่จำเป็นต้องรีบหาย แค่ค่อย ๆ ดีขึ้นในทุกวันก็เพียงพอแล้ว",
+            takeawayTitle: "💡 ข้อคิดสำคัญจากเพลง",
+            takeaways: [
+                "การเยียวยาต้องใช้เวลา: ไม่มีใครสามารถลืมคนสำคัญได้ในชั่วข้ามคืน ความเจ็บปวดไม่ใช่สิ่งที่ต้องรีบกำจัด แต่เป็นสิ่งที่ต้องค่อย ๆ เรียนรู้ที่จะอยู่กับมัน",
+                "การคิดถึง ไม่ได้แปลว่าเรายังติดอยู่กับอดีต: บางครั้งเรายังคิดถึงใครบางคนได้ แม้จะยอมรับการจากลาแล้ว เพราะความทรงจำดี ๆ ยังคงมีความหมายเสมอ",
+                "ไม่ใช่ทุกการจากลาจะมีคนผิด: ความสัมพันธ์บางอย่างจบลงเพราะเวลา สถานการณ์ หรือเส้นทางชีวิตที่เปลี่ยนไป ไม่จำเป็นต้องมีผู้ร้ายในทุกเรื่องราว",
+                "การปล่อยวางไม่ใช่การลืม: การวางลงไม่ได้หมายถึงการลบความทรงจำออกไป แต่คือการมองมันได้โดยไม่เจ็บปวดเหมือนเดิม",
+                "ทุกบาดแผลสามารถกลายเป็นบทเรียน: วันหนึ่งเมื่อมองย้อนกลับมา เราอาจพบว่าความเจ็บปวดในวันนั้นทำให้เราเติบโต เข้าใจชีวิต และเข้มแข็งมากขึ้น"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ปล่อยให้เวลาเป็นคนตอบ.mp3"
+        },
+        {
+            title: "คนที่เดินต่อ",
+            type: "full",
+            summary: "การเติบโตไม่ได้หมายถึงการลืมอดีต แต่คือการมองอดีตด้วยรอยยิ้มแทนน้ำตา",
+            takeawayTitle: "💡 ข้อคิดสำคัญจากเพลง",
+            takeaways: [
+                "การจากลาไม่ใช่จุดจบของชีวิต: แม้คนสำคัญจะจากไป แต่ชีวิตยังคงดำเนินต่อ และเรายังมีโอกาสพบสิ่งดี ๆ ในวันข้างหน้า",
+                "ความคิดถึงกับการก้าวต่อไป สามารถอยู่ร่วมกันได้: การเดินต่อไม่ได้หมายความว่าต้องลืมทั้งหมด เราสามารถคิดถึงใครบางคนได้ โดยไม่ต้องย้อนกลับไปอยู่ในความเจ็บปวดเดิม",
+                "เวลาเปลี่ยนบาดแผลให้กลายเป็นบทเรียน: สิ่งที่เคยทำให้ร้องไห้ทุกคืน วันหนึ่งอาจกลายเป็นเพียงความทรงจำที่ทำให้เราเข้าใจชีวิตมากขึ้น",
+                "ทุกความสัมพันธ์มีคุณค่า แม้จะไม่ลงเอยด้วยกัน: คนบางคนเข้ามาเพื่อสร้างความสุข สอนบทเรียน หรือเปลี่ยนแปลงเราให้เติบโตขึ้น แม้สุดท้ายจะไม่ได้อยู่ด้วยกันก็ตาม",
+                "การก้าวต่อคือความกล้าหาญรูปแบบหนึ่ง: ไม่ใช่ทุกคนที่จะลุกขึ้นยืนได้หลังจากหัวใจแตกสลาย แต่คนที่เลือกเดินต่อ คือคนที่กล้ารับมือกับความจริงและสร้างอนาคตใหม่ให้ตัวเอง"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คนที่เดินต่อ.mp3"
+        },
+        {
+            title: "ซ่อนไม่เก่ง",
+            type: "full",
+            summary: "ความรักที่ไม่ถูกพูดออกไป อาจกลายเป็นความเสียดายที่อยู่กับเราไปอีกนาน",
+            takeawayTitle: "💡 ข้อคิดสำคัญจากเพลง",
+            takeaways: [
+                "ความรู้สึกที่แท้จริง มักซ่อนได้ไม่นาน: แม้เราจะพยายามปิดบังแค่ไหน แต่ความรักมักแสดงออกผ่านสายตา การกระทำ และความใส่ใจ จนคนรอบข้างมองเห็นได้",
+                "ความกลัวคำตอบ อาจทำให้เราพลาดโอกาส: หลายคนไม่กล้าพูดความในใจ เพราะกลัวการถูกปฏิเสธ แต่บางครั้งการไม่พูดอะไรเลย อาจทำให้เราต้องอยู่กับความเสียดายนานกว่า",
+                "การซื่อตรงกับหัวใจตัวเองเป็นเรื่องสำคัญ: ไม่ว่าผลลัพธ์จะออกมาอย่างไร การยอมรับความรู้สึกของตัวเอง คือจุดเริ่มต้นของความกล้าหาญและการเติบโตทางอารมณ์",
+                "ความรักไม่จำเป็นต้องมีคำอธิบายมากมาย: บางครั้งความรู้สึกที่จริงใจ ไม่ได้ต้องการเหตุผลหรือคำพูดสวยหรู แค่ความจริงใจและความกล้าที่จะสื่อสารก็เพียงพอ",
+                "การเปิดใจดีกว่าการเก็บความเสียดายไว้ตลอดชีวิต: แม้คำตอบอาจไม่เป็นอย่างที่หวัง แต่การได้พูดความจริงออกไป อย่างน้อยก็ทำให้เราไม่ต้องตั้งคำถามกับตัวเองในอนาคตว่า 'ถ้าวันนั้นกล้าพูด จะเป็นอย่างไร'"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ซ่อนไม่เก่ง.mp3"
+        },
+        {
+            title: "เก็บเศษหัวใจ",
+            type: "full",
+            summary: "เพลงนี้ไม่ได้เล่าแค่เรื่องความอกหัก แต่เล่าถึงการเยียวยาตัวเองหลังจากสูญเสียสิ่งสำคัญในชีวิต เป็นเรื่องของการลุกขึ้นยืนอีกครั้งหลังจากวันที่พังทลาย",
+            takeawayTitle: "💡 ข้อคิดสำคัญจากเพลง",
+            takeaways: [
+                "เมื่อเรามอบทุกอย่างให้ใครสักคนจนหมด ทั้งความสุข ความหวัง และคุณค่าของตัวเอง หากวันหนึ่งเขาจากไป เราอาจรู้สึกเหมือนสูญเสียทุกอย่างไปพร้อมกัน",
+                "การแตกสลายไม่ใช่ความล้มเหลว แต่เป็นส่วนหนึ่งของการเติบโต",
+                "รอยแผลบางรอยอาจไม่หายไปตลอดชีวิต แต่เราจะเรียนรู้ที่จะอยู่กับมันโดยไม่เจ็บเหมือนเดิม",
+                "แม้ในวันที่มืดมนที่สุด ชีวิตก็ยังมีบางอย่างให้เราเรียนรู้",
+                "เมื่อผ่านความเจ็บปวดมาได้ เราจะเริ่มเห็นคุณค่าของตัวเองมากขึ้น"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เก็บเศษหัวใจ.mp3"
+        },
+        {
+            title: "คำตอบที่หาไม่เจอ",
+            type: "full",
+            summary: "อย่าให้ความผิดหวังในอดีต ทำลายความหวังทั้งหมดของอนาคตบางครั้งสิ่งที่เราตามหาอาจยังมาไม่ถึง ไม่ใช่เพราะมันไม่มีอยู่จริง แต่เพราะยังไม่ถึงเวลาที่เหมาะสมที่จะพบมันเท่านั้น",
+            takeawayTitle: "💡 ข้อคิดสำคัญจากเพลง",
+            takeaways: [
+                "บางเรื่องต้องใช้เวลาเรียนรู้ บางครั้งอาจต้องใช้ทั้งชีวิตกว่าจะเข้าใจว่าทำไมเราถึงต้องพบเจอเรื่องราวต่าง ๆ",
+                "การที่เราเคยเจ็บปวดจากความรัก ไม่ได้แปลว่าความรักไม่มีอยู่จริง เพียงแค่เรายังไม่พบสิ่งที่ใช่ในเวลานั้น",
+                "คนที่กล้ารักย่อมมีโอกาสเจ็บ แต่ถ้าปิดหัวใจเพราะกลัวความเจ็บ ก็อาจพลาดโอกาสพบความสุขเช่นกัน",
+                "การรู้สึกท้อ หมดแรง หรือสับสน เป็นเรื่องปกติของมนุษย์ ไม่ได้หมายความว่าเราต้องหยุดเดินต่อ",
+                "แม้วันนี้จะยังไม่พบสิ่งที่ตามหา แต่อนาคตยังมีความเป็นไปได้เสมอ"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/เก็บเศษหัวใจ.mp3"
+        },
+        {
+            title: "ยิ้มทั้งที่เจ็บ",
+            type: "full",
+            summary: "เพลงนี้สะท้อนความจริงของคนจำนวนมากที่ภายนอกดูเข้มแข็ง ดูมีความสุข แต่ภายในยังเต็มไปด้วยบาดแผลและความคิดถึง เป็นเพลงที่พูดถึงการเยียวยาหัวใจอย่างเงียบ ๆ",
+            takeawayTitle: "💡 ข้อคิดสำคัญจากเพลง",
+            takeaways: [
+                "หลายคนเลือกยิ้มเพื่อให้คนรอบข้างสบายใจ ทั้งที่ในใจยังเจ็บปวดอยู่มาก",
+                "บางคนผ่านวันทั้งวันได้อย่างปกติ แต่พอกลับมาอยู่คนเดียว ความเจ็บปวดทั้งหมดก็กลับมาอีกครั้ง",
+                "ความรักไม่ใช่สิ่งที่ลบออกจากใจได้เพียงชั่วข้ามคืน",
+                "แม้จะไม่มีร่องรอยภายนอก แต่ความเสียใจสามารถอยู่กับเราได้นานกว่าที่คนอื่นคิด",
+                "แม้วันนี้จะยังร้องไห้ ยังคิดถึง ยังอ่อนแอ แต่เชื่อว่าสักวันหนึ่งทุกอย่างจะดีขึ้น"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ยิ้มทั้งที่เจ็บ.mp3"
+        },
+        {
+            title: "ขอให้เธอเจอวันที่ดี",
+            type: "full",
+            summary: "เพลงนี้พูดถึงความรักในรูปแบบที่เติบโตที่สุด คือการรักโดยไม่ยึดติด รักโดยไม่จำเป็นต้องครอบครอง และยินดีกับความสุขของอีกฝ่าย แม้สุดท้ายเราจะไม่ได้เดินไปด้วยกัน",
+            takeawayTitle: "💡 ข้อคิดสำคัญจากเพลง",
+            takeaways: [
+                "หลายคนเข้าใจว่าความรักต้องจบลงด้วยการได้อยู่ด้วยกัน แต่ความจริงแล้ว ความรักที่แท้จริงอาจเป็นเพียงการหวังดีต่อกันก็ได้",
+                "บางครั้งการปล่อยให้คนที่เรารักเดินไปในทางที่เขามีความสุข คือรูปแบบหนึ่งของความรักที่ยิ่งใหญ่",
+                "ไม่ใช่ทุกความรักจะต้องลงเอยด้วยคำว่า 'แฟน' หรือ 'คู่ชีวิต'",
+                "เมื่อความสัมพันธ์จบลง สิ่งสำคัญไม่ใช่การยื้อไว้ แต่คือการเรียนรู้ที่จะก้าวต่อไป",
+                "เราไม่จำเป็นต้องเกลียดใครเพื่อจะเดินจากมาได้"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ขอให้เธอเจอวันที่ดี.mp3"
+        },
+        {
+            title: "คำที่พูดไม่พอ",
+            type: "full",
+            summary: "เพลงนี้สะท้อนความรู้สึกของคนที่มีบางอย่างอยู่เต็มหัวใจ แต่ไม่สามารถถ่ายทอดออกมาเป็นคำพูดได้ ไม่ใช่เพราะไม่อยากบอก แต่เพราะความรู้สึกนั้นลึกซึ้ง ซับซ้อน และเปราะบางเกินกว่าจะอธิบาย",
+            takeawayTitle: "💡 ข้อคิดสำคัญจากเพลง",
+            takeaways: [
+                "บางครั้งหัวใจรู้สึกมากกว่าที่ภาษาใดจะบรรยายได้",
+                "หลายครั้งคนที่เงียบที่สุด อาจเป็นคนที่มีเรื่องอยู่ในใจมากที่สุด",
+                "ความจริงบางอย่างอาจเปลี่ยนความสัมพันธ์ไปตลอดกาล",
+                "บางคนแสดงความรักผ่านการอยู่ข้าง ๆ การดูแล หรือการหวังดีเงียบ ๆ",
+                "สิ่งที่หลายคนต้องการมากที่สุด อาจไม่ใช่คำตอบ แต่คือคนที่เข้าใจความรู้สึกของเรา แม้เราไม่ได้พูดออกมา"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คำที่พูดไม่พอ.mp3"
+        },
+        {
+            title: "ลบได้แค่หน้าจอ",
+            type: "full",
+            summary: "เพลงนี้พูดถึงความจริงของการจากลาและการเยียวยาหัวใจ หลังจากความสัมพันธ์จบลง แม้เราจะลบทุกอย่างที่มองเห็นได้ แต่บางความรู้สึกยังคงอยู่ในใจ และนั่นไม่ใช่เรื่องผิด",
+            takeawayTitle: "💡 ข้อคิดสำคัญจากเพลง",
+            takeaways: [
+                "เราสามารถลบรูป ลบข้อความ หรือเก็บของที่เกี่ยวข้องกับใครบางคนได้ แต่ไม่สามารถสั่งให้หัวใจลืมได้ทันที",
+                "เมื่อคนคนหนึ่งไม่อยู่ในชีวิตแล้ว เขาอาจไม่ได้หายไปจากใจทั้งหมด แต่ย้ายจาก 'ปัจจุบัน' ไปเป็น 'ความทรงจำ'",
+                "เมื่อเราบังคับตัวเองให้ลืมมากเกินไป เรามักจะยิ่งนึกถึงเรื่องนั้นบ่อยขึ้น",
+                "เราสามารถคิดถึงใครบางคนได้ โดยไม่จำเป็นต้องกลับไปใช้ชีวิตแบบเดิม",
+                "หลายคนเข้าใจว่าการเยียวยาคือการลืม แต่ความจริงแล้วคือการอยู่กับความทรงจำนั้นได้ โดยไม่เจ็บเหมือนเดิม"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ลบได้แค่หน้าจอ.mp3"
+        },
+        {
+            title: "วันที่เข้าใจ",
+            type: "full",
+            summary: "เพลงนี้สะท้อนความจริงที่เจ็บปวดที่สุดอย่างหนึ่งของชีวิต คือ เรามักเห็นคุณค่าของบางคนหรือบางสิ่ง เมื่อมันไม่อยู่กับเราแล้ว เป็นบทเพลงแห่งความคิดถึง การยอมรับ และการเติบโตจากการสูญเสีย",
+            takeawayTitle: "💡 ข้อคิดสำคัญจากเพลง",
+            takeaways: [
+                "หลายครั้งเราคิดว่าคนบางคนจะอยู่กับเราเสมอ จนละเลยคำพูด การดูแล หรือช่วงเวลาที่มีร่วมกัน",
+                "สิ่งที่เราคิดว่าเป็นเรื่องธรรมดาในวันนั้น อาจกลายเป็นสิ่งที่คิดถึงที่สุดในวันข้างหน้า",
+                "เมื่อคนคนหนึ่งจากไป ไม่ว่าจะจากด้วยเหตุผลใด คำพูดที่ไม่ได้บอกก็อาจกลายเป็นความเสียดายตลอดชีวิต",
+                "เราสามารถก้าวต่อไปได้ พร้อมกับเก็บใครบางคนไว้ในความทรงจำ",
+                "สิ่งที่ผ่านไปแล้วไม่อาจกลับคืนมาได้ แต่เราสามารถใช้บทเรียนเหล่านั้นดูแลคนที่ยังอยู่ในชีวิตปัจจุบัน"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/วันที่เข้าใจ.mp3"
+        },
+        {
+            title: "ขอเก็บไว้คนเดียว",
+            type: "full",
+            summary: "เพลงนี้ถ่ายทอดความรักในมุมที่อ่อนโยนและสวยงามที่สุดคือการรักใครสักคนโดยไม่เรียกร้องไม่คาดหวัง และไม่จำเป็นต้องได้ครอบครองเป็นความรักที่อยู่ในใจเงียบๆ แต่มีคุณค่าอย่างมาก",
+            takeawayTitle: "💡 ข้อคิดสำคัญจากเพลง",
+            takeaways: [
+                "หลายคนคิดว่าความรักที่สมหวังคือความรักที่ได้อยู่ด้วยกัน แต่ความจริงแล้ว ความรู้สึกดี ๆ ที่มีต่อใครสักคนก็มีคุณค่าในตัวมันเอง",
+                "บางคนเข้ามาในชีวิตเพียงเพื่อทำให้เรากลับมายิ้มได้อีกครั้ง",
+                "การรักใครไม่ได้หมายความว่าต้องบอกออกไปเสมอ",
+                "ดอกไม้บางดอกสวยที่สุดตอนที่มันยังอยู่บนต้น ความรู้สึกบางอย่างก็เช่นกัน",
+                "แม้ความรักนั้นจะไม่มีวันเริ่มต้นหรือสมหวัง แต่การได้รู้สึกก็เป็นประสบการณ์ที่มีค่า"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ขอเก็บไว้คนเดียว.mp3"
+        },
+        {
+            title: "ไม่ต้องมีคำตอบ",
+            type: "full",
+            summary: "เพลงนี้สะท้อนการเติบโตของหัวใจหลังการสูญเสีย เป็นช่วงเวลาที่คนคนหนึ่งเลิกวิ่งตามหาคำตอบ และเริ่มเรียนรู้ที่จะยอมรับความจริง แม้จะไม่เข้าใจทุกอย่างก็ตาม",
+            takeawayTitle: "💡 ข้อคิดสำคัญจากเพลง",
+            takeaways: [
+                "หลายครั้งเราพยายามหาสาเหตุว่าทำไมความสัมพันธ์ถึงจบลง แต่สุดท้ายกลับไม่พบคำตอบที่ชัดเจน",
+                "บางคนใช้เวลาหลายปีตามหาคำอธิบาย ทั้งที่สิ่งที่หัวใจต้องการจริง ๆ คือการยอมรับความจริง",
+                "การปล่อยมือจากอดีต ไม่ได้หมายถึงการลบความทรงจำ แต่คือการหยุดแบกมันไว้ด้วยความเจ็บปวด",
+                "มีคำถามบางข้อที่ไม่มีคำตอบที่สมบูรณ์ และนั่นไม่ใช่ความผิดของใคร",
+                "แม้ความสัมพันธ์จะจบลง แต่สิ่งที่เราได้รับอาจเป็นบทเรียน ประสบการณ์ หรือมุมมองใหม่เกี่ยวกับชีวิต"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ไม่ต้องมีคำตอบ.mp3"
+        },
+        {
+            title: "ฉากที่ไม่มีอยู่จริง",
+            type: "full",
+            summary: "เพลงนี้พูดถึงความเจ็บปวดในรูปแบบที่ลึกมาก เพราะไม่ใช่การสูญเสียคนที่เคยเป็นของเรา แต่เป็นการสูญเสีย 'ภาพฝัน' ที่เราเคยสร้างขึ้นในใจ เป็นการเรียนรู้ว่าบางครั้งสิ่งที่ทำให้เราเจ็บที่สุด ไม่ใช่ความจริง แต่คือความคาดหวังที่เราใส่ลงไป",
+            takeawayTitle: "💡 ข้อคิดสำคัญจากเพลง",
+            takeaways: [
+                "หลายครั้งหัวใจไม่ได้ตกหลุมรักความจริง แต่ตกหลุมรักอนาคตที่จินตนาการขึ้นมา",
+                "ความผิดหวังไม่ได้เกิดจากการที่อีกฝ่ายเปลี่ยนไปเสมอ แต่บางครั้งเกิดจากการที่เราคาดหวังมากเกินกว่าสิ่งที่เขาเคยให้",
+                "หลายคนพยายามหาคนรับผิดชอบเมื่อความรักจบลง แต่บางครั้งไม่มีใครผิดเลย",
+                "ตราบใดที่เรายังอยู่ในโลกของความฝัน เราจะยังเจ็บปวดกับความจริง",
+                "การมีความหวังเป็นเรื่องดี แต่ต้องไม่ปล่อยให้ความหวังกลายเป็นกำแพงที่บดบังความจริง"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ฉากที่ไม่มีอยู่จริง.mp3"
+        },
+        {
+            title: "คนนอกเส้นทาง",
+            type: "full",
+            summary: "เพลงนี้พูดถึงความรักที่เต็มไปด้วยความเข้าใจ การยอมรับ และการเสียสละ เป็นความรักของคนที่รู้ว่าตัวเองอาจไม่ใช่คนที่จะได้เดินไปถึงปลายทางกับอีกฝ่าย แต่ยังคงหวังดีและยินดีกับความสำเร็จของเขาเสมอ",
+            takeawayTitle: "💡 ข้อคิดสำคัญจากเพลง",
+            takeaways: [
+                "บางคนเข้ามาเพื่อเปลี่ยนมุมมอง เปลี่ยนความคิด หรือเปลี่ยนชีวิตเรา แต่ไม่ได้ถูกกำหนดให้เป็นคนที่อยู่จนถึงตอนจบ",
+                "บางครั้งเรารักกัน แต่มีเส้นทางชีวิตที่แตกต่างกันเกินกว่าจะเดินร่วมกันได้",
+                "การยอมให้คนที่เรารักเดินไปตามเส้นทางของเขา ไม่ใช่ความพ่ายแพ้ แต่เป็นความกล้าหาญอย่างหนึ่ง",
+                "เมื่อเรารักใครจริง ๆ เราจะอยากเห็นเขาได้เป็นในสิ่งที่เขาฝัน แม้เราอาจไม่ได้อยู่ในภาพนั้น",
+                "บางครั้งบทบาทของเราในชีวิตใครสักคน อาจเป็นเพียงผู้ร่วมทางช่วงสั้น ๆ แต่ก็สำคัญมาก"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/คนนอกเส้นทาง.mp3"
+        },
+        {
+            title: "ค่อย ๆ หายดี",
+            type: "full",
+            summary: "เพลงนี้พูดถึงความจริงของการจากลาและการเยียวยาหัวใจ หลังจากความสัมพันธ์จบลง แม้เราจะลบทุกอย่างที่มองเห็นได้ แต่บางความรู้สึกยังคงอยู่ในใจ และนั่นไม่ใช่เรื่องผิด",
+            takeawayTitle: "💡 ข้อคิดสำคัญจากเพลง",
+            takeaways: [
+                "หลายคนกดดันตัวเองว่าต้องลืมให้ได้ ต้องเข้มแข็งให้เร็ว แต่ความจริงแล้วหัวใจแต่ละดวงมีเวลาในการรักษาต่างกัน",
+                "การที่ยังนึกถึง ยังรู้สึก หรือยังมีน้ำตา ไม่ได้แปลว่าเราอ่อนแอ",
+                "หลายครั้งแผลในใจไม่ได้หายสนิท แต่เราเรียนรู้ที่จะอยู่กับมันโดยไม่ถูกมันควบคุม",
+                "วันที่ร้องไห้ วันที่อ่อนแอ และวันที่รู้สึกว่าตัวเองไม่ไหว ล้วนมีคุณค่า",
+                "ไม่มีใครอยู่กับเราได้ตลอดไป และนั่นไม่ใช่เรื่องผิด"
+            ],
+            audioSrc: "https://pub-5d410cec70d74fc68f775b724bb9b388.r2.dev/ค่อย ๆ หายดี.mp3"
+        }
+    ];
+
+    // ฟังก์ชันสร้างการ์ดเพลงจากข้อมูล
+    const lyricsListContainer = document.getElementById("lyricsList");
+    
+    songsData.forEach(song => {
+        let contentHtml = "";
+
+        // จัดการหน้าตาเนื้อหาตามประเภท (เต็ม หรือ สั้น)
+        if (song.type === "full") {
+            let titleText = song.takeawayTitle ? song.takeawayTitle : "💡 ข้อคิดสำคัญจากเพลง";
+            let takeawaysHtml = song.takeaways.map(text => `<li>"${text}"</li>`).join("");
+            contentHtml = `
+                <p><strong>📌 สาระสำคัญของเพลง</strong><br>"${song.summary}"</p>
+                <p><strong>${titleText}</strong></p>
+                <ul>${takeawaysHtml}</ul>
+            `;
+        } else {
+            // แบบสั้น แสดงแค่พารากราฟเดียว
+            contentHtml = `<p><strong>📌 สาระสำคัญของเพลง</strong><br>"${song.summary}"</p>`;
+        }
+
+        const cardHtml = `
+            <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-header">
+                    <h3>🎵 ${song.title}</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="song-content">
+                    ${contentHtml}
+                    <audio class="inline-audio-player" controls controlsList="nodownload noplaybackrate">
+                        <source src="${song.audioSrc}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        `;
+        lyricsListContainer.innerHTML += cardHtml;
+    });
+
+    // Script ควบคุมเมนูบนมือถือ
     function toggleMenu() { 
         document.getElementById('sidebar').classList.toggle('active'); 
     }
 
-    // ฟังก์ชันเปิด/ปิดกล่องข้อความสรุปเพลง (Accordion)
+    // Script เปิด-ปิด ข้อความและหยุดเล่นเพลง
     function toggleSummary(card) {
         card.classList.toggle('active');
-        
-        // ทำให้เพลงหยุดเล่นเมื่อปิดการ์ด
         let audio = card.querySelector('audio');
         if (audio && !card.classList.contains('active')) {
             audio.pause();
         }
     }
 
-    // ระบบค้นหาเพลง
+    // Script ระบบค้นหา
     document.getElementById("searchLyrics").addEventListener("keyup", function() {
         let filter = this.value.toLowerCase();
         let cards = document.querySelectorAll(".song-summary-card");
