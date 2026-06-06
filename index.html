@@ -55,6 +55,34 @@ a { text-decoration: none; color: inherit; }
 .btn-fb { background: #1877F2; } .btn-x { background: #000; border: 1px solid #333; } .btn-link { background: rgba(255,255,255,0.2); }
 .social-btn:hover { opacity: 0.8; transform: translateY(-2px); }
 
+/* --- สไตล์สำหรับ E-Book Teaser ในหน้าแรก (เพิ่มใหม่) --- */
+.ebook-teaser-section {
+    display: flex;
+    background: linear-gradient(145deg, rgba(15,23,42,0.8) 0%, rgba(155,92,255,0.1) 100%);
+    border: 1px solid rgba(155,92,255,0.3);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 35px;
+    gap: 30px;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.teaser-content { flex: 1; }
+.teaser-tag {
+    background: #9b5cff; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; display: inline-block; margin-bottom: 15px;
+}
+.teaser-title { font-size: 24px; color: #fff; margin-bottom: 15px; line-height: 1.4; }
+.teaser-desc { color: #cbd5e1; font-size: 14px; line-height: 1.6; margin-bottom: 20px; }
+.teaser-highlights { list-style: none; margin-bottom: 25px; margin-left: 5px; }
+.teaser-highlights li { color: #a5b4fc; font-size: 13px; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;}
+.btn-read-full {
+    display: inline-block; background: #9b5cff; color: white; padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 14px; transition: 0.3s; box-shadow: 0 5px 15px rgba(155,92,255,0.4); border: none; font-family: 'Poppins', sans-serif;
+}
+.btn-read-full:hover { background: #b77dff; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(155,92,255,0.6); }
+.teaser-image { flex-basis: 300px; }
+.teaser-image img { width: 100%; border-radius: 16px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); transition: 0.3s; }
+.teaser-image img:hover { transform: scale(1.02) rotate(1deg); }
+
 /* Article Preview (SEO) */
 .article-preview-section { margin-bottom: 35px; }
 .article-preview-title { font-size: 20px; font-weight: 600; margin-bottom: 15px; color: #9b5cff; }
@@ -151,6 +179,12 @@ a { text-decoration: none; color: inherit; }
     .hero-left { flex-direction: column; align-items: center; text-align: center; }
     .hero-tags { justify-content: center; }
     .social-share-group { justify-content: center; }
+
+    /* Responsive E-Book Teaser (เพิ่มใหม่) */
+    .ebook-teaser-section { flex-direction: column-reverse; padding: 20px; text-align: center; }
+    .teaser-title { font-size: 20px; }
+    .teaser-image { flex-basis: auto; width: 100%; }
+    .teaser-highlights li { justify-content: center; }
     
     .song-table thead { display: none; }
     .song-table, .song-table tbody, .song-table tr, .song-table td { display: block; width: 100%; border: none; }
@@ -216,6 +250,26 @@ a { text-decoration: none; color: inherit; }
                 </div>
             </div>
 
+            <div class="ebook-teaser-section">
+                <div class="teaser-content">
+                    <span class="teaser-tag">🔥 แนะนำสำหรับผู้เริ่มต้นสร้างเพลง AI</span>
+                    <h2 class="teaser-title">คู่มือขั้นตอนการสร้างเพลงด้วย AI (Gemini & Suno)</h2>
+                    <p class="teaser-desc">
+                        เปลี่ยนไอเดียให้เป็นเพลงฮิต! เรียนรู้เทคนิคการเขียนเนื้อเพลงด้วย Gemini 
+                        และการใช้โครงสร้าง Prompt ระดับมือโปรเพื่อนำไปเจนเพลงใน Suno AI 
+                        ให้ได้อารมณ์เพลงที่ใช่และไม่ติดลิขสิทธิ์
+                    </p>
+                    <ul class="teaser-highlights">
+                        <li>✔️ เทคนิคการเขียนเนื้อเพลงให้ร้องเข้าจังหวะ</li>
+                        <li>✔️ แจก Master Prompt ดนตรี Pop Sad</li>
+                        <li>✔️ ขั้นตอนจับมือทำตั้งแต่ต้นจนจบ</li>
+                    </ul>
+                    <a href="ebook.html" class="btn-read-full">📖 อ่าน E-Book ฉบับเต็ม ฟรี!</a>
+                </div>
+                <div class="teaser-image">
+                    <img src="https://via.placeholder.com/400x400/9b5cff/ffffff?text=AI+Music+Guide" alt="คู่มือสร้างเพลง AI">
+                </div>
+            </div>
             <div class="article-preview-section">
                 <div class="article-preview-title">📰 บทความวิเคราะห์ & ข้อคิดจากเพลง</div>
                 <div class="article-grid">
