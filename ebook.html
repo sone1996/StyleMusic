@@ -57,7 +57,7 @@ a { text-decoration: none; color: inherit; }
 .reader-container h3 { color: #fff; font-size: 18px; margin: 25px 0 15px 0; }
 .reader-container h4 { color: #fff; font-size: 16px; margin: 20px 0 10px 0; }
 .reader-container p { margin-bottom: 15px; color: #cbd5e1; line-height: 1.8; }
-.reader-container ul { margin-left: 20px; margin-bottom: 20px; color: #cbd5e1; line-height: 1.8; }
+.reader-container ul, .reader-container ol { margin-left: 20px; margin-bottom: 20px; color: #cbd5e1; line-height: 1.8; }
 .reader-container li { margin-bottom: 10px; }
 .prompt-box { background: #0f172a; border: 1px solid rgba(155,92,255,0.3); padding: 20px; border-radius: 12px; margin: 20px 0; font-family: monospace; color: #a5b4fc; word-wrap: break-word; line-height: 1.6; }
 .btn-back-read { display: inline-block; background: rgba(255,255,255,0.1); color: white; padding: 8px 16px; border-radius: 20px; text-decoration: none; font-size: 14px; transition: 0.3s; margin-bottom: 20px; cursor: pointer; border: none; font-family: 'Poppins', sans-serif; }
@@ -303,7 +303,7 @@ a { text-decoration: none; color: inherit; }
                 <h3 style="color: #b77dff; margin-top: 30px;">สรุป</h3>
                 <p>Prompt ที่ดีคือจุดเริ่มต้นของเพลงที่ดี ยิ่งอธิบายรายละเอียดได้ชัดเจนมากเท่าไร AI ก็ยิ่งสร้างผลงานที่ตรงกับความต้องการมากขึ้นเท่านั้น</p>
 
-                <!-- ================= บทที่ 3 เพิ่มเข้ามาใหม่ ================= -->
+                <!-- ================= บทที่ 3 ================= -->
                 <h2 style="margin-top: 60px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">บทที่ 3 วิธีใช้ Gemini สร้างเนื้อเพลงระดับมืออาชีพ พร้อม Prompt สำเร็จรูป 50 แบบ</h2>
 
                 <h3>ทำไมต้องใช้ Gemini ในการแต่งเพลง</h3>
@@ -428,7 +428,271 @@ a { text-decoration: none; color: inherit; }
 
                 <h3 style="color: #b77dff; margin-top: 30px;">สรุป</h3>
                 <p>Gemini สามารถช่วยสร้างเนื้อเพลงคุณภาพสูงได้ หากเราเขียน Prompt อย่างถูกต้อง ยิ่งระบุรายละเอียดชัดเจนมากเท่าไร ผลลัพธ์ก็ยิ่งตรงกับสิ่งที่ต้องการมากขึ้น และเมื่อใช้งานร่วมกับ Suno AI ก็สามารถสร้างเพลงต้นฉบับได้อย่างรวดเร็วและมีประสิทธิภาพ</p>
-                <!-- ================= สิ้นสุดบทที่ 3 ================= -->
+
+                <!-- ================= บทที่ 4 ================= -->
+                <h2 style="margin-top: 60px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">บทที่ 4 วิธีใช้ Suno AI ระดับมืออาชีพ</h2>
+
+                <h3>Suno AI คืออะไร</h3>
+                <p><strong>Suno AI</strong> เป็นแพลตฟอร์มสร้างเพลงด้วยปัญญาประดิษฐ์ (AI Music Generator) ที่สามารถสร้างทั้งดนตรี เสียงร้อง และการเรียบเรียงเพลงได้ภายในไม่กี่นาที ผู้ใช้งานสามารถสร้างเพลงได้จาก:</p>
+                <ul>
+                    <li>คำอธิบายสั้น ๆ (Prompt)</li>
+                    <li>เนื้อเพลงที่แต่งเอง</li>
+                    <li>ไอเดียเพลง</li>
+                    <li>คอนเซ็ปต์เพลง</li>
+                </ul>
+                <p><em>ทำให้ Suno AI กลายเป็นเครื่องมือสำคัญสำหรับนักสร้างสรรค์เพลงยุคใหม่</em></p>
+
+                <hr style="border: 0; border-bottom: 1px solid rgba(255,255,255,0.1); margin: 30px 0;">
+
+                <h3>เริ่มต้นใช้งาน Suno AI</h3>
+                
+                <h4 style="color: #fff; margin-top: 20px;">ขั้นตอนที่ 1 สมัครสมาชิก</h4>
+                <p>เข้าเว็บไซต์ Suno AI สมัครสมาชิกด้วย:</p>
+                <ul>
+                    <li>Google</li>
+                    <li>Discord</li>
+                    <li>Microsoft</li>
+                </ul>
+                <p>หลังจากสมัครเรียบร้อยจะสามารถเริ่มสร้างเพลงได้ทันที</p>
+
+                <h4 style="color: #fff; margin-top: 20px;">ขั้นตอนที่ 2 เข้าเมนู Create</h4>
+                <p>หน้า <strong>Create</strong> คือพื้นที่หลักสำหรับสร้างเพลง จะมี 2 โหมด:</p>
+                <ul>
+                    <li><strong>Simple Mode:</strong> เหมาะสำหรับมือใหม่ เพียงพิมพ์คำอธิบายสั้น ๆ<br>
+                    <em>ตัวอย่าง:</em> <code style="color: #a5b4fc; background: #0f172a; padding: 2px 6px; border-radius: 4px;">Thai Pop Sad song about missing someone you love</code><br>
+                    จากนั้นกด Create AI จะสร้างเพลงให้อัตโนมัติ</li>
+                    <li style="margin-top: 10px;"><strong>Advanced Mode:</strong> เหมาะสำหรับผู้ที่ต้องการควบคุมรายละเอียดของเพลง สามารถกำหนด เนื้อเพลง, แนวดนตรี, เสียงร้อง, อารมณ์เพลง และสไตล์การเรียบเรียงได้อย่างละเอียด<br>
+                    <span style="color: #b77dff;">*สำหรับผู้สร้างเพลงจริงจัง แนะนำให้ใช้ Advanced Mode เสมอ</span></li>
+                </ul>
+
+                <hr style="border: 0; border-bottom: 1px solid rgba(255,255,255,0.1); margin: 30px 0;">
+
+                <h3>วิธีสร้างเพลงแบบมืออาชีพ</h3>
+
+                <h4 style="color: #fff; margin-top: 20px;">ช่อง Lyrics</h4>
+                <p>นำเนื้อเพลงที่ได้จาก Gemini มาใส่ ตัวอย่าง:</p>
+                <div class="prompt-box">
+                    [Verse 1]<br>
+                    แสงเช้าวันนี้ยังส่องเหมือนเดิม<br>
+                    แต่ไม่มีเธออยู่ตรงนี้อีกแล้ว<br><br>
+                    [Pre-Chorus]<br>
+                    ฉันยังเดินผ่านเรื่องราวเก่า ๆ<br>
+                    ที่ยังไม่เคยลบเลือนไป<br><br>
+                    [Chorus]<br>
+                    แสงเช้าที่ว่างเปล่า<br>
+                    ยังพาใจฉันย้อนกลับไป
+                </div>
+
+                <h4 style="color: #fff; margin-top: 20px;">ช่อง Styles</h4>
+                <p>ใส่ Prompt ดนตรี ตัวอย่าง:</p>
+                <div class="prompt-box">
+                    Original Thai Pop Sad 2026, emotional male vocal, modern emotional pop ballad, cinematic piano intro, ambient electric guitar, atmospheric synth textures, expressive vocals, emotional chorus, soft drums, warm bass, emotional strings, professional mix and mastering, unique original melody.
+                </div>
+
+                <h4 style="color: #fff; margin-top: 30px;">สูตร Prompt ดนตรีระดับมืออาชีพ</h4>
+                <ul>
+                    <li><strong>เพลง Pop Sad:</strong> Original Thai Pop Sad, emotional male vocal, cinematic piano intro, ambient guitar, emotional strings, atmospheric synth, radio-ready production, unique original melody.</li>
+                    <li><strong>เพลงรัก:</strong> Modern Thai Pop Love Song, warm vocal, bright piano, acoustic guitar, uplifting chorus, radio-friendly mix.</li>
+                    <li><strong>เพลงลูกทุ่ง:</strong> Modern Thai Luk Thung, emotional vocal, traditional Thai instruments blended with modern pop production, warm atmosphere.</li>
+                    <li><strong>เพลงลาว:</strong> Modern Lao Pop Ballad, emotional male vocal, acoustic guitar, soft piano, cinematic arrangement, emotional storytelling.</li>
+                </ul>
+
+                <hr style="border: 0; border-bottom: 1px solid rgba(255,255,255,0.1); margin: 30px 0;">
+
+                <h3>💡 เทคนิคสร้างเพลงให้ดีขึ้น</h3>
+                
+                <h4 style="color: #fff; margin-top: 20px;">1. เขียน Prompt ให้ละเอียด</h4>
+                <ul>
+                    <li><strong>Prompt ที่ดี:</strong> <code style="color: #a5b4fc;">Modern Thai Pop Sad, emotional male vocal, cinematic piano intro, atmospheric guitar, emotional storytelling.</code></li>
+                    <li><strong>Prompt ที่ไม่ดี:</strong> <code style="color: #a5b4fc;">Sad Song</code></li>
+                </ul>
+                <p>รายละเอียดมากขึ้นจะช่วยให้ AI เข้าใจสิ่งที่ต้องการได้ดีขึ้น</p>
+
+                <h4 style="color: #fff; margin-top: 20px;">2. สร้างหลายเวอร์ชัน</h4>
+                <p>อย่าสร้างเพียงครั้งเดียว แนะนำให้ลองสร้าง Version 1 ถึง Version 4 จากนั้นเลือกเวอร์ชันที่ดีที่สุด</p>
+
+                <h4 style="color: #fff; margin-top: 20px;">3. ปรับ Prompt ทีละจุด</h4>
+                <ul>
+                    <li>ต้องการเพลงเศร้ามากขึ้น ➔ เพิ่ม <code style="color: #a5b4fc;">deep emotional atmosphere</code></li>
+                    <li>ต้องการเสียงร้องทรงพลัง ➔ เพิ่ม <code style="color: #a5b4fc;">powerful emotional vocal</code></li>
+                    <li>ต้องการเพลงฟังง่าย ➔ เพิ่ม <code style="color: #a5b4fc;">radio-friendly arrangement</code></li>
+                </ul>
+
+                <hr style="border: 0; border-bottom: 1px solid rgba(255,255,255,0.1); margin: 30px 0;">
+
+                <h3>🔥 เทคนิคสร้างเพลงไวรัล</h3>
+                <ul>
+                    <li><strong>Hook ต้องจำง่าย:</strong> ประโยคสั้น ร้องง่าย จำง่าย เหมาะกับ TikTok และ YouTube Shorts (เช่น <em>"แสงเช้าที่ว่างเปล่า ยังมีเธอในความทรงจำ"</em>)</li>
+                    <li><strong>Chorus ต้องเด่นที่สุด:</strong> เพลงที่ประสบความสำเร็จส่วนใหญ่มี Chorus ที่แข็งแรง ควรใช้คำที่ เข้าใจง่าย จำง่าย และร้องตามได้</li>
+                </ul>
+
+                <h3 style="margin-top: 30px;">💰 เทคนิคจัดการเครดิตให้คุ้มค่า</h3>
+                <p>หากใช้แพ็กเกจแบบมีจำนวนเครดิตจำกัด ควร:</p>
+                <ol style="margin-left: 20px; margin-bottom: 20px; color: #cbd5e1; line-height: 1.8;">
+                    <li>แต่งเนื้อเพลงให้เสร็จก่อน</li>
+                    <li>เตรียม Prompt ให้เรียบร้อย</li>
+                    <li>ตรวจสอบก่อนกด Create</li>
+                    <li>สร้างหลายเวอร์ชันเฉพาะเพลงที่มีศักยภาพ</li>
+                </ol>
+
+                <h3 style="margin-top: 30px; color: #ff4757;">⚠️ ข้อควรระวัง</h3>
+                <ul>
+                    <li>หลีกเลี่ยงการขอให้ AI เลียนแบบศิลปินจริง</li>
+                    <li>หลีกเลี่ยงการขอให้เลียนแบบเพลงที่มีอยู่แล้ว</li>
+                    <li>สร้างผลงานต้นฉบับของตัวเอง ใช้ไอเดียของตนเองเป็นหลัก</li>
+                </ul>
+                <p><strong>ตัวอย่างคำที่ควรใช้เสมอ:</strong> <code style="color: #a5b4fc; background: #0f172a; padding: 2px 6px; border-radius: 4px;">Original Composition</code>, <code style="color: #a5b4fc; background: #0f172a; padding: 2px 6px; border-radius: 4px;">Unique Original Melody</code>, <code style="color: #a5b4fc; background: #0f172a; padding: 2px 6px; border-radius: 4px;">Original Lyrics</code>, <code style="color: #a5b4fc; background: #0f172a; padding: 2px 6px; border-radius: 4px;">No References To Existing Songs</code></p>
+
+                <hr style="border: 0; border-bottom: 1px solid rgba(255,255,255,0.1); margin: 30px 0;">
+
+                <h3 style="color: #b77dff;">🔄 Workflow ที่แนะนำสำหรับ StyleMusicPro</h3>
+                <div style="background: rgba(155,92,255,0.1); padding: 20px; border-radius: 12px; border: 1px solid rgba(155,92,255,0.3); margin-top: 20px; text-align: center;">
+                    <p style="margin-bottom: 5px;"><strong>ขั้นตอนที่ 1:</strong> คิดชื่อเพลง</p>
+                    <div style="color: #9b5cff; margin-bottom: 5px;">↓</div>
+                    <p style="margin-bottom: 5px;"><strong>ขั้นตอนที่ 2:</strong> ใช้ Gemini สร้างเนื้อเพลง</p>
+                    <div style="color: #9b5cff; margin-bottom: 5px;">↓</div>
+                    <p style="margin-bottom: 5px;"><strong>ขั้นตอนที่ 3:</strong> ให้ Gemini สร้าง Prompt ดนตรี</p>
+                    <div style="color: #9b5cff; margin-bottom: 5px;">↓</div>
+                    <p style="margin-bottom: 5px;"><strong>ขั้นตอนที่ 4:</strong> นำเนื้อเพลงไปใส่ Suno AI (ช่อง Lyrics)</p>
+                    <div style="color: #9b5cff; margin-bottom: 5px;">↓</div>
+                    <p style="margin-bottom: 5px;"><strong>ขั้นตอนที่ 5:</strong> นำ Prompt ดนตรีไปใส่ (ช่อง Styles)</p>
+                    <div style="color: #9b5cff; margin-bottom: 5px;">↓</div>
+                    <p style="margin-bottom: 5px;"><strong>ขั้นตอนที่ 6:</strong> สร้าง 3-5 เวอร์ชัน</p>
+                    <div style="color: #9b5cff; margin-bottom: 5px;">↓</div>
+                    <p style="margin-bottom: 5px;"><strong>ขั้นตอนที่ 7:</strong> เลือกเวอร์ชันที่ดีที่สุด</p>
+                    <div style="color: #9b5cff; margin-bottom: 5px;">↓</div>
+                    <p style="margin-bottom: 0;"><strong>ขั้นตอนที่ 8:</strong> นำเพลงไปเผยแพร่บน YouTube, TikTok และเว็บไซต์ StyleMusicPro</p>
+                </div>
+
+                <h3 style="color: #b77dff; margin-top: 30px;">สรุป</h3>
+                <p>Suno AI เป็นเครื่องมือที่ทรงพลังมากสำหรับการสร้างเพลงในยุคปัจจุบัน หากใช้งานร่วมกับ Gemini อย่างถูกวิธี จะสามารถสร้างเพลงต้นฉบับคุณภาพสูงได้อย่างรวดเร็ว ตั้งแต่การคิดไอเดีย การแต่งเนื้อเพลง การสร้างดนตรี ไปจนถึงการเผยแพร่ผลงานสู่ผู้ฟังทั่วโลก</p>
+
+                <!-- ================= บทที่ 5 เพิ่มเข้ามาใหม่ ================= -->
+                <h2 style="margin-top: 60px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">บทที่ 5 วิธีทำเพลงลง YouTube สร้างผู้ฟังและรายได้จากเพลง AI</h2>
+
+                <p>สำหรับผู้สร้างเพลงด้วย Suno AI, YouTube ถือเป็นช่องทางที่สำคัญที่สุดในการเผยแพร่ผลงานและสร้างฐานผู้ติดตาม</p>
+                <hr style="border: 0; border-bottom: 1px solid rgba(255,255,255,0.1); margin: 30px 0;">
+
+                <h4 style="color: #fff; margin-top: 20px;">ขั้นตอนที่ 1 สมัครและเปิดช่อง YouTube</h4>
+                <p>ก่อนจะลงเพลงได้ คุณต้องมีช่อง YouTube เป็นของตัวเองเสียก่อน (หากมีแล้วข้ามขั้นตอนนี้ได้เลย)</p>
+                <ol style="margin-left: 20px; margin-bottom: 20px; color: #cbd5e1; line-height: 1.8;">
+                    <li><strong>เตรียมบัญชี Gmail:</strong> หากยังไม่มีให้สมัคร Gmail ให้เรียบร้อย</li>
+                    <li><strong>เข้าสู่ระบบ:</strong> ไปที่เว็บไซต์ <a href="https://www.youtube.com" target="_blank" style="color: #9b5cff;">YouTube.com</a> แล้วกดปุ่ม <em>Sign In (เข้าสู่ระบบ)</em> ที่มุมขวาบน</li>
+                    <li><strong>สร้างช่อง (Create a Channel):</strong> คลิกที่รูปโปรไฟล์ของคุณที่มุมขวาบน เลือกเมนู <em>Create a channel (สร้างช่อง)</em></li>
+                    <li><strong>ตั้งชื่อและใส่รูป:</strong> ตั้งชื่อช่องของคุณ (เช่น ชื่อศิลปิน หรือชื่อแบรนด์ เช่น Style Music) อัปโหลดรูปภาพโปรไฟล์ (โลโก้) ให้เรียบร้อย</li>
+                    <li><strong>ยืนยัน:</strong> กดยืนยันการสร้างช่อง เป็นอันเสร็จสิ้น ช่องของคุณพร้อมสำหรับลงเพลงแล้ว!</li>
+                </ol>
+
+                <h4 style="color: #fff; margin-top: 30px;">ขั้นตอนที่ 2 เตรียมไฟล์เพลง</h4>
+                <p>หลังจากสร้างเพลงด้วย Suno AI แล้ว ให้ดาวน์โหลดไฟล์ MP3 หรือ WAV (ถ้ามี) แนะนำให้เก็บไฟล์ต้นฉบับไว้เสมอ</p>
+                <p><strong>โครงสร้างโฟลเดอร์ที่แนะนำเพื่อความเจ็บระเบียบ:</strong></p>
+                <div class="prompt-box">
+                    📁 Music Project<br>
+                    &nbsp;&nbsp;&nbsp; ├─ 🎵 Audio<br>
+                    &nbsp;&nbsp;&nbsp; ├─ 🖼️ Cover<br>
+                    &nbsp;&nbsp;&nbsp; ├─ 📝 Lyrics<br>
+                    &nbsp;&nbsp;&nbsp; ├─ 🎬 Video<br>
+                    &nbsp;&nbsp;&nbsp; └─ 🖼️ Thumbnail
+                </div>
+
+                <h4 style="color: #fff; margin-top: 30px;">ขั้นตอนที่ 3 สร้างภาพปกเพลง</h4>
+                <p>ภาพปกที่ดีช่วยเพิ่มอัตราการคลิก (CTR) ขนาดที่แนะนำคือ <strong>1920 × 1080 Pixel</strong></p>
+                <p><strong>องค์ประกอบที่ควรมี:</strong></p>
+                <ul>
+                    <li>ชื่อเพลง</li>
+                    <li>โลโก้ช่อง</li>
+                    <li>ภาพสื่ออารมณ์เพลง</li>
+                    <li>สีที่สอดคล้องกับแนวเพลง</li>
+                </ul>
+
+                <h4 style="color: #fff; margin-top: 30px;">ขั้นตอนที่ 4 สร้างวิดีโอเพลง</h4>
+                <ul>
+                    <li><strong>วิธีง่ายที่สุด:</strong> ใช้ภาพปกเพียงภาพเดียวพร้อมเพลงประกอบ สามารถทำได้ด้วย Canva, CapCut หรือ Premiere Pro</li>
+                    <li><strong>วิธีที่แนะนำ:</strong> สร้างวิดีโอแบบ Motion เช่น ฝนตก, ท้องฟ้ายามค่ำคืน, เมืองในแสงไฟ, ทะเล หรือภูเขา (ภาพเคลื่อนไหวจะช่วยให้ผู้ชมอยู่กับวิดีโอนานขึ้น)</li>
+                </ul>
+
+                <h4 style="color: #fff; margin-top: 30px;">ขั้นตอนที่ 5 อัปโหลดเพลงขึ้น YouTube</h4>
+                <p>กดปุ่ม <strong>Create (สร้าง)</strong> ที่มุมขวาบน ➔ <strong>Upload Video (อัปโหลดวิดีโอ)</strong> ➔ แล้วลากไฟล์วิดีโอของคุณมาวางได้เลย</p>
+
+                <h4 style="color: #fff; margin-top: 30px;">ขั้นตอนที่ 6 ตั้งชื่อวิดีโอ</h4>
+                <p><strong>สูตรที่แนะนำ:</strong> <code style="color: #a5b4fc;">ชื่อเพลง | ศิลปิน | Official Audio</code></p>
+                <p><em>ตัวอย่าง:</em><br>
+                แสงเช้าที่ว่างเปล่า | Style Music | Official Audio<br>
+                แสงเช้าที่ว่างเปล่า - เพลงเศร้าใหม่ล่าสุด 2026 | Official Music</p>
+
+                <h4 style="color: #fff; margin-top: 30px;">ขั้นตอนที่ 7 เขียนคำอธิบาย (Description)</h4>
+                <div class="prompt-box">
+                    🎵 แสงเช้าที่ว่างเปล่า<br><br>
+                    เพลงเศร้าแนว Pop Sad ถ่ายทอดความรู้สึกของคนที่ยังคิดถึงคนสำคัญที่จากไป<br>
+                    หากชอบเพลงนี้อย่าลืมกด Like กด Subscribe และแชร์ให้เพื่อนฟังด้วยนะครับ<br><br>
+                    ติดตามผลงานเพิ่มเติมได้ที่<br>
+                    🌐 www.stylemusicpro.com<br><br>
+                    #เพลงเศร้า #เพลงอกหัก #PopSad #ThaiMusic #StyleMusic
+                </div>
+
+                <h4 style="color: #fff; margin-top: 30px;">ขั้นตอนที่ 8 ใส่แท็ก (Tags)</h4>
+                <p><strong>ตัวอย่าง Tags:</strong></p>
+                <div class="prompt-box">
+                    เพลงเศร้า, เพลงอกหัก, เพลงใหม่, เพลงใหม่ล่าสุด, เพลงฮิต, เพลงเศร้า2026, Thai Pop, Pop Sad, Style Music, AI Music, Suno AI
+                </div>
+
+                <h4 style="color: #fff; margin-top: 30px;">ขั้นตอนที่ 9 ออกแบบ Thumbnail</h4>
+                <p>Thumbnail ที่ดีช่วยเพิ่มยอดคลิก ควรมี:</p>
+                <ul>
+                    <li>ตัวอักษรใหญ่ อ่านง่าย</li>
+                    <li>ชื่อเพลงเด่นชัด สีตัดกันพื้นหลัง</li>
+                    <li><em>ตัวอย่างข้อความพาดหัว:</em> "แสงเช้าที่ว่างเปล่า", "เพลงเศร้าที่อาจตรงกับชีวิตคุณ"</li>
+                </ul>
+
+                <hr style="border: 0; border-bottom: 1px solid rgba(255,255,255,0.1); margin: 30px 0;">
+
+                <h3 style="color: #b77dff;">🔍 เทคนิค SEO YouTube</h3>
+                <ul>
+                    <li><strong>คีย์เวิร์ดในชื่อคลิป:</strong> ใส่คำว่า เพลงเศร้า, เพลงอกหัก, เพลงใหม่, เพลงฮิต, เพลงมาแรง</li>
+                    <li><strong>คีย์เวิร์ดใน Description:</strong> ควรใส่คีย์เวิร์ดที่เกี่ยวข้องอย่างเป็นธรรมชาติ เช่น ฟังเพลงออนไลน์, เพลง Pop Sad, เพลงใหม่ล่าสุด</li>
+                </ul>
+
+                <h3 style="color: #b77dff; margin-top: 30px;">📈 เทคนิคเพิ่มยอดวิว</h3>
+                <ol style="margin-left: 20px; margin-bottom: 20px; color: #cbd5e1; line-height: 1.8;">
+                    <li><strong>อัปโหลดสม่ำเสมอ:</strong> แนะนำ 2-5 เพลงต่อสัปดาห์</li>
+                    <li><strong>สร้าง Playlist:</strong> จัดหมวดหมู่ เช่น รวมเพลงเศร้า, รวมเพลงอกหัก, รวมเพลงลาว, รวมเพลง Pop Sad</li>
+                    <li><strong>ทำ YouTube Shorts:</strong> ตัดช่วง Hook 15-30 วินาที นำไปทำ Shorts ช่วยเพิ่มการเข้าถึงได้มหาศาล</li>
+                    <li><strong>แชร์ลง Facebook:</strong> โพสต์ในเพจเพลง, กลุ่มคนชอบฟังเพลง, กลุ่มนักแต่งเพลง</li>
+                    <li><strong>แชร์ลง TikTok:</strong> นำช่วง Chorus ที่ติดหูที่สุดไปใช้ พร้อมแคปชั่นโดนๆ เช่น <em>"ถ้าคุณยังลืมใครไม่ได้ เพลงนี้อาจเป็นตัวแทนความรู้สึกของคุณ"</em></li>
+                </ol>
+
+                <h3 style="color: #b77dff; margin-top: 30px;">💵 การสร้างรายได้จาก YouTube</h3>
+                <p><strong>เงื่อนไขโดยทั่วไป:</strong></p>
+                <ul>
+                    <li>ผู้ติดตาม 1,000 คนขึ้นไป</li>
+                    <li>ชั่วโมงรับชมตามเกณฑ์ของ YouTube (4,000 ชั่วโมง) หรือ ยอดวิว Shorts (10 ล้านวิวใน 90 วัน)</li>
+                </ul>
+                <p>เมื่อผ่านเกณฑ์แล้ว สามารถสร้างรายได้จาก: โฆษณาขั้นวิดีโอ (AdSense), Membership (ระบบสมาชิก), Super Thanks (โดเนท), Affiliate และสปอนเซอร์</p>
+
+                <hr style="border: 0; border-bottom: 1px solid rgba(255,255,255,0.1); margin: 30px 0;">
+
+                <h3 style="color: #b77dff;">🔄 กลยุทธ์สำหรับเว็บ StyleMusicPro</h3>
+                <div style="background: rgba(155,92,255,0.1); padding: 20px; border-radius: 12px; border: 1px solid rgba(155,92,255,0.3); margin-top: 20px; text-align: center;">
+                    <p style="margin-bottom: 5px;"><strong>ขั้นตอนที่ 1:</strong> สร้างเพลงด้วย Gemini</p>
+                    <div style="color: #9b5cff; margin-bottom: 5px;">↓</div>
+                    <p style="margin-bottom: 5px;"><strong>ขั้นตอนที่ 2:</strong> สร้างเพลงด้วย Suno AI</p>
+                    <div style="color: #9b5cff; margin-bottom: 5px;">↓</div>
+                    <p style="margin-bottom: 5px;"><strong>ขั้นตอนที่ 3:</strong> ทำภาพปกด้วย AI</p>
+                    <div style="color: #9b5cff; margin-bottom: 5px;">↓</div>
+                    <p style="margin-bottom: 5px;"><strong>ขั้นตอนที่ 4:</strong> อัปโหลดลง YouTube</p>
+                    <div style="color: #9b5cff; margin-bottom: 5px;">↓</div>
+                    <p style="margin-bottom: 5px;"><strong>ขั้นตอนที่ 5:</strong> นำลิงก์มาฝัง (Embed) ในเว็บ StyleMusicPro</p>
+                    <div style="color: #9b5cff; margin-bottom: 5px;">↓</div>
+                    <p style="margin-bottom: 5px;"><strong>ขั้นตอนที่ 6:</strong> ทำบทความเจาะลึกความหมายเพลง</p>
+                    <div style="color: #9b5cff; margin-bottom: 5px;">↓</div>
+                    <p style="margin-bottom: 5px;"><strong>ขั้นตอนที่ 7:</strong> ปรับแต่ง SEO ให้เว็บไซต์</p>
+                    <div style="color: #9b5cff; margin-bottom: 5px;">↓</div>
+                    <p style="margin-bottom: 0;"><strong>ขั้นตอนที่ 8:</strong> รับทราฟฟิกและรายได้จาก Google และ YouTube พร้อมกัน</p>
+                </div>
+
+                <h3 style="color: #b77dff; margin-top: 30px;">สรุป</h3>
+                <p>YouTube เป็นช่องทางที่ดีที่สุดสำหรับการเผยแพร่เพลง AI ในปัจจุบัน หากทำควบคู่กับการปั้นเว็บไซต์ StyleMusicPro จะช่วยสร้างฐานผู้ฟัง เพิ่มยอดเข้าชมเว็บไซต์ และเปิดโอกาสในการสร้างรายได้จากผลงานเพลงในระยะยาวได้อย่างมั่นคงและมีประสิทธิภาพ</p>
+                <!-- ================= สิ้นสุดบทที่ 5 ================= -->
 
             </div>
         </div>
