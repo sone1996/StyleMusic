@@ -55,6 +55,7 @@ a { text-decoration: none; color: inherit; }
 .book-author { color: #888; font-size: 14px; }
 .reader-container h2 { color: #9b5cff; font-size: 22px; margin: 40px 0 20px 0; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
 .reader-container h3 { color: #fff; font-size: 18px; margin: 25px 0 15px 0; }
+.reader-container h4 { color: #fff; font-size: 16px; margin: 20px 0 10px 0; }
 .reader-container p { margin-bottom: 15px; color: #cbd5e1; line-height: 1.8; }
 .reader-container ul { margin-left: 20px; margin-bottom: 20px; color: #cbd5e1; line-height: 1.8; }
 .reader-container li { margin-bottom: 10px; }
@@ -113,7 +114,6 @@ a { text-decoration: none; color: inherit; }
             </div>
 
             <div class="video-grid">
-                <!-- เปลี่ยนเมนูเดิมให้เหลือแค่ "ขั้นตอนการสร้างเพลง" -->
                 <div class="video-card">
                     <img src="https://via.placeholder.com/300x400/9b5cff/ffffff?text=How+To+Make+Song" alt="ขั้นตอนการสร้างเพลง">
                     <div class="video-title">ขั้นตอนการสร้างเพลง</div>
@@ -123,7 +123,7 @@ a { text-decoration: none; color: inherit; }
             </div>
         </div>
 
-        <!-- ================= โซนหน้าอ่านหนังสือ (เนื้อหาขั้นตอนการสร้างเพลง) ================= -->
+        <!-- ================= โซนหน้าอ่านหนังสือ ================= -->
         <div id="readerSection" style="display: none;">
             <button class="btn-back-read" onclick="closeBook()">← กลับไปคลังหนังสือ</button>
             
@@ -152,6 +152,283 @@ a { text-decoration: none; color: inherit; }
                 <div class="prompt-box">
                     Original Thai Pop Sad 2026, emotional male vocal, modern emotional pop ballad, cinematic piano intro, ambient electric guitar, atmospheric synth textures, heartfelt storytelling about missing your former self and searching for inner healing, expressive vocals, memorable emotional chorus, soft drums, warm bass, emotional strings, bittersweet reflective mood, radio-friendly contemporary Thai pop, unique original melody, original composition, professional mix and mastering, 82 BPM, minor key, emotional climax, hopeful ending, no references to existing songs, artists, lyrics, melodies, hooks, or copyrighted material.
                 </div>
+
+                <!-- ================= บทที่ 2 ================= -->
+                <h2 style="margin-top: 60px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">บทที่ 2 รวม 100 Prompt แต่งเพลงด้วย Gemini และ Suno AI</h2>
+                
+                <h3>ทำไม Prompt จึงสำคัญ</h3>
+                <p>Prompt เปรียบเสมือนแผนที่ที่บอก AI ว่าต้องการให้สร้างเพลงแบบไหน ยิ่ง Prompt มีรายละเอียดชัดเจน ผลลัพธ์ที่ได้ก็ยิ่งใกล้เคียงกับสิ่งที่ต้องการมากขึ้น</p>
+                <p>Prompt ที่ดีควรประกอบด้วย</p>
+                <ul>
+                    <li>แนวเพลง</li>
+                    <li>อารมณ์เพลง</li>
+                    <li>เนื้อหาเพลง</li>
+                    <li>ลักษณะเสียงร้อง</li>
+                    <li>เครื่องดนตรี</li>
+                    <li>จังหวะเพลง</li>
+                    <li>บรรยากาศโดยรวม</li>
+                </ul>
+
+                <hr style="border: 0; border-bottom: 1px solid rgba(255,255,255,0.1); margin: 30px 0;">
+
+                <h3 style="color: #b77dff;">หมวดที่ 1 เพลงอกหัก</h3>
+                <ul>
+                    <li><strong>Prompt 1:</strong> แต่งเพลงแนว Pop Sad เกี่ยวกับการคิดถึงคนรักเก่าที่ไม่มีวันกลับมา ต้องการเนื้อเพลงร่วมสมัย มี Hook ที่จำง่าย และเป็นผลงานต้นฉบับใหม่ทั้งหมด</li>
+                    <li><strong>Prompt 2:</strong> แต่งเพลงเกี่ยวกับความเสียใจที่ปล่อยคนสำคัญหลุดมือไป แนว Thai Pop Ballad สมัยใหม่</li>
+                    <li><strong>Prompt 3:</strong> แต่งเพลงเกี่ยวกับการรอคนที่ไม่กลับมาอีกแล้ว อารมณ์เศร้าลึกซึ้ง</li>
+                    <li><strong>Prompt 4:</strong> แต่งเพลงเกี่ยวกับความทรงจำที่ยังคงอยู่ในห้องเดิม</li>
+                    <li><strong>Prompt 5:</strong> แต่งเพลงเกี่ยวกับการยิ้มทั้งที่หัวใจยังเจ็บ</li>
+                    <li><strong>Prompt 6:</strong> แต่งเพลงเกี่ยวกับการอ่านข้อความเก่า ๆ แล้วคิดถึงอดีต</li>
+                    <li><strong>Prompt 7:</strong> แต่งเพลงเกี่ยวกับความรักที่จบลงโดยไม่มีคำอธิบาย</li>
+                    <li><strong>Prompt 8:</strong> แต่งเพลงเกี่ยวกับคนที่ยังลืมไม่ได้</li>
+                    <li><strong>Prompt 9:</strong> แต่งเพลงเกี่ยวกับการแอบรักคนที่มีเจ้าของ</li>
+                    <li><strong>Prompt 10:</strong> แต่งเพลงเกี่ยวกับความเหงาในคืนฝนตก</li>
+                </ul>
+
+                <h3 style="color: #b77dff; margin-top: 30px;">หมวดที่ 2 เพลงรัก</h3>
+                <ul>
+                    <li><strong>Prompt 11:</strong> แต่งเพลงรักหวาน ๆ แนว Modern Thai Pop เกี่ยวกับคนที่เข้ามาเปลี่ยนชีวิตให้สดใส</li>
+                    <li><strong>Prompt 12:</strong> แต่งเพลงเกี่ยวกับรักแรกพบ</li>
+                    <li><strong>Prompt 13:</strong> แต่งเพลงเกี่ยวกับความรักระยะไกล</li>
+                    <li><strong>Prompt 14:</strong> แต่งเพลงเกี่ยวกับการได้พบคนที่ใช่</li>
+                    <li><strong>Prompt 15:</strong> แต่งเพลงเกี่ยวกับการขอบคุณคนรัก</li>
+                    <li><strong>Prompt 16:</strong> แต่งเพลงเกี่ยวกับวันครบรอบความรัก</li>
+                    <li><strong>Prompt 17:</strong> แต่งเพลงเกี่ยวกับการสร้างอนาคตร่วมกัน</li>
+                    <li><strong>Prompt 18:</strong> แต่งเพลงเกี่ยวกับความอบอุ่นของคนรัก</li>
+                    <li><strong>Prompt 19:</strong> แต่งเพลงเกี่ยวกับการเดินทางของคนสองคน</li>
+                    <li><strong>Prompt 20:</strong> แต่งเพลงเกี่ยวกับคำสัญญาตลอดไป</li>
+                </ul>
+
+                <h3 style="color: #b77dff; margin-top: 30px;">หมวดที่ 3 เพลงเหงา</h3>
+                <ul>
+                    <li><strong>Prompt 21:</strong> แต่งเพลงเกี่ยวกับการอยู่คนเดียวในเมืองใหญ่</li>
+                    <li><strong>Prompt 22:</strong> แต่งเพลงเกี่ยวกับคืนที่ไม่มีใครให้โทรหา</li>
+                    <li><strong>Prompt 23:</strong> แต่งเพลงเกี่ยวกับความเงียบที่ดังที่สุด</li>
+                    <li><strong>Prompt 24:</strong> แต่งเพลงเกี่ยวกับความว่างเปล่าหลังเลิกงาน</li>
+                    <li><strong>Prompt 25:</strong> แต่งเพลงเกี่ยวกับการนั่งมองดาวคนเดียว</li>
+                    <li><strong>Prompt 26:</strong> แต่งเพลงเกี่ยวกับคาเฟ่ที่เคยไปด้วยกัน</li>
+                    <li><strong>Prompt 27:</strong> แต่งเพลงเกี่ยวกับการเดินกลับบ้านคนเดียว</li>
+                    <li><strong>Prompt 28:</strong> แต่งเพลงเกี่ยวกับการมองรูปเก่า</li>
+                    <li><strong>Prompt 29:</strong> แต่งเพลงเกี่ยวกับวันเกิดที่ไม่มีใครจำได้</li>
+                    <li><strong>Prompt 30:</strong> แต่งเพลงเกี่ยวกับความรู้สึกถูกลืม</li>
+                </ul>
+
+                <h3 style="color: #b77dff; margin-top: 30px;">หมวดที่ 4 เพลงกำลังใจ</h3>
+                <ul>
+                    <li><strong>Prompt 31:</strong> แต่งเพลงเกี่ยวกับการลุกขึ้นสู้ใหม่อีกครั้ง</li>
+                    <li><strong>Prompt 32:</strong> แต่งเพลงเกี่ยวกับการเริ่มต้นชีวิตใหม่</li>
+                    <li><strong>Prompt 33:</strong> แต่งเพลงเกี่ยวกับการไม่ยอมแพ้</li>
+                    <li><strong>Prompt 34:</strong> แต่งเพลงเกี่ยวกับการตามความฝัน</li>
+                    <li><strong>Prompt 35:</strong> แต่งเพลงเกี่ยวกับความหวังในวันพรุ่งนี้</li>
+                    <li><strong>Prompt 36:</strong> แต่งเพลงเกี่ยวกับการให้อภัยตัวเอง</li>
+                    <li><strong>Prompt 37:</strong> แต่งเพลงเกี่ยวกับการก้าวข้ามอดีต</li>
+                    <li><strong>Prompt 38:</strong> แต่งเพลงเกี่ยวกับคนธรรมดาที่มีความฝันยิ่งใหญ่</li>
+                    <li><strong>Prompt 39:</strong> แต่งเพลงเกี่ยวกับการเรียนรู้จากความผิดพลาด</li>
+                    <li><strong>Prompt 40:</strong> แต่งเพลงเกี่ยวกับการเชื่อในตัวเอง</li>
+                </ul>
+
+                <h3 style="color: #b77dff; margin-top: 30px;">หมวดที่ 5 เพลงลูกทุ่ง</h3>
+                <ul>
+                    <li><strong>Prompt 41:</strong> แต่งเพลงลูกทุ่งเกี่ยวกับคนบ้านนอกมาทำงานในเมือง</li>
+                    <li><strong>Prompt 42:</strong> แต่งเพลงลูกทุ่งเกี่ยวกับความคิดถึงบ้าน</li>
+                    <li><strong>Prompt 43:</strong> แต่งเพลงลูกทุ่งเกี่ยวกับพ่อแม่ที่รออยู่ต่างจังหวัด</li>
+                    <li><strong>Prompt 44:</strong> แต่งเพลงลูกทุ่งเกี่ยวกับความรักของหนุ่มนา</li>
+                    <li><strong>Prompt 45:</strong> แต่งเพลงลูกทุ่งเกี่ยวกับสาวโรงงาน</li>
+                    <li><strong>Prompt 46:</strong> แต่งเพลงลูกทุ่งเกี่ยวกับชีวิตแรงงาน</li>
+                    <li><strong>Prompt 47:</strong> แต่งเพลงลูกทุ่งเกี่ยวกับการเก็บเงินสร้างบ้าน</li>
+                    <li><strong>Prompt 48:</strong> แต่งเพลงลูกทุ่งเกี่ยวกับทุ่งนาและสายลม</li>
+                    <li><strong>Prompt 49:</strong> แต่งเพลงลูกทุ่งเกี่ยวกับความรักที่ต้องจากลา</li>
+                    <li><strong>Prompt 50:</strong> แต่งเพลงลูกทุ่งเกี่ยวกับคนไกลบ้าน</li>
+                </ul>
+
+                <h3 style="color: #b77dff; margin-top: 30px;">หมวดที่ 6 เพลงลาว</h3>
+                <p><strong>Prompt 51-60: แต่งเพลงภาษาลาวร่วมสมัยเกี่ยวกับ</strong></p>
+                <ul>
+                    <li>ความคิดฮอด</li>
+                    <li>ฮักข้างเดียว</li>
+                    <li>คนเคยฮัก</li>
+                    <li>คำสัญญาเก่า</li>
+                    <li>คนอยู่ไกล</li>
+                    <li>คืนฝนตก</li>
+                    <li>รอคอย</li>
+                    <li>หัวใจแตกสลาย</li>
+                    <li>คิดฮอดบ้าน</li>
+                    <li>กำลังใจจากครอบครัว</li>
+                </ul>
+
+                <h3 style="color: #b77dff; margin-top: 30px;">หมวดที่ 7 เพลง TikTok</h3>
+                <p><strong>Prompt 61-70: แต่งเพลงที่มี Hook สั้น จำง่าย เกี่ยวกับ</strong></p>
+                <ul>
+                    <li>ความรัก</li>
+                    <li>ความเหงา</li>
+                    <li>การเริ่มต้นใหม่</li>
+                    <li>การแอบชอบ</li>
+                    <li>การคิดถึง</li>
+                    <li>การจากลา</li>
+                    <li>ความสุข</li>
+                    <li>ความฝัน</li>
+                    <li>การเดินทาง</li>
+                    <li>ชีวิตวัยรุ่น</li>
+                </ul>
+
+                <h3 style="color: #b77dff; margin-top: 30px;">หมวดที่ 8 Prompt ดนตรีสำหรับ Suno AI</h3>
+                
+                <p><strong>Pop Sad</strong></p>
+                <div class="prompt-box">Original Thai Pop Sad 2026, emotional male vocal, cinematic piano intro, atmospheric synth, soft drums, emotional strings, professional mix, unique original melody.</div>
+                
+                <p><strong>Pop Love</strong></p>
+                <div class="prompt-box">Modern Thai Pop Love Song, warm vocals, acoustic guitar, bright piano, uplifting chorus, romantic atmosphere, radio-friendly sound.</div>
+                
+                <p><strong>Ballad</strong></p>
+                <div class="prompt-box">Emotional Thai Ballad, heartfelt vocal, piano driven arrangement, cinematic strings, slow tempo, emotional climax.</div>
+                
+                <p><strong>Lo-fi</strong></p>
+                <div class="prompt-box">Thai Lo-fi Chill, soft beat, dreamy synths, relaxing atmosphere, warm bass, emotional mood.</div>
+                
+                <p><strong>Acoustic</strong></p>
+                <div class="prompt-box">Acoustic Thai Pop, fingerstyle guitar, intimate vocal, natural sound, emotional storytelling.</div>
+
+                <hr style="border: 0; border-bottom: 1px solid rgba(255,255,255,0.1); margin: 30px 0;">
+
+                <h3>💡 เคล็ดลับสำคัญ</h3>
+                <ol style="margin-left: 20px; margin-bottom: 20px; color: #cbd5e1; line-height: 1.8;">
+                    <li>อย่าขอให้ AI เลียนแบบศิลปินจริง</li>
+                    <li>อย่าคัดลอกเนื้อเพลงที่มีอยู่แล้ว</li>
+                    <li>ใช้คำว่า "Original Composition"</li>
+                    <li>ใช้คำว่า "Unique Original Melody"</li>
+                    <li>ระบุว่าไม่อ้างอิงเพลงหรือศิลปินที่มีลิขสิทธิ์</li>
+                </ol>
+                <p><em>วิธีนี้จะช่วยให้ AI สร้างผลงานใหม่ที่มีเอกลักษณ์ของตัวเองมากขึ้น</em></p>
+
+                <h3 style="color: #b77dff; margin-top: 30px;">สรุป</h3>
+                <p>Prompt ที่ดีคือจุดเริ่มต้นของเพลงที่ดี ยิ่งอธิบายรายละเอียดได้ชัดเจนมากเท่าไร AI ก็ยิ่งสร้างผลงานที่ตรงกับความต้องการมากขึ้นเท่านั้น</p>
+
+                <!-- ================= บทที่ 3 เพิ่มเข้ามาใหม่ ================= -->
+                <h2 style="margin-top: 60px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">บทที่ 3 วิธีใช้ Gemini สร้างเนื้อเพลงระดับมืออาชีพ พร้อม Prompt สำเร็จรูป 50 แบบ</h2>
+
+                <h3>ทำไมต้องใช้ Gemini ในการแต่งเพลง</h3>
+                <p>Gemini เป็นผู้ช่วย AI ที่สามารถช่วยนักแต่งเพลงคิดไอเดีย สร้างเนื้อร้อง ออกแบบโครงสร้างเพลง และสร้างแนวทางดนตรีได้อย่างรวดเร็ว</p>
+                <p>ข้อดีคือ:</p>
+                <ul>
+                    <li>ประหยัดเวลา</li>
+                    <li>คิดไอเดียได้ไม่จำกัด</li>
+                    <li>ช่วยแก้ปัญหาคิดเนื้อเพลงไม่ออก</li>
+                    <li>สร้างโครงสร้างเพลงได้ครบ</li>
+                    <li>ใช้ร่วมกับ Suno AI ได้ง่าย</li>
+                </ul>
+                <p><em>อย่างไรก็ตาม AI เป็นเพียงผู้ช่วย ความคิดสร้างสรรค์ของเจ้าของเพลงยังเป็นสิ่งสำคัญที่สุด</em></p>
+
+                <hr style="border: 0; border-bottom: 1px solid rgba(255,255,255,0.1); margin: 30px 0;">
+
+                <h3>โครงสร้าง Prompt ที่ดี</h3>
+                <p>Prompt ที่ดีควรมี 5 ส่วน ดังนี้:</p>
+                <ul>
+                    <li><strong>1. ชื่อเพลง:</strong> (ตัวอย่าง: แสงเช้าที่ว่างเปล่า, ห้องที่ไม่มีเธอ, ปล่อยให้เวลาเป็นคนตอบ)</li>
+                    <li><strong>2. แนวเพลง:</strong> (ตัวอย่าง: Thai Pop, Pop Sad, Acoustic, Ballad, Lo-fi, ลูกทุ่งร่วมสมัย, เพลงลาวสมัยใหม่)</li>
+                    <li><strong>3. เนื้อหาเพลง:</strong> (ตัวอย่าง: คิดถึงคนรักเก่า, รักที่เป็นไปไม่ได้, การเริ่มต้นใหม่, ความเหงา, การให้อภัยตัวเอง)</li>
+                    <li><strong>4. อารมณ์เพลง:</strong> (ตัวอย่าง: เศร้า, อบอุ่น, ซึ้ง, ให้กำลังใจ, คิดถึง)</li>
+                    <li><strong>5. ข้อกำหนดเพิ่มเติม:</strong> (ตัวอย่าง: มี Verse, Pre-Chorus, Chorus, Bridge และ Outro, มี Hook ติดหู, ภาษาร่วมสมัย, ร้องง่าย, เป็นต้นฉบับใหม่ทั้งหมด, ไม่อ้างอิงเพลง ศิลปิน หรือเนื้อร้องที่มีลิขสิทธิ์)</li>
+                </ul>
+
+                <h3 style="margin-top: 30px;">Prompt มาตรฐานสำหรับ Gemini</h3>
+                <div class="prompt-box">
+                    แต่งเพลงชื่อ "[ชื่อเพลง]"<br>
+                    แนว [แนวเพลง] สมัยใหม่<br>
+                    เนื้อหาเกี่ยวกับ "[หัวข้อเพลง]"<br>
+                    อารมณ์ [อารมณ์เพลง] ลึกซึ้ง และเข้าถึงง่าย<br>
+                    ต้องมี Verse, Pre-Chorus, Chorus, Bridge และ Outro<br>
+                    สร้าง Hook ที่จำง่าย<br>
+                    ใช้ภาษาร่วมสมัยที่ร้องง่าย<br>
+                    ต้องเป็นผลงานต้นฉบับใหม่ทั้งหมด ไม่อ้างอิงเพลง ศิลปิน เนื้อร้อง ทำนอง หรือผลงานที่มีลิขสิทธิ์<br>
+                    ช่วยสร้างแนวทางดนตรีสำหรับ Suno AI เพิ่มเติมด้วย
+                </div>
+
+                <hr style="border: 0; border-bottom: 1px solid rgba(255,255,255,0.1); margin: 30px 0;">
+
+                <h3 style="color: #b77dff;">Prompt สำเร็จรูป 50 แบบ</h3>
+
+                <h4 style="color: #fff; margin-top: 20px;">กลุ่มเพลงเศร้า</h4>
+                <ul>
+                    <li><strong>Prompt 1:</strong> แต่งเพลงชื่อ "แสงเช้าที่ว่างเปล่า" เกี่ยวกับการตื่นมาโดยไม่มีคนสำคัญอยู่ข้าง ๆ อีกแล้ว</li>
+                    <li><strong>Prompt 2:</strong> แต่งเพลงชื่อ "ห้องที่ไม่มีเธอ" เกี่ยวกับความทรงจำในห้องเดิม</li>
+                    <li><strong>Prompt 3:</strong> แต่งเพลงชื่อ "ปล่อยให้เวลาเป็นคนตอบ"</li>
+                    <li><strong>Prompt 4:</strong> แต่งเพลงชื่อ "ร่องรอยของเธอ"</li>
+                    <li><strong>Prompt 5:</strong> แต่งเพลงชื่อ "ยังอยู่ในทุกวัน"</li>
+                    <li><strong>Prompt 6:</strong> แต่งเพลงชื่อ "ประโยคสุดท้าย"</li>
+                    <li><strong>Prompt 7:</strong> แต่งเพลงชื่อ "คำตอบที่หาไม่เจอ"</li>
+                    <li><strong>Prompt 8:</strong> แต่งเพลงชื่อ "สายเกินจะขอโทษ"</li>
+                    <li><strong>Prompt 9:</strong> แต่งเพลงชื่อ "คนที่เดินต่อ"</li>
+                    <li><strong>Prompt 10:</strong> แต่งเพลงชื่อ "วันที่ไม่มีเธอ"</li>
+                </ul>
+
+                <h4 style="color: #fff; margin-top: 20px;">กลุ่มเพลงรัก</h4>
+                <ul>
+                    <li><strong>Prompt 11:</strong> แต่งเพลงชื่อ "โลกที่สดใสขึ้น"</li>
+                    <li><strong>Prompt 12:</strong> แต่งเพลงชื่อ "คนพิเศษ"</li>
+                    <li><strong>Prompt 13:</strong> แต่งเพลงชื่อ "รอยยิ้มของเธอ"</li>
+                    <li><strong>Prompt 14:</strong> แต่งเพลงชื่อ "เรื่องธรรมดาที่พิเศษ"</li>
+                    <li><strong>Prompt 15:</strong> แต่งเพลงชื่อ "ทุกก้าวที่เดิน"</li>
+                    <li><strong>Prompt 16:</strong> แต่งเพลงชื่อ "บ้านของหัวใจ"</li>
+                    <li><strong>Prompt 17:</strong> แต่งเพลงชื่อ "โชคดีที่พบเธอ"</li>
+                    <li><strong>Prompt 18:</strong> แต่งเพลงชื่อ "วันของเรา"</li>
+                    <li><strong>Prompt 19:</strong> แต่งเพลงชื่อ "อยู่ข้างกัน"</li>
+                    <li><strong>Prompt 20:</strong> แต่งเพลงชื่อ "รักที่เติบโต"</li>
+                </ul>
+
+                <h4 style="color: #fff; margin-top: 20px;">กลุ่มเพลงเหงา</h4>
+                <ul>
+                    <li><strong>Prompt 21:</strong> แต่งเพลงชื่อ "คืนที่ยาวนาน"</li>
+                    <li><strong>Prompt 22:</strong> แต่งเพลงชื่อ "คนเดียวในเมืองใหญ่"</li>
+                    <li><strong>Prompt 23:</strong> แต่งเพลงชื่อ "เงียบเกินไป"</li>
+                    <li><strong>Prompt 24:</strong> แต่งเพลงชื่อ "ที่เดิม"</li>
+                    <li><strong>Prompt 25:</strong> แต่งเพลงชื่อ "ดาวดวงเดิม"</li>
+                    <li><strong>Prompt 26:</strong> แต่งเพลงชื่อ "สายลมในคืนเหงา"</li>
+                    <li><strong>Prompt 27:</strong> แต่งเพลงชื่อ "เก้าอี้ตัวเดิม"</li>
+                    <li><strong>Prompt 28:</strong> แต่งเพลงชื่อ "ถนนเส้นเก่า"</li>
+                    <li><strong>Prompt 29:</strong> แต่งเพลงชื่อ "บทสนทนาที่หายไป"</li>
+                    <li><strong>Prompt 30:</strong> แต่งเพลงชื่อ "ไม่มีใคร"</li>
+                </ul>
+
+                <h4 style="color: #fff; margin-top: 20px;">กลุ่มเพลงกำลังใจ</h4>
+                <ul>
+                    <li><strong>Prompt 31:</strong> แต่งเพลงชื่อ "เริ่มใหม่อีกครั้ง"</li>
+                    <li><strong>Prompt 32:</strong> แต่งเพลงชื่อ "เชื่อในตัวเอง"</li>
+                    <li><strong>Prompt 33:</strong> แต่งเพลงชื่อ "วันพรุ่งนี้"</li>
+                    <li><strong>Prompt 34:</strong> แต่งเพลงชื่อ "ลุกขึ้นใหม่"</li>
+                    <li><strong>Prompt 35:</strong> แต่งเพลงชื่อ "ก้าวต่อไป"</li>
+                    <li><strong>Prompt 36:</strong> แต่งเพลงชื่อ "ความหวัง"</li>
+                    <li><strong>Prompt 37:</strong> แต่งเพลงชื่อ "ยังไม่จบ"</li>
+                    <li><strong>Prompt 38:</strong> แต่งเพลงชื่อ "แสงในความมืด"</li>
+                    <li><strong>Prompt 39:</strong> แต่งเพลงชื่อ "คนธรรมดา"</li>
+                    <li><strong>Prompt 40:</strong> แต่งเพลงชื่อ "อีกครั้ง"</li>
+                </ul>
+
+                <h4 style="color: #fff; margin-top: 20px;">กลุ่มเพลงลูกทุ่งและเพลงลาว</h4>
+                <ul>
+                    <li><strong>Prompt 41:</strong> แต่งเพลงลูกทุ่งชื่อ "ดั่งใบตองบ้านป่า"</li>
+                    <li><strong>Prompt 42:</strong> แต่งเพลงลูกทุ่งชื่อ "คิดฮอดบ้าน"</li>
+                    <li><strong>Prompt 43:</strong> แต่งเพลงลูกทุ่งชื่อ "สาวโรงงาน"</li>
+                    <li><strong>Prompt 44:</strong> แต่งเพลงลูกทุ่งชื่อ "ทางกลับบ้าน"</li>
+                    <li><strong>Prompt 45:</strong> แต่งเพลงลูกทุ่งชื่อ "พ่อกับแม่"</li>
+                    <li><strong>Prompt 46:</strong> แต่งเพลงลาวชื่อ "คิดฮอดหลาย"</li>
+                    <li><strong>Prompt 47:</strong> แต่งเพลงลาวชื่อ "คนเคยฮัก"</li>
+                    <li><strong>Prompt 48:</strong> แต่งเพลงลาวชื่อ "คำสัญญาเก่า"</li>
+                    <li><strong>Prompt 49:</strong> แต่งเพลงลาวชื่อ "ทางเดินของเฮา"</li>
+                    <li><strong>Prompt 50:</strong> แต่งเพลงลาวชื่อ "คืนฝนตก"</li>
+                </ul>
+
+                <hr style="border: 0; border-bottom: 1px solid rgba(255,255,255,0.1); margin: 30px 0;">
+
+                <h3>💡 สูตรลับสำหรับมืออาชีพ</h3>
+                <p>แทนที่จะพิมพ์สั้น ๆ ว่า <em>"แต่งเพลงเศร้า"</em> ให้พิมพ์แบบนี้:</p>
+                <div class="prompt-box">
+                    แต่งเพลงแนว Thai Pop Sad สมัยใหม่ ความยาวประมาณ 3-4 นาที เนื้อหาเกี่ยวกับคนที่ยังคิดถึงอดีตแต่พยายามเดินหน้าต่อ ใช้ภาษาที่เข้าถึงง่าย มี Hook ติดหู โครงสร้าง Verse, Pre-Chorus, Chorus, Bridge และ Outro ต้องเป็นผลงานต้นฉบับใหม่ทั้งหมด ไม่อ้างอิงเพลง ศิลปิน หรือเนื้อร้องที่มีลิขสิทธิ์ พร้อมสร้าง Prompt ดนตรีสำหรับ Suno AI
+                </div>
+                <p><em>ผลลัพธ์ที่ได้จะมีคุณภาพสูงกว่ามาก</em></p>
+
+                <h3 style="color: #b77dff; margin-top: 30px;">สรุป</h3>
+                <p>Gemini สามารถช่วยสร้างเนื้อเพลงคุณภาพสูงได้ หากเราเขียน Prompt อย่างถูกต้อง ยิ่งระบุรายละเอียดชัดเจนมากเท่าไร ผลลัพธ์ก็ยิ่งตรงกับสิ่งที่ต้องการมากขึ้น และเมื่อใช้งานร่วมกับ Suno AI ก็สามารถสร้างเพลงต้นฉบับได้อย่างรวดเร็วและมีประสิทธิภาพ</p>
+                <!-- ================= สิ้นสุดบทที่ 3 ================= -->
 
             </div>
         </div>
