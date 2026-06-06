@@ -178,11 +178,10 @@ a { text-decoration: none; color: inherit; }
             <div class="logo">🎵 StyleMusicPro</div>
             <button class="close-sidebar" onclick="toggleMenu()">✕</button>
         </div>
-        <!-- ใช้ onclick เพื่อสลับหน้าแบบ SPA -->
         <a href="#" class="menu active" id="menuHome" onclick="showHome()">🏠 หน้าแรก / ฟังเพลง</a>
         <a href="#" class="menu" id="menuVideo" onclick="showVideos()">📺 เพลงฮิต YouTube</a>
         <a href="#" class="menu" id="menuFav" onclick="showFavorites()">💖 เพลงโปรดของฉัน</a>
-        <div class="menu-divider"></div>
+        <a href="ebook.html" class="menu" id="menuEbook">📚 E-Book นวนิยายรัก</a> <div class="menu-divider"></div>
         <a href="horoscope.html" target="_blank" class="menu">🔮 เช็กดวงรายวัน</a>
         <a href="lyrics.html" target="_blank" class="menu">📖 สรุปความหมายเพลง</a>
         <div class="menu-divider"></div>
@@ -196,7 +195,6 @@ a { text-decoration: none; color: inherit; }
             </div>
         </div>
 
-        <!-- ================= โซนฟังเพลง (หน้าแรก) ================= -->
         <div id="musicSection">
             <div class="hero-banner">
                 <div class="hero-overlay">
@@ -270,9 +268,6 @@ a { text-decoration: none; color: inherit; }
                 </div>
             </div>
         </div>
-        <!-- ================= จบโซนฟังเพลง ================= -->
-
-        <!-- ================= โซนวิดีโอ (ซ่อนไว้ก่อน) ================= -->
         <div id="videoSection" style="display: none;">
             <div class="page-header">
                 <h1 class="page-title">📺 เพลงฮิตจาก YouTube</h1>
@@ -280,25 +275,21 @@ a { text-decoration: none; color: inherit; }
             </div>
 
             <div class="video-grid">
-                <!-- วิดีโอ 1 -->
                 <div class="video-card">
                     <iframe width="100%" height="220" src="https://www.youtube.com/embed/rXsbhNzHbH8" title="รวมเพลงดังใน tiktok 2026 Vol.1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <div class="video-title">รวมเพลงดังใน tiktok 2026 (Vol.1)</div>
                     <div class="video-channel">👤 khoun chanel</div>
                 </div>
-                <!-- วิดีโอ 2 -->
                 <div class="video-card">
                     <iframe width="100%" height="220" src="https://www.youtube.com/embed/gHJ9FdzcyEU" title="รวมเพลงดังใน tiktok 2026 Vol.2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <div class="video-title">รวมเพลงดังใน tiktok 2026 (Vol.2)</div>
                     <div class="video-channel">👤 khoun chanel</div>
                 </div>
-                <!-- วิดีโอ 3 -->
                 <div class="video-card">
                     <iframe width="100%" height="220" src="https://www.youtube.com/embed/jCO7IGr0SBY" title="รวมเพลงดังใน tiktok 2026 Vol.3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <div class="video-title">รวมเพลงดังใน tiktok 2026 (Vol.3)</div>
                     <div class="video-channel">👤 khoun chanel</div>
                 </div>
-                <!-- วิดีโอ 4 -->
                 <div class="video-card">
                     <iframe width="100%" height="220" src="https://www.youtube.com/embed/g-vHSyyR7l8" title="รวมเพลงดังใน tiktok 2026 Vol.4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <div class="video-title">รวมเพลงดังใน tiktok 2026 (Vol.4)</div>
@@ -306,9 +297,6 @@ a { text-decoration: none; color: inherit; }
                 </div>
             </div>
         </div>
-        <!-- ================= จบโซนวิดีโอ ================= -->
-
-        <!-- Footer -->
         <div style="text-align: center; padding: 30px 20px; margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1);">
             <p style="color: #ccc; font-size: 14px; margin-bottom: 10px;">© 2026 StyleMusicPro. All rights reserved.</p>
             <a href="privacy-policy.html" style="color: #9b5cff; text-decoration: none; font-size: 14px; font-weight: 500;">📜 นโยบายความเป็นส่วนตัว (Privacy Policy)</a>
