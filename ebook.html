@@ -5,8 +5,11 @@
      crossorigin="anonymous"></script>   
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>E-Book - StyleMusicPro</title>
 
+<title>E-Book: การแต่งเพลงด้วย Suno AI ด้วยเนื้อเพลงและ Prompt ที่ชัดเจน | StyleMusicPro</title>
+<meta name="description" content="ดาวน์โหลดฟรี E-Book คู่มือการแต่งเพลงด้วย Suno AI เรียนรู้วิธีเขียนเนื้อเพลงและการใช้คำสั่ง (Prompt) ที่ชัดเจน เพื่อสร้างเพลงที่เพราะและได้ผลลัพธ์ดีที่สุด">
+<meta name="keywords" content="Suno AI, แต่งเพลงด้วย AI, Prompt แต่งเพลง Suno, คู่มือ Suno AI, สร้างเพลง AI, เขียนเนื้อเพลง AI, StyleMusicPro">
+<meta name="author" content="StyleMusicPro">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -33,8 +36,8 @@ a { text-decoration: none; color: inherit; }
 
 /* Sections */
 .page-header { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
-.page-title { font-size: 28px; color: #fff; margin-bottom: 10px; }
-.page-subtitle { color: #aaa; font-size: 14px; }
+.page-title { font-size: 28px; color: #fff; margin-bottom: 10px; line-height: 1.4; }
+.page-subtitle { color: #aaa; font-size: 14px; line-height: 1.6; }
 .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 50px; }
 .video-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 15px; transition: 0.3s; }
 .video-card:hover { transform: translateY(-5px); border-color: #9b5cff; background: rgba(255,255,255,0.05); box-shadow: 0 10px 20px rgba(155,92,255,0.1); }
@@ -51,6 +54,7 @@ a { text-decoration: none; color: inherit; }
     .sidebar.active { left: 0; box-shadow: 0 0 30px rgba(0,0,0,.9); }
     .close-sidebar { display: block; }
     .main { margin-left: 0; padding: 15px; padding-top: 75px; padding-bottom: 40px; width: 100%; }
+    .page-title { font-size: 22px; }
 }
 </style>
 </head>
@@ -69,7 +73,7 @@ a { text-decoration: none; color: inherit; }
         <a href="index.html" class="menu">📺 เพลงฮิต YouTube</a>
         <a href="index.html" class="menu">💖 เพลงโปรดของฉัน</a>
         
-        <a href="#" class="menu active">📚 E-Book นวนิยายรัก</a>
+        <a href="#" class="menu active">📚 E-Book คู่มือแต่งเพลง AI</a>
         
         <div class="menu-divider"></div>
         <a href="horoscope.html" target="_blank" class="menu">🔮 เช็กดวงรายวัน</a>
@@ -81,36 +85,36 @@ a { text-decoration: none; color: inherit; }
     <div class="main">
         <div class="topbar">
             <div class="search-box" style="flex:1; margin-left: 50px;">
-                <input type="text" id="searchEbook" placeholder="ค้นหาชื่อหนังสือ...">
+                <input type="text" id="searchEbook" placeholder="ค้นหาชื่อหนังสือ หรือ คีย์เวิร์ด Suno AI...">
             </div>
         </div>
 
         <div id="ebookSection">
             <div class="page-header">
                 <h1 class="page-title">📚 E-Book การแต่งเพลงด้วย Suno AI จะได้ผลดีที่สุดเมื่อมีทั้งเนื้อเพลงที่ดีและ Prompt ที่ชัดเจน</h1>
-                <p class="page-subtitle">ดาวน์โหลดหรืออ่านหนังสือออนไลน์ ฟรี</p>
+                <p class="page-subtitle">ดาวน์โหลดฟรี! คู่มือเจาะลึกเทคนิคการใช้ Suno AI สร้างสรรค์บทเพลงในสไตล์คุณด้วยเนื้อหาและคำสั่งที่แม่นยำ</p>
             </div>
 
             <div class="video-grid">
                 <div class="video-card">
-                    <img src="https://via.placeholder.com/300x400/9b5cff/ffffff?text=E-Book+Cover+1" alt="ปกหนังสือ">
-                    <div class="video-title">ข้อคิดสำหรับคนอกหัก (Vol.1)</div>
+                    <img src="https://via.placeholder.com/300x400/9b5cff/ffffff?text=Suno+AI+Guide" alt="คู่มือแต่งเพลงด้วย Suno AI เบื้องต้น">
+                    <div class="video-title">คู่มือใช้งาน Suno AI ฉบับเริ่มต้นถึงมือโปร</div>
                     <div class="video-channel">📖 ผู้เขียน: StyleMusicPro</div>
-                    <a href="ebooks/book1.pdf" target="_blank" class="btn-download">📥 อ่านเลย / ดาวน์โหลด</a>
+                    <a href="ebooks/suno-ai-guide-vol1.pdf" target="_blank" class="btn-download">📥 อ่านเลย / ดาวน์โหลด</a>
                 </div>
                 
                 <div class="video-card">
-                    <img src="https://via.placeholder.com/300x400/9b5cff/ffffff?text=E-Book+Cover+2" alt="ปกหนังสือ">
-                    <div class="video-title">ก้าวผ่านความเสียใจ</div>
+                    <img src="https://via.placeholder.com/300x400/9b5cff/ffffff?text=Suno+AI+Prompts" alt="รวมคำสั่ง Prompt แต่งเพลง Suno AI">
+                    <div class="video-title">รวมเทคนิคและสูตรลับ Prompt สำหรับ Suno AI</div>
                     <div class="video-channel">📖 ผู้เขียน: StyleMusicPro</div>
-                    <a href="ebooks/book2.pdf" target="_blank" class="btn-download">📥 อ่านเลย / ดาวน์โหลด</a>
+                    <a href="ebooks/suno-ai-prompts.pdf" target="_blank" class="btn-download">📥 อ่านเลย / ดาวน์โหลด</a>
                 </div>
 
                  <div class="video-card">
-                    <img src="https://via.placeholder.com/300x400/9b5cff/ffffff?text=E-Book+Cover+3" alt="ปกหนังสือ">
-                    <div class="video-title">รักตัวเองให้เป็น</div>
+                    <img src="https://via.placeholder.com/300x400/9b5cff/ffffff?text=AI+Lyric+Writing" alt="การเขียนเนื้อเพลงเพื่อป้อน AI">
+                    <div class="video-title">วิธีเขียนเนื้อเพลงให้ดึงอารมณ์ร่วมกับ AI ได้ดีที่สุด</div>
                     <div class="video-channel">📖 ผู้เขียน: StyleMusicPro</div>
-                    <a href="#" target="_blank" class="btn-download">📥 อ่านเลย / ดาวน์โหลด</a>
+                    <a href="ebooks/ai-lyric-writing.pdf" target="_blank" class="btn-download">📥 อ่านเลย / ดาวน์โหลด</a>
                 </div>
             </div>
         </div>
