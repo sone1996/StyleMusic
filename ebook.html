@@ -77,6 +77,7 @@ a { text-decoration: none; color: inherit; }
 .reader-container li { margin-bottom: 10px; }
 .prompt-box { background: #0f172a; border: 1px solid rgba(155,92,255,0.3); padding: 20px; border-radius: 12px; margin: 20px 0; font-family: monospace; color: #a5b4fc; word-wrap: break-word; line-height: 1.6; }
 .workflow-box { background: rgba(155,92,255,0.1); padding: 20px; border-radius: 12px; border: 1px solid rgba(155,92,255,0.3); margin-top: 20px; text-align: center; }
+.prompt-list-item { background: rgba(255,255,255,0.02); border-left: 3px solid #9b5cff; padding: 12px 15px; margin-bottom: 10px; border-radius: 0 8px 8px 0; font-family: monospace; color: #cbd5e1; list-style-type: none; }
 
 /* Bottom Navigation Buttons */
 .chapter-footer-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
@@ -133,7 +134,6 @@ a { text-decoration: none; color: inherit; }
             </div>
         </div>
 
-        <!-- ================= โซนหน้าปกหนังสือ (Library) ================= -->
         <div id="ebookSection">
             <div class="page-header">
                 <h1 class="page-title">📚 E-Book ขั้นตอนการสร้างเพลงด้วย AI (Gemini & Suno)</h1>
@@ -150,7 +150,6 @@ a { text-decoration: none; color: inherit; }
             </div>
         </div>
 
-        <!-- ================= โซนอ่านหนังสือ ================= -->
         <div id="readerSection" style="display: none;">
             <button class="btn-back-read" onclick="closeBook()">← ปิดหนังสือกลับหน้าหลัก</button>
             
@@ -161,21 +160,20 @@ a { text-decoration: none; color: inherit; }
                     <p class="book-author">ผู้เขียน: StyleMusicPro</p>
                 </div>
 
-                <!-- เมนูนำทาง เลือกบทเรียน -->
                 <div class="chapter-nav">
-                    <button class="chapter-btn active" id="btn-ch1" onclick="showChapter(1)">บทที่ 1: ภาพรวมและพื้นฐาน</button>
-                    <button class="chapter-btn" id="btn-ch2" onclick="showChapter(2)">บทที่ 2: คลังไอเดีย 100 Prompt</button>
-                    <button class="chapter-btn" id="btn-ch3" onclick="showChapter(3)">บทที่ 3: ใช้ Gemini แต่งเนื้อร้อง</button>
-                    <button class="chapter-btn" id="btn-ch4" onclick="showChapter(4)">บทที่ 4: ใช้ Suno สร้างทำนอง</button>
-                    <button class="chapter-btn" id="btn-ch5" onclick="showChapter(5)">บทที่ 5: นำไปสร้างรายได้</button>
+                    <button class="chapter-btn active" id="btn-ch1" onclick="showChapter(1)">บทที่ 1: ภาพรวม</button>
+                    <button class="chapter-btn" id="btn-ch2" onclick="showChapter(2)">บทที่ 2: Prompt เนื้อเพลง</button>
+                    <button class="chapter-btn" id="btn-ch3" onclick="showChapter(3)">บทที่ 3: ใช้ Gemini</button>
+                    <button class="chapter-btn" id="btn-ch4" onclick="showChapter(4)">บทที่ 4: ใช้ Suno</button>
+                    <button class="chapter-btn" id="btn-ch5" onclick="showChapter(5)">บทที่ 5: สร้างรายได้</button>
+                    <button class="chapter-btn" id="btn-ch6" onclick="showChapter(6)">บทที่ 6: 100 Prompt Suno</button>
                 </div>
 
-                <!-- ================= บทที่ 1 ================= -->
                 <div id="ch1" class="chapter-content active">
                     <h2 class="chapter-title">บทที่ 1: ภาพรวมการทำงาน (พื้นฐานสร้างเพลง AI)</h2>
                     <div class="chapter-summary">
                         <strong>🎯 เป้าหมายการเรียนรู้ (หน้าที่ของบทนี้):</strong><br>
-                        เพื่อให้คุณเข้าใจขั้นตอนและกระบวนการทำงานแบบรวบรัด ตั้งแต่การใช้คำสั่งแรกเพื่อคิดเนื้อเพลง ไปจนถึงการสั่งงานขั้นพื้นฐานให้ AI เจนออกมาเป็นเสียงดนตรี เพื่อให้เห็นภาพรวมของงานทั้งหมด
+                        เพื่อให้คุณเข้าใจขั้นตอนและกระบวนการทำงานแบบรวบรัด ตั้งแต่การใช้คำสั่งแรกเพื่อคิดเนื้อเพลง ไปจนถึงการสั่งงานขั้นพื้นฐานให้ AI เจนออกมาเป็นเสียงดนตรี
                     </div>
                     
                     <h3>1. ขั้นตอนการสร้างเนื้อเพลง</h3>
@@ -198,386 +196,21 @@ a { text-decoration: none; color: inherit; }
                     </div>
 
                     <div class="chapter-footer-nav">
-                        <div></div> <!-- ช่องว่างจัดรูปแบบ -->
-                        <button class="btn-nav" onclick="showChapter(2)">อ่านต่อ บทที่ 2: คลังไอเดีย 100 Prompt ➔</button>
+                        <div></div>
+                        <button class="btn-nav" onclick="showChapter(2)">อ่านต่อ บทที่ 2: Prompt เนื้อเพลง ➔</button>
                     </div>
                 </div>
 
-                <!-- ================= บทที่ 2 ================= -->
                 <div id="ch2" class="chapter-content">
-                    <h2 class="chapter-title">บทที่ 2: คลังไอเดีย (รวม 100 Prompt สำเร็จรูป)</h2>
+                    <h2 class="chapter-title">บทที่ 2: คลังไอเดียเนื้อเพลง</h2>
                     <div class="chapter-summary">
                         <strong>🎯 เป้าหมายการเรียนรู้ (หน้าที่ของบทนี้):</strong><br>
-                        แก้ปัญหา "คิดไม่ออกว่าจะแต่งเพลงอะไรดี" บทนี้ทำหน้าที่เป็นคู่มือรวมคำสั่ง (Prompt) ในหลากหลายแนวเพลง อารมณ์ และเรื่องราว ที่คุณสามารถคัดลอก (Copy) นำไปปรับใช้ได้ทันทีโดยไม่ต้องเสียเวลาคิดโครงสร้างเอง
+                        แก้ปัญหา "คิดไม่ออกว่าจะแต่งเพลงอะไรดี" ด้วยไอเดียเรื่องราวที่นำไปให้ Gemini แต่งต่อ
                     </div>
                     
-                    <h3>ทำไม Prompt จึงสำคัญ</h3>
-                    <p>Prompt เปรียบเสมือนแผนที่ที่บอก AI ว่าต้องการให้สร้างเพลงแบบไหน ยิ่ง Prompt มีรายละเอียดชัดเจน ผลลัพธ์ที่ได้ก็ยิ่งใกล้เคียงกับสิ่งที่ต้องการมากขึ้น</p>
-                    <p>Prompt ที่ดีควรประกอบด้วย</p>
-                    <ul>
-                        <li>แนวเพลง (เช่น Pop, Rock, Lo-Fi)</li>
-                        <li>อารมณ์เพลง (เช่น เศร้า, อกหัก, เหงา, มีความสุข)</li>
-                        <li>เนื้อหาเพลง (เรื่องราวที่ต้องการสื่อ)</li>
-                        <li>ลักษณะเสียงร้อง (เช่น เสียงผู้ชาย, ร้องประสานเสียง)</li>
-                        <li>เครื่องดนตรี (เช่น กีตาร์โปร่ง, เปียโน)</li>
-                        <li>จังหวะเพลง (ช้า, เร็ว)</li>
-                        <li>บรรยากาศโดยรวม (Mood & Tone)</li>
-                    </ul>
-
-                    <h3 style="color: #b77dff; margin-top: 30px;">หมวดที่ 1 เพลงอกหัก</h3>
+                    <h3 style="color: #b77dff; margin-top: 30px;">ตัวอย่างไอเดียเนื้อเพลง</h3>
                     <ul>
                         <li><strong>Prompt 1:</strong> แต่งเพลงแนว Pop Sad เกี่ยวกับการคิดถึงคนรักเก่าที่ไม่มีวันกลับมา ต้องการเนื้อเพลงร่วมสมัย มี Hook ที่จำง่าย และเป็นผลงานต้นฉบับใหม่ทั้งหมด</li>
                         <li><strong>Prompt 2:</strong> แต่งเพลงเกี่ยวกับความเสียใจที่ปล่อยคนสำคัญหลุดมือไป แนว Thai Pop Ballad สมัยใหม่</li>
                         <li><strong>Prompt 3:</strong> แต่งเพลงเกี่ยวกับการรอคนที่ไม่กลับมาอีกแล้ว อารมณ์เศร้าลึกซึ้ง</li>
-                        <li><strong>Prompt 4:</strong> แต่งเพลงเกี่ยวกับความทรงจำที่ยังคงอยู่ในห้องเดิม</li>
-                        <li><strong>Prompt 5:</strong> แต่งเพลงเกี่ยวกับการยิ้มทั้งที่หัวใจยังเจ็บ</li>
-                        <li><strong>Prompt 6:</strong> แต่งเพลงเกี่ยวกับการอ่านข้อความเก่า ๆ แล้วคิดถึงอดีต</li>
-                        <li><strong>Prompt 7:</strong> แต่งเพลงเกี่ยวกับความรักที่จบลงโดยไม่มีคำอธิบาย</li>
-                        <li><strong>Prompt 8:</strong> แต่งเพลงเกี่ยวกับคนที่ยังลืมไม่ได้</li>
-                        <li><strong>Prompt 9:</strong> แต่งเพลงเกี่ยวกับการแอบรักคนที่มีเจ้าของ</li>
-                        <li><strong>Prompt 10:</strong> แต่งเพลงเกี่ยวกับความเหงาในคืนฝนตก</li>
                     </ul>
-
-                    <h3 style="color: #b77dff; margin-top: 30px;">หมวดที่ 2 เพลงรัก</h3>
-                    <ul>
-                        <li><strong>Prompt 11:</strong> แต่งเพลงรักหวาน ๆ แนว Modern Thai Pop เกี่ยวกับคนที่เข้ามาเปลี่ยนชีวิตให้สดใส</li>
-                        <li><strong>Prompt 12:</strong> แต่งเพลงเกี่ยวกับรักแรกพบ</li>
-                        <li><strong>Prompt 13:</strong> แต่งเพลงเกี่ยวกับความรักระยะไกล</li>
-                        <li><strong>Prompt 14:</strong> แต่งเพลงเกี่ยวกับการได้พบคนที่ใช่</li>
-                        <li><strong>Prompt 15:</strong> แต่งเพลงเกี่ยวกับการขอบคุณคนรัก</li>
-                        <li><strong>Prompt 16:</strong> แต่งเพลงเกี่ยวกับวันครบรอบความรัก</li>
-                        <li><strong>Prompt 17:</strong> แต่งเพลงเกี่ยวกับการสร้างอนาคตร่วมกัน</li>
-                        <li><strong>Prompt 18:</strong> แต่งเพลงเกี่ยวกับความอบอุ่นของคนรัก</li>
-                        <li><strong>Prompt 19:</strong> แต่งเพลงเกี่ยวกับการเดินทางของคนสองคน</li>
-                        <li><strong>Prompt 20:</strong> แต่งเพลงเกี่ยวกับคำสัญญาตลอดไป</li>
-                    </ul>
-
-                    <h3 style="color: #b77dff; margin-top: 30px;">หมวดที่ 3 เพลงเหงา</h3>
-                    <ul>
-                        <li><strong>Prompt 21:</strong> แต่งเพลงเกี่ยวกับการอยู่คนเดียวในเมืองใหญ่</li>
-                        <li><strong>Prompt 22:</strong> แต่งเพลงเกี่ยวกับคืนที่ไม่มีใครให้โทรหา</li>
-                        <li><strong>Prompt 23:</strong> แต่งเพลงเกี่ยวกับความเงียบที่ดังที่สุด</li>
-                        <li><strong>Prompt 24:</strong> แต่งเพลงเกี่ยวกับความว่างเปล่าหลังเลิกงาน</li>
-                        <li><strong>Prompt 25:</strong> แต่งเพลงเกี่ยวกับการนั่งมองดาวคนเดียว</li>
-                        <li><strong>Prompt 26:</strong> แต่งเพลงเกี่ยวกับคาเฟ่ที่เคยไปด้วยกัน</li>
-                        <li><strong>Prompt 27:</strong> แต่งเพลงเกี่ยวกับการเดินกลับบ้านคนเดียว</li>
-                        <li><strong>Prompt 28:</strong> แต่งเพลงเกี่ยวกับการมองรูปเก่า</li>
-                        <li><strong>Prompt 29:</strong> แต่งเพลงเกี่ยวกับวันเกิดที่ไม่มีใครจำได้</li>
-                        <li><strong>Prompt 30:</strong> แต่งเพลงเกี่ยวกับความรู้สึกถูกลืม</li>
-                    </ul>
-
-                    <h3 style="color: #b77dff; margin-top: 30px;">หมวดที่ 4 เพลงกำลังใจ</h3>
-                    <ul>
-                        <li><strong>Prompt 31:</strong> แต่งเพลงเกี่ยวกับการลุกขึ้นสู้ใหม่อีกครั้ง</li>
-                        <li><strong>Prompt 32:</strong> แต่งเพลงเกี่ยวกับการเริ่มต้นชีวิตใหม่</li>
-                        <li><strong>Prompt 33:</strong> แต่งเพลงเกี่ยวกับการไม่ยอมแพ้</li>
-                        <li><strong>Prompt 34:</strong> แต่งเพลงเกี่ยวกับการตามความฝัน</li>
-                        <li><strong>Prompt 35:</strong> แต่งเพลงเกี่ยวกับความหวังในวันพรุ่งนี้</li>
-                        <li><strong>Prompt 36:</strong> แต่งเพลงเกี่ยวกับการให้อภัยตัวเอง</li>
-                        <li><strong>Prompt 37:</strong> แต่งเพลงเกี่ยวกับการก้าวข้ามอดีต</li>
-                        <li><strong>Prompt 38:</strong> แต่งเพลงเกี่ยวกับคนธรรมดาที่มีความฝันยิ่งใหญ่</li>
-                        <li><strong>Prompt 39:</strong> แต่งเพลงเกี่ยวกับการเรียนรู้จากความผิดพลาด</li>
-                        <li><strong>Prompt 40:</strong> แต่งเพลงเกี่ยวกับการเชื่อในตัวเอง</li>
-                    </ul>
-
-                    <h3 style="color: #b77dff; margin-top: 30px;">หมวดที่ 5 เพลงลูกทุ่ง</h3>
-                    <ul>
-                        <li><strong>Prompt 41:</strong> แต่งเพลงลูกทุ่งเกี่ยวกับคนบ้านนอกมาทำงานในเมือง</li>
-                        <li><strong>Prompt 42:</strong> แต่งเพลงลูกทุ่งเกี่ยวกับความคิดถึงบ้าน</li>
-                        <li><strong>Prompt 43:</strong> แต่งเพลงลูกทุ่งเกี่ยวกับพ่อแม่ที่รออยู่ต่างจังหวัด</li>
-                        <li><strong>Prompt 44:</strong> แต่งเพลงลูกทุ่งเกี่ยวกับความรักของหนุ่มนา</li>
-                        <li><strong>Prompt 45:</strong> แต่งเพลงลูกทุ่งเกี่ยวกับสาวโรงงาน</li>
-                        <li><strong>Prompt 46:</strong> แต่งเพลงลูกทุ่งเกี่ยวกับชีวิตแรงงาน</li>
-                        <li><strong>Prompt 47:</strong> แต่งเพลงลูกทุ่งเกี่ยวกับการเก็บเงินสร้างบ้าน</li>
-                        <li><strong>Prompt 48:</strong> แต่งเพลงลูกทุ่งเกี่ยวกับทุ่งนาและสายลม</li>
-                        <li><strong>Prompt 49:</strong> แต่งเพลงลูกทุ่งเกี่ยวกับความรักที่ต้องจากลา</li>
-                        <li><strong>Prompt 50:</strong> แต่งเพลงลูกทุ่งเกี่ยวกับคนไกลบ้าน</li>
-                    </ul>
-
-                    <h3 style="color: #b77dff; margin-top: 30px;">หมวดที่ 6 เพลงลาว</h3>
-                    <p><strong>Prompt 51-60: แต่งเพลงภาษาลาวร่วมสมัยเกี่ยวกับ</strong></p>
-                    <ul>
-                        <li>ความคิดฮอด / ฮักข้างเดียว / คนเคยฮัก</li>
-                        <li>คำสัญญาเก่า / คนอยู่ไกล / คืนฝนตก</li>
-                        <li>รอคอย / หัวใจแตกสลาย / คิดฮอดบ้าน</li>
-                        <li>กำลังใจจากครอบครัว</li>
-                    </ul>
-
-                    <h3 style="color: #b77dff; margin-top: 30px;">หมวดที่ 7 เพลง TikTok</h3>
-                    <p><strong>Prompt 61-70: แต่งเพลงที่มี Hook สั้น จำง่าย เกี่ยวกับ</strong></p>
-                    <ul>
-                        <li>ความรัก / ความเหงา / การเริ่มต้นใหม่</li>
-                        <li>การแอบชอบ / การคิดถึง / การจากลา</li>
-                        <li>ความสุข / ความฝัน / การเดินทาง / ชีวิตวัยรุ่น</li>
-                    </ul>
-
-                    <h3 style="color: #b77dff; margin-top: 30px;">หมวดที่ 8 Prompt สไตล์ดนตรี (นำไปใส่ช่อง Style ใน Suno)</h3>
-                    
-                    <p><strong>Pop Sad</strong></p>
-                    <div class="prompt-box">Original Thai Pop Sad 2026, emotional male vocal, cinematic piano intro, atmospheric synth, soft drums, emotional strings, professional mix, unique original melody.</div>
-                    
-                    <p><strong>Pop Love</strong></p>
-                    <div class="prompt-box">Modern Thai Pop Love Song, warm vocals, acoustic guitar, bright piano, uplifting chorus, romantic atmosphere, radio-friendly sound.</div>
-                    
-                    <p><strong>Ballad</strong></p>
-                    <div class="prompt-box">Emotional Thai Ballad, heartfelt vocal, piano driven arrangement, cinematic strings, slow tempo, emotional climax.</div>
-                    
-                    <p><strong>Lo-fi</strong></p>
-                    <div class="prompt-box">Thai Lo-fi Chill, soft beat, dreamy synths, relaxing atmosphere, warm bass, emotional mood.</div>
-                    
-                    <p><strong>Acoustic</strong></p>
-                    <div class="prompt-box">Acoustic Thai Pop, fingerstyle guitar, intimate vocal, natural sound, emotional storytelling.</div>
-
-                    <hr style="border: 0; border-bottom: 1px solid rgba(255,255,255,0.1); margin: 30px 0;">
-
-                    <h3>💡 เคล็ดลับสำคัญ</h3>
-                    <ol style="margin-left: 20px; margin-bottom: 20px; color: #cbd5e1; line-height: 1.8;">
-                        <li>อย่าขอให้ AI เลียนแบบศิลปินจริง หรือคัดลอกเนื้อเพลงที่มีอยู่แล้ว</li>
-                        <li>ใช้คำว่า "Original Composition" และ "Unique Original Melody" ทุกครั้ง</li>
-                        <li>ระบุให้ชัดว่า "ไม่อ้างอิงเพลงหรือศิลปินที่มีลิขสิทธิ์"</li>
-                    </ol>
-
-                    <div class="chapter-footer-nav">
-                        <button class="btn-nav" onclick="showChapter(1)">🡨 ย้อนกลับ บทที่ 1</button>
-                        <button class="btn-nav" onclick="showChapter(3)">อ่านต่อ บทที่ 3: ใช้ Gemini แต่งเนื้อ ➔</button>
-                    </div>
-                </div>
-
-                <!-- ================= บทที่ 3 ================= -->
-                <div id="ch3" class="chapter-content">
-                    <h2 class="chapter-title">บทที่ 3: นักแต่งเพลงส่วนตัว (วิธีใช้ Gemini แต่งเนื้อร้อง)</h2>
-                    <div class="chapter-summary">
-                        <strong>🎯 เป้าหมายการเรียนรู้ (หน้าที่ของบทนี้):</strong><br>
-                        สอนวิธีการใช้ Gemini เพื่อเป็นนักแต่งเพลงส่วนตัวให้คุณ โดยเน้นที่เทคนิคการป้อนโครงสร้างเพลงที่ถูกต้อง (เช่น ท่อน Verse, Chorus, Hook) และการปรับแต่งอารมณ์ภาษาให้สละสลวยเหมือนแต่งโดยมืออาชีพ
-                    </div>
-
-                    <h3>ทำไมต้องใช้ Gemini ในการแต่งเพลง</h3>
-                    <p>Gemini เป็นผู้ช่วย AI (จาก Google) ที่สามารถช่วยนักแต่งเพลงคิดไอเดีย สร้างเนื้อร้อง ออกแบบโครงสร้างเพลง และสร้างคำสั่งสไตล์ดนตรี (ดนตรีแนวไหน) ได้อย่างรวดเร็ว</p>
-                    <p>ข้อดีคือ:</p>
-                    <ul>
-                        <li>ประหยัดเวลา และได้ไอเดียแบบไม่จำกัด</li>
-                        <li>ช่วยแก้ปัญหาเวลาคิดเนื้อเพลงหรือคำคล้องจองไม่ออก</li>
-                        <li>แบ่งสัดส่วนโครงสร้างเพลงให้ครบถ้วน (ท่อนฮุค ท่อนเชื่อม ท่อนจบ)</li>
-                        <li>สามารถขอให้แปลงข้อความธรรมดา ให้สละสลวยขึ้นได้</li>
-                    </ul>
-                    <p><em>อย่างไรก็ตาม AI เป็นเพียงผู้ช่วย ความคิดสร้างสรรค์ของเจ้าของผลงานในการเลือกหรือแก้ไขเนื้อร้องยังเป็นสิ่งสำคัญที่สุด</em></p>
-
-                    <hr style="border: 0; border-bottom: 1px solid rgba(255,255,255,0.1); margin: 30px 0;">
-
-                    <h3>โครงสร้าง Prompt แต่งเนื้อเพลงที่ดี</h3>
-                    <p>Prompt ที่ดีควรมี 5 ส่วนประกอบ ดังนี้:</p>
-                    <ul>
-                        <li><strong>1. ชื่อเพลง:</strong> (เช่น แสงเช้าที่ว่างเปล่า, ห้องที่ไม่มีเธอ, ปล่อยให้เวลาเป็นคนตอบ)</li>
-                        <li><strong>2. แนวเพลง:</strong> (เช่น Thai Pop, Pop Sad, Acoustic, Ballad, Lo-fi, ลูกทุ่ง, หมอลำ)</li>
-                        <li><strong>3. เนื้อหาและเรื่องราว:</strong> (เช่น คิดถึงคนรักเก่า, รักที่เป็นไปไม่ได้, การเริ่มต้นใหม่, ให้กำลังใจตัวเอง)</li>
-                        <li><strong>4. อารมณ์การเล่าเรื่อง:</strong> (เช่น เศร้า, อบอุ่น, ซึ้ง, หวานละมุน, ดุดัน)</li>
-                        <li><strong>5. โครงสร้างและข้อกำหนด:</strong> (ต้องระบุเสมอว่าให้มี Verse, Pre-Chorus, Chorus, Bridge, Outro รวมถึงต้องเป็นผลงานต้นฉบับ ไม่ละเมิดลิขสิทธิ์)</li>
-                    </ul>
-
-                    <h3 style="margin-top: 30px;">✨ Prompt ขั้นเทพ (สำหรับ Copy ไปวางใน Gemini)</h3>
-                    <div class="prompt-box">
-                        แต่งเพลงชื่อ "[ระบุชื่อเพลง]"<br>
-                        แนว [ระบุแนวเพลง] สมัยใหม่<br>
-                        เนื้อหาเกี่ยวกับ "[เล่าเรื่องย่อๆ ว่าเพลงเกี่ยวกับอะไร]"<br>
-                        อารมณ์ [ระบุอารมณ์เพลง] ลึกซึ้ง และเข้าถึงง่าย<br>
-                        ต้องมีโครงสร้างมาตรฐาน: Verse 1, Pre-Chorus, Chorus (Hook), Verse 2, Pre-Chorus, Chorus, Bridge และ Outro<br>
-                        สร้างท่อน Hook ที่จำง่าย ร้องตามง่าย<br>
-                        ใช้ภาษาร่วมสมัยที่เข้ากับคนยุคนี้<br>
-                        ต้องเป็นผลงานต้นฉบับใหม่ทั้งหมด ไม่อ้างอิงเพลง ศิลปิน เนื้อร้อง ทำนอง หรือผลงานที่มีลิขสิทธิ์<br>
-                        ท้ายสุด ช่วยสร้างแนวทางดนตรี (Style of Music Prompt) เป็นภาษาอังกฤษ สำหรับนำไปใช้ใน Suno AI ให้ด้วย
-                    </div>
-
-                    <div class="chapter-footer-nav">
-                        <button class="btn-nav" onclick="showChapter(2)">🡨 ย้อนกลับ บทที่ 2</button>
-                        <button class="btn-nav" onclick="showChapter(4)">อ่านต่อ บทที่ 4: ใช้ Suno สร้างทำนอง ➔</button>
-                    </div>
-                </div>
-
-                <!-- ================= บทที่ 4 ================= -->
-                <div id="ch4" class="chapter-content">
-                    <h2 class="chapter-title">บทที่ 4: โปรดิวเซอร์ดนตรี (วิธีใช้ Suno AI สร้างเสียงดนตรี)</h2>
-                    <div class="chapter-summary">
-                        <strong>🎯 เป้าหมายการเรียนรู้ (หน้าที่ของบทนี้):</strong><br>
-                        สอนเทคนิคระดับมืออาชีพในการใช้งานเว็บไซต์ Suno AI เพื่อนำ "เนื้อเพลง" และ "แนวทางดนตรี" ที่ได้จากบทที่แล้ว มาเจนเรทให้เป็นบทเพลงที่สมบูรณ์แบบ มีทั้งเสียงนักร้องและดนตรีประกอบ พร้อมเทคนิคการทำเพลงให้ฟังดูเหมือนศิลปินจริงๆ
-                    </div>
-
-                    <h3>Suno AI คืออะไร</h3>
-                    <p><strong>Suno AI</strong> เป็นแพลตฟอร์มสร้างเพลงด้วยปัญญาประดิษฐ์ (AI Music Generator) ที่สามารถสร้างทั้งดนตรี เสียงร้อง และการเรียบเรียงเพลงได้ภายในไม่กี่นาที</p>
-
-                    <hr style="border: 0; border-bottom: 1px solid rgba(255,255,255,0.1); margin: 30px 0;">
-
-                    <h3>เริ่มต้นใช้งาน Suno AI อย่างถูกวิธี</h3>
-                    
-                    <h4 style="color: #fff; margin-top: 20px;">ขั้นตอนที่ 1 สมัครสมาชิก</h4>
-                    <p>เข้าเว็บไซต์ Suno AI สมัครสมาชิกด้วย Google, Discord หรือ Microsoft</p>
-
-                    <h4 style="color: #fff; margin-top: 20px;">ขั้นตอนที่ 2 เข้าเมนู Create</h4>
-                    <p>ไปที่เมนู <strong>Create</strong> จะเห็นแถบการทำงาน ให้คุณสังเกตการเปิดปิด <strong>Custom Mode (Advanced)</strong></p>
-                    <ul>
-                        <li><strong>Simple Mode:</strong> (ปิด Custom Mode) เหมาะสำหรับมือใหม่ที่ไม่มีเนื้อเพลง พิมพ์แค่ไอเดียสั้นๆ ลงไป AI จะแต่งเนื้อและดนตรีให้เอง</li>
-                        <li style="margin-top: 10px;"><strong>Custom Mode:</strong> (เปิด Custom Mode) เหมาะสำหรับผู้ที่ต้องการควบคุมรายละเอียด <strong>(นี่คือโหมดที่เราจะใช้)</strong> เพราะเราสามารถใส่ "เนื้อเพลง" ของเราเอง และกำหนด "แนวทางดนตรี" ได้</li>
-                    </ul>
-
-                    <hr style="border: 0; border-bottom: 1px solid rgba(255,255,255,0.1); margin: 30px 0;">
-
-                    <h3>วิธีใส่ข้อมูลแบบมืออาชีพ (ในโหมด Custom)</h3>
-
-                    <h4 style="color: #fff; margin-top: 20px;">1. ช่อง Lyrics (ช่องเนื้อเพลง)</h4>
-                    <p>นำเนื้อเพลงที่แต่งไว้มาใส่ สำคัญมากคือต้องจัดแท็ก (Tag) ในวงเล็บเหลี่ยมให้ชัดเจน เพื่อบอก AI ว่าตรงไหนคือท่อนฮุค ตัวอย่าง:</p>
-                    <div class="prompt-box">
-                        [Verse 1]<br>
-                        แสงเช้าวันนี้ยังส่องเหมือนเดิม<br>
-                        แต่ไม่มีเธออยู่ตรงนี้อีกแล้ว<br><br>
-                        [Chorus]<br>
-                        แสงเช้าที่ว่างเปล่า<br>
-                        ยังพาใจฉันย้อนกลับไป
-                    </div>
-
-                    <h4 style="color: #fff; margin-top: 20px;">2. ช่อง Style of Music (ช่องสไตล์ดนตรี)</h4>
-                    <p>นำ Prompt ภาษาอังกฤษที่บอกสไตล์เพลงมาใส่ (ดูได้จากคลังบทที่ 2) ตัวอย่าง:</p>
-                    <div class="prompt-box">
-                        Original Thai Pop Sad 2026, emotional male vocal, modern emotional pop ballad, cinematic piano intro, ambient electric guitar, atmospheric synth textures, soft drums, warm bass, professional mix and mastering.
-                    </div>
-
-                    <hr style="border: 0; border-bottom: 1px solid rgba(255,255,255,0.1); margin: 30px 0;">
-
-                    <h3>💡 เทคนิคสร้างเพลงให้ปัง และคุ้มเครดิตที่สุด</h3>
-                    <ul>
-                        <li><strong>เขียน Prompt ดนตรีให้ละเอียด:</strong> อย่าใช้แค่คำว่า <code style="color: #a5b4fc;">Sad Song</code> ให้เขียนบรรยายเครื่องดนตรีไปด้วย</li>
-                        <li><strong>สร้างหลายเวอร์ชัน:</strong> การเจน 1 ครั้งมักจะได้ 2 เพลง (เวอร์ชัน) ให้ลองฟังและเลือกอันที่ทำนองโดนใจที่สุด</li>
-                        <li><strong>แก้ไขทีละนิด:</strong> หากต้องการดนตรีช้าลง ลองเติม <code style="color: #a5b4fc;">slow tempo</code> หรือถ้าอยากให้เสียงร้องเศร้าขึ้นให้เติม <code style="color: #a5b4fc;">crying emotional vocal</code></li>
-                        <li><strong>ท่อน Hook ต้องโดดเด่น:</strong> ในช่อง Lyrics ก่อนเริ่มท่อนฮุค อาจพิมพ์ <code style="color: #a5b4fc;">[Build-up]</code> หรือ <code style="color: #a5b4fc;">[Drop]</code> เพื่อให้ดนตรีส่งอารมณ์ก่อนเข้าฮุค</li>
-                    </ul>
-
-                    <div class="workflow-box">
-                        <h3 style="margin-top: 0; margin-bottom: 20px;">🔄 สรุปลำดับการทำงาน (Workflow)</h3>
-                        <p style="margin-bottom: 5px;">1. คิดชื่อเพลง</p>
-                        <div style="color: #9b5cff; margin-bottom: 5px;">↓</div>
-                        <p style="margin-bottom: 5px;">2. ให้ Gemini แต่งเนื้อร้อง & ดนตรี Prompt</p>
-                        <div style="color: #9b5cff; margin-bottom: 5px;">↓</div>
-                        <p style="margin-bottom: 5px;">3. นำข้อมูลไปใส่ใน Suno AI (Custom Mode)</p>
-                        <div style="color: #9b5cff; margin-bottom: 5px;">↓</div>
-                        <p style="margin-bottom: 5px;">4. เจนเรทและเลือกเวอร์ชันที่เสียงเพราะที่สุด</p>
-                        <div style="color: #9b5cff; margin-bottom: 5px;">↓</div>
-                        <p style="margin-bottom: 0;">5. ดาวน์โหลดไฟล์ (Audio / Video) เตรียมเผยแพร่</p>
-                    </div>
-
-                    <div class="chapter-footer-nav">
-                        <button class="btn-nav" onclick="showChapter(3)">🡨 ย้อนกลับ บทที่ 3</button>
-                        <button class="btn-nav" onclick="showChapter(5)">อ่านต่อ บทที่ 5: นำไปสร้างรายได้ ➔</button>
-                    </div>
-                </div>
-
-                <!-- ================= บทที่ 5 ================= -->
-                <div id="ch5" class="chapter-content">
-                    <h2 class="chapter-title">บทที่ 5: การตลาดและเผยแพร่ (นำไปลง YouTube เพื่อสร้างรายได้)</h2>
-                    <div class="chapter-summary">
-                        <strong>🎯 เป้าหมายการเรียนรู้ (หน้าที่ของบทนี้):</strong><br>
-                        สอนวิธีต่อยอดเพลงที่คุณทำเสร็จแล้ว ไม่ให้เก็บไว้ฟังคนเดียว แต่แนะนำขั้นตอนการนำไปลงแพลตฟอร์มอย่าง YouTube พร้อมเทคนิคการตั้งชื่อวิดีโอ การทำปก และวิธีการสร้างรายได้จากการทำเพลง AI
-                    </div>
-
-                    <p>สำหรับผู้สร้างเพลงด้วย AI, YouTube ถือเป็นช่องทางที่สำคัญที่สุดในการเผยแพร่ผลงาน สร้างฐานผู้ติดตาม และสามารถเปิดสร้างรายได้ได้ในอนาคต</p>
-                    <hr style="border: 0; border-bottom: 1px solid rgba(255,255,255,0.1); margin: 30px 0;">
-
-                    <h4 style="color: #fff; margin-top: 20px;">ขั้นตอนที่ 1: เปิดช่อง YouTube สำหรับค่ายเพลงของคุณ</h4>
-                    <p>หากคุณมีช่องอยู่แล้วสามารถข้ามได้เลย หรือถ้าอยากทำจริงจัง ควรเปิดช่องแยกมาสำหรับเรื่องเพลงโดยเฉพาะ:</p>
-                    <ol style="margin-left: 20px; margin-bottom: 20px; color: #cbd5e1; line-height: 1.8;">
-                        <li>ไปที่เว็บไซต์ YouTube.com แล้วกดปุ่มลงชื่อเข้าใช้ (Sign In) ด้วย Gmail</li>
-                        <li>คลิกที่รูปโปรไฟล์ เลือก <strong>สร้างช่อง (Create a Channel)</strong></li>
-                        <li>ตั้งชื่อช่องให้จำง่าย เช่น <em>Style Music Official</em> และใส่รูปโลโก้ให้สวยงาม</li>
-                    </ol>
-
-                    <h4 style="color: #fff; margin-top: 30px;">ขั้นตอนที่ 2: เตรียมภาพปกและวิดีโอ (Visuals)</h4>
-                    <p>เพลงที่ดีต้องมาคู่กับภาพที่น่าดึงดูด:</p>
-                    <ul>
-                        <li><strong>ภาพปก (Thumbnail):</strong> ขนาด 1920×1080 ควรมีชื่อเพลงตัวใหญ่ อ่านง่าย มีรูปที่สื่อถึงอารมณ์เพลง</li>
-                        <li><strong>การทำวิดีโอ:</strong> สามารถใช้เครื่องมือตัดต่อฟรี เช่น CapCut เพื่อนำภาพปกมาวางยาวๆ ให้เท่ากับความยาวเพลง หรือถ้าจะให้ดี ลองหาภาพวิดีโอวิวธรรมชาติที่ขยับช้าๆ (Motion Background) มาทำเป็นพื้นหลัง จะทำให้คนดูอินไปกับเพลงมากขึ้น</li>
-                    </ul>
-
-                    <h4 style="color: #fff; margin-top: 30px;">ขั้นตอนที่ 3: เทคนิคอัปโหลดให้คนค้นหาเจอ (SEO)</h4>
-                    <p>กด Upload วิดีโอลงในช่องของคุณ และตั้งค่าดังนี้เพื่อให้คนค้นหาเพลงของคุณเจอ:</p>
-                    <ul>
-                        <li><strong>การตั้งชื่อวิดีโอ:</strong> <code style="color: #a5b4fc;">ชื่อเพลง | ชื่อศิลปิน/ค่าย | Official Audio</code> (ตัวอย่าง: แสงเช้าที่ว่างเปล่า | Style Music | Official Audio) หรือเติมคำค้นหาต่อท้าย เช่น <em>- เพลงเศร้าใหม่ล่าสุด</em></li>
-                        <li><strong>ช่องคำอธิบาย (Description):</strong> ให้เขียนอารมณ์ของเพลง, แปะเนื้อเพลง (เพื่อให้คนร้องตามได้) และอย่าลืมฝังลิงก์เว็บไซต์หรือโซเชียลของคุณไว้ด้วย</li>
-                        <li><strong>การใส่แท็ก (Tags):</strong> ใส่คำที่คนมักจะค้นหา เช่น เพลงเศร้า, เพลงอกหัก, เพลงฮิต TikTok, ฟังเพลงต่อเนื่อง, Pop Sad</li>
-                    </ul>
-
-                    <hr style="border: 0; border-bottom: 1px solid rgba(255,255,255,0.1); margin: 30px 0;">
-
-                    <h3 style="color: #b77dff;">📈 เทคนิคปั้นช่องให้โตไว (เพิ่มยอดวิว)</h3>
-                    <ol style="margin-left: 20px; margin-bottom: 20px; color: #cbd5e1; line-height: 1.8;">
-                        <li><strong>ความสม่ำเสมอ:</strong> อัปโหลดเพลงสัปดาห์ละ 2-3 เพลง เพื่อให้ AI ของ YouTube นำส่งคลิปของคุณบ่อยขึ้น</li>
-                        <li><strong>สร้างเพลย์ลิสต์ (Playlist):</strong> จัดหมวดหมู่รวมเพลง เช่น <em>"รวมเพลงเศร้าฟังสบาย", "รวมเพลงอกหักฟูมฟาย"</em> เพื่อให้คนเปิดฟังยาวๆ เป็นการเพิ่มชั่วโมงการรับชม</li>
-                        <li><strong>ทำ YouTube Shorts:</strong> ตัดเฉพาะ "ท่อนฮุค" สั้นๆ ประมาณ 15-30 วินาที ไปลงใน Shorts พร้อมใส่เนื้อเพลงพาดบนจอ วิธีนี้จะเรียกผู้ติดตามใหม่ๆ ได้ดีมาก</li>
-                    </ol>
-
-                    <h3 style="color: #b77dff; margin-top: 30px;">💵 การสร้างรายได้ (Monetization)</h3>
-                    <p><strong>เป้าหมายที่ต้องทำให้ถึง:</strong> ผู้ติดตาม (Subscriber) 1,000 คน + ยอดคนดูสะสม 4,000 ชั่วโมง (หรือถ้ามาจากคลิปสั้น Shorts ต้องได้ 10 ล้านวิว)</p>
-                    <p>เมื่อผ่านเกณฑ์แล้ว คุณสามารถเปิดสร้างรายได้ (AdSense) ให้มีโฆษณามาคั่นวิดีโอเพลงของคุณ นอกจากนี้ยังสามารถทำระบบสมาชิก (Membership) ให้แฟนคลับบริจาคสนับสนุนผลงานคุณได้อีกด้วย</p>
-
-                    <div class="workflow-box">
-                        <h3 style="margin-top: 0; margin-bottom: 20px;">🔄 เคล็ดลับเพิ่มรายได้สำหรับ StyleMusicPro</h3>
-                        <p>นอกจากการทำลง YouTube แล้ว เมื่ออัปโหลดเสร็จ ให้<strong>คัดลอกลิงก์ (Embed URL) ของ YouTube ไปเขียนเป็นบทความในเว็บไซต์ StyleMusicPro ของคุณ</strong> อธิบายความหมายเพลงและแจกเนื้อเพลง จะช่วยดึงดูดคนที่ค้นหาเนื้อเพลงใน Google ให้เข้ามาดูวิดีโอของคุณ เป็นการยิงปืนนัดเดียวได้นกสองตัว!</p>
-                    </div>
-
-                    <div class="chapter-footer-nav">
-                        <button class="btn-nav" onclick="showChapter(4)">🡨 ย้อนกลับ บทที่ 4</button>
-                        <button class="btn-nav" onclick="closeBook()" style="background: #ff4757; border-color: #ff4757;">🏠 จบหลักสูตร กลับหน้าหลัก</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div style="text-align: center; padding: 30px 20px; margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1);">
-            <p style="color: #ccc; font-size: 14px; margin-bottom: 10px;">© 2026 StyleMusicPro. All rights reserved.</p>
-            <a href="privacy-policy.html" style="color: #9b5cff; text-decoration: none; font-size: 14px; font-weight: 500;">📜 นโยบายความเป็นส่วนตัว (Privacy Policy)</a>
-        </div>
-    </div>
-</div>
-
-<script>
-// ฟังก์ชันสำหรับเปิดปิดเมนูด้านข้างบนมือถือ
-function toggleMenu() { 
-    document.getElementById('sidebar').classList.toggle('active'); 
-}
-
-// ฟังก์ชันสำหรับเปิดหน้าอ่าน E-Book
-function openBook() {
-    document.getElementById('ebookSection').style.display = 'none';
-    document.getElementById('readerSection').style.display = 'block';
-    showChapter(1); // เปิดมาให้แสดงบทที่ 1 เสมอ
-}
-
-// ฟังก์ชันสำหรับปิดหน้าอ่าน และกลับไปหน้าคลัง E-Book
-function closeBook() {
-    document.getElementById('readerSection').style.display = 'none';
-    document.getElementById('ebookSection').style.display = 'block';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-// ฟังก์ชันสำหรับสลับบทเรียน (เปลี่ยนหน้า)
-function showChapter(chapterNumber) {
-    // ซ่อนเนื้อหาทุกบทก่อน
-    document.querySelectorAll('.chapter-content').forEach(function(content) {
-        content.classList.remove('active');
-    });
-    
-    // ยกเลิกสถานะ active ของปุ่มเมนูทั้งหมด
-    document.querySelectorAll('.chapter-btn').forEach(function(btn) {
-        btn.classList.remove('active');
-    });
-    
-    // แสดงเนื้อหาบทที่ถูกเลือก
-    document.getElementById('ch' + chapterNumber).classList.add('active');
-    
-    // ทำไฮไลต์ปุ่มเมนูที่ถูกเลือก
-    document.getElementById('btn-ch' + chapterNumber).classList.add('active');
-    
-    // เลื่อนหน้าจอกลับขึ้นไปด้านบนสุดของส่วนอ่านหนังสือ
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-</script>
-
-</body>
-</html>
