@@ -161,15 +161,16 @@ a { text-decoration: none; color: inherit; }
                 </div>
 
                 <div class="chapter-nav">
-                    <button class="chapter-btn" id="btn-ch1" onclick="showChapter(1)">บทที่ 1: ภาพรวม</button>
+                    <button class="chapter-btn active" id="btn-ch1" onclick="showChapter(1)">บทที่ 1: ภาพรวม</button>
                     <button class="chapter-btn" id="btn-ch2" onclick="showChapter(2)">บทที่ 2: Prompt เนื้อเพลง</button>
                     <button class="chapter-btn" id="btn-ch3" onclick="showChapter(3)">บทที่ 3: ใช้ Gemini</button>
-                    <button class="chapter-btn active" id="btn-ch4" onclick="showChapter(4)">บทที่ 4: ใช้ Suno</button>
+                    <button class="chapter-btn" id="btn-ch4" onclick="showChapter(4)">บทที่ 4: ใช้ Suno</button>
                     <button class="chapter-btn" id="btn-ch5" onclick="showChapter(5)">บทที่ 5: สร้างรายได้</button>
                     <button class="chapter-btn" id="btn-ch6" onclick="showChapter(6)">บทที่ 6: 100 Prompt Suno</button>
                 </div>
 
-                <div id="ch1" class="chapter-content">
+                <!-- ================== บทที่ 1 ================== -->
+                <div id="ch1" class="chapter-content active">
                     <h2 class="chapter-title">บทที่ 1: ภาพรวมการทำงาน (พื้นฐานสร้างเพลง AI)</h2>
                     <div class="chapter-summary">
                         <strong>🎯 เป้าหมายการเรียนรู้ (หน้าที่ของบทนี้):</strong><br>
@@ -201,6 +202,7 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
+                <!-- ================== บทที่ 2 ================== -->
                 <div id="ch2" class="chapter-content">
                     <h2 class="chapter-title">บทที่ 2: คลังไอเดีย Prompt เนื้อเพลง 100 แบบ</h2>
                     
@@ -217,9 +219,122 @@ a { text-decoration: none; color: inherit; }
                         <li class="prompt-list-item"><strong>Prompt 3:</strong> แต่งเพลงรักหวาน ๆ สำหรับคู่รักที่คบกันมานาน</li>
                         <li class="prompt-list-item"><strong>Prompt 4:</strong> แต่งเพลงเกี่ยวกับความรักที่เหมือนพรหมลิขิต</li>
                         <li class="prompt-list-item"><strong>Prompt 5:</strong> แต่งเพลงรักวัยเรียน แอบชอบเพื่อนในห้อง</li>
+                        <li class="prompt-list-item"><strong>Prompt 6:</strong> แต่งเพลงรักของคนขี้อายที่ไม่กล้าบอกรัก</li>
+                        <li class="prompt-list-item"><strong>Prompt 7:</strong> แต่งเพลงรักที่เล่าความรู้สึกทุกครั้งเมื่อเห็นรอยยิ้มของเธอ</li>
+                        <li class="prompt-list-item"><strong>Prompt 8:</strong> แต่งเพลงรักแนวปัจจุบันเกี่ยวกับคนธรรมดาที่โชคดีได้เจอคนพิเศษ</li>
+                        <li class="prompt-list-item"><strong>Prompt 9:</strong> แต่งเพลงรักที่สัญญาจะอยู่ด้วยกันตลอดไป</li>
+                        <li class="prompt-list-item"><strong>Prompt 10:</strong> แต่งเพลงรักเกี่ยวกับการเดินทางของคนสองคน</li>
+                        <li class="prompt-list-item"><strong>Prompt 11:</strong> แต่งเพลงรักแนว Pop Ballad ซึ้งกินใจ</li>
+                        <li class="prompt-list-item"><strong>Prompt 12:</strong> แต่งเพลงรักในคืนที่เต็มไปด้วยดวงดาว</li>
+                        <li class="prompt-list-item"><strong>Prompt 13:</strong> แต่งเพลงเกี่ยวกับการขอเป็นแฟน</li>
+                        <li class="prompt-list-item"><strong>Prompt 14:</strong> แต่งเพลงรักสำหรับงานแต่งงาน</li>
+                        <li class="prompt-list-item"><strong>Prompt 15:</strong> แต่งเพลงเกี่ยวกับการได้พบรักอีกครั้ง</li>
+                        <li class="prompt-list-item"><strong>Prompt 16:</strong> แต่งเพลงรักของคนต่างจังหวัด</li>
+                        <li class="prompt-list-item"><strong>Prompt 17:</strong> แต่งเพลงรักที่ใช้คำง่าย ๆ แต่ซึ้งมาก</li>
+                        <li class="prompt-list-item"><strong>Prompt 18:</strong> แต่งเพลงรักที่เปรียบคนรักเป็นแสงสว่างของชีวิต</li>
+                        <li class="prompt-list-item"><strong>Prompt 19:</strong> แต่งเพลงรักแนว Acoustic อบอุ่น</li>
+                        <li class="prompt-list-item"><strong>Prompt 20:</strong> แต่งเพลงรักที่บอกว่า "ขอบคุณที่เข้ามา"</li>
                     </ul>
 
-                    <p style="text-align:center; color:#888;">[ เนื้อหาหมวดอื่นๆ ของบทที่ 2 ]</p>
+                    <h3 style="color: #b77dff; margin-top: 30px;">หมวดที่ 2: เพลงอกหัก (21-40)</h3>
+                    <ul>
+                        <li class="prompt-list-item"><strong>Prompt 21:</strong> แต่งเพลง Pop Sad เกี่ยวกับการถูกทิ้ง</li>
+                        <li class="prompt-list-item"><strong>Prompt 22:</strong> แต่งเพลงอกหักที่ยังลืมคนรักเก่าไม่ได้</li>
+                        <li class="prompt-list-item"><strong>Prompt 23:</strong> แต่งเพลงเกี่ยวกับคนที่ถูกนอกใจ</li>
+                        <li class="prompt-list-item"><strong>Prompt 24:</strong> แต่งเพลงเศร้าเกี่ยวกับความทรงจำเก่า ๆ</li>
+                        <li class="prompt-list-item"><strong>Prompt 25:</strong> แต่งเพลงเกี่ยวกับคนที่ยังรอทั้งที่รู้ว่าไม่มีวันกลับมา</li>
+                        <li class="prompt-list-item"><strong>Prompt 26:</strong> แต่งเพลงอกหักสไตล์วัยรุ่นยุคใหม่</li>
+                        <li class="prompt-list-item"><strong>Prompt 27:</strong> แต่งเพลงเกี่ยวกับการเห็นแฟนเก่ามีคนใหม่</li>
+                        <li class="prompt-list-item"><strong>Prompt 28:</strong> แต่งเพลงเศร้าลึกซึ้งเกี่ยวกับการจากลา</li>
+                        <li class="prompt-list-item"><strong>Prompt 29:</strong> แต่งเพลงเกี่ยวกับรักที่ไม่สมหวัง</li>
+                        <li class="prompt-list-item"><strong>Prompt 30:</strong> แต่งเพลง Pop Sad แบบติดหู</li>
+                        <li class="prompt-list-item"><strong>Prompt 31:</strong> แต่งเพลงเกี่ยวกับความเหงาหลังเลิกรา</li>
+                        <li class="prompt-list-item"><strong>Prompt 32:</strong> แต่งเพลงของคนที่ยังคิดถึงทุกคืน</li>
+                        <li class="prompt-list-item"><strong>Prompt 33:</strong> แต่งเพลงเศร้าเกี่ยวกับคำสัญญาที่หายไป</li>
+                        <li class="prompt-list-item"><strong>Prompt 34:</strong> แต่งเพลงของคนที่แพ้ในความรัก</li>
+                        <li class="prompt-list-item"><strong>Prompt 35:</strong> แต่งเพลงเกี่ยวกับการพยายามลืมแต่ทำไม่ได้</li>
+                        <li class="prompt-list-item"><strong>Prompt 36:</strong> แต่งเพลงแนว Broken Heart สมัยใหม่</li>
+                        <li class="prompt-list-item"><strong>Prompt 37:</strong> แต่งเพลงเกี่ยวกับคนที่ถูกแทนที่</li>
+                        <li class="prompt-list-item"><strong>Prompt 38:</strong> แต่งเพลงเศร้าแบบภาพจำยังชัดเจน</li>
+                        <li class="prompt-list-item"><strong>Prompt 39:</strong> แต่งเพลงเกี่ยวกับรักข้างเดียว</li>
+                        <li class="prompt-list-item"><strong>Prompt 40:</strong> แต่งเพลงเศร้าสำหรับร้องกลางคืน</li>
+                    </ul>
+
+                    <h3 style="color: #b77dff; margin-top: 30px;">หมวดที่ 3: เพลงคิดถึง (41-55)</h3>
+                    <ul>
+                        <li class="prompt-list-item"><strong>Prompt 41:</strong> แต่งเพลงเกี่ยวกับการคิดถึงคนไกล</li>
+                        <li class="prompt-list-item"><strong>Prompt 42:</strong> แต่งเพลงเกี่ยวกับความคิดถึงบ้าน</li>
+                        <li class="prompt-list-item"><strong>Prompt 43:</strong> แต่งเพลงของคนทำงานต่างถิ่น</li>
+                        <li class="prompt-list-item"><strong>Prompt 44:</strong> แต่งเพลงคิดถึงแฟนที่อยู่คนละประเทศ</li>
+                        <li class="prompt-list-item"><strong>Prompt 45:</strong> แต่งเพลงเกี่ยวกับการรอคอย</li>
+                        <li class="prompt-list-item"><strong>Prompt 46:</strong> แต่งเพลงคิดถึงอดีตวัยเด็ก</li>
+                        <li class="prompt-list-item"><strong>Prompt 47:</strong> แต่งเพลงเกี่ยวกับมิตรภาพเก่า ๆ</li>
+                        <li class="prompt-list-item"><strong>Prompt 48:</strong> แต่งเพลงคิดถึงคนที่จากไป</li>
+                        <li class="prompt-list-item"><strong>Prompt 49:</strong> แต่งเพลงคิดถึงช่วงเวลาที่เคยมีความสุข</li>
+                        <li class="prompt-list-item"><strong>Prompt 50:</strong> แต่งเพลงเกี่ยวกับบ้านเกิด</li>
+                        <li class="prompt-list-item"><strong>Prompt 51:</strong> แต่งเพลงแนวลูกทุ่งคิดถึงพ่อแม่</li>
+                        <li class="prompt-list-item"><strong>Prompt 52:</strong> แต่งเพลงเกี่ยวกับความทรงจำริมแม่น้ำ</li>
+                        <li class="prompt-list-item"><strong>Prompt 53:</strong> แต่งเพลงคิดถึงคนรักในฤดูฝน</li>
+                        <li class="prompt-list-item"><strong>Prompt 54:</strong> แต่งเพลงแนวเพื่อชีวิตเกี่ยวกับบ้าน</li>
+                        <li class="prompt-list-item"><strong>Prompt 55:</strong> แต่งเพลงคิดถึงคนที่ไม่มีวันกลับมา</li>
+                    </ul>
+
+                    <h3 style="color: #b77dff; margin-top: 30px;">หมวดที่ 4: เพลงให้กำลังใจ (56-70)</h3>
+                    <ul>
+                        <li class="prompt-list-item"><strong>Prompt 56:</strong> แต่งเพลงให้กำลังใจคนที่กำลังล้มเหลว</li>
+                        <li class="prompt-list-item"><strong>Prompt 57:</strong> แต่งเพลงเกี่ยวกับการเริ่มต้นใหม่</li>
+                        <li class="prompt-list-item"><strong>Prompt 58:</strong> แต่งเพลงสร้างแรงบันดาลใจในการทำงาน</li>
+                        <li class="prompt-list-item"><strong>Prompt 59:</strong> แต่งเพลงสำหรับคนที่กำลังเหนื่อย</li>
+                        <li class="prompt-list-item"><strong>Prompt 60:</strong> แต่งเพลงเกี่ยวกับการไม่ยอมแพ้</li>
+                        <li class="prompt-list-item"><strong>Prompt 61:</strong> แต่งเพลงแนว Positive Energy</li>
+                        <li class="prompt-list-item"><strong>Prompt 62:</strong> แต่งเพลงเกี่ยวกับความฝัน</li>
+                        <li class="prompt-list-item"><strong>Prompt 63:</strong> แต่งเพลงปลุกใจวัยรุ่น</li>
+                        <li class="prompt-list-item"><strong>Prompt 64:</strong> แต่งเพลงเกี่ยวกับการก้าวผ่านอุปสรรค</li>
+                        <li class="prompt-list-item"><strong>Prompt 65:</strong> แต่งเพลงสร้างกำลังใจหลังอกหัก</li>
+                        <li class="prompt-list-item"><strong>Prompt 66:</strong> แต่งเพลงแนว Pop Rock สู้ชีวิต</li>
+                        <li class="prompt-list-item"><strong>Prompt 67:</strong> แต่งเพลงสำหรับคนที่กำลังตามหาตัวเอง</li>
+                        <li class="prompt-list-item"><strong>Prompt 68:</strong> แต่งเพลงเกี่ยวกับการลุกขึ้นอีกครั้ง</li>
+                        <li class="prompt-list-item"><strong>Prompt 69:</strong> แต่งเพลงสร้างแรงใจให้คนทำงาน</li>
+                        <li class="prompt-list-item"><strong>Prompt 70:</strong> แต่งเพลงแนว Inspirational ทันสมัย</li>
+                    </ul>
+
+                    <h3 style="color: #b77dff; margin-top: 30px;">หมวดที่ 5: เพลงลูกทุ่ง / เพื่อชีวิต (71-85)</h3>
+                    <ul>
+                        <li class="prompt-list-item"><strong>Prompt 71:</strong> แต่งเพลงลูกทุ่งเกี่ยวกับคนไกลบ้าน</li>
+                        <li class="prompt-list-item"><strong>Prompt 72:</strong> แต่งเพลงเกี่ยวกับชีวิตชาวนา</li>
+                        <li class="prompt-list-item"><strong>Prompt 73:</strong> แต่งเพลงเกี่ยวกับแรงงานต่างถิ่น</li>
+                        <li class="prompt-list-item"><strong>Prompt 74:</strong> แต่งเพลงเกี่ยวกับชีวิตคนก่อสร้าง</li>
+                        <li class="prompt-list-item"><strong>Prompt 75:</strong> แต่งเพลงลูกทุ่งอกหัก</li>
+                        <li class="prompt-list-item"><strong>Prompt 76:</strong> แต่งเพลงเกี่ยวกับความฝันของคนจน</li>
+                        <li class="prompt-list-item"><strong>Prompt 77:</strong> แต่งเพลงเกี่ยวกับแม่</li>
+                        <li class="prompt-list-item"><strong>Prompt 78:</strong> แต่งเพลงเกี่ยวกับพ่อ</li>
+                        <li class="prompt-list-item"><strong>Prompt 79:</strong> แต่งเพลงเพื่อชีวิตสะท้อนสังคม</li>
+                        <li class="prompt-list-item"><strong>Prompt 80:</strong> แต่งเพลงเกี่ยวกับบ้านเกิด</li>
+                        <li class="prompt-list-item"><strong>Prompt 81:</strong> แต่งเพลงลูกทุ่งอีสานสมัยใหม่</li>
+                        <li class="prompt-list-item"><strong>Prompt 82:</strong> แต่งเพลงเกี่ยวกับการกลับบ้านช่วงปีใหม่</li>
+                        <li class="prompt-list-item"><strong>Prompt 83:</strong> แต่งเพลงของคนขายแรงงาน</li>
+                        <li class="prompt-list-item"><strong>Prompt 84:</strong> แต่งเพลงเกี่ยวกับความหวังของครอบครัว</li>
+                        <li class="prompt-list-item"><strong>Prompt 85:</strong> แต่งเพลงเกี่ยวกับชีวิตจริงของคนธรรมดา</li>
+                    </ul>
+
+                    <h3 style="color: #b77dff; margin-top: 30px;">หมวดที่ 6: เพลงไวรัล TikTok และเพลงสมัยใหม่ (86-100)</h3>
+                    <ul>
+                        <li class="prompt-list-item"><strong>Prompt 86:</strong> แต่งเพลง Pop Dance ติดหูสำหรับ TikTok</li>
+                        <li class="prompt-list-item"><strong>Prompt 87:</strong> แต่งเพลงเกี่ยวกับคนคลั่งรัก</li>
+                        <li class="prompt-list-item"><strong>Prompt 88:</strong> แต่งเพลงรักสั้น ๆ ที่มี Hook จำง่าย</li>
+                        <li class="prompt-list-item"><strong>Prompt 89:</strong> แต่งเพลงแนววัยรุ่นยุคดิจิทัล</li>
+                        <li class="prompt-list-item"><strong>Prompt 90:</strong> แต่งเพลงเกี่ยวกับการแอบส่องโซเชียลแฟนเก่า</li>
+                        <li class="prompt-list-item"><strong>Prompt 91:</strong> แต่งเพลง Pop Sad ที่มี Hook ไวรัล</li>
+                        <li class="prompt-list-item"><strong>Prompt 92:</strong> แต่งเพลงเกี่ยวกับ Friend Zone</li>
+                        <li class="prompt-list-item"><strong>Prompt 93:</strong> แต่งเพลงแนว City Pop สมัยใหม่</li>
+                        <li class="prompt-list-item"><strong>Prompt 94:</strong> แต่งเพลงแนว Indie Pop ฟังสบาย</li>
+                        <li class="prompt-list-item"><strong>Prompt 95:</strong> แต่งเพลงแนว Electro Pop ทันสมัย</li>
+                        <li class="prompt-list-item"><strong>Prompt 96:</strong> แต่งเพลงเกี่ยวกับการตกหลุมรักออนไลน์</li>
+                        <li class="prompt-list-item"><strong>Prompt 97:</strong> แต่งเพลงเกี่ยวกับการเริ่มต้นความสัมพันธ์ผ่านแชต</li>
+                        <li class="prompt-list-item"><strong>Prompt 98:</strong> แต่งเพลงแนว Sad Trap</li>
+                        <li class="prompt-list-item"><strong>Prompt 99:</strong> แต่งเพลงแนว Pop Rock สำหรับวัยรุ่น</li>
+                        <li class="prompt-list-item"><strong>Prompt 100:</strong> แต่งเพลงฮิตสมัยใหม่ที่มีโอกาสติดกระแส TikTok พร้อมโครงสร้าง Verse – Pre-Chorus – Chorus – Verse 2 – Bridge – Final Chorus และ Hook ที่จำง่าย</li>
+                    </ul>
 
                     <h3 style="color: #b77dff; margin-top: 40px;">สรุปท้ายบท</h3>
                     <p>Prompt ที่ดีจะช่วยให้ AI เข้าใจสิ่งที่เราต้องการได้ชัดเจนขึ้น ส่งผลให้ได้เนื้อเพลงที่ตรงใจ มีคุณภาพ และสามารถนำไปพัฒนาต่อเป็นผลงานจริงได้</p>
@@ -229,19 +344,26 @@ a { text-decoration: none; color: inherit; }
                         <strong>แนวเพลง + อารมณ์ + เนื้อหา + กลุ่มผู้ฟัง + โครงสร้างเพลง + คำสำคัญ</strong>
                     </div>
 
+                    <h4>ตัวอย่างการใช้สูตร</h4>
+                    <div class="prompt-box">
+                        "แต่งเพลง Pop Sad สมัยใหม่ เกี่ยวกับการคิดถึงแฟนเก่า เนื้อหาซึ้งกินใจ สำหรับวัยรุ่น มี Verse, Pre-Chorus, Chorus, Bridge และ Hook ที่ติดหู"
+                    </div>
+
                     <div class="chapter-footer-nav">
                         <button class="btn-nav" onclick="showChapter(1)">← ย้อนกลับ บทที่ 1</button>
                         <button class="btn-nav" onclick="showChapter(3)">อ่านต่อ บทที่ 3 ➔</button>
                     </div>
                 </div>
 
+                <!-- ================== บทที่ 3 ================== -->
                 <div id="ch3" class="chapter-content">
                     <h2 class="chapter-title">บทที่ 3: ใช้ Gemini แต่งเนื้อเพลงแบบมืออาชีพ</h2>
                     
                     <div class="chapter-summary">
                         <strong>บทนำ:</strong><br>
                         นอกจาก ChatGPT แล้ว อีกหนึ่งเครื่องมือ AI ที่ได้รับความนิยมในการช่วยแต่งเพลงคือ <strong>Google Gemini</strong><br>
-                        Gemini เป็น AI จาก Google ที่สามารถช่วยคิดไอเดียเพลง แต่งเนื้อเพลง สร้างคำคล้องจอง และพัฒนาเนื้อหาจากแนวคิดสั้น ๆ ให้กลายเป็นเพลงเต็มรูปแบบได้
+                        Gemini เป็น AI จาก Google ที่สามารถช่วยคิดไอเดียเพลง แต่งเนื้อเพลง สร้างคำคล้องจอง และพัฒนาเนื้อหาจากแนวคิดสั้น ๆ ให้กลายเป็นเพลงเต็มรูปแบบได้<br>
+                        สำหรับผู้เริ่มต้น Gemini ถือเป็นเครื่องมือที่ใช้งานง่าย เพียงพิมพ์คำสั่ง (Prompt) ที่ชัดเจน AI ก็สามารถช่วยสร้างเนื้อเพลงได้ภายในไม่กี่วินาที
                     </div>
 
                     <h3 style="color: #b77dff; margin-top: 30px;">Gemini ช่วยอะไรในการแต่งเพลงได้บ้าง?</h3>
@@ -249,7 +371,109 @@ a { text-decoration: none; color: inherit; }
                         <li style="margin-bottom: 5px;">✅ คิดหัวข้อเพลง</li>
                         <li style="margin-bottom: 5px;">✅ ตั้งชื่อเพลง</li>
                         <li style="margin-bottom: 5px;">✅ แต่งเนื้อเพลงใหม่</li>
+                        <li style="margin-bottom: 5px;">✅ เขียน Hook ติดหู</li>
+                        <li style="margin-bottom: 5px;">✅ ปรับเนื้อเพลงให้ทันสมัย</li>
+                        <li style="margin-bottom: 5px;">✅ แต่งเพลงหลายแนว</li>
+                        <li style="margin-bottom: 5px;">✅ แปลเพลงหลายภาษา</li>
+                        <li style="margin-bottom: 5px;">✅ สร้างไอเดียอัลบั้ม</li>
+                        <li style="margin-bottom: 5px;">✅ ช่วยแต่ง Verse และ Chorus</li>
+                        <li style="margin-bottom: 5px;">✅ ช่วยแก้เนื้อเพลงที่แต่งไว้แล้ว</li>
                     </ul>
+
+                    <h3 style="color: #b77dff; margin-top: 30px;">เริ่มใช้งาน Gemini</h3>
+                    <ol>
+                        <li><strong>ขั้นตอนที่ 1:</strong> เข้าเว็บไซต์ <strong>Google Gemini</strong></li>
+                        <li><strong>ขั้นตอนที่ 2:</strong> เข้าสู่ระบบด้วยบัญชี Google</li>
+                        <li><strong>ขั้นตอนที่ 3:</strong> พิมพ์ Prompt ที่ต้องการ</li>
+                    </ol>
+
+                    <h4>ตัวอย่างการพิมพ์:</h4>
+                    <div class="prompt-box">
+                        แต่งเพลง Pop Sad สมัยใหม่<br>
+                        เกี่ยวกับการคิดถึงแฟนเก่า ที่จากไปนานแล้ว<br><br>
+                        ต้องมี Verse, Pre-Chorus, Chorus, Bridge<br><br>
+                        ใช้ภาษาสวยงาม ร้องง่าย และมี Hook ติดหู
+                    </div>
+
+                    <h3 style="color: #b77dff; margin-top: 30px;">สูตรสร้าง Prompt สำหรับแต่งเพลง</h3>
+                    <div class="workflow-box">
+                        <strong>สูตรพื้นฐาน:</strong><br>
+                        แต่งเพลง <strong>[แนวเพลง]</strong> + เกี่ยวกับ <strong>[เนื้อหา]</strong> + อารมณ์ <strong>[เศร้า / ซึ้ง / สนุก]</strong> + กลุ่มเป้าหมาย <strong>[วัยรุ่น / คนทำงาน]</strong> + โครงสร้างเพลง <strong>[Verse, Pre-Chorus, Chorus, Bridge]</strong> + มี <strong>Hook</strong> ที่จำง่าย
+                    </div>
+
+                    <h3 style="color: #b77dff; margin-top: 30px;">ตัวอย่าง Prompt ระดับมืออาชีพ</h3>
+                    <ul>
+                        <li class="prompt-list-item"><strong>ตัวอย่างที่ 1:</strong> แต่งเพลง Pop Sad เกี่ยวกับคนที่ยังลืมแฟนเก่าไม่ได้ ใช้ภาษาสมัยใหม่ มีภาพจำในเนื้อเพลง ร้องง่าย ความยาวประมาณ 3 นาที</li>
+                        <li class="prompt-list-item"><strong>ตัวอย่างที่ 2:</strong> แต่งเพลงลูกทุ่งอีสาน เกี่ยวกับคนทำงานกรุงเทพฯ ที่คิดถึงบ้าน ใช้ภาษาถิ่นอีสาน เศร้าซึ้ง มีท่อนฮุกติดหู</li>
+                        <li class="prompt-list-item"><strong>ตัวอย่างที่ 3:</strong> แต่งเพลงเพื่อชีวิต เกี่ยวกับแรงงานต่างถิ่น สะท้อนสังคม ใช้คำง่าย ๆ แต่กินใจ</li>
+                    </ul>
+
+                    <h3 style="color: #b77dff; margin-top: 30px;">5 เทคนิคทำให้ Gemini แต่งเพลงดีขึ้น</h3>
+                    <ol>
+                        <li>
+                            <strong>ระบุแนวเพลงให้ชัด:</strong>
+                            <p style="margin-top: 5px;">❌ ไม่ควรพิมพ์: <em>แต่งเพลงให้หน่อย</em><br>
+                            ✅ ควรพิมพ์: <em>แต่งเพลง Pop Sad สไตล์วัยรุ่นยุคใหม่</em></p>
+                        </li>
+                        <li>
+                            <strong>ระบุอารมณ์:</strong>
+                            <p style="margin-top: 5px;">เช่น อกหัก, คิดถึง, มีความหวัง, เหงา, สนุก, เศร้าลึก<br>
+                            ตัวอย่าง: <em>แต่งเพลงเศร้าลึก เหมือนคนที่ยังรอทั้งที่รู้ว่าไม่มีวันกลับมา</em></p>
+                        </li>
+                        <li>
+                            <strong>ระบุโครงสร้างเพลง:</strong>
+                            <p style="margin-top: 5px;">ตัวอย่าง: <em>มี Intro, Verse 1, Pre-Chorus, Chorus, Verse 2, Bridge, Final Chorus</em><br>
+                            (วิธีนี้ Gemini จะจัดรูปแบบเพลงได้ใกล้เคียงเพลงจริงมากขึ้น)</p>
+                        </li>
+                        <li>
+                            <strong>ขอให้สร้าง Hook (ท่อนที่ผู้ฟังจำได้มากที่สุด):</strong>
+                            <p style="margin-top: 5px;">ตัวอย่าง: <em>สร้าง Hook ที่ฟังครั้งเดียวจำได้ และสามารถนำไปใช้ใน TikTok ได้</em></p>
+                        </li>
+                        <li>
+                            <strong>ขอภาพจำในเนื้อเพลง:</strong>
+                            <p style="margin-top: 5px;">ตัวอย่าง: <em>ใช้ภาพจำ เช่น ฝน ถนน ร้านกาแฟ พระจันทร์ รูปถ่ายเก่า</em> (จะช่วยให้เพลงมีมิติมากขึ้น)</p>
+                        </li>
+                    </ol>
+
+                    <h3 style="color: #b77dff; margin-top: 30px;">เทคนิคแก้เนื้อเพลงด้วย Gemini</h3>
+                    <p>หากมีเนื้อเพลงอยู่แล้ว สามารถใช้คำสั่งเหล่านี้ได้เลย:</p>
+                    <div class="prompt-box">
+                        "ช่วยปรับเนื้อเพลงนี้ ให้ทันสมัยมากขึ้น เพิ่มคำคล้องจอง เพิ่มความซึ้ง และทำให้ Chorus ติดหูมากขึ้น"<br><br>
+                        [วางเนื้อเพลงของคุณตรงนี้]
+                    </div>
+                    <p>จากนั้น Gemini จะช่วยปรับแต่งให้อัตโนมัติ</p>
+
+                    <h3 style="color: #b77dff; margin-top: 30px;">ใช้ Gemini ร่วมกับ Suno AI</h3>
+                    <div class="workflow-box" style="text-align: left;">
+                        <strong>วิธีที่ได้รับความนิยมมากที่สุด:</strong><br><br>
+                        <strong>ขั้นที่ 1:</strong> ใช้ Gemini แต่งเนื้อเพลง<br>
+                        <div style="text-align: center; color: #9b5cff; margin: 5px 0;">↓</div>
+                        <strong>ขั้นที่ 2:</strong> แก้ไขเนื้อเพลงจนพอใจ<br>
+                        <div style="text-align: center; color: #9b5cff; margin: 5px 0;">↓</div>
+                        <strong>ขั้นที่ 3:</strong> นำไปใส่ใน Suno AI<br>
+                        <div style="text-align: center; color: #9b5cff; margin: 5px 0;">↓</div>
+                        <strong>ขั้นที่ 4:</strong> สร้างเพลง<br>
+                        <div style="text-align: center; color: #9b5cff; margin: 5px 0;">↓</div>
+                        <strong>ขั้นที่ 5:</strong> ดาวน์โหลดเพลง
+                    </div>
+
+                    <h3 style="color: #b77dff; margin-top: 30px;">Prompt สำเร็จรูปสำหรับ Gemini</h3>
+                    <ul>
+                        <li class="prompt-list-item"><strong>💖 เพลงรัก:</strong> แต่งเพลง Pop Romantic เกี่ยวกับการพบคนที่ใช่ อบอุ่น ละมุน ร้องง่าย มี Hook ติดหู</li>
+                        <li class="prompt-list-item"><strong>💔 เพลงอกหัก:</strong> แต่งเพลง Pop Sad เกี่ยวกับการถูกทิ้ง เศร้าลึก ภาษาสมัยใหม่ มี Verse, Pre-Chorus, Chorus, Bridge</li>
+                        <li class="prompt-list-item"><strong>📱 เพลงไวรัล TikTok:</strong> แต่งเพลง Pop ความยาวประมาณ 2 นาที มี Hook ที่จำง่าย ใช้คำสั้น ติดหู เหมาะสำหรับคลิป TikTok</li>
+                        <li class="prompt-list-item"><strong>🌾 เพลงลูกทุ่ง:</strong> แต่งเพลงลูกทุ่งอีสาน เกี่ยวกับคนไกลบ้าน คิดถึงพ่อแม่ ซึ้งกินใจ มีท่อนฮุกที่ร้องตามได้ง่าย</li>
+                    </ul>
+
+                    <h3 style="color: #b77dff; margin-top: 40px;">สรุปท้ายบท</h3>
+                    <p>Gemini เป็นผู้ช่วยแต่งเพลงที่ทรงพลังสำหรับมือใหม่ เพราะสามารถช่วยตั้งแต่คิดไอเดีย ไปจนถึงสร้างเนื้อเพลงเต็มรูปแบบได้ภายในไม่กี่นาที</p>
+                    
+                    <div class="workflow-box">
+                        เคล็ดลับสำคัญคือ <strong>"ยิ่ง Prompt ชัดเจน AI ยิ่งแต่งเพลงได้ตรงใจ"</strong>
+                    </div>
+                    
+                    <p style="margin-top: 15px;">ดังนั้นก่อนกดส่ง Prompt ควรระบุให้ครบ ได้แก่ <strong>แนวเพลง, อารมณ์เพลง, เนื้อหา, กลุ่มผู้ฟัง, โครงสร้างเพลง, และ Hook ที่ต้องการ</strong></p>
+                    <p>เมื่อใช้ Gemini ร่วมกับ Suno AI คุณจะสามารถสร้างเพลงคุณภาพสูงได้ แม้ไม่เคยแต่งเพลงมาก่อนก็ตาม</p>
 
                     <div class="chapter-footer-nav">
                         <button class="btn-nav" onclick="showChapter(2)">← ย้อนกลับ บทที่ 2</button>
@@ -257,7 +481,8 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-                <div id="ch4" class="chapter-content active">
+                <!-- ================== บทที่ 4 ================== -->
+                <div id="ch4" class="chapter-content">
                     <h2 class="chapter-title">บทที่ 4: คู่มือใช้งาน Suno AI แบบละเอียด ตั้งแต่เริ่มต้นจนสร้างเพลงระดับมืออาชีพ</h2>
                     
                     <div class="chapter-summary">
@@ -394,6 +619,7 @@ a { text-decoration: none; color: inherit; }
                         <div style="text-align: center; color: #9b5cff; margin: 5px 0;">↓</div>
                         <strong>9.</strong> นำไปทำ MV หรือ TikTok
                     </div>
+
                     <h3 style="color: #b77dff; margin-top: 40px;">สรุปท้ายบท</h3>
                     <p>Suno AI ไม่ได้เป็นเพียงเครื่องมือสร้างเพลง แต่เป็นสตูดิโอเพลง AI ที่สามารถสร้างผลงานได้ในระดับใกล้เคียงงานมืออาชีพ หากใช้งานอย่างถูกต้อง</p>
                     <div class="workflow-box">
@@ -405,7 +631,242 @@ a { text-decoration: none; color: inherit; }
                         <button class="btn-nav" onclick="showChapter(5)">อ่านต่อ บทที่ 5 ➔</button>
                     </div>
                 </div>
+
+                <!-- ================== บทที่ 5 ================== -->
+                <div id="ch5" class="chapter-content">
+                    <h2 class="chapter-title">บทที่ 5: สร้างรายได้จากเพลง AI แบบเข้าใจง่าย</h2>
+                    
+                    <div class="chapter-summary">
+                        <strong>เพลง AI สร้างรายได้ได้จริงไหม?</strong><br>
+                        คำตอบคือ <strong>"ได้"</strong> แต่รายได้ไม่ได้มาจากตัว AI โดยตรง รายได้หลักจะมาจากการนำเพลงที่สร้างเสร็จแล้วไปเผยแพร่และต่อยอดทางธุรกิจในแพลตฟอร์มต่างๆ
+                    </div>
+
+                    <h3 style="color: #b77dff; margin-top: 30px;">5 ช่องทางการสร้างรายได้จากเพลง AI</h3>
+                    
+                    <ol>
+                        <li style="margin-bottom: 20px;">
+                            <strong style="color: #fff; font-size: 16px;">1. สร้างรายได้จาก YouTube</strong>
+                            <ul style="list-style-type: disc; margin-top: 10px;">
+                                <li>อัปโหลดเพลงพร้อมภาพประกอบสวยๆ หรือทำเป็น MV (Music Video)</li>
+                                <li>สร้างช่องเพลงของตัวเองให้มีเอกลักษณ์</li>
+                                <li>ลงคลิปอย่างสม่ำเสมอเพื่อสร้างฐานแฟนคลับ</li>
+                                <li>เมื่อมีผู้ติดตามและยอดรับชมถึงเกณฑ์ที่กำหนด ก็สามารถเปิดสร้างรายได้จากโฆษณาได้ทันที</li>
+                            </ul>
+                        </li>
+                        
+                        <li style="margin-bottom: 20px;">
+                            <strong style="color: #fff; font-size: 16px;">2. สร้างรายได้จาก TikTok</strong>
+                            <ul style="list-style-type: disc; margin-top: 10px;">
+                                <li>ตัดเฉพาะ "ท่อนฮุก (Hook)" ที่ติดหู ความยาวประมาณ 15–30 วินาที</li>
+                                <li>ทำคลิปวิดีโอสั้นลง TikTok โดยใช้แผ่นเสียงของคุณเอง</li>
+                                <li>หากเพลงเกิดไวรัล (Viral) จะช่วยเพิ่มทั้งยอดคนฟัง ผู้ติดตาม และสามารถต่อยอดรับงานสปอนเซอร์ได้</li>
+                            </ul>
+                        </li>
+
+                        <li style="margin-bottom: 20px;">
+                            <strong style="color: #fff; font-size: 16px;">3. สร้างรายได้จาก Spotify (Streaming Platform)</strong>
+                            <ul style="list-style-type: disc; margin-top: 10px;">
+                                <li>ส่งเพลงขึ้นสตรีมมิ่งต่างๆ เช่น Spotify, Apple Music, Joox ผ่านตัวแทนจัดจำหน่าย (Music Distributor) เช่น DistroKid หรือ TuneCore</li>
+                                <li>รับรายได้ส่วนแบ่งจากการสตรีมเพลง (ยอดฟัง) ในแต่ละเดือน</li>
+                            </ul>
+                        </li>
+
+                        <li style="margin-bottom: 20px;">
+                            <strong style="color: #fff; font-size: 16px;">4. รับจ้างแต่งเพลง (Freelance)</strong>
+                            <ul style="list-style-type: disc; margin-top: 10px;">
+                                <li>รับแต่งเพลงประจำร้านค้า หรือแบรนด์สินค้า</li>
+                                <li>แต่งเพลงประกอบโฆษณาสั้นๆ</li>
+                                <li>แต่งเพลงเซอร์ไพรส์วันเกิด วันครบรอบ หรือเพลงมอบให้คนพิเศษ</li>
+                                <li>รับแต่งเพลงและใส่เนื้อร้องให้ลูกค้าตามสั่งผ่านกลุ่มรับงานฟรีแลนซ์ต่างๆ</li>
+                            </ul>
+                        </li>
+
+                        <li style="margin-bottom: 20px;">
+                            <strong style="color: #fff; font-size: 16px;">5. ขายบริการเกี่ยวกับ AI Music</strong>
+                            <ul style="list-style-type: disc; margin-top: 10px;">
+                                <li>รับจ้างเขียนเนื้อเพลง (ใช้ Gemini/ChatGPT ช่วยคิด)</li>
+                                <li>รับสร้างและออกแบบเพลงด้วย Suno AI ให้ออกมาตรงโจทย์ลูกค้า</li>
+                                <li>รับออกแบบ Prompt แนวดนตรีสำหรับคนที่อยากเจนเพลงเองแต่คิดคำสั่งไม่ออก</li>
+                                <li>รับทำเพลงประกอบช่องให้ครีเอเตอร์ (YouTuber, TikToker) และธุรกิจต่างๆ</li>
+                            </ul>
+                        </li>
+                    </ol>
+
+                    <h3 style="color: #b77dff; margin-top: 40px;">สูตรสร้างรายได้ง่าย ๆ</h3>
+                    <div class="workflow-box" style="font-size: 15px; letter-spacing: 0.5px;">
+                        <strong>สร้างเพลง</strong> ➔ <strong>ลง YouTube/TikTok</strong> ➔ <strong>สะสมผู้ติดตาม</strong> ➔ <strong>สร้างผลงานพอร์ตโฟลิโอ</strong> ➔ <strong>รับงานจ้าง</strong> ➔ <strong>สร้างรายได้ 💰</strong>
+                    </div>
+
+                    <h3 style="color: #b77dff; margin-top: 40px;">สรุปท้ายบท</h3>
+                    <p>การสร้างรายได้จากเพลง AI ไม่ใช่การ <em>"รอเพลงเดียวให้ดัง"</em> แต่คือ <strong>"การสร้างผลงานอย่างต่อเนื่อง"</strong> สะสมผู้ฟัง และต่อยอดเป็นรายได้จากหลายช่องทางพร้อมๆ กัน</p>
+                    <p style="color: #9b5cff; font-weight: 600;">ยิ่งคุณมีจำนวนเพลงมาก โอกาสในการสร้างรายได้ของคุณก็ยิ่งมากขึ้นตามไปด้วย!</p>
+
+                    <div class="chapter-footer-nav">
+                        <button class="btn-nav" onclick="showChapter(4)">← ย้อนกลับ บทที่ 4</button>
+                        <button class="btn-nav" onclick="showChapter(6)">อ่านต่อ บทที่ 6 ➔</button>
+                    </div>
                 </div>
+
+                <!-- ================== บทที่ 6 ================== -->
+                <div id="ch6" class="chapter-content">
+                    <h2 class="chapter-title">บทที่ 6: 100 Prompt ดนตรีสำหรับ Suno AI</h2>
+                    
+                    <div class="chapter-summary">
+                        <strong>วิธีใช้:</strong><br>
+                        นำ Prompt ด้านล่างไปใส่ในช่อง <strong>Style of Music</strong> ของ Suno AI เพื่อกำหนดแนวเพลงที่ต้องการ
+                    </div>
+
+                    <h3 style="color: #b77dff; margin-top: 30px;">Pop & Pop Sad (1-20)</h3>
+                    <ul>
+                        <li class="prompt-list-item"><strong>01.</strong> Modern Pop Sad, Emotional Male Vocal, Piano, Heartbreak, Radio Quality</li>
+                        <li class="prompt-list-item"><strong>02.</strong> Thai Pop Ballad, Emotional, Piano, Soft Vocal, Romantic</li>
+                        <li class="prompt-list-item"><strong>03.</strong> Contemporary Pop, Catchy Chorus, Youthful Vocal</li>
+                        <li class="prompt-list-item"><strong>04.</strong> Pop Rock, Powerful Chorus, Electric Guitar</li>
+                        <li class="prompt-list-item"><strong>05.</strong> Sad Pop, Rainy Night Mood, Emotional Vocal</li>
+                        <li class="prompt-list-item"><strong>06.</strong> Romantic Pop, Warm Acoustic Guitar, Sweet Melody</li>
+                        <li class="prompt-list-item"><strong>07.</strong> Modern Pop, Clean Production, Catchy Hook</li>
+                        <li class="prompt-list-item"><strong>08.</strong> Piano Ballad, Emotional Storytelling</li>
+                        <li class="prompt-list-item"><strong>09.</strong> Pop Love Song, Bright Melody, Female Vocal</li>
+                        <li class="prompt-list-item"><strong>10.</strong> Heartbreak Pop, Deep Emotion, Modern Sound</li>
+                        <li class="prompt-list-item"><strong>11.</strong> Radio Friendly Pop, Memorable Hook</li>
+                        <li class="prompt-list-item"><strong>12.</strong> Acoustic Pop, Soft Vocal, Relaxing</li>
+                        <li class="prompt-list-item"><strong>13.</strong> Emotional Pop, Cinematic Atmosphere</li>
+                        <li class="prompt-list-item"><strong>14.</strong> Sad Love Song, Piano and Strings</li>
+                        <li class="prompt-list-item"><strong>15.</strong> Dreamy Pop, Atmospheric Synth</li>
+                        <li class="prompt-list-item"><strong>16.</strong> Viral TikTok Pop, Short Catchy Chorus</li>
+                        <li class="prompt-list-item"><strong>17.</strong> Modern Love Ballad, Emotional Build-Up</li>
+                        <li class="prompt-list-item"><strong>18.</strong> Pop with Acoustic Guitar and Piano</li>
+                        <li class="prompt-list-item"><strong>19.</strong> Youth Pop, Fresh and Modern</li>
+                        <li class="prompt-list-item"><strong>20.</strong> Emotional Pop Rock, Strong Chorus</li>
+                    </ul>
+
+                    <h3 style="color: #b77dff; margin-top: 30px;">ลูกทุ่ง / อีสาน (21-40)</h3>
+                    <ul>
+                        <li class="prompt-list-item"><strong>21.</strong> Modern Isan Pop, Khene, Emotional Male Vocal</li>
+                        <li class="prompt-list-item"><strong>22.</strong> Luk Thung Ballad, Rural Storytelling</li>
+                        <li class="prompt-list-item"><strong>23.</strong> Isan Love Song, Traditional Khene</li>
+                        <li class="prompt-list-item"><strong>24.</strong> Modern Luk Thung, Heartbreak Theme</li>
+                        <li class="prompt-list-item"><strong>25.</strong> Sad Isan Song, Deep Emotion</li>
+                        <li class="prompt-list-item"><strong>26.</strong> Acoustic Isan Folk, Village Atmosphere</li>
+                        <li class="prompt-list-item"><strong>27.</strong> Modern Rural Pop, Warm Melody</li>
+                        <li class="prompt-list-item"><strong>28.</strong> Luk Thung Rock, Strong Emotional Chorus</li>
+                        <li class="prompt-list-item"><strong>29.</strong> Isan Ballad, Longing for Home</li>
+                        <li class="prompt-list-item"><strong>30.</strong> Country Isan, Simple and Heartfelt</li>
+                        <li class="prompt-list-item"><strong>31.</strong> Emotional Khene Melody</li>
+                        <li class="prompt-list-item"><strong>32.</strong> Modern Molam Style</li>
+                        <li class="prompt-list-item"><strong>33.</strong> Sad Village Love Story</li>
+                        <li class="prompt-list-item"><strong>34.</strong> Rural Life Ballad</li>
+                        <li class="prompt-list-item"><strong>35.</strong> Worker Away From Home Theme</li>
+                        <li class="prompt-list-item"><strong>36.</strong> Traditional Isan Folk Sound</li>
+                        <li class="prompt-list-item"><strong>37.</strong> Modern Isan Pop Ballad</li>
+                        <li class="prompt-list-item"><strong>38.</strong> Country Heartbreak Song</li>
+                        <li class="prompt-list-item"><strong>39.</strong> Emotional Rural Storytelling</li>
+                        <li class="prompt-list-item"><strong>40.</strong> Modern Luk Thung Hit Song</li>
+                    </ul>
+
+                    <h3 style="color: #b77dff; margin-top: 30px;">Indie & Acoustic (41-60)</h3>
+                    <ul>
+                        <li class="prompt-list-item"><strong>41.</strong> Indie Pop, Dreamy Atmosphere</li>
+                        <li class="prompt-list-item"><strong>42.</strong> Acoustic Guitar, Warm Vocal</li>
+                        <li class="prompt-list-item"><strong>43.</strong> Bedroom Pop, Soft Production</li>
+                        <li class="prompt-list-item"><strong>44.</strong> Indie Folk, Relaxing Mood</li>
+                        <li class="prompt-list-item"><strong>45.</strong> Lo-Fi Acoustic Ballad</li>
+                        <li class="prompt-list-item"><strong>46.</strong> Chill Indie Pop</li>
+                        <li class="prompt-list-item"><strong>47.</strong> Emotional Indie Rock</li>
+                        <li class="prompt-list-item"><strong>48.</strong> Coffee Shop Acoustic</li>
+                        <li class="prompt-list-item"><strong>49.</strong> Relaxing Guitar Melody</li>
+                        <li class="prompt-list-item"><strong>50.</strong> Gentle Acoustic Love Song</li>
+                        <li class="prompt-list-item"><strong>51.</strong> Indie Sad Song</li>
+                        <li class="prompt-list-item"><strong>52.</strong> Emotional Storytelling Folk</li>
+                        <li class="prompt-list-item"><strong>53.</strong> Dream Pop Atmosphere</li>
+                        <li class="prompt-list-item"><strong>54.</strong> Acoustic Heartbreak Ballad</li>
+                        <li class="prompt-list-item"><strong>55.</strong> Modern Indie Sound</li>
+                        <li class="prompt-list-item"><strong>56.</strong> Soft Guitar and Piano</li>
+                        <li class="prompt-list-item"><strong>57.</strong> Minimal Acoustic Production</li>
+                        <li class="prompt-list-item"><strong>58.</strong> Nostalgic Indie Pop</li>
+                        <li class="prompt-list-item"><strong>59.</strong> Warm Sunset Vibes</li>
+                        <li class="prompt-list-item"><strong>60.</strong> Emotional Acoustic Performance</li>
+                    </ul>
+
+                    <h3 style="color: #b77dff; margin-top: 30px;">Rock & Pop Rock (61-75)</h3>
+                    <ul>
+                        <li class="prompt-list-item"><strong>61.</strong> Modern Rock, Powerful Guitar</li>
+                        <li class="prompt-list-item"><strong>62.</strong> Alternative Rock, Emotional Vocal</li>
+                        <li class="prompt-list-item"><strong>63.</strong> Pop Punk, Youth Energy</li>
+                        <li class="prompt-list-item"><strong>64.</strong> Arena Rock, Anthem Chorus</li>
+                        <li class="prompt-list-item"><strong>65.</strong> Emotional Rock Ballad</li>
+                        <li class="prompt-list-item"><strong>66.</strong> Hard Rock, Strong Drums</li>
+                        <li class="prompt-list-item"><strong>67.</strong> Soft Rock Love Song</li>
+                        <li class="prompt-list-item"><strong>68.</strong> Modern Alternative Sound</li>
+                        <li class="prompt-list-item"><strong>69.</strong> Powerful Rock Vocal</li>
+                        <li class="prompt-list-item"><strong>70.</strong> Guitar Driven Rock Song</li>
+                        <li class="prompt-list-item"><strong>71.</strong> Emotional Rock Anthem</li>
+                        <li class="prompt-list-item"><strong>72.</strong> Pop Rock Radio Hit</li>
+                        <li class="prompt-list-item"><strong>73.</strong> Heartbreak Rock Ballad</li>
+                        <li class="prompt-list-item"><strong>74.</strong> Modern Rock Production</li>
+                        <li class="prompt-list-item"><strong>75.</strong> Epic Rock Chorus</li>
+                    </ul>
+
+                    <h3 style="color: #b77dff; margin-top: 30px;">TikTok & Viral (76-90)</h3>
+                    <ul>
+                        <li class="prompt-list-item"><strong>76.</strong> TikTok Viral Pop, Catchy Hook</li>
+                        <li class="prompt-list-item"><strong>77.</strong> Trendy Dance Pop</li>
+                        <li class="prompt-list-item"><strong>78.</strong> Viral Love Song</li>
+                        <li class="prompt-list-item"><strong>79.</strong> Upbeat Social Media Hit</li>
+                        <li class="prompt-list-item"><strong>80.</strong> Modern Youth Pop</li>
+                        <li class="prompt-list-item"><strong>81.</strong> Short Hook Chorus Style</li>
+                        <li class="prompt-list-item"><strong>82.</strong> Dance Beat with Catchy Melody</li>
+                        <li class="prompt-list-item"><strong>83.</strong> Viral Sad Pop</li>
+                        <li class="prompt-list-item"><strong>84.</strong> Emotional TikTok Song</li>
+                        <li class="prompt-list-item"><strong>85.</strong> Youthful Dance Pop</li>
+                        <li class="prompt-list-item"><strong>86.</strong> Trendy Pop Beat</li>
+                        <li class="prompt-list-item"><strong>87.</strong> Social Media Friendly Song</li>
+                        <li class="prompt-list-item"><strong>88.</strong> Catchy Repetitive Chorus</li>
+                        <li class="prompt-list-item"><strong>89.</strong> Viral Emotional Ballad</li>
+                        <li class="prompt-list-item"><strong>90.</strong> Modern Streaming Hit</li>
+                    </ul>
+
+                    <h3 style="color: #b77dff; margin-top: 30px;">Cinematic & Fantasy (91-100)</h3>
+                    <ul>
+                        <li class="prompt-list-item"><strong>91.</strong> Epic Cinematic Orchestra</li>
+                        <li class="prompt-list-item"><strong>92.</strong> Fantasy Adventure Soundtrack</li>
+                        <li class="prompt-list-item"><strong>93.</strong> Dark Fantasy Theme</li>
+                        <li class="prompt-list-item"><strong>94.</strong> Emotional Movie Score</li>
+                        <li class="prompt-list-item"><strong>95.</strong> Heroic Orchestral Music</li>
+                        <li class="prompt-list-item"><strong>96.</strong> Dramatic Fantasy Ballad</li>
+                        <li class="prompt-list-item"><strong>97.</strong> Magical Atmosphere Soundtrack</li>
+                        <li class="prompt-list-item"><strong>98.</strong> Epic Choir and Orchestra</li>
+                        <li class="prompt-list-item"><strong>99.</strong> Emotional Fantasy Journey</li>
+                        <li class="prompt-list-item"><strong>100.</strong> Legendary Cinematic Theme</li>
+                    </ul>
+
+                    <h3 style="color: #b77dff; margin-top: 40px;">สูตร Prompt ระดับมืออาชีพ</h3>
+                    <div class="workflow-box" style="font-size: 16px;">
+                        <strong>Genre + Mood + Vocal + Instruments + Production</strong>
+                    </div>
+
+                    <h4>ตัวอย่างการประยุกต์ใช้สูตร</h4>
+                    <div class="prompt-box">
+                        Modern Thai Pop Sad,<br>
+                        Emotional Male Vocal,<br>
+                        Piano Ballad,<br>
+                        Heartbreak Theme,<br>
+                        Powerful Chorus,<br>
+                        Radio Quality Production
+                    </div>
+
+                    <p style="margin-top: 15px; color: #cbd5e1; font-weight: 500;">
+                        💡 <strong>คำแนะนำเพิ่มเติม:</strong> ยิ่งระบุรายละเอียดมากเท่าไร Suno AI จะยิ่งสร้างดนตรีได้ตรงกับที่ต้องการมากขึ้น และมีคุณภาพใกล้เคียงเพลงมืออาชีพมากขึ้นครับ!
+                    </p>
+
+                    <div class="chapter-footer-nav">
+                        <button class="btn-nav" onclick="showChapter(5)">← ย้อนกลับ บทที่ 5</button>
+                        <button class="btn-nav" style="background: #ff4757; border-color: #ff4757;" onclick="closeBook()">จบหลักสูตร / ปิดหนังสือ ➔</button>
+                    </div>
+                </div>
+                <!-- ================== สิ้นสุดบทที่ 6 ================== -->
+
+            </div>
         </div>
     </div>
 </div>
@@ -448,6 +909,7 @@ a { text-decoration: none; color: inherit; }
         let selectedChapter = document.getElementById('ch' + chapterNum);
         if (selectedChapter) {
             selectedChapter.classList.add('active');
+            window.scrollTo(0, 0); // เลื่อนกลับขึ้นบนสุดเมื่อเปลี่ยนบท
         }
 
         // 4. ไฮไลต์ปุ่มที่ถูกเลือก
