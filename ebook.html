@@ -70,104 +70,44 @@ a { text-decoration: none; color: inherit; }
 .chapter-summary { background: rgba(155, 92, 255, 0.1); border-left: 4px solid #9b5cff; padding: 15px 20px; margin-bottom: 30px; border-radius: 0 12px 12px 0; color: #e2e8f0; font-size: 14.5px; line-height: 1.6; }
 .chapter-summary strong { color: #fff; }
 
-.reader-container h3 { color: #fff; font-size: 18px; margin: 30px 0 15px 0; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 8px; }
-.reader-container h4 { color: #fff; font-size: 16px; margin: 20px 0 10px 0; }
-.reader-container p { margin-bottom: 15px; color: #cbd5e1; line-height: 1.8; }
-.reader-container ul, .reader-container ol { margin-left: 0px; margin-bottom: 20px; color: #cbd5e1; line-height: 1.8; padding-left: 20px; }
-.reader-container li { margin-bottom: 10px; }
 .prompt-box { background: #0f172a; border: 1px solid rgba(155,92,255,0.3); padding: 20px; border-radius: 12px; margin: 20px 0; font-family: monospace; color: #a5b4fc; word-wrap: break-word; line-height: 1.6; }
 .workflow-box { background: rgba(155,92,255,0.1); padding: 20px; border-radius: 12px; border: 1px solid rgba(155,92,255,0.3); margin-top: 20px; text-align: center; }
-.prompt-list-item { background: rgba(255,255,255,0.02); border-left: 3px solid #9b5cff; padding: 12px 15px; margin-bottom: 10px; border-radius: 0 8px 8px 0; font-family: monospace; color: #cbd5e1; list-style-type: none; margin-left: -20px;}
 .content-image { max-width: 100%; height: auto; border-radius: 12px; margin: 25px 0; box-shadow: 0 5px 15px rgba(0,0,0,0.5); display: block; }
 
 /* Custom Layout for Infographic Content */
 .info-container { background: rgba(255,255,255,0.02); border-radius: 16px; padding: 25px; margin-top: 30px; border: 1px solid rgba(255,255,255,0.05); }
-.info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; margin-bottom: 35px; }
-.info-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 20px; }
-.info-number { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; flex-shrink: 0; font-size: 14px; box-shadow: 0 2px 5px rgba(0,0,0,0.3); }
 
-/* Number Colors */
-.num-1, .num-11 { background: #8b5cf6; }
-.num-2, .num-10 { background: #3b82f6; }
-.num-3 { background: #10b981; }
-.num-4 { background: #f97316; }
-.num-5 { background: #ec4899; }
-.num-6 { background: #8b5cf6; }
-.num-7 { background: #eab308; }
-.num-8 { background: #06b6d4; }
-.num-9 { background: #84cc16; }
-.num-12 { background: #3b82f6; }
+/* Facebook Specific Styles (Chapter 9) */
+.fb-header-box { background: rgba(24,119,242,0.1); border: 1px solid rgba(24,119,242,0.3); padding: 20px; border-radius: 12px; margin-bottom: 30px; }
+.fb-main-title { color: #3b82f6; font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 5px; }
+.fb-sub-title { color: #93c5fd; text-align: center; font-size: 14px; margin-bottom: 20px; }
+.fb-flow { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; font-size: 13px; font-weight: 600; color: #fff; }
+.fb-flow span { display: flex; align-items: center; gap: 5px; }
+.fb-flow span::after { content: "➔"; color: #3b82f6; margin-left: 10px; }
+.fb-flow span:last-child::after { display: none; }
 
-.info-text strong { display: block; color: #fff; margin-bottom: 5px; font-size: 15px; }
-.info-text p { font-size: 13px; margin: 0; line-height: 1.5; color: #cbd5e1; }
-.info-text ul { padding-left: 15px; margin-top: 5px; margin-bottom: 0; }
-.info-text li { font-size: 13px; margin-bottom: 3px; color: #cbd5e1; }
+.fb-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 25px; }
+.fb-box { background: rgba(255,255,255,0.02); border: 1px solid rgba(24,119,242,0.2); border-radius: 12px; padding: 20px; }
+.fb-box-header { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; border-bottom: 1px solid rgba(24,119,242,0.2); padding-bottom: 10px; }
+.fb-step-circle { width: 32px; height: 32px; background: #1877f2; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 16px; flex-shrink: 0; }
+.fb-box-title { color: #93c5fd; font-size: 16px; font-weight: 600; }
 
-/* Cards Grid */
-.cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
-.card-box { background: rgba(0,0,0,0.2); border-radius: 12px; padding: 20px; border: 1px solid rgba(155,92,255,0.2); }
-.card-title { font-weight: 600; color: #b77dff; margin-bottom: 15px; font-size: 16px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px; }
-.card-box.purple-bg { background: rgba(155,92,255,0.1); border-color: rgba(155,92,255,0.4); }
-.card-box.blue-bg { background: rgba(59,130,246,0.1); border-color: rgba(59,130,246,0.4); }
-.card-box.green-bg { background: rgba(16,185,129,0.1); border-color: rgba(16,185,129,0.4); }
-.card-box ol, .card-box ul { padding-left: 20px; margin-bottom: 10px; }
-.card-box li { font-size: 13px; margin-bottom: 8px; line-height: 1.6; }
-.card-subtitle { font-weight: 600; color: #a5b4fc; font-size: 14px; margin-bottom: 5px; margin-top: 10px; }
-.card-text { font-size: 13px; color: #e2e8f0; background: rgba(0,0,0,0.3); padding: 8px; border-radius: 6px; margin-bottom: 10px; line-height: 1.5; }
+.fb-list { list-style: none; padding: 0; margin: 0; }
+.fb-list li { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; font-size: 13px; color: #cbd5e1; line-height: 1.5; }
+.fb-list li .num { background: #1877f2; color: white; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: bold; flex-shrink: 0; margin-top: 2px; }
 
-/* Gemini 4 Steps Grid */
-.gemini-steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 30px; }
-.gemini-step { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 15px; }
-.gemini-step-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
-.gemini-step-num { width: 24px; height: 24px; border-radius: 50%; background: #9b5cff; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; }
-.gemini-step-title { font-weight: 600; font-size: 14px; color: #fff; }
-.gemini-step-desc { font-size: 12px; color: #cbd5e1; line-height: 1.5; }
-.gemini-mockup { background: #0f172a; border-radius: 8px; padding: 10px; margin-top: 10px; font-size: 11px; border: 1px solid rgba(255,255,255,0.05); }
+.fb-highlight-box { background: rgba(0,0,0,0.3); border-radius: 8px; padding: 15px; margin-top: 15px; border: 1px solid rgba(255,255,255,0.05); }
+.fb-highlight-box h4 { color: #60a5fa; font-size: 14px; margin-top: 0; margin-bottom: 10px; text-align: center; }
 
-/* YouTube Specific Styles */
-.yt-header-box { background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3); padding: 20px; border-radius: 12px; margin-bottom: 30px; }
-.yt-main-title { color: #ef4444; font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 5px; }
-.yt-sub-title { color: #fca5a5; text-align: center; font-size: 14px; margin-bottom: 20px; }
-.yt-flow { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; font-size: 13px; font-weight: 600; color: #fff; }
-.yt-flow span { display: flex; align-items: center; gap: 5px; }
-.yt-flow span::after { content: "➔"; color: #ef4444; margin-left: 10px; }
-.yt-flow span:last-child::after { display: none; }
-
-.yt-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 25px; }
-.yt-box { background: rgba(255,255,255,0.02); border: 1px solid rgba(239,68,68,0.2); border-radius: 12px; padding: 20px; }
-.yt-box-header { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; border-bottom: 1px solid rgba(239,68,68,0.2); padding-bottom: 10px; }
-.yt-step-circle { width: 32px; height: 32px; background: #ef4444; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 16px; flex-shrink: 0; }
-.yt-box-title { color: #fca5a5; font-size: 16px; font-weight: 600; }
-
-.yt-list { list-style: none; padding: 0; margin: 0; }
-.yt-list li { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; font-size: 13px; color: #cbd5e1; line-height: 1.5; }
-.yt-list li .num { background: #ef4444; color: white; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: bold; flex-shrink: 0; margin-top: 2px; }
-.yt-list li ul { padding-left: 15px; margin-top: 5px; list-style-type: disc; color: #94a3b8; }
-.yt-list li ul li { margin-bottom: 2px; }
-
-.yt-highlight-box { background: rgba(0,0,0,0.3); border-radius: 8px; padding: 15px; margin-top: 15px; border: 1px solid rgba(255,255,255,0.05); }
-.yt-highlight-box h4 { color: #fff; font-size: 14px; margin-top: 0; margin-bottom: 10px; text-align: center; }
-
-.yt-features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
-.yt-feature { background: rgba(255,255,255,0.03); padding: 10px; border-radius: 8px; text-align: center; font-size: 12px; color: #cbd5e1; border: 1px solid rgba(255,255,255,0.05); }
-.yt-feature strong { display: block; color: #60a5fa; margin-bottom: 5px; font-size: 13px; }
-
-.yt-tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
-.yt-tool { display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.03); padding: 10px; border-radius: 8px; font-size: 12px; border: 1px solid rgba(255,255,255,0.05); }
-.yt-tool-icon { width: 30px; height: 30px; border-radius: 6px; background: #333; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; }
-
-.yt-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 12px; }
-.yt-table th, .yt-table td { padding: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); text-align: left; color: #cbd5e1; }
-.yt-table th { color: #fca5a5; font-weight: 600; }
-.yt-table td:last-child { color: #10b981; font-weight: 600; }
-
-.yt-summary-bar { background: linear-gradient(90deg, #1e1b4b, #4c1d95, #9f1239); padding: 15px 20px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; margin-top: 20px; flex-wrap: wrap; gap: 15px; }
-.yt-summary-text { color: white; font-size: 14px; font-weight: 600; }
+.fb-icon-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; text-align: center; font-size: 12px; color: #cbd5e1; }
+.fb-icon-item { background: rgba(255,255,255,0.03); padding: 15px 10px; border-radius: 8px; border: 1px solid rgba(24,119,242,0.1); }
+.fb-icon-item strong { display: block; color: #93c5fd; margin-bottom: 5px; font-size: 13px; }
 
 /* Bottom Navigation Buttons */
 .chapter-footer-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
 .btn-nav { background: rgba(255,255,255,0.08); color: white; border: 1px solid rgba(255,255,255,0.1); padding: 12px 24px; border-radius: 30px; cursor: pointer; transition: 0.3s; font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px; }
 .btn-nav:hover { background: #9b5cff; border-color: #9b5cff; }
+
 .btn-back-read { display: inline-block; background: rgba(255,255,255,0.1); color: white; padding: 8px 16px; border-radius: 20px; text-decoration: none; font-size: 14px; transition: 0.3s; margin-bottom: 20px; cursor: pointer; border: none; font-family: 'Poppins', sans-serif; }
 .btn-back-read:hover { background: #ff4757; color: white; }
 
@@ -184,8 +124,7 @@ a { text-decoration: none; color: inherit; }
     .chapter-btn { flex: 0 0 auto; white-space: nowrap; }
     .chapter-footer-nav { flex-direction: column; gap: 15px; }
     .btn-nav { width: 100%; justify-content: center; }
-    .yt-flow span::after { content: "↓"; margin-left: 0; display: block; text-align: center; width: 100%; margin-top: 5px; }
-    .yt-summary-bar { flex-direction: column; text-align: center; }
+    .fb-flow span::after { content: "↓"; margin-left: 0; display: block; text-align: center; width: 100%; margin-top: 5px; }
 }
 </style>
 </head>
@@ -251,571 +190,290 @@ a { text-decoration: none; color: inherit; }
                     <button class="chapter-btn" id="btn-ch2" onclick="showChapter(2)">บทที่ 2: Prompt เนื้อเพลง</button>
                     <button class="chapter-btn" id="btn-ch3" onclick="showChapter(3)">บทที่ 3: ใช้ Gemini</button>
                     <button class="chapter-btn" id="btn-ch4" onclick="showChapter(4)">บทที่ 4: ใช้ Suno</button>
-                    <button class="chapter-btn" id="btn-ch5" onclick="showChapter(5)">บทที่ 5: สร้างรายได้</button>
-                    <button class="chapter-btn" id="btn-ch6" onclick="showChapter(6)">บทที่ 6: 100 Prompt Suno</button>
+                    <button class="chapter-btn" id="btn-ch5" onclick="showChapter(5)">บทที่ 5: YouTube</button>
+                    <button class="chapter-btn" id="btn-ch6" onclick="showChapter(6)">บทที่ 6: 100 Prompt</button>
+                    <button class="chapter-btn" id="btn-ch7" onclick="showChapter(7)">บทที่ 7: TikTok</button>
+                    <button class="chapter-btn" id="btn-ch8" onclick="showChapter(8)">บทที่ 8: Shopee</button>
+                    <button class="chapter-btn" id="btn-ch9" onclick="showChapter(9)">บทที่ 9: Facebook</button>
                 </div>
 
-                <!-- ================== บทที่ 1 ================== -->
                 <div id="ch1" class="chapter-content active">
                     <h2 class="chapter-title">บทที่ 1: ภาพรวมการทำงาน (พื้นฐานสร้างเพลง AI)</h2>
-                    <div class="chapter-summary">
-                        <strong>🎯 เป้าหมายการเรียนรู้ (หน้าที่ของบทนี้):</strong><br>
-                        เพื่อให้คุณเข้าใจขั้นตอนและกระบวนการทำงานแบบรวบรัด ตั้งแต่การใช้คำสั่งแรกเพื่อคิดเนื้อเพลง ไปจนถึงการสั่งงานขั้นพื้นฐานให้ AI เจนออกมาเป็นเสียงดนตรี
-                    </div>
-                    
-                    <h3>1. ขั้นตอนการสร้างเนื้อเพลง</h3>
-                    <p>ไปที่ Gemini และใช้ Prompt นี้ในการสั่งงาน:</p>
-                    <div class="prompt-box">
-                        แต่งเพลง "แสงเช้าที่ว่างเปล่า" ให้หน่อย แต่งไม่ให้ผิดลิขสิทธิ์เพลงอื่นนะ แต่งเป็นแนว Pop Sad อยากให้เป็นเพลงแบบปัจจุบันเน้นร้องก่อน สร้าง Prompt แนวทางดนตรี Pop Sad เพื่อนำไปใช้ใน Suno และต้องมั่นใจว่าจะไม่ผิดลิขสิทธิ์เพลงอื่น
-                    </div>
-
-                    <h3>2. ขั้นตอนการสร้างดนตรีและเสียงร้อง</h3>
-                    <p>เอาเนื้อเพลงและ Prompt ดนตรีที่ได้จาก Gemini ไปที่เว็บไซต์ Suno AI จากนั้นทำตามขั้นตอนดังนี้:</p>
-                    <ul>
-                        <li>ไปที่เมนู <strong>Create</strong> และเลือก <strong>Custom (Advanced)</strong></li>
-                        <li><strong>ช่อง Lyrics:</strong> ใส่เนื้อเพลงที่ได้มาลงไป</li>
-                        <li><strong>ช่อง Style of Music:</strong> ใส่ Prompt แนวดนตรีลงไป</li>
-                    </ul>
-
-                    <h4>ตัวอย่าง Prompt ดนตรีที่ใช้สำหรับเพลงนี้:</h4>
-                    <div class="prompt-box">
-                        Original Thai Pop Sad 2026, emotional male vocal, modern emotional pop ballad, cinematic piano intro, ambient electric guitar, atmospheric synth textures, heartfelt storytelling about missing your former self and searching for inner healing, expressive vocals, memorable emotional chorus, soft drums, warm bass, emotional strings, bittersweet reflective mood, radio-friendly contemporary Thai pop, unique original melody, original composition, professional mix and mastering, 82 BPM, minor key, emotional climax, hopeful ending, no references to existing songs, artists, lyrics, melodies, hooks, or copyrighted material.
-                    </div>
-
-                    <div class="chapter-footer-nav">
-                        <div></div>
-                        <button class="btn-nav" onclick="showChapter(2)">อ่านต่อ บทที่ 2: Prompt เนื้อเพลง ➔</button>
-                    </div>
+                    <div class="chapter-footer-nav"><button class="btn-nav" onclick="showChapter(2)">อ่านต่อ บทที่ 2 ➔</button></div>
                 </div>
-
-                <!-- ================== บทที่ 2 ================== -->
                 <div id="ch2" class="chapter-content">
                     <h2 class="chapter-title">บทที่ 2: คลังไอเดีย Prompt เนื้อเพลง 100 แบบ</h2>
-                    
-                    <div class="chapter-summary">
-                        <strong>คำนำ:</strong><br>
-                        หนึ่งในปัญหาที่มือใหม่เจอมากที่สุดคือ <strong>"ไม่รู้จะเริ่มแต่งเพลงจากอะไร"</strong><br>
-                        บทนี้จึงรวบรวม Prompt เนื้อเพลง 100 แบบ ที่สามารถนำไปใช้กับ AI สร้างเพลงได้ทันที ไม่ว่าจะเป็น Suno AI, ChatGPT หรือโปรแกรมสร้างเพลงอื่น ๆ เพียงคัดลอก Prompt แล้วปรับรายละเอียดเล็กน้อย AI ก็สามารถสร้างเนื้อเพลงใหม่ได้อย่างรวดเร็ว
-                    </div>
-                    
-                    <h3 style="color: #b77dff; margin-top: 30px;">หมวดที่ 1: เพลงรัก (1-20)</h3>
-                    <ul>
-                        <li class="prompt-list-item"><strong>Prompt 1:</strong> แต่งเพลง Pop Romantic เกี่ยวกับการตกหลุมรักตั้งแต่แรกเห็น อบอุ่น ละมุน ฟังสบาย</li>
-                        <li class="prompt-list-item"><strong>Prompt 2:</strong> แต่งเพลงรักเกี่ยวกับคนที่เข้ามาเปลี่ยนชีวิตให้ดีขึ้น</li>
-                        <li class="prompt-list-item"><strong>Prompt 20:</strong> แต่งเพลงรักที่บอกว่า "ขอบคุณที่เข้ามา"</li>
-                    </ul>
-
-                    <h3 style="color: #b77dff; margin-top: 40px;">สรุปท้ายบท</h3>
-                    <p>Prompt ที่ดีจะช่วยให้ AI เข้าใจสิ่งที่เราต้องการได้ชัดเจนขึ้น ส่งผลให้ได้เนื้อเพลงที่ตรงใจ มีคุณภาพ และสามารถนำไปพัฒนาต่อเป็นผลงานจริงได้</p>
-
-                    <h4>สูตร Prompt มืออาชีพ</h4>
-                    <div class="workflow-box">
-                        <strong>แนวเพลง + อารมณ์ + เนื้อหา + กลุ่มผู้ฟัง + โครงสร้างเพลง + คำสำคัญ</strong>
-                    </div>
-
-                    <h4>ตัวอย่างการใช้สูตร</h4>
-                    <div class="prompt-box">
-                        "แต่งเพลง Pop Sad สมัยใหม่ เกี่ยวกับการคิดถึงแฟนเก่า เนื้อหาซึ้งกินใจ สำหรับวัยรุ่น มี Verse, Pre-Chorus, Chorus, Bridge และ Hook ที่ติดหู"
-                    </div>
-
-                    <div class="chapter-footer-nav">
-                        <button class="btn-nav" onclick="showChapter(1)">← ย้อนกลับ บทที่ 1</button>
-                        <button class="btn-nav" onclick="showChapter(3)">อ่านต่อ บทที่ 3 ➔</button>
-                    </div>
+                    <div class="chapter-footer-nav"><button class="btn-nav" onclick="showChapter(1)">← ย้อนกลับ บทที่ 1</button><button class="btn-nav" onclick="showChapter(3)">อ่านต่อ บทที่ 3 ➔</button></div>
                 </div>
-
-                <!-- ================== บทที่ 3 ================== -->
                 <div id="ch3" class="chapter-content">
                     <h2 class="chapter-title">บทที่ 3: ใช้ Gemini แต่งเนื้อเพลงแบบมืออาชีพ</h2>
-                    
-                    <div class="chapter-summary">
-                        <strong>Gemini คืออะไร?</strong><br>
-                        Gemini คือ AI จาก Google ที่สามารถตอบคำถาม ช่วยคิดไอเดีย เขียนข้อความ สรุปเนื้อหา แปลภาษา วิเคราะห์ข้อมูล และอีกมากมาย AI ผู้ช่วยอัจฉริยะที่ช่วยคุณคิด เขียน วิเคราะห์ และสร้างสรรค์ได้ในที่เดียว
-                    </div>
-
-                    <h3 style="color: #b77dff; margin-top: 30px;">ทำความรู้จักหน้าต่าง Gemini (Web)</h3>
-                    <p>คู่มือใช้งาน Gemini สำหรับผู้เริ่มต้น (Beginner's Guide)</p>
-
-                    <img src="ChatGPT Image 13 มิ.ย. 2569 22_56_23.png" alt="คู่มือใช้งาน Gemini สำหรับผู้เริ่มต้น" class="content-image">
-
-                    <div class="info-container">
-                        
-                        <!-- Grid ข้อมูล 1-9 ข้อ -->
-                        <div class="info-grid">
-                            
-                            <!-- คอลัมน์ที่ 1 -->
-                            <div>
-                                <div class="info-item">
-                                    <div class="info-number num-1">1</div>
-                                    <div class="info-text">
-                                        <strong>New chat</strong>
-                                        <p>เริ่มแชทใหม่</p>
-                                    </div>
-                                </div>
-                                <div class="info-item">
-                                    <div class="info-number num-2">2</div>
-                                    <div class="info-text">
-                                        <strong>Recent (ประวัติเก่า)</strong>
-                                        <p>แสดงประวัติการสนทนาล่าสุด คลิกเพื่อเปิดดูอีกครั้ง</p>
-                                    </div>
-                                </div>
-                                <div class="info-item">
-                                    <div class="info-number num-3">3</div>
-                                    <div class="info-text">
-                                        <strong>เลือกโมเดล (Model)</strong>
-                                        <p>เลือกโมเดลของ Gemini เช่น 2.5 Flash (เร็ว), 2.5 Pro (ฉลาดละเอียด)</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- คอลัมน์ที่ 2 -->
-                            <div>
-                                <div class="info-item">
-                                    <div class="info-number num-4">4</div>
-                                    <div class="info-text">
-                                        <strong>ตัวอย่างการใช้งาน</strong>
-                                        <p>แนะนำคำถามหรือไอเดียที่คุณอาจสนใจ</p>
-                                    </div>
-                                </div>
-                                <div class="info-item">
-                                    <div class="info-number num-5">5</div>
-                                    <div class="info-text">
-                                        <strong>ช่องพิมพ์คำถาม</strong>
-                                        <p>พิมพ์คำถามหรือสิ่งที่ต้องการให้ Gemini ช่วยได้ที่นี่</p>
-                                    </div>
-                                </div>
-                                <div class="info-item">
-                                    <div class="info-number num-6">6</div>
-                                    <div class="info-text">
-                                        <strong>เครื่องมือพิเศษ (Tools)</strong>
-                                        <ul>
-                                            <li>Deep Research: ค้นคว้าเชิงลึก</li>
-                                            <li>Think: คิดวิเคราะห์อย่างเป็นขั้นตอน</li>
-                                            <li>Canvas: สร้าง/แก้ไขงานร่วมกัน</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- คอลัมน์ที่ 3 -->
-                            <div>
-                                <div class="info-item">
-                                    <div class="info-number num-7">7</div>
-                                    <div class="info-text">
-                                        <strong>Gemini Advanced</strong>
-                                        <p>อัปเกรดเพื่อใช้งานความสามารถขั้นสูงและโมเดลที่ทรงพลังขึ้น</p>
-                                    </div>
-                                </div>
-                                <div class="info-item">
-                                    <div class="info-number num-8">8</div>
-                                    <div class="info-text">
-                                        <strong>เมนูและแอปต่างๆ</strong>
-                                        <ul>
-                                            <li>จุด 9 จุด: เข้าถึงแอป Google อื่นๆ เช่น Gmail, Drive</li>
-                                            <li>ถังขยะ: ลบแชทปัจจุบัน</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="info-item">
-                                    <div class="info-number num-9">9</div>
-                                    <div class="info-text">
-                                        <strong>บัญชีผู้ใช้</strong>
-                                        <p>จัดการบัญชี Google และการตั้งค่าบัญชี</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div> <!-- End info-grid -->
-
-                        <h3 style="color: #a5b4fc; margin-top: 20px; font-size: 18px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">วิธีใช้งาน Gemini แบบง่ายๆ ใน 4 ขั้นตอน</h3>
-                        
-                        <!-- 4 Steps Grid -->
-                        <div class="gemini-steps-grid">
-                            <div class="gemini-step">
-                                <div class="gemini-step-header">
-                                    <div class="gemini-step-num num-1">1</div>
-                                    <div class="gemini-step-title">เริ่มแชทใหม่</div>
-                                </div>
-                                <div class="gemini-step-desc">คลิก "New chat" เพื่อเริ่มบทสนทนาใหม่</div>
-                            </div>
-                            
-                            <div class="gemini-step">
-                                <div class="gemini-step-header">
-                                    <div class="gemini-step-num num-2">2</div>
-                                    <div class="gemini-step-title">พิมพ์คำถามหรือคำสั่ง</div>
-                                </div>
-                                <div class="gemini-step-desc">พิมพ์สิ่งที่ต้องการให้ Gemini ช่วย ให้ชัดเจนและละเอียด</div>
-                            </div>
-                            
-                            <div class="gemini-step">
-                                <div class="gemini-step-header">
-                                    <div class="gemini-step-num num-3">3</div>
-                                    <div class="gemini-step-title">รับคำตอบและโต้ตอบต่อ</div>
-                                </div>
-                                <div class="gemini-step-desc">Gemini จะแสดงคำตอบ คุณสามารถถามต่อหรือขอรายละเอียดเพิ่มได้</div>
-                            </div>
-                            
-                            <div class="gemini-step">
-                                <div class="gemini-step-header">
-                                    <div class="gemini-step-num num-4">4</div>
-                                    <div class="gemini-step-title">ใช้เครื่องมือเพิ่มผลลัพธ์</div>
-                                </div>
-                                <div class="gemini-step-desc">เลือกเครื่องมือให้เหมาะกับงานเพื่อคำตอบที่ลึกและแม่นยำขึ้น</div>
-                            </div>
-                        </div>
-
-                        <!-- Grid กล่องข้อมูลด้านล่าง 3 กล่อง -->
-                        <div class="cards-grid">
-                            
-                            <!-- กล่อง 1: เทคนิค -->
-                            <div class="card-box green-bg">
-                                <div class="card-title" style="color: #34d399;">เทคนิคการใช้งานให้ได้ผลลัพธ์ที่ดี</div>
-                                <ul>
-                                    <li><strong>ระบุรายละเอียดให้ชัดเจน</strong><br>เช่น บทบาท, เป้าหมาย, กลุ่มเป้าหมาย, รูปแบบที่ต้องการ</li>
-                                    <li><strong>ใช้คำสั่งทีละเรื่อง</strong><br>เพื่อให้ Gemini โฟกัสและตอบได้ตรงประเด็น</li>
-                                    <li><strong>ขอรายละเอียดเพิ่มเติม</strong><br>เช่น "อธิบายเพิ่ม", "ยกตัวอย่าง", "สรุปสั้นลง"</li>
-                                    <li><strong>ตรวจสอบข้อมูลสำคัญเสมอ</strong><br>โดยเฉพาะข้อมูลที่เป็นปัจจุบันหรือเชิงตัวเลข</li>
-                                </ul>
-                            </div>
-
-                            <!-- กล่อง 2: ตัวอย่าง -->
-                            <div class="card-box blue-bg">
-                                <div class="card-title" style="color: #60a5fa;">ตัวอย่างการใช้งาน (Prompt Example)</div>
-                                <ul>
-                                    <li>ช่วยเขียนโพสต์เฟซบุ๊กโปรโมทคาเฟ่ สไตล์มินิมอล ความยาวไม่เกิน 150 คำ</li>
-                                    <li>สรุปไฟล์ PDF นี้ให้หน่อย (อัปโหลดไฟล์)</li>
-                                    <li>วางแผนเที่ยวเชียงใหม่ 3 วัน 2 คืน งบประมาณ 5,000 บาท</li>
-                                    <li>แปลประโยคนี้เป็นภาษาอังกฤษ: "ขอบคุณที่ช่วยเหลือฉัน"</li>
-                                </ul>
-                            </div>
-
-                            <!-- กล่อง 3: ทำอะไรได้บ้าง -->
-                            <div class="card-box purple-bg">
-                                <div class="card-title" style="color: #c084fc;">Gemini ใช้อะไรได้บ้าง?</div>
-                                <ul>
-                                    <li>💬 ตอบคำถามและให้ความรู้</li>
-                                    <li>📝 เขียนบทความ อีเมล สคริปต์ โพสต์</li>
-                                    <li>📊 สรุปและวิเคราะห์ข้อมูล</li>
-                                    <li>🌍 แปลภาษา</li>
-                                    <li>💼 ช่วยในการเรียนและการทำงาน</li>
-                                    <li>💻 เขียนโค้ด และแก้ไขปัญหา</li>
-                                    <li>💡 สร้างไอเดีย และวางแผนต่างๆ</li>
-                                </ul>
-                            </div>
-
-                        </div> <!-- End cards-grid -->
-                        
-                    </div> <!-- End info-container -->
-
-
-                    <h3 style="color: #b77dff; margin-top: 40px;">ใช้ Gemini ร่วมกับ Suno AI เพื่อแต่งเพลง</h3>
-                    
-                    <div class="workflow-box" style="text-align: left;">
-                        <strong>วิธีที่ได้รับความนิยมมากที่สุด:</strong><br><br>
-                        <strong>ขั้นที่ 1:</strong> ใช้ Gemini แต่งเนื้อเพลง<br>
-                        <div style="text-align: center; color: #9b5cff; margin: 5px 0;">↓</div>
-                        <strong>ขั้นที่ 2:</strong> แก้ไขเนื้อเพลงจนพอใจ<br>
-                        <div style="text-align: center; color: #9b5cff; margin: 5px 0;">↓</div>
-                        <strong>ขั้นที่ 3:</strong> นำไปใส่ใน Suno AI<br>
-                        <div style="text-align: center; color: #9b5cff; margin: 5px 0;">↓</div>
-                        <strong>ขั้นที่ 4:</strong> สร้างเพลง<br>
-                        <div style="text-align: center; color: #9b5cff; margin: 5px 0;">↓</div>
-                        <strong>ขั้นที่ 5:</strong> ดาวน์โหลดเพลง
-                    </div>
-
-                    <div class="chapter-footer-nav">
-                        <button class="btn-nav" onclick="showChapter(2)">← ย้อนกลับ บทที่ 2</button>
-                        <button class="btn-nav" onclick="showChapter(4)">อ่านต่อ บทที่ 4 ➔</button>
-                    </div>
+                    <div class="chapter-footer-nav"><button class="btn-nav" onclick="showChapter(2)">← ย้อนกลับ บทที่ 2</button><button class="btn-nav" onclick="showChapter(4)">อ่านต่อ บทที่ 4 ➔</button></div>
                 </div>
-
-                <!-- ================== บทที่ 4 ================== -->
                 <div id="ch4" class="chapter-content">
-                    <h2 class="chapter-title">บทที่ 4: คู่มือใช้งาน Suno AI แบบละเอียด ตั้งแต่เริ่มต้นจนสร้างเพลงระดับมืออาชีพ</h2>
-                    
-                    <div class="chapter-summary">
-                        <strong>Suno AI คืออะไร?</strong><br>
-                        Suno AI คือแพลตฟอร์มสร้างเพลงด้วยปัญญาประดิษฐ์ (AI) ที่สามารถสร้างเพลงพร้อมเสียงร้อง ดนตรี และการเรียบเรียงเพลงได้ภายในเวลาไม่กี่นาที
-                    </div>
-
-                    <h3 style="color: #b77dff; margin-top: 30px;">อธิบายหน้าต่างการใช้งาน (Create Song)</h3>
-                    <p>สร้างเพลงด้วย AI ง่ายๆ ไม่กี่ขั้นตอน (Make a song with AI in just a few steps.)</p>
-
-                    <img src="image_d14a76.jpg" alt="หน้าต่างการใช้งาน Suno AI Create Mode" class="content-image">
-
-                    <div class="info-container">
-                        <!-- (เนื้อหาส่วนนี้คงเดิมตามที่เคยสร้างไว้) -->
-                        <div class="info-grid">
-                            <div>
-                                <div class="info-item"><div class="info-number num-1">1</div><div class="info-text"><strong>เมนูหลัก (Main Menu)</strong><p>เมนูสำหรับนำทางใน Suno AI</p></div></div>
-                                <div class="info-item"><div class="info-number num-2">2</div><div class="info-text"><strong>Lyrics (เนื้อเพลง)</strong><p>ช่องสำหรับใส่เนื้อเพลงของคุณ</p></div></div>
-                                <div class="info-item"><div class="info-number num-3">3</div><div class="info-text"><strong>Style of Music (สไตล์เพลง)</strong><p>อธิบายแนวเพลง สไตล์ อารมณ์</p></div></div>
-                                <div class="info-item"><div class="info-number num-4">4</div><div class="info-text"><strong>Title (ชื่อเพลง)</strong><p>ใส่ชื่อเพลงที่คุณต้องการ</p></div></div>
-                            </div>
-                            <div>
-                                <div class="info-item"><div class="info-number num-5">5</div><div class="info-text"><strong>Instrumental (เพลงบรรเลง)</strong><p>เปิดเพื่อสร้างเพลงบรรเลง</p></div></div>
-                                <div class="info-item"><div class="info-number num-6">6</div><div class="info-text"><strong>Create (สร้างเพลง)</strong><p>ปุ่มสร้างเพลงให้คุณ</p></div></div>
-                                <div class="info-item"><div class="info-number num-7">7</div><div class="info-text"><strong>Song List (รายการเพลง)</strong><p>แสดงเพลงที่คุณสร้างทั้งหมด</p></div></div>
-                            </div>
-                            <div>
-                                <div class="info-item"><div class="info-number num-8">8</div><div class="info-text"><strong>Play / Preview</strong><p>กดเพื่อฟังตัวอย่างเพลง</p></div></div>
-                                <div class="info-item"><div class="info-number num-9">9</div><div class="info-text"><strong>Like / Dislike</strong><p>กดไลค์ หรือไม่ไลค์เพลง</p></div></div>
-                                <div class="info-item"><div class="info-number num-10">10</div><div class="info-text"><strong>Share</strong><p>แชร์เพลงให้คนอื่น</p></div></div>
-                                <div class="info-item"><div class="info-number num-11">11</div><div class="info-text"><strong>More Options</strong><p>ตัวเลือกเพิ่มเติม (Download ฯลฯ)</p></div></div>
-                                <div class="info-item"><div class="info-number num-12">12</div><div class="info-text"><strong>Download</strong><p>ดาวน์โหลดเพลงที่สร้าง</p></div></div>
-                            </div>
-                        </div>
-                    </div> <!-- End info-container -->
-
-                    <div class="chapter-footer-nav">
-                        <button class="btn-nav" onclick="showChapter(3)">← ย้อนกลับ บทที่ 3</button>
-                        <button class="btn-nav" onclick="showChapter(5)">อ่านต่อ บทที่ 5 ➔</button>
-                    </div>
+                    <h2 class="chapter-title">บทที่ 4: คู่มือใช้งาน Suno AI แบบละเอียด</h2>
+                    <div class="chapter-footer-nav"><button class="btn-nav" onclick="showChapter(3)">← ย้อนกลับ บทที่ 3</button><button class="btn-nav" onclick="showChapter(5)">อ่านต่อ บทที่ 5 ➔</button></div>
                 </div>
-
-                <!-- ================== บทที่ 5 ================== -->
                 <div id="ch5" class="chapter-content">
-                    <h2 class="chapter-title">บทที่ 5: สร้างรายได้จากเพลง AI แบบเข้าใจง่าย (เน้น YouTube)</h2>
-                    
-                    <div class="chapter-summary">
-                        <strong>เพลง AI สร้างรายได้ได้จริงไหม?</strong><br>
-                        คำตอบคือ <strong>"ได้"</strong> และแพลตฟอร์มที่ทรงพลังที่สุดในการสร้างรายได้ระยะยาวคือ <strong>YouTube</strong> เมื่อคุณทำเพลงเสร็จแล้ว คุณสามารถนำเพลงนั้นมาทำภาพประกอบ หรือ MV เพื่ออัปลงช่องและเปิดรับรายได้ตลอด 24 ชม.
-                    </div>
-
-                    <!-- ภาพอินโฟกราฟิก YouTube -->
-                    <img src="ChatGPT Image 13 มิ.ย. 2569 22_59_17.png" alt="วิธีสร้างรายได้จาก YouTube" class="content-image">
-
-                    <!-- โครงสร้างข้อมูลจากภาพ YouTube -->
-                    <div class="info-container" style="border-color: rgba(239,68,68,0.2);">
-                        
-                        <div class="yt-header-box">
-                            <div class="yt-main-title">วิธีสร้างรายได้จาก YouTube</div>
-                            <div class="yt-sub-title">เปลี่ยนช่อง YouTube ให้เป็นรายได้ 24 ชม.</div>
-                            <div class="yt-flow">
-                                <span>🎯 สร้างตัวตน</span>
-                                <span>👥 สร้างผู้ชม</span>
-                                <span>💰 สร้างรายได้</span>
-                                <span>📈 ต่อยอดธุรกิจ</span>
-                            </div>
-                        </div>
-
-                        <!-- 7 รายได้หลัก -->
-                        <div class="yt-highlight-box" style="margin-bottom: 25px;">
-                            <h4>รายได้หลักจาก YouTube</h4>
-                            <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; font-size: 13px; color: #fca5a5;">
-                                <span>❶ รายได้จากโฆษณา</span>
-                                <span>❷ สมาชิกช่อง (Membership)</span>
-                                <span>❸ Super Chat & Super Thanks</span>
-                                <span>❹ YouTube Premium</span>
-                                <span>❺ การขายสินค้า</span>
-                                <span>❻ Affiliate Marketing</span>
-                                <span>❼ สปอนเซอร์ (Brand Sponsor)</span>
-                            </div>
-                        </div>
-
-                        <!-- Grid 1: ขั้นตอนที่ 1 & 2 -->
-                        <div class="yt-grid">
-                            
-                            <!-- Box 1 -->
-                            <div class="yt-box">
-                                <div class="yt-box-header">
-                                    <div class="yt-step-circle">1</div>
-                                    <div class="yt-box-title">เริ่มต้นสร้างช่อง YouTube</div>
-                                </div>
-                                <ul class="yt-list">
-                                    <li><span class="num">1</span> <div><strong>สร้างบัญชี Google</strong><br>ใช้บัญชี Google ในการสร้างช่อง</div></li>
-                                    <li><span class="num">2</span> <div><strong>สร้างช่อง YouTube</strong><br>ไปที่ youtube.com คลิก "สร้าง" > "สร้างช่อง"</div></li>
-                                    <li><span class="num">3</span> <div><strong>ตั้งค่าช่อง</strong>
-                                        <ul>
-                                            <li>ชื่อช่อง / @ชื่อผู้ใช้</li>
-                                            <li>ภาพโปรไฟล์ / ภาพแบนเนอร์</li>
-                                            <li>คำอธิบายช่อง (เกี่ยวกับช่อง)</li>
-                                        </ul>
-                                    </div></li>
-                                    <li><span class="num">4</span> <div><strong>ปรับแต่งช่องให้ครบ</strong>
-                                        <ul>
-                                            <li>เพิ่มลิงก์โซเชียล</li>
-                                            <li>เพิ่มปุ่มติดตาม / ปุ่มต่างๆ</li>
-                                            <li>จัดเพลย์ลิสต์</li>
-                                        </ul>
-                                    </div></li>
-                                </ul>
-                            </div>
-
-                            <!-- Box 2 -->
-                            <div class="yt-box">
-                                <div class="yt-box-header">
-                                    <div class="yt-step-circle">2</div>
-                                    <div class="yt-box-title">สร้างคอนเทนต์ที่คนดูและอยากดู</div>
-                                </div>
-                                <ul class="yt-list">
-                                    <li><span class="num">1</span> เลือก "กลุ่มเป้าหมาย" ให้ชัดเจน</li>
-                                    <li><span class="num">2</span> คิดหัวข้อที่คนค้นหา (ใช้ YouTube Search, Google Trends, TubeBuddy)</li>
-                                    <li><span class="num">3</span> ทำวิดีโอให้มีคุณภาพ (เนื้อหามีประโยชน์, ภาพชัด เสียงชัด, ตัดต่อให้น่าสนใจ)</li>
-                                    <li><span class="num">4</span> ตั้งชื่อ (Title) ให้น่าคลิก</li>
-                                    <li><span class="num">5</span> ทำคำอธิบาย (Description) ให้ดี</li>
-                                    <li><span class="num">6</span> ใส่แท็ก (Tag) ให้เกี่ยวข้อง</li>
-                                    <li><span class="num">7</span> ทำภาพปก (Thumbnail) ให้น่าสนใจ</li>
-                                </ul>
-                            </div>
-
-                        </div> <!-- End Grid 1 -->
-
-                        <!-- Grid 2: ขั้นตอนที่ 3 & 4 -->
-                        <div class="yt-grid">
-                            
-                            <!-- Box 3 -->
-                            <div class="yt-box">
-                                <div class="yt-box-header">
-                                    <div class="yt-step-circle">3</div>
-                                    <div class="yt-box-title">เข้าร่วมโปรแกรมพาร์ทเนอร์ (YPP)</div>
-                                </div>
-                                <div style="font-size: 13px; color: #cbd5e1; margin-bottom: 15px;">สร้างรายได้จากโฆษณา เมื่อผ่านเกณฑ์ดังนี้:</div>
-                                <ul class="yt-list">
-                                    <li style="color: #10b981; font-weight: 600;">✓ มีผู้ติดตาม 1,000 คนขึ้นไป</li>
-                                    <li style="justify-content: center; font-size: 11px;">และ</li>
-                                    <li style="color: #10b981; font-weight: 600;">✓ ยอดดูสาธารณะ 4,000 ชั่วโมง ใน 365 วันที่ผ่านมา</li>
-                                    <li style="justify-content: center; font-size: 11px;">หรือ</li>
-                                    <li style="color: #10b981; font-weight: 600;">✓ ยอดดู Shorts 10,000,000 ครั้ง ใน 90 วันที่ผ่านมา</li>
-                                    <li style="color: #10b981; font-weight: 600;">✓ ไม่มีการละเมิดกฎของ YouTube</li>
-                                </ul>
-                            </div>
-
-                            <!-- Box 4 -->
-                            <div class="yt-box">
-                                <div class="yt-box-header">
-                                    <div class="yt-step-circle">4</div>
-                                    <div class="yt-box-title">เปิดรายได้จากโฆษณา</div>
-                                </div>
-                                <ul class="yt-list">
-                                    <li><span class="num">1</span> เปิดใช้สร้างรายได้ใน YouTube Studio</li>
-                                    <li><span class="num">2</span> เลือกประเภทโฆษณา (Pre-roll, Mid-roll, Display, Overlay)</li>
-                                    <li><span class="num">3</span> เลือกตำแหน่งโฆษณากลางวิดีโอได้</li>
-                                    <li><span class="num">4</span> รายได้จะเข้าบัญชี Google AdSense</li>
-                                </ul>
-                                <div class="yt-highlight-box">
-                                    <h4 style="color: #fca5a5;">รายได้โดยประมาณ</h4>
-                                    <div style="text-align: center; font-size: 18px; font-weight: bold; color: white;">20 - 100 บาท</div>
-                                    <div style="text-align: center; font-size: 11px; color: #94a3b8;">ต่อ 1,000 วิว (ขึ้นอยู่กับหมวดหมู่ และประเทศผู้ชม)</div>
-                                </div>
-                            </div>
-
-                        </div> <!-- End Grid 2 -->
-
-                        <!-- Box 5 Full Width -->
-                        <div class="yt-box" style="margin-bottom: 25px;">
-                            <div class="yt-box-header">
-                                <div class="yt-step-circle">5</div>
-                                <div class="yt-box-title">รายได้เสริมจากฟีเจอร์ต่างๆ</div>
-                            </div>
-                            <div class="yt-features-grid">
-                                <div class="yt-feature"><strong>1. สมาชิกช่อง</strong>ให้ผู้ชมสมัครสมาชิกรับสิทธิพิเศษ รายได้ประจำทุกเดือน</div>
-                                <div class="yt-feature"><strong>2. Super Chat</strong>ผู้ชมส่งข้อความโดดเด่นในไลฟ์สด หรือให้กำลังใจ</div>
-                                <div class="yt-feature"><strong>3. YT Premium</strong>รายได้จากการที่สมาชิก Premium ดูวิดีโอของคุณ</div>
-                                <div class="yt-feature"><strong>4. ขายสินค้า</strong>ขายเสื้อ แก้ว หมวก ผ่าน YouTube</div>
-                                <div class="yt-feature"><strong>5. Affiliate</strong>แนะนำสินค้า ใส่ลิงก์ในคำอธิบาย ได้รับค่าคอมฯ</div>
-                                <div class="yt-feature"><strong>6. สปอนเซอร์</strong>แบรนด์จ้างทำวิดีโอ โปรโมทสินค้า/บริการ</div>
-                            </div>
-                        </div>
-
-                        <!-- Grid 3: ขั้นตอนที่ 6 & 7 -->
-                        <div class="yt-grid">
-                            
-                            <!-- Box 6 -->
-                            <div class="yt-box">
-                                <div class="yt-box-header">
-                                    <div class="yt-step-circle">6</div>
-                                    <div class="yt-box-title">เคล็ดลับเพิ่มยอดวิวและรายได้</div>
-                                </div>
-                                <ul class="yt-list">
-                                    <li><div><strong>ทำคอนเทนต์สม่ำเสมอ:</strong> อัปโหลดอย่างน้อยสัปดาห์ละ 1-2 คลิป</div></li>
-                                    <li><div><strong>เข้าใจ SEO ของ YouTube:</strong> ใช้คีย์เวิร์ดในชื่อ คำอธิบาย และแท็ก</div></li>
-                                    <li><div><strong>ทำ Thumbnail ให้น่าคลิก:</strong> ภาพปกสวย ดึงดูด สื่อถึงเนื้อหา</div></li>
-                                    <li><div><strong>ทำให้คนดูจบวิดีโอ:</strong> เปิดคลิปให้น่าสนใจ ใช้การเล่าเรื่อง</div></li>
-                                    <li><div><strong>สร้างเพลย์ลิสต์:</strong> ช่วยให้คนดูต่อเนื่อง เพิ่มเวลาการรับชม</div></li>
-                                    <li><div><strong>โปรโมตช่อง:</strong> แชร์ในโซเชียล Facebook, TikTok, Blog</div></li>
-                                </ul>
-                            </div>
-
-                            <!-- Box 7 -->
-                            <div class="yt-box">
-                                <div class="yt-box-header">
-                                    <div class="yt-step-circle">7</div>
-                                    <div class="yt-box-title">ขั้นตอนรับเงิน & เครื่องมือแนะนำ</div>
-                                </div>
-                                <ul class="yt-list">
-                                    <li><span class="num">1</span> เชื่อมต่อบัญชี AdSense ใน YouTube Studio</li>
-                                    <li><span class="num">2</span> รอรับเงินเมื่อรายได้ถึงเกณฑ์ $100 (ประมาณ 3,500 บาท)</li>
-                                    <li><span class="num">3</span> Google จะโอนเงินเข้าบัญชีทุกวันที่ 21-26 ของเดือน</li>
-                                    <li><span class="num">4</span> ตรวจสอบรายได้ที่เมนู "รายได้" ใน Studio</li>
-                                </ul>
-                                
-                                <h4 style="color: #fca5a5; font-size: 14px; margin-top: 15px; margin-bottom: 5px;">เครื่องมือที่แนะนำ</h4>
-                                <div class="yt-tools-grid">
-                                    <div class="yt-tool"><div class="yt-tool-icon" style="background:#ef4444;">YT</div><span><strong>YT Studio</strong><br>จัดการช่อง</span></div>
-                                    <div class="yt-tool"><div class="yt-tool-icon" style="background:#ef4444;">tb</div><span><strong>TubeBuddy</strong><br>ช่วยทำ SEO</span></div>
-                                    <div class="yt-tool"><div class="yt-tool-icon" style="background:#3b82f6;">vQ</div><span><strong>vidIQ</strong><br>วิจัยคีย์เวิร์ด</span></div>
-                                    <div class="yt-tool"><div class="yt-tool-icon" style="background:#8b5cf6;">C</div><span><strong>Canva</strong><br>ทำภาพปก</span></div>
-                                </div>
-                            </div>
-
-                        </div> <!-- End Grid 3 -->
-
-                        <div class="yt-summary-bar">
-                            <div class="yt-summary-text">
-                                สรุป: สร้างช่อง ➔ สร้างคอนเทนต์ ➔ สร้างผู้ชม<br>
-                                เปิดรายได้ ➔ เพิ่มรายได้หลายทาง ➔ เติบโตอย่างยั่งยืน
-                            </div>
-                            <div style="background: white; color: #ef4444; padding: 10px 20px; border-radius: 30px; font-weight: bold; font-size: 15px;">
-                                ทำอย่างต่อเนื่อง = ความสำเร็จ 🎯
-                            </div>
-                        </div>
-
-                    </div> <!-- End info-container YouTube -->
-
-                    <div class="chapter-footer-nav">
-                        <button class="btn-nav" onclick="showChapter(4)">← ย้อนกลับ บทที่ 4</button>
-                        <button class="btn-nav" onclick="showChapter(6)">อ่านต่อ บทที่ 6 ➔</button>
-                    </div>
+                    <h2 class="chapter-title">บทที่ 5: สร้างรายได้จากเพลง AI (YouTube)</h2>
+                    <div class="chapter-footer-nav"><button class="btn-nav" onclick="showChapter(4)">← ย้อนกลับ บทที่ 4</button><button class="btn-nav" onclick="showChapter(6)">อ่านต่อ บทที่ 6 ➔</button></div>
                 </div>
-
-                <!-- ================== บทที่ 6 ================== -->
                 <div id="ch6" class="chapter-content">
                     <h2 class="chapter-title">บทที่ 6: 100 Prompt ดนตรีสำหรับ Suno AI</h2>
+                    <div class="chapter-footer-nav"><button class="btn-nav" onclick="showChapter(5)">← ย้อนกลับ บทที่ 5</button><button class="btn-nav" onclick="showChapter(7)">อ่านต่อ บทที่ 7 ➔</button></div>
+                </div>
+                <div id="ch7" class="chapter-content">
+                    <h2 class="chapter-title">บทที่ 7: วิธีสร้างรายได้จาก TikTok</h2>
+                    <div class="chapter-footer-nav"><button class="btn-nav" onclick="showChapter(6)">← ย้อนกลับ บทที่ 6</button><button class="btn-nav" onclick="showChapter(8)">อ่านต่อ บทที่ 8 ➔</button></div>
+                </div>
+                <div id="ch8" class="chapter-content">
+                    <h2 class="chapter-title">บทที่ 8: วิธีสร้างรายได้จาก Shopee Affiliate</h2>
+                    <div class="chapter-footer-nav"><button class="btn-nav" onclick="showChapter(7)">← ย้อนกลับ บทที่ 7</button><button class="btn-nav" onclick="showChapter(9)">อ่านต่อ บทที่ 9 ➔</button></div>
+                </div>
+
+                <div id="ch9" class="chapter-content">
+                    <h2 class="chapter-title">บทที่ 9: วิธีสร้างรายได้จาก Facebook</h2>
                     
                     <div class="chapter-summary">
-                        <strong>วิธีใช้:</strong><br>
-                        นำ Prompt ด้านล่างไปใส่ในช่อง <strong>Style of Music</strong> ของ Suno AI เพื่อกำหนดแนวเพลงที่ต้องการ
+                        เปลี่ยนคอนเทนต์ของคุณให้เป็นรายได้ทุกวัน! Facebook เป็นอีกหนึ่งแพลตฟอร์มที่มีผู้ใช้งานมหาศาล และมีเครื่องมือสร้างรายได้ที่หลากหลาย ครอบคลุมทั้งวิดีโอสั้น วิดีโอยาว และการขายสินค้า
                     </div>
 
-                    <h3 style="color: #b77dff; margin-top: 30px;">Pop & Pop Sad (1-20)</h3>
-                    <ul>
-                        <li class="prompt-list-item"><strong>01.</strong> Modern Pop Sad, Emotional Male Vocal, Piano, Heartbreak, Radio Quality</li>
-                        <li class="prompt-list-item"><strong>02.</strong> Thai Pop Ballad, Emotional, Piano, Soft Vocal, Romantic</li>
-                    </ul>
+                    <img src="ChatGPT Image 14 มิ.ย. 2569 06_42_53.png" alt="วิธีสร้างรายได้จาก Facebook" class="content-image">
 
-                    <h3 style="color: #b77dff; margin-top: 40px;">สูตร Prompt ระดับมืออาชีพ</h3>
-                    <div class="workflow-box" style="font-size: 16px;">
-                        <strong>Genre + Mood + Vocal + Instruments + Production</strong>
-                    </div>
+                    <div class="info-container" style="border-color: rgba(24,119,242,0.2);">
+                        
+                        <div class="fb-header-box">
+                            <div class="fb-main-title">วิธีสร้างรายได้จาก Facebook</div>
+                            <div class="fb-sub-title">เปลี่ยนคอนเทนต์ของคุณให้เป็นรายได้ทุกวัน!</div>
+                            <div class="fb-flow">
+                                <span>สร้างตัวตน</span>
+                                <span>สร้างคอนเทนต์</span>
+                                <span>เพิ่มผู้ติดตาม</span>
+                                <span>สร้างรายได้</span>
+                            </div>
+                        </div>
 
-                    <h4>ตัวอย่างการประยุกต์ใช้สูตร</h4>
-                    <div class="prompt-box">
-                        Modern Thai Pop Sad,<br>
-                        Emotional Male Vocal,<br>
-                        Piano Ballad,<br>
-                        Heartbreak Theme,<br>
-                        Powerful Chorus,<br>
-                        Radio Quality Production
-                    </div>
+                        <div class="fb-highlight-box" style="margin-bottom: 25px; border-color: rgba(24,119,242,0.3);">
+                            <h4 style="color: #93c5fd;">รายได้จาก Facebook มีอะไรบ้าง?</h4>
+                            <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; font-size: 13px; color: #fff;">
+                                <span><span style="color:#60a5fa; font-weight:bold;">1</span> แชร์รายได้จากโฆษณา (In-Stream Ads)</span>
+                                <span><span style="color:#60a5fa; font-weight:bold;">2</span> โฆษณาใน Reels (Reels Ads)</span>
+                                <span><span style="color:#60a5fa; font-weight:bold;">3</span> การตลาดแบบพันธมิตร (Affiliate Marketing)</span>
+                                <span><span style="color:#60a5fa; font-weight:bold;">4</span> ขายสินค้าหรือบริการ</span>
+                                <span><span style="color:#60a5fa; font-weight:bold;">5</span> รับงาน สปอนเซอร์ (Brand Sponsorship)</span>
+                                <span><span style="color:#60a5fa; font-weight:bold;">6</span> ดาว (Stars) / ของขวัญ (Gifts)</span>
+                                <span><span style="color:#60a5fa; font-weight:bold;">7</span> ค่าสมัครสมาชิก (Facebook Subscription)</span>
+                            </div>
+                        </div>
 
-                    <div class="chapter-footer-nav">
-                        <button class="btn-nav" onclick="showChapter(5)">← ย้อนกลับ บทที่ 5</button>
+                        <div class="fb-grid">
+                            
+                            <div class="fb-box">
+                                <div class="fb-box-header">
+                                    <div class="fb-step-circle">1</div>
+                                    <div class="fb-box-title">สร้างตัวตนและเพจให้แข็งแรง</div>
+                                </div>
+                                <ul class="fb-list">
+                                    <li><span class="num">1</span> <div><strong>สร้างเพจให้น่าสนใจ</strong><br><span style="color:#94a3b8;">เลือกชื่อที่จดจำง่าย, รูปโปรไฟล์และหน้าปกชัดเจน</span></div></li>
+                                    <li><span class="num">2</span> <div><strong>กรอกข้อมูลให้ครบถ้วน</strong><br><span style="color:#94a3b8;">หมวดหมู่เพจ, รายละเอียดเพจ, ช่องทางติดต่อ</span></div></li>
+                                    <li><span class="num">3</span> <div><strong>วางตัวตนของเพจ</strong><br><span style="color:#94a3b8;">กำหนดกลุ่มเป้าหมาย, วางคอนเทนต์ที่ถนัด</span></div></li>
+                                    <li><span class="num">4</span> <div><strong>โพสต์สม่ำเสมอ</strong><br><span style="color:#94a3b8;">อย่างน้อย 3-5 โพสต์/สัปดาห์</span></div></li>
+                                </ul>
+                            </div>
+
+                            <div class="fb-box">
+                                <div class="fb-box-header">
+                                    <div class="fb-step-circle">2</div>
+                                    <div class="fb-box-title">สร้างคอนเทนต์ที่คนชอบ</div>
+                                </div>
+                                <ul class="fb-list">
+                                    <li><span class="num">1</span> <div><strong>คอนเทนต์ให้คุณค่า</strong><br><span style="color:#94a3b8;">เช่น ความรู้, เคล็ดลับ, ความบันเทิง</span></div></li>
+                                    <li><span class="num">2</span> <div><strong>ใช้รูปแบบที่หลากหลาย</strong><br><span style="color:#94a3b8;">ภาพ, วิดีโอ, Reels, ไลฟ์สด</span></div></li>
+                                    <li><span class="num">3</span> <div><strong>เข้าใจกลุ่มเป้าหมาย</strong><br><span style="color:#94a3b8;">สร้างคอนเทนต์ที่ตอบโจทย์</span></div></li>
+                                    <li><span class="num">4</span> <div><strong>โพสต์ในเวลาที่เหมาะสม</strong><br><span style="color:#94a3b8;">เช่น 07.00-09.00 น. / 18.00-21.00 น.</span></div></li>
+                                    <li><span class="num">5</span> <div><strong>กระตุ้นการมีส่วนร่วม</strong><br><span style="color:#94a3b8;">ถาม-ตอบ, โพล, คอมเมนต์</span></div></li>
+                                </ul>
+                                <div style="font-size: 12px; color: #93c5fd; margin-top: 15px; text-align: center; background: rgba(24,119,242,0.1); padding: 8px; border-radius: 6px;">
+                                    💡 <strong>เคล็ดลับ:</strong> คอนเทนต์ที่ดี = คนดูเยอะ<br>คนดูเยอะ = โอกาสสร้างรายได้มากขึ้น
+                                </div>
+                            </div>
+
+                        </div> <div class="fb-grid">
+                            
+                            <div class="fb-box">
+                                <div class="fb-box-header">
+                                    <div class="fb-step-circle">3</div>
+                                    <div class="fb-box-title">เปิดสร้างรายได้จากโฆษณา (In-Stream Ads)</div>
+                                </div>
+                                <ul class="fb-list">
+                                    <li><span class="num">1</span> <div>เข้าไปที่ <strong>Meta Business Suite</strong></div></li>
+                                    <li><span class="num">2</span> <div>เลือก <strong>"สร้างรายได้"</strong></div></li>
+                                    <li><span class="num">3</span> <div>เลือก <strong>"โฆษณาในสตรีม"</strong></div></li>
+                                    <li><span class="num">4</span> <div><strong>ตรวจสอบคุณสมบัติให้ผ่าน:</strong><br>
+                                        <span style="color:#60a5fa;">✓ ผู้ติดตามอย่างน้อย 10,000 คน</span><br>
+                                        <span style="color:#60a5fa;">✓ มีวิดีโอดูอย่างน้อย 600,000 นาที ใน 60 วันที่ผ่านมา</span><br>
+                                        <span style="color:#60a5fa;">✓ อายุ 18 ปีขึ้นไป</span>
+                                    </div></li>
+                                    <li><span class="num">5</span> <div>เมื่อผ่านเกณฑ์ ระบบจะเปิดให้สร้างรายได้</div></li>
+                                </ul>
+                            </div>
+
+                            <div class="fb-box">
+                                <div class="fb-box-header">
+                                    <div class="fb-step-circle">4</div>
+                                    <div class="fb-box-title">สร้างรายได้จาก Reels Ads</div>
+                                </div>
+                                <ul class="fb-list">
+                                    <li><span class="num">1</span> <div>สร้างวิดีโอ Reels ให้คนดูเยอะ</div></li>
+                                    <li><span class="num">2</span> <div><strong>เข้าเกณฑ์:</strong><br>
+                                        <span style="color:#60a5fa;">✓ ผู้ติดตามอย่างน้อย 5,000 คน</span><br>
+                                        <span style="color:#60a5fa;">✓ มียอดชม Reels อย่างน้อย 100,000 ครั้ง ใน 30 วันที่ผ่านมา</span>
+                                    </div></li>
+                                    <li><span class="num">3</span> <div>เปิดสร้างรายได้จาก Reels</div></li>
+                                    <li><span class="num">4</span> <div>รับเงินจากโฆษณาที่แสดงใน Reels</div></li>
+                                </ul>
+                                <div class="fb-highlight-box" style="margin-top: 10px; background: rgba(24,119,242,0.05);">
+                                    <h4 style="text-align: center; margin-bottom: 5px;">รายได้โดยประมาณ</h4>
+                                    <div style="font-size: 12px; color: #cbd5e1; text-align: center;">
+                                        ขึ้นอยู่กับ ยอดวิว, ประเทศผู้ชม, ประเภทโฆษณา<br>
+                                        <strong>โดยเฉลี่ย: 1,000 วิว = 0.5 - 2 บาท</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div> <div class="fb-grid">
+                            
+                            <div class="fb-box">
+                                <div class="fb-box-header">
+                                    <div class="fb-step-circle">5</div>
+                                    <div class="fb-box-title">รายได้จาก Affiliate Marketing</div>
+                                </div>
+                                <ul class="fb-list">
+                                    <li><span class="num">1</span> <div>เลือกสินค้าที่เกี่ยวข้องกับเพจ</div></li>
+                                    <li><span class="num">2</span> <div>สมัคร Affiliate กับแพลตฟอร์ม (เช่น Shopee, Lazada, TikTok Shop)</div></li>
+                                    <li><span class="num">3</span> <div>นำลิงก์สินค้า มาแชร์ในเพจ/โพสต์</div></li>
+                                    <li><span class="num">4</span> <div>เมื่อมีคนคลิกลิงก์และซื้อสินค้า คุณจะได้รับค่าคอมมิชชั่น</div></li>
+                                </ul>
+                                <div style="font-size: 12px; color: #93c5fd; margin-top: 15px; text-align: center; background: rgba(24,119,242,0.1); padding: 8px; border-radius: 6px;">
+                                    💡 <strong>เคล็ดลับ:</strong> รีวิวสินค้า แนะนำสินค้าที่คุณใช้จริง คนเชื่อถือมากขึ้น ยอดขายจะดีขึ้น
+                                </div>
+                            </div>
+
+                            <div class="fb-box">
+                                <div class="fb-box-header">
+                                    <div class="fb-step-circle">6</div>
+                                    <div class="fb-box-title">รายได้จากการขายสินค้า/บริการ</div>
+                                </div>
+                                <ul class="fb-list">
+                                    <li><span class="num">1</span> <div>ตั้งร้านค้าบน Facebook (เปิดใช้งาน Facebook Shop)</div></li>
+                                    <li><span class="num">2</span> <div>โพสต์สินค้าอย่างสม่ำเสมอ</div></li>
+                                    <li><span class="num">3</span> <div>ใช้ไลฟ์สดขายสินค้า</div></li>
+                                    <li><span class="num">4</span> <div>บริการดี ส่งไว ลูกค้าประทับใจ ลูกค้ากลับมาซื้อซ้ำ</div></li>
+                                </ul>
+                            </div>
+
+                        </div> <div class="fb-grid">
+                            
+                            <div class="fb-box">
+                                <div class="fb-box-header">
+                                    <div class="fb-step-circle">7</div>
+                                    <div class="fb-box-title">รายได้จากสปอนเซอร์ (Brand Sponsorship)</div>
+                                </div>
+                                <ul class="fb-list">
+                                    <li><span class="num">1</span> <div>สร้างตัวตนและความน่าเชื่อถือ</div></li>
+                                    <li><span class="num">2</span> <div>ทำคอนเทนต์ให้มีคุณภาพ และมีกลุ่มผู้ติดตามชัดเจน</div></li>
+                                    <li><span class="num">3</span> <div>แบรนด์จะติดต่อมาเอง หรือคุณนำเสนอแบรนด์ได้</div></li>
+                                    <li><span class="num">4</span> <div>รับค่าจ้างจากการรีวิว หรือโปรโมตสินค้า</div></li>
+                                </ul>
+                                <div class="fb-highlight-box" style="margin-top: 10px; background: rgba(24,119,242,0.05);">
+                                    <h4 style="text-align: left; margin-bottom: 5px; font-size: 13px;">สิ่งที่แบรนด์ดู:</h4>
+                                    <ul style="list-style: none; padding: 0; font-size: 12px; color: #cbd5e1;">
+                                        <li>✓ กลุ่มเป้าหมายของเพจ</li>
+                                        <li>✓ ยอดการเข้าถึง (Reach)</li>
+                                        <li>✓ การมีส่วนร่วม (Engagement)</li>
+                                        <li>✓ ความน่าเชื่อถือของเพจ</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="fb-box">
+                                <div class="fb-box-header">
+                                    <div class="fb-step-circle">8</div>
+                                    <div class="fb-box-title">รายได้จาก Stars / Gifts / Subscription</div>
+                                </div>
+                                <div class="fb-icon-grid" style="margin-bottom: 15px;">
+                                    <div class="fb-icon-item">
+                                        <strong>⭐ ดาว (Stars)</strong>
+                                        แฟนคลับส่งดาวในระหว่างไลฟ์สด หรือวิดีโอ (คุณจะได้รับเงิน)
+                                    </div>
+                                    <div class="fb-icon-item">
+                                        <strong>🎁 ของขวัญ (Gifts)</strong>
+                                        ผู้ชมส่งของขวัญในไลฟ์สด เพื่อสนับสนุนคุณ
+                                    </div>
+                                    <div class="fb-icon-item">
+                                        <strong>🛡️ ค่าสมัครสมาชิก (Subscription)</strong>
+                                        แฟนคลับสมัครสมาชิกรายเดือน เพื่อรับสิทธิพิเศษ
+                                    </div>
+                                </div>
+                                <div style="font-size: 12px; color: #93c5fd; text-align: center; background: rgba(24,119,242,0.1); padding: 8px; border-radius: 6px;">
+                                    <strong>วิธีเปิดใช้งาน:</strong> เข้า Meta Business Suite > สร้างรายได้ > เลือกเครื่องมือที่ต้องการ > ทำตามขั้นตอน
+                                </div>
+                            </div>
+
+                        </div> <div class="fb-box" style="margin-bottom: 25px;">
+                            <div class="fb-box-header">
+                                <div class="fb-step-circle">9</div>
+                                <div class="fb-box-title">เทคนิคเพิ่มรายได้จาก Facebook</div>
+                            </div>
+                            <div class="fb-icon-grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">
+                                <div class="fb-icon-item">
+                                    <strong>🎯 รู้จักกลุ่มเป้าหมาย</strong>
+                                    ทำคอนเทนต์ที่ตรงใจกลุ่มเป้าหมาย
+                                </div>
+                                <div class="fb-icon-item">
+                                    <strong>📅 โพสต์สม่ำเสมอ</strong>
+                                    ต่อเนื่อง สม่ำเสมอ สร้างความน่าเชื่อถือ
+                                </div>
+                                <div class="fb-icon-item">
+                                    <strong>#️⃣ ใช้แฮชแท็ก</strong>
+                                    เพิ่มโอกาสให้คนเจอเพจและโพสต์ของคุณ
+                                </div>
+                                <div class="fb-icon-item">
+                                    <strong>🔴 ไลฟ์สดบ่อยๆ</strong>
+                                    เพิ่มยอดมองเห็น และความสัมพันธ์
+                                </div>
+                                <div class="fb-icon-item">
+                                    <strong>📢 โปรโมตเพจ</strong>
+                                    ใช้โฆษณาเพิ่มผู้ติดตามและยอดขาย
+                                </div>
+                                <div class="fb-icon-item">
+                                    <strong>📈 วิเคราะห์และปรับปรุง</strong>
+                                    ดูข้อมูลเชิงลึก (Insights) และพัฒนาคอนเทนต์
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="fb-box" style="text-align: center; border-color: #3b82f6; background: rgba(24,119,242,0.05);">
+                            <h3 style="color: #3b82f6; margin-bottom: 10px;">สรุปขั้นตอนความสำเร็จ</h3>
+                            
+                            <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 15px; font-size: 13px; color: #fff; font-weight: 600;">
+                                <span>🏆 สร้างตัวตนให้แข็งแรง</span> ➔
+                                <span>📝 สร้างคอนเทนต์ที่มีคุณภาพ</span> ➔
+                                <span>👥 เพิ่มผู้ติดตามและความน่าเชื่อถือ</span> ➔
+                                <span>⚙️ ใช้เครื่องมือสร้างรายได้อย่างเหมาะสม</span> ➔
+                                <span>💰 รายได้เพิ่มขึ้นอย่างต่อเนื่อง</span>
+                            </div>
+                            
+                            <div style="margin-top: 20px; font-size: 16px; color: #93c5fd; font-weight: bold;">
+                                👍 เริ่มวันนี้! ตั้งใจทำอย่างต่อเนื่อง คุณก็สร้างรายได้จาก Facebook ได้แน่นอน
+                            </div>
+                        </div>
+
+                    </div> <div class="chapter-footer-nav">
+                        <button class="btn-nav" onclick="showChapter(8)">← ย้อนกลับ บทที่ 8</button>
                         <button class="btn-nav" style="background: #ff4757; border-color: #ff4757;" onclick="closeBook()">จบหลักสูตร / ปิดหนังสือ ➔</button>
                     </div>
                 </div>
-
-            </div>
+                </div>
         </div>
     </div>
 </div>
