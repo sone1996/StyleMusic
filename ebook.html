@@ -247,17 +247,14 @@ a { text-decoration: none; color: inherit; }
                 </div>
 
                 <div class="chapter-nav">
-                    <button class="chapter-btn active" id="btn-ch1" onclick="showChapter(1)">บทที่ 1: ภาพรวม</button>
-                    <button class="chapter-btn" id="btn-ch2" onclick="showChapter(2)">บทที่ 2: Prompt เนื้อเพลง</button>
-                    <button class="chapter-btn" id="btn-ch3" onclick="showChapter(3)">บทที่ 3: ใช้ Gemini</button>
-                    <button class="chapter-btn" id="btn-ch4" onclick="showChapter(4)">บทที่ 4: ใช้ Suno</button>
-                    <button class="chapter-btn" id="btn-ch5" onclick="showChapter(5)">บทที่ 5: สร้างรายได้</button>
-                    <button class="chapter-btn" id="btn-ch6" onclick="showChapter(6)">บทที่ 6: 100 Prompt Suno</button>
+                    <button class="chapter-btn active" id="btn-ch1" onclick="showChapter(1)">บทที่ 1: ใช้ Gemini</button>
+                    <button class="chapter-btn" id="btn-ch2" onclick="showChapter(2)">บทที่ 2: ใช้ Suno</button>
+                    <button class="chapter-btn" id="btn-ch3" onclick="showChapter(3)">บทที่ 3: สร้างรายได้</button>
                 </div>
 
                 <!-- ================== บทที่ 1 ================== -->
-                <div id="ch3" class="chapter-content">
-                    <h2 class="chapter-title">บทที่ 3: ใช้ Gemini แต่งเนื้อเพลงแบบมืออาชีพ</h2>
+                <div id="ch1" class="chapter-content">
+                    <h2 class="chapter-title">บทที่ 1: ใช้ Gemini แต่งเนื้อเพลงแบบมืออาชีพ</h2>
                     
                     <div class="chapter-summary">
                         <strong>Gemini คืออะไร?</strong><br>
@@ -471,14 +468,14 @@ a { text-decoration: none; color: inherit; }
                         <strong>ขั้นที่ 5:</strong> ดาวน์โหลดเพลง
                     </div>
 
-                    <div class="chapter-footer-nav">
-                        <button class="btn-nav" onclick="showChapter(2)">← ย้อนกลับ บทที่ 1</button>
-                        <button class="btn-nav" onclick="showChapter(4)">อ่านต่อ บทที่ 2 ➔</button>
+                    <div class="chapter-footer-nav" style="justify-content: flex-end;">
+                        <button class="btn-nav" onclick="showChapter(2)">อ่านต่อ บทที่ 2 ➔</button>
                     </div>
                 </div>
-<!-- ================== บทที่ 4 ================== -->
-                <div id="ch4" class="chapter-content">
-                    <h2 class="chapter-title">บทที่ 4: คู่มือใช้งาน Suno AI แบบละเอียด ตั้งแต่เริ่มต้นจนสร้างเพลงระดับมืออาชีพ</h2>
+                
+                <!-- ================== บทที่ 2 ================== -->
+                <div id="ch2" class="chapter-content">
+                    <h2 class="chapter-title">บทที่ 2: คู่มือใช้งาน Suno AI แบบละเอียด ตั้งแต่เริ่มต้นจนสร้างเพลงระดับมืออาชีพ</h2>
                     
                     <div class="chapter-summary">
                         <strong>Suno AI คืออะไร?</strong><br>
@@ -660,13 +657,14 @@ a { text-decoration: none; color: inherit; }
                     </div> <!-- End infographic-container -->
 
                     <div class="chapter-footer-nav">
-                        <button class="btn-nav" onclick="showChapter(3)">← ย้อนกลับ บทที่ 2</button>
-                        <button class="btn-nav" onclick="showChapter(5)">อ่านต่อ บทที่ 3 ➔</button>
+                        <button class="btn-nav" onclick="showChapter(1)">← ย้อนกลับ บทที่ 1</button>
+                        <button class="btn-nav" onclick="showChapter(3)">อ่านต่อ บทที่ 3 ➔</button>
                     </div>
                 </div>
-                <!-- ================== บทที่ 5 ================== -->
-                <div id="ch5" class="chapter-content">
-                    <h2 class="chapter-title">บทที่ 5: สร้างรายได้จากเพลง AI แบบเข้าใจง่าย (เน้น YouTube)</h2>
+                
+                <!-- ================== บทที่ 3 ================== -->
+                <div id="ch3" class="chapter-content">
+                    <h2 class="chapter-title">บทที่ 3: สร้างรายได้จากเพลง AI แบบเข้าใจง่าย (เน้น YouTube)</h2>
                     
                     <div class="chapter-summary">
                         <strong>เพลง AI สร้างรายได้ได้จริงไหม?</strong><br>
@@ -864,11 +862,11 @@ a { text-decoration: none; color: inherit; }
 
                     </div> <!-- End info-container YouTube -->
 
-                    <div class="chapter-footer-nav">
-                        <button class="btn-nav" onclick="showChapter(4)">← ย้อนกลับ บทที่ 3</button>
-                        <button class="btn-nav" onclick="showChapter(6)">อ่านต่อ บทที่ 4 ➔</button>
+                    <div class="chapter-footer-nav" style="justify-content: flex-start;">
+                        <button class="btn-nav" onclick="showChapter(2)">← ย้อนกลับ บทที่ 2</button>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -879,6 +877,7 @@ a { text-decoration: none; color: inherit; }
     function openBook() {
         document.getElementById('ebookSection').style.display = 'none';
         document.getElementById('readerSection').style.display = 'block';
+        showChapter(1); 
         window.scrollTo(0, 0); 
     }
 
