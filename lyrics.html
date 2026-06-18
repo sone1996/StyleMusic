@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>📖 สรุปใจความบทเพลง - StyleMusicPro</title>
 
-<!-- ติดตั้งระบบเก็บสถิติ Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PZHXG2Y1PY"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -34,7 +33,7 @@ a { text-decoration: none; color: inherit; }
 /* Main Content */
 .main{ flex:1; overflow-y:auto; overflow-x:hidden; padding:30px; padding-bottom:120px; background:#050816; }
 
-/* Lyrics Styles - ระบบคลิกเพื่อเปิด */
+/* Lyrics Styles */
 .lyrics-container { background: rgba(255, 255, 255, 0.03); border-radius: 20px; padding: 30px; border: 1px solid rgba(255,255,255,0.1); width: 100%; }
 
 /* Search Box */
@@ -44,15 +43,14 @@ a { text-decoration: none; color: inherit; }
 .search-box-lyrics input:focus { background: rgba(255,255,255,.08); border-color: #9b5cff; box-shadow: 0 0 10px rgba(155,92,255,0.2); }
 
 /* Card Styles */
-.song-summary-card { background: rgba(255,255,255,0.04); border-radius: 16px; margin-bottom: 20px; border-left: 5px solid #9b5cff; transition: 0.3s; cursor: pointer; overflow: hidden; text-align: left; }
+.song-summary-card { background: rgba(255,255,255,0.04); border-radius: 16px; margin-bottom: 20px; border-left: 5px solid #9b5cff; text-align: left; }
 .song-summary-card:hover { background: rgba(255,255,255,0.07); }
 
 .song-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 25px; }
-.song-header h3 { color: #fff; font-size: 18px; margin: 0; pointer-events: none; text-align: left; }
-.toggle-icon { font-size: 16px; color: #9b5cff; transition: transform 0.3s ease; pointer-events: none; }
+.song-header h3 { color: #fff; font-size: 18px; margin: 0; text-align: left; }
 
-/* เนื้อหาด้านในกล่อง */
-.song-content { padding: 0 25px; max-height: 0; opacity: 0; overflow: hidden; transition: all 0.5s ease; }
+/* เนื้อหาด้านในกล่อง โชว์ตลอดเวลา */
+.song-content { padding: 10px 25px 25px 25px; opacity: 1; display: block; }
 .song-content p { color: #ccc; line-height: 1.8; font-size: 14px; margin-bottom: 12px; text-align: left; }
 .song-content ul { color: #ccc; font-size: 14px; margin-left: 20px; margin-bottom: 15px; line-height: 1.8; text-align: left; }
 .song-content li { margin-bottom: 5px; }
@@ -61,10 +59,6 @@ a { text-decoration: none; color: inherit; }
 /* เครื่องเล่นเพลงในหน้าเนื้อหา */
 .inline-audio-player { width: 100%; height: 40px; margin-top: 15px; outline: none; border-radius: 20px; display: block; }
 .inline-audio-player::-webkit-media-controls-panel { background-color: rgba(255, 255, 255, 0.9); }
-
-/* คลาสที่ใช้ตอนถูกคลิก (เปิดเนื้อหา) */
-.song-summary-card.active .song-content { max-height: 2000px; opacity: 1; padding-top: 10px; padding-bottom: 25px; }
-.song-summary-card.active .toggle-icon { transform: rotate(180deg); color: #ff2d55; }
 
 /* ซ่อนปุ่ม 3 ขีดในหน้าจอคอมพิวเตอร์ */
 @media(min-width: 769px) {
@@ -83,7 +77,7 @@ a { text-decoration: none; color: inherit; }
     .lyrics-container { padding: 15px 10px; }
     .song-header { padding: 15px; }
     .song-header h3 { font-size: 16px; }
-    .song-content { padding: 0 15px; }
+    .song-content { padding: 0 15px 20px 15px; }
     .search-box-lyrics { margin-left: 0; width: 100%; }
     audio { width: 100% !important; max-width: 100%; }
 }
@@ -108,7 +102,7 @@ a { text-decoration: none; color: inherit; }
         <div class="lyrics-container">
             <div style="text-align: center; margin-bottom: 25px;">
                 <h1 style="color: #fff; font-size: 28px;">📖 สรุปใจความบทเพลง</h1>
-                <p style="color: #bbb; margin-top: 5px;">คลิกที่ชื่อเพลงเพื่ออ่านข้อคิดและความหมายแบบเจาะลึก พร้อมฟังเพลง</p>
+                <p style="color: #bbb; margin-top: 5px;">อ่านข้อคิดและความหมายแบบเจาะลึก พร้อมฟังเพลง</p>
             </div>
 
             <div class="search-box-lyrics">
@@ -117,10 +111,9 @@ a { text-decoration: none; color: inherit; }
             
             <div id="lyricsList">
 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 ไม่มีคำแปล</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -139,10 +132,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 ยอมรับคนเดียว</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -161,10 +153,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 ฉากสุดท้าย</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -183,10 +174,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 ซ่อนไว้</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -205,10 +195,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 ฤดูที่ไม่มีเธอ</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -227,10 +216,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 ฝากดาวดูแลเธอ</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -249,10 +237,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 เพิ่งเข้าใจคำว่ารัก</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -271,10 +258,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 รอยร้าวในหัวใจ</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -293,10 +279,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 ประโยคสุดท้าย</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -315,10 +300,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 ฉันไม่ได้อยู่ในตอนจบตั้งแต่แรก</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -338,10 +322,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 ถอยออกมาก่อน</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -361,10 +344,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 คำขอโทษ</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -384,10 +366,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 สายเกินจะขอโทษ</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -404,10 +385,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 ยังอยู่ในทุกวัน</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญ of เพลง</strong>
@@ -424,10 +404,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 ร่องรอยของเธอ</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -444,10 +423,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 รู้ทั้งรู้</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -466,10 +444,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 วันที่หัวใจเริ่มเดิน</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -488,10 +465,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 วนกลับมาที่เดิม</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -510,10 +486,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 ปล่อยให้เวลาเป็นคนตอบ</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -532,10 +507,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 คนที่เดินต่อ</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -554,10 +528,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 ซ่อนไม่เก่ง</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -576,10 +549,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
                 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 เก็บเศษหัวใจ</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -598,10 +570,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
                 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 คำตอบที่หาไม่เจอ</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -620,10 +591,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 ยิ้มทั้งที่เจ็บ</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -642,10 +612,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 ขอให้เธอเจอวันที่ดี</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -664,10 +633,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 คำที่พูดไม่พอ</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -685,10 +653,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 ลบได้แค่หน้าจอ</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -706,10 +673,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 วันที่เข้าใจ</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -728,10 +694,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
                 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 ขอเก็บไว้คนเดียว</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -750,10 +715,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 ไม่ต้องมีคำตอบ</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -772,10 +736,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 ฉากที่ไม่มีอยู่จริง</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -794,10 +757,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 คนนอกเส้นทาง</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -815,10 +777,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-                <div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 ค่อย ๆ หายดี</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -835,10 +796,10 @@ a { text-decoration: none; color: inherit; }
                         </audio>
                     </div>
                 </div>
-<div class="song-summary-card" onclick="toggleSummary(this)">
+                
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 คนคนนั้นหายไปไหน</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -856,10 +817,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-<div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 สิ่งที่เหลืออยู่</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -877,10 +837,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-<div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 รอยแตกที่ไม่มีใครเห็น</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -898,10 +857,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-<div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 ห้องที่เสียงไม่ถึง</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -919,10 +877,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-<div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 คนที่เคยอยู่ตรงนี้</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -940,10 +897,9 @@ a { text-decoration: none; color: inherit; }
                     </div>
                 </div>
 
-<div class="song-summary-card" onclick="toggleSummary(this)">
+                <div class="song-summary-card">
                     <div class="song-header">
                         <h3>🎵 ประโยคที่ตกหล่น</h3>
-                        <span class="toggle-icon">▼</span>
                     </div>
                     <div class="song-content">
                         <p><strong>📌 สาระสำคัญของเพลง</strong>
@@ -972,18 +928,7 @@ a { text-decoration: none; color: inherit; }
         document.getElementById('sidebar').classList.toggle('active'); 
     }
 
-    // ฟังก์ชันเปิด/ปิดกล่องข้อความสรุปเพลง (Accordion)
-    function toggleSummary(card) {
-        card.classList.toggle('active');
-        
-        // ทำให้เพลงหยุดเล่นเมื่อปิดการ์ด
-        let audio = card.querySelector('audio');
-        if (audio && !card.classList.contains('active')) {
-            audio.pause();
-        }
-    }
-
-    // ระบบค้นหาเพลง
+    // ระบบค้นหาเพลง (ยังคงใช้งานได้เหมือนเดิม)
     document.getElementById("searchLyrics").addEventListener("keyup", function() {
         let filter = this.value.toLowerCase();
         let cards = document.querySelectorAll(".song-summary-card");
