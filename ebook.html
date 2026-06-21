@@ -265,7 +265,7 @@ a { text-decoration: none; color: inherit; }
         <a href="index.html" class="menu">📺 เพลงฮิต YouTube</a>
         <a href="index.html" class="menu">💖 เพลงโปรดของฉัน</a>
         
-        <a href="#" class="menu active" onclick="closeBook()">📚 E-Book คู่มือแต่งเพลง AI</a>
+        <a href="#" class="menu active" onclick="openBook()">📚 E-Book คู่มือแต่งเพลง AI</a>
         
         <div class="menu-divider"></div>
         <a href="horoscope.html" target="_blank" class="menu">🔮 เช็กดวงรายวัน</a>
@@ -281,7 +281,7 @@ a { text-decoration: none; color: inherit; }
             </div>
         </div>
 
-        <div id="ebookSection">
+        <div id="ebookSection" style="display: none;">
             <div class="page-header">
                 <h1 class="page-title">📚 E-Book ขั้นตอนการสร้างเพลงด้วย AI (Gemini & Suno)</h1>
                 <p class="page-subtitle">ดาวน์โหลดฟรี! คู่มือเจาะลึกเทคนิคการใช้ AI สร้างสรรค์บทเพลงตั้งแต่เริ่มเขียนเนื้อจนถึงการเจนเพลงด้วย Suno</p>
@@ -297,7 +297,7 @@ a { text-decoration: none; color: inherit; }
             </div>
         </div>
 
-        <div id="readerSection" style="display: none;">
+        <div id="readerSection">
             <button class="btn-back-read" onclick="closeBook()">← ปิดหนังสือกลับหน้าหลัก</button>
             
             <div class="reader-container">
@@ -315,7 +315,7 @@ a { text-decoration: none; color: inherit; }
     <button class="chapter-btn" id="btn-ch5" onclick="showChapter(5)">บทที่ 5: ใช้ Canva</button>
 </div>
 
-                <div id="ch1" class="chapter-content">
+                <div id="ch1" class="chapter-content active">
                     <h2 class="chapter-title">บทที่ 1: ใช้ Gemini แต่งเนื้อเพลงแบบมืออาชีพ</h2>
                     
                     <div class="chapter-summary">
@@ -526,7 +526,7 @@ a { text-decoration: none; color: inherit; }
                     </div>
 
                     <h3 style="color: #b77dff; margin-top: 30px;">อธิบายหน้าต่างการใช้งาน (Create Song)</h3>
-                    <p>สร้างเพลงด้วย AI ง่ายๆ ไม่กี่ขั้นตอน (Make a song with AI in just a few steps.)</p>
+                    <p>สร้างเพลงด้วย AI ง่ายๆ ไม่กี่ขั้นตอน (Make a songกับ AI in just a few steps.)</p>
 
                     <img src="image_d14a76.jpg" alt="หน้าต่างการใช้งาน Suno AI Create Mode" class="content-image">
 
