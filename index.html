@@ -739,18 +739,29 @@ window.addEventListener("load", () => {
     });
 });
 
-let viewTimer = null;
+const viewTimers = {};
+
 window.incrementFirebaseView = function(songId) {
-    clearTimeout(viewTimer);
-    viewTimer = setTimeout(() => {
+    for (let id in viewTimers) {
+        clearTimeout(viewTimers[id]);
+    }
+
+    viewTimers[songId] = setTimeout(() => {
         const songRef = ref(db, "song" + songId);
+        
         update(songRef, { views: increment(1) }).then(() => {
             get(songRef).then((snapshot)=>{
                 const el = document.getElementById("views" + songId);
-                if(el && snapshot.exists()) el.innerHTML = "👁 " + (snapshot.val().views || 0);
+                if(el && snapshot.exists()) {
+                    el.innerHTML = "👁 " + (snapshot.val().views || 0);
+                }
             });
+        }).catch((error) => {
+            console.error("ไม่สามารถอัปเดตยอดวิวได้:", error);
+            alert("อัปเดตยอดวิวไม่ได้ ลองเช็ก Firebase Rules หรือการเชื่อมต่ออินเทอร์เน็ตดูครับ");
         });
-    }, 10000); 
+        
+    }, 10000);
 };
 
 const commentsRef = ref(db, "global_comments");
