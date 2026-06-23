@@ -313,6 +313,7 @@ a { text-decoration: none; color: inherit; }
     <button class="chapter-btn" id="btn-ch4" onclick="showChapter(4)">บทที่ 4: รายได้ (Facebook)</button>
     <button class="chapter-btn" id="btn-ch5" onclick="showChapter(5)">บทที่ 5: ใช้ Canva</button>
     <button class="chapter-btn" id="btn-ch6" onclick="showChapter(6)">บทที่ 6: รวม Prompt แต่งเพลง</button>
+    <button class="chapter-btn" id="btn-ch7" onclick="showChapter(7)">บทที่ 7: ใช้ Leonardo.Ai</button>
 </div>
 
                 <div id="ch1" class="chapter-content active">
@@ -1342,13 +1343,139 @@ a { text-decoration: none; color: inherit; }
 
                     </div>
 
-                    <div class="chapter-footer-nav">
-                        <button class="btn-nav" onclick="showChapter(5)">← ย้อนกลับ บทที่ 5</button>
-                        <button class="btn-nav" style="background: #ff4757; border-color: #ff4757;" onclick="closeBook()">ปิดหนังสือ กลับสู่หน้าหลัก ➔</button>
-                    </div>
+                                  <div class="chapter-footer-nav">
+    <button class="btn-nav" onclick="showChapter(5)">← ย้อนกลับ บทที่ 5</button>
+    <button class="btn-nav" onclick="showChapter(7)">อ่านต่อ บทที่ 7 ➔</button>
+</div>
                 </div>
             </div>
-         
+         <div id="ch7" class="chapter-content">
+                    <h2 class="chapter-title">บทที่ 7: อธิบายหน้า AI Creation – Leonardo.Ai</h2>
+                    
+                    <div class="chapter-summary">
+                        <strong>Leonardo.Ai คืออะไร?</strong><br>
+                        เครื่องมือสร้างภาพด้วย AI ระดับมืออาชีพ เพียงแค่พิมพ์คำบรรยาย (Prompt) ก็สามารถแปลงเป็นภาพกราฟิกสุดอลังการได้ สามารถปรับแต่งรายละเอียดได้ลึก และนำภาพไปใช้งานเชิงพาณิชย์ได้!
+                    </div>
+
+                    <img src="ChatGPT Image 23 มิ.ย. 2569 08_57_14.png" alt="อธิบายหน้า AI Creation - Leonardo.Ai" class="content-image" style="margin-top: 10px;">
+
+                    <div class="info-container" style="border-color: rgba(155,92,255,0.3);">
+                        
+                        <div class="fb-header-box" style="background: rgba(155,92,255,0.1); border-color: rgba(155,92,255,0.3);">
+                            <div class="fb-main-title" style="color: #c084fc;">หน้าสร้างภาพด้วย AI แบบมืออาชีพ</div>
+                            <div class="fb-sub-title" style="color: #e9d5ff;">สวยสมจริง ปรับแต่งได้ตามใจสั่ง!</div>
+                            <div class="fb-flow" style="color: #fff;">
+                                <span>เลือก Model</span>
+                                <span>พิมพ์ Prompt</span>
+                                <span>กด Generate</span>
+                                <span>นำไปใช้งาน</span>
+                            </div>
+                        </div>
+
+                        <div class="fb-highlight-box" style="margin-bottom: 25px; border-color: rgba(155,92,255,0.3);">
+                            <h4 style="color: #c084fc;">💡 ใช้อะไรได้บ้าง?</h4>
+                            <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; font-size: 13px; color: #fff;">
+                                <span><span style="color:#10b981; font-weight:bold;">✓</span> สร้างภาพจากข้อความ (Text to Image)</span>
+                                <span><span style="color:#10b981; font-weight:bold;">✓</span> ปรับแต่งรายละเอียดของภาพ</span>
+                                <span><span style="color:#10b981; font-weight:bold;">✓</span> เลือกสไตล์, ขนาด, โหมดต่างๆ</span>
+                                <span><span style="color:#10b981; font-weight:bold;">✓</span> บันทึกผลงานและใช้งานเชิงพาณิชย์ได้</span>
+                            </div>
+                        </div>
+
+                        <div class="fb-grid">
+                            
+                            <div class="fb-box" style="border-color: rgba(155,92,255,0.3);">
+                                <div class="fb-box-header" style="border-color: rgba(155,92,255,0.3);">
+                                    <div class="fb-step-circle" style="background: #9b5cff;">1</div>
+                                    <div class="fb-box-title" style="color: #c084fc;">ตั้งค่าพื้นฐาน (แถบซ้ายมือ)</div>
+                                </div>
+                                <ul class="fb-list">
+                                    <li><span class="num" style="background: #9b5cff;">1</span> <div><strong>Model & Style</strong><br><span style="color:#94a3b8;">เลือกโมเดล AI และสไตล์ภาพที่ต้องการ</span></div></li>
+                                    <li><span class="num" style="background: #9b5cff;">2</span> <div><strong>Image Dimensions</strong><br><span style="color:#94a3b8;">เลือกอัตราส่วนภาพ (เช่น 16:9, 1:1, 2:3)</span></div></li>
+                                    <li><span class="num" style="background: #9b5cff;">3</span> <div><strong>Number of generations</strong><br><span style="color:#94a3b8;">กำหนดจำนวนภาพที่ต้องการให้ AI สร้างในครั้งเดียว</span></div></li>
+                                    <li><span class="num" style="background: #9b5cff;">4</span> <div><strong>Private Mode & Add to Collection</strong><br><span style="color:#94a3b8;">เปิดโหมดส่วนตัว และเพิ่มลงในคอลเลกชันของคุณ</span></div></li>
+                                </ul>
+                            </div>
+
+                            <div class="fb-box" style="border-color: rgba(155,92,255,0.3);">
+                                <div class="fb-box-header" style="border-color: rgba(155,92,255,0.3);">
+                                    <div class="fb-step-circle" style="background: #9b5cff;">2</div>
+                                    <div class="fb-box-title" style="color: #c084fc;">Prompt & การ Generate</div>
+                                </div>
+                                <ul class="fb-list">
+                                    <li><span class="num" style="background: #9b5cff;">1</span> <div><strong>กล่องใส่ Prompt</strong><br><span style="color:#94a3b8;">พิมพ์บรรยายภาพที่ต้องการให้ละเอียดที่สุดที่นี่</span></div></li>
+                                    <li><span class="num" style="background: #9b5cff;">2</span> <div><strong>เลือกโหมดการสร้าง</strong><br><span style="color:#94a3b8;">เลือกสร้างแบบ Image, Video, 3D หรือใช้งาน Blueprints</span></div></li>
+                                    <li><span class="num" style="background: #9b5cff;">3</span> <div><strong>ปุ่ม Generate</strong><br><span style="color:#94a3b8;">กดเพื่อเริ่มสร้างภาพ (จะแสดงจำนวน Token ที่ใช้)</span></div></li>
+                                    <li><span class="num" style="background: #9b5cff;">4</span> <div><strong>ผลลัพธ์ที่สร้างได้</strong><br><span style="color:#94a3b8;">แสดงภาพที่เสร็จแล้ว พร้อมข้อมูลโมเดล และปุ่มดาวน์โหลด</span></div></li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <div class="fb-box" style="margin-bottom: 25px; border-color: #9b5cff; background: rgba(155,92,255,0.05);">
+                            <div class="fb-box-header" style="border-bottom: none; margin-bottom: 0;">
+                                <div class="fb-box-title" style="color: #c084fc; font-size: 18px; width: 100%; text-align: center;">6 ขั้นตอนการสร้างภาพ AI ด้วย Leonardo.Ai</div>
+                            </div>
+                            <div class="fb-icon-grid" style="grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); margin-top: 15px;">
+                                <div class="fb-icon-item" style="text-align: center; background: rgba(0,0,0,0.3);">
+                                    <div style="background: #9b5cff; color: white; width: 26px; height: 26px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 8px; font-weight: bold;">1</div>
+                                    <strong>เลือก Model</strong>
+                                    <span style="font-size:11px;">เลือกโมเดลและสไตล์</span>
+                                </div>
+                                <div class="fb-icon-item" style="text-align: center; background: rgba(0,0,0,0.3);">
+                                    <div style="background: #10b981; color: white; width: 26px; height: 26px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 8px; font-weight: bold;">2</div>
+                                    <strong>เลือกขนาด</strong>
+                                    <span style="font-size:11px;">ให้เหมาะกับงาน</span>
+                                </div>
+                                <div class="fb-icon-item" style="text-align: center; background: rgba(0,0,0,0.3);">
+                                    <div style="background: #f97316; color: white; width: 26px; height: 26px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 8px; font-weight: bold;">3</div>
+                                    <strong>พิมพ์ Prompt</strong>
+                                    <span style="font-size:11px;">อธิบายภาพให้ชัดเจน</span>
+                                </div>
+                                <div class="fb-icon-item" style="text-align: center; background: rgba(0,0,0,0.3);">
+                                    <div style="background: #3b82f6; color: white; width: 26px; height: 26px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 8px; font-weight: bold;">4</div>
+                                    <strong>ตั้งจำนวน</strong>
+                                    <span style="font-size:11px;">เลือกจำนวนภาพ</span>
+                                </div>
+                                <div class="fb-icon-item" style="text-align: center; background: rgba(0,0,0,0.3);">
+                                    <div style="background: #ec4899; color: white; width: 26px; height: 26px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 8px; font-weight: bold;">5</div>
+                                    <strong>กด Generate</strong>
+                                    <span style="font-size:11px;">ใช้ Token สร้างงาน</span>
+                                </div>
+                                <div class="fb-icon-item" style="text-align: center; background: rgba(0,0,0,0.3);">
+                                    <div style="background: #10b981; color: white; width: 26px; height: 26px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 8px; font-weight: bold;">6</div>
+                                    <strong>เลือกภาพ</strong>
+                                    <span style="font-size:11px;">ดาวน์โหลดไปใช้</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="fb-grid">
+                            <div class="fb-box" style="background: rgba(0,0,0,0.2); border-color: rgba(155,92,255,0.2);">
+                                <h4 style="color: #c084fc; margin-bottom: 10px;">⭐ เคล็ดลับ & หมายเหตุ</h4>
+                                <ul style="list-style: none; padding: 0; font-size: 13px; color: #cbd5e1; line-height: 1.6;">
+                                    <li>• Prompt ยิ่งละเอียด = ภาพยิ่งสวยและตรงใจ</li>
+                                    <li>• ใช้คำบรรยายเกี่ยวกับ แสง, มุมกล้อง, บรรยากาศ, และรายละเอียดต่างๆ</li>
+                                    <li>• บางฟีเจอร์ต้องใช้ Token ในการประมวลผล</li>
+                                    <li>• ภาพที่สร้างสามารถใช้เชิงพาณิชย์ได้ (ขึ้นอยู่กับเงื่อนไขของแพ็กเกจ)</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="fb-box" style="background: rgba(0,0,0,0.2); border-color: rgba(155,92,255,0.2);">
+                                <h4 style="color: #c084fc; margin-bottom: 10px;">📄 ตัวอย่าง Prompt ที่ดี</h4>
+                                <div style="background: #0f172a; padding: 15px; border-radius: 8px; border: 1px solid rgba(155,92,255,0.2); font-size: 13px; color: #a5b4fc; font-family: monospace; line-height: 1.6;">
+                                    "A cinematic close-up shot of a whiskey glass beside a whiskey bottle on a wooden bar table, warm amber lighting, soft smoke in the air, blurred bar lights background, shallow depth of field, ultra realistic, dramatic mood."
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="chapter-footer-nav">
+                        <button class="btn-nav" onclick="showChapter(6)">← ย้อนกลับ บทที่ 6</button>
+                        <button class="btn-nav" style="background: #ff4757; border-color: #ff4757;" onclick="closeBook()">จบหลักสูตร / ปิดหนังสือ ➔</button>
+                    </div>
+                </div>
         </div>
     </div>
 </div>
