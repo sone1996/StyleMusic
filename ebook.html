@@ -318,7 +318,8 @@ a { text-decoration: none; color: inherit; }
     <button class="chapter-btn" id="btn-ch9" onclick="showChapter(9)">บทที่ 9: Shopee Affiliate</button>  
     <button class="chapter-btn" id="btn-ch10" onclick="showChapter(10)">บทที่ 10: Google AdSense</button>
     <button class="chapter-btn" id="btn-ch11" onclick="showChapter(11)">บทที่ 11: แผน 100 ดอลลาร์แรก</button>     
-    <button class="chapter-btn" id="btn-ch11" onclick="showChapter(12)">บทที่ 12: วิธีทำ SEO ให้เว็บติด Google</button>              
+    <button class="chapter-btn" id="btn-ch11" onclick="showChapter(12)">บทที่ 12: วิธีทำ SEO ให้เว็บติด Google</button> 
+    <button class="chapter-btn" id="btn-ch13" onclick="showChapter(13)">บทที่ 13: การทำ Storyboard เพือสร้าง video  </button>
 </div>
 
                 <div id="ch1" class="chapter-content active">
@@ -2363,6 +2364,149 @@ a { text-decoration: none; color: inherit; }
 
                     <div class="chapter-footer-nav">
                         <button class="btn-nav" onclick="showChapter(11)">← ย้อนกลับ บทที่ 11</button>
+                         <button class="btn-nav" onclick="showChapter(13)">อ่านต่อ บทที่ 13 ➔</button>
+                    </div>
+                </div>
+         <div id="ch13" class="chapter-content">
+                    <h2 class="chapter-title" style="color: #3b82f6;">บทที่ 13: แผนเรียน Storyboard (เขียนแผนก่อนสร้างวิดีโอ)</h2>
+                    
+                    <div class="chapter-summary" style="border-color: #3b82f6; background: rgba(59,130,246,0.1);">
+                        <strong>ทำไมถึงต้องทำ Storyboard?</strong><br>
+                        Storyboard คือ <strong>"การวาดหรือเขียนแผนของวิดีโอ"</strong> ก่อนลงมือสร้างจริง ช่วยให้เห็นภาพรวม ประหยัดเวลา ประหยัดงบ (โดยเฉพาะการใช้ Token ของ AI) และทำให้งานออกมาตรงกับที่เราคิดไว้มากที่สุด!
+                    </div>
+
+                    <img src="songs/Storyboard.png" alt="แผนเรียน Storyboard สำหรับมือใหม่" class="content-image" style="margin-top: 10px;">
+
+                    <div class="info-container" style="border-color: rgba(59,130,246,0.3);">
+                        
+                        <div class="fb-header-box" style="background: rgba(59,130,246,0.1); border-color: rgba(59,130,246,0.3);">
+                            <div class="fb-main-title" style="color: #3b82f6;">กระบวนการสร้างวิดีโอแบบมืออาชีพ</div>
+                            <div class="fb-flow" style="color: #fff;">
+                                <span>1. เขียนแผน (Script)</span>
+                                <span>2. วางฉาก (Storyboard)</span>
+                                <span>3. ถ่ายทำ/สร้าง (AI)</span>
+                                <span>4. ตัดต่อ (Edit)</span>
+                                <span>5. เผยแพร่ (Publish)</span>
+                            </div>
+                        </div>
+
+                        <div class="fb-grid" style="margin-top: 25px;">
+                            
+                            <div class="fb-box" style="border-color: rgba(139,92,246,0.3);">
+                                <div class="fb-box-header" style="border-color: rgba(139,92,246,0.3);">
+                                    <div class="fb-step-circle" style="background: #8b5cf6;">1</div>
+                                    <div class="fb-box-title" style="color: #a78bfa;">มุมกล้องที่ควรรู้ (Camera Angles)</div>
+                                </div>
+                                <div class="fb-icon-grid" style="grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));">
+                                    <div style="background: rgba(0,0,0,0.2); padding: 10px; border-radius: 8px; text-align: center;">
+                                        <strong style="color: #a78bfa; font-size: 13px;">1. Wide Shot</strong><br><span style="font-size: 11px; color:#cbd5e1;">เห็นทั้งตัว/บรรยากาศ</span>
+                                    </div>
+                                    <div style="background: rgba(0,0,0,0.2); padding: 10px; border-radius: 8px; text-align: center;">
+                                        <strong style="color: #a78bfa; font-size: 13px;">2. Medium Shot</strong><br><span style="font-size: 11px; color:#cbd5e1;">เห็นครึ่งตัว</span>
+                                    </div>
+                                    <div style="background: rgba(0,0,0,0.2); padding: 10px; border-radius: 8px; text-align: center;">
+                                        <strong style="color: #a78bfa; font-size: 13px;">3. Close-up</strong><br><span style="font-size: 11px; color:#cbd5e1;">เน้นใบหน้า</span>
+                                    </div>
+                                    <div style="background: rgba(0,0,0,0.2); padding: 10px; border-radius: 8px; text-align: center;">
+                                        <strong style="color: #a78bfa; font-size: 13px;">4. Extreme Close-up</strong><br><span style="font-size: 11px; color:#cbd5e1;">เน้นรายละเอียด (เช่น ตา)</span>
+                                    </div>
+                                    <div style="background: rgba(0,0,0,0.2); padding: 10px; border-radius: 8px; text-align: center;">
+                                        <strong style="color: #a78bfa; font-size: 13px;">5. Over Shoulder</strong><br><span style="font-size: 11px; color:#cbd5e1;">มองผ่านไหล่ตัวละคร</span>
+                                    </div>
+                                    <div style="background: rgba(0,0,0,0.2); padding: 10px; border-radius: 8px; text-align: center;">
+                                        <strong style="color: #a78bfa; font-size: 13px;">6. Top View / Drone</strong><br><span style="font-size: 11px; color:#cbd5e1;">มุมสูง / มุมโดรน</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fb-box" style="border-color: rgba(16,185,129,0.3);">
+                                <div class="fb-box-header" style="border-color: rgba(16,185,129,0.3);">
+                                    <div class="fb-step-circle" style="background: #10b981;">2</div>
+                                    <div class="fb-box-title" style="color: #34d399;">การเคลื่อนกล้อง (Camera Movement)</div>
+                                </div>
+                                <ul class="fb-list">
+                                    <li><span class="num" style="background: #10b981;">✓</span> <div><strong>Push In / Pull Out:</strong><br><span style="color:#94a3b8;">ค่อยๆ ซูมเข้า (เน้นอารมณ์) / ค่อยๆ ถอยออก (ให้เห็นภาพกว้าง)</span></div></li>
+                                    <li><span class="num" style="background: #10b981;">✓</span> <div><strong>Pan Left / Right:</strong><br><span style="color:#94a3b8;">หมุนกล้องซ้ายหรือขวา (ตามสิ่งที่เคลื่อนไหว)</span></div></li>
+                                    <li><span class="num" style="background: #10b981;">✓</span> <div><strong>Tilt Up / Down:</strong><br><span style="color:#94a3b8;">เงยกล้องขึ้น / ก้มกล้องลง (โชว์ความยิ่งใหญ่ของสถานที่)</span></div></li>
+                                    <li><span class="num" style="background: #10b981;">✓</span> <div><strong>Tracking / Orbit:</strong><br><span style="color:#94a3b8;">กล้องเคลื่อนที่ตามตัวละคร / กล้องหมุนรอบตัวละคร</span></div></li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <div class="fb-box" style="margin-top: 25px; border-color: #f43f5e; background: rgba(244,63,94,0.05);">
+                            <div class="fb-box-header" style="border-bottom: 1px solid rgba(244,63,94,0.2);">
+                                <div class="fb-step-circle" style="background: #f43f5e;">3</div>
+                                <div class="fb-box-title" style="color: #fb7185;">การแปลง Storyboard เป็น AI Prompt</div>
+                            </div>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding-top: 15px;">
+                                <div>
+                                    <strong style="color: #fb7185; font-size: 14px;">หลักการเขียน Prompt ที่ดี (ใส่ให้ครบ)</strong>
+                                    <ul style="list-style: none; padding: 0; font-size: 13px; color: #cbd5e1; margin-top: 10px; line-height: 1.8;">
+                                        <li>1. <strong>Subject:</strong> ใคร/อะไร อยู่ในฉาก</li>
+                                        <li>2. <strong>Action:</strong> กำลังทำอะไร</li>
+                                        <li>3. <strong>Setting:</strong> สถานที่ / บรรยากาศ / แสง</li>
+                                        <li>4. <strong>Camera Angle:</strong> มุมกล้อง (เช่น Close-up)</li>
+                                        <li>5. <strong>Movement:</strong> การเคลื่อนกล้อง (เช่น Push in)</li>
+                                        <li>6. <strong>Style:</strong> สไตล์ภาพ (เช่น Cinematic, Realistic)</li>
+                                    </ul>
+                                </div>
+                                
+                                <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; border: 1px solid rgba(244,63,94,0.2);">
+                                    <strong style="color: #fb7185; font-size: 13px;">📝 ตัวอย่างการแปลงคำพูด เป็น Prompt</strong>
+                                    <div style="margin-top: 10px; font-size: 12px; color: #94a3b8;">
+                                        <strong>จากฉาก:</strong> "ชายวัย 30 เปิดคอมในห้องมืด"
+                                    </div>
+                                    <div style="margin-top: 5px; font-size: 13px; color: #fecdd3; font-family: monospace; background: rgba(244,63,94,0.1); padding: 10px; border-radius: 6px;">
+                                        "A 30-year-old man sits in a dimly lit room, turning on his computer, cinematic lighting, realistic style, over-the-shoulder camera, slow push in, ultra detailed."
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="fb-grid" style="margin-top: 25px;">
+                            
+                            <div class="fb-box" style="border-color: rgba(14,165,233,0.3);">
+                                <div class="fb-box-header" style="border-color: rgba(14,165,233,0.3);">
+                                    <div class="fb-box-title" style="color: #38bdf8;">🎬 โครงสร้างการเล่าเรื่อง (รวมเป็นหนังสั้น)</div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; gap: 8px; padding-top: 10px;">
+                                    <div style="background: rgba(14,165,233,0.1); padding: 8px 12px; border-radius: 6px; font-size: 13px;"><strong style="color:#7dd3fc;">1. Hook (เปิดเรื่อง):</strong> ดึงความสนใจใน 3 วินาทีแรก</div>
+                                    <div style="background: rgba(14,165,233,0.1); padding: 8px 12px; border-radius: 6px; font-size: 13px;"><strong style="color:#7dd3fc;">2. Setup (เกริ่นนำ):</strong> ปูเรื่องราว แนะนำตัวละคร</div>
+                                    <div style="background: rgba(14,165,233,0.1); padding: 8px 12px; border-radius: 6px; font-size: 13px;"><strong style="color:#7dd3fc;">3. Content (เนื้อหา):</strong> ดำเนินเรื่อง / ปัญหา</div>
+                                    <div style="background: rgba(14,165,233,0.1); padding: 8px 12px; border-radius: 6px; font-size: 13px;"><strong style="color:#7dd3fc;">4. Climax (จุดพีค):</strong> จุดตื่นเต้นที่สุด / การแก้ปัญหา</div>
+                                    <div style="background: rgba(14,165,233,0.1); padding: 8px 12px; border-radius: 6px; font-size: 13px;"><strong style="color:#7dd3fc;">5. Conclusion (สรุป):</strong> จบเรื่อง / ให้ข้อคิด หรือ Call to Action</div>
+                                </div>
+                            </div>
+
+                            <div class="fb-box" style="border-color: rgba(245,158,11,0.3);">
+                                <div class="fb-box-header" style="border-color: rgba(245,158,11,0.3);">
+                                    <div class="fb-box-title" style="color: #fbbf24;">💡 5 คำถามเช็กความพร้อม (ก่อนสร้างจริง)</div>
+                                </div>
+                                <p style="font-size: 12px; color: #cbd5e1; margin-bottom: 10px;">ก่อนนำไปเจนใน AI (Kling, Runway, etc.) ให้ถามตัวเองก่อนว่า:</p>
+                                <ul style="list-style: decimal; margin-left: 20px; font-size: 13px; color: #fde68a; line-height: 1.8;">
+                                    <li>ฉากนี้ต้องการสื่ออะไร? (ใจความหลัก)</li>
+                                    <li>ตัวละครกำลังทำอะไร? (การกระทำ/สีหน้า)</li>
+                                    <li>กล้องอยู่ตรงไหน? (มุมกล้อง/การเคลื่อนไหว)</li>
+                                    <li>แสงและโทนสีเป็นแบบไหน? (เช้า/กลางคืน/มืดหม่น)</li>
+                                    <li>คนดูจะรู้สึกอย่างไร? (ตื่นเต้น/เศร้า/หวังดี)</li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <div style="text-align: center; margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 12px; border: 1px dashed rgba(255,255,255,0.2);">
+                            <h4 style="color: #10b981; margin-bottom: 5px;">🚀 วิธีเรียนที่ได้ผลที่สุด: Project-Based Learning</h4>
+                            <p style="font-size: 13px; color: #cbd5e1;">
+                                "อย่ามัวแต่อ่าน ให้ลองตั้งโจทย์ทำวิดีโอ 1 คลิปไปพร้อมๆ กันเลย คิดไอเดีย > เขียนสคริปต์ > ทำ Storyboard > เจน AI > ตัดต่อ > อัปโหลด... ทำซ้ำๆ แล้วคุณจะเก่งขึ้นแน่นอน!"
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="chapter-footer-nav">
+                        <button class="btn-nav" onclick="showChapter(12)">← ย้อนกลับ บทที่ 12</button>
                         <button class="btn-nav" style="background: #ff4757; border-color: #ff4757;" onclick="closeBook()">จบหลักสูตร / ปิดหนังสือ ➔</button>
                     </div>
                 </div>
